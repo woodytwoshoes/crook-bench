@@ -1,0 +1,318 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crook Bench Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; each chart is a figure with its question as the heading, a hover layer, and a plain caption. */
+:root {
+  --bg: #f6f7f7; --surface: #ffffff; --ink: #121615; --ink-2: #4d5553; --ink-3: #7a8381;
+  --rule: #dfe3e2; --grid: #eceeee;
+  --closed: #2a78d6; --open: #eb6834; --bad: #c4302b;
+  --seq-0: #eef4fc; --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #5598e7; --seq-4: #256abf; --seq-5: #104281;
+  --t0: #121615; --t1: #121615; --t2: #121615; --t3: #ffffff; --t4: #ffffff; --t5: #ffffff;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121514; --surface: #1a1e1d; --ink: #eef1f0; --ink-2: #b4bcba; --ink-3: #87908e;
+  --rule: #2d3332; --grid: #252a29; --closed: #3987e5; --open: #d95926; --bad: #e66767;
+  --seq-0: #1b2633; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --t0: #eef1f0; --t1: #eef1f0; --t2: #ffffff; --t3: #ffffff; --t4: #0d1a2b; --t5: #0d1a2b;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121514; --surface: #1a1e1d; --ink: #eef1f0; --ink-2: #b4bcba; --ink-3: #87908e;
+  --rule: #2d3332; --grid: #252a29; --closed: #3987e5; --open: #d95926; --bad: #e66767;
+  --seq-0: #1b2633; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --t0: #eef1f0; --t1: #eef1f0; --t2: #ffffff; --t3: #ffffff; --t4: #0d1a2b; --t5: #0d1a2b;
+  color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--body); }
+main { max-width: 860px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 44px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+h1 { font: 700 clamp(30px, 5vw, 44px)/1.08 var(--display); margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+h2 { font: 700 22px/1.2 var(--display); margin: 0; text-wrap: balance; }
+.lede { margin: 0; max-width: 64ch; color: var(--ink-2); font-size: 17px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 6px 0 0; padding: 0; list-style: none; }
+.facts li { display: grid; gap: 2px; }
+.facts b { font: 500 26px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.facts span { font-size: 13px; color: var(--ink-3); }
+figure { margin: 0; display: grid; gap: 12px; min-width: 0; }
+.fighead { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 20px; }
+.fighead p { margin: 4px 0 0; color: var(--ink-2); font-size: 15px; max-width: 60ch; }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 12px 8px; overflow-x: auto; }
+.panel svg { display: block; width: 100%; min-width: 560px; height: auto; }
+figcaption { font-size: 14px; color: var(--ink-3); max-width: 70ch; }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--ink-2); align-items: center; flex-wrap: wrap; }
+.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.legend .c { background: var(--closed); border-radius: 50%; }
+.legend .o { background: var(--open); transform: rotate(45deg) scale(.85); }
+svg text { fill: var(--ink-2); font: 12px var(--body); }
+svg .lbl { fill: var(--ink); font-size: 12.5px; }
+svg .num { font: 11.5px var(--mono); fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+svg .axis { fill: var(--ink-3); font: 11px var(--mono); }
+svg .grid { stroke: var(--grid); stroke-width: 1; }
+svg .base { stroke: var(--rule); stroke-width: 1; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.seg button { font: 500 13px var(--body); border: 0; background: var(--surface); color: var(--ink-2); padding: 6px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible, .hit:focus-visible { outline: 2px solid var(--closed); outline-offset: 2px; }
+#tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.4; padding: 8px 10px; border-radius: 6px; max-width: 260px; z-index: 10; }
+#tip b { font-family: var(--display); font-size: 14px; }
+#tip .m { font-family: var(--mono); font-size: 12px; }
+table.traps { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px; }
+.traps th, .traps td { padding: 7px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
+.traps th { font: 500 11px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); vertical-align: bottom; }
+.traps td:first-child { white-space: nowrap; }
+.traps td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.dots { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 6px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--rule); }
+.dots i.on { background: var(--bad); border-color: var(--bad); }
+.note { font-size: 14px; color: var(--ink-2); display: grid; gap: 8px; max-width: 70ch; }
+.note p { margin: 0; }
+a { color: var(--closed); }
+@media (prefers-reduced-motion: no-preference) { .bar { transition: opacity .15s; } }
+</style>
+<main>
+  <header>
+    <div class="eyebrow">Crook bench · first run · 4 October 2026</div>
+    <h1>How AI models do as the GP in a consultation game</h1>
+    <p class="lede">Thirteen models played the doctor in five free cases of <em>Crook</em>, an Australian general-practice consultation game, three times each. They talked to the patient, examined, ordered tests, prescribed and referred through tools. The game's own code scored every consultation against a hand-written key, exactly as it scores a human player.</p>
+    <ul class="facts">
+      <li><b>195</b><span>consultations</span></li>
+      <li><b>195/195</b><span>named the right diagnosis</span></li>
+      <li><b>18</b><span>gave penicillin to a patient allergic to it</span></li>
+      <li><b>US$53</b><span>total cost of the run</span></li>
+    </ul>
+  </header>
+
+  <figure id="f-board">
+    <div class="fighead">
+      <div><h2>Overall score</h2><p>Mean share of each case's maximum over 15 consultations. The line shows one standard deviation either side.</p></div>
+      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+    </div>
+    <div class="panel"><svg id="board" role="img" aria-label="Bar chart of overall score by model"></svg></div>
+  </figure>
+
+  <figure id="f-cost">
+    <div class="fighead">
+      <div><h2>Score against cost</h2><p>Cost per consultation through OpenRouter, on a log scale. Up and to the left is better value.</p></div>
+      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+    </div>
+    <div class="panel"><svg id="cost" role="img" aria-label="Scatter plot of score against cost per consultation"></svg></div>
+    <figcaption>GPT-6.1 Sol scored 80% for about 3 cents a consultation. Claude Fable 5.1 scored 75% for about $2.06.</figcaption>
+  </figure>
+
+  <figure id="f-flags">
+    <div class="fighead">
+      <div><h2>Questions asked against red flags caught</h2><p>Red flags are the history items that change management, such as sweating with chest pain. The budget was 50 questions; no model came close.</p></div>
+      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+    </div>
+    <div class="panel"><svg id="flags" role="img" aria-label="Scatter plot of red flags caught against questions asked"></svg></div>
+    <figcaption>Models that asked more found more. Claude Opus 5.5 was the most economical of the top group, at 16 questions a consultation.</figcaption>
+  </figure>
+
+  <figure id="f-heat">
+    <div class="fighead">
+      <div><h2>Where the points came from</h2><p>Mean score by case, or by the four parts of the bill.</p></div>
+      <div class="seg" role="group" aria-label="Break down by">
+        <button type="button" id="by-case" aria-pressed="true">By case</button>
+        <button type="button" id="by-part" aria-pressed="false">By part of the bill</button>
+      </div>
+    </div>
+    <div class="panel"><svg id="heat" role="img" aria-label="Heatmap of mean score by model"></svg></div>
+    <figcaption id="heat-cap">Chest pain was the hardest case for every model except Llama 4 Maverick: the patient is having a heart attack and took Viagra the night before.</figcaption>
+  </figure>
+
+  <figure id="f-traps">
+    <div class="fighead">
+      <div><h2>The traps</h2><p>Each case hides something the record doesn't show. Filled dots are consultations that walked into it, out of three.</p></div>
+    </div>
+    <div class="panel"><table class="traps" id="traps"></table></div>
+    <figcaption>Two of the penicillin consultations (Gemini 3.1 Pro and Grok 4.7) asked about allergies and the patient model wrongly denied it; both are listed as a known issue.</figcaption>
+  </figure>
+
+  <section class="note">
+    <h2>About this benchmark</h2>
+    <p>It measures how models play a game, scored on process: red flags, key history, indicated exams and tests, a safe plan and a defensible diagnosis. It does not show that any model can or should practise medicine.</p>
+    <p>The patient, the question classifier and the end-of-consultation marker are Qwen3 8B, the same model human players talk to. All five cases are drafts still under review by the game's author, a GP registrar, and follow Australian practice. Fifteen consultations per model is a small sample.</p>
+    <p>Code, cases, every transcript and the known issues: <a href="https://github.com/woodytwoshoes/crook-bench">github.com/woodytwoshoes/crook-bench</a>. The game: <a href="https://doctorfoo.ai">doctorfoo.ai</a>.</p>
+  </section>
+</main>
+<div id="tip" hidden></div>
+<script>
+const DATA = [{"id":"openai/gpt-6-astra","name":"GPT-6 Astra","lab":"OpenAI","open":0,"n":15,"score":82.60921429958121,"sd":11.22961835730999,"history":81,"exam":76,"tests":88,"mgmt":92,"flags":88,"questions":26.7,"cost":0.2088,"harms":0,"missedRequired":0,"traps":{"pen":0,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":89,"back_pain_mechanical":80,"chest_pain_stemi":64,"cough_pneumonia":90,"dysuria_cystitis":90}},{"id":"openai/gpt-6.1-sol","name":"GPT-6.1 Sol","lab":"OpenAI","open":0,"n":15,"score":80.22492966383473,"sd":12.911746214191382,"history":77,"exam":77,"tests":83,"mgmt":91,"flags":82,"questions":24.7,"cost":0.0317,"harms":0,"missedRequired":0,"traps":{"pen":0,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":88,"back_pain_mechanical":78,"chest_pain_stemi":59,"cough_pneumonia":89,"dysuria_cystitis":87}},{"id":"anthropic/claude-opus-5.5","name":"Claude Opus 5.5","lab":"Anthropic","open":0,"n":15,"score":76.73891955021833,"sd":12.378135265125115,"history":67,"exam":84,"tests":85,"mgmt":93,"flags":67,"questions":16.2,"cost":0.3683,"harms":0,"missedRequired":0,"traps":{"pen":0,"gtn":0,"ect":0,"dup":1},"cases":{"abdo_pain_appendicitis":81,"back_pain_mechanical":78,"chest_pain_stemi":55,"cough_pneumonia":83,"dysuria_cystitis":87}},{"id":"anthropic/claude-fable-5.1","name":"Claude Fable 5.1","lab":"Anthropic","open":0,"n":15,"score":75.46036738127594,"sd":11.74318651057267,"history":71,"exam":81,"tests":85,"mgmt":83,"flags":70,"questions":22.6,"cost":2.0563,"harms":0.13,"missedRequired":0,"traps":{"pen":2,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":87,"back_pain_mechanical":76,"chest_pain_stemi":57,"cough_pneumonia":81,"dysuria_cystitis":77}},{"id":"qwen/qwen3.8-max-0902","name":"Qwen3.8 Max","lab":"Alibaba Qwen","open":0,"n":15,"score":74.21159805616416,"sd":12.442706539854754,"history":67,"exam":83,"tests":80,"mgmt":86,"flags":66,"questions":25.6,"cost":0.1248,"harms":0.07,"missedRequired":0,"traps":{"pen":1,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":80,"back_pain_mechanical":70,"chest_pain_stemi":56,"cough_pneumonia":83,"dysuria_cystitis":82}},{"id":"x-ai/grok-4.7","name":"Grok 4.7","lab":"xAI","open":0,"n":15,"score":73.54362383017015,"sd":9.310901053732275,"history":66,"exam":86,"tests":83,"mgmt":82,"flags":70,"questions":20.8,"cost":0.0933,"harms":0.13,"missedRequired":0,"traps":{"pen":1,"gtn":1,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":82,"back_pain_mechanical":75,"chest_pain_stemi":60,"cough_pneumonia":73,"dysuria_cystitis":77}},{"id":"deepseek/deepseek-v4-pro-0813","name":"DeepSeek V4 Pro","lab":"DeepSeek","open":1,"n":15,"score":70.53313426580753,"sd":12.609917557795436,"history":65,"exam":79,"tests":86,"mgmt":78,"flags":72,"questions":17.7,"cost":0.087,"harms":0.2,"missedRequired":0,"traps":{"pen":1,"gtn":2,"ect":0,"dup":1},"cases":{"abdo_pain_appendicitis":81,"back_pain_mechanical":70,"chest_pain_stemi":50,"cough_pneumonia":73,"dysuria_cystitis":78}},{"id":"moonshotai/kimi-k3","name":"Kimi K3","lab":"Moonshot AI","open":1,"n":15,"score":67.26531448663073,"sd":15.490495463516547,"history":60,"exam":77,"tests":55,"mgmt":81,"flags":57,"questions":19.5,"cost":0.1608,"harms":0.27,"missedRequired":0,"traps":{"pen":2,"gtn":1,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":83,"back_pain_mechanical":69,"chest_pain_stemi":44,"cough_pneumonia":64,"dysuria_cystitis":78}},{"id":"google/gemini-3.1-pro-preview","name":"Gemini 3.1 Pro","lab":"Google","open":0,"n":15,"score":62.84088156714831,"sd":9.044223473685467,"history":52,"exam":82,"tests":78,"mgmt":75,"flags":55,"questions":14.5,"cost":0.1716,"harms":0.13,"missedRequired":0,"traps":{"pen":2,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":71,"back_pain_mechanical":64,"chest_pain_stemi":53,"cough_pneumonia":57,"dysuria_cystitis":69}},{"id":"z-ai/glm-5.3","name":"GLM 5.3","lab":"Z.ai","open":1,"n":15,"score":62.41961215729416,"sd":15.591740926274396,"history":57,"exam":74,"tests":77,"mgmt":67,"flags":58,"questions":18.7,"cost":0.0387,"harms":0.27,"missedRequired":0,"traps":{"pen":2,"gtn":0,"ect":0,"dup":3},"cases":{"abdo_pain_appendicitis":78,"back_pain_mechanical":65,"chest_pain_stemi":44,"cough_pneumonia":60,"dysuria_cystitis":65}},{"id":"mistralai/mistral-medium-3-5","name":"Mistral Medium 3.5","lab":"Mistral","open":0,"n":15,"score":60.37171330578436,"sd":6.691798711700462,"history":59,"exam":68,"tests":56,"mgmt":62,"flags":58,"questions":19.9,"cost":0.1654,"harms":0.2,"missedRequired":0,"traps":{"pen":1,"gtn":2,"ect":2,"dup":1},"cases":{"abdo_pain_appendicitis":62,"back_pain_mechanical":63,"chest_pain_stemi":52,"cough_pneumonia":63,"dysuria_cystitis":61}},{"id":"qwen/qwen3.8-27b","name":"Qwen3.8 27B","lab":"Alibaba Qwen","open":1,"n":15,"score":58.781900879163544,"sd":9.699096708380688,"history":50,"exam":77,"tests":52,"mgmt":69,"flags":49,"questions":17.5,"cost":0.0274,"harms":0.33,"missedRequired":0,"traps":{"pen":3,"gtn":0,"ect":0,"dup":0},"cases":{"abdo_pain_appendicitis":71,"back_pain_mechanical":60,"chest_pain_stemi":47,"cough_pneumonia":55,"dysuria_cystitis":61}},{"id":"meta-llama/llama-4-maverick","name":"Llama 4 Maverick","lab":"Meta","open":1,"n":15,"score":24.190503308033882,"sd":9.5129293749506,"history":22,"exam":38,"tests":38,"mgmt":21,"flags":16,"questions":5.6,"cost":0.0093,"harms":0.4,"missedRequired":3,"traps":{"pen":3,"gtn":1,"ect":1,"dup":3},"cases":{"abdo_pain_appendicitis":17,"back_pain_mechanical":28,"chest_pain_stemi":30,"cough_pneumonia":18,"dysuria_cystitis":27}}];
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs = {}, parent) => {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+const txt = (parent, x, y, s, cls, anchor = "start") => {
+  const t = el("text", { x, y, class: cls || "", "text-anchor": anchor }, parent);
+  t.textContent = s;
+  return t;
+};
+const colour = (m) => (m.open ? "var(--open)" : "var(--closed)");
+const money = (c) => (c < 0.1 ? `${(c * 100).toFixed(1)}¢` : `$${c.toFixed(2)}`);
+
+// Shared tooltip
+const tip = document.getElementById("tip");
+function showTip(ev, m, extra = "") {
+  tip.innerHTML = `<b>${m.name}</b> <span class="m">${m.lab}, ${m.open ? "open" : "closed"} weights</span><br>` +
+    `<span class="m">Score ${m.score.toFixed(0)}% (±${m.sd.toFixed(0)}) · red flags ${m.flags}%<br>` +
+    `${m.questions.toFixed(0)} questions · ${money(m.cost)} a consult</span>${extra}`;
+  tip.hidden = false;
+  moveTip(ev);
+}
+function moveTip(ev) {
+  const r = tip.getBoundingClientRect();
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - 14;
+  tip.style.left = `${Math.max(8, x)}px`;
+  tip.style.top = `${Math.max(8, y)}px`;
+}
+const hideTip = () => (tip.hidden = true);
+function hover(target, m, extra) {
+  target.setAttribute("tabindex", "0");
+  target.classList.add("hit");
+  target.addEventListener("pointerenter", (e) => showTip(e, m, extra));
+  target.addEventListener("pointermove", moveTip);
+  target.addEventListener("pointerleave", hideTip);
+  target.addEventListener("focus", () => {
+    const b = target.getBoundingClientRect();
+    showTip({ clientX: b.right, clientY: b.top }, m, extra);
+  });
+  target.addEventListener("blur", hideTip);
+}
+
+// 1. Leaderboard bars
+(function board() {
+  const svg = document.getElementById("board");
+  const W = 760, row = 30, top = 8, left = 150, right = 700, H = top + DATA.length * row + 30;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const x = (v) => left + ((right - left) * v) / 100;
+  for (const t of [0, 20, 40, 60, 80, 100]) {
+    el("line", { x1: x(t), x2: x(t), y1: top, y2: top + DATA.length * row, class: t ? "grid" : "base" }, svg);
+    txt(svg, x(t), H - 8, `${t}%`, "axis", "middle");
+  }
+  DATA.forEach((m, i) => {
+    const y = top + i * row, cy = y + row / 2;
+    const g = el("g", {}, svg);
+    txt(g, left - 10, cy + 4, m.name, "lbl", "end");
+    const w = x(m.score) - left;
+    el("path", { d: `M${left},${cy - 7} h${w - 3} a3,3 0 0 1 3,3 v8 a3,3 0 0 1 -3,3 h${-(w - 3)} z`, fill: colour(m), class: "bar" }, g);
+    const lo = x(Math.max(0, m.score - m.sd)), hi = x(Math.min(100, m.score + m.sd));
+    el("line", { x1: lo, x2: hi, y1: cy, y2: cy, stroke: "var(--ink-2)", "stroke-width": 1.5 }, g);
+    el("line", { x1: lo, x2: lo, y1: cy - 4, y2: cy + 4, stroke: "var(--ink-2)", "stroke-width": 1.5 }, g);
+    el("line", { x1: hi, x2: hi, y1: cy - 4, y2: cy + 4, stroke: "var(--ink-2)", "stroke-width": 1.5 }, g);
+    txt(g, hi + 8, cy + 4, `${m.score.toFixed(0)}%`, "num");
+    const hit = el("rect", { x: 0, y, width: W, height: row, fill: "transparent" }, g);
+    hover(hit, m);
+  });
+})();
+
+// Scatter with greedy label placement
+function scatter(id, xs, ys, xLabel, yLabel) {
+  const svg = document.getElementById(id);
+  const W = 760, H = 430, L = 58, R = 730, T = 14, B = 380;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  for (const t of ys.ticks) {
+    el("line", { x1: L, x2: R, y1: ys.f(t, T, B), y2: ys.f(t, T, B), class: t === ys.ticks[0] ? "base" : "grid" }, svg);
+    txt(svg, L - 8, ys.f(t, T, B) + 4, ys.fmt(t), "axis", "end");
+  }
+  for (const t of xs.ticks) {
+    el("line", { x1: xs.f(t, L, R), x2: xs.f(t, L, R), y1: T, y2: B, class: "grid" }, svg);
+    txt(svg, xs.f(t, L, R), B + 18, xs.fmt(t), "axis", "middle");
+  }
+  txt(svg, (L + R) / 2, H - 6, xLabel, "", "middle");
+  const yl = txt(svg, 14, (T + B) / 2, yLabel, "", "middle");
+  yl.setAttribute("transform", `rotate(-90 14 ${(T + B) / 2})`);
+  const pts = DATA.map((m) => ({ m, x: xs.f(xs.v(m), L, R), y: ys.f(ys.v(m), T, B) }));
+  const boxes = pts.map((p) => ({ x1: p.x - 8, x2: p.x + 8, y1: p.y - 8, y2: p.y + 8 }));
+  const overlaps = (b) => boxes.some((o) => b.x1 < o.x2 && b.x2 > o.x1 && b.y1 < o.y2 && b.y2 > o.y1) || b.x1 < L || b.x2 > R || b.y1 < T || b.y2 > B;
+  for (const p of pts) {
+    const w = p.m.name.length * 6.6, h = 14;
+    const tries = [[11, 4, "start"], [-11, 4, "end"], [0, -13, "middle"], [0, 21, "middle"], [11, -9, "start"], [-11, -9, "end"], [11, 17, "start"], [-11, 17, "end"]];
+    for (const [dx, dy, a] of tries) {
+      const x1 = a === "start" ? p.x + dx : a === "end" ? p.x + dx - w : p.x - w / 2;
+      const b = { x1, x2: x1 + w, y1: p.y + dy - 11, y2: p.y + dy - 11 + h };
+      if (!overlaps(b)) { boxes.push(b); p.label = [p.x + dx, p.y + dy, a]; break; }
+    }
+  }
+  for (const p of pts) {
+    const g = el("g", {}, svg);
+    if (p.m.open) el("rect", { x: p.x - 5.5, y: p.y - 5.5, width: 11, height: 11, transform: `rotate(45 ${p.x} ${p.y})`, fill: colour(p.m), stroke: "var(--surface)", "stroke-width": 2 }, g);
+    else el("circle", { cx: p.x, cy: p.y, r: 6.5, fill: colour(p.m), stroke: "var(--surface)", "stroke-width": 2 }, g);
+    if (p.label) txt(g, p.label[0], p.label[1], p.m.name, "lbl", p.label[2]);
+    hover(el("circle", { cx: p.x, cy: p.y, r: 14, fill: "transparent" }, g), p.m);
+  }
+}
+const lin = (lo, hi) => (v, a, b) => b - ((v - lo) / (hi - lo)) * (b - a);
+const linX = (lo, hi) => (v, a, b) => a + ((v - lo) / (hi - lo)) * (b - a);
+const logX = (lo, hi) => (v, a, b) => a + ((Math.log10(v) - Math.log10(lo)) / (Math.log10(hi) - Math.log10(lo))) * (b - a);
+scatter("cost",
+  { v: (m) => m.cost, f: logX(0.005, 3), ticks: [0.01, 0.03, 0.1, 0.3, 1, 3], fmt: (t) => (t < 0.1 ? `${Math.round(t * 100)}¢` : `$${t}`) },
+  { v: (m) => m.score, f: lin(20, 90), ticks: [20, 30, 40, 50, 60, 70, 80, 90], fmt: (t) => `${t}%` },
+  "Cost per consultation (US$, log scale)", "Overall score");
+scatter("flags",
+  { v: (m) => m.questions, f: linX(0, 30), ticks: [0, 5, 10, 15, 20, 25, 30], fmt: String },
+  { v: (m) => m.flags, f: lin(0, 100), ticks: [0, 20, 40, 60, 80, 100], fmt: (t) => `${t}%` },
+  "Questions asked per consultation (budget 50)", "Red flags caught");
+
+// 4. Heatmap
+const CASES = [["chest_pain_stemi", "Chest pain", "Heart attack (STEMI)"], ["cough_pneumonia", "Cough, fever", "Pneumonia"], ["back_pain_mechanical", "Back pain", "Mechanical back pain"], ["abdo_pain_appendicitis", "Abdominal pain", "Appendicitis"], ["dysuria_cystitis", "Burning urine", "Cystitis"]];
+const PARTS = [["history", "History"], ["exam", "Examination"], ["tests", "Tests"], ["mgmt", "Management and diagnosis"]];
+const bin = (v) => (v < 40 ? 0 : v < 55 ? 1 : v < 70 ? 2 : v < 80 ? 3 : v < 90 ? 4 : 5);
+function heat(mode) {
+  const svg = document.getElementById("heat");
+  svg.replaceChildren();
+  const cols = mode === "case" ? CASES.map(([k, a, b]) => [k, a, b]) : PARTS.map(([k, a]) => [k, a, ""]);
+  const W = 760, L = 150, T = 44, row = 28, cw = (W - L - 4) / cols.length, H = T + DATA.length * row + 6;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  cols.forEach(([, a, b], j) => {
+    txt(svg, L + j * cw + cw / 2, b ? 16 : 26, a, "lbl", "middle");
+    if (b) txt(svg, L + j * cw + cw / 2, 32, b, "axis", "middle");
+  });
+  DATA.forEach((m, i) => {
+    const y = T + i * row;
+    txt(svg, L - 10, y + row / 2 + 4, m.name, "lbl", "end");
+    cols.forEach(([k, a], j) => {
+      const v = mode === "case" ? m.cases[k] : m[k];
+      const b = bin(v), x = L + j * cw;
+      const g = el("g", {}, svg);
+      el("rect", { x: x + 1, y: y + 1, width: cw - 2, height: row - 2, rx: 3, fill: `var(--seq-${b})` }, g);
+      const t = txt(g, x + cw / 2, y + row / 2 + 4, `${v}`, "num", "middle");
+      t.style.fill = `var(--t${b})`;
+      hover(el("rect", { x, y, width: cw, height: row, fill: "transparent" }, g), m, `<br><span class="m">${a}: ${v}%</span>`);
+    });
+  });
+}
+const bc = document.getElementById("by-case"), bp = document.getElementById("by-part"), cap = document.getElementById("heat-cap");
+const capCase = cap.textContent;
+const capPart = "Examination scores were close across the field, 68 to 86% outside Llama 4 Maverick. History, tests and the management plan spread the models out.";
+function setMode(mode) {
+  bc.setAttribute("aria-pressed", String(mode === "case"));
+  bp.setAttribute("aria-pressed", String(mode === "part"));
+  cap.textContent = mode === "case" ? capCase : capPart;
+  heat(mode);
+  try { localStorage.setItem("crook-heat", mode); } catch {}
+}
+bc.addEventListener("click", () => setMode("case"));
+bp.addEventListener("click", () => setMode("part"));
+let saved = "case";
+try { saved = localStorage.getItem("crook-heat") || "case"; } catch {}
+setMode(saved === "part" ? "part" : "case");
+
+// 5. Traps table
+(function traps() {
+  const t = document.getElementById("traps");
+  const dots = (n, of) => `<span class="dots" aria-hidden="true">${Array.from({ length: of }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("")}</span>`;
+  t.innerHTML = `<thead><tr><th>Model</th><th>Penicillin for the allergic patient<br>(pneumonia)</th><th>GTN after Viagra<br>(chest pain)</th><th>Ectopic pregnancy as a man's can't-miss<br>(abdominal pain)</th><th>Same diagnosis in two slots<br>(any case, of 15)</th></tr></thead><tbody>` +
+    DATA.map((m) => `<tr><td>${m.name}</td><td class="n">${dots(m.traps.pen, 3)}${m.traps.pen}</td><td class="n">${dots(m.traps.gtn, 3)}${m.traps.gtn}</td><td class="n">${dots(m.traps.ect, 3)}${m.traps.ect}</td><td class="n">${m.traps.dup}</td></tr>`).join("") +
+    `</tbody>`;
+})();
+</script>
+</head></html>

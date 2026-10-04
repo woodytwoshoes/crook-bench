@@ -14,6 +14,10 @@ about whether a model can or should practise medicine.
 
 ## Results
 
+**Interactive charts:** https://woodytwoshoes.github.io/crook-bench/ (hover any model for its numbers).
+
+![Overall score by model, with one standard deviation either side](images/board.png)
+
 | Rank | Model | Consults | Score % (±sd) | History | Exam | Tests | Mgmt + dx | Red flags caught | Questions asked | Red flags per 10 questions | Top dx right | Harms per consult | Required care missed | Cost per consult |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | openai/gpt-6-astra | 15 (5 cases) | 83 (±11) | 81 | 76 | 88 | 92 | 88% | 27 | 2.7 | 100% | 0.00 | 0 | $0.21 |
@@ -34,6 +38,14 @@ Score is the mean share of each case's maximum. History, Exam, Tests and
 Mgmt + dx are the bill's four parts, each out of its own maximum. Full
 transcripts, bills and move logs for every consultation are in
 [`results/`](results/).
+
+![Score against cost per consultation, log scale](images/cost.png)
+
+![Red flags caught against questions asked](images/flags.png)
+
+![Mean score by model and case](images/heat.png)
+
+![How often each model walked into each case's trap](images/traps.png)
 
 **What stood out**
 
