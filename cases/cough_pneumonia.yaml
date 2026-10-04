@@ -1,0 +1,513 @@
+# Pilot case — drafted by Claude from the developer's reference texts.
+# NOT clinically reviewed. Source citations are in ground_truth.notes.
+id: cough_pneumonia
+status: draft
+title: A chest cold that won't shift
+difficulty: 2
+presenting_complaint: Cough and fever
+condition_description: >-
+  Cough and fever for a few days. Feeling pretty rotten and it's not
+  shifting. Might need some antibiotics?
+
+booked_urgent: false
+
+patient:
+  name: Mark Delaney
+  age: 46
+  sex: M
+  occupation: High-school maths teacher
+  persona:
+    personality: >-
+      Dry sense of humour, practical, and not one for doctors. Answers
+      straightforwardly. Keen to get back to his classes before exams.
+    health_literacy: medium
+    emotional_state: >-
+      Tired and fed up. Quietly a bit worried, because he can't remember the
+      last time he felt this knocked about.
+    verbosity: normal
+    conceals: []
+  # How he is drawn; cosmetic only, never a finding.
+  appearance:
+    build: average
+    skin: fair
+    hair: auburn
+    hair_length: short
+    eyes: grey
+    facial_hair: beard
+
+record:
+  allergies: []
+  conditions: []
+  medications: []
+
+consult_start: "08:50"
+
+ground_truth:
+  diagnosis: pneumonia
+  acceptable_diagnoses: []
+  sinister: false
+  differentials: [acute_bronchitis, influenza, atypical_pneumonia, urti, covid19]
+  sinister_diagnoses: [pulmonary_embolism, sepsis, lung_cancer, tuberculosis, pneumothorax]
+  # Never recorded: the record says nil known. Found only by asking.
+  allergies: [Penicillin (hives and lip swelling as a child)]
+  notes: >-
+    Low-severity community-acquired pneumonia (right lower lobe) in a
+    previously well 46-year-old, booked as "cough and fever". Tests whether
+    the player takes a focused respiratory history, measures every vital
+    sign a severity score needs, finds the focal chest signs, applies a
+    score (CRB-65 0, CORB 0, SMRT-CO 0), asks about allergies, and treats
+    at home with an oral antibiotic he can safely take and an early review. Temperature authored at 38.0
+    to sidestep Murtagh's ">38" admission criterion; age under 65 so CRB-65
+    is unambiguously 0; a hidden immediate penicillin allergy (hives,
+    lip swelling), not on the record, so amoxicillin is out and the player
+    must ask: doxycycline alone for mild pneumonia [em p.349 L15922; murtagh
+    p.966 L15703, dose from L15699], moxifloxacin alone if immediate
+    penicillin hypersensitivity [em p.349 L15932], macrolide alone for mild
+    pneumonia [em p.349 L15922]. DRAFT re-key, 2026-09-29. sinister: false because low-severity CAP
+    is not itself a can't-miss diagnosis; severe pneumonia/sepsis, PE, lung
+    cancer, TB and pneumothorax are the can't-miss alternatives. Sources:
+    definition and community management [em p.342 L.15453, L.15466; em
+    p.343 L.15488]; S. pneumoniae commonest [em p.342 L.15458; murtagh
+    p.962 L.15667]; presenting symptoms [em p.343 L.15484; murtagh p.962-963
+    L.15670-15674; talley p.217 L.9724; talley p.194 L.8917-8918]; rusty
+    sputum [murtagh p.950 L.15469]; red flags and admission criteria
+    [murtagh p.966 L.15714; murtagh p.965 L.15703; em p.348 L.15717]; CORB
+    [em p.348 L.15695-15698; em p.517 L.23718]; CURB-65/CRB-65 [em p.348
+    L.15707-15711]; SMART-COP/SMRT-CO [em p.347 L.15626-15680; em p.348
+    L.15688-15693]; immunosuppression excludes CAP [em p.343 L.15488];
+    comorbidity, smoking, exposures and their weak associations [em p.347
+    L.15671; murtagh p.946 L.15417, L.15431; em p.344 L.15539; em p.345
+    L.15545]; post-influenza S. aureus [em p.343 L.15496]; PE vs pneumonia
+    [talley p.194 L.8913-8915; murtagh p.946 L.15431]; weight loss/TB
+    [murtagh p.944 L.15393; p.945 L.15404]; vitals and chest signs, LRs
+    [talley p.217 L.9661-9727; talley p.218 L.9731; talley p.212 L.9442;
+    talley p.213 L.9470]; calves [murtagh p.956 L.15566]; CXR [em p.345
+    L.15564; talley p.226 L.10133; murtagh p.945 L.15406]; routine bloods,
+    cultures, CRP, sputum of little value in non-severe CAP [em p.345
+    L.15575; em p.346 L.15587-15608]; amoxicillin 1 g 8-hourly usually 5
+    days, review and follow-up plan, doxycycline add-on criteria [abx p.2
+    L.66-83, TG May 2025]; 5-7 days and doxycycline for atypicals [murtagh
+    p.964 L.15699]; review in 24-48 h, rest, analgesia, fluids [em p.348
+    L.15725]; phenoxymethylpenicillin inadequate, broad-spectrum and
+    fluoroquinolone overuse, cefuroxime as alternative [em p.350
+    L.15926-15933]; no antibiotic for bronchitis but needed for pneumonia
+    [murtagh p.961 L.15652-15654; em p.347 L.15620]; steroids no outcome
+    benefit [em p.351 L.15962]; complications [murtagh p.963 L.15680];
+    mortality [em p.342 L.15478; em p.349 L.15889-15891]. CXR essential
+    (developer's decision, 2026-10-01) [em p.345 L.15564; talley p.226
+    L.10133; murtagh p.963 L.15678]. Not in sources (see questions):
+    sputum/viral PCR turnaround, sputum
+    sensitivities, safety-net wording, hospital referral scoring, cefuroxime
+    and doxycycline/macrolide monotherapy scoring.
+
+history:
+  - id: cough_duration
+    topic: How long the cough has been present
+    answer: >-
+      Three days now. It was a dry, hacking cough to start with.
+    volunteered: true
+    importance: essential
+    covers: [other_cough]
+  - id: fever
+    topic: Fever
+    answer: >-
+      I've been burning up, on and off. Didn't have a thermometer, but I was
+      roasting.
+    volunteered: true
+    importance: essential
+    covers: [other_sweats]
+  - id: rigors
+    topic: Shaking chills (rigors)
+    answer: >-
+      Yeah, the first night I was shaking under the doona, teeth chattering,
+      even though I was boiling.
+    volunteered: false
+    importance: essential
+  - id: sputum_colour
+    topic: Colour of the phlegm
+    answer: >-
+      Since yesterday I'm bringing stuff up. It's a rusty, brownish colour.
+      Clear at first.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: pleuritic_pain
+    topic: Chest pain with breathing or coughing
+    answer: >-
+      There's a sharp pain low down on the right side, round towards my back.
+      Catches me when I take a deep breath or cough. Started yesterday.
+    volunteered: false
+    open_question: true
+    importance: essential
+    covers: [other_chest_pain]
+  - id: breathlessness
+    topic: Shortness of breath
+    answer: >-
+      Only going up the stairs. I got puffed on the way in from the car park.
+      Sitting here I'm alright.
+    volunteered: false
+    importance: red_flag
+    covers: [other_breathing]
+  - id: confusion
+    topic: Confusion or drowsiness
+    answer: >-
+      No, my head's clear. My wife reckons I'm just grumpy.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: haemoptysis
+    topic: Coughing up blood
+    answer: >-
+      No actual blood. Just that rusty colour.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: getting_worse_fast
+    topic: Whether he is getting rapidly worse
+    answer: >-
+      Worse than the first day, but about the same since yesterday. Not going
+      downhill fast.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: vomiting
+    topic: Vomiting
+    answer: No, no vomiting.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: immunosuppression
+    topic: Immune problems or immunosuppressant medicines
+    answer: No, nothing like that.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: recent_hospital
+    topic: Recent hospital stay
+    answer: No, haven't been in hospital for years.
+    volunteered: false
+    importance: red_flag
+    covers: [other_hospital]
+    absent: true
+  - id: weight_loss
+    topic: Weight loss
+    answer: No. If anything I could lose a few kilos.
+    volunteered: false
+    importance: red_flag
+    covers: [other_weight]
+    absent: true
+  - id: leg_swelling
+    topic: Leg swelling or calf pain
+    answer: No, legs are fine.
+    volunteered: false
+    importance: red_flag
+    covers: [other_swelling]
+    absent: true
+  - id: lung_disease
+    topic: Asthma or other lung disease
+    answer: No, never had asthma or anything with my lungs.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: heart_disease
+    topic: Heart problems
+    answer: No, no heart problems.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: diabetes
+    topic: Diabetes
+    answer: No.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: smoking
+    topic: Smoking
+    answer: Never smoked.
+    volunteered: false
+    importance: essential
+    covers: [other_smoking]
+  - id: antibiotic_allergy
+    topic: Allergy to antibiotics
+    answer: >-
+      Yes, penicillin. I came up in hives and my lips swelled when I was a
+      kid. It's probably not on my file; I haven't needed antibiotics in years.
+    volunteered: false
+    importance: essential
+    covers: [other_allergies]
+  - id: home_support
+    topic: Who is at home with him
+    answer: >-
+      My wife and our two teenagers. She's working from home this week, so
+      she can drive me back in if I need.
+    volunteered: false
+    importance: essential
+    covers: [other_home]
+  - id: preceding_flu
+    topic: A flu-like illness in the weeks before
+    answer: No, I was fine until three days ago.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: recent_travel
+    topic: Recent travel
+    answer: No, haven't been anywhere. Just school and home.
+    volunteered: false
+    importance: supporting
+    covers: [other_travel]
+    absent: true
+  - id: bird_contact
+    topic: Contact with birds
+    answer: No birds. We've got a dog.
+    volunteered: false
+    importance: supporting
+    absent: true
+  # 2026-10-03 (developer's decision, Heidi full key check): potting mix carries
+  # Legionella longbeachae, a local cause of CAP (Victorian Department of Health).
+  - id: gardening
+    topic: Gardening or handling potting mix
+    answer: No, I'm not much of a gardener. Haven't touched potting mix in years.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: alcohol
+    topic: Alcohol
+    answer: A couple of beers on the weekend. None this week.
+    volunteered: false
+    importance: supporting
+    covers: [other_alcohol]
+  - id: recent_antibiotics
+    topic: Antibiotics already taken
+    answer: No, haven't had any antibiotics.
+    volunteered: false
+    importance: supporting
+    covers: [other_treatment_tried]
+    absent: true
+  - id: flu_vaccine
+    topic: Flu vaccination
+    answer: Didn't get round to the flu jab this year.
+    volunteered: false
+    importance: supporting
+    covers: [other_vaccines]
+  # Authored because, asked "how bad is it out of ten?", the patient made
+  # a number up (playtest, medical student round, 2026-10-01). Incidental:
+  # not scored; consistent with the other pain answers.
+  - id: pain_severity
+    topic: How bad the chest pain is
+    answer: A solid six when I cough or take a big breath. Otherwise just a dull ache.
+    volunteered: false
+    importance: incidental
+
+examination:
+  temperature:
+    finding: 38.0 °C.
+    necessity: essential
+  heart_rate:
+    finding: 96, regular.
+    necessity: essential
+  blood_pressure:
+    finding: 128/80.
+    necessity: essential
+  resp_rate:
+    finding: "22."
+    necessity: essential
+  spo2:
+    finding: 95% on room air.
+    necessity: essential
+  general_inspection:
+    finding: >-
+      Flushed and tired-looking. Alert and orientated. Speaking in full
+      sentences. Not cyanosed.
+    necessity: essential
+  chest_inspection:
+    finding: >-
+      Normal chest shape. Breathing slightly fast; holds back on deep breaths
+      on the right.
+    abnormal: true
+    necessity: acceptable
+  chest_expansion:
+    finding: Expansion reduced on the right lower chest.
+    abnormal: true
+    necessity: useful
+  chest_percussion:
+    finding: Dull at the right base posteriorly. Resonant elsewhere.
+    at:
+      lungs_front: Resonant.
+      lungs_back: Dull to percussion at the right base. Left base resonant.
+    abnormal: [finding, lungs_back]
+    necessity: essential
+  chest_auscultation:
+    finding: >-
+      Bronchial breathing and coarse crackles at the right base posteriorly.
+      Vesicular elsewhere. No wheeze.
+    at:
+      lungs_front: Vesicular breath sounds. No added sounds.
+      lungs_back: >-
+        Bronchial breathing with coarse crackles at the right base. Left base
+        clear.
+    abnormal: [finding, lungs_back]
+    necessity: essential
+  vocal_resonance:
+    finding: Increased at the right base posteriorly. Normal elsewhere.
+    at:
+      lungs_front: Normal and symmetrical.
+      lungs_back: Increased at the right base.
+    abnormal: [finding, lungs_back]
+    necessity: useful
+  cardiac_auscultation:
+    finding: Heart sounds dual, no added sounds. No murmurs.
+    necessity: useful
+  calves:
+    finding: Calf soft and non-tender. No swelling.
+    necessity: useful
+
+investigations:
+  # Matches the authored heart rate: the catalogue normal says 72/min
+  # (playtest, 2026-10-01).
+  # 2026-10-03 (developer's decision, Heidi full key check): neutral, not -2;
+  # pleuritic pain and breathlessness keep PE in view (Respiratory Medicine Today, BMJ Best Practice).
+  ecg_12_lead:
+    result: Sinus rhythm 96/min. Normal axis and intervals. No ST or T-wave changes.
+    turnaround_days: 0
+    necessity: acceptable
+  # Useful (developer's decision, 2026-10-03; essential from 2026-10-01): a
+  # new infiltrate is central to the diagnosis [em p.345 L15564; talley p.226
+  # L10133; murtagh p.963 L15678], and a single lobe is what keeps him at home
+  # [murtagh p.966 L15714], but most community CAP needs no X-ray; reasonable
+  # if CRB-65 > 0 (Respiratory Medicine Today 2024, via Heidi Evidence,
+  # docs/review/heidi/answers.md).
+  chest_xray:
+    abnormal: true
+    result: >-
+      Right lower lobe consolidation with air bronchograms. Other lobes
+      clear. No pleural effusion. Normal heart size.
+    turnaround_days: 0
+    necessity: useful
+  sputum_mcs:
+    abnormal: true
+    result: >-
+      Gram stain: numerous neutrophils, Gram-positive diplococci. Culture:
+      Streptococcus pneumoniae.
+    turnaround_days: 2
+    necessity: acceptable
+  resp_viral_pcr:
+    result: Influenza A and B, RSV and SARS-CoV-2 not detected.
+    turnaround_days: 1
+    necessity: acceptable
+  crp:
+    abnormal: true
+    result: CRP 142 mg/L.
+    necessity: acceptable
+  # 2026-10-03 (developer's decision, Heidi full key check): neutral, not -2;
+  # severity and baseline (MJA, Respiratory Medicine Today).
+  fbe:
+    abnormal: true
+    result: Hb 148 g/L, WCC 14.6 (neutrophils 12.1), platelets 310.
+    necessity: acceptable
+  # 2026-10-03 (developer's decision, Heidi full key check): neutral, not -2;
+  # severity and baseline (MJA, Respiratory Medicine Today).
+  uec:
+    result: Na 138, K 4.2, urea 5.1, creatinine 84, eGFR >90.
+    necessity: acceptable
+  lft:
+    result: Normal.
+    necessity: unnecessary
+  blood_culture:
+    result: No growth at 48 hours.
+    necessity: unnecessary
+
+management:
+  # Items with `when` are matched to game actions by code. Plain strings can
+  # only be said: the judge looks for them in the closing explanation.
+  # Referring this score-0 patient to hospital is deliberately unscored.
+  ideal:
+    # Penicillin allergy (hidden): amoxicillin is penalised by the safety rules.
+    - text: Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)
+      when:
+        prescribe: [doxycycline]
+        frequency: [Twice daily, Every 12 hours]
+        duration: [5 days, 7 days]
+    - Explain it is pneumonia that is safe to treat at home
+    - Review in 24 to 48 hours (e.g. "come back and see me in two days")
+    - Safety-net — come back urgently if more breathless, confused, or unable to keep tablets down
+  acceptable:
+    - text: Moxifloxacin alone (immediate penicillin hypersensitivity)
+      when: { prescribe: [moxifloxacin] }
+    - text: A macrolide alone for mild pneumonia
+      when: { prescribe: [roxithromycin, clarithromycin, azithromycin] }
+    - text: Paracetamol for fever and chest pain
+      when: { medicate: [paracetamol] }
+      also_said: true
+    - Drink plenty of fluids
+    # 2026-10-03 (developer's decision, Heidi full key check): the allergy is
+    # hidden, so recording it protects him next time (SA Health, MJA).
+    - Add the penicillin allergy to his record
+    # 2026-10-03 (developer's decision, Heidi full key check): about 10% fail
+    # community treatment (BMJ Best Practice).
+    - Come back if not improving in 48 to 72 hours
+  harmful:
+    - text: Phenoxymethylpenicillin
+      when: { medicate: [phenoxymethylpenicillin] }
+      consequence: >-
+        Oral penicillin is too poorly absorbed to cover the pneumococcus
+        reliably. Mark is no better at two days and needs his antibiotic
+        changed.
+    - text: Ciprofloxacin or norfloxacin (reserve antibiotics)
+      when: { medicate: [ciprofloxacin, norfloxacin] }
+      consequence: >-
+        A reserve antibiotic is used for a low-severity pneumonia. The
+        prescription is flagged at the practice's antimicrobial stewardship
+        audit.
+    - text: Broad-spectrum antibiotic first-line
+      when: { medicate: [amoxicillin + clavulanic acid, ceftriaxone] }
+      consequence: >-
+        Mark's chest settles, but the broad-spectrum antibiotic brings on
+        severe diarrhoea — Clostridioides difficile — and the prescription is
+        flagged at the stewardship audit.
+    - text: Tell him it's viral and send him home without an antibiotic (e.g. "it's just a virus", "it's only a chest cold, ride it out")
+      consequence: >-
+        Mark goes home without antibiotics. Two days later he is breathless
+        at rest and is brought to hospital with a parapneumonic effusion.
+    # Drafted from the references, not yet reviewed (see docs/research).
+    # Metronidazole's antibacterial activity is confined to anaerobes (and protozoa) [em p.522 L24097–24099]; the pathogens of community-acquired pneumonia are S. pneumoniae and the atypicals, treated with a beta-lactam, macrolide or tetracycline [em p.350 L15922–15929; murtagh p.962 L15665, p.964 L15699]. Tinidazole is the same class (formulary). Leaving pneumonia effectively untreated mirrors the existing "it's viral, no antibiotic" harm.
+    - text: Metronidazole or tinidazole as the antibiotic for pneumonia
+      when: { medicate: [metronidazole, tinidazole] }
+      consequence: >-
+        The metronidazole does nothing against the pneumococcus in Mark's
+        lung. Two days later he is breathless at rest and is admitted to
+        hospital with the pneumonia still spreading.
+    # Norfloxacin is one of the "important quinolones" to keep off first-line use, and is kept for proven-resistant urinary infection [murtagh p.398 L6851–6855]; early quinolones act mainly on gram-negative bacilli [em p.523 L24146]; quinolone use in mild pneumonia raises concern about resistance to reserve agents such as ciprofloxacin [em p.350 L15925], and focused quinolone use is advised [em p.523 L24123–24142]. Amoxicillin is first-line [abx p.2 L46–47; murtagh p.964 L15699]. The existing fluoroquinolone item lists only ciprofloxacin and moxifloxacin.
+    - text: Antibiotic course of a month or longer for pneumonia
+      when:
+        medicate:
+          - amoxicillin
+          - doxycycline
+          - cefuroxime
+          - clarithromycin
+          - roxithromycin
+          - azithromycin
+        duration: [1 month, 3 months, Ongoing]
+      consequence: >-
+        Mark keeps taking antibiotics for weeks after his chest has cleared,
+        until the diarrhoea starts: Clostridioides difficile. The script is
+        flagged at the stewardship audit.
+  # Oral steroids moved here from harmful (2026-10-03, developer's decision): no
+  # benefit in low-severity CAP, but no evidence of net harm in that group either
+  # (Cochrane, Stern 2017, via Heidi Evidence, docs/review/heidi/answers.md).
+  not_indicated: [prednisolone, dexamethasone]
+
+consequences:
+  ideal: >-
+    Mark comes back two days later with his fever gone and the chest pain
+    easing. He finishes his course of doxycycline and is back in the classroom
+    the following week.
+  acceptable: Mark recovers at home.
+  harmful: >-
+    The treatment didn't match a low-severity pneumonia. Mark's recovery is
+    slower than it should have been, and the prescription is flagged at the
+    stewardship audit.
+  missed_red_flag: >-
+    Without a proper severity assessment, the plan rested on guesswork. Mark
+    deteriorates at home and is admitted with severe pneumonia — a turn that
+    should have been anticipated, or at least safety-netted, at the first
+    visit.

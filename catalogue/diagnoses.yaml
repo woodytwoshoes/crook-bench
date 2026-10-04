@@ -1,0 +1,206 @@
+
+- { id: stemi, name: ST-elevation myocardial infarction (STEMI), aliases: [STEMI, heart attack, MI, inferior STEMI, anterior STEMI, ACOMI, acute coronary occlusion MI] }
+- { id: nstemi, name: Non-ST-elevation myocardial infarction (NSTEMI), aliases: [NSTEMI, heart attack, MI] }
+- { id: acs, name: Acute coronary syndrome, aliases: [ACS, heart attack] }
+- { id: myocardial_infarction, name: Acute myocardial infarction, aliases: [AMI, MI, heart attack] }
+- { id: unstable_angina, name: Unstable angina, aliases: [crescendo angina, ACS] }
+- { id: stable_angina, name: Stable angina, aliases: [angina, ischaemic heart disease] }
+- { id: pericarditis, name: Pericarditis }
+- { id: aortic_dissection, name: Aortic dissection, aliases: [dissecting aneurysm] }
+- { id: aaa, name: Abdominal aortic aneurysm, aliases: [AAA, ruptured aneurysm] }
+- { id: heart_failure, name: Heart failure, aliases: [CCF, congestive cardiac failure, LVF] }
+- { id: atrial_fibrillation, name: Atrial fibrillation, aliases: [AF] }
+- { id: hypertension, name: Hypertension, aliases: [high blood pressure] }
+- { id: dvt, name: Deep vein thrombosis, aliases: [DVT, clot] }
+- { id: pulmonary_embolism, name: Pulmonary embolism, aliases: [PE, clot on the lung] }
+
+- { id: pneumothorax, name: Pneumothorax, aliases: [collapsed lung] }
+- { id: pneumonia, name: Community-acquired pneumonia, aliases: [pneumonia, chest infection, CAP] }
+- { id: asthma, name: Asthma exacerbation, aliases: [asthma] }
+- { id: copd_exacerbation, name: COPD exacerbation, aliases: [COPD flare, infective exacerbation of COPD, emphysema] }
+- { id: copd, name: Chronic obstructive pulmonary disease (COPD), aliases: [COPD, emphysema, chronic bronchitis] }
+- { id: urti, name: Upper respiratory tract infection, aliases: [URTI, cold, viral] }
+- { id: influenza, name: Influenza, aliases: [flu] }
+- { id: covid19, name: COVID-19, aliases: [coronavirus] }
+- { id: acute_bronchitis, name: Acute bronchitis }
+
+- { id: gord, name: Gastro-oesophageal reflux disease, aliases: [GORD, GERD, reflux, heartburn, indigestion] }
+- { id: oesophageal_spasm, name: Oesophageal spasm }
+- { id: oesophageal_rupture, name: Oesophageal rupture, aliases: [Boerhaave] }
+- { id: peptic_ulcer, name: Peptic ulcer disease, aliases: [PUD, gastric ulcer, duodenal ulcer] }
+- { id: gastritis, name: Gastritis }
+- { id: biliary_colic, name: Biliary colic, aliases: [gallstones] }
+- { id: cholecystitis, name: Acute cholecystitis }
+- { id: pancreatitis, name: Acute pancreatitis }
+- { id: appendicitis, name: Appendicitis }
+- { id: gastroenteritis, name: Gastroenteritis, aliases: [gastro] }
+- { id: ibs, name: Irritable bowel syndrome, aliases: [IBS] }
+- { id: constipation, name: Constipation }
+- { id: diverticulitis, name: Diverticulitis }
+- { id: bowel_obstruction, name: Bowel obstruction }
+- { id: mesenteric_adenitis, name: Mesenteric adenitis }
+- { id: crohns_disease, name: "Crohn's disease", aliases: [Crohn, IBD, inflammatory bowel disease, terminal ileitis] }
+- { id: perforated_viscus, name: Perforated viscus with peritonitis, aliases: [perforation, peritonitis] }
+- { id: nonspecific_abdominal_pain, name: Non-specific abdominal pain, aliases: [NSAP, abdominal pain] }
+- { id: testicular_torsion, name: Testicular torsion, aliases: [torsion, twisted testicle] }
+- { id: colorectal_cancer, name: Colorectal cancer, aliases: [bowel cancer] }
+
+- { id: cystitis, name: Acute uncomplicated cystitis, aliases: [cystitis, bladder infection, UTI] }
+- { id: uti, name: Urinary tract infection, aliases: [UTI] }
+- { id: lower_uti, name: Lower urinary tract infection, aliases: [lower UTI] }
+- { id: complicated_uti, name: Recurrent or complicated urinary tract infection, aliases: [recurrent UTI, complicated UTI] }
+- { id: pyelonephritis, name: Pyelonephritis, aliases: [kidney infection, upper UTI] }
+- { id: renal_colic, name: Renal colic, aliases: [kidney stone, ureteric colic, urolithiasis] }
+- { id: interstitial_cystitis, name: Interstitial cystitis, aliases: [bladder pain syndrome] }
+- { id: prostatitis, name: Prostatitis }
+- { id: bph, name: Benign prostatic hyperplasia, aliases: [BPH, enlarged prostate] }
+- { id: bladder_cancer, name: Bladder cancer }
+
+- { id: sti_urethritis, name: Urethritis from a sexually transmitted infection, aliases: [STI, chlamydia, gonorrhoea, urethritis] }
+- { id: chlamydia, name: Chlamydia infection, aliases: [chlamydia, STI] }
+- { id: vaginal_candidiasis, name: Vaginal candidiasis, aliases: [thrush, vaginitis, candida] }
+- { id: bacterial_vaginosis, name: Bacterial vaginosis, aliases: [BV, vaginitis] }
+- { id: pid, name: Pelvic inflammatory disease, aliases: [PID, salpingitis] }
+- { id: ectopic_pregnancy, name: Ectopic pregnancy }
+- { id: pregnancy, name: Pregnancy }
+- { id: ovarian_torsion, name: Ovarian torsion }
+- { id: endometriosis, name: Endometriosis }
+- { id: genital_herpes, name: Genital herpes, aliases: [HSV] }
+
+- { id: nonspecific_lbp, name: Acute non-specific low back pain, aliases: [back pain, low back pain, LBP] }
+- { id: mechanical_lbp, name: Mechanical low back pain, aliases: [back pain, low back pain] }
+- { id: lumbar_strain, name: Lumbar muscle strain, aliases: [back strain, muscle strain, pulled muscle] }
+- { id: disc_prolapse_sciatica, name: Lumbar disc prolapse with sciatica, aliases: [sciatica, slipped disc, herniated disc, radiculopathy] }
+- { id: facet_joint_pain, name: Facet joint pain, aliases: [facet joint syndrome] }
+- { id: si_joint_dysfunction, name: Sacroiliac joint dysfunction, aliases: [SI joint pain] }
+- { id: spondyloarthropathy, name: Inflammatory back pain (spondyloarthropathy), aliases: [ankylosing spondylitis, axial spondyloarthritis] }
+- { id: cauda_equina, name: Cauda equina syndrome }
+- { id: spinal_malignancy, name: Spinal malignancy (metastases or myeloma), aliases: [spinal metastases, myeloma, cancer] }
+- { id: spinal_infection, name: Spinal infection (discitis or epidural abscess), aliases: [discitis, epidural abscess, osteomyelitis] }
+- { id: vertebral_fracture, name: Vertebral fracture, aliases: [osteoporotic fracture, compression fracture] }
+- { id: spinal_stenosis, name: Lumbar spinal stenosis, aliases: [neurogenic claudication] }
+- { id: msk_chest_pain, name: Musculoskeletal chest wall pain, aliases: [chest wall pain, costochondritis, muscular chest pain] }
+- { id: osteoarthritis, name: Osteoarthritis, aliases: [OA] }
+- { id: rheumatoid_arthritis, name: Rheumatoid arthritis, aliases: [RA] }
+- { id: gout, name: Gout }
+- { id: polymyalgia, name: Polymyalgia rheumatica, aliases: [PMR] }
+
+- { id: migraine, name: Migraine }
+- { id: tension_headache, name: Tension-type headache }
+- { id: sah, name: Subarachnoid haemorrhage, aliases: [SAH, bleed on the brain] }
+- { id: meningitis, name: Meningitis }
+- { id: stroke, name: Stroke, aliases: [CVA] }
+- { id: tia, name: Transient ischaemic attack, aliases: [TIA, mini stroke] }
+- { id: bppv, name: Benign paroxysmal positional vertigo, aliases: [BPPV, vertigo] }
+- { id: shingles, name: Herpes zoster, aliases: [shingles] }
+
+- { id: cellulitis, name: Cellulitis }
+- { id: eczema, name: Eczema, aliases: [dermatitis] }
+- { id: psoriasis, name: Psoriasis }
+- { id: tinea, name: Tinea, aliases: [ringworm, fungal infection] }
+
+- { id: otitis_media, name: Acute otitis media, aliases: [ear infection] }
+- { id: tonsillitis, name: Tonsillitis, aliases: [sore throat, pharyngitis] }
+- { id: sinusitis, name: Acute sinusitis }
+- { id: conjunctivitis, name: Conjunctivitis }
+
+- { id: anxiety, name: Anxiety or panic attack, aliases: [panic attack, anxiety] }
+- { id: depression, name: Depression }
+
+- { id: diabetes_t2, name: Type 2 diabetes, aliases: [diabetes, T2DM] }
+- { id: hypothyroidism, name: Hypothyroidism, aliases: [underactive thyroid, myxoedema] }
+- { id: anaemia, name: Anaemia }
+- { id: sepsis, name: Sepsis }
+
+- { id: intracerebral_haemorrhage, name: Intracerebral haemorrhage, aliases: [ ICH, haemorrhagic stroke, brain bleed ] }
+- { id: cervical_artery_dissection, name: Carotid or vertebral artery dissection, aliases: [ arterial dissection, carotid dissection, vertebral dissection ] }
+- { id: cerebral_venous_thrombosis, name: Cerebral venous sinus thrombosis, aliases: [ CVST, CVT, venous sinus thrombosis ] }
+- { id: rcvs, name: Reversible cerebral vasoconstriction syndrome, aliases: [ RCVS ] }
+- { id: benign_thunderclap_headache, name: Benign thunderclap headache, aliases: [ primary thunderclap headache, thunderclap ] }
+- { id: exertional_headache, name: Primary exertional or sexual headache, aliases: [ exertional headache, coital headache, sex headache ] }
+- { id: cluster_headache, name: Cluster headache }
+
+- { id: pleurisy, name: Pleurisy, aliases: [ pleuritis, viral pleurisy, Bornholm disease, pleuritic chest pain ] }
+
+- { id: acute_angle_closure, name: Acute angle-closure glaucoma, aliases: [ acute glaucoma, angle closure, AACG, acute primary angle closure, APAC, glaucoma ] }
+- { id: open_angle_glaucoma, name: Chronic open-angle glaucoma, aliases: [ glaucoma, chronic glaucoma ] }
+- { id: anterior_uveitis, name: Acute anterior uveitis, aliases: [ iritis, uveitis, iridocyclitis ] }
+- { id: microbial_keratitis, name: Microbial keratitis (corneal ulcer), aliases: [ keratitis, corneal ulcer, bacterial keratitis ] }
+- { id: hsv_keratitis, name: Herpes simplex keratitis, aliases: [ HSV keratitis, dendritic ulcer, herpetic keratitis ] }
+- { id: scleritis, name: Scleritis }
+- { id: episcleritis, name: Episcleritis }
+- { id: subconjunctival_haemorrhage, name: Subconjunctival haemorrhage, aliases: [ bleed in the eye ] }
+- { id: herpes_zoster_ophthalmicus, name: Herpes zoster ophthalmicus, aliases: [ HZO, shingles of the eye, ophthalmic shingles ] }
+- { id: endophthalmitis, name: Endophthalmitis }
+- { id: orbital_cellulitis, name: Orbital cellulitis }
+- { id: giant_cell_arteritis, name: Giant cell arteritis, aliases: [ GCA, temporal arteritis ] }
+
+- { id: iron_deficiency_anaemia, name: Iron-deficiency anaemia, aliases: [ IDA, iron deficiency, low iron, anaemia ] }
+- { id: upper_gi_cancer, name: Gastric or oesophageal cancer, aliases: [ stomach cancer, gastric cancer, oesophageal cancer, upper GI cancer ] }
+- { id: coeliac_disease, name: Coeliac disease, aliases: [ coeliac, celiac, gluten intolerance ] }
+- { id: obstructive_sleep_apnoea, name: Obstructive sleep apnoea, aliases: [ OSA, sleep apnoea, snoring ] }
+
+- { id: atypical_pneumonia, name: Atypical pneumonia, aliases: [ mycoplasma, legionella, walking pneumonia, psittacosis ] }
+- { id: lung_cancer, name: Lung cancer, aliases: [ bronchial carcinoma, lung tumour, cancer ] }
+- { id: tuberculosis, name: Tuberculosis, aliases: [ TB ] }
+
+- { id: subdural_haematoma, name: Subdural haematoma, aliases: [ subdural, SDH, bleed on the brain ] }
+- { id: heart_block, name: Complete heart block, aliases: [ heart block, Stokes-Adams, bradyarrhythmia ] }
+- { id: infective_endocarditis, name: Infective endocarditis, aliases: [ endocarditis, SBE ] }
+- { id: hypoglycaemia, name: Hypoglycaemia, aliases: [ low blood sugar, hypo ] }
+- { id: postural_hypotension, name: Postural hypotension, aliases: [ orthostatic hypotension, low blood pressure ] }
+- { id: labyrinthitis, name: Vestibular neuritis or labyrinthitis, aliases: [ labyrinthitis, vestibular neuritis, inner ear, vertigo ] }
+- { id: syncope, name: Syncope, aliases: [ faint, vasovagal, blackout ] }
+- { id: mechanical_fall, name: Mechanical fall, aliases: [ trip, fall, slip ] }
+- { id: hyperthyroidism, name: Hyperthyroidism, aliases: [ thyrotoxicosis, overactive thyroid ] }
+
+- { id: melanoma, name: Melanoma, aliases: [ skin cancer, malignant melanoma, superficial spreading melanoma, nodular melanoma, lentigo maligna ] }
+- { id: benign_naevus, name: Benign naevus (mole), aliases: [ mole, naevus, nevus, compound naevus, junctional naevus, intradermal naevus ] }
+- { id: dysplastic_naevus, name: Dysplastic (atypical) naevus, aliases: [ atypical mole, atypical naevus, dysplastic mole ] }
+- { id: seborrhoeic_keratosis, name: Seborrhoeic keratosis, aliases: [ seborrhoeic wart, SK, barnacle ] }
+- { id: basal_cell_carcinoma, name: Basal cell carcinoma, aliases: [ BCC, pigmented BCC, rodent ulcer, skin cancer ] }
+- { id: dermatofibroma, name: Dermatofibroma, aliases: [ sclerosing haemangioma, histiocytoma ] }
+- { id: haemangioma, name: Haemangioma, aliases: [ thrombosed haemangioma, cherry angioma, blood spot ] }
+- { id: cutaneous_scc, name: Squamous cell carcinoma of the skin, aliases: [ SCC, skin cancer, keratoacanthoma ] }
+- { id: solar_keratosis, name: Solar keratosis, aliases: [ actinic keratosis, sunspot, sun spot ] }
+- { id: solar_lentigo, name: Solar lentigo, aliases: [ age spot, liver spot, lentigo, freckle ] }
+
+- { id: erysipelas, name: Erysipelas }
+- { id: necrotising_fasciitis, name: Necrotising fasciitis, aliases: [ necrotizing fasciitis, flesh-eating bacteria, NF, Fournier gangrene ] }
+- { id: venous_stasis_dermatitis, name: Venous stasis dermatitis, aliases: [ venous eczema, varicose eczema, stasis eczema, gravitational eczema, chronic venous insufficiency ] }
+- { id: superficial_thrombophlebitis, name: Superficial thrombophlebitis, aliases: [ thrombophlebitis, superficial venous thrombosis, phlebitis, SVT ] }
+
+- { id: septic_arthritis, name: Septic arthritis, aliases: [ joint infection, infected joint, bacterial arthritis, gonococcal arthritis, pyogenic arthritis ] }
+- { id: pseudogout, name: Pseudogout (calcium pyrophosphate arthritis), aliases: [ CPPD, calcium pyrophosphate deposition, chondrocalcinosis ] }
+- { id: reactive_arthritis, name: Reactive arthritis, aliases: [ Reiter syndrome, post-infective arthritis ] }
+
+- { id: hashimoto_thyroiditis, name: Hashimoto thyroiditis, aliases: [ autoimmune thyroiditis, chronic lymphocytic thyroiditis, "Hashimoto's", Hashimoto disease ] }
+- { id: subclinical_hypothyroidism, name: Subclinical hypothyroidism, aliases: [ mildly raised TSH, borderline thyroid ] }
+- { id: perimenopause, name: Perimenopause, aliases: [ menopausal transition, perimenopausal, change of life ] }
+
+- { id: oesophagitis, name: Reflux oesophagitis, aliases: [ oesophagitis, esophagitis, erosive oesophagitis ] }
+- { id: functional_dyspepsia, name: Functional dyspepsia, aliases: [ non-ulcer dyspepsia, indigestion, dyspepsia ] }
+
+- { id: ace_inhibitor_cough, name: ACE inhibitor cough, aliases: [ ACEI cough, drug-induced cough, blood pressure tablet cough, perindopril cough ] }
+- { id: bronchiectasis, name: Bronchiectasis }
+
+- { id: retinal_tear, name: Retinal tear, aliases: [ retinal break, retinal hole, horseshoe tear, torn retina ] }
+- { id: posterior_vitreous_detachment, name: Posterior vitreous detachment, aliases: [ PVD, vitreous detachment, floaters ] }
+- { id: retinal_detachment, name: Retinal detachment, aliases: [ detached retina, RD ] }
+- { id: vitreous_haemorrhage, name: Vitreous haemorrhage, aliases: [ vitreous bleed, VH, bleeding inside the eye ] }
+- { id: migraine_with_aura, name: Migraine with aura, aliases: [ classic migraine, migraine aura, aura ] }
+
+- { id: medication_overuse_headache, name: Medication-overuse headache, aliases: [ rebound headache, analgesic overuse headache, MOH ] }
+- { id: brain_tumour, name: Brain tumour (space-occupying lesion), aliases: [ cerebral tumour, brain cancer, space-occupying lesion, SOL, intracranial tumour, glioma ] }
+- { id: idiopathic_intracranial_hypertension, name: Idiopathic intracranial hypertension, aliases: [ IIH, benign intracranial hypertension, pseudotumour cerebri ] }
+
+- { id: viral_pharyngitis, name: Viral pharyngitis or pharyngotonsillitis, aliases: [ viral sore throat, viral pharyngitis, viral tonsillitis, pharyngitis, sore throat ] }
+- { id: strep_pharyngitis, name: Group A streptococcal pharyngitis, aliases: [ strep throat, streptococcal tonsillitis, GABHS, bacterial tonsillitis, bacterial sore throat ] }
+- { id: infectious_mononucleosis, name: Infectious mononucleosis (glandular fever), aliases: [ glandular fever, mono, EBV, Epstein-Barr virus, kissing disease ] }
+- { id: peritonsillar_abscess, name: Peritonsillar abscess (quinsy), aliases: [ quinsy, tonsil abscess, peritonsillar cellulitis ] }
+- { id: epiglottitis, name: Epiglottitis (supraglottitis), aliases: [ supraglottitis, swollen epiglottis ] }
+
+- { id: strangulated_hernia, name: Strangulated or incarcerated hernia, aliases: [ strangulated hernia, incarcerated hernia, obstructed hernia, inguinal hernia, femoral hernia ] }
+- { id: pituitary_apoplexy, name: Pituitary apoplexy, aliases: [ pituitary haemorrhage, pituitary bleed ] }
+- { id: retropharyngeal_abscess, name: Retropharyngeal or parapharyngeal abscess, aliases: [ retropharyngeal abscess, parapharyngeal abscess, deep neck abscess, deep neck infection ] }
+- { id: ckd, name: Chronic kidney disease, aliases: [ CKD, kidney disease, renal impairment, chronic renal failure ] }

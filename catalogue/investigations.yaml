@@ -1,0 +1,614 @@
+
+- id: ecg_12_lead
+  name: ECG (12-lead)
+  category: bedside
+  aliases: [ECG, EKG, electrocardiogram, heart tracing]
+  minutes: 3
+  turnaround_days: 0
+  normal: Sinus rhythm 72/min. Normal axis and intervals. No ST or T-wave changes.
+- id: ecg_right_sided
+  name: Right-sided ECG (V4R)
+  category: bedside
+  aliases: [V4R, right-sided leads, right ventricular ECG]
+  minutes: 3
+  turnaround_days: 0
+  normal: No ST elevation in V4R.
+- id: urine_dipstick
+  name: Urine dipstick
+  category: bedside
+  aliases: [urinalysis, dipstick, UA, urine test]
+  minutes: 2
+  turnaround_days: 0
+  normal: Negative for leucocytes, nitrites, blood, protein, glucose and ketones.
+- id: urine_pregnancy_test
+  name: Urine pregnancy test
+  category: bedside
+  aliases: [pregnancy test, hCG, beta hCG urine, UPT]
+  minutes: 2
+  turnaround_days: 0
+  normal: Negative.
+- id: bgl_fingerprick
+  name: Blood glucose (finger-prick)
+  category: bedside
+  aliases: [BGL, BSL, blood sugar, glucometer]
+  minutes: 1
+  turnaround_days: 0
+  normal: 5.6 mmol/L.
+- id: poc_troponin
+  name: Troponin (point-of-care)
+  category: bedside
+  aliases: [troponin, trop, POC troponin, cardiac enzymes]
+  minutes: 3
+  turnaround_days: 0
+  normal: Negative.
+  timed: true
+- id: peak_flow
+  name: Peak expiratory flow
+  category: bedside
+  aliases: [PEF, peak flow]
+  minutes: 2
+  turnaround_days: 0
+  normal: 95% of predicted.
+- id: spirometry
+  name: Spirometry
+  category: bedside
+  aliases: [lung function, FEV1, pulmonary function]
+  minutes: 10
+  turnaround_days: 0
+  normal: FEV1/FVC 0.80. No obstruction; no bronchodilator response.
+
+- id: fbe
+  name: Full blood examination (FBE)
+  category: pathology
+  aliases: [FBE, FBC, full blood count, blood count, haemoglobin, white cells]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Hb 142 g/L, WCC 6.8, platelets 250. Normal indices.
+- id: uec
+  name: Urea, electrolytes and creatinine (UEC)
+  category: pathology
+  aliases: [UEC, EUC, U&E, electrolytes, kidney function, renal function, eGFR, creatinine]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Na 139, K 4.2, urea 5.1, creatinine 78, eGFR >90.
+- id: lft
+  name: Liver function tests (LFT)
+  category: pathology
+  aliases: [LFT, liver function, bilirubin, ALT]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: All within normal limits.
+- id: crp
+  name: C-reactive protein (CRP)
+  category: pathology
+  aliases: [CRP, inflammatory markers]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: CRP 2 mg/L.
+- id: esr
+  name: Erythrocyte sedimentation rate (ESR)
+  category: pathology
+  aliases: [ESR, sed rate, inflammatory markers]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: ESR 8 mm/h.
+- id: lipids
+  name: Fasting lipids
+  category: pathology
+  aliases: [cholesterol, lipid profile, LDL, triglycerides]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Total cholesterol 4.8, LDL 2.7, HDL 1.3, TG 1.4 mmol/L.
+- id: hba1c
+  name: HbA1c
+  category: pathology
+  aliases: [A1c, glycated haemoglobin, diabetes test]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: HbA1c 5.4%.
+- id: tfts
+  name: Thyroid function tests (TFTs)
+  category: pathology
+  aliases: [TSH, thyroid function, TFT, T4]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: TSH 1.8 mIU/L.
+- id: troponin_lab
+  name: Troponin (high-sensitivity, laboratory)
+  category: pathology
+  aliases: [hs troponin, hsTnT, hsTnI, troponin, trop, lab troponin]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: hs-troponin below the 99th percentile.
+  timed: true
+- id: creatine_kinase
+  name: Creatine kinase (CK)
+  category: pathology
+  aliases: [CK, CPK, creatine phosphokinase, CK-MB, cardiac enzymes]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: CK within the reference range.
+  timed: true
+- id: d_dimer
+  name: D-dimer
+  category: pathology
+  aliases: [D dimer, clot test]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: 0.3 mg/L FEU.
+- id: coags
+  name: Coagulation studies (INR, APTT)
+  category: pathology
+  aliases: [INR, APTT, clotting, coags, PT]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: INR 1.0. APTT 30 s.
+- id: iron_studies
+  name: Iron studies
+  category: pathology
+  aliases: [ferritin, iron, transferrin]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Ferritin 110 µg/L. Normal iron and transferrin saturation.
+- id: b12_folate
+  name: Vitamin B12 and folate
+  category: pathology
+  aliases: [B12, folate, folic acid]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Within normal limits.
+- id: calcium_magnesium_phosphate
+  name: Calcium, magnesium and phosphate
+  category: pathology
+  aliases: [calcium, magnesium, phosphate, CMP]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Within normal limits.
+- id: psa
+  name: Prostate-specific antigen (PSA)
+  category: pathology
+  aliases: [PSA, prostate]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: PSA 1.1 µg/L.
+- id: serum_bhcg
+  name: Serum beta-hCG
+  category: pathology
+  aliases: [quantitative hCG, blood pregnancy test, beta hCG]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Less than 5 IU/L.
+- id: urine_mcs
+  name: Urine microscopy, culture and sensitivity (MC&S)
+  category: pathology
+  aliases: [MSU, urine culture, urine MCS, midstream urine]
+  minutes: 1
+  turnaround_days: 2
+  normal: No pyuria. No significant growth.
+- id: chlamydia_gonorrhoea_naat
+  name: Chlamydia and gonorrhoea PCR
+  category: pathology
+  aliases: [STI screen, chlamydia, gonorrhoea, NAAT, PCR, first-pass urine, sexual health]
+  minutes: 1
+  turnaround_days: 2
+  normal: Chlamydia and gonorrhoea not detected.
+- id: blood_culture
+  name: Blood cultures
+  category: pathology
+  aliases: [blood culture, sepsis, bacteraemia]
+  minutes: 3
+  turnaround_days: 2
+  normal: No growth at 48 hours.
+- id: throat_swab
+  name: Throat swab
+  category: pathology
+  aliases: [strep, throat culture]
+  minutes: 1
+  turnaround_days: 2
+  normal: Normal flora. No group A streptococcus.
+- id: wound_swab
+  name: Wound swab
+  category: pathology
+  aliases: [skin swab, wound culture]
+  minutes: 1
+  turnaround_days: 2
+  normal: Skin flora only.
+- id: stool_mcs
+  name: Faecal microscopy, culture and PCR
+  category: pathology
+  aliases: [stool culture, faeces, gastro, stool test]
+  minutes: 1
+  turnaround_days: 2
+  normal: No pathogens detected.
+
+- id: chest_xray
+  name: Chest X-ray
+  category: imaging
+  aliases: [CXR, chest film, lungs xray]
+  minutes: 2
+  turnaround_days: 0
+  normal: Normal heart size. Lungs clear. Normal mediastinum.
+- id: lumbar_xray
+  name: Lumbar spine X-ray
+  category: imaging
+  aliases: [back x-ray, lumbar spine xray, L-spine]
+  minutes: 2
+  turnaround_days: 0
+  normal: Normal alignment. No fracture or destructive lesion.
+- id: limb_xray
+  name: Limb X-ray
+  category: imaging
+  aliases: [x-ray arm, x-ray leg, bone x-ray, fracture]
+  minutes: 2
+  turnaround_days: 0
+  normal: No fracture or dislocation.
+- id: ct_brain
+  name: CT brain
+  category: imaging
+  aliases: [CT head, brain scan, head CT]
+  minutes: 1
+  turnaround_days: 0
+  normal: No acute intracranial abnormality.
+- id: ct_lumbar_spine
+  name: CT lumbar spine
+  category: imaging
+  aliases: [CT back, CT L-spine, spine CT]
+  minutes: 1
+  turnaround_days: 0
+  normal: No fracture. No significant canal or foraminal stenosis.
+- id: ct_abdomen
+  name: CT abdomen and pelvis
+  category: imaging
+  aliases: [CT abdo, abdominal CT, CT KUB]
+  minutes: 1
+  turnaround_days: 0
+  normal: No acute abdominal abnormality.
+- id: ctpa
+  name: CT pulmonary angiogram (CTPA)
+  category: imaging
+  aliases: [CTPA, CT chest angiogram, pulmonary angiogram, CT for clots]
+  minutes: 1
+  turnaround_days: 1
+  normal: No pulmonary embolism.
+- id: vq_scan
+  name: Ventilation-perfusion (V/Q) scan
+  category: imaging
+  aliases: [V/Q, VQ scan, lung perfusion scan, nuclear lung scan]
+  minutes: 1
+  turnaround_days: 1
+  normal: Normal ventilation and perfusion. No mismatched defects.
+- id: ct_coronary_angiogram
+  name: CT coronary angiogram
+  category: imaging
+  aliases: [CTCA, coronary CT, calcium score]
+  minutes: 1
+  turnaround_days: 7
+  normal: No significant coronary artery stenosis.
+- id: mri_lumbar_spine
+  name: MRI lumbar spine
+  category: imaging
+  aliases: [MRI back, spine MRI, L-spine MRI]
+  minutes: 1
+  turnaround_days: 3
+  normal: Normal for age. No nerve root compression.
+- id: mri_brain
+  name: MRI brain
+  category: imaging
+  aliases: [brain MRI, head MRI]
+  minutes: 1
+  turnaround_days: 7
+  normal: No intracranial abnormality.
+- id: renal_tract_ultrasound
+  name: Renal tract ultrasound
+  category: imaging
+  aliases: [kidney ultrasound, bladder ultrasound, renal US]
+  minutes: 1
+  turnaround_days: 3
+  normal: Normal kidneys and bladder.
+- id: abdominal_ultrasound
+  name: Abdominal ultrasound
+  category: imaging
+  aliases: [abdo ultrasound, liver ultrasound, gallbladder ultrasound, US abdomen]
+  minutes: 1
+  turnaround_days: 3
+  normal: Normal liver, gallbladder, pancreas, spleen and kidneys.
+- id: pelvic_ultrasound
+  name: Pelvic ultrasound
+  category: imaging
+  aliases: [transvaginal ultrasound, TVUS, pelvic US, uterus ultrasound]
+  minutes: 1
+  turnaround_days: 3
+  normal: Normal uterus and ovaries.
+- id: doppler_leg
+  name: Leg venous Doppler ultrasound
+  category: imaging
+  aliases: [DVT scan, venous doppler, leg ultrasound]
+  minutes: 1
+  turnaround_days: 1
+  normal: No deep vein thrombosis.
+- id: dexa
+  name: Bone density scan (DEXA)
+  category: imaging
+  aliases: [DEXA, BMD, osteoporosis scan, bone density]
+  minutes: 1
+  turnaround_days: 14
+  normal: T-score -0.5. Normal bone density.
+
+- id: exercise_stress_test
+  name: Exercise stress test
+  category: cardiac
+  aliases: [stress test, treadmill test, exercise ECG, stress ECG]
+  minutes: 1
+  turnaround_days: 7
+  normal: Good exercise capacity. No ischaemic changes.
+- id: echocardiogram
+  name: Echocardiogram
+  category: cardiac
+  aliases: [echo, heart ultrasound, TTE]
+  minutes: 1
+  turnaround_days: 14
+  normal: Normal LV size and function. No significant valve disease.
+- id: holter
+  name: Holter monitor (24-hour ECG)
+  category: cardiac
+  aliases: [Holter, ambulatory ECG, 24 hour ECG, heart monitor]
+  minutes: 1
+  turnaround_days: 7
+  normal: Sinus rhythm throughout. No significant arrhythmia.
+
+- id: ifobt
+  name: Faecal occult blood test (immunochemical, iFOBT)
+  category: pathology
+  aliases:
+    - FOBT
+    - iFOBT
+    - FIT
+    - faecal immunochemical test
+    - occult blood
+    - bowel screening test
+    - stool blood test
+  minutes: 1
+  turnaround_days: 7
+  normal: Negative.
+- id: coeliac_serology
+  name: Coeliac serology (tTG-IgA and total IgA)
+  category: pathology
+  aliases:
+    - coeliac
+    - celiac
+    - tTG
+    - transglutaminase
+    - gluten
+  minutes: 0.5
+  turnaround_days: 2
+  normal: tTG-IgA negative. Total IgA normal.
+- id: ct_colonography
+  name: CT colonography
+  category: imaging
+  aliases:
+    - CT colonography
+    - CTC
+    - virtual colonoscopy
+  minutes: 1
+  turnaround_days: 7
+  normal: No colonic mass or polyp.
+
+- id: sputum_mcs
+  name: Sputum microscopy and culture
+  category: pathology
+  aliases:
+    - sputum
+    - sputum culture
+    - MCS
+    - gram stain
+  minutes: 1
+  turnaround_days: 2
+  normal: Normal respiratory flora. No pathogens isolated.
+- id: resp_viral_pcr
+  name: Respiratory virus PCR (nasopharyngeal swab)
+  category: pathology
+  aliases:
+    - flu swab
+    - COVID swab
+    - influenza
+    - RSV
+    - viral swab
+    - nose swab
+    - PCR
+  minutes: 1
+  turnaround_days: 1
+  normal: Influenza A and B, RSV and SARS-CoV-2 not detected.
+
+- id: carotid_doppler
+  name: Carotid Doppler ultrasound
+  category: imaging
+  aliases:
+    - carotid duplex
+    - carotid ultrasound
+    - carotid scan
+    - carotids
+  minutes: 1
+  turnaround_days: 2
+  normal: No significant carotid stenosis.
+
+- id: skin_excision_biopsy
+  name: Excision biopsy of skin lesion (2 mm margin, histology)
+  category: pathology
+  aliases:
+    - excision biopsy
+    - excisional biopsy
+    - excise
+    - cut it out
+    - skin excision
+    - histology
+    - histopathology
+  minutes: 20
+  turnaround_days: 5
+  normal: Benign compound naevus, completely excised.
+- id: skin_punch_biopsy
+  name: Punch biopsy of skin lesion (histology)
+  category: pathology
+  aliases:
+    - punch biopsy
+    - punch
+    - incisional biopsy
+    - skin biopsy
+  minutes: 10
+  turnaround_days: 5
+  normal: Benign naevus in the sample.
+- id: skin_shave_biopsy
+  name: Shave biopsy of skin lesion (histology)
+  category: pathology
+  aliases:
+    - shave biopsy
+    - shave
+    - saucerisation
+    - skin biopsy
+  minutes: 10
+  turnaround_days: 5
+  normal: Benign naevus in the sample.
+
+- id: fungal_skin_scraping
+  name: Skin scrapings for fungal microscopy and culture
+  category: pathology
+  aliases:
+    - fungal scraping
+    - skin scraping
+    - fungal culture
+    - tinea
+    - mycology
+    - KOH
+  minutes: 2
+  turnaround_days: 7
+  normal: No fungal elements seen. No fungal growth.
+
+- id: serum_urate
+  name: Serum uric acid (urate)
+  category: pathology
+  aliases: [uric acid, urate, serum urate, gout test]
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Uric acid 0.30 mmol/L.
+- id: joint_aspiration
+  name: Joint aspiration (synovial fluid crystals, cell count, Gram stain and culture)
+  category: pathology
+  aliases: [aspirate, joint tap, synovial fluid, arthrocentesis, crystals, polarised microscopy]
+  minutes: 10
+  turnaround_days: 1
+  normal: Clear straw-coloured fluid. No crystals. White cells under 2000 ×10⁶/L. Gram stain no organisms. Culture no growth.
+
+- id: tpo_antibodies
+  name: Thyroid peroxidase antibodies (TPO Ab)
+  category: pathology
+  aliases:
+    - TPO
+    - anti-TPO
+    - thyroid antibodies
+    - antithyroid antibodies
+    - microsomal antibodies
+  minutes: 0.5
+  turnaround_days: 2
+  normal: TPO antibodies <35 IU/mL. Negative.
+- id: thyroid_ultrasound
+  name: Thyroid ultrasound
+  category: imaging
+  aliases:
+    - thyroid US
+    - neck ultrasound
+    - ultrasound thyroid
+    - goitre scan
+  minutes: 1
+  turnaround_days: 3
+  normal: Normal-sized thyroid with uniform texture. No nodules.
+- id: free_t3
+  name: Free T3 (tri-iodothyronine)
+  category: pathology
+  aliases:
+    - T3
+    - FT3
+    - free T3
+    - triiodothyronine
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Free T3 4.5 pmol/L.
+- id: vitamin_d
+  name: Vitamin D (25-hydroxyvitamin D)
+  category: pathology
+  aliases:
+    - vit D
+    - 25-OH vitamin D
+    - 25OHD
+    - cholecalciferol level
+  minutes: 0.5
+  turnaround_days: 2
+  normal: 25-hydroxyvitamin D 75 nmol/L.
+- id: morning_cortisol
+  name: Cortisol (8 am, serum)
+  category: pathology
+  aliases:
+    - cortisol
+    - morning cortisol
+    - 9am cortisol
+    - adrenal function
+    - Addison
+  minutes: 0.5
+  turnaround_days: 1
+  normal: Cortisol 420 nmol/L at 8 am.
+- id: fsh_lh_oestradiol
+  name: FSH, LH and oestradiol
+  category: pathology
+  aliases:
+    - FSH
+    - LH
+    - oestradiol
+    - estradiol
+    - menopause bloods
+    - gonadotrophins
+    - female hormones
+  minutes: 0.5
+  turnaround_days: 1
+  normal: FSH, LH and oestradiol within the reference ranges for the cycle phase.
+
+- id: h_pylori_breath_test
+  name: Helicobacter pylori urea breath test
+  category: pathology
+  aliases:
+    - H. pylori
+    - H pylori
+    - Helicobacter
+    - urea breath test
+    - UBT
+    - breath test
+  minutes: 1
+  turnaround_days: 2
+  normal: Negative for Helicobacter pylori.
+
+- id: ct_chest
+  name: CT chest
+  category: imaging
+  aliases:
+    - CT thorax
+    - chest CT
+    - CT lungs
+    - CT scan of the chest
+    - CT chest with contrast
+    - HRCT
+    - high-resolution CT
+  minutes: 1
+  turnaround_days: 1
+  normal: Lungs clear. No mass, nodule, consolidation or effusion. No enlarged lymph nodes. Normal mediastinum.
+
+- id: ebv_serology
+  name: Glandular fever test (EBV serology)
+  category: pathology
+  aliases:
+    - glandular fever
+    - mono test
+    - monospot
+    - Paul-Bunnell
+    - heterophil antibodies
+    - EBV
+    - Epstein-Barr
+  minutes: 0.5
+  turnaround_days: 2
+  normal: EBV VCA IgM not detected.

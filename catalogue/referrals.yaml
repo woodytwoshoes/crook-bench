@@ -1,0 +1,213 @@
+
+- id: ambulance_ed
+  name: Emergency department by ambulance (call 000)
+  kind: emergency
+  aliases: [ambulance, "000", triple zero, ED, emergency, hospital, MICA, paramedics]
+  minutes: 2
+- id: phone_ed_handover
+  name: Phone the emergency department (clinical handover)
+  kind: emergency
+  aliases: [phone ahead, call the hospital, handover, ring ED, notify hospital, cardiology registrar]
+  minutes: 2
+- id: ed_self_present
+  name: Emergency department (patient to self-present)
+  kind: emergency
+  aliases: [ED, emergency, hospital, send to hospital]
+  minutes: 1
+
+- id: cardiology
+  name: Cardiologist
+  kind: specialist
+  aliases: [cardiology, heart specialist]
+  minutes: 1
+- id: gastroenterology
+  name: Gastroenterologist
+  kind: specialist
+  aliases: [gastro, gastroenterology, endoscopy, colonoscopy]
+  minutes: 1
+- id: respiratory
+  name: Respiratory physician
+  kind: specialist
+  aliases: [respiratory, thoracic physician, lung specialist]
+  minutes: 1
+- id: neurology
+  name: Neurologist
+  kind: specialist
+  aliases: [neurology]
+  minutes: 1
+- id: endocrinology
+  name: Endocrinologist
+  kind: specialist
+  aliases: [endocrinology, diabetes specialist, thyroid specialist]
+  minutes: 1
+- id: rheumatology
+  name: Rheumatologist
+  kind: specialist
+  aliases: [rheumatology, arthritis]
+  minutes: 1
+- id: nephrology
+  name: Renal physician
+  kind: specialist
+  aliases: [nephrology, nephrologist, kidney specialist]
+  minutes: 1
+- id: dermatology
+  name: Dermatologist
+  kind: specialist
+  aliases: [dermatology, skin specialist]
+  minutes: 1
+- id: psychiatry
+  name: Psychiatrist
+  kind: specialist
+  aliases: [psychiatry, mental health]
+  minutes: 1
+- id: geriatrics
+  name: Geriatrician
+  kind: specialist
+  aliases: [geriatrics, aged care]
+  minutes: 1
+- id: infectious_diseases
+  name: Infectious diseases physician
+  kind: specialist
+  aliases: [ID, infectious diseases]
+  minutes: 1
+- id: sexual_health
+  name: Sexual health clinic
+  kind: specialist
+  aliases: [STI clinic, sexual health]
+  minutes: 1
+
+- id: general_surgery
+  name: General surgeon
+  kind: specialist
+  aliases: [surgeon, general surgery]
+  minutes: 1
+- id: orthopaedics
+  name: Orthopaedic surgeon
+  kind: specialist
+  aliases: [orthopaedics, orthopedics, ortho, bone specialist]
+  minutes: 1
+- id: neurosurgery
+  name: Neurosurgeon
+  kind: specialist
+  aliases: [neurosurgery, spinal surgeon]
+  minutes: 1
+- id: urology
+  name: Urologist
+  kind: specialist
+  aliases: [urology]
+  minutes: 1
+- id: gynaecology
+  name: Gynaecologist
+  kind: specialist
+  aliases: [gynaecology, gynecology, obstetrics, O&G]
+  minutes: 1
+- id: ent_surgery
+  name: ENT surgeon
+  kind: specialist
+  aliases: [ENT, otolaryngology, ear nose and throat]
+  minutes: 1
+- id: ophthalmology
+  name: Ophthalmologist
+  kind: specialist
+  aliases: [ophthalmology, eye specialist]
+  minutes: 1
+- id: vascular_surgery
+  name: Vascular surgeon
+  kind: specialist
+  aliases: [vascular]
+  minutes: 1
+
+- id: physiotherapy
+  name: Physiotherapist
+  kind: allied_health
+  aliases: [physio, physiotherapy]
+  minutes: 1
+- id: psychology
+  name: Psychologist
+  kind: allied_health
+  aliases: [psychology, counselling, mental health plan]
+  minutes: 1
+- id: dietitian
+  name: Dietitian
+  kind: allied_health
+  aliases: [dietician, nutrition]
+  minutes: 1
+- id: podiatry
+  name: Podiatrist
+  kind: allied_health
+  aliases: [podiatry, feet]
+  minutes: 1
+- id: cardiac_rehab
+  name: Cardiac rehabilitation
+  kind: allied_health
+  aliases: [cardiac rehab]
+  minutes: 1
+- id: quit_smoking
+  name: Quitline (smoking cessation)
+  kind: allied_health
+  aliases: [quitline, smoking cessation, quit smoking]
+  minutes: 1
+
+- id: ophthalmology_emergency
+  name: Ophthalmology on call (phone for same-day emergency review)
+  kind: emergency
+  aliases:
+    - eye emergency
+    - eye hospital
+    - ophthalmology registrar
+    - on-call ophthalmology
+    - urgent eye referral
+  minutes: 2
+- id: optometry
+  name: Optometrist
+  kind: allied_health
+  aliases:
+    - optometry
+    - optician
+    - eye test
+    - glasses
+  minutes: 1
+
+- id: stroke_team_phone
+  name: Phone the on-call stroke team (stroke or neurology registrar)
+  kind: emergency
+  aliases:
+    - stroke team
+    - stroke registrar
+    - on-call stroke
+    - neurology registrar
+    - on-call neurology
+  minutes: 2
+- id: tia_clinic
+  name: Rapid-access TIA clinic
+  kind: specialist
+  aliases:
+    - TIA clinic
+    - rapid access TIA clinic
+    - transient ischaemic attack clinic
+    - mini-stroke clinic
+    - stroke clinic
+  minutes: 1
+
+- id: plastic_surgery
+  name: Plastic surgeon
+  kind: specialist
+  aliases: [plastics, plastic surgery, reconstructive surgeon, melanoma surgeon, skin cancer surgeon]
+  minutes: 1
+
+- id: lung_cancer_clinic
+  name: Lung cancer clinic (specialist linked to a lung cancer team)
+  kind: specialist
+  aliases:
+    - lung cancer clinic
+    - rapid access lung clinic
+    - lung cancer team
+    - lung cancer MDT
+    - thoracic oncology
+  minutes: 1
+
+- id: pulmonary_rehab
+  name: Pulmonary rehabilitation
+  kind: allied_health
+  aliases: [pulmonary rehab, lung rehab, respiratory rehab, COPD exercise program]
+  minutes: 1

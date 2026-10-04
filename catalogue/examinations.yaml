@@ -1,0 +1,114 @@
+
+- { id: heart_rate, name: Heart rate, region: vitals, modality: measure, minutes: 0.5, aliases: [pulse, HR], normal: "72 regular." }
+- { id: blood_pressure, name: Blood pressure, region: vitals, modality: measure, minutes: 1, aliases: [BP], normal: "124/78." }
+- { id: resp_rate, name: Respiratory rate, region: vitals, modality: measure, minutes: 0.5, aliases: [RR], normal: "14." }
+- { id: spo2, name: Oxygen saturation, region: vitals, modality: measure, minutes: 0.5, aliases: [SpO2, sats, oximeter], normal: "98% on room air." }
+- { id: temperature, name: Temperature, region: vitals, modality: measure, minutes: 0.5, aliases: [temp], normal: "36.7 °C." }
+- id: general_inspection
+  name: General appearance
+  region: vitals
+  modality: look
+  minutes: 0.5
+  aliases: [end of bed, general inspection, appearance]
+  normal: Well-looking, comfortable at rest. Not pale, jaundiced or distressed.
+
+- { id: eyes, name: Eyes, region: head, subregions: [eyes], modality: look, minutes: 1.5, aliases: [red eye, conjunctiva, pupils], normal: "Eyes white and quiet. Pupils equal and reactive." }
+- { id: fundoscopy, name: Fundoscopy, region: head, subregions: [eyes], modality: look, minutes: 2, aliases: [ophthalmoscope, fundi, papilloedema], normal: "Discs sharp. No papilloedema or retinopathy." }
+- { id: visual_acuity, name: Visual acuity and fields, region: head, subregions: [eyes], modality: test, minutes: 2, aliases: [vision, visual fields], normal: "Acuity 6/6 both eyes. Fields full to confrontation." }
+- { id: otoscopy, name: Otoscopy, region: head, subregions: [ears], modality: look, minutes: 1.5, aliases: [ears, eardrums, tympanic membrane], normal: "Tympanic membranes normal. Canals clear." }
+- { id: throat, name: Mouth and throat, region: head, subregions: [mouth_throat], modality: look, minutes: 1, aliases: [tonsils, pharynx, tongue, mucous membranes, hydration], normal: "Moist mucous membranes. Throat and tonsils normal." }
+- { id: sinus_tenderness, name: Sinus tenderness, region: head, subregions: [face], modality: feel, minutes: 0.5, normal: "No sinus tenderness." }
+- { id: cranial_nerves, name: Cranial nerves, region: head, subregions: [face], modality: test, minutes: 3, aliases: [facial weakness, CN], normal: "Cranial nerves II–XII intact." }
+- { id: face_inspection, name: Face, region: head, subregions: [face], modality: look, minutes: 0.5, aliases: [pallor, jaundice, facial rash], normal: "No pallor, jaundice or rash. Face symmetrical." }
+- { id: jvp, name: Jugular venous pressure, region: head, subregions: [neck], modality: look, minutes: 1, aliases: [JVP, neck veins], normal: "JVP not raised." }
+- { id: thyroid, name: Thyroid, region: head, subregions: [neck], modality: feel, minutes: 1.5, aliases: [goitre, neck lump], normal: "Thyroid not enlarged. No nodules." }
+- { id: lymph_nodes, name: Lymph nodes, region: head, subregions: [neck], modality: feel, minutes: 1.5, aliases: [glands, lymphadenopathy], normal: "No lymphadenopathy." }
+- { id: carotid_bruits, name: Carotid bruits, region: head, subregions: [neck], modality: listen, minutes: 0.5, normal: "No carotid bruits." }
+- { id: cervical_spine, name: Neck movement, region: head, subregions: [neck], modality: move, minutes: 2, aliases: [neck, C-spine], normal: "Full, pain-free neck movement." }
+
+- { id: cardiac_auscultation, name: Heart sounds, region: thorax, subregions: [heart], modality: listen, minutes: 1.5, aliases: [murmur, heart], normal: "Heart sounds dual, no added sounds. No murmurs." }
+- { id: apex_beat, name: Apex beat and heaves, region: thorax, subregions: [heart], modality: feel, minutes: 0.5, aliases: [apex, thrills], normal: "Apex beat not displaced. No heaves or thrills." }
+- { id: chest_inspection, name: Chest, region: thorax, subregions: [chest_wall, lungs_front], modality: look, minutes: 0.5, aliases: [chest shape, scars, work of breathing], normal: "Normal chest shape. No scars. Breathing comfortably." }
+- { id: chest_wall_palpation, name: Chest wall, region: thorax, subregions: [chest_wall], modality: feel, minutes: 0.5, aliases: [chest wall tenderness, costochondral, ribs], normal: "No chest wall tenderness." }
+- { id: chest_expansion, name: Chest expansion, region: thorax, subregions: [lungs_front, lungs_back], modality: feel, minutes: 0.5, normal: "Expansion normal and symmetrical." }
+- { id: chest_percussion, name: Chest percussion, region: thorax, subregions: [lungs_front, lungs_back], modality: percuss, minutes: 1, aliases: [dullness, resonance], normal: "Resonant throughout." }
+- { id: chest_auscultation, name: Breath sounds, region: thorax, subregions: [lungs_front, lungs_back], modality: listen, minutes: 1.5, aliases: [lungs, crackles, wheeze], normal: "Vesicular breath sounds throughout. No added sounds." }
+- { id: breast_exam, name: Breasts and axillae, region: thorax, subregions: [breasts], modality: feel, minutes: 3, aliases: [breast lump, axilla], normal: "No breast masses. No axillary lymphadenopathy." }
+- { id: thoracic_spine, name: Thoracic spine, region: thorax, subregions: [thoracic_spine], modality: feel, minutes: 1, aliases: [upper back], normal: "No thoracic spinal tenderness." }
+
+- { id: abdominal_inspection, name: Abdomen, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: look, minutes: 0.5, aliases: [distension, scars], normal: "Flat abdomen. No scars or distension." }
+- { id: abdominal_palpation, name: Abdominal palpation, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: feel, minutes: 2, aliases: [tenderness, masses, organomegaly, liver, spleen], normal: "Soft, non-tender. No masses or organomegaly." }
+- { id: abdominal_percussion, name: Abdominal percussion, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: percuss, minutes: 1, aliases: [shifting dullness, liver span, ascites], normal: "Resonant. No shifting dullness." }
+- { id: bowel_sounds, name: Bowel sounds, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: listen, minutes: 0.5, normal: "Normal bowel sounds." }
+- { id: rebound_tenderness, name: Rebound tenderness, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: feel, minutes: 0.5, aliases: [rebound, peritonism, Blumberg], normal: "No rebound tenderness." }
+- { id: rovsings_sign, name: "Rovsing's sign", region: abdomen, subregions: [llq], modality: test, minutes: 0.5, aliases: [Rovsing], normal: "Negative: pressure on the left causes no pain on the right." }
+- { id: cough_test, name: Cough test, region: abdomen, subregions: [ruq, luq, rlq, llq, epigastrium, umbilical], modality: test, minutes: 0.5, aliases: [cough, peritonism, Dunphy], normal: "Coughing causes no abdominal pain." }
+- { id: abdominal_aaa, name: Aortic pulsation, region: abdomen, subregions: [epigastrium], modality: feel, minutes: 1, aliases: [AAA, pulsatile mass, aneurysm], normal: "No pulsatile abdominal mass." }
+- { id: abdominal_suprapubic, name: Suprapubic palpation, region: abdomen, subregions: [suprapubic], modality: feel, minutes: 1, aliases: [bladder], normal: "No suprapubic tenderness. Bladder not palpable." }
+- { id: bladder_percussion, name: Bladder percussion, region: abdomen, subregions: [suprapubic], modality: percuss, minutes: 0.5, aliases: [urinary retention], normal: "No suprapubic dullness." }
+- { id: renal_angle, name: Renal angle tenderness, region: abdomen, subregions: [loins], modality: percuss, minutes: 0.5, aliases: [loin, flank, kidney], normal: "No renal angle tenderness." }
+- { id: hernial_orifices, name: Hernial orifices, region: abdomen, subregions: [groin], modality: feel, minutes: 1, aliases: [hernia, inguinal], normal: "No hernias." }
+- { id: femoral_pulses, name: Femoral pulses, region: abdomen, subregions: [groin], modality: feel, minutes: 0.5, normal: "Femoral pulses present and equal." }
+- { id: external_genitalia, name: External genitalia, region: abdomen, subregions: [genitalia], modality: look, minutes: 2, aliases: [genital examination, rash, discharge], normal: "Normal external genitalia. No lesions or discharge." }
+- { id: pelvic_speculum, name: Speculum examination, region: abdomen, subregions: [genitalia], modality: look, minutes: 5, aliases: [speculum, cervix], normal: "Normal vagina and cervix. No discharge.", sex: F }
+- { id: bimanual_pelvic, name: Bimanual pelvic examination, region: abdomen, subregions: [genitalia], modality: feel, minutes: 3, aliases: [PV, adnexal tenderness], normal: "Uterus normal size. No adnexal masses or tenderness.", sex: F }
+- { id: testicular, name: Testes, region: abdomen, subregions: [genitalia], modality: feel, minutes: 2, aliases: [scrotum], normal: "Both testes normal. No masses.", sex: M }
+- { id: rectal, name: Digital rectal examination, region: abdomen, subregions: [rectum], modality: feel, minutes: 3, aliases: [DRE, PR, prostate], normal: "Normal anal tone. No masses." }
+- { id: saddle_sensation_pr, name: Saddle sensation and anal tone, region: abdomen, subregions: [rectum], modality: test, minutes: 3, aliases: [saddle anaesthesia, cauda equina, perianal sensation], normal: "Saddle sensation intact. Normal anal tone." }
+- { id: back_inspection, name: Back and posture, region: abdomen, subregions: [lumbar_spine], modality: look, minutes: 0.5, aliases: [posture, scoliosis, lean], normal: "Normal posture. No deformity." }
+- { id: spinal_palpation, name: Lumbar spine, region: abdomen, subregions: [lumbar_spine], modality: feel, minutes: 1, aliases: [spinous processes, paraspinal, back tenderness], normal: "No spinal or paraspinal tenderness." }
+- { id: lumbar_range_of_movement, name: Lumbar range of movement, region: abdomen, subregions: [lumbar_spine], modality: move, minutes: 1, aliases: [back movement, flexion, extension], normal: "Full, pain-free lumbar range of movement." }
+- { id: sacroiliac_tests, name: Sacroiliac joint tests, region: abdomen, subregions: [sacroiliac], modality: test, minutes: 1, aliases: [SI joint, FABER], normal: "Sacroiliac joint tests negative." }
+
+- { id: arm_inspection, name: Arm and hand, region: upper_limb, subregions: [arm, wrist_hand], modality: look, minutes: 0.5, aliases: [clubbing, wasting, tremor, skin], normal: "No clubbing, wasting or tremor. Skin normal." }
+- { id: radial_pulse, name: Radial pulse, region: upper_limb, subregions: [wrist_hand], modality: feel, minutes: 0.5, aliases: [pulse], normal: "Radial pulse present, regular." }
+- { id: bp_both_arms, name: Blood pressure in both arms, region: upper_limb, subregions: [arm], modality: test, minutes: 1.5, aliases: [bilateral BP, radio-radial delay], normal: "BP equal in both arms." }
+- { id: tinels_test, name: Tinel's test, region: upper_limb, subregions: [wrist_hand], modality: percuss, minutes: 0.5, aliases: [carpal tunnel], normal: "Tinel's test negative." }
+- { id: wrist_hand_movement, name: Wrist and hand movement, region: upper_limb, subregions: [wrist_hand], modality: move, minutes: 1, normal: "Full, pain-free wrist and finger movement." }
+- { id: elbow, name: Elbow movement, region: upper_limb, subregions: [elbow], modality: move, minutes: 1, normal: "Full, pain-free elbow movement." }
+- { id: shoulder, name: Shoulder movement, region: upper_limb, subregions: [shoulder], modality: move, minutes: 2, aliases: [rotator cuff], normal: "Full, pain-free shoulder movement." }
+- { id: upper_limb_neuro, name: Arm neurology, region: upper_limb, subregions: [arm], modality: test, minutes: 3, aliases: [power, reflexes, sensation], normal: "Tone, power, reflexes and sensation normal." }
+- { id: cerebellar, name: Coordination, region: upper_limb, subregions: [arm], modality: test, minutes: 1.5, aliases: [finger-nose, ataxia], normal: "Finger-nose normal. No dysdiadochokinesis." }
+- { id: neuro_screen, name: Quick neurological screen, region: upper_limb, subregions: [arm], modality: test, minutes: 2, aliases: [quick neuro], normal: "Grossly normal power, sensation and coordination in all limbs.", counts_as: [upper_limb_neuro, lower_limb_neuro] }
+
+- { id: leg_inspection, name: Leg, region: lower_limb, subregions: [leg, ankle_foot], modality: look, minutes: 0.5, aliases: [skin, swelling, ulcers, varicose veins], normal: "Legs look normal. No swelling or skin changes." }
+- { id: psoas_sign, name: Psoas sign, region: lower_limb, subregions: [hip], modality: move, minutes: 0.5, aliases: [psoas, hip extension], normal: "Negative: hip extension causes no abdominal pain." }
+- { id: obturator_sign, name: Obturator sign, region: lower_limb, subregions: [hip], modality: move, minutes: 0.5, aliases: [obturator, internal rotation], normal: "Negative: internal rotation of the flexed hip causes no pain." }
+- { id: hip_sacroiliac, name: Hip movement, region: lower_limb, subregions: [hip], modality: move, minutes: 2, aliases: [hip], normal: "Full, pain-free hip movement." }
+- { id: knee, name: Knee, region: lower_limb, subregions: [knee], modality: move, minutes: 3, aliases: [effusion, ligaments, meniscus], normal: "No effusion. Full range of movement. Ligaments stable." }
+- { id: calves, name: Calf, region: lower_limb, subregions: [calf], modality: feel, minutes: 0.5, aliases: [DVT, calf tenderness], normal: "Calf soft and non-tender. No swelling." }
+- { id: peripheral_oedema, name: Pitting oedema, region: lower_limb, subregions: [ankle_foot], modality: feel, minutes: 0.5, aliases: [ankle swelling], normal: "No pitting oedema." }
+- { id: peripheral_pulses, name: Foot pulses, region: lower_limb, subregions: [ankle_foot], modality: feel, minutes: 1, aliases: [dorsalis pedis, posterior tibial], normal: "Foot pulses present." }
+- { id: ankle_foot_movement, name: Ankle and foot movement, region: lower_limb, subregions: [ankle_foot], modality: move, minutes: 1, normal: "Full, pain-free ankle movement." }
+- { id: lower_limb_neuro, name: Leg neurology, region: lower_limb, subregions: [leg], modality: test, minutes: 3, aliases: [power, reflexes, sensation], normal: "Tone, power, reflexes and sensation normal." }
+- { id: straight_leg_raise_slump, name: Straight leg raise and slump, region: lower_limb, subregions: [leg], modality: test, minutes: 1.5, aliases: [SLR, sciatica], normal: "SLR to 90° without pain. Slump negative." }
+- { id: inspection_gait, name: Gait, region: lower_limb, subregions: [leg], modality: test, minutes: 1, aliases: [walking], normal: "Normal gait." }
+
+- { id: neck_stiffness, name: Neck stiffness (passive flexion), region: head, subregions: [ neck ], modality: move, minutes: 0.5, aliases: [ meningism, neck flexion, nuchal rigidity, Brudzinski ], normal: No neck stiffness on passive flexion. }
+- { id: kernigs_sign, name: Kernig's sign, region: lower_limb, subregions: [ hip ], modality: move, minutes: 0.5, aliases: [ Kernig, meningism ], normal: Kernig's sign negative. }
+
+- { id: homans_sign, name: Homans' sign, region: lower_limb, subregions: [ calf ], modality: move, minutes: 0.5, aliases: [ Homans, calf dorsiflexion ], normal: No calf pain on dorsiflexion of the foot. }
+
+- { id: pupils, name: Pupil reactions, region: head, subregions: [ eyes ], modality: test, minutes: 1, aliases: [ light reflex, pupillary reflex, torch, RAPD ], normal: "Pupils equal, round and reactive to light.", counts_as: [ eyes ] }
+- { id: eye_pressure, name: Eye pressure (palpation), region: head, subregions: [ eyes ], modality: feel, minutes: 0.5, aliases: [ intraocular pressure, IOP, ocular tension, tonometry ], normal: Both eyes feel equally firm through the closed lids. }
+- { id: fluorescein, name: Fluorescein staining, region: head, subregions: [ eyes ], modality: test, minutes: 2, aliases: [ corneal staining, blue light, corneal abrasion ], normal: No fluorescein uptake. Cornea intact. }
+- { id: dilated_fundoscopy, name: Dilated fundoscopy (mydriatic drops), region: head, subregions: [ eyes ], modality: look, minutes: 5, aliases: [ dilate pupils, mydriasis, dilated fundi ], normal: Pupils dilated with drops. Discs sharp. No retinopathy. }
+- { id: temporal_arteries, name: Temporal arteries, region: head, subregions: [ face ], modality: feel, minutes: 0.5, aliases: [ temporal artery, temporal arteritis ], normal: Temporal arteries pulsatile and non-tender. }
+
+- { id: vocal_resonance, name: Vocal resonance, region: thorax, subregions: [ lungs_front, lungs_back ], modality: listen, minutes: 1, aliases: [ aegophony, whispering pectoriloquy, "99" ], normal: Vocal resonance normal and symmetrical. }
+
+- { id: postural_bp, name: Lying and standing blood pressure, region: upper_limb, subregions: [ arm ], modality: test, minutes: 3, aliases: [ postural BP, orthostatic BP, lying and standing, postural drop ], normal: "No postural drop: standing BP within 10 mmHg of lying." }
+- { id: scalp_palpation, name: Scalp and skull, region: head, subregions: [ face ], modality: feel, minutes: 0.5, aliases: [ head injury, scalp, skull, haematoma ], normal: "No scalp swelling, tenderness or wounds." }
+- { id: carotid_sinus_massage, name: Carotid sinus massage, region: head, subregions: [ neck ], modality: feel, minutes: 1, aliases: [ carotid massage, vagal manoeuvre ], normal: "Heart rate slows slightly, then recovers." }
+
+- { id: skin_back, name: Skin of the back, region: thorax, subregions: [ thoracic_spine, lungs_back ], modality: look, minutes: 1, aliases: [ back skin, skin lesion, spot on the back, moles, pigmented lesion ], normal: "Skin of the back normal. A few small, even, regular moles." }
+- { id: dermoscopy, name: Dermoscopy, region: thorax, subregions: [ chest_wall, thoracic_spine, lungs_back ], modality: look, minutes: 2, aliases: [ dermatoscope, dermatoscopy, skin microscope, epiluminescence ], normal: "Moles examined show a regular, symmetrical network. Nothing of concern." }
+- { id: full_skin_exam, name: Full skin examination, region: thorax, subregions: [ chest_wall, thoracic_spine ], modality: look, minutes: 5, aliases: [ skin check, full skin check, whole body skin examination, total body skin examination, moles ], normal: "No suspicious lesions anywhere on the skin." }
+- { id: axillary_nodes, name: Axillary lymph nodes, region: thorax, subregions: [ breasts ], modality: feel, minutes: 1, aliases: [ armpit, axilla, axillary glands, armpit glands ], normal: "No axillary lymphadenopathy." }
+
+- { id: leg_palpation, name: Leg skin (warmth and texture), region: lower_limb, subregions: [ leg, calf, knee, ankle_foot ], modality: feel, minutes: 1, aliases: [ warmth, crepitus, induration, fluctuance, skin temperature ], normal: Skin warmth normal. No induration or crepitus. }
+- { id: inguinal_nodes, name: Inguinal lymph nodes, region: abdomen, subregions: [ groin ], modality: feel, minutes: 1, aliases: [ groin nodes, groin lymph nodes, inguinal nodes, groin glands, inguinal lymphadenopathy, lymph nodes ], normal: No inguinal lymphadenopathy. }
+
+- { id: foot_joints, name: Foot and toe joints, region: lower_limb, subregions: [ ankle_foot ], modality: feel, minutes: 1, aliases: [ big toe, MTP joint, first MTP, toe joints, joint warmth, joint tenderness ], normal: "No warmth or tenderness over the ankle, foot or toe joints." }
+- { id: tophi, name: "Tophi (elbows, forearms, fingers)", region: upper_limb, subregions: [ elbow, wrist_hand ], modality: look, minutes: 0.5, aliases: [ tophus, gouty tophi, olecranon bursa, chalky lumps ], normal: "No tophi." }
+- { id: ear_pinna, name: Outer ear, region: head, subregions: [ ears ], modality: look, minutes: 0.5, aliases: [ pinna, helix, ear lobe, tophi on the ear ], normal: "Outer ears normal.", counts_as: [ tophi ] }

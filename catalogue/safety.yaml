@@ -1,0 +1,551 @@
+rules:
+
+
+  - id: pde5_nitrate
+    label: Nitrate with a PDE5 inhibitor
+    if:
+      taking: [sildenafil, tadalafil]
+    drugs: [glyceryl trinitrate, isosorbide mononitrate]
+    consequence: >-
+      Within minutes {name}'s blood pressure collapses; the nitrate on top of the
+      erectile dysfunction tablet causes a profound, potentially fatal fall in pressure.
+    source: "[murtagh p.888 L14518; murtagh p.889 L14537; murtagh p.2808 L46024; em p.258 L12029]"
+
+  - id: nitrate_pde5
+    label: PDE5 inhibitor with a nitrate
+    if:
+      taking: [glyceryl trinitrate, isosorbide mononitrate]
+    drugs: [sildenafil, tadalafil]
+    consequence: >-
+      {name} takes the erectile dysfunction tablet alongside the regular nitrate and
+      collapses with severe hypotension that evening.
+    source: "[murtagh p.285 L5096; murtagh p.2808 L46024]"
+
+  - id: ssri_snri_serotonergic_opioid
+    label: Tramadol or tapentadol with an SSRI/SNRI
+    if:
+      taking: [citalopram, escitalopram, fluoxetine, paroxetine, sertraline, venlafaxine, desvenlafaxine, duloxetine, amitriptyline]
+    drugs: [tramadol, tapentadol]
+    consequence: >-
+      Two days later {name} is brought in agitated, sweating, tremulous and febrile
+      with clonus: serotonin toxicity from the opioid added to the antidepressant.
+    source: "[murtagh p.246 L4347–4349; em p.884 L39744–39774; em p.955 L42668–42678; em p.962 L43196; em p.963 L43225–43232]"
+
+  - id: serotonergic_opioid_ssri_snri
+    label: SSRI/SNRI started with tramadol or tapentadol
+    if:
+      taking: [tramadol, tapentadol]
+    drugs: [citalopram, escitalopram, fluoxetine, paroxetine, sertraline, venlafaxine, desvenlafaxine, duloxetine, amitriptyline]
+    consequence: >-
+      Soon after starting the antidepressant on top of the regular opioid, {name}
+      becomes agitated, tremulous and febrile with clonus: serotonin toxicity.
+    source: "[murtagh p.246 L4347–4349; em p.884 L39744–39774; em p.955 L42668–42678; em p.962 L43196]"
+
+  - id: warfarin_nsaid
+    label: NSAID with warfarin
+    if:
+      taking: [warfarin]
+    drugs: [celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      A week later {name} presents with melaena and a raised INR: the anti-inflammatory
+      on top of warfarin has caused a gastrointestinal bleed.
+    source: "[murtagh p.3228 L52090; murtagh p.3229 L52094]"
+
+  - id: acei_with_arb
+    label: ARB added to an ACE inhibitor
+    if:
+      taking: [perindopril, ramipril]
+    drugs: [candesartan, irbesartan, losartan]
+    consequence: >-
+      Dual blockade of the renin-angiotensin system: {name}'s next bloods show a
+      dangerous rise in potassium and a fall in kidney function.
+    source: "[murtagh p.2145 L35371; murtagh p.2177 L36061]"
+
+  - id: arb_with_acei
+    label: ACE inhibitor added to an ARB
+    if:
+      taking: [candesartan, irbesartan, losartan]
+    drugs: [perindopril, ramipril]
+    consequence: >-
+      Dual blockade of the renin-angiotensin system: {name}'s next bloods show a
+      dangerous rise in potassium and a fall in kidney function.
+    source: "[murtagh p.2145 L35371; murtagh p.2177 L36061]"
+
+  - id: colchicine_clarithromycin
+    label: Clarithromycin with colchicine
+    if:
+      taking: [colchicine]
+    drugs: [clarithromycin]
+    consequence: >-
+      Clarithromycin lets {name}'s colchicine accumulate; within days there is
+      severe vomiting and diarrhoea from colchicine toxicity.
+    source: "[murtagh p.719 L11891; em p.900 L40397–40411; em p.901 L40416–40442]"
+
+  - id: clarithromycin_colchicine
+    label: Colchicine with clarithromycin
+    if:
+      taking: [clarithromycin]
+    drugs: [colchicine]
+    consequence: >-
+      With clarithromycin on board, {name}'s colchicine accumulates; within days there
+      is severe vomiting and diarrhoea from colchicine toxicity.
+    source: "[murtagh p.719 L11891; em p.900 L40397–40411; em p.901 L40416–40442]"
+
+
+  - id: penicillin_allergy
+    label: Penicillin in a penicillin-allergic patient
+    if:
+      allergy: [penicillin, amoxicillin, amoxycillin, flucloxacillin, dicloxacillin, augmentin]
+    drugs: [amoxicillin, amoxicillin + clavulanic acid, benzylpenicillin, dicloxacillin, flucloxacillin, phenoxymethylpenicillin]
+    consequence: >-
+      {name} is allergic to penicillin. After the first dose the allergic
+      reaction comes back, and it could have been anaphylaxis.
+    source: "[murtagh p.2501 L41259; murtagh p.2562 L42146; murtagh p.2835 L46555; em p.83 L2951–2956; em p.83 L2970]"
+
+  - id: nsaid_allergy
+    label: NSAID in a patient allergic to aspirin or NSAIDs
+    if:
+      allergy: [aspirin, nsaid, anti-inflammator, ibuprofen, naproxen, diclofenac, celecoxib, meloxicam, indometacin, indomethacin, mefenamic]
+    drugs: [aspirin, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      {name} is sensitive to aspirin and NSAIDs cross-react; within hours there is a
+      reaction with wheeze and swelling.
+    source: "[murtagh p.2072 L34118–34119; em p.765 L35447; em p.765 L35448–35464]"
+
+  - id: sulfonamide_allergy
+    label: Sulfonamide in a sulfa-allergic patient
+    if:
+      allergy: [sulfa, sulpha, sulfonamide, sulphonamide, cotrimoxazole, co-trimoxazole]
+    drugs: [trimethoprim + sulfamethoxazole]
+    consequence: >-
+      {name} has a recorded sulfonamide allergy; the sulfa drug brings on a
+      recurrence of the allergic reaction.
+    source: "[em p.839 L38609; murtagh p.2562 L42146; murtagh p.514 L8774]"
+
+  - id: acei_allergy
+    label: ACE inhibitor in a patient allergic to one
+    if:
+      allergy: [perindopril, ramipril, enalapril, lisinopril, captopril, ace inhibitor]
+    drugs: [perindopril, ramipril]
+    consequence: >-
+      {name} reacted to an ACE inhibitor before; this one is the same class and
+      {name} returns with facial and tongue swelling (angioedema).
+    source: "[murtagh p.2142 L35315; em p.99 L3923]"
+
+
+
+  - id: aspirin_sensitive_asthma_nsaid
+    label: NSAID in aspirin-sensitive asthma
+    if:
+      condition: [aspirin-sensitive, aspirin sensitive, aspirin-exacerbated, aspirin exacerbated, nsaid-exacerbated, samter]
+    drugs: [aspirin, celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      {name}'s asthma is aspirin-sensitive and NSAIDs cross-react; within hours of the
+      dose there is a severe attack of bronchospasm.
+    source: "[murtagh p.2072 L34119; murtagh p.2046 L33557; em p.765 L35447; em p.765 L35448–35464]"
+
+  - id: heart_block_beta_blocker
+    label: Beta blocker in heart block
+    if:
+      condition: [heart block, av block, atrioventricular block]
+    drugs: [atenolol, bisoprolol, metoprolol]
+    consequence: >-
+      The beta blocker worsens {name}'s conduction block; {name} collapses with a
+      profound bradycardia.
+    source: "[murtagh p.2142 L35308]"
+
+  - id: asthma_copd_timolol
+    label: Timolol eye drops in asthma or COPD
+    if:
+      condition: [asthma, copd, chronic obstructive, emphysema]
+    drugs: [timolol]
+    consequence: >-
+      Enough of the timolol is absorbed from the eye to reach {name}'s lungs;
+      within the hour {name} is wheezy and breathless and needs emergency
+      treatment for bronchospasm.
+    source: "[murtagh p.1896 L31052; talley p.197 L8993; murtagh p.2142 L35308; https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/018086s076lbl.pdf]"
+
+  - id: heart_block_timolol
+    label: Timolol eye drops in heart block
+    if:
+      condition: [heart block, av block, atrioventricular block]
+    drugs: [timolol]
+    consequence: >-
+      The timolol is absorbed from the eye and slows {name}'s heart conduction
+      further; {name} becomes faint with a profound bradycardia.
+    source: "[murtagh p.2142 L35308; https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/018086s076lbl.pdf]"
+
+  - id: heart_failure_timolol
+    label: Timolol eye drops in heart failure
+    if:
+      condition: [heart failure, cardiac failure, ccf, chf]
+    drugs: [timolol]
+    consequence: >-
+      The timolol is absorbed from the eye and blunts the drive that keeps
+      {name}'s weakened heart pumping; {name} slips into worse heart failure,
+      more breathless and swollen.
+    source: "[murtagh p.2142 L35308; https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/018086s076lbl.pdf]"
+
+  - id: ckd_nsaid
+    label: NSAID in chronic kidney disease
+    if:
+      condition: [chronic kidney disease, ckd, kidney failure, renal failure, renal impairment, kidney impairment, renal insufficiency]
+    drugs: [celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      {name}'s kidneys cannot take the anti-inflammatory; the next bloods show acute
+      kidney injury on top of the chronic disease.
+    source: "[murtagh p.2176 L36055–36056; murtagh p.2176 L36058; em p.765 L35448–35462]"
+
+  - id: ckd_colchicine
+    label: Colchicine in kidney impairment
+    if:
+      condition: [chronic kidney disease, ckd, kidney failure, renal failure, renal impairment, kidney impairment, renal insufficiency]
+    drugs: [colchicine]
+    consequence: >-
+      {name}'s kidneys cannot clear the colchicine; it accumulates and causes severe
+      vomiting and diarrhoea from colchicine toxicity.
+    source: "[murtagh p.719 L11891; em p.900 L40397–40411; em p.901 L40416–40442]"
+
+  - id: peptic_ulcer_nsaid
+    label: NSAID with a history of peptic ulcer or GI bleeding
+    if:
+      condition: [peptic ulcer, gastric ulcer, duodenal ulcer, gi bleed, gastrointestinal bleed, gastrointestinal haemorrhage, melaena]
+    drugs: [celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      Ten days later {name} vomits blood: the anti-inflammatory has reactivated the
+      old ulcer.
+    source: "[murtagh p.1088 L17807; em p.391 L17858–17876; em p.397 L18069]"
+
+  - id: hyperkalaemia_raas
+    label: Potassium-raising drug in hyperkalaemia
+    if:
+      condition: [hyperkalaemia, hyperkalemia]
+    drugs: [perindopril, ramipril, candesartan, irbesartan, losartan, spironolactone]
+    consequence: >-
+      {name}'s potassium, already high, climbs further; the next ECG shows peaked T
+      waves and {name} is sent to hospital.
+    source: "[murtagh p.2142 L35315; murtagh p.2142 L35318; murtagh p.2177 L36061; murtagh p.376 L6590–6591]"
+
+  - id: renal_artery_stenosis_raas
+    label: ACE inhibitor or ARB in bilateral renal artery stenosis
+    if:
+      condition: [bilateral renal artery stenosis, renal artery stenosis (bilateral), bilateral kidney artery stenosis, solitary kidney, single kidney, solitary functioning kidney]
+    drugs: [perindopril, ramipril, candesartan, irbesartan, losartan]
+    consequence: >-
+      With stenosed renal arteries, {name}'s kidney function falls sharply within a
+      week of starting the drug.
+    source: "[murtagh p.2142 L35315]"
+
+  - id: angioedema_acei
+    label: ACE inhibitor after angioedema
+    if:
+      condition: [angioedema]
+    drugs: [perindopril, ramipril]
+    consequence: >-
+      {name} has had angioedema before; on the ACE inhibitor the lips and tongue
+      swell again, this time threatening the airway.
+    source: "[murtagh p.2142 L35315; em p.99 L3923]"
+
+  - id: pregnancy_raas
+    label: ACE inhibitor or ARB in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [perindopril, ramipril, candesartan, irbesartan, losartan]
+    consequence: >-
+      {name} is pregnant; the ACE inhibitor or ARB puts the baby's developing kidneys
+      at risk, and the obstetric team stops it urgently.
+    source: "[murtagh p.2142 L35315; murtagh p.2142 L35318; em p.673 L31661–31690]"
+
+  - id: pregnancy_spironolactone
+    label: Spironolactone in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [spironolactone]
+    consequence: >-
+      {name} is pregnant; spironolactone's anti-androgen effect is a risk to the baby,
+      and the obstetric team stops it urgently.
+    source: "[murtagh p.3112 L50442; murtagh p.2948 L48220; em p.673 L31661–31691]"
+
+  - id: pregnancy_doxycycline
+    label: Doxycycline in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [doxycycline]
+    consequence: >-
+      {name} is pregnant and doxycycline is contraindicated; the pharmacist queries
+      it, but not before {name} has taken several doses.
+    source: "[murtagh p.3436 L55722; murtagh p.2562 L42144; em p.511 L23544]"
+
+  - id: pregnancy_trimethoprim
+    label: Trimethoprim in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [trimethoprim, trimethoprim + sulfamethoxazole]
+    consequence: >-
+      {name} is pregnant and trimethoprim is contraindicated; the obstetric team has
+      to change the antibiotic and counsel {name} about the exposure.
+    source: "[em p.486 L22117; em p.486 L22142]"
+
+  - id: pregnancy_nsaid
+    label: NSAID in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium]
+    consequence: >-
+      {name} is pregnant; NSAIDs are to be avoided late in pregnancy, and the
+      obstetric team stops it and monitors the baby.
+    source: "[em p.618 L29037; em p.765 L35449]"
+
+  - id: ihd_triptan
+    label: Triptan in coronary heart disease
+    if:
+      condition: [ischaemic heart disease, ischemic heart disease, coronary artery disease, coronary heart disease, angina, myocardial infarction, heart attack, coronary stent, cabg]
+    drugs: [sumatriptan]
+    consequence: >-
+      Twenty minutes after the triptan {name} develops crushing chest pain; the triptan is
+      contraindicated in known coronary heart disease.
+    source: "[murtagh p.1318 L21431; em p.431 L19406]"
+
+  - id: pde5_cardiac
+    label: PDE5 inhibitor in unstable angina
+    if:
+      condition: [unstable angina]
+    drugs: [sildenafil, tadalafil]
+    consequence: >-
+      {name}'s heart disease makes the erectile dysfunction tablet unsafe; {name}
+      develops chest pain and hypotension that night.
+    source: "[murtagh p.2808 L46024]"
+
+  - id: coc_migraine_aura
+    label: Combined pill with migraine with aura
+    if:
+      condition: [migraine with aura]
+    drugs: [levonorgestrel + ethinylestradiol]
+    consequence: >-
+      Migraine with aura is an absolute contraindication to the combined pill;
+      months later {name} is admitted with a stroke.
+    source: "[murtagh p.2481 L40955–40956]"
+
+  - id: coc_vte
+    label: Combined pill after venous thromboembolism
+    if:
+      condition: [deep vein thrombosis, dvt, pulmonary embolism, pulmonary embolus, venous thromboembolism, thrombophilia, factor v leiden, antiphospholipid]
+    drugs: [levonorgestrel + ethinylestradiol]
+    consequence: >-
+      With {name}'s history of clotting, the oestrogen tips the balance; {name}
+      returns with a swollen leg and breathlessness from a new clot.
+    source: "[murtagh p.2481 L40955–40956; murtagh p.2481 L40956]"
+
+  - id: coc_arterial_disease
+    label: Combined pill with heart disease or stroke
+    if:
+      condition: [ischaemic heart disease, ischemic heart disease, coronary artery disease, myocardial infarction, stroke, cerebrovascular, transient ischaemic attack]
+    drugs: [levonorgestrel + ethinylestradiol]
+    consequence: >-
+      Arterial disease is an absolute contraindication to the combined pill; {name}
+      has a further arterial event within the year.
+    source: "[murtagh p.2481 L40955–40956]"
+
+  - id: oestrogen_hormonal_cancer
+    label: Oestrogen with breast or endometrial cancer
+    if:
+      condition: [breast cancer, breast carcinoma, carcinoma of the breast, endometrial cancer]
+    drugs: [levonorgestrel + ethinylestradiol, estradiol]
+    consequence: >-
+      Oestrogen is contraindicated after a hormone-dependent cancer; {name}'s
+      oncologist stops it at once and brings forward the surveillance scans.
+    source: "[murtagh p.2481 L40956; murtagh p.2595 L42688–42690]"
+
+  - id: epilepsy_tramadol
+    label: Tramadol in epilepsy
+    if:
+      condition: [epilepsy, epileptic, seizure disorder]
+    drugs: [tramadol]
+    consequence: >-
+      Tramadol lowers the seizure threshold; two days later {name} has a
+      generalised seizure.
+    source: "[em p.454 L20546–20559; em p.962 L43196]"
+
+  - id: glaucoma_mydriatic
+    label: Pupil-dilating drops in angle-closure glaucoma or narrow angles
+    if:
+      condition: [angle closure, angle-closure, closed-angle, closed angle, narrow angle, narrow-angle, occludable angle]
+    drugs: [cyclopentolate, homatropine, tropicamide]
+    consequence: >-
+      That evening {name} has a severe painful red eye with blurred vision and haloes:
+      the dilating drops have precipitated acute angle closure.
+    source: "[murtagh p.1908 L31274; em p.643 L30338–30345]"
+
+
+  - id: opioid_benzodiazepine
+    label: Benzodiazepine with an opioid
+    if:
+      taking: [oxycodone, morphine, tapentadol, tramadol, fentanyl, paracetamol + codeine]
+    drugs: [diazepam, temazepam, oxazepam, midazolam]
+    consequence: >-
+      That night {name} is found hard to rouse and breathing slowly: the
+      benzodiazepine on top of the opioid has depressed {name}'s breathing.
+    source: "Australian opioid product information (ACSQHC): co-prescribing reserved for when other options are not possible; COPD-X: avoid sedatives in exacerbations (via Heidi Evidence, answers.md safety Prompt 25)"
+
+  - id: benzodiazepine_opioid
+    label: Opioid with a benzodiazepine
+    if:
+      taking: [diazepam, temazepam, oxazepam, midazolam]
+    drugs: [oxycodone, morphine, tapentadol, tramadol, fentanyl, paracetamol + codeine]
+    consequence: >-
+      That night {name} is found hard to rouse and breathing slowly: the
+      opioid on top of the benzodiazepine has depressed {name}'s breathing.
+    source: "Australian opioid product information (ACSQHC) warning on concomitant benzodiazepines (via Heidi Evidence, answers.md safety Prompt 25)"
+
+  - id: paracetamol_duplicate
+    label: Paracetamol twice (plain and in a combination)
+    if:
+      taking: [paracetamol]
+    drugs: [paracetamol + codeine]
+    consequence: >-
+      {name} keeps taking the regular paracetamol as well as the combination
+      tablets. A week later the blood tests show liver injury from a
+      paracetamol overdose nobody meant.
+    source: "TGA paracetamol safety campaign (check to avoid double dosing); about 225 hospitalisations and 50 deaths a year (via Heidi Evidence, answers.md safety Prompt 27)"
+
+  - id: paracetamol_duplicate_combination
+    label: Paracetamol twice (combination already taken)
+    if:
+      taking: [paracetamol + codeine]
+    drugs: [paracetamol]
+    consequence: >-
+      {name} takes the plain paracetamol on top of the combination tablets. A
+      week later the blood tests show liver injury from a paracetamol
+      overdose nobody meant.
+    source: "TGA paracetamol safety campaign (via Heidi Evidence, answers.md safety Prompt 27)"
+
+  - id: penicillin_severe_cefalexin
+    label: Cefalexin after a severe penicillin reaction
+    if:
+      allergy:
+        - penicillin (anaphylaxis
+        - penicillin (angioedema
+        - penicillin (hives and lip swelling
+        - penicillin (lip swelling
+        - penicillin (facial swelling
+        - amoxicillin (anaphylaxis
+        - amoxicillin (angioedema
+        - anaphylaxis to penicillin
+        - angioedema to penicillin
+    drugs: [cefalexin]
+    consequence: >-
+      Cefalexin shares a side chain with amoxicillin. Within the hour {name}'s
+      lips and face swell again, and the reaction has to be treated with
+      adrenaline.
+    source: "ASCIA penicillin allergy consensus 2020 (angioedema is high risk); RCH Melbourne antibiotic allergy guideline; Heffernan 2024, Aust J Rural Health (adrenaline after a first-generation cephalosporin) (via Heidi Evidence, answers.md pneumonia and safety Prompt 24)"
+
+  - id: angle_closure_anticholinergic
+    label: Anticholinergic drug in angle closure or narrow angles
+    if:
+      condition: [angle closure, angle-closure, closed-angle, closed angle, narrow angle, narrow-angle, occludable angle]
+    drugs: [promethazine, oxybutynin, solifenacin, hyoscine butylbromide, ipratropium, tiotropium, tiotropium + olodaterol, olanzapine, amitriptyline]
+    consequence: >-
+      Two days later {name} has a painful red eye with haloes and vomiting: the
+      anticholinergic drug has closed the drainage angle again.
+    source: "BMJ Best Practice; ACSQHC olanzapine, amitriptyline and tiotropium PIs; U.S. Pharmacist precipitant list (via Heidi Evidence, answers.md angle closure message 3)"
+
+  - id: parkinsons_dopamine_antagonist
+    label: Metoclopramide, prochlorperazine or droperidol in Parkinson disease
+    if:
+      condition: [parkinson]
+    drugs: [metoclopramide, prochlorperazine, droperidol]
+    consequence: >-
+      Within a day {name} is rigid, slow and falling: the antiemetic has
+      blocked dopamine and made the Parkinson disease far worse.
+    source: "NSW Health Safety Notice 2023 (centrally acting dopamine antagonists must be avoided); metoclopramide PI (ACSQHC) (via Heidi Evidence, answers.md safety Prompt 26)"
+
+  - id: thrombosis_tranexamic_acid
+    label: Tranexamic acid with a clot, or a bleed in the brain
+    if:
+      condition: [deep vein thrombosis, dvt, pulmonary embolism, venous thromboembolism, thrombosis, subarachnoid, stroke]
+    drugs: [tranexamic acid]
+    consequence: >-
+      Tranexamic acid is contraindicated here. Within the week {name} is
+      admitted with a new clot.
+    source: "Australian tranexamic acid product information (contraindicated in active thromboembolism and subarachnoid haemorrhage); Medsafe, FDA labels (via Heidi Evidence, answers.md PE message 3 and SAH message 3)"
+
+  - id: iron_deficiency_antithrombotic
+    label: NSAID or blood thinner with iron deficiency or occult GI bleeding
+    if:
+      condition: [iron deficiency, iron-deficiency, occult gastrointestinal, occult gi, gastrointestinal bleeding, gi bleeding, melaena]
+    drugs: [aspirin, celecoxib, diclofenac, ibuprofen, indometacin, mefenamic acid, meloxicam, naproxen, naproxen sodium, clopidogrel, ticagrelor, prasugrel, warfarin, apixaban, rivaroxaban, dabigatran, enoxaparin]
+    consequence: >-
+      The unexplained iron deficiency was hidden blood loss from the gut. The
+      new drug makes it bleed faster, and {name} is admitted with melaena.
+    source: "RACGP AFP on blood management in iron deficiency (aspirin, clopidogrel, NSAIDs, warfarin and DOACs compound GI blood loss) (via Heidi Evidence, answers.md colorectal message 2)"
+
+  - id: pregnancy_warfarin
+    label: Warfarin in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [warfarin]
+    consequence: >-
+      {name} is pregnant; warfarin crosses the placenta and can cause
+      embryopathy and fetal bleeding into the brain.
+    source: "TGA pregnancy category D (embryopathy weeks 6-9; fetal CNS haemorrhage) (via Heidi Evidence, answers.md safety Prompt 22)"
+
+  - id: pregnancy_doac
+    label: DOAC in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [apixaban, rivaroxaban, dabigatran]
+    consequence: >-
+      {name} is pregnant; the direct oral anticoagulant is contraindicated in
+      pregnancy, and the obstetric team has to switch to heparin.
+    source: "Australian DOAC guidance: contraindicated in pregnancy and breastfeeding (via Heidi Evidence, answers.md safety Prompt 22)"
+
+  - id: pregnancy_statin
+    label: Statin in pregnancy
+    if:
+      condition: [pregnant, pregnancy]
+    drugs: [atorvastatin, rosuvastatin, simvastatin]
+    consequence: >-
+      {name} is pregnant; statins are contraindicated in pregnancy because of
+      the risk to the developing baby.
+    source: "Australian statin product information: contraindicated in pregnancy (via Heidi Evidence, answers.md safety Prompt 22)"
+
+  - id: child_metoclopramide
+    label: Metoclopramide under 15
+    if:
+      age_under: 15
+    drugs: [metoclopramide]
+    consequence: >-
+      Hours after the dose {name}'s neck twists and eyes roll up: a dystonic
+      reaction, the reason metoclopramide is not given under 15.
+    source: "Australian metoclopramide PI update 2024: contraindicated under 15 (NSW TAG) (via Heidi Evidence, answers.md safety Prompt 27)"
+
+  - id: child_prochlorperazine
+    label: Prochlorperazine under 16
+    if:
+      age_under: 16
+    drugs: [prochlorperazine]
+    consequence: >-
+      Hours after the dose {name}'s neck twists and eyes roll up: a dystonic
+      reaction; prochlorperazine is not for use under 16.
+    source: "TGA: not intended for use under 16 (via Heidi Evidence, answers.md safety Prompt 27)"
+
+  - id: child_aspirin
+    label: Aspirin under 12
+    if:
+      age_under: 12
+    drugs: [aspirin]
+    consequence: >-
+      A few days later {name} is vomiting and drowsy: aspirin in a child risks
+      Reye syndrome.
+    source: "Aspirin PI (ACSQHC): Reye syndrome; avoid under 12 except under specialist care, e.g. Kawasaki disease (via Heidi Evidence, answers.md safety Prompt 27)"
+
+  - id: child_codeine
+    label: Codeine under 12
+    if:
+      age_under: 12
+    drugs: [paracetamol + codeine]
+    consequence: >-
+      That night {name} is drowsy and breathing slowly: some children turn
+      codeine into morphine very fast, which is why it is contraindicated
+      under 12.
+    source: "Paracetamol-codeine PI (ACSQHC): contraindicated under 12, and at 12-18 after tonsillectomy for sleep apnoea (via Heidi Evidence, answers.md safety Prompt 27)"

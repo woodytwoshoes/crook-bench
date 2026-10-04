@@ -1,0 +1,474 @@
+# Pilot case — drafted by Claude from the developer's reference texts.
+# NOT clinically reviewed. Source citations are in ground_truth.notes.
+id: abdo_pain_appendicitis
+status: draft
+title: A stomach bug
+difficulty: 2
+presenting_complaint: Tummy pain
+condition_description: >-
+  Tummy pain since last night. Probably a stomach bug, but it's not going away.
+
+booked_urgent: false
+
+patient:
+  name: Samuel Okafor
+  age: 24
+  sex: M
+  occupation: Apprentice electrician
+  persona:
+    personality: >-
+      Easy-going and a bit stoic. Doesn't like fuss and would rather be at
+      work. Answers questions plainly, and plays things down.
+    health_literacy: medium
+    emotional_state: Uncomfortable and keeping still; mildly embarrassed to be here for a tummy ache.
+    verbosity: terse
+    conceals: []
+  # How he is drawn; cosmetic only, never a finding.
+  appearance:
+    build: slim
+    skin: dark
+    hair: black
+    hair_length: short
+    eyes: brown
+    facial_hair: none
+
+record:
+  allergies: []
+  conditions: []
+  medications: []
+
+consult_start: "11:40"
+
+ground_truth:
+  diagnosis: appendicitis
+  acceptable_diagnoses: []
+  sinister: true
+  differentials: [gastroenteritis, mesenteric_adenitis, nonspecific_abdominal_pain, renal_colic, crohns_disease, uti]
+  # 2026-10-03 (developer's decision, Heidi full key check): strangulated hernia is a
+  # can't-miss cause of lower abdominal pain in men (CARPA, NSW ACI).
+  sinister_diagnoses: [appendicitis, testicular_torsion, perforated_viscus, strangulated_hernia]
+  notes: >-
+    Classic anterior appendicitis booked as "a stomach bug": tests whether
+    the player elicits the pain's migration and the order of symptoms,
+    examines the right lower quadrant and the testes, and refers to hospital
+    rather than reassuring or waiting on tests. Male patient so the
+    gynaecological differentials don't apply; testicular torsion is the
+    can't-miss alternative. Sources: presentation, migration, symptom order
+    [murtagh p.648 L.10924-10926; murtagh p.633 L.10688; em p.406
+    L.18452-18453]; pain before vomiting favours surgical cause [em p.375
+    L.17101]; low-grade fever and mild tachycardia [em p.406 L.18453,
+    L.18456]; McBurney tenderness and guarding [murtagh p.650 L.10937-10941;
+    talley p.300 L.12351]; Rovsing's, psoas, obturator [murtagh p.650
+    L.10945-10951; em p.406 L.18460-18462]; percussion tenderness kinder
+    than rebound [talley p.298 L.12151]; cough test [em p.376 L.17174];
+    rectal exam of little added value [em p.406 L.18463; talley p.300
+    L.12321]; testes must be examined [murtagh p.626 L.10577]; urinalysis
+    in all, may show trace leucocytes/blood [em p.406 L.18473; em p.376
+    L.17197]; normal WCC/CRP don't exclude, reliance delays treatment [em
+    p.406 L.18475-18476]; ultrasound rules in, not out [em p.407 L.18483];
+    plain imaging unhelpful [em p.406 L.18478]; immediate surgical referral
+    [murtagh p.651 L.10974]; early opioid analgesia doesn't mask signs [em
+    p.407 L.18547; em p.378 L.17254]; missed as gastroenteritis or UTI
+    [murtagh p.625 L.10566; p.626 L.10576]; analgesia and discharge without
+    a diagnosis unacceptable [em p.764 L.35421]; complications [em p.405
+    L.18442; murtagh p.675 L.11336]. Not in sources (developer to decide):
+    mode of transport, nil by mouth, GP antibiotics, laxatives as a harm.
+
+history:
+  - id: pain_site_now
+    topic: Where the pain is now
+    answer: Down here on the right side, low down.
+    volunteered: true
+    importance: essential
+  - id: pain_onset
+    topic: When the pain started
+    answer: Last night, about ten o'clock. So maybe fourteen hours.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: pain_migration
+    topic: Where the pain started and whether it has moved
+    answer: >-
+      It actually started around my belly button. It moved down to the right
+      sometime overnight.
+    volunteered: false
+    importance: red_flag
+  - id: pain_character
+    topic: Whether the pain is constant or comes and goes
+    answer: It's there all the time now. At first it sort of came and went.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: pain_severity
+    topic: How bad the pain is
+    answer: Maybe a seven out of ten. I'm not one to complain.
+    volunteered: false
+    open_question: true
+    importance: essential
+  # 2026-10-03 (developer's decision, Heidi full key check): pain on coughing
+  # (peritonism) is a red flag for urgent consult (CARPA).
+  - id: movement_pain
+    topic: Whether moving, walking or coughing makes it worse
+    answer: >-
+      Yeah, walking hurts. Every bump in the car on the way here was awful,
+      and coughing is the worst.
+    volunteered: false
+    importance: red_flag
+  - id: anorexia
+    topic: Appetite
+    answer: I couldn't face breakfast. Not hungry at all, which isn't like me.
+    volunteered: false
+    importance: essential
+    covers: [other_appetite]
+  - id: nausea_vomiting
+    topic: Nausea or vomiting
+    answer: Felt sick since the early hours, and I threw up once this morning.
+    volunteered: false
+    importance: essential
+  - id: vomiting_order
+    topic: Whether the pain or the vomiting came first
+    answer: The pain came first. The sickness came a few hours later.
+    volunteered: false
+    importance: essential
+  - id: fever
+    topic: Fever, sweats or chills
+    answer: I felt hot and a bit shivery last night.
+    volunteered: false
+    importance: red_flag
+    covers: [other_sweats]
+  - id: testicular_pain
+    topic: Pain or swelling in the testicles
+    answer: No, nothing down there.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  # 2026-10-03 (developer's decision, Heidi full key check): checks for a hernia, a
+  # can't-miss cause of lower abdominal pain in men (CARPA, NSW ACI).
+  - id: groin_lump
+    topic: A lump or bulge in the groin
+    answer: No, no lumps down there.
+    volunteered: false
+    importance: essential
+    covers: [other_swelling]
+    absent: true
+  - id: faint
+    topic: Fainting or light-headedness
+    answer: No, I haven't fainted or felt faint.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: urinary_symptoms
+    topic: Pain or frequency passing urine
+    answer: No, weeing is normal.
+    volunteered: false
+    importance: essential
+    covers: [other_urine]
+    absent: true
+  - id: diarrhoea
+    topic: Diarrhoea
+    answer: No diarrhoea. I went normally yesterday morning, nothing since.
+    volunteered: false
+    importance: essential
+    covers: [other_bowels]
+    absent: true
+  - id: rectal_bleeding
+    topic: Blood in the stools
+    answer: No, no blood.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: previous_surgery
+    topic: Previous operations
+    answer: Never had an operation. I've still got my appendix, as far as I know.
+    volunteered: false
+    importance: essential
+    covers: [other_operations]
+    absent: true
+  - id: previous_episodes
+    topic: Whether he has had this pain before
+    answer: No, never had anything like this.
+    volunteered: false
+    importance: essential
+    covers: [other_previous]
+    absent: true
+  - id: unwell_contacts
+    topic: Anyone around him with vomiting or diarrhoea
+    answer: No, everyone at home and work is fine.
+    volunteered: false
+    importance: supporting
+    covers: [other_contacts]
+    absent: true
+  - id: food_history
+    topic: Unusual food or takeaway recently
+    answer: No, just the usual. Mum's cooking on Sunday.
+    volunteered: false
+    importance: supporting
+    covers: [other_diet]
+    absent: true
+  - id: recent_travel
+    topic: Recent overseas travel
+    answer: No, haven't been anywhere.
+    volunteered: false
+    importance: supporting
+    covers: [other_travel]
+    absent: true
+  - id: diabetes
+    topic: Diabetes
+    answer: No.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: analgesia_tried
+    topic: Pain relief taken so far
+    answer: A couple of paracetamol at six this morning. Didn't do much.
+    volunteered: false
+    importance: supporting
+    covers: [other_treatment_tried]
+  - id: alcohol
+    topic: Alcohol
+    answer: A few beers on the weekend. Nothing this week.
+    volunteered: false
+    importance: incidental
+    covers: [other_alcohol]
+  - id: smoking
+    topic: Smoking
+    answer: No, I don't smoke.
+    volunteered: false
+    importance: incidental
+    covers: [other_smoking]
+
+examination:
+  temperature:
+    finding: 37.9 °C.
+    necessity: essential
+  heart_rate:
+    finding: 102, regular.
+    necessity: essential
+  blood_pressure:
+    finding: 126/78.
+    necessity: useful
+  resp_rate:
+    finding: "16."
+    necessity: useful
+  general_inspection:
+    finding: >-
+      Flushed and uncomfortable. Lies very still on the couch and walks in
+      slightly stooped.
+    necessity: useful
+  throat:
+    finding: Tongue coated; mild halitosis.
+    abnormal: true
+    necessity: acceptable
+  abdominal_inspection:
+    finding: Flat. No scars. Moves little with breathing.
+    abnormal: true
+    necessity: acceptable
+  abdominal_palpation:
+    finding: Soft and non-tender in this area.
+    at:
+      rlq: >-
+        Marked tenderness, maximal at McBurney's point, with voluntary
+        guarding.
+      umbilical: Mild tenderness only.
+    abnormal: [rlq, umbilical]
+    necessity: essential
+  abdominal_percussion:
+    finding: Resonant and non-tender in this area.
+    at:
+      rlq: Tender to light percussion.
+    abnormal: [rlq]
+    necessity: useful
+  rebound_tenderness:
+    finding: No rebound tenderness in this area.
+    at:
+      rlq: Rebound tenderness present; he winces sharply.
+    abnormal: [rlq]
+    # 2026-10-03 (developer's decision, Heidi full key check): modest LR+ ~2.0,
+    # LR− 0.39; generous rule (BMJ Best Practice, meta-analyses).
+    necessity: useful
+  rovsings_sign:
+    finding: Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.
+    abnormal: true
+    necessity: useful
+  cough_test:
+    finding: Coughing causes sharp pain in the right lower quadrant; he holds his side.
+    abnormal: true
+    necessity: useful
+  psoas_sign:
+    finding: Negative.
+    necessity: useful
+  obturator_sign:
+    finding: Negative.
+    necessity: useful
+  bowel_sounds:
+    finding: Present, slightly reduced.
+    abnormal: true
+    necessity: acceptable
+  hernial_orifices:
+    finding: No hernias.
+    necessity: useful
+  testicular:
+    finding: Both testes normal lie, non-tender, no swelling.
+    necessity: essential
+  renal_angle:
+    finding: No renal angle tenderness.
+    necessity: useful
+  rectal:
+    finding: Tender on the right.
+    abnormal: true
+    # 2026-10-03 (developer's decision, Heidi full key check): not routinely done
+    # in suspected appendicitis, LR+ 1.24 (BMJ Best Practice).
+    necessity: unnecessary
+
+investigations:
+  # Matches the authored heart rate: the catalogue normal says 72/min
+  # (playtest, 2026-10-01). Unnecessary, as an unlisted test scores.
+  ecg_12_lead:
+    abnormal: true
+    result: Sinus tachycardia 102/min. Normal axis and intervals. No ST or T-wave changes.
+    turnaround_days: 0
+    necessity: unnecessary
+  urine_dipstick:
+    abnormal: true
+    result: Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.
+    turnaround_days: 0
+    necessity: essential
+  fbe:
+    abnormal: true
+    result: Hb 151 g/L, WCC 13.2 (neutrophils 10.8), platelets 290.
+    necessity: acceptable
+  crp:
+    abnormal: true
+    result: CRP 38 mg/L.
+    necessity: acceptable
+  # Electrolytes and creatinine in the ED assessment of abdominal pain [em
+  # p.376 L17196], and he is vomiting; LFTs are on the abdominal pain list
+  # [murtagh p.630 L10630]. Acceptable (developer's decision, 2026-10-01:
+  # formal bloods that may help in the days after ED are not penalised).
+  uec:
+    result: Na 139, K 4.1, urea 5.8, creatinine 82, eGFR >90.
+    necessity: acceptable
+  lft:
+    result: Normal.
+    necessity: acceptable
+  urine_mcs:
+    abnormal: true
+    result: Leucocytes 20 ×10⁶/L, red cells 15 ×10⁶/L. No growth.
+    turnaround_days: 2
+    necessity: unnecessary
+  stool_mcs:
+    result: No pathogens detected.
+    turnaround_days: 3
+    necessity: unnecessary
+  abdominal_ultrasound:
+    result: Appendix not visualised. No free fluid. Otherwise normal.
+    turnaround_days: 2
+    necessity: harmful
+    consequence: >-
+      Samuel goes home to wait for his ultrasound. Two days later the scan
+      is inconclusive, but by then he has perforated and is brought in by
+      ambulance with peritonitis.
+    aside: The ultrasound ordered from the clinic would only have delayed him.
+  ct_abdomen:
+    abnormal: true
+    result: >-
+      Dilated, thick-walled appendix with surrounding fat stranding. No
+      perforation or collection.
+    turnaround_days: 1
+    necessity: unnecessary
+
+management:
+  ideal:
+    - text: Refer to the emergency department today for surgical assessment
+      required: true
+      when: { refer: [ambulance_ed, ed_self_present] }
+    - Explain that appendicitis is likely and why he needs to go to hospital today
+    # 2026-10-03 (developer's decision, Heidi full key check): one ideal item for
+    # either drug, replacing the separate acceptable paracetamol and opioid items
+    # (BMJ Best Practice, Queensland PCCM).
+    - text: Pain relief before transfer
+      when:
+        - { give: [paracetamol] }
+        - { give: [morphine, fentanyl, oxycodone] }
+    # Fasting status bears on anaesthetic risk in abdominal pain [em p.374
+    # L.17030]; suspected appendicitis stays nil by mouth until the surgical
+    # team says otherwise (Perth Children's Hospital ED guideline,
+    # Appendicitis, https://pch.health.wa.gov.au/For-health-professionals/Emergency-Department-Guidelines/Appendicitis).
+    # Developer's request after the playtest, 2026-10-01.
+    # 2026-10-03 (developer's decision, Heidi full key check): acceptable → ideal
+    # (BMJ Best Practice).
+    - Advise nothing to eat or drink until the surgical team has seen him (e.g. "don't eat or drink anything", "nil by mouth")
+  acceptable:
+    - text: Phone the emergency department with a handover
+      when: { refer: [phone_ed_handover] }
+  harmful:
+    # 2026-10-03 (developer's decision, Heidi full key check): a routine surgeon's
+    # referral lets appendicitis wait for an outpatient appointment (BMJ Best
+    # Practice, Queensland PCCM).
+    - text: Routine referral to a general surgeon (outpatient appointment)
+      when: { refer: [general_surgery] }
+      consequence: >-
+        Samuel goes home to wait for a surgical outpatient appointment. His
+        appendix perforates before he is seen, and he is brought in by
+        ambulance with peritonitis.
+      aside: The routine surgeon's referral would have left him waiting at home for weeks.
+    - text: Send home as gastroenteritis (e.g. "it's probably a stomach bug", "go home and rest")
+      consequence: >-
+        Samuel goes home. Overnight the pain eases for a while, then becomes
+        severe everywhere. He is brought to ED by ambulance with a perforated
+        appendix and peritonitis.
+      aside: Told it was a stomach bug, he could have gone home to perforate overnight.
+    # Prescribe only (2026-10-03, developer's decision): a single stat dose given
+    # while transfer is arranged is not itself a harm; the take-home script that goes
+    # with sending him home is (via Heidi Evidence, answers.md, appendicitis).
+    - text: Treat as a urinary tract infection
+      when: { prescribe: [trimethoprim, nitrofurantoin, cefalexin] }
+      consequence: >-
+        The trace leucocytes led to a UTI script. Samuel takes the tablets at
+        home while his appendix perforates.
+      aside: The UTI script treated the wrong problem.
+    - text: Pain relief and home without a diagnosis (e.g. "take some painkillers and see how you go")
+      consequence: >-
+        The painkillers take the edge off and Samuel stays home. He returns
+        the next day with a perforated appendix.
+      aside: Painkillers and home would have dulled the pain while the appendix burst.
+    # Drafted from the references, not yet reviewed (see docs/research).
+    # Missing appendicitis as gastroenteritis is a common pitfall [murtagh p.625 L10566]; appendicitis must be considered in acute vomiting [murtagh p.1004 L16334]; treating a provisional "gastro" symptomatically and sending home without excluding appendicitis is unacceptable [em p.764 L35421–35429]; gangrenous appendix -> peritonitis [murtagh p.625 L10562]
+    - text: Take-home treatment for a stomach bug (antiemetic, rehydration salts, antispasmodic or antidiarrhoeal)
+      when: { prescribe: [ondansetron, metoclopramide, prochlorperazine, "glucose + sodium chloride + potassium chloride + sodium citrate", hyoscine butylbromide, loperamide] }
+      consequence: >-
+        Samuel goes home with a script for a stomach bug. The tablets settle
+        his nausea a little while his appendix keeps swelling, and he comes
+        back by ambulance two days later with peritonitis.
+      aside: The stomach-bug script would only have settled his nausea while the appendix kept swelling.
+    # Analgesia that relieves pain, then discharge without a diagnosis, lets appendicitis go unexcluded [em p.764 L35421–35429]; misleading temporary easing of pain as the appendix perforates [murtagh p.626 L10574]; immediate surgical referral is the standard [murtagh p.651 L10974]
+    - text: Take-home script for strong pain relief instead of a diagnosis
+      when: { prescribe: [oxycodone, tramadol, tapentadol, "paracetamol + codeine", ibuprofen, naproxen, diclofenac, mefenamic acid, indometacin, celecoxib, meloxicam] }
+      consequence: >-
+        With a box of painkillers Samuel feels well enough to stay home. The
+        pain dulls, then eases suddenly overnight as the appendix bursts; he
+        is brought in the next day with peritonitis.
+      aside: A box of strong painkillers would have dulled the warning pain while the appendix burst.
+    # Immediate referral for surgical removal is the gold standard; antibiotic-only management is reserved for selected low-grade cases with careful (hospital) monitoring, and surgery was the safest option [murtagh p.651 L10974]; gastroenteritis itself mostly doesn't need antibiotics [em p.389 L17776–17787]; missed as gastroenteritis [murtagh p.625 L10566]
+    - text: Oral antibiotics and home (for a "gut infection", or to treat the appendix outside hospital)
+      when: { prescribe: ["amoxicillin + clavulanic acid", amoxicillin, metronidazole, tinidazole, ciprofloxacin, norfloxacin, azithromycin, cefuroxime] }
+      consequence: >-
+        Samuel takes the antibiotics at home and nobody examines him again.
+        The infection smoulders on, and he re-presents four days later with an
+        appendix abscess needing drainage and a long hospital stay.
+      aside: Antibiotics at home would have let the infection smoulder into an abscess.
+
+consequences:
+  ideal: >-
+    Samuel is seen by the surgical team that afternoon and has a laparoscopic
+    appendicectomy the same evening. The appendix was inflamed but intact. He
+    goes home two days later.
+  acceptable: Samuel gets to hospital and has his appendix out.
+  harmful: >-
+    The diagnosis was missed at the first visit. Samuel's appendix
+    perforates; he needs emergency surgery for peritonitis and a week in
+    hospital.
+  missed_red_flag: >-
+    Without the story of the pain moving, the fever and the order of
+    symptoms, the picture looked like a stomach bug. Samuel re-presents with
+    a perforated appendix.

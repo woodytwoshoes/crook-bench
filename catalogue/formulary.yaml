@@ -1,0 +1,1930 @@
+
+- id: amoxicillin_500mg_cap
+  name: Amoxicillin 500 mg capsules
+  ingredient: amoxicillin
+  form: capsule
+  unit: capsule
+  pack: 20
+  aliases: [amoxycillin]
+- id: amoxicillin_250mg_cap
+  name: Amoxicillin 250 mg capsules
+  ingredient: amoxicillin
+  form: capsule
+  unit: capsule
+  pack: 20
+  aliases: [amoxycillin]
+- id: amoxicillin_250mg_5ml_liquid
+  name: Amoxicillin 250 mg/5 mL oral liquid
+  ingredient: amoxicillin
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [amoxycillin, amoxicillin suspension]
+- id: amoxicillin_125mg_5ml_liquid
+  name: Amoxicillin 125 mg/5 mL oral liquid
+  ingredient: amoxicillin
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [amoxycillin, amoxicillin suspension]
+- id: amoxicillin_clavulanate_500_125_tab
+  name: Amoxicillin 500 mg + clavulanic acid 125 mg tablets
+  ingredient: amoxicillin + clavulanic acid
+  form: tablet
+  unit: tablet
+  pack: 10
+  aliases: [amoxicillin-clavulanate, amoxicillin/clavulanate, amoxycillin-clavulanate, co-amoxiclav]
+- id: amoxicillin_clavulanate_875_125_tab
+  name: Amoxicillin 875 mg + clavulanic acid 125 mg tablets
+  ingredient: amoxicillin + clavulanic acid
+  form: tablet
+  unit: tablet
+  pack: 10
+  aliases: [amoxicillin-clavulanate, amoxicillin/clavulanate, amoxycillin-clavulanate, co-amoxiclav]
+- id: amoxicillin_clavulanate_400_57_5ml_liquid
+  name: Amoxicillin 400 mg + clavulanic acid 57 mg/5 mL oral liquid
+  ingredient: amoxicillin + clavulanic acid
+  form: oral liquid
+  unit: mL
+  pack: 60
+  aliases: [amoxicillin-clavulanate, amoxicillin/clavulanate, co-amoxiclav]
+- id: phenoxymethylpenicillin_500mg_tab
+  name: Phenoxymethylpenicillin 500 mg tablets
+  ingredient: phenoxymethylpenicillin
+  form: tablet
+  unit: tablet
+  pack: 50
+  aliases: [penicillin V]
+- id: phenoxymethylpenicillin_250mg_5ml_liquid
+  name: Phenoxymethylpenicillin 250 mg/5 mL oral liquid
+  ingredient: phenoxymethylpenicillin
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [penicillin V]
+- id: flucloxacillin_500mg_cap
+  name: Flucloxacillin 500 mg capsules
+  ingredient: flucloxacillin
+  form: capsule
+  unit: capsule
+  pack: 24
+- id: flucloxacillin_250mg_5ml_liquid
+  name: Flucloxacillin 250 mg/5 mL oral liquid
+  ingredient: flucloxacillin
+  form: oral liquid
+  unit: mL
+  pack: 100
+- id: dicloxacillin_500mg_cap
+  name: Dicloxacillin 500 mg capsules
+  ingredient: dicloxacillin
+  form: capsule
+  unit: capsule
+  pack: 24
+
+- id: cefalexin_500mg_cap
+  name: Cefalexin 500 mg capsules
+  ingredient: cefalexin
+  form: capsule
+  unit: capsule
+  pack: 20
+  aliases: [cephalexin]
+- id: cefalexin_250mg_cap
+  name: Cefalexin 250 mg capsules
+  ingredient: cefalexin
+  form: capsule
+  unit: capsule
+  pack: 20
+  aliases: [cephalexin]
+- id: cefalexin_250mg_5ml_liquid
+  name: Cefalexin 250 mg/5 mL oral liquid
+  ingredient: cefalexin
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [cephalexin]
+- id: cefuroxime_500mg_tab
+  name: Cefuroxime 500 mg tablets
+  ingredient: cefuroxime
+  form: tablet
+  unit: tablet
+  pack: 14
+  aliases: [cefuroxime axetil]
+
+- id: doxycycline_100mg_tab
+  name: Doxycycline 100 mg tablets
+  ingredient: doxycycline
+  form: tablet
+  unit: tablet
+  pack: 7
+- id: roxithromycin_300mg_tab
+  name: Roxithromycin 300 mg tablets
+  ingredient: roxithromycin
+  form: tablet
+  unit: tablet
+  pack: 5
+- id: azithromycin_500mg_tab
+  name: Azithromycin 500 mg tablets
+  ingredient: azithromycin
+  form: tablet
+  unit: tablet
+  pack: 2
+- id: clarithromycin_500mg_tab
+  name: Clarithromycin 500 mg tablets
+  ingredient: clarithromycin
+  form: tablet
+  unit: tablet
+  pack: 14
+- id: clindamycin_150mg_cap
+  name: Clindamycin 150 mg capsules
+  ingredient: clindamycin
+  form: capsule
+  unit: capsule
+  pack: 24
+
+- id: nitrofurantoin_100mg_cap
+  name: Nitrofurantoin 100 mg capsules
+  ingredient: nitrofurantoin
+  form: capsule
+  unit: capsule
+  pack: 30
+- id: nitrofurantoin_50mg_cap
+  name: Nitrofurantoin 50 mg capsules
+  ingredient: nitrofurantoin
+  form: capsule
+  unit: capsule
+  pack: 30
+- id: trimethoprim_300mg_tab
+  name: Trimethoprim 300 mg tablets
+  ingredient: trimethoprim
+  form: tablet
+  unit: tablet
+  pack: 7
+- id: trimethoprim_sulfamethoxazole_160_800_tab
+  name: Trimethoprim 160 mg + sulfamethoxazole 800 mg tablets
+  ingredient: trimethoprim + sulfamethoxazole
+  form: tablet
+  unit: tablet
+  pack: 10
+  aliases: [co-trimoxazole, trimethoprim/sulfamethoxazole, TMP-SMX]
+- id: fosfomycin_3g_sachet
+  name: Fosfomycin 3 g oral granules sachet
+  ingredient: fosfomycin
+  form: oral granules
+  unit: sachet
+  pack: 1
+  aliases: [fosfomycin trometamol]
+- id: ciprofloxacin_500mg_tab
+  name: Ciprofloxacin 500 mg tablets
+  ingredient: ciprofloxacin
+  form: tablet
+  unit: tablet
+  pack: 14
+- id: ciprofloxacin_250mg_tab
+  name: Ciprofloxacin 250 mg tablets
+  ingredient: ciprofloxacin
+  form: tablet
+  unit: tablet
+  pack: 14
+- id: norfloxacin_400mg_tab
+  name: Norfloxacin 400 mg tablets
+  ingredient: norfloxacin
+  form: tablet
+  unit: tablet
+  pack: 14
+- id: metronidazole_400mg_tab
+  name: Metronidazole 400 mg tablets
+  ingredient: metronidazole
+  form: tablet
+  unit: tablet
+  pack: 21
+- id: tinidazole_500mg_tab
+  name: Tinidazole 500 mg tablets
+  ingredient: tinidazole
+  form: tablet
+  unit: tablet
+  pack: 4
+
+- id: benzylpenicillin_1_2g_inj
+  name: Benzylpenicillin 1.2 g powder for injection
+  ingredient: benzylpenicillin
+  form: injection
+  unit: vial
+  pack: 10
+  aliases: [penicillin G]
+- id: benzylpenicillin_600mg_inj
+  name: Benzylpenicillin 600 mg powder for injection
+  ingredient: benzylpenicillin
+  form: injection
+  unit: vial
+  pack: 10
+  aliases: [penicillin G]
+- id: ceftriaxone_1g_inj
+  name: Ceftriaxone 1 g powder for injection
+  ingredient: ceftriaxone
+  form: injection
+  unit: vial
+  pack: 5
+- id: ceftriaxone_500mg_inj
+  name: Ceftriaxone 500 mg powder for injection
+  ingredient: ceftriaxone
+  form: injection
+  unit: vial
+  pack: 5
+
+- id: valaciclovir_500mg_tab
+  name: Valaciclovir 500 mg tablets
+  ingredient: valaciclovir
+  form: tablet
+  unit: tablet
+  pack: 42
+  aliases: [valacyclovir]
+- id: aciclovir_800mg_tab
+  name: Aciclovir 800 mg tablets
+  ingredient: aciclovir
+  form: tablet
+  unit: tablet
+  pack: 35
+  aliases: [acyclovir]
+
+- id: fluconazole_150mg_cap
+  name: Fluconazole 150 mg capsule
+  ingredient: fluconazole
+  form: capsule
+  unit: capsule
+  pack: 1
+- id: terbinafine_250mg_tab
+  name: Terbinafine 250 mg tablets
+  ingredient: terbinafine
+  form: tablet
+  unit: tablet
+  pack: 42
+- id: terbinafine_1pct_cream
+  name: Terbinafine 1% cream
+  ingredient: terbinafine
+  form: cream
+  unit: application
+  pack: 15
+- id: clotrimazole_1pct_cream
+  name: Clotrimazole 1% cream
+  ingredient: clotrimazole
+  form: cream
+  unit: application
+  pack: 50
+- id: clotrimazole_500mg_pessary
+  name: Clotrimazole 500 mg vaginal pessary
+  ingredient: clotrimazole
+  form: pessary
+  unit: pessary
+  pack: 1
+- id: miconazole_2pct_cream
+  name: Miconazole 2% cream
+  ingredient: miconazole
+  form: cream
+  unit: application
+  pack: 30
+- id: nystatin_100000u_ml_drops
+  name: Nystatin 100 000 units/mL oral drops
+  ingredient: nystatin
+  form: oral liquid
+  unit: mL
+  pack: 24
+
+- id: paracetamol_500mg_tab
+  name: Paracetamol 500 mg tablets
+  ingredient: paracetamol
+  form: tablet
+  unit: tablet
+  pack: 100
+  aliases: [acetaminophen]
+- id: paracetamol_665mg_mr_tab
+  name: Paracetamol 665 mg modified-release tablets
+  ingredient: paracetamol
+  form: modified-release tablet
+  unit: tablet
+  pack: 96
+  aliases: [acetaminophen, paracetamol SR]
+- id: paracetamol_240mg_5ml_liquid
+  name: Paracetamol 240 mg/5 mL oral liquid
+  ingredient: paracetamol
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [acetaminophen, paracetamol elixir]
+- id: paracetamol_120mg_5ml_liquid
+  name: Paracetamol 120 mg/5 mL oral liquid
+  ingredient: paracetamol
+  form: oral liquid
+  unit: mL
+  pack: 100
+  aliases: [acetaminophen, paracetamol elixir]
+- id: paracetamol_codeine_500_30_tab
+  name: Paracetamol 500 mg + codeine phosphate 30 mg tablets
+  ingredient: paracetamol + codeine
+  form: tablet
+  unit: tablet
+  pack: 20
+  aliases: [paracetamol/codeine, codeine]
+
+- id: ibuprofen_200mg_tab
+  name: Ibuprofen 200 mg tablets
+  ingredient: ibuprofen
+  form: tablet
+  unit: tablet
+  pack: 24
+- id: ibuprofen_400mg_tab
+  name: Ibuprofen 400 mg tablets
+  ingredient: ibuprofen
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: ibuprofen_100mg_5ml_liquid
+  name: Ibuprofen 100 mg/5 mL oral liquid
+  ingredient: ibuprofen
+  form: oral liquid
+  unit: mL
+  pack: 100
+- id: naproxen_500mg_tab
+  name: Naproxen 500 mg tablets
+  ingredient: naproxen
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: naproxen_250mg_tab
+  name: Naproxen 250 mg tablets
+  ingredient: naproxen
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: naproxen_sodium_550mg_tab
+  name: Naproxen sodium 550 mg tablets
+  ingredient: naproxen sodium
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: diclofenac_50mg_tab
+  name: Diclofenac 50 mg enteric-coated tablets
+  ingredient: diclofenac
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: diclofenac_25mg_tab
+  name: Diclofenac 25 mg enteric-coated tablets
+  ingredient: diclofenac
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: meloxicam_15mg_tab
+  name: Meloxicam 15 mg tablets
+  ingredient: meloxicam
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: meloxicam_7_5mg_tab
+  name: Meloxicam 7.5 mg tablets
+  ingredient: meloxicam
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: celecoxib_100mg_cap
+  name: Celecoxib 100 mg capsules
+  ingredient: celecoxib
+  form: capsule
+  unit: capsule
+  pack: 60
+- id: celecoxib_200mg_cap
+  name: Celecoxib 200 mg capsules
+  ingredient: celecoxib
+  form: capsule
+  unit: capsule
+  pack: 30
+- id: indometacin_25mg_cap
+  name: Indometacin 25 mg capsules
+  ingredient: indometacin
+  form: capsule
+  unit: capsule
+  pack: 50
+  aliases: [indomethacin]
+- id: mefenamic_acid_250mg_cap
+  name: Mefenamic acid 250 mg capsules
+  ingredient: mefenamic acid
+  form: capsule
+  unit: capsule
+  pack: 50
+
+- id: tramadol_50mg_cap
+  name: Tramadol 50 mg capsules
+  ingredient: tramadol
+  form: capsule
+  unit: capsule
+  pack: 20
+- id: tapentadol_50mg_mr_tab
+  name: Tapentadol 50 mg modified-release tablets
+  ingredient: tapentadol
+  form: modified-release tablet
+  unit: tablet
+  pack: 28
+  aliases: [tapentadol SR]
+- id: oxycodone_5mg_tab
+  name: Oxycodone 5 mg tablets
+  ingredient: oxycodone
+  form: tablet
+  unit: tablet
+  pack: 20
+- id: oxycodone_10mg_mr_tab
+  name: Oxycodone 10 mg modified-release tablets
+  ingredient: oxycodone
+  form: modified-release tablet
+  unit: tablet
+  pack: 28
+  aliases: [oxycodone SR, oxycodone CR]
+- id: morphine_10mg_tab
+  name: Morphine sulfate 10 mg tablets
+  ingredient: morphine
+  form: tablet
+  unit: tablet
+  pack: 20
+  aliases: [morphine sulphate]
+
+- id: morphine_10mg_ml_inj
+  name: Morphine sulfate 10 mg/1 mL injection
+  ingredient: morphine
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [morphine sulphate]
+- id: fentanyl_100mcg_2ml_inj
+  name: Fentanyl 100 microgram/2 mL injection
+  ingredient: fentanyl
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [fentanyl citrate]
+- id: naloxone_400mcg_ml_inj
+  name: Naloxone 400 microgram/1 mL injection
+  ingredient: naloxone
+  form: injection
+  unit: mL
+  pack: 5
+
+- id: diazepam_5mg_tab
+  name: Diazepam 5 mg tablets
+  ingredient: diazepam
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: diazepam_2mg_tab
+  name: Diazepam 2 mg tablets
+  ingredient: diazepam
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: baclofen_10mg_tab
+  name: Baclofen 10 mg tablets
+  ingredient: baclofen
+  form: tablet
+  unit: tablet
+  pack: 100
+- id: baclofen_25mg_tab
+  name: Baclofen 25 mg tablets
+  ingredient: baclofen
+  form: tablet
+  unit: tablet
+  pack: 100
+- id: colchicine_500mcg_tab
+  name: Colchicine 500 microgram tablets
+  ingredient: colchicine
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: allopurinol_100mg_tab
+  name: Allopurinol 100 mg tablets
+  ingredient: allopurinol
+  form: tablet
+  unit: tablet
+  pack: 200
+- id: allopurinol_300mg_tab
+  name: Allopurinol 300 mg tablets
+  ingredient: allopurinol
+  form: tablet
+  unit: tablet
+  pack: 60
+- id: prednisolone_25mg_tab
+  name: Prednisolone 25 mg tablets
+  ingredient: prednisolone
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: prednisolone_5mg_tab
+  name: Prednisolone 5 mg tablets
+  ingredient: prednisolone
+  form: tablet
+  unit: tablet
+  pack: 60
+- id: prednisolone_5mg_ml_liquid
+  name: Prednisolone 5 mg/mL oral liquid
+  ingredient: prednisolone
+  form: oral liquid
+  unit: mL
+  pack: 30
+- id: dexamethasone_4mg_tab
+  name: Dexamethasone 4 mg tablets
+  ingredient: dexamethasone
+  form: tablet
+  unit: tablet
+  pack: 30
+
+- id: aspirin_300mg_dispersible_tab
+  name: Aspirin 300 mg dispersible tablets
+  ingredient: aspirin
+  form: dispersible tablet
+  unit: tablet
+  pack: 24
+  aliases: [soluble aspirin, acetylsalicylic acid]
+- id: aspirin_100mg_tab
+  name: Aspirin 100 mg enteric-coated tablets
+  ingredient: aspirin
+  form: tablet
+  unit: tablet
+  pack: 112
+  aliases: [low-dose aspirin, acetylsalicylic acid]
+- id: clopidogrel_75mg_tab
+  name: Clopidogrel 75 mg tablets
+  ingredient: clopidogrel
+  form: tablet
+  unit: tablet
+  pack: 28
+- id: ticagrelor_90mg_tab
+  name: Ticagrelor 90 mg tablets
+  ingredient: ticagrelor
+  form: tablet
+  unit: tablet
+  pack: 56
+- id: prasugrel_10mg_tab
+  name: Prasugrel 10 mg tablets
+  ingredient: prasugrel
+  form: tablet
+  unit: tablet
+  pack: 28
+
+- id: apixaban_5mg_tab
+  name: Apixaban 5 mg tablets
+  ingredient: apixaban
+  form: tablet
+  unit: tablet
+  pack: 60
+  aliases: [DOAC, NOAC]
+- id: apixaban_2_5mg_tab
+  name: Apixaban 2.5 mg tablets
+  ingredient: apixaban
+  form: tablet
+  unit: tablet
+  pack: 60
+  aliases: [DOAC, NOAC]
+- id: rivaroxaban_20mg_tab
+  name: Rivaroxaban 20 mg tablets
+  ingredient: rivaroxaban
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [DOAC, NOAC]
+- id: rivaroxaban_15mg_tab
+  name: Rivaroxaban 15 mg tablets
+  ingredient: rivaroxaban
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [DOAC, NOAC]
+- id: dabigatran_150mg_cap
+  name: Dabigatran 150 mg capsules
+  ingredient: dabigatran
+  form: capsule
+  unit: capsule
+  pack: 60
+  aliases: [DOAC, NOAC]
+- id: dabigatran_110mg_cap
+  name: Dabigatran 110 mg capsules
+  ingredient: dabigatran
+  form: capsule
+  unit: capsule
+  pack: 60
+  aliases: [DOAC, NOAC]
+- id: warfarin_5mg_tab
+  name: Warfarin 5 mg tablets
+  ingredient: warfarin
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: warfarin_1mg_tab
+  name: Warfarin 1 mg tablets
+  ingredient: warfarin
+  form: tablet
+  unit: tablet
+  pack: 50
+- id: enoxaparin_40mg_inj
+  name: Enoxaparin 40 mg/0.4 mL injection (prefilled syringe)
+  ingredient: enoxaparin
+  form: injection
+  unit: syringe
+  pack: 10
+  aliases: [low molecular weight heparin, LMWH]
+
+- id: gtn_400mcg_spray
+  name: Glyceryl trinitrate 400 microgram/dose sublingual spray
+  ingredient: glyceryl trinitrate
+  form: sublingual spray
+  unit: spray
+  pack: 200
+  aliases: [GTN, GTN spray, nitroglycerin]
+- id: gtn_600mcg_sl_tab
+  name: Glyceryl trinitrate 600 microgram sublingual tablets
+  ingredient: glyceryl trinitrate
+  form: sublingual tablet
+  unit: tablet
+  pack: 100
+  aliases: [GTN, GTN tablet, nitroglycerin]
+- id: gtn_5mg_24h_patch
+  name: Glyceryl trinitrate 5 mg/24 hours transdermal patches
+  ingredient: glyceryl trinitrate
+  form: transdermal patch
+  unit: patch
+  pack: 30
+  aliases: [GTN, GTN patch, nitroglycerin]
+- id: isosorbide_mononitrate_60mg_mr_tab
+  name: Isosorbide mononitrate 60 mg modified-release tablets
+  ingredient: isosorbide mononitrate
+  form: modified-release tablet
+  unit: tablet
+  pack: 30
+  aliases: [ISMN]
+
+- id: perindopril_arginine_2_5mg_tab
+  name: Perindopril arginine 2.5 mg tablets
+  ingredient: perindopril
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: perindopril_arginine_5mg_tab
+  name: Perindopril arginine 5 mg tablets
+  ingredient: perindopril
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: perindopril_arginine_10mg_tab
+  name: Perindopril arginine 10 mg tablets
+  ingredient: perindopril
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: ramipril_2_5mg_cap
+  name: Ramipril 2.5 mg capsules
+  ingredient: ramipril
+  form: capsule
+  unit: capsule
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: ramipril_5mg_cap
+  name: Ramipril 5 mg capsules
+  ingredient: ramipril
+  form: capsule
+  unit: capsule
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: ramipril_10mg_cap
+  name: Ramipril 10 mg capsules
+  ingredient: ramipril
+  form: capsule
+  unit: capsule
+  pack: 30
+  aliases: [ACE inhibitor]
+- id: candesartan_8mg_tab
+  name: Candesartan 8 mg tablets
+  ingredient: candesartan
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ARB, sartan]
+- id: candesartan_16mg_tab
+  name: Candesartan 16 mg tablets
+  ingredient: candesartan
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ARB, sartan]
+- id: irbesartan_150mg_tab
+  name: Irbesartan 150 mg tablets
+  ingredient: irbesartan
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ARB, sartan]
+- id: irbesartan_300mg_tab
+  name: Irbesartan 300 mg tablets
+  ingredient: irbesartan
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ARB, sartan]
+- id: losartan_50mg_tab
+  name: Losartan 50 mg tablets
+  ingredient: losartan
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [ARB, sartan]
+- id: amlodipine_5mg_tab
+  name: Amlodipine 5 mg tablets
+  ingredient: amlodipine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [calcium channel blocker]
+- id: amlodipine_10mg_tab
+  name: Amlodipine 10 mg tablets
+  ingredient: amlodipine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [calcium channel blocker]
+- id: metoprolol_tartrate_50mg_tab
+  name: Metoprolol tartrate 50 mg tablets
+  ingredient: metoprolol
+  form: tablet
+  unit: tablet
+  pack: 100
+  aliases: [beta blocker]
+- id: bisoprolol_2_5mg_tab
+  name: Bisoprolol 2.5 mg tablets
+  ingredient: bisoprolol
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [beta blocker]
+- id: bisoprolol_5mg_tab
+  name: Bisoprolol 5 mg tablets
+  ingredient: bisoprolol
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [beta blocker]
+- id: atenolol_50mg_tab
+  name: Atenolol 50 mg tablets
+  ingredient: atenolol
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [beta blocker]
+- id: hydrochlorothiazide_25mg_tab
+  name: Hydrochlorothiazide 25 mg tablets
+  ingredient: hydrochlorothiazide
+  form: tablet
+  unit: tablet
+  pack: 50
+  aliases: [HCT, thiazide]
+- id: furosemide_40mg_tab
+  name: Furosemide 40 mg tablets
+  ingredient: furosemide
+  form: tablet
+  unit: tablet
+  pack: 100
+  aliases: [frusemide, loop diuretic]
+- id: furosemide_20mg_2ml_inj
+  name: Furosemide 20 mg/2 mL injection
+  ingredient: furosemide
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [frusemide, loop diuretic]
+- id: spironolactone_25mg_tab
+  name: Spironolactone 25 mg tablets
+  ingredient: spironolactone
+  form: tablet
+  unit: tablet
+  pack: 100
+
+- id: atorvastatin_10mg_tab
+  name: Atorvastatin 10 mg tablets
+  ingredient: atorvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: atorvastatin_20mg_tab
+  name: Atorvastatin 20 mg tablets
+  ingredient: atorvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: atorvastatin_40mg_tab
+  name: Atorvastatin 40 mg tablets
+  ingredient: atorvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: atorvastatin_80mg_tab
+  name: Atorvastatin 80 mg tablets
+  ingredient: atorvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: rosuvastatin_10mg_tab
+  name: Rosuvastatin 10 mg tablets
+  ingredient: rosuvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: rosuvastatin_20mg_tab
+  name: Rosuvastatin 20 mg tablets
+  ingredient: rosuvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: simvastatin_40mg_tab
+  name: Simvastatin 40 mg tablets
+  ingredient: simvastatin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [statin]
+- id: ezetimibe_10mg_tab
+  name: Ezetimibe 10 mg tablets
+  ingredient: ezetimibe
+  form: tablet
+  unit: tablet
+  pack: 30
+
+- id: salbutamol_100mcg_mdi
+  name: Salbutamol 100 microgram/dose pressurised inhaler
+  ingredient: salbutamol
+  form: inhaler
+  unit: puff
+  pack: 200
+  aliases: [albuterol, reliever, puffer, SABA]
+- id: salbutamol_5mg_2_5ml_neb
+  name: Salbutamol 5 mg/2.5 mL nebuliser solution
+  ingredient: salbutamol
+  form: nebuliser solution
+  unit: mL
+  pack: 30
+  aliases: [albuterol, salbutamol nebule]
+- id: salbutamol_2_5mg_2_5ml_neb
+  name: Salbutamol 2.5 mg/2.5 mL nebuliser solution
+  ingredient: salbutamol
+  form: nebuliser solution
+  unit: mL
+  pack: 30
+  aliases: [albuterol, salbutamol nebule]
+- id: ipratropium_21mcg_mdi
+  name: Ipratropium 21 microgram/dose pressurised inhaler
+  ingredient: ipratropium
+  form: inhaler
+  unit: puff
+  pack: 200
+  aliases: [ipratropium bromide]
+- id: ipratropium_500mcg_1ml_neb
+  name: Ipratropium 500 microgram/1 mL nebuliser solution
+  ingredient: ipratropium
+  form: nebuliser solution
+  unit: mL
+  pack: 30
+  aliases: [ipratropium bromide, ipratropium nebule]
+- id: budesonide_formoterol_200_6_dpi
+  name: Budesonide 200 microgram + formoterol 6 microgram/dose dry powder inhaler
+  ingredient: budesonide + formoterol
+  form: inhaler
+  unit: puff
+  pack: 120
+  aliases: [budesonide/formoterol, budesonide/eformoterol, eformoterol, ICS/LABA]
+- id: budesonide_formoterol_400_12_dpi
+  name: Budesonide 400 microgram + formoterol 12 microgram/dose dry powder inhaler
+  ingredient: budesonide + formoterol
+  form: inhaler
+  unit: puff
+  pack: 60
+  aliases: [budesonide/formoterol, budesonide/eformoterol, eformoterol, ICS/LABA]
+- id: fluticasone_salmeterol_250_25_mdi
+  name: Fluticasone propionate 250 microgram + salmeterol 25 microgram/dose pressurised inhaler
+  ingredient: fluticasone propionate + salmeterol
+  form: inhaler
+  unit: puff
+  pack: 120
+  aliases: [fluticasone/salmeterol, ICS/LABA]
+- id: fluticasone_125mcg_mdi
+  name: Fluticasone propionate 125 microgram/dose pressurised inhaler
+  ingredient: fluticasone propionate
+  form: inhaler
+  unit: puff
+  pack: 120
+  aliases: [inhaled corticosteroid, ICS, preventer]
+- id: beclometasone_100mcg_mdi
+  name: Beclometasone dipropionate 100 microgram/dose pressurised inhaler
+  ingredient: beclometasone
+  form: inhaler
+  unit: puff
+  pack: 200
+  aliases: [beclomethasone, inhaled corticosteroid, ICS, preventer]
+- id: tiotropium_18mcg_inh_cap
+  name: Tiotropium 18 microgram inhalation capsules
+  ingredient: tiotropium
+  form: inhalation capsule
+  unit: capsule
+  pack: 30
+  aliases: [tiotropium bromide, LAMA]
+- id: montelukast_10mg_tab
+  name: Montelukast 10 mg tablets
+  ingredient: montelukast
+  form: tablet
+  unit: tablet
+  pack: 28
+- id: montelukast_5mg_chew_tab
+  name: Montelukast 5 mg chewable tablets
+  ingredient: montelukast
+  form: chewable tablet
+  unit: tablet
+  pack: 28
+- id: montelukast_4mg_chew_tab
+  name: Montelukast 4 mg chewable tablets
+  ingredient: montelukast
+  form: chewable tablet
+  unit: tablet
+  pack: 28
+
+- id: esomeprazole_20mg_tab
+  name: Esomeprazole 20 mg enteric-coated tablets
+  ingredient: esomeprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: esomeprazole_40mg_tab
+  name: Esomeprazole 40 mg enteric-coated tablets
+  ingredient: esomeprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: pantoprazole_40mg_tab
+  name: Pantoprazole 40 mg enteric-coated tablets
+  ingredient: pantoprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: pantoprazole_20mg_tab
+  name: Pantoprazole 20 mg enteric-coated tablets
+  ingredient: pantoprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: omeprazole_20mg_tab
+  name: Omeprazole 20 mg tablets
+  ingredient: omeprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: rabeprazole_20mg_tab
+  name: Rabeprazole 20 mg enteric-coated tablets
+  ingredient: rabeprazole
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [PPI, proton pump inhibitor]
+- id: famotidine_20mg_tab
+  name: Famotidine 20 mg tablets
+  ingredient: famotidine
+  form: tablet
+  unit: tablet
+  pack: 60
+  aliases: [H2 antagonist]
+- id: antacid_al_mg_simeticone_liquid
+  name: Aluminium hydroxide 200 mg + magnesium hydroxide 200 mg + simeticone 20 mg/5 mL oral liquid
+  ingredient: aluminium hydroxide + magnesium hydroxide + simeticone
+  form: oral liquid
+  unit: mL
+  pack: 500
+  aliases: [antacid, simethicone]
+- id: alginate_antacid_liquid
+  name: Sodium alginate 500 mg + sodium bicarbonate 267 mg + calcium carbonate 160 mg/10 mL oral liquid
+  ingredient: sodium alginate + sodium bicarbonate + calcium carbonate
+  form: oral liquid
+  unit: mL
+  pack: 500
+  aliases: [antacid, alginate]
+
+- id: ondansetron_4mg_tab
+  name: Ondansetron 4 mg tablets
+  ingredient: ondansetron
+  form: tablet
+  unit: tablet
+  pack: 4
+- id: ondansetron_8mg_tab
+  name: Ondansetron 8 mg tablets
+  ingredient: ondansetron
+  form: tablet
+  unit: tablet
+  pack: 4
+- id: ondansetron_4mg_odt
+  name: Ondansetron 4 mg orally disintegrating tablets
+  ingredient: ondansetron
+  form: orally disintegrating tablet
+  unit: tablet
+  pack: 4
+  aliases: [ondansetron wafer, ODT]
+- id: ondansetron_4mg_2ml_inj
+  name: Ondansetron 4 mg/2 mL injection
+  ingredient: ondansetron
+  form: injection
+  unit: mL
+  pack: 5
+- id: metoclopramide_10mg_tab
+  name: Metoclopramide 10 mg tablets
+  ingredient: metoclopramide
+  form: tablet
+  unit: tablet
+  pack: 25
+- id: metoclopramide_10mg_2ml_inj
+  name: Metoclopramide 10 mg/2 mL injection
+  ingredient: metoclopramide
+  form: injection
+  unit: mL
+  pack: 10
+- id: prochlorperazine_5mg_tab
+  name: Prochlorperazine 5 mg tablets
+  ingredient: prochlorperazine
+  form: tablet
+  unit: tablet
+  pack: 25
+- id: prochlorperazine_12_5mg_ml_inj
+  name: Prochlorperazine 12.5 mg/1 mL injection
+  ingredient: prochlorperazine
+  form: injection
+  unit: mL
+  pack: 10
+- id: domperidone_10mg_tab
+  name: Domperidone 10 mg tablets
+  ingredient: domperidone
+  form: tablet
+  unit: tablet
+  pack: 25
+- id: droperidol_2_5mg_ml_inj
+  name: Droperidol 2.5 mg/1 mL injection
+  ingredient: droperidol
+  form: injection
+  unit: mL
+  pack: 10
+- id: hyoscine_butylbromide_10mg_tab
+  name: Hyoscine butylbromide 10 mg tablets
+  ingredient: hyoscine butylbromide
+  form: tablet
+  unit: tablet
+  pack: 20
+- id: hyoscine_butylbromide_20mg_ml_inj
+  name: Hyoscine butylbromide 20 mg/1 mL injection
+  ingredient: hyoscine butylbromide
+  form: injection
+  unit: mL
+  pack: 5
+
+- id: macrogol_3350_sachet
+  name: Macrogol 3350 with electrolytes oral powder sachets
+  ingredient: macrogol 3350
+  form: oral powder
+  unit: sachet
+  pack: 30
+  aliases: [polyethylene glycol, PEG]
+- id: lactulose_3_34g_5ml_liquid
+  name: Lactulose 3.34 g/5 mL oral liquid
+  ingredient: lactulose
+  form: oral liquid
+  unit: mL
+  pack: 500
+- id: docusate_senna_tab
+  name: Docusate sodium 50 mg + sennosides 8 mg tablets
+  ingredient: docusate + sennosides
+  form: tablet
+  unit: tablet
+  pack: 90
+  aliases: [senna, docusate/senna]
+- id: loperamide_2mg_cap
+  name: Loperamide 2 mg capsules
+  ingredient: loperamide
+  form: capsule
+  unit: capsule
+  pack: 20
+- id: oral_rehydration_salts_sachet
+  name: Oral rehydration salts powder sachets
+  ingredient: glucose + sodium chloride + potassium chloride + sodium citrate
+  form: oral powder
+  unit: sachet
+  pack: 10
+  aliases: [ORS, oral rehydration solution]
+
+- id: metformin_500mg_tab
+  name: Metformin 500 mg tablets
+  ingredient: metformin
+  form: tablet
+  unit: tablet
+  pack: 100
+- id: metformin_1000mg_tab
+  name: Metformin 1000 mg tablets
+  ingredient: metformin
+  form: tablet
+  unit: tablet
+  pack: 90
+- id: metformin_1000mg_mr_tab
+  name: Metformin 1000 mg modified-release tablets
+  ingredient: metformin
+  form: modified-release tablet
+  unit: tablet
+  pack: 60
+  aliases: [metformin XR, metformin SR]
+- id: gliclazide_30mg_mr_tab
+  name: Gliclazide 30 mg modified-release tablets
+  ingredient: gliclazide
+  form: modified-release tablet
+  unit: tablet
+  pack: 100
+  aliases: [sulfonylurea]
+- id: gliclazide_60mg_mr_tab
+  name: Gliclazide 60 mg modified-release tablets
+  ingredient: gliclazide
+  form: modified-release tablet
+  unit: tablet
+  pack: 60
+  aliases: [sulfonylurea]
+- id: empagliflozin_10mg_tab
+  name: Empagliflozin 10 mg tablets
+  ingredient: empagliflozin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [SGLT2 inhibitor]
+- id: dapagliflozin_10mg_tab
+  name: Dapagliflozin 10 mg tablets
+  ingredient: dapagliflozin
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [SGLT2 inhibitor]
+- id: sitagliptin_100mg_tab
+  name: Sitagliptin 100 mg tablets
+  ingredient: sitagliptin
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [DPP-4 inhibitor, gliptin]
+- id: insulin_glargine_100u_ml_pen
+  name: Insulin glargine 100 units/mL injection (3 mL prefilled pen)
+  ingredient: insulin glargine
+  form: injection
+  unit: unit
+  pack: 1500
+  aliases: [basal insulin, long-acting insulin]
+- id: glucagon_1mg_inj
+  name: Glucagon 1 mg injection kit
+  ingredient: glucagon
+  form: injection
+  unit: mL
+  pack: 1
+- id: levothyroxine_50mcg_tab
+  name: Levothyroxine 50 microgram tablets
+  ingredient: levothyroxine
+  form: tablet
+  unit: tablet
+  pack: 200
+  aliases: [thyroxine, T4]
+- id: levothyroxine_100mcg_tab
+  name: Levothyroxine 100 microgram tablets
+  ingredient: levothyroxine
+  form: tablet
+  unit: tablet
+  pack: 200
+  aliases: [thyroxine, T4]
+- id: carbimazole_5mg_tab
+  name: Carbimazole 5 mg tablets
+  ingredient: carbimazole
+  form: tablet
+  unit: tablet
+  pack: 100
+
+- id: sertraline_50mg_tab
+  name: Sertraline 50 mg tablets
+  ingredient: sertraline
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [SSRI]
+- id: sertraline_100mg_tab
+  name: Sertraline 100 mg tablets
+  ingredient: sertraline
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [SSRI]
+- id: escitalopram_10mg_tab
+  name: Escitalopram 10 mg tablets
+  ingredient: escitalopram
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [SSRI]
+- id: escitalopram_20mg_tab
+  name: Escitalopram 20 mg tablets
+  ingredient: escitalopram
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [SSRI]
+- id: citalopram_20mg_tab
+  name: Citalopram 20 mg tablets
+  ingredient: citalopram
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [SSRI]
+- id: fluoxetine_20mg_cap
+  name: Fluoxetine 20 mg capsules
+  ingredient: fluoxetine
+  form: capsule
+  unit: capsule
+  pack: 28
+  aliases: [SSRI]
+- id: paroxetine_20mg_tab
+  name: Paroxetine 20 mg tablets
+  ingredient: paroxetine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [SSRI]
+- id: venlafaxine_75mg_mr_cap
+  name: Venlafaxine 75 mg modified-release capsules
+  ingredient: venlafaxine
+  form: modified-release capsule
+  unit: capsule
+  pack: 28
+  aliases: [SNRI, venlafaxine XR]
+- id: venlafaxine_150mg_mr_cap
+  name: Venlafaxine 150 mg modified-release capsules
+  ingredient: venlafaxine
+  form: modified-release capsule
+  unit: capsule
+  pack: 28
+  aliases: [SNRI, venlafaxine XR]
+- id: desvenlafaxine_50mg_mr_tab
+  name: Desvenlafaxine 50 mg modified-release tablets
+  ingredient: desvenlafaxine
+  form: modified-release tablet
+  unit: tablet
+  pack: 28
+  aliases: [SNRI]
+- id: duloxetine_30mg_cap
+  name: Duloxetine 30 mg capsules
+  ingredient: duloxetine
+  form: capsule
+  unit: capsule
+  pack: 28
+  aliases: [SNRI]
+- id: duloxetine_60mg_cap
+  name: Duloxetine 60 mg capsules
+  ingredient: duloxetine
+  form: capsule
+  unit: capsule
+  pack: 28
+  aliases: [SNRI]
+- id: mirtazapine_15mg_tab
+  name: Mirtazapine 15 mg tablets
+  ingredient: mirtazapine
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: mirtazapine_30mg_tab
+  name: Mirtazapine 30 mg tablets
+  ingredient: mirtazapine
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: amitriptyline_10mg_tab
+  name: Amitriptyline 10 mg tablets
+  ingredient: amitriptyline
+  form: tablet
+  unit: tablet
+  pack: 50
+  aliases: [tricyclic, TCA]
+- id: amitriptyline_25mg_tab
+  name: Amitriptyline 25 mg tablets
+  ingredient: amitriptyline
+  form: tablet
+  unit: tablet
+  pack: 50
+  aliases: [tricyclic, TCA]
+
+- id: oxazepam_15mg_tab
+  name: Oxazepam 15 mg tablets
+  ingredient: oxazepam
+  form: tablet
+  unit: tablet
+  pack: 25
+  aliases: [benzodiazepine]
+- id: temazepam_10mg_tab
+  name: Temazepam 10 mg tablets
+  ingredient: temazepam
+  form: tablet
+  unit: tablet
+  pack: 25
+  aliases: [benzodiazepine]
+- id: melatonin_2mg_mr_tab
+  name: Melatonin 2 mg modified-release tablets
+  ingredient: melatonin
+  form: modified-release tablet
+  unit: tablet
+  pack: 30
+- id: olanzapine_5mg_tab
+  name: Olanzapine 5 mg tablets
+  ingredient: olanzapine
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [antipsychotic]
+- id: olanzapine_10mg_tab
+  name: Olanzapine 10 mg tablets
+  ingredient: olanzapine
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [antipsychotic]
+- id: quetiapine_25mg_tab
+  name: Quetiapine 25 mg tablets
+  ingredient: quetiapine
+  form: tablet
+  unit: tablet
+  pack: 60
+  aliases: [antipsychotic]
+- id: risperidone_1mg_tab
+  name: Risperidone 1 mg tablets
+  ingredient: risperidone
+  form: tablet
+  unit: tablet
+  pack: 60
+  aliases: [antipsychotic]
+
+- id: varenicline_1mg_tab
+  name: Varenicline 1 mg tablets
+  ingredient: varenicline
+  form: tablet
+  unit: tablet
+  pack: 56
+- id: nicotine_21mg_24h_patch
+  name: Nicotine 21 mg/24 hours transdermal patches
+  ingredient: nicotine
+  form: transdermal patch
+  unit: patch
+  pack: 28
+  aliases: [NRT, nicotine replacement]
+
+- id: sumatriptan_50mg_tab
+  name: Sumatriptan 50 mg tablets
+  ingredient: sumatriptan
+  form: tablet
+  unit: tablet
+  pack: 4
+  aliases: [triptan]
+- id: pregabalin_75mg_cap
+  name: Pregabalin 75 mg capsules
+  ingredient: pregabalin
+  form: capsule
+  unit: capsule
+  pack: 56
+- id: gabapentin_300mg_cap
+  name: Gabapentin 300 mg capsules
+  ingredient: gabapentin
+  form: capsule
+  unit: capsule
+  pack: 100
+
+- id: levonorgestrel_ethinylestradiol_150_30_tab
+  name: Levonorgestrel 150 microgram + ethinylestradiol 30 microgram tablets
+  ingredient: levonorgestrel + ethinylestradiol
+  form: tablet
+  unit: tablet
+  pack: 84
+  aliases: [levonorgestrel/ethinylestradiol, ethinyloestradiol, combined oral contraceptive, COC, combined pill, the pill, OCP]
+- id: levonorgestrel_ethinylestradiol_100_20_tab
+  name: Levonorgestrel 100 microgram + ethinylestradiol 20 microgram tablets
+  ingredient: levonorgestrel + ethinylestradiol
+  form: tablet
+  unit: tablet
+  pack: 84
+  aliases: [levonorgestrel/ethinylestradiol, ethinyloestradiol, combined oral contraceptive, COC, combined pill, the pill, OCP]
+- id: norethisterone_350mcg_tab
+  name: Norethisterone 350 microgram tablets
+  ingredient: norethisterone
+  form: tablet
+  unit: tablet
+  pack: 84
+  aliases: [progestogen-only pill, POP, mini pill]
+- id: levonorgestrel_1_5mg_tab
+  name: Levonorgestrel 1.5 mg tablet
+  ingredient: levonorgestrel
+  form: tablet
+  unit: tablet
+  pack: 1
+  aliases: [emergency contraception, morning-after pill, ECP]
+- id: ulipristal_30mg_tab
+  name: Ulipristal acetate 30 mg tablet
+  ingredient: ulipristal
+  form: tablet
+  unit: tablet
+  pack: 1
+  aliases: [emergency contraception, ECP]
+- id: etonogestrel_68mg_implant
+  name: Etonogestrel 68 mg subdermal implant
+  ingredient: etonogestrel
+  form: implant
+  unit: implant
+  pack: 1
+  aliases: [contraceptive implant, rod, LARC]
+- id: levonorgestrel_52mg_ius
+  name: Levonorgestrel 52 mg intrauterine system
+  ingredient: levonorgestrel
+  form: intrauterine device
+  unit: device
+  pack: 1
+  aliases: [hormonal IUD, LNG-IUS, LARC]
+- id: medroxyprogesterone_150mg_ml_inj
+  name: Medroxyprogesterone acetate 150 mg/1 mL depot injection
+  ingredient: medroxyprogesterone
+  form: injection
+  unit: mL
+  pack: 1
+  aliases: [DMPA, depot, contraceptive injection]
+
+- id: norethisterone_5mg_tab
+  name: Norethisterone 5 mg tablets
+  ingredient: norethisterone
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: medroxyprogesterone_10mg_tab
+  name: Medroxyprogesterone acetate 10 mg tablets
+  ingredient: medroxyprogesterone
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: tranexamic_acid_500mg_tab
+  name: Tranexamic acid 500 mg tablets
+  ingredient: tranexamic acid
+  form: tablet
+  unit: tablet
+  pack: 100
+- id: estradiol_1mg_tab
+  name: Estradiol 1 mg tablets
+  ingredient: estradiol
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [oestradiol, MHT, HRT]
+- id: estradiol_50mcg_patch
+  name: Estradiol 50 microgram/24 hours transdermal patches
+  ingredient: estradiol
+  form: transdermal patch
+  unit: patch
+  pack: 8
+  aliases: [oestradiol, MHT, HRT]
+- id: estradiol_10mcg_pessary
+  name: Estradiol 10 microgram vaginal pessaries
+  ingredient: estradiol
+  form: pessary
+  unit: pessary
+  pack: 18
+  aliases: [oestradiol, vaginal oestrogen]
+- id: estriol_0_1pct_vag_cream
+  name: Estriol 0.1% vaginal cream
+  ingredient: estriol
+  form: vaginal cream
+  unit: application
+  pack: 15
+  aliases: [oestriol, vaginal oestrogen]
+- id: progesterone_100mg_cap
+  name: Progesterone 100 mg capsules
+  ingredient: progesterone
+  form: capsule
+  unit: capsule
+  pack: 30
+  aliases: [micronised progesterone, MHT, HRT]
+
+- id: loratadine_10mg_tab
+  name: Loratadine 10 mg tablets
+  ingredient: loratadine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [antihistamine]
+- id: cetirizine_10mg_tab
+  name: Cetirizine 10 mg tablets
+  ingredient: cetirizine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [antihistamine]
+- id: fexofenadine_180mg_tab
+  name: Fexofenadine 180 mg tablets
+  ingredient: fexofenadine
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [antihistamine]
+- id: promethazine_25mg_tab
+  name: Promethazine hydrochloride 25 mg tablets
+  ingredient: promethazine
+  form: tablet
+  unit: tablet
+  pack: 50
+  aliases: [antihistamine]
+- id: mometasone_50mcg_nasal_spray
+  name: Mometasone furoate 50 microgram/dose nasal spray
+  ingredient: mometasone
+  form: nasal spray
+  unit: spray
+  pack: 140
+  aliases: [nasal steroid, intranasal corticosteroid]
+- id: budesonide_64mcg_nasal_spray
+  name: Budesonide 64 microgram/dose nasal spray
+  ingredient: budesonide
+  form: nasal spray
+  unit: spray
+  pack: 120
+  aliases: [nasal steroid, intranasal corticosteroid]
+- id: adrenaline_300mcg_autoinjector
+  name: Adrenaline 300 microgram autoinjector
+  ingredient: adrenaline
+  form: injection (autoinjector)
+  unit: autoinjector
+  pack: 1
+  aliases: [epinephrine, adrenaline pen]
+- id: adrenaline_150mcg_autoinjector
+  name: Adrenaline 150 microgram autoinjector
+  ingredient: adrenaline
+  form: injection (autoinjector)
+  unit: autoinjector
+  pack: 1
+  aliases: [epinephrine, adrenaline pen, junior]
+- id: adrenaline_1mg_ml_inj
+  name: Adrenaline 1 mg/1 mL (1 in 1000) injection
+  ingredient: adrenaline
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [epinephrine, "1:1000"]
+
+- id: hydrocortisone_100mg_inj
+  name: Hydrocortisone sodium succinate 100 mg powder for injection
+  ingredient: hydrocortisone
+  form: injection
+  unit: vial
+  pack: 1
+- id: diazepam_10mg_2ml_inj
+  name: Diazepam 10 mg/2 mL injection
+  ingredient: diazepam
+  form: injection
+  unit: mL
+  pack: 5
+- id: midazolam_5mg_ml_inj
+  name: Midazolam 5 mg/1 mL injection
+  ingredient: midazolam
+  form: injection
+  unit: mL
+  pack: 5
+- id: lidocaine_1pct_5ml_inj
+  name: Lidocaine 1% (50 mg/5 mL) injection
+  ingredient: lidocaine
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [lignocaine, local anaesthetic]
+- id: lidocaine_1pct_adrenaline_5ml_inj
+  name: Lidocaine 1% with adrenaline 1 in 100,000 injection
+  ingredient: lidocaine + adrenaline
+  form: injection
+  unit: mL
+  pack: 5
+  aliases: [lignocaine with adrenaline, lidocaine with epinephrine, local anaesthetic]
+
+- id: hydrocortisone_1pct_cream
+  name: Hydrocortisone 1% cream
+  ingredient: hydrocortisone
+  form: cream
+  unit: application
+  pack: 30
+  aliases: [topical steroid]
+- id: methylprednisolone_aceponate_0_1pct_cream
+  name: Methylprednisolone aceponate 0.1% cream
+  ingredient: methylprednisolone aceponate
+  form: cream
+  unit: application
+  pack: 15
+  aliases: [topical steroid]
+- id: mometasone_0_1pct_ointment
+  name: Mometasone furoate 0.1% ointment
+  ingredient: mometasone
+  form: ointment
+  unit: application
+  pack: 15
+  aliases: [topical steroid]
+- id: mometasone_0_1pct_cream
+  name: Mometasone furoate 0.1% cream
+  ingredient: mometasone
+  form: cream
+  unit: application
+  pack: 15
+  aliases: [topical steroid]
+- id: betamethasone_dipropionate_0_05pct_cream
+  name: Betamethasone dipropionate 0.05% cream
+  ingredient: betamethasone dipropionate
+  form: cream
+  unit: application
+  pack: 15
+  aliases: [topical steroid]
+- id: mupirocin_2pct_ointment
+  name: Mupirocin 2% ointment
+  ingredient: mupirocin
+  form: ointment
+  unit: application
+  pack: 15
+- id: permethrin_5pct_cream
+  name: Permethrin 5% cream
+  ingredient: permethrin
+  form: cream
+  unit: application
+  pack: 30
+  aliases: [scabies cream]
+- id: adapalene_0_1pct_gel
+  name: Adapalene 0.1% gel
+  ingredient: adapalene
+  form: gel
+  unit: application
+  pack: 30
+  aliases: [topical retinoid]
+
+- id: chloramphenicol_0_5pct_eye_drops
+  name: Chloramphenicol 0.5% eye drops
+  ingredient: chloramphenicol
+  form: eye drops
+  unit: drop
+  pack: 10
+- id: chloramphenicol_1pct_eye_ointment
+  name: Chloramphenicol 1% eye ointment
+  ingredient: chloramphenicol
+  form: eye ointment
+  unit: application
+  pack: 4
+- id: ciprofloxacin_0_3pct_ear_drops
+  name: Ciprofloxacin 0.3% ear drops
+  ingredient: ciprofloxacin
+  form: ear drops
+  unit: drop
+  pack: 5
+- id: dexamethasone_framycetin_gramicidin_ear_drops
+  name: Dexamethasone 0.05% + framycetin 0.5% + gramicidin 0.005% ear/eye drops
+  ingredient: dexamethasone + framycetin + gramicidin
+  form: ear drops
+  unit: drop
+  pack: 8
+
+- id: sodium_citrotartrate_4g_sachet
+  name: Sodium citrotartrate 4 g oral granules sachets
+  ingredient: sodium citrotartrate
+  form: oral granules
+  unit: sachet
+  pack: 28
+  aliases: [urinary alkaliniser, urinary alkalinising agent]
+- id: tamsulosin_400mcg_mr_cap
+  name: Tamsulosin 400 microgram modified-release capsules
+  ingredient: tamsulosin
+  form: modified-release capsule
+  unit: capsule
+  pack: 30
+  aliases: [alpha blocker]
+- id: finasteride_5mg_tab
+  name: Finasteride 5 mg tablets
+  ingredient: finasteride
+  form: tablet
+  unit: tablet
+  pack: 30
+- id: solifenacin_5mg_tab
+  name: Solifenacin 5 mg tablets
+  ingredient: solifenacin
+  form: tablet
+  unit: tablet
+  pack: 30
+  aliases: [anticholinergic, overactive bladder]
+- id: oxybutynin_5mg_tab
+  name: Oxybutynin 5 mg tablets
+  ingredient: oxybutynin
+  form: tablet
+  unit: tablet
+  pack: 100
+  aliases: [anticholinergic, overactive bladder]
+- id: sildenafil_50mg_tab
+  name: Sildenafil 50 mg tablets
+  ingredient: sildenafil
+  form: tablet
+  unit: tablet
+  pack: 4
+  aliases: [PDE5 inhibitor]
+- id: sildenafil_100mg_tab
+  name: Sildenafil 100 mg tablets
+  ingredient: sildenafil
+  form: tablet
+  unit: tablet
+  pack: 4
+  aliases: [PDE5 inhibitor]
+- id: tadalafil_20mg_tab
+  name: Tadalafil 20 mg tablets
+  ingredient: tadalafil
+  form: tablet
+  unit: tablet
+  pack: 4
+  aliases: [PDE5 inhibitor]
+- id: tadalafil_5mg_tab
+  name: Tadalafil 5 mg tablets
+  ingredient: tadalafil
+  form: tablet
+  unit: tablet
+  pack: 28
+  aliases: [PDE5 inhibitor]
+
+- id: acetazolamide_500mg_inj
+  name: Acetazolamide 500 mg powder for injection
+  ingredient: acetazolamide
+  form: injection
+  unit: vial
+  pack: 1
+- id: acetazolamide_250mg_tab
+  name: Acetazolamide 250 mg tablets
+  ingredient: acetazolamide
+  form: tablet
+  unit: tablet
+  pack: 100
+- id: pilocarpine_2pct_eye_drops
+  name: Pilocarpine 2% eye drops
+  ingredient: pilocarpine
+  form: eye drops
+  unit: drop
+  pack: 15
+- id: pilocarpine_4pct_eye_drops
+  name: Pilocarpine 4% eye drops
+  ingredient: pilocarpine
+  form: eye drops
+  unit: drop
+  pack: 15
+- id: brimonidine_0_2pct_eye_drops
+  name: Brimonidine 0.2% eye drops
+  ingredient: brimonidine
+  form: eye drops
+  unit: drop
+  pack: 5
+- id: timolol_0_5pct_eye_drops
+  name: Timolol 0.5% eye drops
+  ingredient: timolol
+  form: eye drops
+  unit: drop
+  pack: 5
+  aliases: [beta blocker eye drops]
+- id: tropicamide_1pct_eye_drops
+  name: Tropicamide 1% eye drops
+  ingredient: tropicamide
+  form: eye drops
+  unit: drop
+  pack: 15
+  aliases:
+    - dilating drops
+    - mydriatic
+- id: cyclopentolate_1pct_eye_drops
+  name: Cyclopentolate 1% eye drops
+  ingredient: cyclopentolate
+  form: eye drops
+  unit: drop
+  pack: 15
+  aliases:
+    - dilating drops
+    - cycloplegic
+- id: homatropine_2pct_eye_drops
+  name: Homatropine 2% eye drops
+  ingredient: homatropine
+  form: eye drops
+  unit: drop
+  pack: 15
+  aliases:
+    - dilating drops
+    - cycloplegic
+- id: atropine_1pct_eye_drops
+  name: Atropine 1% eye drops
+  ingredient: atropine
+  form: eye drops
+  unit: drop
+  pack: 15
+  aliases:
+    - dilating drops
+    - cycloplegic
+- id: prednisolone_acetate_1pct_eye_drops
+  name: Prednisolone acetate 1% eye drops
+  ingredient: prednisolone acetate
+  form: eye drops
+  unit: drop
+  pack: 10
+  aliases:
+    - steroid eye drops
+    - prednisolone eye drops
+
+- id: ferrous_sulfate_325mg_mr_tab
+  name: Ferrous sulfate 325 mg (105 mg elemental iron) modified-release tablets
+  ingredient: ferrous sulfate
+  form: modified-release tablet
+  unit: tablet
+  pack: 30
+  aliases:
+    - iron
+    - iron tablets
+    - ferrous sulphate
+    - oral iron
+
+- id: moxifloxacin_400mg_tab
+  name: Moxifloxacin 400 mg tablets
+  ingredient: moxifloxacin
+  form: tablet
+  unit: tablet
+  pack: 5
+
+- id: febuxostat_80mg_tab
+  name: Febuxostat 80 mg tablets
+  ingredient: febuxostat
+  form: tablet
+  unit: tablet
+  pack: 28
+- id: probenecid_500mg_tab
+  name: Probenecid 500 mg tablets
+  ingredient: probenecid
+  form: tablet
+  unit: tablet
+  pack: 100
+
+- id: propranolol_10mg_tab
+  name: Propranolol 10 mg tablets
+  ingredient: propranolol
+  form: tablet
+  unit: tablet
+  pack: 100
+  aliases: [beta blocker, migraine prevention]
+
+- id: nicotine_2mg_gum
+  name: Nicotine 2 mg chewing gum
+  ingredient: nicotine
+  form: chewing gum
+  unit: piece
+  pack: 96
+  aliases: [NRT, nicotine replacement, nicotine gum, quit gum]
+- id: nicotine_4mg_gum
+  name: Nicotine 4 mg chewing gum
+  ingredient: nicotine
+  form: chewing gum
+  unit: piece
+  pack: 96
+  aliases: [NRT, nicotine replacement, nicotine gum, quit gum]
+- id: nicotine_2mg_lozenge
+  name: Nicotine 2 mg lozenges
+  ingredient: nicotine
+  form: lozenge
+  unit: lozenge
+  pack: 72
+  aliases: [NRT, nicotine replacement, nicotine lozenge]
+- id: umeclidinium_vilanterol_62_5_25_dpi
+  name: Umeclidinium 62.5 microgram + vilanterol 25 microgram/dose dry powder inhaler
+  ingredient: umeclidinium + vilanterol
+  form: inhaler
+  unit: puff
+  pack: 30
+  aliases: [umeclidinium/vilanterol, LAMA/LABA, dual bronchodilator]
+- id: tiotropium_olodaterol_2_5_2_5_smi
+  name: Tiotropium 2.5 microgram + olodaterol 2.5 microgram/dose soft mist inhaler
+  ingredient: tiotropium + olodaterol
+  form: inhaler
+  unit: puff
+  pack: 60
+  aliases: [tiotropium/olodaterol, LAMA/LABA, dual bronchodilator]
+
+- id: calcium_carbonate_1_5g_tab
+  name: Calcium carbonate 1.5 g (600 mg calcium) tablets
+  ingredient: calcium carbonate
+  form: tablet
+  unit: tablet
+  pack: 120
+  aliases: [calcium, calcium supplement, calcium tablets]

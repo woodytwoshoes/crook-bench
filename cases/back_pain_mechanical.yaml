@@ -1,0 +1,507 @@
+# Pilot case — drafted by Claude from the developer's reference texts.
+# NOT clinically reviewed. Source citations are in ground_truth.notes.
+id: back_pain_mechanical
+status: draft
+title: Did my back in
+difficulty: 2
+presenting_complaint: Low back pain — wants a scan
+condition_description: >-
+  Hurt my lower back lifting something on the weekend, can barely move. Would like a referral for an MRI.
+
+booked_urgent: true
+
+patient:
+  name: Daniel Russo
+  age: 41
+  sex: M
+  occupation: IT project manager (desk-based)
+  persona:
+    personality: >-
+      Articulate, a bit anxious, has been reading about slipped discs online.
+      Expects a scan and thinks rest is the safe option. Responds well to a
+      confident, clear explanation; pushes back if fobbed off.
+    health_literacy: high
+    emotional_state: Worried this is serious; frustrated at being immobile.
+    verbosity: normal
+    conceals:
+      - How anxious he really is — says "I just want to know what's going on"
+  # How he is drawn; cosmetic only, never a finding.
+  appearance:
+    build: average
+    skin: light
+    hair: dark_brown
+    hair_length: short
+    eyes: brown
+    facial_hair: stubble
+
+record:
+  allergies: ["Tramadol (vomiting and dizziness)"]
+  conditions: []
+  medications: []
+
+# Troponin and other timed results show this as their collection time.
+consult_start: "14:00"
+
+ground_truth:
+  # Diagnosis keys are ids from catalogue/diagnoses.yaml.
+  diagnosis: nonspecific_lbp
+  acceptable_diagnoses: [mechanical_lbp, lumbar_strain]
+  sinister: false
+  differentials: [disc_prolapse_sciatica, facet_joint_pain, si_joint_dysfunction, spondyloarthropathy]
+  sinister_diagnoses: [cauda_equina, spinal_malignancy, spinal_infection, vertebral_fracture, aaa]
+  notes: >-
+    Restraint case: all red flags absent; the skill is screening them
+    efficiently, examining appropriately, declining imaging and managing
+    conservatively while addressing fear-avoidance. Sources: epidemiology and
+    natural history [murtagh p.785-786, p.827]; typical profile and
+    description [murtagh p.793-794, p.810]; red-flag lists [murtagh p.790-791
+    Table 28.2; em p.625-627 Table 14.4.4; talley p.418-419 List 24.6];
+    yellow flags [murtagh p.792]; examination [murtagh p.796-803; talley
+    p.418-419]; no X-ray in acute LBP <6 weeks without red flags [murtagh
+    p.803-804, p.810, p.827; em p.625]; asymptomatic disc findings on MRI
+    [talley p.419]; stay active vs bed rest, heat, NSAIDs best-evidenced,
+    paracetamol ineffective, opioids not recommended, review ~5 days [murtagh
+    p.821-823, p.827; em p.625]; NSAID dose from Murtagh's general NSAID
+    section [murtagh p.2223]. Developer's decisions (2026-10-01): muscle
+    relaxants not indicated, any course -2 and a long one harmful
+    [murtagh p.823; em p.626; ACSQHC Low Back Pain Clinical Care Standard
+    2022 QS7, avoid benzodiazepines,
+    https://www.safetyandquality.gov.au/standards/clinical-care-standards/low-back-pain-clinical-care-standard];
+    leg neurology essential, to exclude hard neurology before declining
+    imaging [em p.625; ACSQHC QS1], though Murtagh asks for it only when
+    symptoms pass the buttocks [murtagh p.796, p.802]; cough/sneeze
+    aggravation and morning stiffness supporting, as they mainly separate
+    radicular and inflammatory pain [talley p.418; murtagh p.831]. Design
+    calls for review: CT scored harmful
+    (radiation plus false positives) though sources only say "not
+    recommended"; turnaround times are not in the sources.
+
+history:
+  - id: onset_mechanism
+    topic: How and when the pain started
+    answer: >-
+      Saturday, lifting a big pot plant in the garden. Felt a twinge, then
+      woke up Sunday and could barely get out of bed. So three days ago.
+    volunteered: true
+    importance: essential
+  - id: pain_site
+    topic: Where exactly the pain is
+    answer: >-
+      Low down on the left side of my back. Sometimes into my left buttock.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: leg_radiation
+    topic: Whether the pain spreads down the legs
+    answer: >-
+      No, nothing down my legs.
+    volunteered: false
+    importance: essential
+  - id: aggravating_relieving
+    topic: What makes the pain better or worse
+    answer: >-
+      Worse when I bend or get out of a chair. Better lying still with a heat pack. Worse by the evening.
+    volunteered: false
+    open_question: true
+    importance: essential
+    covers: [other_relief]
+  # 2026-10-03 (developer's decision, Heidi full key check): pain that eases with
+  # exercise suggests inflammatory back pain, and spondyloarthropathy is on the
+  # differential (NSW ACI LBP model of care, Queensland PCCM, BMJ Best Practice).
+  - id: eases_with_exercise
+    topic: Whether the pain eases with exercise or moving about
+    answer: >-
+      No, the opposite. Moving about makes it worse, and it settles when I rest.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: morning_stiffness
+    topic: Morning stiffness and how long it lasts
+    answer: >-
+      A bit stiff in the morning but it loosens up in ten minutes or so.
+    volunteered: false
+    # Supporting (developer's decision, 2026-10-01): stiffness over 30
+    # minutes points to inflammatory pain [murtagh p.831 L13549; talley
+    # p.418 L15707], unlikely after a lifting injury.
+    importance: supporting
+  - id: cough_sneeze
+    topic: Whether coughing, sneezing or straining makes it worse
+    answer: Not really — sneezing's a bit uncomfortable but nothing shoots anywhere.
+    volunteered: false
+    # Supporting (developer's decision, 2026-10-01): it points to nerve-root
+    # involvement [talley p.418 L15707], which leg_radiation and
+    # leg_neuro_symptoms already ask about.
+    importance: supporting
+    absent: true
+  - id: function_work
+    topic: Effect on work and daily activities
+    answer: >-
+      I've worked from home the last two days, mostly lying on the couch with
+      the laptop. Can walk around slowly.
+    volunteered: false
+    open_question: true
+    importance: essential
+    covers: [other_work]
+  - id: analgesia_tried
+    topic: What treatment or pain relief he has tried so far
+    answer: Some paracetamol. Didn't do much, honestly.
+    volunteered: false
+    importance: essential
+    covers: [other_treatment_tried]
+  - id: saddle_anaesthesia
+    topic: Numbness around the buttocks, genitals or back passage
+    answer: No, nothing like that.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: bladder_function
+    topic: Any change in passing urine — difficulty, retention or leaking
+    answer: No, all normal.
+    volunteered: false
+    importance: red_flag
+    covers: [other_urine]
+    absent: true
+  - id: bowel_function
+    topic: Any loss of bowel control
+    answer: No.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: leg_neuro_symptoms
+    topic: Weakness, numbness or pins and needles in the legs
+    answer: No, legs feel completely normal.
+    volunteered: false
+    importance: red_flag
+    covers: [other_numbness]
+    absent: true
+  - id: cancer_history
+    topic: Any history of cancer
+    answer: No, never.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: weight_loss
+    topic: Unexplained weight loss
+    answer: No, if anything I've put some on.
+    volunteered: false
+    importance: red_flag
+    covers: [other_weight]
+    absent: true
+  - id: fever_infection
+    topic: Fever or recent infection
+    answer: >-
+      No fevers, no infections.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: iv_drug_use
+    topic: Injecting drug use
+    answer: >-
+      No, never.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: immunosuppression
+    topic: Immune suppression
+    answer: >-
+      No, nothing like that.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: night_rest_pain
+    topic: Pain at night or at rest that keeps him awake
+    answer: >-
+      It hurts when I roll over, but once I'm settled I sleep. It's not there
+      constantly.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: significant_trauma
+    topic: Any fall or significant injury
+    answer: No fall — just the lifting.
+    volunteered: false
+    importance: red_flag
+    covers: [other_injury]
+    absent: true
+  - id: steroid_use
+    topic: Steroid use
+    answer: >-
+      No.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: osteoporosis
+    topic: Known osteoporosis
+    answer: >-
+      No.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: previous_episodes
+    topic: Previous episodes of back pain
+    answer: >-
+      I tweaked it once maybe five years ago, but it was gone in a week.
+    volunteered: false
+    importance: supporting
+    covers: [other_previous]
+  - id: stomach_ulcers
+    topic: Stomach ulcers or indigestion with anti-inflammatories
+    answer: >-
+      No ulcers.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: asthma
+    topic: Asthma
+    answer: >-
+      No asthma.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: kidney_problems
+    topic: Kidney problems
+    answer: >-
+      Kidneys are fine as far as I know.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: concerns
+    topic: What he is worried the pain might be
+    answer: >-
+      Honestly? I've been reading about slipped discs and people needing surgery.
+    volunteered: false
+    importance: supporting
+    covers: [other_concerns]
+  - id: expectations
+    topic: What he expects from the visit
+    answer: >-
+      I figured I'd need an MRI to see what's going on.
+    volunteered: false
+    importance: supporting
+  - id: stress
+    topic: Stress at work or home
+    answer: >-
+      Work's busy — big deadline next week.
+    volunteered: false
+    importance: supporting
+  - id: mood
+    topic: Mood
+    answer: >-
+      Mood's fine, just frustrated.
+    volunteered: false
+    importance: supporting
+    covers: [other_mood]
+    absent: true
+  - id: spondyloarthropathy_screen
+    topic: Psoriasis, eye inflammation, bowel upset or other joint pains
+    answer: No, none of that.
+    volunteered: false
+    importance: incidental
+    covers: [other_joints]
+    absent: true
+  # Authored so the patient doesn't improvise habits (playtest, 2026-10-01).
+  # Incidental: no bearing on this diagnosis, so not scored.
+  - id: smoking
+    topic: Smoking
+    answer: No, never.
+    volunteered: false
+    importance: incidental
+    covers: [other_smoking]
+    absent: true
+  - id: alcohol
+    topic: Alcohol
+    answer: A couple of beers on a Friday, and maybe a glass of wine on the weekend.
+    volunteered: false
+    importance: incidental
+    covers: [other_alcohol]
+  # Authored because, asked "how bad is it out of ten?", the patient made
+  # a number up (playtest, medical student round, 2026-10-01). Incidental:
+  # not scored; consistent with the other pain answers.
+  - id: pain_severity
+    topic: How bad the pain is
+    answer: About a seven when I move or roll over. Maybe a three if I keep still.
+    volunteered: false
+    importance: incidental
+
+examination:
+  temperature:
+    finding: 36.7 °C.
+    necessity: useful
+  inspection_gait:
+    finding: Walks slowly and guardedly.
+    abnormal: true
+    necessity: essential
+  back_inspection:
+    finding: Slight lean away from the left. No deformity or skin changes.
+    abnormal: true
+    necessity: useful
+  lumbar_range_of_movement:
+    finding: >-
+      Flexion limited to fingertips at mid-shin by pain; extension mildly
+      uncomfortable; lateral flexion to the right painful on the left.
+    abnormal: true
+    necessity: essential
+  spinal_palpation:
+    finding: >-
+      Tender over left paraspinal muscles at L4–L5 with some spasm. No
+      bony midline tenderness.
+    abnormal: true
+    necessity: essential
+  # Essential (developer's decision, 2026-10-01): the exam excludes hard
+  # neurology [em p.625 L29506-29507], takes 2-3 minutes [murtagh p.802
+  # L13111], and a normal result is what lets the doctor decline the MRI.
+  # Murtagh asks for it only when symptoms extend below the buttocks
+  # [murtagh p.796 L13050; p.802 L13107]; Daniel's reach the buttock.
+  lower_limb_neuro:
+    finding: >-
+      Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact.
+      Heel and toe walking normal.
+    necessity: essential
+  straight_leg_raise_slump:
+    finding: SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.
+    necessity: useful
+  hip_sacroiliac:
+    finding: Full, painless hip movement.
+    necessity: useful
+  sacroiliac_tests:
+    finding: SI joint stress tests negative.
+    necessity: useful
+  abdominal_aaa:
+    finding: Soft, non-tender, no pulsatile mass.
+    necessity: acceptable
+  saddle_sensation_pr:
+    finding: Saddle sensation intact; anal tone normal.
+    necessity: unnecessary
+
+investigations:
+  lumbar_xray:
+    abnormal: true
+    result: >-
+      Mild disc space narrowing at L4/5, consistent with age. No fracture or
+      destructive lesion.
+    turnaround_days: 0
+    necessity: unnecessary
+  ct_lumbar_spine:
+    abnormal: true
+    result: >-
+      Broad-based L4/5 disc bulge without significant canal or foraminal
+      stenosis. No fracture.
+    turnaround_days: 0
+    necessity: harmful
+    consequence: >-
+      The CT report mentions a "disc bulge". Daniel becomes convinced his
+      spine is damaged, avoids activity and takes weeks off work. At six
+      weeks he is still in pain and asking about surgery.
+  mri_lumbar_spine:
+    abnormal: true
+    result: >-
+      L4/5 disc bulge with a small annular fissure. No nerve root compression.
+      Findings are common in asymptomatic adults of this age.
+    turnaround_days: 3
+    # 2026-10-03 (developer's decision, Heidi full key check): early MRI without
+    # an indication is linked to prolonged disability and an investigation
+    # cascade (RACGP, Australian Rheumatology Association).
+    necessity: harmful
+    consequence: >-
+      The MRI report mentions a disc bulge and an annular fissure. Daniel is
+      frightened, rests more and asks for a surgeon's opinion and more scans.
+      His recovery is slower than it needed to be.
+  fbe:
+    result: Hb 150 g/L, WCC 6.2, platelets 240. Normal indices.
+    necessity: unnecessary
+  esr:
+    result: ESR 6 mm/h.
+    necessity: unnecessary
+  crp:
+    result: CRP 2 mg/L.
+    necessity: unnecessary
+
+management:
+  # Items with `when` are matched to game actions by code. Plain strings can
+  # only be said: the judge looks for them in the closing explanation.
+  # Imaging is scored through the investigation ratings, not here.
+  ideal:
+    - Explain and reassure — no sign of anything serious; most recover within weeks
+    - Advise staying active and continuing work (desk work with regular movement)
+    # Example phrasings give the quote check words to meet (playtest: "An
+    # MRI wouldn't change what we do" shared none with the plain text).
+    - Explain why imaging will not help and may mislead (e.g. "an MRI won't change what we do", "a scan can show harmless changes")
+    - text: Ibuprofen 400 mg orally three times daily with food, short course
+      when: { prescribe: [ibuprofen] }
+    - Heat packs
+    - Safety-net — return urgently if numbness, weakness, bladder or bowel change, or fever
+    - Review in about 5 days
+  acceptable:
+    - text: Paracetamol as the analgesic
+      when: { medicate: [paracetamol] }
+    - text: Naproxen or celecoxib as the NSAID
+      when: { medicate: [naproxen, naproxen sodium, celecoxib] }
+    - text: Physiotherapy referral
+      when: { refer: [physiotherapy] }
+    # 2026-10-03 (developer's decision, Heidi full key check): fear-avoidance and
+    # work stress predict chronic pain (AJGP).
+    - Talk through his worries (a slipped disc, his work) and his work stress
+  harmful:
+    - text: Bed rest (e.g. "stay in bed", "rest in bed until it settles")
+      consequence: >-
+        Daniel takes to bed for a week as advised. He stiffens up, falls behind
+        at work, and at six weeks is still in pain and anxious about his spine.
+    - text: Opioid analgesia first-line
+      when: { medicate: [oxycodone, tapentadol, tramadol, paracetamol + codeine, morphine, fentanyl] }
+      consequence: >-
+        The opioid makes Daniel drowsy and constipated, and he asks for a
+        repeat at review. The back pain resolves on its own; the opioid habit
+        takes longer.
+    - text: Specialist or surgical referral
+      when: { refer: [orthopaedics, neurosurgery] }
+      consequence: >-
+        The surgical referral convinces Daniel something is badly wrong. He
+        rests while he waits for the appointment, and at six weeks is worse
+        than when he first came in.
+    # Drafted from the references, not yet reviewed (see docs/research).
+    # Muscle relaxants (diazepam, baclofen) cause sedation and addiction, so short periods only [murtagh p.823 L13415]; muscle relaxants effective short term but with significant side effects [em p.625 L29509]; benzodiazepines not shown effective in well-performed studies [em p.626 L29573]; ACSQHC Low Back Pain Clinical Care Standard 2022, QS7: avoid benzodiazepines (https://www.safetyandquality.gov.au/standards/clinical-care-standards/low-back-pain-clinical-care-standard). A short course is not indicated (not_indicated below); a long one is harmful.
+    - text: Long course of a muscle relaxant (two weeks or more)
+      when: { medicate: [diazepam, baclofen, oxazepam, temazepam], duration: [14 days, 1 month, 3 months, Ongoing] }
+      consequence: >-
+        Daniel takes the diazepam every day for weeks. He is foggy at work,
+        his back gets better on its own, and stopping the tablets proves
+        harder than he expected.
+    # Gabapentinoids: limited benefit, common drowsiness and dizziness, misuse, dependence and withdrawal [murtagh p.2225 L36840–36852]; neuropathic agents are added only when there is radicular (leg) pain [em p.626 L29581–29591]; Daniel has no leg pain and a normal neurological exam (case history/exam)
+    - text: Nerve-pain medicine (gabapentinoid) with no leg pain
+      when: { medicate: [pregabalin, gabapentin] }
+      consequence: >-
+        The pregabalin makes Daniel dizzy and drowsy without touching the
+        back pain, and he now believes a nerve is damaged. He moves even less
+        and his recovery drags on.
+    # Systemic steroids appear in the sources only for very severe sciatica, with efficacy not clearly established [murtagh p.828 L13486–13488]; not among the evidence-based options for acute non-specific LBP [murtagh p.810 L13260–13263]. Mirrors the existing prednisolone item for the other oral steroid in the formulary.
+    - text: NSAID prescribed long term for acute back pain
+      when: { prescribe: [ibuprofen, naproxen, "naproxen sodium", celecoxib, diclofenac, meloxicam, indometacin, mefenamic acid], duration: [3 months, Ongoing] }
+      consequence: >-
+        Daniel keeps taking the anti-inflammatory for months after his back
+        has settled, until he turns up with black stools and a bleeding
+        stomach ulcer.
+
+  # Muscle relaxants are not indicated (developer's decision, 2026-10-01):
+  # any course costs as an unlisted drug, a long one is the harm above. Only
+  # Murtagh counts them effective, short term [murtagh p.823 L13415]; EM:
+  # benzodiazepines not shown effective [em p.626 L29573]; ACSQHC QS7: avoid
+  # benzodiazepines.
+  # Oral steroids moved here from harmful (2026-10-03, developer's decision): no
+  # benefit in non-specific low back pain, and no serious harm shown in short courses
+  # (Cochrane 2022, via Heidi Evidence, docs/review/heidi/answers.md, back pain).
+  # Oxazepam, temazepam added (2026-10-03): ACSQHC says avoid benzodiazepines as a class (via Heidi Evidence, docs/review/heidi/answers.md).
+  not_indicated: [diazepam, baclofen, prednisolone, dexamethasone, oxazepam, temazepam]
+
+consequences:
+  ideal: >-
+    Daniel is back at his desk the next day with a heat pack. At review he's
+    much better, and he no longer thinks he needs a scan. Largely pain-free
+    within two weeks.
+  acceptable: Daniel recovers over a couple of weeks, as most people do.
+  harmful: >-
+    Daniel's recovery is set back by an intervention he didn't need, and he
+    becomes more worried about his back.
+  missed_red_flag: >-
+    Daniel recovered — but the red flags were never screened. Had this been
+    cauda equina or spinal infection, it would have been missed. He was
+    lucky, not safe.

@@ -1,0 +1,652 @@
+# Pilot case — drafted by Claude from the developer's reference texts.
+# NOT clinically reviewed. Source citations are in ground_truth.notes.
+id: chest_pain_stemi
+status: draft
+title: Just a bit of indigestion
+difficulty: 2
+presenting_complaint: Indigestion
+condition_description: >-
+  Indigestion since this morning. Wife insisted I get it looked at.
+
+# Graham didn't think it was urgent: booking triage can mislead.
+booked_urgent: false
+
+patient:
+  name: Graham Mitchell
+  age: 58
+  sex: M
+  occupation: Plumber, self-employed
+  persona:
+    personality: >-
+      Stoic, laconic, dislikes fuss. Only came because his wife insisted.
+      Keeps calling it indigestion and wants antacids so he can get to a job.
+    health_literacy: low
+    emotional_state: >-
+      Uneasy and quietly frightened underneath the bravado.
+    verbosity: terse
+    conceals:
+      # Topic only: the actor sees this from the first turn, so naming the
+      # tablet here leaked it. The fact itself is history item pde5_inhibitor.
+      - His sex life; embarrassed, says as little as he can
+  # How he is drawn; cosmetic only, never a finding.
+  appearance:
+    build: average
+    skin: fair
+    hair: grey
+    hair_length: short
+    eyes: blue
+    facial_hair: none
+
+record:
+  allergies: []
+  conditions:
+    - Hypertension
+    - Hypercholesterolaemia
+    - Current smoker
+  medications:
+    - Perindopril 5 mg daily
+    - Atorvastatin 40 mg daily
+
+# Troponin and other timed results show this as their collection time.
+consult_start: "08:30"
+
+ground_truth:
+  # Diagnosis keys are ids from catalogue/diagnoses.yaml.
+  diagnosis: stemi
+  acceptable_diagnoses: [acs, myocardial_infarction]
+  # The key diagnosis is itself can't-miss.
+  sinister: true
+  differentials: [unstable_angina, pericarditis, gord, oesophageal_spasm, msk_chest_pain]
+  sinister_diagnoses: [aortic_dissection, pulmonary_embolism, pneumothorax]
+  # Takes, not on the record: checked by the global safety rules.
+  taking: [sildenafil]
+  notes: >-
+    Danger case: recognise ACS behind "indigestion", get the ECG, transfer by
+    ambulance with aspirin, and withhold GTN because of recent sildenafil.
+    Sources: STEMI chosen because ECG alone selects for reperfusion
+    [murtagh p.900]; mistaking ischaemia for indigestion is the commonest
+    serious error [murtagh p.893, p.1070-1072; em p.242]; pain >15-20 min
+    suggests infarction [murtagh p.862, p.871]; red-flag associated symptoms
+    [murtagh p.862]; crescendo pattern [murtagh p.860, p.883; talley p.88];
+    dissection features [murtagh p.871; em p.314-316; talley p.86, p.148];
+    inferior MI bradycardia/hypotension [talley p.147]; ECG within 10 min,
+    STEMI criteria [em p.251]; early troponin non-informative, up to 10 h to
+    be reliably negative [murtagh p.898; em p.246]; do not wait for bloods
+    [talley p.185]; aspirin 300 mg, not contraindicated by indigestion
+    [murtagh p.899-900; em p.251-252]; GTN 300 mcg SL unless BP <90 or pulse
+    <50, avoid within 24 h of sildenafil [murtagh p.888, p.900, p.3160];
+    oxygen only if SpO2 <94% [em p.247, p.252; murtagh p.898, p.900];
+    morphine titrated IV [murtagh p.900, p.3160]; ambulance/MICA and phone
+    ahead [murtagh p.898-900, p.3160]; GTN/antacid response not diagnostic
+    [em p.247]. Developer's decisions, 2026-10-01: point-of-care troponin
+    useful (first essential, changed once the sources were read: the ECG
+    alone decides transfer); formal bloods (troponin, CK, FBE, UEC, LFT, coags, lipids,
+    HbA1c) acceptable, drawn with the IV line [murtagh p.900] and never
+    awaited; IV opioid acceptable rather than ideal (severe pain [em
+    p.252]; "reasonable", slows oral P2Y12 inhibitors: NHFA/CSANZ ACS
+    guideline 2025, https://assets.contentstack.io/v3/assets/blt8a393bb3b76c0ede/blt8874388e6d9b835c/ACS-Abridged-Guidelines.pdf);
+    aspirin-allergy question incidental, not scored (rare; benefit judged
+    to outweigh risk in AMI. Sources: known allergy is the principal
+    contraindication [em p.252]; the guideline advises risk assessment and
+    desensitisation in aspirin sensitivity). Not in sources (standard
+    teaching, for developer review): reciprocal ST depression in I/aVL;
+    "000"; driving self to hospital as harmful.
+
+history:
+  - id: pain_character
+    topic: What the pain or discomfort feels like
+    answer: >-
+      It's like a heaviness. Like indigestion but… heavier. Sort of a weight
+      sitting on my chest.
+    volunteered: true
+    importance: essential
+  - id: pain_site
+    topic: Where exactly the discomfort is
+    answer: Right in the middle, behind the breastbone. Bit up into the throat.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: pain_radiation
+    topic: Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)
+    answer: >-
+      Now you mention it, my jaw's a bit achy, and my left arm feels heavy.
+      Not my back.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: onset_time
+    topic: When the discomfort started
+    answer: >-
+      About seven this morning. Came on over a few minutes.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: onset_activity
+    # Topics reworded after playtest misroutes (2026-10-01): "exerting" here
+    # pulled exertion questions away from crescendo_angina.
+    topic: Activity at the moment today's pain began
+    answer: >-
+      I was just sitting having a cuppa, reading the paper.
+    volunteered: false
+    importance: essential
+  - id: duration_ongoing
+    topic: How long it has lasted and whether it is still present now
+    answer: >-
+      It's been going the whole time — so an hour and a half, near enough.
+      Still there now.
+    # Obvious to the patient: he is sitting there with it.
+    volunteered: true
+    importance: red_flag
+  # covers (decoys.ts): the generic decoys an item is this case's version of.
+  # If the decoy wins a question, nothing is scored, and for a present fact
+  # the patient denies it ("never had chest pain before").
+  - id: sweating
+    topic: Sweating or clamminess with the pain
+    answer: Yeah, I've been sweating like anything. Thought it was just hot.
+    volunteered: false
+    importance: red_flag
+    covers: [other_sweats]
+  - id: dyspnoea
+    topic: Shortness of breath
+    answer: A bit short of breath, yeah. Hard to get a proper breath in.
+    volunteered: false
+    importance: red_flag
+    covers: [other_breathing]
+  - id: presyncope
+    topic: Dizziness, light-headedness or fainting
+    answer: Bit light-headed getting out of the car. Didn't pass out.
+    volunteered: false
+    importance: red_flag
+  - id: crescendo_angina
+    topic: Had this chest pain before, e.g. on stairs or exertion
+    answer: >-
+      This past week I've had a bit of a tightness going up ladders — goes
+      away if I stop. Put it down to being unfit. It's been happening more.
+    volunteered: false
+    importance: red_flag
+    covers: [other_previous]
+  - id: nausea_vomiting
+    topic: Nausea or vomiting
+    answer: Feel a bit sick. Haven't vomited.
+    volunteered: false
+    # An associated symptom: the GP has to ask about it specifically.
+    importance: essential
+  - id: tearing_pain
+    topic: Sudden severe tearing or ripping pain
+    answer: >-
+      No, nothing like that. It crept up on me.
+    volunteered: false
+    # Pain through to the back is covered by pain_radiation.
+    importance: red_flag
+    absent: true
+  - id: neuro_symptoms
+    topic: Weakness, numbness or other neurological symptoms, or limb pain
+    answer: No. Arm's heavy but I can use it fine.
+    volunteered: false
+    importance: red_flag
+    covers: [other_numbness]
+    absent: true
+  - id: pde5_inhibitor
+    # A broad probe beyond his regular tablets counts (developer's decision,
+    # 2026-10-01); a bare "any medications?" lands on the regular-medicines
+    # decoy. "Taking" keeps allergy questions off it.
+    topic: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)
+    answer: >-
+      …Yeah. Took one of those Viagra tablets last night. Don't tell the missus
+      I told you.
+    volunteered: false
+    importance: red_flag
+  - id: aspirin_allergy
+    # Every medicine allergy, so "any allergies to medicines?" lands here
+    # rather than on the occasional-medicines item (the generic allergy
+    # decoy is covered).
+    topic: Allergies to any medicine, including aspirin
+    answer: No allergies that I know of. I've had Disprin before, no problems.
+    volunteered: false
+    # Incidental, not a red flag (developer's decision, 2026-10-01): true
+    # aspirin allergy is rare, and in AMI aspirin's benefit is judged to
+    # outweigh the risk. Kept so "any allergies?" still lands here and he
+    # gives his own answer. Not scored.
+    importance: incidental
+    covers: [other_allergies]
+    absent: true
+  - id: previous_cardiac
+    topic: Previous heart problems, angina, stents or heart operations
+    answer: Never had anything wrong with my heart.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: smoking
+    topic: Smoking history
+    answer: About twenty a day since I was a teenager. Been meaning to quit.
+    volunteered: false
+    importance: essential
+    covers: [other_smoking]
+  - id: diabetes
+    topic: Diabetes
+    answer: Not that I know of.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: anticoagulants
+    topic: Blood thinners (anticoagulants)
+    answer: >-
+      No, nothing like that.
+    volunteered: false
+    importance: essential
+    absent: true
+  # 2026-10-03 (developer's decision, Heidi full key check): aspirin or another
+  # antiplatelet already taken changes the loading decision (BMJ Best Practice,
+  # ANZCOR, NHF/CSANZ 2025). Separate from blood thinners and allergies above.
+  - id: antiplatelet
+    topic: Already taking aspirin or clopidogrel
+    answer: No, I don't take aspirin or anything like that.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: recent_bleeding
+    topic: Any recent bleeding
+    answer: >-
+      No.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: previous_stroke
+    # Reworded (eval:sweep, 2026-10-03): after the antiplatelet item was added,
+    # "Any previous stroke" also took "Have you had any operations?", so the
+    # patient denied a stroke when asked about surgery. With this wording the
+    # old and new keys release the same, interleaved 3 times.
+    topic: Ever had a stroke or mini-stroke
+    answer: >-
+      No, never.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: recent_surgery
+    topic: Any recent surgery
+    answer: >-
+      No operations.
+    volunteered: false
+    importance: supporting
+    covers: [other_operations]
+    absent: true
+  - id: family_history
+    topic: Family history of heart disease at a young age
+    answer: Dad had a heart attack at fifty-five. He died from it.
+    volunteered: false
+    importance: supporting
+    covers: [other_family]
+  - id: pleuritic_pain
+    topic: Whether the pain is worse on breathing in
+    answer: >-
+      No, breathing doesn't change it.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: positional_pain
+    topic: Whether the pain changes lying flat or sitting forward
+    answer: >-
+      No, it's the same however I sit.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: movement_pain
+    topic: Whether moving or pressing on the chest makes it worse
+    answer: >-
+      No, moving doesn't change it.
+    volunteered: false
+    importance: supporting
+    absent: true
+    # "Does anything make it better or worse? Like moving, breathing in,
+    # eating..." went to the generic decoy, not his five items (multi-agent
+    # playtest, 2026-10-01).
+    covers: [other_relief]
+  - id: heartburn_history
+    topic: Previous heartburn or reflux
+    answer: >-
+      I get a bit of heartburn after a big feed sometimes. This isn't like that really.
+    volunteered: false
+    importance: supporting
+  - id: meal_relation
+    topic: Whether the pain is related to meals
+    answer: >-
+      No, I didn't eat much. It wasn't after food.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: acid_regurgitation
+    topic: Acid taste or regurgitation
+    answer: >-
+      No, no acid coming up.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: antacid_response
+    topic: Whether antacids or anything else relieved it
+    answer: Had a couple of Quick-Eze. Didn't touch it.
+    volunteered: false
+    importance: supporting
+    covers: [other_treatment_tried]
+  - id: leg_swelling
+    topic: Leg swelling or calf pain
+    answer: >-
+      No, legs are fine.
+    volunteered: false
+    importance: supporting
+    covers: [other_swelling]
+    absent: true
+  - id: immobility_travel
+    topic: Long trips or bed rest recently
+    answer: >-
+      No, I've been working as usual.
+    volunteered: false
+    importance: supporting
+    covers: [other_travel]
+    absent: true
+  - id: previous_clots
+    topic: Blood clots in the legs or lungs, ever
+    answer: >-
+      No, never had a clot.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: alcohol
+    topic: Alcohol intake
+    answer: Few beers after work. Maybe four or five a night.
+    volunteered: false
+    importance: incidental
+    covers: [other_alcohol]
+  # Authored because, asked "how bad is it out of ten?", the patient made
+  # a number up (playtest, medical student round, 2026-10-01). Incidental:
+  # not scored; consistent with the other pain answers.
+  - id: pain_severity
+    topic: How bad the discomfort is
+    answer: I don't know. Maybe a six? It's more heavy than sore.
+    volunteered: false
+    importance: incidental
+
+examination:
+  heart_rate:
+    finding: 54, regular.
+    necessity: essential
+  blood_pressure:
+    finding: 104/68.
+    necessity: essential
+  resp_rate:
+    finding: "20."
+    necessity: useful
+  spo2:
+    finding: 96% on room air.
+    necessity: essential
+  temperature:
+    finding: 36.6 °C.
+    necessity: useful
+  general_inspection:
+    finding: Pale, grey and clammy. Sweating. Anxious, shifting in the chair.
+    necessity: essential
+  bp_both_arms:
+    finding: Right 104/68, left 102/66. Radial pulses equal.
+    necessity: essential
+  cardiac_auscultation:
+    finding: Heart sounds dual, soft S4. No murmur. No rub.
+    abnormal: true
+    necessity: useful
+  chest_auscultation:
+    finding: Chest clear. No crackles.
+    necessity: useful
+  jvp:
+    finding: JVP not raised.
+    necessity: useful
+  chest_wall_palpation:
+    finding: No chest wall tenderness.
+    necessity: useful
+  abdominal_palpation:
+    finding: Soft, non-tender. No masses.
+    necessity: useful
+  calves:
+    finding: No calf swelling or tenderness.
+    necessity: useful
+  neuro_screen:
+    finding: Grossly normal power and sensation in all limbs.
+    necessity: useful
+
+investigations:
+  ecg_12_lead:
+    abnormal: true
+    result: >-
+      Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF.
+      Reciprocal ST depression in I and aVL. No LBBB.
+    turnaround_days: 0
+    necessity: essential
+  # Looking for right ventricular involvement in an inferior STEMI is good
+  # practice [em p.252 L.11727; murtagh p.905 L.14734]. Authored negative to
+  # match the exam (JVP not raised, BP 104/68 rather than hypotensive): the
+  # GTN harm rests on the sildenafil. Developer's request, 2026-10-01.
+  ecg_right_sided:
+    result: No ST elevation in V4R. No evidence of right ventricular involvement.
+    turnaround_days: 0
+    # 2026-10-03 (developer's decision, Heidi full key check): inferior STEMI with
+    # BP 104/68 and HR 54 is when right-sided leads are mandated (BMJ Best
+    # Practice, NHFA/CSANZ, ANZCOR 2026).
+    necessity: essential
+  bgl_fingerprick:
+    result: 7.4 mmol/L.
+    turnaround_days: 0
+    necessity: useful
+  poc_troponin:
+    # Useful (developer's decision, 2026-10-01, after the sources: the ECG
+    # alone decides STEMI transfer [murtagh p.900 L14663; talley p.185
+    # L8622], and one early POC troponin settles nothing). The trap stays:
+    # ~90 minutes after onset is too early to exclude infarction (troponin
+    # rises over 3-12 h and may need 10 h to be reliably negative; murtagh
+    # p.898 L14623), and the slip doesn't say so. Waiting for it, or being
+    # reassured by it, is harmful management (see below).
+    result: Negative.
+    turnaround_days: 0
+    necessity: useful
+  chest_xray:
+    result: Normal heart size, clear lungs, normal mediastinum.
+    turnaround_days: 0
+    necessity: unnecessary
+  # Formal pathology is acceptable (developer's decision, 2026-10-01): blood
+  # drawn with the IV line [murtagh p.900 L14665] is useful to the hospital
+  # over the next few days. None of it is back during the consult, and none
+  # of it may delay transfer: the ECG alone selects for reperfusion [murtagh
+  # p.900 L14663; talley p.185 L8622]. Waiting is the harmful management
+  # item "Wait for troponin".
+  troponin_lab:
+    abnormal: true
+    # Drawn 90 minutes after onset: raised, not "markedly" (troponin rises
+    # over 3-12 h; murtagh p.898 L14623). Developer's call, 2026-10-01.
+    result: hs-troponin raised, above the 99th percentile.
+    necessity: acceptable
+  creatine_kinase:
+    # A cardiac enzyme for AMI alongside troponin [murtagh p.867 L14140];
+    # rises only after 6-8 h from onset of pain, peaking at 20-24 h [murtagh
+    # p.898 L14623]. Collected 90 minutes after onset, so still normal.
+    result: CK 142 U/L, within the reference range.
+    necessity: acceptable
+  fbe:
+    result: Hb 152 g/L, WCC 8.1, platelets 236. Normal indices.
+    turnaround_days: 1
+    necessity: acceptable
+  uec:
+    # Normal potassium on perindopril.
+    result: Na 139, K 4.4, urea 5.6, creatinine 86 µmol/L, eGFR >90.
+    turnaround_days: 1
+    necessity: acceptable
+  lft:
+    result: Within normal limits.
+    turnaround_days: 1
+    necessity: acceptable
+  coags:
+    # No anticoagulant.
+    result: INR 1.0. APTT 31 s.
+    turnaround_days: 1
+    necessity: acceptable
+  d_dimer:
+    # Not formal pathology for later: D-dimer cannot rule out dissection
+    # [em p.317 L14711], and is of no use to the cath lab.
+    result: 0.3 mg/L FEU.
+    turnaround_days: 1
+    necessity: unnecessary
+  lipids:
+    abnormal: true
+    result: Total cholesterol 6.1, LDL 3.9, HDL 0.9, TG 2.3 mmol/L.
+    necessity: acceptable
+  hba1c:
+    result: HbA1c 5.9%.
+    necessity: acceptable
+  ct_coronary_angiogram:
+    result: Not performed — booked for next week.
+    necessity: harmful
+    consequence: >-
+      Graham goes home to wait for a CT coronary angiogram next week. He
+      arrests that evening.
+    aside: The CT coronary angiogram booked for next week would only have delayed him.
+  exercise_stress_test:
+    result: Not performed — booked for next week.
+    turnaround_days: 7
+    necessity: harmful
+    consequence: >-
+      Graham goes home to wait for his stress test next week. He arrests
+      that evening.
+    aside: The stress test booked for next week would only have delayed him.
+  calcium_magnesium_phosphate:
+    # Potassium and magnesium are checked after infarction [murtagh p.902
+    # L14702]. Acceptable, like the bloods above.
+    result: Calcium 2.32, magnesium 0.84, phosphate 1.0 mmol/L.
+    necessity: acceptable
+
+management:
+  # Items with `when` are matched to game actions by code. Plain strings can
+  # only be said: the judge looks for them in the closing explanation.
+  # Omissions (withholding GTN, no oxygen) are never scored.
+  ideal:
+    - text: Call an ambulance (000) immediately for STEMI transfer
+      when: { refer: [ambulance_ed] }
+      required: true
+    - text: Aspirin 300 mg chewed
+      when: { give: [aspirin] }
+    - text: Phone the receiving hospital with the STEMI ECG
+      when: { refer: [phone_ed_handover] }
+    - Stay with the patient with a defibrillator available until the ambulance arrives
+  acceptable:
+    - text: Aspirin prescribed rather than given now
+      when: { prescribe: [aspirin] }
+    # Acceptable, not ideal (developer's decision, 2026-10-01). IV opioid is
+    # in Murtagh's first-line box [murtagh p.900 L14668, p.3160 L51060], but
+    # titrated morphine is for severe pain [em p.252 L11740] and his is "maybe
+    # a six"; NHFA/CSANZ 2025 rates it only "reasonable" (consensus) and notes
+    # opioids slow oral P2Y12 inhibitors.
+    # 2026-10-03 (developer's decision, Heidi full key check): text names the
+    # blood pressure threshold (NSW ACI ECAT protocol).
+    - text: Titrated IV morphine or fentanyl for pain (not if systolic BP is below 100)
+      when: { give: [morphine, fentanyl] }
+    # 2026-10-03 (developer's decision, Heidi full key check): pretreatment with a
+    # P2Y12 inhibitor can be considered once STEMI is confirmed (NHF/CSANZ 2025,
+    # NSW ACI ECAT protocol). No safety rule applies to him (no iron deficiency).
+    - text: P2Y12 inhibitor (ticagrelor or clopidogrel) given before transfer
+      when: { give: [ticagrelor, clopidogrel] }
+  harmful:
+    # Developer's rule: no points for withholding; giving it is a major penalty.
+    - text: GTN (recent sildenafil)
+      when: { medicate: [glyceryl trinitrate] }
+      consequence: >-
+        Within minutes of the GTN, Graham's blood pressure collapses — the
+        sildenafil and nitrate together. He loses consciousness in the consult
+        room and the ambulance crew arrive to a resuscitation.
+    - text: Patient drives or is driven to hospital by private car
+      when: { refer: [ed_self_present] }
+      also_said: true
+      consequence: >-
+        Graham drives himself. He arrests at the wheel two kilometres from the
+        clinic and is found by a passer-by.
+      aside: Going by car would have risked an arrest at the wheel.
+    - text: Send the patient home (e.g. "go home and rest", "come back if it gets worse")
+      consequence: >-
+        Graham goes home. He collapses in his ute an hour later; the ambulance
+        crew attempt resuscitation.
+      aside: Sent home, he would have collapsed within the hour.
+    - text: Diagnose reflux and give a PPI, H2 antagonist or antacid
+      when:
+        medicate:
+          - omeprazole
+          - esomeprazole
+          - pantoprazole
+          - rabeprazole
+          - famotidine
+          - aluminium hydroxide + magnesium hydroxide + simeticone
+          - sodium alginate + sodium bicarbonate + calcium carbonate
+      consequence: >-
+        Reassured it's reflux, Graham heads back to work with antacids. He
+        collapses on a job that afternoon.
+      aside: The reflux tablets treated the wrong problem, and reassured by them he might have gone back to work.
+    - text: Wait for troponin before arranging transfer
+      consequence: >-
+        While everyone waits on a blood test, the infarct extends. Graham
+        reaches the cath lab hours late with a large inferior infarct.
+    - text: Reassure on the basis of a negative early troponin
+      consequence: >-
+        The early troponin was negative, so Graham was reassured. He
+        re-presents by ambulance that evening with a completed infarct.
+      aside: The early troponin proved nothing; reassured by it, he would have come back by ambulance that evening.
+    # Drafted from the references, not yet reviewed (see docs/research).
+    # Avoid all nitrates (not just GTN) within 24 h of sildenafil [murtagh p.888 L14518]; avoid nitrates within 1-5 days of a PDE-5 inhibitor [murtagh p.889 L14537]; nitrates contraindicated within 24 h of sildenafil because of profound vasodilatation and hypotension [em p.258 L12029]. Graham took sildenafil last night (case history). The existing GTN item only matches glyceryl trinitrate.
+    - text: Long-acting nitrate (recent sildenafil)
+      when: { medicate: [isosorbide mononitrate] }
+      consequence: >-
+        The long-acting nitrate combines with last night's Viagra. Graham's
+        blood pressure falls away over the next hour and he collapses, and
+        the effect cannot simply be switched off.
+    # MI and angina are often missed; chest pain wrongly attributed elsewhere is a named pitfall [murtagh p.863 L14025, p.863 L14033]; musculoskeletal chest pain is the condition treated with NSAIDs [em p.247 L11417]; after myocardial infarction NSAIDs should be avoided because they may impair myocardial healing and scar formation [em p.292 L13550]; post-infarct anti-inflammatories only "with caution" [murtagh p.904 L14730]. Pericarditis and musculoskeletal chest pain are on this case's differential list.
+    - text: NSAID for the chest pain (treated as pericarditis or chest wall pain)
+      when:
+        medicate:
+          - ibuprofen
+          - naproxen
+          - naproxen sodium
+          - diclofenac
+          - celecoxib
+          - meloxicam
+          - indometacin
+          - mefenamic acid
+      consequence: >-
+        Graham is told it's inflammation and given an anti-inflammatory. It
+        does nothing for the blocked artery, and it works against the heart
+        muscle that is trying to heal from the infarct.
+    # Missing reflux instead of ischaemia is the classic pitfall [murtagh p.863 L14025, p.863 L14033]; symptom relief after antacids does not distinguish the cause [em p.247 L11424]. Famotidine (H2 antagonist) is the one acid-suppressing drug in the formulary not covered by the existing reflux item.
+    - text: Beta blocker given now (bradycardic, borderline BP, inferior STEMI)
+      when: { give: [metoprolol, atenolol, bisoprolol] }
+      consequence: >-
+        Graham's pulse was already slow from the inferior infarct. After the
+        beta blocker it drops into the 30s, his blood pressure falls, and he
+        is barely conscious when the ambulance arrives.
+    # 2026-10-03 (developer's decision): at BP 104/68, with possible RV involvement, an ACE
+    # inhibitor or ARB needs haemodynamic stability first, and furosemide drops the preload
+    # an RV infarct depends on (BMJ; NHF/CSANZ 2025 via bpacNZ; via Heidi Evidence, docs/review/heidi/answers.md).
+    - text: An ACE inhibitor or ARB given in the clinic
+      when: { give: [perindopril, ramipril, candesartan, irbesartan, losartan] }
+      consequence: >-
+        Graham's blood pressure, already low, falls further. He is grey and
+        barely conscious when the ambulance arrives.
+    - text: Furosemide given in the clinic
+      when: { give: [furosemide] }
+      consequence: >-
+        The diuretic empties the veins Graham's struggling right ventricle
+        depends on. His blood pressure collapses before the ambulance arrives.
+
+consequences:
+  ideal: >-
+    The ambulance arrives within minutes. Graham goes straight to the cath lab
+    and has a stent to his right coronary artery. He is home in four days,
+    starts cardiac rehab, and his wife sends the clinic a card. He's quit
+    smoking.
+  acceptable: Graham reaches the cath lab and has a stent to his right coronary artery.
+  harmful: >-
+    Graham comes to harm from a management decision that should not have
+    been made, and the delay to reperfusion costs heart muscle.
+  missed_red_flag: >-
+    Without the duration, sweating, crescendo history or medication
+    question, the danger was never recognised. Graham leaves with antacids
+    and has a cardiac arrest that afternoon.

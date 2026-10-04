@@ -1,0 +1,444 @@
+# Pilot case — drafted by Claude from the developer's reference texts.
+# NOT clinically reviewed. Source citations are in ground_truth.notes.
+id: dysuria_cystitis
+status: draft
+title: Stinging when I wee
+difficulty: 1
+presenting_complaint: Burning when passing urine
+condition_description: >-
+  Burning when I wee since yesterday. Pretty sure it's a UTI again. Need antibiotics please.
+
+booked_urgent: true
+
+patient:
+  name: Chloe Nguyen
+  age: 22
+  sex: F
+  occupation: Hospitality worker (café barista), studying part-time
+  persona:
+    personality: >-
+      Friendly and practical. Fairly sure she knows what this is and wants to
+      get a script and get back to work. A little embarrassed talking about
+      sex, but answers honestly if asked plainly.
+    health_literacy: medium
+    emotional_state: Uncomfortable and mildly impatient; not worried.
+    verbosity: normal
+    conceals:
+      - Her sex life, until asked directly (then answers honestly)
+  # How she is drawn; cosmetic only, never a finding.
+  appearance:
+    build: slim
+    skin: light
+    hair: black
+    hair_length: long
+    eyes: brown
+
+record:
+  allergies: []
+  conditions: []
+  medications:
+    - Combined oral contraceptive pill (levonorgestrel/ethinylestradiol)
+
+# Troponin and other timed results show this as their collection time.
+consult_start: "10:15"
+
+ground_truth:
+  # Diagnosis keys are ids from catalogue/diagnoses.yaml.
+  diagnosis: cystitis
+  acceptable_diagnoses: [uti, lower_uti]
+  sinister: false
+  differentials: [sti_urethritis, chlamydia, vaginal_candidiasis, bacterial_vaginosis, complicated_uti]
+  sinister_diagnoses: [pyelonephritis, pid, ectopic_pregnancy, appendicitis]
+  notes: >-
+    Routine case testing efficiency: quick exclusion of pyelonephritis,
+    pregnancy, STI and vaginitis; dipstick; a first-line short course.
+    Sources: presentation and precipitants [murtagh p.388-391, p.404,
+    p.1854-1856]; dysuria without discharge ~90% cystitis [em p.484];
+    pyelonephritis features [murtagh p.391; em p.484; talley p.325];
+    dipstick-guided empirical treatment, culture not mandatory [murtagh p.393,
+    p.395, p.404; em p.485]; imaging unnecessary [em p.485; murtagh p.404];
+    first line is any one of nitrofurantoin 100 mg 6-hourly 5 days,
+    fosfomycin 3 g single dose or trimethoprim 300 mg daily 3 days, with
+    cefalexin 500 mg 12-hourly 5 days only if none of these can be used
+    (eTG, developer's excerpt 2026-10-01); nitrofurantoin also [abx p.3
+    L65-67]; trimethoprim and cefalexin also [murtagh p.398 L6833-6837; em
+    p.485 L22096-22097]; consider an alternative to trimethoprim if used in
+    the last 3 months [em p.485 L22093]; fosfomycin product [TGA ARTG
+    411811, https://www.tga.gov.au/resources/artg/411811];
+    fluoroquinolone/amoxicillin first-line inappropriate
+    [abx p.3; murtagh p.398; em p.485]; no alkaliniser with nitrofurantoin
+    [murtagh p.396]; chlamydia screening in young sexually active women
+    [redbook p.156, p.160]. Age 22 chosen so the Red Book screening age
+    threshold applies whichever way the extracted symbol reads.
+
+history:
+  - id: dysuria_character
+    topic: What the pain on passing urine is like and when in the stream it occurs
+    answer: >-
+      It stings and burns, worst right at the end of weeing. Like my last UTI.
+    volunteered: true
+    importance: essential
+    covers: [other_urine]
+  - id: frequency_urgency
+    topic: How often and how urgently she needs to pass urine
+    answer: >-
+      I'm going constantly — every half hour — and only a little bit comes
+      out. I have to rush.
+    volunteered: true
+    importance: essential
+  - id: duration
+    topic: How long the symptoms have been present
+    answer: Since yesterday morning, so about a day and a half.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: fever_rigors
+    topic: Fever, sweats, chills or shaking
+    answer: No, no fevers or shivers. I feel fine apart from this.
+    volunteered: false
+    importance: red_flag
+    covers: [other_sweats]
+    absent: true
+  - id: loin_pain
+    topic: Pain in the back or sides (loins)
+    answer: No, nothing in my back. Just a bit of an ache low down in my tummy.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: nausea_vomiting
+    topic: Nausea, vomiting or feeling generally unwell
+    answer: No, I'm eating normally. Haven't been sick.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: pregnancy_possible
+    topic: Whether she could be pregnant
+    answer: >-
+      No, I don't think so.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: last_period
+    topic: When her last period was
+    answer: >-
+      About two weeks ago. It was normal.
+    volunteered: false
+    importance: essential
+  - id: contraception
+    topic: Contraception
+    answer: >-
+      I'm on the pill and I don't miss it.
+    volunteered: false
+    importance: essential
+  - id: abdominal_pain
+    topic: Abdominal pain beyond a low ache
+    answer: >-
+      Just the low ache above my bladder. Nothing else.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  - id: abnormal_bleeding
+    topic: Any unusual vaginal bleeding
+    answer: >-
+      No, just my normal periods.
+    volunteered: false
+    importance: red_flag
+    absent: true
+  # 2026-10-03 (developer's decision, Heidi full key check): screens for
+  # cervicitis or PID, distinct from "unusual bleeding" (EAU, AJGP, BMJ Best Practice).
+  - id: postcoital_intermenstrual_bleeding
+    topic: Bleeding after sex or between periods
+    answer: Um, no. Never after sex, and nothing between my periods.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: vaginal_discharge_itch
+    topic: Vaginal discharge, itch or irritation
+    answer: No, nothing like that.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: sexual_partners
+    topic: Sexual activity and partners
+    answer: >-
+      Um — yeah, I have a boyfriend. We've been together about a year. Just him.
+    volunteered: false
+    importance: essential
+  - id: condom_use
+    topic: Condom use
+    answer: >-
+      We don't use condoms because I'm on the pill.
+    volunteered: false
+    importance: essential
+  - id: haematuria
+    topic: Colour of the urine or any visible blood
+    answer: It's a bit cloudy and smells, but I haven't seen any blood.
+    volunteered: false
+    open_question: true
+    importance: essential
+  - id: previous_utis
+    topic: Previous urine infections
+    answer: >-
+      I had one UTI about two years ago, that's it.
+    volunteered: false
+    importance: essential
+    covers: [other_previous]
+  - id: renal_tract_problems
+    topic: Known kidney or bladder problems
+    answer: >-
+      No, nothing like that.
+    volunteered: false
+    importance: essential
+    absent: true
+  - id: diabetes
+    topic: Diabetes
+    answer: >-
+      No.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: immunosuppression
+    topic: Immune problems or immunosuppressant medicines
+    answer: >-
+      No.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: recent_antibiotics
+    topic: Antibiotics in the last few months
+    answer: >-
+      No antibiotics this year.
+    volunteered: false
+    importance: essential
+    absent: true
+  # Ask about allergies before any antimicrobial, record or not (ACSQHC
+  # Antimicrobial Stewardship Clinical Care Standard 2020, quality statement
+  # 3). Playtest, 2026-10-01: without this item "Are you allergic to any
+  # antibiotics?" released recent antibiotics and got "No antibiotics this
+  # year".
+  - id: antibiotic_allergy
+    topic: Allergy to antibiotics
+    answer: No, I'm not allergic to anything that I know of.
+    volunteered: false
+    importance: essential
+    covers: [other_allergies]
+    absent: true
+  - id: overseas_travel
+    topic: Recent overseas travel
+    answer: >-
+      No, haven't been overseas.
+    volunteered: false
+    importance: supporting
+    covers: [other_travel]
+    absent: true
+  - id: recent_intercourse
+    topic: Recent sexual intercourse as a possible trigger
+    answer: Yeah… we'd, um, been together the night before it started.
+    volunteered: false
+    importance: supporting
+  - id: dyspareunia
+    topic: Pain during intercourse
+    answer: No, that's never been a problem.
+    volunteered: false
+    importance: supporting
+    absent: true
+  - id: fluid_intake
+    topic: How much water or other fluid she drinks
+    answer: Probably not enough — mostly coffee at work, to be honest.
+    volunteered: false
+    importance: incidental
+  # Authored so the patient doesn't improvise habits (playtest, 2026-10-01).
+  # Incidental: no bearing on this diagnosis, so not scored.
+  - id: smoking
+    topic: Smoking
+    answer: No, I don't smoke.
+    volunteered: false
+    importance: incidental
+    covers: [other_smoking]
+    absent: true
+  - id: alcohol
+    topic: Alcohol
+    answer: A few drinks if I go out with friends, maybe twice a month.
+    volunteered: false
+    importance: incidental
+    covers: [other_alcohol]
+
+examination:
+  temperature:
+    finding: 36.8 °C.
+    necessity: essential
+  heart_rate:
+    finding: 78, regular.
+    necessity: essential
+  blood_pressure:
+    finding: 118/72.
+    necessity: useful
+  general_inspection:
+    finding: Looks well. Not unwell or toxic.
+    necessity: useful
+  # Authored so general palpation agrees with the suprapubic finding: the
+  # catalogue normal said "non-tender" (playtest round 3). Palpation
+  # focuses on the loins and suprapubic area [murtagh p.1856 L30443].
+  abdominal_palpation:
+    finding: >-
+      Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or
+      organomegaly.
+    abnormal: true
+    necessity: acceptable
+  abdominal_suprapubic:
+    finding: >-
+      Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No
+      masses.
+    abnormal: true
+    necessity: essential
+  renal_angle:
+    finding: No renal angle tenderness on either side.
+    necessity: essential
+  pelvic_speculum:
+    finding: Normal vulva and vagina; no discharge; cervix normal.
+    necessity: unnecessary
+  rectal:
+    finding: Not indicated; declined as unnecessary.
+    necessity: unnecessary
+
+investigations:
+  # Matches the authored heart rate: the catalogue normal says 72/min
+  # (playtest, 2026-10-01). Unnecessary, as an unlisted test scores.
+  ecg_12_lead:
+    result: Sinus rhythm 78/min. Normal axis and intervals. No ST or T-wave changes.
+    turnaround_days: 0
+    necessity: unnecessary
+  urine_dipstick:
+    abnormal: true
+    result: Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.
+    turnaround_days: 0
+    necessity: essential
+  urine_pregnancy_test:
+    result: Negative.
+    turnaround_days: 0
+    necessity: useful
+  urine_mcs:
+    abnormal: true
+    result: >-
+      Microscopy: leucocytes >100 ×10⁶/L. Culture: E. coli >10⁸ cfu/L,
+      sensitive to nitrofurantoin, fosfomycin, trimethoprim, cefalexin and
+      amoxicillin–clavulanate; resistant to amoxicillin.
+    turnaround_days: 2
+    necessity: useful
+  chlamydia_gonorrhoea_naat:
+    result: Chlamydia and gonorrhoea not detected.
+    turnaround_days: 2
+    necessity: useful
+  fbe:
+    result: Hb 131 g/L, WCC 7.9, platelets 280. Normal indices.
+    necessity: unnecessary
+  crp:
+    result: CRP 4 mg/L.
+    necessity: unnecessary
+  uec:
+    result: Na 140, K 4.0, urea 4.2, creatinine 64, eGFR >90.
+    necessity: unnecessary
+  renal_tract_ultrasound:
+    result: Normal kidneys and bladder.
+    turnaround_days: 3
+    necessity: unnecessary
+
+management:
+  # Items with `when` are matched to game actions by code. Plain strings can
+  # only be said: the judge looks for them in the closing explanation.
+  ideal:
+    # First line is any one of three regimens (eTG, developer's excerpt,
+    # 2026-10-01): one item with three alternatives, not three items, since
+    # the case maximum counts every ideal item and one script is the job.
+    - text: >-
+        First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days,
+        fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days
+      when:
+        - prescribe: [nitrofurantoin]
+          frequency: [Four times daily, Every 6 hours]
+          duration: [5 days]
+        # A single dose: scripted, or given in the room.
+        - medicate: [fosfomycin]
+          frequency: [Once only, Stat dose]
+          duration: [Single dose]
+        - prescribe: [trimethoprim]
+          frequency: [Once daily, In the morning, At night]
+          duration: [3 days]
+    - Advise plenty of fluids
+    - Paracetamol for discomfort
+    - Safety-net — return if fever, loin pain, vomiting, or not improving within 48 hours
+  acceptable:
+    # Second line: only if none of the first-line choices can be used (eTG,
+    # developer's excerpt, 2026-10-01).
+    - text: Cefalexin 500 mg orally 12-hourly for 5 days (second line)
+      when: { prescribe: [cefalexin], duration: [5 days] }
+    - text: Urinary alkaliniser with trimethoprim
+      when: { medicate: [sodium citrotartrate], with: [trimethoprim] }
+    # 2026-10-03 (developer's decision, Heidi full key check): a counselling
+    # point, so acceptable rather than ideal (BMJ Best Practice, PSA).
+    - Take the nitrofurantoin with food
+  harmful:
+    - text: A fluoroquinolone (ciprofloxacin, norfloxacin, moxifloxacin) first-line
+      when: { medicate: [ciprofloxacin, norfloxacin, moxifloxacin] }
+      consequence: >-
+        Chloe's infection clears, but the quinolone is flagged at the
+        practice's antimicrobial stewardship audit, and she develops Achilles
+        pain a week later.
+    - text: Amoxicillin alone
+      when: { medicate: [amoxicillin] }
+      consequence: >-
+        Chloe re-presents three days later no better: the E. coli was
+        amoxicillin-resistant.
+    # 7 days taken out (2026-10-03, developer's decision): AUA treats 7 days as the
+    # upper acceptable limit, longer than needed but not clearly harmful (via Heidi
+    # Evidence, docs/review/heidi/answers.md, cystitis message 1). 10+ days stays.
+    - text: Antibiotic course of 10 days or more for uncomplicated cystitis
+      when:
+        medicate:
+          - nitrofurantoin
+          - fosfomycin
+          - trimethoprim
+          - cefalexin
+          - amoxicillin + clavulanic acid
+          - amoxicillin
+          - ciprofloxacin
+          - norfloxacin
+          - trimethoprim + sulfamethoxazole
+        duration: [10 days, 14 days, 1 month, 3 months, Ongoing]
+      consequence: >-
+        The infection settles, but the long course brings thrush and diarrhoea,
+        and the prescription is flagged at the stewardship audit.
+    - text: Nitrofurantoin combined with a urinary alkaliniser
+      when: { medicate: [nitrofurantoin], with: [sodium citrotartrate] }
+      consequence: >-
+        The alkaliniser blunts the nitrofurantoin. Chloe's symptoms drag on and
+        she re-presents for a second course.
+
+  # Amoxicillin-clavulanate is not indicated (developer's decision,
+  # 2026-10-01): the eTG excerpt names cefalexin as the only fallback, so a
+  # broad-spectrum course where narrow first-line ones exist costs as an
+  # unlisted drug; ten days or more is still the long-course harm.
+  # Ceftriaxone appears in the sources for UTI only as IV therapy for severe pyelonephritis in penicillin hypersensitivity [em p.486 L22124]; uncomplicated cystitis is treated with oral nitrofurantoin, trimethoprim, cefalexin or amoxicillin-clavulanate [abx p.3 L80; murtagh p.398 L6833–6849]; overprescribing broad-spectrum antibiotics brings C. difficile, anaphylaxis and resistance [em p.350 L15929, p.350 L15933–15941].
+  # Ceftriaxone moved here from harmful (2026-10-03, developer's decision): parenteral
+  # treatment is for complicated or severe infection only; a stewardship error rather
+  # than a harm (BMJ Best Practice, via Heidi Evidence, answers.md, cystitis).
+  # Narrow penicillins moved here from harmful (2026-10-03, developer's decision): no
+  # E. coli activity, but a third of cystitis self-resolves; amoxicillin alone stays
+  # harmful as the common real error (EAU; BMJ; via Heidi Evidence, docs/review/heidi/answers.md).
+  # Co-trimoxazole moved here from harmful (2026-10-03, developer's decision, Heidi
+  # full key check): stewardship, not dangerous; first line overseas, Australia uses
+  # trimethoprim alone (IDSA, EAU, via BMJ Best Practice). 10+ days stays the long-course harm.
+  not_indicated: [amoxicillin + clavulanic acid, ceftriaxone, flucloxacillin, dicloxacillin, phenoxymethylpenicillin, benzylpenicillin, trimethoprim + sulfamethoxazole]
+
+consequences:
+  ideal: >-
+    Chloe texts the clinic two days later to say she's back to normal. No
+    follow-up needed.
+  acceptable: Symptoms settle over a few days and Chloe doesn't need to come back.
+  harmful: >-
+    Chloe re-presents. The treatment was inappropriate for uncomplicated
+    cystitis, and the prescription is flagged at the stewardship audit.
+  missed_red_flag: >-
+    Chloe re-presents two days later with fever, loin pain and vomiting — or
+    the diagnosis is revised to something that was never excluded. She needs
+    escalation that could have been anticipated at the first visit.
