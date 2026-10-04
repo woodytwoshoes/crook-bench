@@ -1,0 +1,487 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP today. Can you tell me when this started and how your cough and fever have changed since then?",
+  "released": [],
+  "flooded": false,
+  "reply": "It started three days ago. The cough was dry and hacking at first. Then I started burning up, on and off. I didn’t have a thermometer, but I was definitely roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Are you short of breath, and do you have any chest pain, especially when you breathe in? Have you coughed up any mucus or blood?",
+  "released": [
+   "breathlessness",
+   "pleuritic_pain",
+   "sputum_colour",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "I got puffed going up the stairs, but I'm alright sitting here. There's a sharp pain on the right side near my back that catches when I breathe in or cough. I've been coughing up stuff that started clear and turned rusty brown, but no actual blood.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "left",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "left",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt confused, faint, or unusually drowsy? Are you managing to drink and keep fluids down, and passing urine normally?",
+  "released": [
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "No, my head's clear. My wife reckons I'm just grumpy. I'm managing to drink and keep fluids down. I'm passing urine normally.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had shaking chills, a sore throat, runny nose, headaches or muscle aches? Any vomiting or diarrhoea? Has anyone around you been ill, or have you recently travelled?",
+  "released": [
+   "rigors",
+   "vomiting",
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "Yes, the first night I was shaking under the doona, teeth chattering, even though I was boiling. No vomiting. Haven't been anywhere, just school and home.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "side": "left",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "side": "left",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "side": "left",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "side": "left",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "side": "left",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have asthma, lung or heart disease, diabetes, kidney problems, or anything that weakens your immune system? What medicines or remedies have you taken, and are you allergic to any medicines?",
+  "released": [
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "immunosuppression",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No heart problems, no asthma or lung issues, no diabetes, nothing that weakens my immune system. I’m allergic to penicillin – I had hives and my lips swelled when I was a kid, but I haven’t needed antibiotics in years and it’s probably not on my file.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for telling me—that penicillin reaction is important, and I'll make sure it's documented. How soon after taking it did the hives and lip swelling start, and did you have trouble breathing or need hospital treatment? Have you taken any medicines for this illness, or any regular medicines?",
+  "released": [
+   "recent_hospital",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "The hives and lip swelling started within half an hour of taking penicillin, but I didn’t have trouble breathing and didn’t need hospital treatment. I haven’t taken any medicines for this illness and haven’t had any antibiotics. I haven’t been in hospital for years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke or vape, and how much alcohol do you drink? Have you had a blood clot before, any recent surgery or long periods immobile, or swelling or pain in one leg?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No, I’ve never smoked. I had a couple of beers on the weekend, none this week. My legs are fine, no swelling or pain in either leg.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "Your chest examination suggests an infection in the bottom of your right lung, called pneumonia. Your blood pressure and oxygen level are reassuring, although you are breathing slightly faster than normal. I'd like a chest X-ray to confirm this. Do you have someone at home who can support you, and would you be able to return for a check within two days?",
+  "released": [
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "Yes, my wife and our two teenagers are at home. She's working from home this week, so she can drive me back in if I need. I'll be able to return for a check within two days.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray confirms pneumonia in the lower part of your right lung, without fluid around it. You appear well enough to treat at home with close follow-up. Because your penicillin reaction was immediate, we must avoid penicillin antibiotics. I'll prescribe doxycycline, a different antibiotic. Before that, do you have any liver or kidney disease or problems swallowing tablets?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don’t have liver or kidney disease. I’ve never had trouble swallowing tablets.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1–2 tablets (500–1000 mg), at least 4–6 hours apart; maximum 8 tablets (4 g) in 24 hours",
+  "frequency": "When required",
+  "duration": "As directed",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Take the doxycycline morning and evening for five days, starting today. Take it with food and a full glass of water, and stay upright for at least 30 minutes afterwards; don't take it just before bed. Keep antacids and iron, calcium or magnesium supplements at least two hours apart from it. It can make you more sensitive to sunlight, so cover up and use sunscreen. If you develop hives, lip or tongue swelling or difficulty breathing, stop it and seek urgent help; call 000 for breathing difficulty or swelling of the tongue or throat.\n\nYou can take paracetamol for pain and fever as prescribed; don't combine it with cold-and-flu products containing paracetamol. Rest, drink fluids regularly, and avoid alcohol while unwell. Stay home from school while feverish and until you're feeling well enough; cover your cough and wash your hands.\n\nI want to review you in 48 hours to check your breathing, oxygen level and response. You should start feeling better within two to three days, although the cough and tiredness may take several weeks. If you're not improving within that time, we need to reassess rather than just extend the antibiotics.\n\nIf your breathing worsens, your chest pain becomes worse, you're coughing blood, you cannot drink, or you're passing much less urine, seek urgent medical care the same day. Call 000 for severe breathing difficulty, blue lips, collapse or confusion. Don't wait for your follow-up if you're getting worse. If symptoms persist after treatment, we may need another chest X-ray. What questions or concerns do you have about this plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want to make sure I'm not going to end up in hospital again. I don't want to be stuck with this cough for weeks.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "I understand that's worrying. The findings today suggest we can safely start treatment at home, but the early review and warning signs matter because pneumonia can sometimes worsen. Antibiotics should improve the fever and how unwell you feel before the cough fully settles. You mentioned hospital again—what were you admitted for previously?",
+  "released": [],
+  "flooded": false,
+  "reply": "I was in hospital for a bad chest infection a few years back. It was a bit of a nightmare, but I got better.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Was that your only previous serious chest infection, and did your breathing return completely to normal afterwards? Were you ever told there was an underlying lung problem?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that was the only serious chest infection. My breathing returned to normal. No, I wasn't told there was an underlying lung problem.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring. Having needed hospital treatment once doesn't mean you'll need it this time. Your wife can help keep an eye on you, and please contact us sooner if you deteriorate. We'll record penicillin as an allergy with hives and lip swelling within 30 minutes, so it isn't missed in future. Once you're recovered, we can discuss whether formal allergy assessment would be useful. I'll arrange the review in two days; if the cough or breathlessness isn't settling over the following weeks, come back for another assessment.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks. I'll keep an eye on it. If it's not better in a few days, I'll come back.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 330
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3",
+    "acceptable_4"
+   ],
+   "quotes": {
+    "ideal_2": "I want to review you in 48 hours to check your breathing, oxygen level and response.",
+    "ideal_3": "If your breathing worsens, your chest pain becomes worse, you're coughing blood, you cannot drink, or you're passing much less urine, seek urgent medical care the same day.",
+    "acceptable_3": "Rest, drink fluids regularly, and avoid alcohol while unwell.",
+    "acceptable_4": "We'll record penicillin as an allergy with hives and lip swelling within 30 minutes, so it isn't missed in future."
+   }
+  },
+  "total": 370,
+  "max": 425,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 330
+ }
+]

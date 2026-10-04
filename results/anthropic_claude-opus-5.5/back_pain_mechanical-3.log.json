@@ -1,0 +1,430 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm the GP. Tell me what happened with your back and how it's been since?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I lifted a big pot plant in the garden on Saturday and felt a twinge. I woke up Sunday and could barely get out of bed. The pain is low on the left side of my back and sometimes goes into my left buttock. It gets worse when I bend or get out of a chair, but it's better when I lie still with a heat pack. It's worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain go below your knee or into your foot, and any numbness, pins and needles or weakness in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, the pain doesn't go below my knee or into my foot. I haven't noticed any numbness, pins and needles, or weakness in my legs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Any trouble passing urine or controlling your bladder or bowels, or numbness around your bottom or genitals when you wipe?",
+  "released": [
+   "bladder_function",
+   "bowel_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any trouble passing urine, and I haven't noticed any loss of bowel control. I don't have any numbness around my bottom, genitals or back passage either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any fevers, sweats, unexplained weight loss, history of cancer, steroid use, injecting drugs, or recent infections? And does the pain wake you at night or is there severe pain even when lying still?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history",
+   "steroid_use",
+   "iv_drug_use",
+   "night_rest_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or recent infections. I've put on a bit of weight, not lost any. No history of cancer, no steroid use, never injected drugs. The pain doesn't wake me at night, it just hurts when I roll over, but once I'm settled I can sleep, and it's not there constantly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Injecting drug use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had back problems before? Any morning stiffness lasting over half an hour in general? And what have you tried for pain so far, and any other medical issues like stomach ulcers, kidney problems or asthma?",
+  "released": [
+   "previous_episodes",
+   "morning_stiffness",
+   "analgesia_tried",
+   "stomach_ulcers",
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "I had a minor back tweak about five years ago, but it was gone in a week. I get a bit stiff in the morning, but it loosens up in ten minutes or so. I've tried some paracetamol, but it didn't do much. I have a history of ulcers, but my kidneys are fine as far as I know, and I don't have asthma.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Morning stiffness and how long it lasts"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Tell me about the ulcers — when, did they bleed, were you on treatment? And how much paracetamol were you taking? Also, what's worrying you most, and what are you hoping the MRI will show?",
+  "released": [
+   "concerns",
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I had ulcers a few years back, they didn't bleed but I was on treatment for a while. I've been taking paracetamol a couple of times a day, but it didn't help much. What's worrying me most is that I've been reading about slipped discs and people needing surgery, and I figured I'd need an MRI to see what's going on.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_aaa",
+  "finding": "Soft, non-tender, no pulsatile mass.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "A couple more: are you on any regular medicines or supplements now? Was the ulcer treated for the stomach bug (H. pylori)? And how are you going generally — stress, mood, sleep?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not on any regular medicines or supplements now. The ulcer was treated for H. pylori. I'm going okay, just a bit stressed and sleepless because of the back pain.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, the good news: your examination shows this is a strain of the muscles and ligaments in your lower back. Your nerves are working perfectly — strength, reflexes and feeling in your legs are all normal, and the nerve-stretch tests are negative, so there's no sign of a disc pressing on a nerve. \n\nAbout the MRI: I don't recommend one right now. Scans in the first weeks of simple back pain don't change treatment, and they often show \"disc bulges\" that most people your age have without any pain — which can lead to worry and unnecessary procedures. Medicare also doesn't cover a GP-ordered MRI for this. We'd only scan if warning signs appear or it isn't improving after about 6 weeks.\n\nMost people with this are much better within 2–6 weeks. What helps:\n- Keep moving gently — short walks several times a day, avoid long bed rest or lying on the couch all day. Change position every 20–30 minutes; set up your laptop at a desk or alternate sitting and standing.\n- Heat packs are good.\n- Take paracetamol regularly rather than now and then: two 500 mg tablets up to four times a day (max 8 a day) for the next week or so — it works better taken regularly.\n- Because of your ulcer history I'd avoid anti-inflammatory tablets like ibuprofen or Nurofen unless we discuss stomach protection first. I'll avoid tramadol given your reaction, and I don't recommend strong opioids for this — they don't help recovery much and have risks.\n- I'll refer you to a physio who can give you exercises and hands-on treatment and help you get back to normal activity.\n- Ease back into lifting; bend with your knees.\n\nGo straight to the emergency department if you get: trouble passing urine or holding urine/bowels, numbness around your bottom or genitals, weakness or numbness in your legs, or pain spreading down both legs. See me sooner if you get fevers, night pain that won't settle, or pain spreading below the knee. Otherwise let's review in 2 weeks, or sooner if you're not improving.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm relieved to hear it's not a disc problem, but I'm still worried it's serious. I was hoping the MRI would show something definite, but I guess I'll just follow the plan and see how it goes.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "That's completely understandable — it's a lot of pain, and pain this strong feels like it must mean damage. But how much it hurts doesn't match how serious it is; we checked carefully for the serious causes and found none. If things aren't heading the right way, we'll reassess and I'm happy to reconsider imaging then. Do you need a medical certificate for work?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't need a medical certificate. I'll just take it easy and follow the plan.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_4",
+    "ideal_5",
+    "ideal_6"
+   ],
+   "quotes": {
+    "ideal_0": "There's no sign of a disc pressing on a nerve.",
+    "ideal_4": "Heat packs are good.",
+    "ideal_5": "Go straight to the emergency department if you get: trouble passing urine or holding urine/bowels, numbness around your bottom or genitals, weakness or numbness in your legs, or pain spreading down both legs.",
+    "ideal_6": "Otherwise let's review in 2 weeks, or sooner if you're not improving."
+   }
+  },
+  "total": 340,
+  "max": 450,
+  "level": "Consultant",
+  "consequence": "acceptable",
+  "score": 280
+ }
+]

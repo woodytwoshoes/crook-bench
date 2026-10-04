@@ -1,0 +1,401 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the GP. Sorry you're feeling crook. Can you tell me where the pain started, where it is now, and how it's changed since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "It started down here on the right side, low down. Last night, about ten o'clock. So maybe fourteen hours. It's there all the time now. At first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any vomiting, feeling sick, loss of appetite, fever or chills, diarrhoea or constipation? And does it hurt more when you move, cough or go over bumps?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "fever",
+   "diarrhoea",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yes, felt sick since the early hours and threw up once this morning. Not hungry at all, which isn't like me. Felt hot and a bit shivery last night. No diarrhoea, went normally yesterday morning, nothing since. Walking hurts, every bump in the car was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Any burning or pain passing urine, blood in the urine, or pain going to your back or groin? Any pain or swelling in your testicles? Have you had your appendix out or any operations before, or any medical problems? Have you taken any painkillers today, and when did you last eat or drink?",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain",
+   "previous_surgery",
+   "analgesia_tried",
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal. Nothing down there. Never had an operation. I've still got my appendix, as far as I know. A couple of paracetamol at six this morning. Didn't do much. Just the usual. Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "When did you last eat or drink anything today? And did the pain start around your belly button first, or right where it is now?",
+  "released": [],
+  "flooded": false,
+  "reply": "I had some tea at seven this morning. It started down here on the right side, low down.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Is there someone who can drive you to the hospital emergency department straight from here? You shouldn't drive yourself.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I can't drive myself. My brother's coming to pick me up.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I don't think this is a stomach bug. The pain starting low on the right, getting constant, feeling sick, the vomiting, the fever, and the way it hurts when you cough or when I press and let go all point strongly to appendicitis. That's when the appendix, a small tube off the bowel, gets inflamed. It usually needs an operation to take it out, and it needs sorting out today, because if it isn't treated it can burst and cause a serious infection inside the belly. Your urine test doesn't suggest a kidney or bladder problem.\n\nMy plan: I'm phoning the emergency department now to tell them about you, and your brother should take you straight there. Please don't eat or drink anything from now, not even water, in case you need surgery. They'll do blood tests, probably a scan, give you pain relief through a drip, and the surgeons will see you. Don't take any more tablets on the way. If the pain suddenly gets much worse or spreads across your whole belly, you feel faint, very cold and clammy or confused, or you can't wait for your brother, call 000 for an ambulance straight away. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to have an operation. I've never had one. What's it like?",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "That's a really normal worry. It's one of the most common operations there is, especially in young people. Usually it's done through keyhole surgery: you're fully asleep under a general anaesthetic, they make two or three small cuts, and it takes about an hour. Most people go home within a day or two and are back to light duties in a couple of weeks. Since you do physical work, you'd avoid heavy lifting for a few weeks. Sometimes, in early or mild cases, the hospital team might try antibiotics first, but that's their decision once they've checked you over. The risks of leaving it are much bigger than the risks of the operation. The surgeons will explain everything and answer your questions before anything happens. Can I go ahead and call the hospital now?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, go ahead. I'll be okay.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I don't think this is a stomach bug. The pain starting low on the right, getting constant, feeling sick, the vomiting, the fever, and the way it hurts when you cough or when I press and let go all point strongly to appendicitis.",
+    "ideal_3": "Please don't eat or drink anything from now, not even water, in case you need surgery."
+   }
+  },
+  "total": 305,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 275
+ }
+]

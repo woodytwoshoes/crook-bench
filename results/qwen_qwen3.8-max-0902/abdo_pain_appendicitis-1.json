@@ -1,0 +1,89 @@
+{
+ "model": "qwen/qwen3.8-max-0902",
+ "case": "abdo_pain_appendicitis",
+ "rep": 1,
+ "ending": "ended",
+ "total": 305,
+ "max": 420,
+ "level": "Fellow",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 155,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 70,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 70,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": true
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": true
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": true
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "renal_colic",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "sepsis",
+   "role": null
+  }
+ ],
+ "says": 11,
+ "questions": 27,
+ "usage": {
+  "calls": 29,
+  "prompt_tokens": 189919,
+  "completion_tokens": 9026,
+  "cost": 0.145706
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:16:26.218Z",
+ "max_questions": 50
+}

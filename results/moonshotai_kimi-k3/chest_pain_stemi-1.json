@@ -1,0 +1,97 @@
+{
+ "model": "moonshotai/kimi-k3",
+ "case": "chest_pain_stemi",
+ "rep": 1,
+ "ending": "ended",
+ "total": 280,
+ "max": 505,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 155,
+   "max": 290
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 85
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 30
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 75,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Sweating or clamminess with the pain",
+   "elicited": false
+  },
+  {
+   "topic": "Shortness of breath",
+   "elicited": false
+  },
+  {
+   "topic": "Dizziness, light-headedness or fainting",
+   "elicited": true
+  },
+  {
+   "topic": "Had this chest pain before, e.g. on stairs or exertion",
+   "elicited": true
+  },
+  {
+   "topic": "Sudden severe tearing or ripping pain",
+   "elicited": false
+  },
+  {
+   "topic": "Weakness, numbness or other neurological symptoms, or limb pain",
+   "elicited": false
+  },
+  {
+   "topic": "Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "acs",
+   "role": "acceptable"
+  },
+  {
+   "label": "Differential 1",
+   "id": "pulmonary_embolism",
+   "role": "sinister"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "aortic_dissection",
+   "role": "sinister"
+  }
+ ],
+ "says": 4,
+ "questions": 11,
+ "usage": {
+  "calls": 20,
+  "prompt_tokens": 135318,
+  "completion_tokens": 9668,
+  "cost": 0.225943926
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:36:46.447Z",
+ "max_questions": 50
+}

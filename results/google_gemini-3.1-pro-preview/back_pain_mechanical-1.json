@@ -1,0 +1,121 @@
+{
+ "model": "google/gemini-3.1-pro-preview",
+ "case": "back_pain_mechanical",
+ "rep": 1,
+ "ending": "ended",
+ "total": 290,
+ "max": 450,
+ "level": "Fellow",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 135,
+   "max": 240
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 50,
+   "max": 65
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 105,
+   "max": 145
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Numbness around the buttocks, genitals or back passage",
+   "elicited": true
+  },
+  {
+   "topic": "Any change in passing urine — difficulty, retention or leaking",
+   "elicited": true
+  },
+  {
+   "topic": "Any loss of bowel control",
+   "elicited": true
+  },
+  {
+   "topic": "Weakness, numbness or pins and needles in the legs",
+   "elicited": true
+  },
+  {
+   "topic": "Any history of cancer",
+   "elicited": false
+  },
+  {
+   "topic": "Unexplained weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Fever or recent infection",
+   "elicited": true
+  },
+  {
+   "topic": "Injecting drug use",
+   "elicited": false
+  },
+  {
+   "topic": "Immune suppression",
+   "elicited": false
+  },
+  {
+   "topic": "Pain at night or at rest that keeps him awake",
+   "elicited": true
+  },
+  {
+   "topic": "Any fall or significant injury",
+   "elicited": false
+  },
+  {
+   "topic": "Steroid use",
+   "elicited": false
+  },
+  {
+   "topic": "Known osteoporosis",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "nonspecific_lbp",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "disc_prolapse_sciatica",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "cauda_equina",
+   "role": "sinister"
+  }
+ ],
+ "says": 16,
+ "questions": 25,
+ "usage": {
+  "calls": 26,
+  "prompt_tokens": 104830,
+  "completion_tokens": 3946,
+  "cost": 0.2260304
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T03:45:43.422Z",
+ "max_questions": 50
+}

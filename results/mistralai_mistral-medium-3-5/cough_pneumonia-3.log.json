@@ -1,0 +1,399 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm Dr. Smith. I can see you've been feeling unwell with a cough and fever. Can you tell me how long you've had these symptoms?",
+  "released": [],
+  "flooded": false,
+  "reply": "Three days now. It was a dry, hacking cough to start with. I've been burning up, on and off. Didn't have a thermometer, but I was roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any phlegm or mucus with the cough now, or is it still dry? And have you had any shortness of breath or difficulty breathing?",
+  "released": [
+   "sputum_colour",
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "Since yesterday I've been bringing stuff up, it's a rusty, brownish colour now, though it was clear at first. I only get puffed when going up the stairs, I got winded coming in from the car park, but I'm alright when sitting here.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That rusty-coloured phlegm is important to note. Have you had any chest pain, or a sharp pain when you breathe in? And have you noticed any wheezing or a whistling sound in your chest?",
+  "released": [
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "There's a sharp pain low down on the right side, near my back. It catches me when I take a deep breath or cough. I haven't noticed any wheezing or whistling sounds.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any night sweats, chills, or weight loss recently? And have you been in contact with anyone else who’s been unwell with similar symptoms?",
+  "released": [
+   "rigors",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "Yes, the first night I was shaking under the doona, teeth chattering, even though I was boiling, and if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent travel, or exposure to dust, chemicals, or unusual environments? And do you smoke, or have you ever smoked?",
+  "released": [
+   "recent_travel",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere, just school and home. Never smoked.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms, like a sore throat, headache, muscle aches, or fatigue? And have you noticed any swelling in your legs or ankles?",
+  "released": [
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had a sore throat, headache, muscle aches, or fatigue. No, legs are fine.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any previous episodes like this, or any history of lung problems, heart issues, or other chronic conditions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't had any previous episodes like this. I don't have any history of lung problems, heart issues, or other chronic conditions.",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I’d like to check your temperature, heart rate, and oxygen levels. It sounds like this might be a chest infection, possibly pneumonia, given the fever, cough with rusty phlegm, and the pain when you breathe in. I’ll also listen to your heart and check your pulse.",
+  "released": [
+   "heart_disease"
+  ],
+  "flooded": false,
+  "reply": "I don’t have any heart problems.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, your temperature is elevated at 38°C, your heart rate is slightly raised, and your breathing is a bit faster than normal. Your oxygen levels are slightly lower than ideal at 95%, which suggests your lungs aren’t working at their best. \n\nGiven your symptoms—fever, cough with rusty phlegm, sharp pain when breathing in, and the findings on examination—it’s likely you have a chest infection, possibly pneumonia. I’d like to order a chest X-ray to confirm this and rule out anything else. I’ll also arrange some blood tests to check for infection and how your body is coping.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be stuck in a hospital. Can I do the X-ray and blood tests at the clinic?",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, the chest X-ray shows an area of consolidation in your right lower lung, which is consistent with pneumonia. This is a serious infection, but it’s treatable. Given your symptoms, examination findings, and the X-ray, I recommend starting antibiotics to treat the pneumonia. \n\nI’ll prescribe a course of antibiotics for you. It’s important to start them as soon as possible. I’ll also advise you to rest, drink plenty of fluids, and monitor your temperature. If your symptoms worsen—if you develop difficulty breathing, severe chest pain, or confusion—you should seek immediate medical attention. \n\nWould you like me to prescribe the antibiotics now?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, go ahead. I just don’t want to be stuck in a hospital.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "500 mg",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "I’ve prescribed you a 7-day course of amoxicillin, 500 mg three times a day. Take it exactly as directed, even if you start feeling better. It’s important to finish the entire course to ensure the infection clears completely. \n\nI also want you to:\n- Rest as much as possible.\n- Drink plenty of fluids to stay hydrated.\n- Take paracetamol for fever or pain, if needed.\n- Monitor your temperature and symptoms closely.\n\nIf your fever doesn’t improve in 48 hours, or if you develop difficulty breathing, worsening chest pain, or confusion, seek immediate medical attention. You should also return if you start coughing up blood or feel significantly worse.\n\nWould you like me to arrange a follow-up appointment in a few days to check on your progress?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I’ll just take the antibiotics and see how I go. I’ve got exams to prepare for.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you’re busy, but it’s important to prioritise your health. If your symptoms don’t improve or worsen, please don’t hesitate to come back or go to the emergency department. Pneumonia can be serious, and it’s important to ensure it’s treated properly. \n\nDo you have any questions about the antibiotics or what to expect over the next few days?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I think that's it. Just make sure I don't miss any doses.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, to summarise: you have a chest infection, likely pneumonia, and I’ve prescribed antibiotics to treat it. Take the full course, rest, and monitor your symptoms. If you worsen or don’t improve in 48 hours, seek urgent care. \n\nTake care, and don’t hesitate to reach out if you need anything.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks. I'll be seeing you in a few days, then.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "It’s treatable. Given your symptoms, examination findings, and the X-ray, I recommend starting antibiotics to treat the pneumonia.",
+    "ideal_3": "If your symptoms worsen—if you develop difficulty breathing, severe chest pain, or confusion—you should seek immediate medical attention.",
+    "acceptable_3": "Drink plenty of fluids to stay hydrated."
+   }
+  },
+  "total": 215,
+  "max": 425,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 180
+ }
+]

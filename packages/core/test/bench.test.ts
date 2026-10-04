@@ -1,9 +1,11 @@
-import { readFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { parseCase, parseCatalogue, parseDiagnoses, parseFormulary, parseReferrals } from "../src/index.ts";
 import { Consult, type Library, type PatientChat } from "../scripts/bench/engine.ts";
 import { DEFAULT_LIMITS, playConsult, questionsIn, systemPrompt, type Usage } from "../scripts/bench/doctor.ts";
-import { leaderboard, summarise } from "../scripts/bench.ts";
+import { leaderboard, modelDirs, summarise } from "../scripts/bench.ts";
 
 const read = (path: string) => readFileSync(new URL(`../../../${path}`, import.meta.url), "utf8");
 const lib: Library = {
@@ -57,6 +59,26 @@ describe("benchmark consult", () => {
     expect(f.total).toBeGreaterThan(0);
     expect(usage.calls).toBe(6);
     expect(usage.cost).toBeCloseTo(0.006);
+  });
+
+  it("replays a consult from its log with no model and reproduces the bill", async () => {
+    const consult = new Consult(stemi, lib, patient);
+    scriptedDoctor([
+      ["say", { text: "What brings you in today?" }],
+      ["examine", { exam_id: "cardiac_auscultation" }],
+      ["order_test", { test_id: "ecg_12_lead" }],
+      ["prescribe", { drug_id: "aspirin_300mg_dispersible_tab", dose: "300 mg", frequency: "Stat dose", duration: "Single dose" }],
+      ["refer", { referral_id: "ambulance_ed" }],
+      ["diagnose", { most_likely: "stemi", differential: "unstable_angina", cant_miss: "aortic_dissection" }],
+      ["end_consult", {}],
+    ]);
+    await playConsult(consult, api, fresh());
+    expect(consult.log.map((e) => e.type)).toEqual(["say", "exam", "order", "rx", "refer", "dx", "end"]);
+    const replayed = new Consult(stemi, lib, () => Promise.reject(new Error("no model")));
+    const f = replayed.replay(consult.log);
+    expect(f.total).toBe(consult.result!.total);
+    expect(f.awards.map((x) => x.label)).toEqual(consult.result!.awards.map((x) => x.label));
+    expect(f.consequence).toBe(consult.result!.consequence);
   });
 
   it("refuses to end without a diagnosis, as the app asks for one", async () => {
@@ -146,5 +168,13 @@ describe("benchmark consult", () => {
     const header = leaderboard([a1]).split("\n")[0]!.split("|").map((c) => c.trim());
     expect(cells[header.indexOf("Questions asked")]).toBe("20");
     expect(cells[header.indexOf("Red flags per 10 questions")]).toBe("1.3");
+  });
+
+  it("reads only the model folders, not the leaderboard beside them", () => {
+    const out = mkdtempSync(join(tmpdir(), "bench-"));
+    mkdirSync(join(out, "a_model"));
+    writeFileSync(join(out, "LEADERBOARD.md"), "# Leaderboard\n");
+    expect(modelDirs(out)).toEqual(["a_model"]);
+    expect(modelDirs(join(out, "missing"))).toEqual([]);
   });
 });

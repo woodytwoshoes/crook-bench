@@ -1,0 +1,269 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Mr Mitchell. Your wife has brought you in today for some indigestion you've been having. Can you tell me more about it?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. It's been there an hour and a half, still there now. Right in the middle, behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. Came on about seven this morning, over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "Can you tell me more about the pain you're experiencing? Is it related to your breathing or movement?",
+  "released": [
+   "pleuritic_pain",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "No, breathing doesn't change it. Moving doesn't change it either. Pressing on it would probably make it worse, but I haven't tried that.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain is worse on breathing in"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether moving or pressing on the chest makes it worse"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to get an ECG done to check your heart. Can you tell me if you've experienced anything like this before?",
+  "released": [
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "This past week I've had a bit of tightness going up ladders. It goes away if I stop. I put it down to being unfit. It's been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms like nausea or dizziness this morning?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that.",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Mr Mitchell, your symptoms and the ECG results suggest you are having a heart attack. I'm going to call an ambulance to get you to the hospital as quickly as possible for further treatment.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was nothing serious. I just wanted some antacid.",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "1 tablet",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "1 spray",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "The ambulance is on its way. Please try to stay calm and still until they arrive.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was nothing serious. I just wanted some antacid.",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "dx",
+  "primary": "myocardial_infarction",
+  "differentials": [
+   "nstemi",
+   "stemi"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Acute myocardial infarction",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please try to stay calm and still until they arrive."
+   }
+  },
+  "total": 145,
+  "max": 505,
+  "level": "Resident",
+  "consequence": "harmful",
+  "score": 130
+ }
+]

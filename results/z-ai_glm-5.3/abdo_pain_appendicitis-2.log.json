@@ -1,0 +1,381 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. I'm sorry you're not feeling well. Tell me about this tummy pain — where did it start, and has it moved anywhere since?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button and moved down to the right side, low down. It's been there all the time now, though it sort of came and went at first. It's a seven out of ten.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "That's very helpful. A few more questions: have you felt sick or actually vomited? Have you been able to eat or drink anything? Any fever, chills or sweating? And have your bowels moved normally — any diarrhoea or constipation?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "fever",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours and threw up once this morning. Couldn't face breakfast, not hungry at all. Felt hot and a bit shivery last night. Went normally yesterday morning, nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A couple more things to rule out other causes: any pain or burning when you pass urine, or blood in your wee? Any pain in your groin or testicles? And have you had any cough, cold or chest troubles recently?",
+  "released": [
+   "urinary_symptoms",
+   "groin_lump",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "No pain or burning when I wee, and weeing's normal. No lumps down there, and nothing in the testicles. No cough, cold or chest issues.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Are you normally fit and well — any past operations, health conditions, or regular medicines? Has anyone around you been sick with vomiting or diarrhoea recently? And have you been somewhere the pain could be — any knocks or heavy lifting?",
+  "released": [
+   "previous_surgery",
+   "unwell_contacts"
+  ],
+  "flooded": false,
+  "reply": "I'm normally fit and well. Never had an operation, still got my appendix. Everyone at home and work is fine. No knocks or heavy lifting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Anyone around him with vomiting or diarrhoea"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   },
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I've examined your tummy and I'm fairly sure this isn't a stomach bug. Everything points to your appendix — the pain starting around your belly button and moving to the lower right side, the fever, feeling sick, and the way your tummy is tender and protective when I press there — is the classic picture of appendicitis, which is an inflamed or infected appendix. I've just spoken to the emergency department at the hospital and told them you're coming. I've given you paracetamol for the pain here. Here's what I need you to do:\n\n1. Go straight to the emergency department now — please don't drive yourself; get someone to drive you or take a taxi. Take this letter with you.\n2. Don't eat or drink anything from now on, in case they need to do an operation.\n3. The hospital will do blood tests and a scan to confirm it. Most people with appendicitis need their appendix removed, and these days it's usually done with keyhole surgery, which is very safe and most people are home within a day or two.\n\nIf the pain suddenly gets much worse, you start vomiting more, the pain spreads across your whole tummy, or you feel faint or very unwell on the way, call 000 for an ambulance. Any questions?",
+  "released": [
+   "faint"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't fainted or felt faint. I don't got any questions. I'll go to the hospital.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 310
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I'm fairly sure this isn't a stomach bug. Everything points to your appendix — the pain starting around your belly button and moving to the lower right side, the fever, feeling sick, and the way your tummy is tender and protective when I press there — is the classic picture of appendicitis",
+    "ideal_3": "Don't eat or drink anything from now on, in case they need to do an operation."
+   }
+  },
+  "total": 340,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "acceptable",
+  "score": 310
+ }
+]

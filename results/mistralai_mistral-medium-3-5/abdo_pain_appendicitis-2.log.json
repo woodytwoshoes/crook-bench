@@ -1,0 +1,437 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Smith. I can see you're in some discomfort. Can you tell me more about the tummy pain? When did it start and where exactly is it?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It started last night, about ten o'clock. It's down here on the right side, low down. It's there all the time now. At first it sort of came and went. It's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that. Has the pain changed at all since last night? And can you describe it—is it sharp, dull, or crampy?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, it's been the same. Dull, sort of. Not sharp. Not crampy.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any nausea, vomiting, or changes in your bowel habits, like diarrhoea or constipation?",
+  "released": [
+   "nausea_vomiting",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "Yes, I felt sick since the early hours and threw up once this morning. No diarrhoea, I went normally yesterday morning and nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any fever, sweating, or chills? And have you had any pain or burning when you pass urine?",
+  "released": [
+   "fever",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. Weeing is normal. No pain or burning when I pass urine.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any appetite? And have you noticed any bloating, belching, or passing more gas than usual?",
+  "released": [
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "No appetite. Not hungry at all. No bloating or belching. No more gas than usual.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any similar pain before? And have you had any recent injuries or surgeries on your abdomen?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this before. Never had an operation. I've still got my appendix, as far as I know.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any pain in your groin, testicles, or lower back? And have you had any recent sexual activity or exposure to anyone with similar symptoms?",
+  "released": [
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No pain in the groin, testicles or lower back. No lumps down there. No recent sexual activity. No exposure to anyone with similar symptoms.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any cough, shortness of breath, or chest pain? And have you travelled anywhere recently?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No cough, no shortness of breath, no chest pain. No, haven't been anywhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent overseas travel"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any medical conditions or take any medications, even over-the-counter ones? And do you smoke, drink alcohol, or use any recreational drugs?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No medical conditions. I don't take any medications. I don't smoke. A few beers on the weekend, nothing this week. No recreational drugs.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any blood in your stool, vomit, or urine? And have you had any dizziness or fainting spells?",
+  "released": [
+   "rectal_bleeding",
+   "faint"
+  ],
+  "flooded": false,
+  "reply": "No blood in my stool, vomit or urine. No, I haven't fainted or felt faint.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Let me check your temperature and pulse to see if there’s any sign of infection or other issues. Can I examine your abdomen as well?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, go ahead. Not sure.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, your temperature is slightly raised, and your heart rate is a bit fast. When I press on your right lower abdomen, it’s very tender, and there’s a sign called rebound tenderness—when I let go, it hurts more. That, along with the pain starting around the umbilicus and moving to the right lower side, makes me concerned about appendicitis. I’d like to do a quick test to check for infection and then refer you to the hospital for further assessment. How does that sound?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "That's what happened. I didn't think much of it at first. I'm not sure what to do.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, the urine test shows a trace of white blood cells, which could indicate an infection. Combined with the tenderness and rebound pain in your right lower abdomen, this strongly suggests appendicitis. This is a serious condition that usually requires surgery to remove the appendix. I need to refer you to the emergency department immediately for further assessment, including a surgical review and likely an ultrasound or CT scan. Do you have any questions or concerns about this?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to go to the hospital. It's just a stomach bug.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "I understand your concern, but appendicitis is a medical emergency. If the appendix bursts, it can lead to a serious infection in your abdomen, which can be life-threatening. The signs you have—pain starting near the belly button and moving to the right lower side, fever, nausea, vomiting, and the tenderness I found—are classic for appendicitis. It’s not something we can treat here, and it won’t go away on its own. The hospital will take good care of you, and it’s better to go now before it gets worse. Would you like me to call an ambulance or can you get someone to drive you?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll go. Just don't want to.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I’ve referred you to the emergency department. Please go straight there now. Avoid eating or drinking anything until you’ve been seen by the doctors there. If the pain gets worse, or you feel faint or very unwell, call an ambulance on 000. Do you have someone who can take you to the hospital?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I'll get a taxi.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "That’s fine. Please go directly to the emergency department and let them know you’ve been referred by your GP for suspected appendicitis. They’ll prioritise you. If you feel worse on the way, call 000 for an ambulance. Take care, and don’t delay.",
+  "released": [],
+  "flooded": false,
+  "reply": "Got it. Thanks.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "appendicitis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "This is a serious condition that usually requires surgery to remove the appendix. I need to refer you to the emergency department immediately for further assessment, including a surgical review and likely an ultrasound or CT scan.",
+    "ideal_3": "Avoid eating or drinking anything until you’ve been seen by the doctors there."
+   }
+  },
+  "total": 275,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 245
+ }
+]

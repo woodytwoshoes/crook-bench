@@ -1,0 +1,105 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "case": "cough_pneumonia",
+ "rep": 1,
+ "ending": "ended",
+ "total": 380,
+ "max": 425,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 180,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 85,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 5
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 110,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": true
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": true
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": false
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": true
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": true
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": false
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "acute_bronchitis",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "pulmonary_embolism",
+   "role": "sinister"
+  }
+ ],
+ "says": 15,
+ "questions": 28,
+ "usage": {
+  "calls": 19,
+  "prompt_tokens": 57951,
+  "completion_tokens": 1897,
+  "cost": 0.036043000000000006
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:04:48.856Z",
+ "max_questions": 50
+}

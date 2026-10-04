@@ -1,0 +1,451 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm Dr. Smith. I see you've hurt your lower back. Can you tell me more about what happened when you lifted something on the weekend?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I lifted a big pot plant in the garden on Saturday and felt a twinge. By Sunday, I could barely get out of bed. The pain is low down on the left side of my back and sometimes goes into my left buttock. It gets worse when I bend or get up from a chair, but it's better when I lie still with a heat pack. It's worse in the evening, but I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that. On a scale of 0 to 10, how severe is the pain at its worst?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "At its worst, the pain is about a seven when I move or roll over. If I keep still, it's maybe a three.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any numbness, tingling, or weakness in your legs or feet? And have you had any issues with bladder or bowel control, like difficulty passing urine or a loss of control?",
+  "released": [
+   "leg_neuro_symptoms",
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal — no weakness, numbness or tingling. I haven't had any issues with passing urine or bowel control.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, unexplained weight loss, or night sweats? And have you ever had back pain like this before?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, unexplained weight loss or night sweats. I had a similar back pain maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions, like diabetes, heart disease, or a history of cancer? And are you on any medications or supplements?",
+  "released": [
+   "cancer_history",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have diabetes, heart disease or a history of cancer. I've only taken some paracetamol, but it didn't do much, honestly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any swelling, redness, or warmth in your back or legs? And have you had any recent infections or injuries?",
+  "released": [
+   "significant_trauma"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any swelling, redness or warmth in my back or legs. I haven't had any recent infections or injuries — just the lifting on the weekend.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any fall or significant injury"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "psoas_sign",
+  "side": "left",
+  "finding": "Negative: hip extension causes no abdominal pain.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, I’d like to check your strength and sensation in your legs. Can you stand up for me and walk a few steps? Then, I’ll ask you to lie down so I can test your legs further.",
+  "released": [],
+  "flooded": false,
+  "reply": "I can stand up and walk a few steps, but it's a bit stiff and painful. I'll do it.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, I’ve examined your back and legs. Your pain seems to be coming from a muscle or ligament strain in your lower back, likely from lifting the pot plant. The good news is that there are no signs of nerve irritation or anything more serious. \n\nAt this stage, I don’t think an MRI is necessary, as most back pain like this improves with time and simple measures. Would you like me to explain what we can do to help you manage the pain and recover?",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I thought an MRI might be needed to see what's going on, but if it's just a muscle or ligament strain, then rest and simple measures should help. Can you explain what those measures are?",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Absolutely. The key is to stay as active as possible within the limits of your pain. Bed rest is not recommended, as it can slow recovery. I suggest:\n\n1. **Pain Relief**: Take regular paracetamol (up to 1g, 4 times a day) and consider an anti-inflammatory like ibuprofen (if you can take it) for a few days to reduce inflammation. Avoid tramadol due to your allergy.\n\n2. **Heat or Ice**: Continue using the heat pack for 15-20 minutes every few hours if it helps. Some people find ice packs helpful in the first 48 hours, but heat seems to be working for you.\n\n3. **Gentle Movement**: Try to keep moving gently. Walking is excellent, even if it’s just short distances. Avoid heavy lifting, bending, or twisting for now.\n\n4. **Posture**: Be mindful of your posture, especially when working from home. Use a chair with good back support and avoid slouching on the couch.\n\n5. **Exercises**: Once the pain starts to ease, gentle stretching and strengthening exercises for your back and core muscles can help prevent this from happening again. A physiotherapist can guide you with these.\n\n6. **Avoid Smoking**: If you smoke, try to cut down or quit, as smoking can slow healing.\n\nWould you like me to refer you to a physiotherapist for guidance on exercises?",
+  "released": [],
+  "flooded": false,
+  "reply": "I think staying active and using paracetamol and ibuprofen should help. Can I take ibuprofen? I haven’t had any issues with it before.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, you can take ibuprofen if you’ve taken it before without issues. The usual dose is 200-400 mg, 3 times a day with food. Do you have any stomach issues, like ulcers or heartburn, or are you on any blood pressure medications?",
+  "released": [
+   "stomach_ulcers"
+  ],
+  "flooded": false,
+  "reply": "No ulcers. I don’t take any blood pressure medications.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Great. Then ibuprofen is safe for you to try. Take it with food to protect your stomach. If you notice any stomach pain, heartburn, or bleeding, stop taking it and let me know.\n\nNow, let’s talk about red flags. While your symptoms sound like a muscle or ligament strain, it’s important to watch out for any of the following. If you develop any of these, seek medical attention immediately:\n\n- Numbness, tingling, or weakness in your legs or feet.\n- Difficulty passing urine or loss of bladder or bowel control.\n- Severe pain that doesn’t improve with rest or medication.\n- Fever, unexplained weight loss, or night sweats.\n\nIf your pain isn’t improving in a week or so, or if it gets worse, come back and see me. Otherwise, we can review in 2-3 weeks to see how you’re progressing.\n\nDoes this plan sound okay to you?",
+  "released": [
+   "night_rest_pain"
+  ],
+  "flooded": false,
+  "reply": "Yes, this plan sounds okay. I’ll try the ibuprofen with food and keep moving as much as I can. I’ll watch out for any of those red flags and come back if it doesn’t improve in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1g",
+  "frequency": "Four times daily",
+  "duration": "As directed",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "I’ve prescribed paracetamol 1g, up to four times a day, and ibuprofen 400 mg, three times a day with food for 5 days. You can collect these from the pharmacy.\n\nWould you like a referral to a physiotherapist to help with exercises and rehabilitation?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I'd like a referral to a physiotherapist.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "differentials": [
+   "nonspecific_lbp",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, to summarise: You’ve got mechanical low back pain, likely from a muscle or ligament strain when you lifted the pot plant. The plan is to stay active, use paracetamol and ibuprofen for pain relief, and avoid heavy lifting or twisting. I’ve referred you to a physiotherapist for exercises to help your recovery. \n\nWatch out for red flags like numbness, weakness, or bladder/bowel issues, and come back if your pain isn’t improving in a week or gets worse. Otherwise, we’ll check in again in 2-3 weeks. Does that sound good?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "Honestly? I've been reading about slipped discs and people needing surgery, but if it's just a muscle or ligament strain, then I guess I'll follow the plan.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "It’s completely normal to worry, especially when you read about more serious cases. But your symptoms and examination don’t suggest a slipped disc or anything that would need surgery. Most back pain like yours improves with time and simple measures. If things change or you’re not improving, we’ll reassess. For now, focus on staying active and following the plan. You’ll likely start feeling better in a few days to a week.",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess I'll just have to trust the plan then. I'll keep moving and take the medication.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "The good news is that there are no signs of nerve irritation or anything more serious.",
+    "ideal_1": "The key is to stay as active as possible within the limits of your pain.",
+    "ideal_4": "Continue using the heat pack for 15-20 minutes every few hours if it helps.",
+    "ideal_5": "Watch out for red flags like numbness, weakness, or bladder/bowel issues, and come back if your pain isn’t improving in a week or gets worse."
+   }
+  },
+  "total": 310,
+  "max": 450,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 250
+ }
+]

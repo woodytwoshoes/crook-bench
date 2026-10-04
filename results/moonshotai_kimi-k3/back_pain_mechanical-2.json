@@ -1,0 +1,121 @@
+{
+ "model": "moonshotai/kimi-k3",
+ "case": "back_pain_mechanical",
+ "rep": 2,
+ "ending": "ended",
+ "total": 315,
+ "max": 450,
+ "level": "Fellow",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 165,
+   "max": 240
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 65
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 105,
+   "max": 145
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Numbness around the buttocks, genitals or back passage",
+   "elicited": true
+  },
+  {
+   "topic": "Any change in passing urine — difficulty, retention or leaking",
+   "elicited": true
+  },
+  {
+   "topic": "Any loss of bowel control",
+   "elicited": true
+  },
+  {
+   "topic": "Weakness, numbness or pins and needles in the legs",
+   "elicited": true
+  },
+  {
+   "topic": "Any history of cancer",
+   "elicited": true
+  },
+  {
+   "topic": "Unexplained weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Fever or recent infection",
+   "elicited": true
+  },
+  {
+   "topic": "Injecting drug use",
+   "elicited": false
+  },
+  {
+   "topic": "Immune suppression",
+   "elicited": false
+  },
+  {
+   "topic": "Pain at night or at rest that keeps him awake",
+   "elicited": true
+  },
+  {
+   "topic": "Any fall or significant injury",
+   "elicited": false
+  },
+  {
+   "topic": "Steroid use",
+   "elicited": false
+  },
+  {
+   "topic": "Known osteoporosis",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "nonspecific_lbp",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "mechanical_lbp",
+   "role": "acceptable"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "cauda_equina",
+   "role": "sinister"
+  }
+ ],
+ "says": 11,
+ "questions": 25,
+ "usage": {
+  "calls": 23,
+  "prompt_tokens": 149812,
+  "completion_tokens": 7407,
+  "cost": 0.21632339999999997
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:29:15.541Z",
+ "max_questions": 50
+}

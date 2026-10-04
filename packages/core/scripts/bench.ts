@@ -6,6 +6,8 @@
 //   node packages/core/scripts/bench.ts run <model> [--cases free|all|id,id] [--reps 3] [--questions 50] [--concurrency 2] [--out bench-results]
 //   (--questions: how many questions the doctor may ask, the consult's time budget)
 //   node packages/core/scripts/bench.ts report [--out bench-results]
+//   node packages/core/scripts/bench.ts rescore [--write] [--out bench-results]
+//   (rescores finished consults from their logs against the current case files, no model calls)
 //
 // Env:
 //   DOCTOR_URL   the model under test's OpenAI-compatible API (default https://openrouter.ai/api/v1)
@@ -24,7 +26,7 @@ import {
   type ChatMessage,
   type FinalScore,
 } from "../src/index.ts";
-import { Consult, signed, type Library, type PatientChat } from "./bench/engine.ts";
+import { Consult, signed, type Library, type LogEntry, type PatientChat } from "./bench/engine.ts";
 import { DEFAULT_LIMITS, playConsult, questionsIn, type RunLimits, type Usage } from "./bench/doctor.ts";
 
 /** The free five: the cases the public build ships, open to everyone. */
@@ -206,6 +208,10 @@ const sd = (xs: number[]) => {
   return xs.length > 1 ? Math.sqrt(xs.reduce((s, x) => s + (x - m) ** 2, 0) / (xs.length - 1)) : 0;
 };
 
+/** The per-model folders in a results folder (LEADERBOARD.md sits beside them). */
+export const modelDirs = (outDir: string) =>
+  existsSync(outDir) ? readdirSync(outDir, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name) : [];
+
 /** The leaderboard, from every record in the results folder. */
 export function leaderboard(records: RunRecord[]): string {
   const byModel = new Map<string, RunRecord[]>();
@@ -251,7 +257,7 @@ export function leaderboard(records: RunRecord[]): string {
 function report(args: string[]) {
   const outDir = flag(args, "out", "bench-results");
   const records: RunRecord[] = [];
-  for (const m of existsSync(outDir) ? readdirSync(outDir) : []) {
+  for (const m of modelDirs(outDir)) {
     const dir = join(outDir, m);
     for (const f of readdirSync(dir).filter((x) => /-\d+\.json$/.test(x))) records.push(JSON.parse(readFileSync(join(dir, f), "utf8")) as RunRecord);
   }
@@ -261,9 +267,45 @@ function report(args: string[]) {
   console.log(table);
 }
 
+/**
+ * Rescores every finished consult from its log against the case files as they
+ * are now, with no model calls (Consult.replay). Without --write it only
+ * reports consults whose score would change; with it, the record and the
+ * transcript's bill are rewritten.
+ */
+function rescore(args: string[]) {
+  const outDir = flag(args, "out", "bench-results");
+  const write = args.includes("--write");
+  const lib = library();
+  let same = 0;
+  for (const m of modelDirs(outDir)) {
+    const dir = join(outDir, m);
+    for (const f of readdirSync(dir).filter((x) => /-\d+\.json$/.test(x))) {
+      const base = join(dir, f.replace(/\.json$/, ""));
+      const old = JSON.parse(readFileSync(`${base}.json`, "utf8")) as RunRecord;
+      const consult = new Consult(parseCase(read(`cases/${old.case}.yaml`)), lib, () => Promise.reject(new Error("no model in a rescore")));
+      const fs = consult.replay(JSON.parse(readFileSync(`${base}.log.json`, "utf8")) as LogEntry[]);
+      if (fs.total === old.total && fs.consequence === old.consequence) {
+        same++;
+        continue;
+      }
+      console.log(`${old.model} ${old.case} #${old.rep}: ${old.total} -> ${fs.total} (${old.consequence} -> ${fs.consequence})`);
+      if (!write) continue;
+      const record: RunRecord = { ...old, ...summarise(old.model, old.case, old.rep, old.ending, fs, old.says, old.questions, old.usage, old.started) };
+      writeFileSync(`${base}.json`, JSON.stringify(record, null, 1));
+      writeFileSync(`${base}.log.json`, JSON.stringify(consult.log, null, 1));
+      const md = readFileSync(`${base}.md`, "utf8");
+      const head = md.slice(0, md.indexOf("\n## Bill:"));
+      writeFileSync(`${base}.md`, `${head}\n## Bill: ${fs.total}/${fs.max} (${fs.level.name}), ${fs.consequence} (rescored)\n${fs.awards.map((x) => `- ${signed(x)}`).join("\n")}\n\n${fs.consequenceText.trim()}\n`);
+    }
+  }
+  console.log(`${same} consult(s) unchanged.`);
+}
+
 const [command, ...rest] = process.argv.slice(2);
 if (import.meta.url === `file://${process.argv[1]}`) {
   if (command === "run") await run(rest);
   else if (command === "report") report(rest);
-  else console.log("Usage: bench.ts run <model> [--cases free|all|id,id] [--reps 3] | bench.ts report");
+  else if (command === "rescore") rescore(rest);
+  else console.log("Usage: bench.ts run <model> [--cases free|all|id,id] [--reps 3] | bench.ts report | bench.ts rescore [--write]");
 }

@@ -1,0 +1,549 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. You look uncomfortable. Can you tell me where the pain is, how it started, and whether it has moved since last night?",
+  "released": [
+   "pain_onset",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "The pain started around my belly button last night, about ten o'clock, and it moved down to the right side over the past fourteen hours.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "How bad is the pain from zero to ten now, is it constant or coming in waves, and is it getting worse?",
+  "released": [
+   "pain_severity",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "It's a seven out of ten, constant now, but it started coming and going.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "left",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "left",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Does moving, coughing or going over bumps make it worse? Have you felt feverish, nauseated, or vomited?",
+  "released": [
+   "movement_pain",
+   "fever",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Yes, moving, walking or coughing makes it worse. I felt hot and a bit shivery last night, and I've been feeling sick since the early hours, throwing up once this morning.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you lost your appetite, and when did you last eat or drink? Have you had diarrhoea, constipation, blood in your poo, or trouble passing wind?",
+  "released": [
+   "anorexia",
+   "diarrhoea",
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "I couldn't face breakfast, not hungry at all, which isn't like me. I had breakfast yesterday morning, nothing since. No diarrhoea, no blood in my poo. I've been going normally. No trouble passing wind.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Any burning or blood when you wee, needing to wee more often, or pain in your back or side? Any pain or swelling in your testicles or groin?",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal. No pain or swelling down there. No lumps in the groin.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had this before, or had any operations or other medical problems? Have you taken any medicines for this, and do you have any allergies?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "Never had anything like this before. Never had an operation. I've still got my appendix as far as I know. Took a couple of paracetamol this morning, didn't do much. No allergies.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "I'm worried this could be an inflamed appendix rather than a stomach bug. I'll gently examine your tummy now. Is that okay? If needed, I'd also like to check for a groin hernia or a testicle problem, with a chaperone present and your privacy protected.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, go ahead. Just make it quick.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "side": "left",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "side": "left",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "side": "left",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "side": "left",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "side": "right",
+  "finding": "No renal angle tenderness.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "side": "right",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "left",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "right",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "side": "right",
+  "finding": "Right lower quadrant: Tender to light percussion. Elsewhere: resonant and non-tender.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "side": "right",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "What time did you take the paracetamol, and what strength and number of tablets? Have you been able to keep fluids down, and have you felt faint or dizzy?",
+  "released": [
+   "faint"
+  ],
+  "flooded": false,
+  "reply": "I took a couple of paracetamol at six this morning. It was the regular strength. I've been able to keep fluids down. No, I haven't fainted or felt faint.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "The pattern of pain moving from your belly button to the lower right, loss of appetite, fever and tenderness strongly suggests appendicitis. There's also irritation of the lining inside your tummy. This needs hospital assessment by a surgical team now, because an inflamed appendix can burst. Please don't eat or drink while we arrange transfer, as you may need an operation. We can give pain relief with a small sip of water. Are you taking any other medicines or supplements, or do you have any liver problems?",
+  "released": [
+   "diabetes"
+  ],
+  "flooded": false,
+  "reply": "No, I'm not taking any other medicines or supplements. No liver problems.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "I'll arrange ambulance transfer because of your significant pain and abdominal tenderness. Please don't drive yourself. I'll give you paracetamol now and ask the ambulance team to provide stronger pain relief and treatment for sickness if needed. We'll keep you here and monitor you until they arrive. At hospital they'll likely do blood tests and may do a scan, and the surgeon will decide whether you need surgery and antibiotics. We shouldn't delay transfer for blood tests or scans here.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be in the ambulance. I just want to go home.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you'd rather go home. What worries you about the ambulance or going to hospital? Going home isn't safe with these findings—if the appendix bursts it can cause a serious infection and become life-threatening.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be in the ambulance. I just want to go home.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "If it's the ambulance you don't want, we can consider someone taking you straight to the emergency department now, without going home first. You're currently stable enough for that if a responsible adult stays with you. Is there someone who could take you directly and stay with you?",
+  "released": [],
+  "flooded": false,
+  "reply": "My brother's coming. He can take me.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "That's a reasonable alternative provided you go straight to emergency now, with your brother driving and staying with you. Please wait here for him. Do you agree to go directly to hospital rather than home?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 310
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 350
+ },
+ {
+  "type": "say",
+  "utterance": "I've arranged emergency department referral and handover for suspected appendicitis, including your fever, pulse, tummy findings and the pain medicine you've had. Your urine has tiny traces of blood and white cells, but that doesn't establish a urine infection or rule out appendicitis. Please keep avoiding food and drink until the hospital advises otherwise. If the pain suddenly becomes much worse or spreads across your tummy, you collapse, feel faint, become confused, or develop repeated vomiting while travelling, your brother should pull over safely and call 000. Don't wait to see if this settles, even if the pain briefly improves. We'll give you the referral details to take with you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be in the ambulance. I just want to go home.",
+  "awards": [],
+  "score": 350
+ },
+ {
+  "type": "say",
+  "utterance": "You don't have to go by ambulance while you're stable—our agreed plan is for your brother to take you directly to hospital. I strongly advise against going home because waiting could be dangerous. Just so I know I've explained clearly, can you tell me where you'll go with your brother and why it needs to be now?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm going with my brother to the hospital now. It needs to be now because waiting could be dangerous.",
+  "awards": [],
+  "score": 350
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please don't eat or drink while we arrange transfer, as you may need an operation. We can give pain relief with a small sip of water."
+   }
+  },
+  "total": 365,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 350
+ }
+]

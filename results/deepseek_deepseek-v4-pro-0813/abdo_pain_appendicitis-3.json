@@ -1,0 +1,89 @@
+{
+ "model": "deepseek/deepseek-v4-pro-0813",
+ "case": "abdo_pain_appendicitis",
+ "rep": 3,
+ "ending": "ended",
+ "total": 320,
+ "max": 420,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 150,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 55,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 105,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": true
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": true
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "renal_colic",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "perforated_viscus",
+   "role": "sinister"
+  }
+ ],
+ "says": 12,
+ "questions": 21,
+ "usage": {
+  "calls": 21,
+  "prompt_tokens": 109496,
+  "completion_tokens": 5028,
+  "cost": 0.04057517000000001
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T03:46:44.850Z",
+ "max_questions": 50
+}

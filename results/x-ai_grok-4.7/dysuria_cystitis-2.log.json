@@ -1,0 +1,296 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm the doctor. I can see you've come in because of burning when you wee since yesterday, and you're wondering if it's a urine infection. Can you tell me a bit more about what's been happening?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, especially at the end when I wee, which feels familiar from my last UTI. I’ve been going all the time — every half hour or so — but only pass a little each time. It’s been happening since yesterday morning, so about a day and a half. The urine is a bit cloudy and smells, but I haven’t seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry to hear that. Any pain in your lower tummy or back, fever, chills, nausea, or feeling generally unwell? And have you had any vaginal discharge, itch, or pain with sex?",
+  "released": [
+   "abdominal_pain",
+   "fever_rigors",
+   "nausea_vomiting",
+   "vaginal_discharge_itch",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, just a low ache above my bladder, nothing else. No fevers, shivers, nausea or feeling unwell — I’m eating normally and feeling fine apart from this. No vaginal discharge, itching or pain with sex.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last UTI, and how many have you had? Are you sexually active at the moment, and when was your last period? Any chance you could be pregnant?",
+  "released": [
+   "previous_utis",
+   "sexual_partners",
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I had a UTI about two years ago and that’s the only one I’ve had. I’m sexually active — I’ve been with my boyfriend for about a year, just him — and my last period was about two weeks ago, it was normal. I don’t think I’m pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have a regular partner, or any new partners recently? Any pain in your side or loin, or blood in the urine that you might have missed?",
+  "released": [
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "My boyfriend — and no new partners recently. No pain in my side or loin. I haven’t seen any blood in my urine, just the cloudy smell and the ache.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken any antibiotics recently, or anything else for this? Any allergies to medicines? And are you drinking plenty of water?",
+  "released": [
+   "antibiotic_allergy",
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "No, I haven’t taken any antibiotics recently or anything else for this. I’m not allergic to anything that I know of. I’m not sure if I’m drinking enough water — probably not enough, mostly coffee at work, to be honest.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "This looks like a straightforward bladder infection — a UTI. Your symptoms fit, and the urine test shows white cells and nitrites, which supports that. You don’t have signs of a kidney infection: no fever, no back pain, and your tummy exam only shows mild tenderness low down.\n\nI’m prescribing trimethoprim 300 mg, one tablet once a day for 3 days. Take the full course even if you feel better sooner. It shouldn’t affect your contraceptive pill, so keep taking that as usual.\n\nDrink more water than usual — aim for pale urine — and cut back on coffee while this settles if you can. Simple pain relief like paracetamol from the chemist is fine if the burning is uncomfortable. You don’t need to avoid sex, but peeing after sex can help prevent another one.\n\nPlease come back or go to emergency if you get fever, shivers, pain in your side or back, vomiting, blood in the urine, or if you’re not clearly improving within 48 hours. If symptoms come back soon after finishing the antibiotics, see us again so we can check a urine sample in the lab. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Relief, thank you. I’ll take the antibiotics and drink more water. I’ll make sure to pee after sex. I don’t think I need to come back unless it gets worse.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_2": "Simple pain relief like paracetamol from the chemist is fine if the burning is uncomfortable.",
+    "ideal_3": "Please come back or go to emergency if you get fever, shivers, pain in your side or back, vomiting, blood in the urine, or if you’re not clearly improving within 48 hours."
+   }
+  },
+  "total": 265,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 235
+ }
+]

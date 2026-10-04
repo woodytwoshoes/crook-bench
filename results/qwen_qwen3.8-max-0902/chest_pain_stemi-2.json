@@ -1,0 +1,97 @@
+{
+ "model": "qwen/qwen3.8-max-0902",
+ "case": "chest_pain_stemi",
+ "rep": 2,
+ "ending": "ended",
+ "total": 285,
+ "max": 505,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 125,
+   "max": 290
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 50,
+   "max": 85
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 25,
+   "max": 30
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 85,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Sweating or clamminess with the pain",
+   "elicited": false
+  },
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Dizziness, light-headedness or fainting",
+   "elicited": true
+  },
+  {
+   "topic": "Had this chest pain before, e.g. on stairs or exertion",
+   "elicited": false
+  },
+  {
+   "topic": "Sudden severe tearing or ripping pain",
+   "elicited": true
+  },
+  {
+   "topic": "Weakness, numbness or other neurological symptoms, or limb pain",
+   "elicited": false
+  },
+  {
+   "topic": "Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "stemi",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "pericarditis",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "aortic_dissection",
+   "role": "sinister"
+  }
+ ],
+ "says": 7,
+ "questions": 14,
+ "usage": {
+  "calls": 17,
+  "prompt_tokens": 96688,
+  "completion_tokens": 6567,
+  "cost": 0.088522
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:53:57.088Z",
+ "max_questions": 50
+}

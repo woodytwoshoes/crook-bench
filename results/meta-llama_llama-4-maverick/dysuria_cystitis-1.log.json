@@ -1,0 +1,200 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in today. Can you tell me more about the burning when you go to the toilet?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, especially at the end when I finish weeing. I’ve been going a lot — maybe every half hour — but only a little comes out each time. It’s been like this since yesterday morning. The urine is a bit cloudy and smells, but I haven’t seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "subregion": "suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any pain in your lower back or sides?",
+  "released": [
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No, nothing in my back. Just a bit of an ache low down in my tummy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "bladder_percussion",
+  "subregion": "suprapubic",
+  "finding": "No suprapubic dullness.",
+  "awards": [],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a urinary tract infection before?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "How was it treated?",
+  "released": [],
+  "flooded": false,
+  "reply": "I was given antibiotics and it cleared up after a few days.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to order a urine test to check for infection. We'll get the results in a few days.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, I guess that's the plan. I just want to get back to work and not feel so uncomfortable.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "I've prescribed you a 3-day course of trimethoprim to treat your UTI. You should start feeling better within a few days. If your symptoms don't improve or get worse, please come back to see me. Drink plenty of water to help flush out your system.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I'll start the pills today. I hope they work fast so I can get back to work without any problems.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "dx",
+  "primary": "lower_uti",
+  "differentials": [
+   "interstitial_cystitis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lower urinary tract infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water to help flush out your system.",
+    "ideal_3": "If your symptoms don't improve or get worse, please come back to see me."
+   }
+  },
+  "total": 135,
+  "max": 375,
+  "level": "Resident",
+  "consequence": "ideal",
+  "score": 105
+ }
+]

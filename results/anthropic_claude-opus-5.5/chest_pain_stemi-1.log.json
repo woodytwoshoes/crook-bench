@@ -1,0 +1,331 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Graham, I'm the doctor. You look quite unwell, so I'll be quick. Can you tell me where the discomfort is, what it feels like, and whether it spreads to your arm, jaw, neck or back? When exactly did it start, and has it been constant?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness, sort of a weight on my chest. Right behind the breastbone, a bit up into the throat. Been there about an hour and a half, still there. Jaw's a bit achy, left arm feels heavy. Started about seven this morning, came on over a few minutes. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your heart tracing shows you're having a heart attack right now. I've called an ambulance to take you straight to hospital, where they can unblock the artery. I want to give you an aspirin to chew. Quickly: are you allergic to aspirin, have you had any recent bleeding such as from your stomach or in your bowel motions, or are you on any blood thinners? Have you taken any erection tablets like Viagra in the last two days?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "anticoagulants",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "No allergies, no recent bleeding, no blood thinners. Took one Viagra tablet last night.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had chest pain like this before, or any heart problems, stroke, or surgery recently? Any shortness of breath, nausea, or feeling faint right now? And is the pain tearing or ripping through to your back at all?",
+  "released": [],
+  "flooded": true,
+  "reply": "Too much all at once. What's the first thing you want to know?",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry. Have you had a stroke, bleeding in the brain, or any operation in the last few months?",
+  "released": [
+   "previous_stroke",
+   "recent_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had a stroke or mini-stroke. No operations.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent surgery"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Are you feeling short of breath, sick in the stomach, or faint right now?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, feel a bit sick but haven't vomited, and got a bit light-headed getting out of the car but didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Graham. Here's what's happening: one of the arteries supplying your heart is blocked. The ambulance is on its way and the hospital will likely do a procedure to open the artery with a small balloon and stent — the sooner, the better for your heart. You've chewed an aspirin, which helps thin the blood. Because you took Viagra last night, we must NOT give you the usual under-the-tongue spray for chest pain (nitroglycerin) — the combination can drop your blood pressure dangerously, and I'll tell the paramedics and hospital this. Please stay sitting or lying still, don't walk around, and don't eat or drink. I'll stay with you, keep you on the monitor and check your blood pressure. If you feel more faint, your breathing gets worse, or the pain gets much stronger, tell me straight away — I have the defibrillator ready. I'll give the paramedics a copy of your heart tracing and a letter with your medicines. Can someone call your wife to meet you at the hospital?",
+  "released": [],
+  "flooded": false,
+  "reply": "Wife's name's Julie. She's at home. I'll call her.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "myocardial_infarction",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute myocardial infarction",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I'll stay with you, keep you on the monitor and check your blood pressure."
+   }
+  },
+  "total": 280,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 265
+ }
+]

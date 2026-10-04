@@ -1,0 +1,264 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. Sharma — I'm your GP today. I can see you've been having burning when you wee since yesterday. Can you tell me a bit more about what's been going on, and anything else you've noticed since it started?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It burns the most at the end of peeing, like my last UTI. I've been going all the time — every half hour — but only a little comes out each time. It's been happening since yesterday morning. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. A few more questions to make sure this is a straightforward one:\n1. Have you had any fever, shivering, or generally feeling unwell?\n2. Any pain in your back or side, especially just below the ribs?\n3. Any nausea or vomiting?\n4. You mentioned this is \"again\" — how many UTIs have you had in the past year, and were you ever tested for other infections?\n5. Any new sexual partner recently, or any new symptoms like vaginal itching, unusual discharge, or sores?\n6. When was your last period, and could you be pregnant?\n7. Have you taken any antibiotics in the last few months?",
+  "released": [],
+  "flooded": true,
+  "reply": "That's a lot at once. Could you let me know what you'd like to ask first?",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that — let me take it step by step. First, the important safety questions:\n1. Have you had any fever, chills, or generally feeling unwell?\n2. Any pain in your back or side, like under your right or left ribs?\n3. Any nausea or vomiting?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and I feel fine apart from the burning when I pee. I don’t have any pain in my back or sides, just a bit of a tummy ache low down. I’m eating normally and haven’t been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good, that's reassuring — no signs it's in the kidneys. A couple more questions:\n1. How many times in the past year have you had UTIs like this, and were you always tested for other infections?\n2. Have you had a new sexual partner recently, or noticed any vaginal itching, unusual discharge, or sores?\n3. When was your last period, and any chance you're pregnant?",
+  "released": [
+   "previous_utis",
+   "sexual_partners",
+   "vaginal_discharge_itch",
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it — never tested for anything else. I've been with the same boyfriend for a year, no new partners, and I haven't noticed any itching, discharge, or sores. My last period was about two weeks ago and it was normal, I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that all fits with a bladder infection. A last few details:\n1. When you had your UTI two years ago — were you tested, and what antibiotic did you take? Any problems with it?\n2. Have you started any antibiotics or any \"UTI cocktail\" tablets yourself this time?\n3. Do you get a strong urge to go even when you've just been, or suprapubic pressure that eases after you pass urine?\n4. Do you tend to hold your urine, or drink a lot of alcohol or caffeine?",
+  "released": [
+   "recent_antibiotics",
+   "fluid_intake",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "When I had my UTI two years ago, I was tested and took amoxicillin — no problems with it. I haven't started any antibiotics or UTI cocktail tablets myself this time. I do get a strong urge to go even when I've just been, and there's a bit of pressure low down that eases after I pee. I probably don't drink enough water — mostly coffee at work — and have a few drinks with friends maybe twice a month.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "subregion": "suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "subregion": "loins",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "200 mg (2 capsules)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 205,
+  "max": 375,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 205
+ }
+]

@@ -1,0 +1,405 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Samuel, I see you're here because of some tummy pain that started last night. Can you tell me a bit more about what the pain feels like, where exactly it is, and how it started?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down. Started last night, about ten o'clock. It's there all the time now, though it sort of came and went at first. It's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sorry you're in so much pain. Did the pain start around your belly button and move down to the right side, or did it start right there? Also, have you had any nausea, vomiting, or fevers?",
+  "released": [
+   "pain_migration",
+   "nausea_vomiting",
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button and moved down to the right sometime overnight. I've felt sick since the early hours and threw up once this morning. I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds very uncomfortable. How has your appetite been? And have you noticed any changes in your bowel movements, like diarrhoea, or any pain or burning when you pass urine?",
+  "released": [
+   "anorexia",
+   "diarrhoea",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "I couldn't face breakfast, not hungry at all, which isn't like me. No diarrhoea, went normally yesterday morning, nothing since. Weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to ask a few routine background questions now. Have you ever had any surgery in the past, or do you have any regular medical conditions? Are you taking any medications or supplements? And I see your record says no allergies, is that correct?",
+  "released": [
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had an operation. I've still got my appendix, as far as I know. No regular medical conditions. I take no medications or supplements. No allergies.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and my examination, I am highly suspicious that you have acute appendicitis. This means your appendix is inflamed and likely infected. You need to go to the Emergency Department at the hospital right away, as you may need surgery. Please do not eat or drink anything from now on, just in case you need an operation. Did you drive here yourself, or is someone with you who can take you to the hospital?",
+  "released": [],
+  "flooded": false,
+  "reply": "I drove here myself. I'm not sure if I should have. I'm not too bad, really.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "I strongly advise against driving yourself because you're in severe pain and your condition might worsen suddenly. I've arranged for an ambulance to take you to the Emergency Department, and I have also phoned ahead to let them know you are coming. Because you might need surgery, please do not eat or drink anything. The paramedics will give you some strong pain relief through a drip when they arrive. For my records before you go, do you smoke, drink alcohol, or use any recreational drugs?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I don't smoke. A few beers on the weekend, nothing this week. No recreational drugs.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Is there any family history of bowel problems or any other conditions that I should know about?",
+  "released": [],
+  "flooded": false,
+  "reply": "No family history of bowel problems or other conditions.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Just to be very thorough, have you had any pain in your testicles or scrotum?",
+  "released": [
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "The paramedics should be here shortly. To recap, your symptoms and my examination strongly point towards acute appendicitis. The hospital team will likely perform some blood tests and an ultrasound or CT scan to confirm. If it is appendicitis, you will likely need a minor operation to remove it. Remember to stay nil by mouth, meaning no food or drink. Do you have any questions before the ambulance arrives?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have any questions.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "testicular_torsion"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please do not eat or drink anything from now on, just in case you need an operation."
+   }
+  },
+  "total": 285,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 270
+ }
+]

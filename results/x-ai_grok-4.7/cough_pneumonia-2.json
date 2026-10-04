@@ -1,0 +1,107 @@
+{
+ "model": "x-ai/grok-4.7",
+ "case": "cough_pneumonia",
+ "rep": 2,
+ "ending": "ended",
+ "total": 285,
+ "max": 425,
+ "level": "Fellow",
+ "consequence": "harmful",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 135,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 80,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 5
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 65,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": true
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": true
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": false
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": true
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": false
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": true
+  }
+ ],
+ "harmful": [
+  "Unsafe: Penicillin in a penicillin-allergic patient"
+ ],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "atypical_pneumonia",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "pulmonary_embolism",
+   "role": "sinister"
+  }
+ ],
+ "says": 10,
+ "questions": 24,
+ "usage": {
+  "calls": 14,
+  "prompt_tokens": 64248,
+  "completion_tokens": 3208,
+  "cost": 0.086112
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:07:55.181Z",
+ "max_questions": 50
+}

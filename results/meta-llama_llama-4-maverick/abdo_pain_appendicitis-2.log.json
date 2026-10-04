@@ -1,0 +1,258 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, thanks for coming in today. Can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down. Started last night about ten o'clock. It's there all the time now, though it came and went at first. It's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you tell me more about the pain? Is it sharp, dull, or crampy? Have you noticed anything that makes it better or worse, like food, movement, or going to the toilet?",
+  "released": [
+   "movement_pain",
+   "food_history",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "It's more of a dull pain, but walking or coughing makes it worse. No particular food made it better or worse, just the usual. Weeing is normal.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any vomiting or diarrhoea, or problems opening your bowels?",
+  "released": [
+   "nausea_vomiting",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours and threw up once this morning. No diarrhoea, went normally yesterday morning, nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever or chills? Have you noticed any blood in your vomit or stool?",
+  "released": [
+   "fever",
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. No blood in my vomit or stool.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "subregion": "rlq",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and the examination, I'm concerned about the possibility of appendicitis. I'm arranging some tests to help confirm the diagnosis. We'll get the results soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was appendicitis. I'm not sure what it is.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "I'm just checking a few things to make sure we cover all the possibilities. The tests will help us figure out what's going on.",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess I'll go along with the tests.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Urine pregnancy test",
+    "domain": "investigations"
+   }
+  ],
+  "score": 128
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 128
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, given your symptoms and the findings on examination, I'm referring you to the surgical team at the hospital to be assessed further for possible appendicitis. They will be able to evaluate you more thoroughly and decide on the next steps.",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess I'll go to the hospital then.",
+  "awards": [],
+  "score": 128
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "appendicitis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 133
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "I'm concerned about the possibility of appendicitis. I'm arranging some tests to help confirm the diagnosis."
+   }
+  },
+  "total": 118,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "missed_red_flag",
+  "score": 133
+ }
+]

@@ -1,0 +1,306 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Graham, I'm one of the doctors. You're looking a bit uncomfortable — can you tell me what's been going on this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "G'day. It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Been there an hour and a half, still there. Right behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, left arm feels heavy. Not my back. Started about seven this morning, came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That heaviness in your chest, going into your throat, jaw and left arm, is important. Have you felt sweaty, sick in the stomach, or short of breath with it? And has anything like this happened before?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "Sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. A bit short of breath, yeah. Had a tightness going up ladders, goes away if I stop. Happening more, put it down to being unfit.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale, grey and clammy. Sweating. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you. This isn't indigestion. The heart trace shows you're having a heart attack — a blockage in one of the arteries feeding your heart muscle. That's why you're pale, sweaty and short of breath.\n\nI've already given you aspirin to chew, which thins the blood, and I've called an ambulance to take you straight to hospital. There they can open the blocked artery quickly, which gives you the best chance.\n\nFor now, please stay sitting down and keep calm — do not get up or drive. The ambulance is on its way. If the pain suddenly gets much worse, or you feel faint or pass out, let me know straight away and we can call for more urgent help. Is there anyone here with you, or someone we should call?",
+  "released": [],
+  "flooded": false,
+  "reply": "Wife's at work. She'll be back soon. Can I go?",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Please don't leave, Graham — I need you to stay here with me until the ambulance arrives. You're having a heart attack right now, and trying to walk or drive would be dangerous. Stay seated and rest, and we'll get you to hospital safely. Do you want us to phone your wife for you?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I'm fine. Just want to go. Can I?",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you want to go, but I can't let you walk out, Graham — you're in the middle of a heart attack and you need hospital treatment now. Staying here and going by ambulance is what's going to keep you alive. Please stay seated with me. The ambulance crew will take over very soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not fine. Just want to go. Can I?",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 microgram",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I've given you a spray under your tongue to help ease the chest heaviness while we wait. I know it's frightening, but the safest place for you right now is here with us until the ambulance arrives. I'm staying with you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not fine. Just want to go. Can I?",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "nstemi",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please stay seated with me. The ambulance crew will take over very soon."
+   }
+  },
+  "total": 215,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 200
+ }
+]

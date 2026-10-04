@@ -1,0 +1,317 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, thanks for coming in today. Can you tell me more about what's been going on with your lower back pain?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I lifted a big pot plant in the garden on Saturday and felt a twinge. By Sunday, I could barely get out of bed. The pain is low down on the left side of my back and sometimes goes into my left buttock. It gets worse when I bend or get up from a chair, but it's better when I lie still with a heat pack. It's worse in the evenings. I've been working from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you rate your pain on a scale from 0 to 10, with 10 being the worst pain you've ever had?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "When I'm moving or rolling over, it's about a seven. If I keep still, it's maybe a three.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "subregion": "lumbar_spine",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "subregion": "lumbar_spine",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "subregion": "lumbar_spine",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "subregion": "lumbar_spine",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "sacroiliac_tests",
+  "subregion": "sacroiliac",
+  "finding": "SI joint stress tests negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Sacroiliac joint tests"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "sacroiliac_tests",
+  "subregion": "sacroiliac",
+  "finding": "SI joint stress tests negative.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any numbness, tingling or weakness in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any problems with your bladder or bowel function recently?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, all normal. I haven't noticed any changes with passing urine or any loss of bowel control.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent fever, chills or unexplained weight loss?",
+  "released": [
+   "fever_infection",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever or chills, and I haven't noticed any unexplained weight loss — if anything, I've put some on.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent fever, chills or unexplained weight loss?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven’t had any fever or chills, and I haven’t noticed any unexplained weight loss — if anything, I’ve put some on.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to manage your back pain conservatively for now with some simple pain relief and advice on exercises. I'd like to start you on some regular paracetamol and ibuprofen to help with the pain and inflammation. Have you taken these before?",
+  "released": [
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "I've taken some paracetamol, but it didn't do much, honestly. I haven't taken ibuprofen before.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "I'll also give you some advice on exercises to help improve your back pain. You can start with some gentle stretching and strengthening exercises. If your pain doesn't improve or gets worse, we can reconsider further investigations like an MRI. For now, let's focus on managing your symptoms and improving your mobility.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want to know what's going on. I'm worried this is serious. I'd like to have an MRI to be sure.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "dx",
+  "primary": "lumbar_strain",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lumbar muscle strain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "I'd like to start you on some regular paracetamol and ibuprofen to help with the pain and inflammation."
+   }
+  },
+  "total": 185,
+  "max": 450,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 170
+ }
+]

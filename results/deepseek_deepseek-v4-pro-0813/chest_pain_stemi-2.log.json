@@ -1,0 +1,438 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Graham, I'm Dr. I understand you've had some indigestion since this morning. Can you tell me in your own words what's been going on?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "G'day. It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Been there an hour and a half, still there. Right in the middle, behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Came on about seven this morning, over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds really uncomfortable, I'm sorry. A few more questions so I can get the full picture. Any feeling sick, or have you vomited? Any sweating, shortness of breath, light-headedness, or a sense your heart is racing or skipping?",
+  "released": [
+   "nausea_vomiting",
+   "sweating",
+   "dyspnoea",
+   "presyncope",
+   "anticoagulants"
+  ],
+  "flooded": false,
+  "reply": "Feel a bit sick, haven't vomited. Sweating like anything, thought it was just hot. A bit short of breath, hard to get a proper breath in. Bit light-headed getting out of the car, didn't pass out. No, nothing like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "What were you doing when it started, and has anything made it better or worse since — like rest, moving around, belching, or antacids? Have you ever had anything like this before?",
+  "released": [
+   "onset_activity",
+   "movement_pain",
+   "antacid_response",
+   "previous_cardiac"
+  ],
+  "flooded": false,
+  "reply": "I was just sitting having a cuppa, reading the paper. Moving doesn't change it. Had a couple of Quick-Eze, didn't touch it. Never had anything wrong with my heart.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Activity at the moment today's pain began"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether moving or pressing on the chest makes it worse"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "On a scale of 0 to 10, with 10 being the worst pain imaginable, how bad is it now? And in the last few days or weeks, have you noticed any chest tightness or breathlessness when you're walking or working?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Don't know. Maybe a six? It's more heavy than sore. No, nothing like that.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale, grey and clammy. Sweating. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest wall"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 micrograms",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I've done a heart trace and examined you, and I need to be straight with you. This isn't simple indigestion — the symptoms and your ECG show that a part of your heart muscle isn't getting enough blood, which suggests you're having a heart attack.\n\nI've already given you a soluble aspirin to chew, which helps thin the blood, and a spray under the tongue for the chest heaviness. I'm calling an ambulance to take you straight to hospital right now, because the hospital can open the blocked artery with emergency treatment that works best the sooner it's given.\n\nWhile we wait: please stay sitting or lying down, don't get up or walk around, and don't have anything to eat or drink except small sips of water if you need. If the heaviness worsens, you feel more faint, more breathless, or like you might pass out, tell me straight away. Do not drive yourself to hospital — the ambulance crew will monitor you the whole way.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm having a heart attack? No. Can't be. I'm fit. I'm a plumber. I don't get sick. I've never had nothing like this.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "I understand this is a shock, Graham — you've always been a hard worker and it's scary to hear. But heart attacks can happen to fit people too, and catching it now, while you're awake and talking to me, means we can treat it. That's exactly why your wife was right to send you in.\n\nThe most important thing is to get you to the hospital quickly so they can restore the blood flow to your heart. The ambulance is on its way. Is there anyone at home I should call, or anyone you'd like me to contact while we wait?",
+  "released": [],
+  "flooded": false,
+  "reply": "Wife's at home. She'll be worried. I don't want her to panic. Just tell her I'm going to hospital. Don't want her to drive.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Of course — I'll make sure the hospital contacts her, and she can meet you there rather than driving. How is that chest heaviness feeling now after the spray — any better, the same, or worse? And any new dizziness or breathlessness?",
+  "released": [],
+  "flooded": false,
+  "reply": "Same. Still heavy. Still a bit light-headed. Still short of breath.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 micrograms",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "acs",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute coronary syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "I've given you a second spray under the tongue to try to ease that heaviness while the ambulance comes. I'll stay right here with you until they arrive and keep checking on you.\n\nThe hospital team will repeat a heart trace, take blood tests, and likely take you to the catheter lab to open the blocked artery with a small tube — that's the fastest way to limit damage. You're in the best possible place for this to have been caught, and we're acting on it now.\n\nKeep still and keep me posted on any change. Is there anything you want to ask me before the ambulance gets here?",
+  "released": [],
+  "flooded": false,
+  "reply": "No. Just... tell her I'm going. Don't want her to drive.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "I'll make sure she's called and told you're being taken to hospital, and that she should get there safely without driving herself. You focus on resting now, Graham — we're getting you sorted.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Just... tell her I'm going. Don't want her to drive.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I'll stay right here with you until they arrive and keep checking on you."
+   }
+  },
+  "total": 270,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 255
+ }
+]

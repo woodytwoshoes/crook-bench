@@ -1,0 +1,592 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark. I understand you've had a cough and fever for a few days. Tell me a bit more about what's been going on.",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "Three days now. It started as a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was roasting. Since yesterday I've been bringing stuff up, rusty and brownish, clear at first. There's a sharp pain on the right side, near my back, catches when I breathe deep or cough. It started yesterday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds rough. A few more questions so I can get a clear picture. Have you been out of breath, or noticing your breathing is faster or harder than usual?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "Only going up the stairs. Got puffed on the way in from the car park. Sitting here I'm alright.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain in your chest when you're just sitting still, or is it only with coughing and deep breaths?",
+  "released": [],
+  "flooded": false,
+  "reply": "Only with coughing and deep breaths.",
+  "awards": [],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you coughed up any blood, or noticed blood when you blow your nose or bring something up?",
+  "released": [
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "No actual blood. Just that rusty colour.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "And have you had any chills or rigors — shaking that's hard to stop? Any drenching sweats?",
+  "released": [
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "Yeah, the first night I was shaking under the doona, teeth chattering, even though I was boiling. I don't know what rigors means. Do you mean shaking chills?",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Any nausea, vomiting, or pain in your tummy?",
+  "released": [
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, no vomiting. No nausea or tummy pain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been able to keep fluids down and eat anything over these three days?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, I've been able to keep fluids down. Just not much appetite.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions, or take any regular medication, including anything from the chemist or herbal?",
+  "released": [],
+  "flooded": false,
+  "reply": "I take a blood pressure pill and some anti-anxiety meds. That's it. No other conditions.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, and how much? Any alcohol or other drugs?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "Never smoked. A couple of beers on the weekend, none this week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, rigors are exactly that — shaking chills. That points to the body fighting something off.\n\nDo you remember the names of the blood pressure pill and the anti-anxiety medication?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't know that word. What do you mean by rigors?",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt dizzy or light-headed, or nearly fainted at any point these past few days?",
+  "released": [
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "No, my head's clear. My wife reckons I'm just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you travelled anywhere recently, including overseas, or been around anyone who was unwell with a cough or fever?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere. Just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Any recent contact with birds, farms, or animals?",
+  "released": [
+   "bird_contact"
+  ],
+  "flooded": false,
+  "reply": "No birds. We've got a dog.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry, I should have been clearer. Rigors just means severe shivering shakes that are hard to stop — exactly what you described with your teeth chattering under the doona. Nothing more than that.\n\nCould I just get the names of the blood pressure tablet and the anxiety medication? It might be on the box or your script.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't know that word. Do you mean shaking chills?",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, exactly — severe shaking chills. That's all it means. No need to worry about the word itself.\n\nDo you happen to know the names of your two medications? It would be on the box or your pharmacy receipt.",
+  "released": [],
+  "flooded": false,
+  "reply": "I take a blood pressure pill and some anti-anxiety meds. I don't know the names, just what the pharmacist gave me.",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Before we go any further — have you ever had a bad reaction to an antibiotic like penicillin, with a rash, swelling, or trouble breathing?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, penicillin. I came up in hives and my lips swelled when I was a kid. It's probably not on my file; I haven't needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "A few more checks while I go through things: any pain, redness or swelling in one leg, any previous blood clot in the leg or lung, recent surgery, long-haul travel, or being stuck in bed? And any unintentional weight loss or nights where you wake drenched in sweat recently?",
+  "released": [
+   "leg_swelling",
+   "heart_disease",
+   "home_support",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "Legs are fine. No heart problems. My wife and the two kids are at home — she can drive me back if I need. I could lose a few kilos, but that's not a big deal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "As directed",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Good news is we've got a clear answer. Your chest X-ray shows a pneumonia — an infection in the lower part of your right lung. That's what's causing the fever, the rusty phlegm, and the sharp pain when you breathe or cough.\n\nI've started you on an antibiotic called doxycycline — two 100 mg tablets, once in the morning and once at night, for 5 days, with food and a full glass of water. I chose this because of your penicillin allergy (the hives and lip swelling you had as a child), which means we avoid penicillin-type antibiotics. Take the full course even if you feel better before it's finished.\n\nFor the fever and the pain, take paracetamol up to 1 gram (two 500 mg tablets) every 6 hours, but no more than 4 grams in 24 hours. Don't take anything else that also contains paracetamol (like some cold-and-flu remedies) at the same time.",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I don't know what a chest X-ray is. But if it's pneumonia, that explains the pain and the phlegm. I'll take the doxycycline. I just hope it's not too strong on the stomach.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry — a chest X-ray is just a quick picture taken of your chest, like a photograph, that shows me your lungs. It showed a patch of infection in the right lower lung. That's the pneumonia.\n\nDoxycycline can upset the stomach, so the best way to reduce that is to take each dose with food and a full glass of water, and not to lie down for at least half an hour after taking it. If it does make you feel sick or you get bad diarrhoea, let me know.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll take it with food. If it makes me sick, I'll let you know. I just hope it works.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "A few important things to watch for over the next 2–3 days, because pneumonia can occasionally get worse despite antibiotics. If any of these happen, you need to be seen urgently — call me, come straight back, or go to the Emergency Department:\n\n• Feeling more short of breath, or breathless even while sitting still.\n• New chest tightness, or pain that is much worse.\n• Coughing up frank blood.\n• Feeling confused, faint, or drowsy.\n• A temperature that won't come down, or shaking chills that return.\n\nAlso come back or see your doctor if you're not starting to feel better within 2 to 3 days of starting the antibiotic.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll keep an eye on it. If I get worse, I'll come back. Just hope the kids don't get sick from me.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "It often does work very well, and most people with pneumonia like this recover fully with 5 days of antibiotics. A follow-up chest X-ray in about 6 weeks is worth doing to confirm the lung has cleared, especially in someone your age — I'll arrange that note for your record.\n\nA few other things to help you get better: rest at home for the next few days and don't go to work until your fever has gone and you feel well enough (usually a few days). Drink plenty of fluids. And yes — do encourage good hand washing and covering coughs at home to reduce the risk of passing bugs to your family. It's also worth checking you're up to date with your flu and COVID vaccinations.\n\nDo you have any questions about what we've discussed?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "Didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "That's worth sorting once you're recovered — book in for your flu (and COVID) vaccinations when you come for your follow-up in a few weeks. I can flag that for your next visit.\n\nAnything else you'd like to ask me, or is there anything that doesn't make sense?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I think that's it. Just hope I don't lose any more weight.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "It's likely just your reduced appetite from being unwell — but if you keep losing weight once you're better, or you notice any other changes, come back and we'll look into it properly.\n\nTo sum up: it's a pneumonia in the right lower lung. Take the doxycycline twice daily for the full 5 days, with food and water, and paracetamol for fever and pain. Rest, push fluids, and stay home until the fever settles. If you get more breathless, get chest pain, cough up blood, become confused, or aren't improving in 2–3 days, seek urgent care. We'll do a follow-up chest X-ray in about 6 weeks.\n\nI'd like to keep an eye on your blood and inflammation results when they come back tomorrow — if anything needs attention I'll be in touch. Take care, and I hope you feel better soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks. I'll take it easy. Hope the kids don't catch it.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "pulmonary_embolism",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "Good news is we've got a clear answer. Your chest X-ray shows a pneumonia — an infection in the lower part of your right lung. That's what's causing the fever, the rusty phlegm, and the sharp pain when you breathe or cough.",
+    "ideal_2": "Also come back or see your doctor if you're not starting to feel better within 2 to 3 days of starting the antibiotic.",
+    "ideal_3": "A few important things to watch for over the next 2–3 days, because pneumonia can occasionally get worse despite antibiotics. If any of these happen, you need to be seen urgently — call me, come straight back, or go to the Emergency Department:",
+    "acceptable_2": "For the fever and the pain, take paracetamol up to 1 gram (two 500 mg tablets) every 6 hours, but no more than 4 grams in 24 hours.",
+    "acceptable_3": "A few other things to help you get better: rest at home for the next few days and don't go to work until your fever has gone and you feel well enough (usually a few days). Drink plenty of fluids.",
+    "acceptable_5": "Also come back or see your doctor if you're not starting to feel better within 2 to 3 days of starting the antibiotic."
+   }
+  },
+  "total": 325,
+  "max": 425,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 270
+ }
+]

@@ -1,0 +1,259 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi, Daniel. So, you've been having some back pain since the weekend?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I lifted a big pot plant in the garden on Saturday and felt a twinge. Then I woke up on Sunday and could barely get out of bed. It's been three days now.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Can you show me exactly where it hurts?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "It's low down on the left side of my back, and it sometimes goes into my left buttock.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "side": "left",
+  "subregion": "lumbar_spine",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "side": "right",
+  "subregion": "lumbar_spine",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "side": "left",
+  "subregion": "lumbar_spine",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "So, the pain is quite bad and is stopping you from moving your back properly. Have you noticed any numbness or tingling in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal. I haven't noticed any numbness or tingling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any problems with your bladder or bowel control since the pain started?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any problems with my bladder or bowel control. Everything's normal in that regard.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "right",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "You've had back pain for three days after lifting something heavy. Your back is stiff and tender, but your legs feel normal and you have no bladder or bowel problems. I'm going to check your vital signs to make sure there's no sign of infection or other serious issues.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want to know what's going on. I'm worried it's serious, but I don't want to take any unnecessary risks.",
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Well-looking, comfortable at rest. Not pale, jaundiced or distressed.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Your temperature is normal, so there's no sign of infection. I'm going to consider what might be causing your back pain and what we should do about it.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm worried it's serious, but I don't want to take any unnecessary risks. I'd like a scan to be sure.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "order",
+  "id": "lumbar_xray",
+  "result": "Mild disc space narrowing at L4/5, consistent with age. No fracture or destructive lesion.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Lumbar spine X-ray",
+    "domain": "investigations"
+   }
+  ],
+  "score": 68
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray shows some wear and tear on your spine, but nothing serious like a fracture. Your symptoms are consistent with mechanical low back pain, likely due to the heavy lifting you did. I recommend managing your pain with simple measures like paracetamol or ibuprofen, and avoiding heavy lifting for a few weeks. If your symptoms don't improve or worsen, we can reassess. I'd like to give you some advice on exercises to help strengthen your back.",
+  "released": [],
+  "flooded": false,
+  "reply": "I understand it's probably not serious, but I'm still worried. I'd prefer to have the scan to be sure.",
+  "awards": [],
+  "score": 68
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1g",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 73
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 103
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 103,
+  "max": 450,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 103
+ }
+]

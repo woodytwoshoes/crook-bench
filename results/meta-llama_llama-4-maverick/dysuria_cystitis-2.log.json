@@ -1,0 +1,218 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in today. Can you tell me more about the burning when you go to the toilet? When did it start and has it changed since then?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, worst right at the end of weeing, like my last UTI. I've been going constantly — every half hour — and only a little comes out. It's been like that since yesterday morning. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms like pain in your lower belly or back, or fever?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't had any pain in my lower belly or back. No fever either.",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any vaginal discharge or itching?",
+  "released": [
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any vaginal discharge or itching.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last period and was it normal?",
+  "released": [
+   "last_period"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago. It was normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Do you use condoms with your partner, or is there anything else you think I should know about your sexual history?",
+  "released": [
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "We don't use condoms because I'm on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a similar problem like this before?",
+  "released": [],
+  "flooded": false,
+  "reply": "I had a similar problem a few weeks ago. It was pretty much the same — burning when I weeded, going a lot, and the urine was cloudy.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "suprapubic",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Did you see a doctor then, and if so, what were you treated for?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I saw a doctor then. I was treated with antibiotics for a urinary tract infection.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to order a urine test to check for infection. We'll also discuss treatment options based on your history and test results.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, got it. I'll do the test. I just want to get back to work soon.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "In the meantime, I'll prescribe you some antibiotics. We'll review the test results when they come back.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I'll take the antibiotics. I just hope it works so I can go back to work soon.",
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "I've prescribed nitrofurantoin 100 mg twice a day for 7 days. This should help clear up the infection. Make sure to finish the course even if you start feeling better before it's done.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I'll take them. I just hope it works so I can go back to work soon.",
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "dx",
+  "primary": "lower_uti",
+  "differentials": [
+   "interstitial_cystitis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lower urinary tract infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 90,
+  "max": 375,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 90
+ }
+]

@@ -1,0 +1,91 @@
+{
+ "model": "google/gemini-3.1-pro-preview",
+ "case": "abdo_pain_appendicitis",
+ "rep": 3,
+ "ending": "ended",
+ "total": 298,
+ "max": 420,
+ "level": "Fellow",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 130,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 70,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 8,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 90,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": true
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": false
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": true
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [
+  "Blood glucose (finger-prick)"
+ ],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "mesenteric_adenitis",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "testicular_torsion",
+   "role": "sinister"
+  }
+ ],
+ "says": 8,
+ "questions": 14,
+ "usage": {
+  "calls": 20,
+  "prompt_tokens": 81435,
+  "completion_tokens": 4058,
+  "cost": 0.1810002
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T03:43:27.741Z",
+ "max_questions": 50
+}

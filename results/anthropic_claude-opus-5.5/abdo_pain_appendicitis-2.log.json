@@ -1,0 +1,481 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the GP. Sorry you're feeling rough. Can you tell me where the pain started, where it is now, and how it's changed since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "It started down here on the right side, low down. Last night, about ten o'clock. So maybe fourteen hours. It's there all the time now. At first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any vomiting, diarrhoea, fever or chills, loss of appetite? And does moving, coughing or bumps in the car make it worse?",
+  "released": [
+   "nausea_vomiting",
+   "diarrhoea",
+   "fever",
+   "anorexia",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yes, felt sick since the early hours and threw up once this morning. No diarrhoea, just normal yesterday morning, nothing since. Felt hot and a bit shivery last night. Not hungry at all, which isn't like me. Walking hurts, bumps in the car and coughing make it worse.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "A few more: any pain or swelling in your testicles or groin? Any burning or blood when passing urine, or going more often? Have you had anything like this before or any operations? Have you taken any painkillers today? And when did you last eat or drink?",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What do you want to know first?",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry! First: any pain or swelling in your testicles or groin?",
+  "released": [
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down there. No lumps down there either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Any burning, blood, or going more often when you pass urine?",
+  "released": [
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had pain like this before, or any operations or medical problems? And have you taken any painkillers today?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this. Never had an operation. I've still got my appendix, as far as I know. Took a couple of paracetamol this morning, didn't do much.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "When did you last eat or drink anything? And how bad is the pain out of 10?",
+  "released": [
+   "food_history",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Last ate or drank about six hours ago, just the usual. Mum's cooking on Sunday. It's maybe a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Is there someone who can drive you to hospital right now? Please don't drive yourself.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I can't drive myself. My mates are out. I'll wait for a lift.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, from what you've told me and what I've found, I think this is most likely appendicitis — an inflamed appendix, the small tube coming off the bowel low on the right. The pain moving and settling there, the fever, feeling sick, not being hungry, and the tenderness when I press and let go all fit. This isn't a stomach bug, and it needs to be seen in hospital today — it usually needs surgery to take the appendix out, and if left it can burst, which is much more serious. Because you don't have a lift, I've called an ambulance to take you to the emergency department, and I'm phoning the doctors there to tell them about you. Until then, please don't eat or drink anything, not even water, in case you need an operation — they can give you fluids and stronger pain relief through a drip in hospital. Don't take any more tablets. If the pain suddenly gets much worse or spreads across your whole belly, you feel faint, or you start vomiting a lot while you wait, tell our staff straight away. Would you like us to call your mum or someone to meet you at the hospital?",
+  "released": [
+   "faint",
+   "vomiting_order",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't fainted or felt faint. The pain came first, the sickness came a few hours later. It started around my belly button and moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain or the vomiting came first"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 345
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, Samuel — the pain starting near your belly button and then moving down to the right is a classic pattern for appendicitis, which makes me more sure. The ambulance is on its way. Stay lying still, nothing to eat or drink, and let our nurse know right away if anything gets worse. Your urine test showed only small changes, which can happen with an inflamed appendix lying near the bladder. The hospital team will do blood tests and possibly a scan, and talk to you about surgery. You've done the right thing coming in.",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. I just want to know what's going to happen next.",
+  "awards": [],
+  "score": 345
+ },
+ {
+  "type": "say",
+  "utterance": "Simple version: the ambulance takes you to hospital. They'll put a drip in your arm for fluids and pain relief, do blood tests, and probably get the surgeons to see you. Most likely they'll take your appendix out today with keyhole surgery, and most people go home in a day or two. Until then: lie still, nothing to eat or drink, and tell us if it gets worse.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want to know what's going to happen next.",
+  "awards": [],
+  "score": 345
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I think this is most likely appendicitis — an inflamed appendix, the small tube coming off the bowel low on the right. The pain moving and settling there, the fever, feeling sick, not being hungry, and the tenderness when I press and let go all fit.",
+    "ideal_3": "Until then, please don't eat or drink anything, not even water, in case you need an operation — they can give you fluids and stronger pain relief through a drip in hospital."
+   }
+  },
+  "total": 375,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 345
+ }
+]

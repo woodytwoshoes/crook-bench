@@ -1,0 +1,430 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham. I can see you're looking a bit unwell and pale. You mentioned indigestion since this morning. Can you tell me exactly what it feels like, when it started, and if the discomfort goes anywhere else?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Started about seven this morning. Been there the whole time, near enough an hour and a half. Still there now. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this sounds very concerning for a heart attack. I am arranging for an ECG (a heart tracing) immediately. Have you had any shortness of breath, feeling sick or vomiting? Also, do you have any allergies to medications, particularly Aspirin?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah. Hard to get a proper breath in. Feel a bit sick. Haven't vomited. No allergies that I know of. I've had Disprin before, no problems.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your ECG shows you are having a heart attack. I am calling an ambulance immediately to take you to the hospital. I'm also going to give you an aspirin to chew on right now, which helps to thin the blood. Have you ever had a heart attack before, or does anyone in your family have heart problems?",
+  "released": [
+   "previous_cardiac",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart. Dad had a heart attack at fifty-five. He died from it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I'm very sorry to hear about your father. The ambulance is on its way. We've given you the aspirin. I'm just going to quickly listen to your heart and lungs while we wait. How severe is the pain right now on a scale of 1 to 10?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I don't know. Maybe a six? It's more heavy than sore.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, we are keeping a close eye on you until the paramedics arrive. Just to be absolutely thorough, have you noticed any pain tearing through to your back, and is there any history of stomach ulcers or severe reflux?",
+  "released": [
+   "tearing_pain",
+   "heartburn_history"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that. It crept up on me. I get a bit of heartburn after a big feed sometimes. This isn't like that really.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Sudden severe tearing or ripping pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous heartburn or reflux"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "The paramedics will be here shortly. You are having an inferior ST-elevation myocardial infarction, which is a type of heart attack. The blocked blood vessel in your heart needs to be opened up, likely with a procedure at the hospital. The aspirin we've given you will start to help, and the ambulance team will give you stronger medications for the discomfort and to thin your blood further. Try to rest, and let me know if the pain changes.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't know what to say. Just… thanks.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Before the ambulance arrives, I need to ask a very important question. Have you taken any medications like Viagra, Cialis, or Levitra for erectile dysfunction in the past 24 to 48 hours? It's important because some heart medications can interact dangerously with them.",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "…Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for being honest, Graham. Because you took Viagra last night, it is extremely important that you do NOT receive any nitrate medications, like a GTN spray or tablet, from the paramedics or at the hospital. It could cause your blood pressure to drop to a dangerously low level. I will put this in my handover notes, but please make sure you tell the ambulance officers and doctors too.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. I'll tell them.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Also, to help the hospital team decide on the best treatment, have you had any recent major bleeding, like in your stomach or bowel, any recent surgery, or have you ever had a stroke?",
+  "released": [
+   "recent_bleeding",
+   "recent_surgery",
+   "previous_stroke"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that. No operations. Never had a stroke or mini-stroke.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent surgery"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "jvp",
+  "finding": "JVP not raised.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Jugular venous pressure"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "bp_both_arms",
+  "side": "left",
+  "finding": "Right 104/68, left 102/66. Radial pulses equal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure in both arms"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft, non-tender. No masses.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Did you take your perindopril and atorvastatin this morning?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes. Took them this morning.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, just try to stay as calm as possible and take slow, deep breaths. We are monitoring you constantly. Is there anyone, like your wife, that you would like me or my reception team to call for you while we wait?",
+  "released": [],
+  "flooded": false,
+  "reply": "No. Just… thanks.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "gord",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastro-oesophageal reflux disease",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 285,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 285
+ }
+]

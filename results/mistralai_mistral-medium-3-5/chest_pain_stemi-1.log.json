@@ -1,0 +1,337 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm Dr. Smith. I can see you're not feeling well. Can you tell me more about this indigestion you've been having since this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. It's been there an hour and a half, still there. Right in the middle, behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Came on about seven this morning, over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds concerning, Graham. I need to ask a few more questions. Have you ever had pain or discomfort like this before?",
+  "released": [
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "No, never had this before. But this week I've had a bit of tightness going up ladders — goes away if I stop. Happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been short of breath, nauseous, or sweating more than usual?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "sweating"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, feel a bit sick, and been sweating like anything.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent illness, fever, or cough? Any history of heart problems in your family?",
+  "released": [
+   "previous_cardiac",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything wrong with my heart. Dad had a heart attack at fifty-five, he died from it. No fever, no cough, no recent illness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Do you feel lightheaded, dizzy, or like you might faint?",
+  "released": [
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. No scars. Breathing comfortably.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm very concerned this might be a heart problem. Your symptoms—chest heaviness, jaw and arm discomfort, sweating, and shortness of breath—are very serious. I need to call an ambulance to take you to the hospital immediately. Do you agree?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't agree. I'm not going to the hospital. I'm fine. Just need some antacids.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I understand you're worried, but this is not indigestion. Your symptoms, your family history, and what I’ve found on examination—like your low blood pressure and the extra heart sound—are signs of a possible heart attack. This is life-threatening, and you need urgent treatment. If we don’t act now, it could be fatal. Please, let me call an ambulance for you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to go. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I hear you, but this is not something antacids will fix. Your symptoms are classic for a heart attack, and delaying treatment could make it much worse. The ambulance can assess you further and take you to the hospital where they can confirm and treat this properly. You’re at serious risk if we don’t act now. Can I call the ambulance for you?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to go. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’m calling an ambulance for you now. This is not a choice—your life is at risk, and you need immediate medical attention. The ambulance will take you to the hospital where they can give you the care you need. Stay with me, and try to stay calm.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’ve already called the ambulance. It’s on its way. You’re showing signs of a heart attack, and this is not something we can treat here. The ambulance team will assess you and take you to the hospital for urgent care. Please, stay seated and let them help you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I insist. You are not well, and this is a medical emergency. The ambulance is coming, and they will take you to the hospital. You need to be there for your own safety. Let’s not argue—your health is the priority.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I understand you're scared, but I’m not giving you a choice here. You’re having symptoms of a heart attack, and if we don’t get you to the hospital, you could die. The ambulance is coming, and they will take you. I need you to cooperate for your own sake.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "nstemi",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the ambulance is on its way, and you are going to the hospital. This is a heart emergency, and you need immediate treatment. I will not let you leave here without getting the care you need. Stay with me, and let the paramedics do their job when they arrive.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’m not asking you anymore. The ambulance is coming, and you are going to the hospital. This is a life-threatening situation, and I will not let you refuse treatment. You need to be there now.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not going. I'm not sick. Just need antacids. I've had worse.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Stay with me, and try to stay calm."
+   }
+  },
+  "total": 240,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 225
+ }
+]

@@ -1,0 +1,404 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP seeing you today. Tell me about this cough and fever — when did it start and how has it gone since?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago. It was a dry, hacking cough at first. Then I started feeling really hot, like I was roasting. Since yesterday I've been bringing up stuff — it's rusty and brownish now, but it was clear at first. There's also a sharp pain on the right side, near my back, that catches when I cough or take a deep breath.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Are you short of breath, and have you had shaking chills, confusion, coughing blood, or any trouble keeping fluids down?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "confusion",
+   "haemoptysis",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had shortness of breath except when going up the stairs — I got puffed on the way in from the car park, but I'm alright sitting here. I did have shaking chills the first night, even though I was boiling hot. My head's clear, my wife says I'm just grumpy. No coughing up blood, just that rusty, brownish stuff. No vomiting.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Any medical conditions like asthma, diabetes, heart or kidney problems? Do you smoke or drink much alcohol? Any recent travel, hospital stays, or antibiotics in the last few months? And any allergies to medicines?",
+  "released": [],
+  "flooded": true,
+  "reply": "That's a lot at once. I'm not sure where to start. What's the most important thing you want to know first?",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry! Do you have any medical conditions, or take any regular medicines?",
+  "released": [
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "smoking",
+   "alcohol",
+   "recent_antibiotics",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No medical conditions. Never had asthma or anything with my lungs, no heart problems, no diabetes. Never smoked. A couple of beers on the weekend, none this week. Haven't had any antibiotics. I had an allergy to penicillin when I was a kid — hives and swelling of the lips — but I haven't needed antibiotics in years and it's probably not on my file.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, and how much alcohol do you drink in a week?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't smoke. A couple of beers on the weekend, none this week.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "A few more quick ones: any recent travel or long trips, or any calf pain or leg swelling?",
+  "released": [
+   "recent_travel",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't been anywhere — just school and home. Legs are fine, no swelling or calf pain.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, you have a chest infection in the lower part of your right lung — a pneumonia — which the X-ray confirms. The good news is your blood pressure, oxygen level and thinking are all fine, so it's safe to treat at home. Because you had hives and lip swelling with penicillin as a child, I won't use penicillin-type antibiotics; I'll record that allergy in your file. I'm prescribing doxycycline, one tablet twice a day for 5 days. Take it with a full glass of water and food, stay upright for half an hour after taking it, don't take it at the same time as milk, antacids or iron, and avoid strong sun as it makes you sunburn easily. Take paracetamol for fever and the side pain, drink plenty of fluids and rest — please take the rest of the week off school, and no strenuous exercise. I'd like to see you again in 48 hours to check you're improving. Call an ambulance or go to the emergency department straight away if you become more short of breath at rest, your lips turn blue, you feel confused or very drowsy, you cough up blood, you faint or feel very dizzy, or you can't keep fluids or tablets down. Also come back sooner if the fever isn't settling after 2 to 3 days of antibiotics. The cough can linger for a few weeks, and the tiredness too, which is normal. We'll repeat the chest X-ray in about 6 weeks to make sure it has cleared. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks. I guess I'll be taking the rest of the week off then. I just hope the kids don't miss me too much. I'll make sure to take the pills as you said. What's the deal with the sun thing? I thought doxycycline was for the skin.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Good question — doxycycline is used for skin conditions like acne too, but it's also a standard antibiotic for pneumonia and works well against the usual bugs. One of its side effects is making your skin more sensitive to sunlight, so you can burn quickly — just cover up, use sunscreen and stay indoors in the middle of the day while you're on it. I'll see you in two days.",
+  "released": [],
+  "flooded": false,
+  "reply": "No problem. I'll keep that in mind. Just hope the sun doesn't decide to play up while I'm on it.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "sepsis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 300
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_4",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "The good news is your blood pressure, oxygen level and thinking are all fine, so it's safe to treat at home.",
+    "ideal_2": "I'd like to see you again in 48 hours to check you're improving.",
+    "ideal_3": "Call an ambulance or go to the emergency department straight away if you become more short of breath at rest, your lips turn blue, you feel confused or very drowsy, you cough up blood, you faint or feel very dizzy, or you can't keep fluids or tablets down.",
+    "acceptable_4": "I'll record that allergy in your file.",
+    "acceptable_2": "Take paracetamol for fever and the side pain",
+    "acceptable_3": "drink plenty of fluids",
+    "acceptable_5": "Also come back sooner if the fever isn't settling after 2 to 3 days of antibiotics."
+   }
+  },
+  "total": 365,
+  "max": 425,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 300
+ }
+]

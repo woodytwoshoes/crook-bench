@@ -1,0 +1,345 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Graham. I can see you look pretty unwell — pale and sweaty. I want to get straight to it: tell me about this \"indigestion\". Where exactly do you feel it? Is it in the middle of your chest, or up in your tummy?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "G'day. It's like a heaviness. Sort of a weight on my chest. Right in the middle, behind the breastbone. Bit up into the throat. Been there since about seven this morning. Still there now. My jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I've got a result from your heart tracing and it's serious — I've already rung for an ambulance. While we wait, a few quick questions. Have you felt sick, vomited, or been short of breath this morning? And have you ever had chest pain like this before, or been told you have angina?",
+  "released": [
+   "nausea_vomiting",
+   "dyspnoea",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "Feeling a bit sick, haven't vomited. A bit short of breath, yeah. Hard to get a proper breath in. Had a bit of tightness going up ladders this week — goes away if I stop. Put it down to being unfit. It's been happening more.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "That tightness on the ladder is important — it means your heart's been warning you. Now, two quick safety questions before the paramedics arrive: are you on any blood thinners, or do you have any bleeding problems, stomach ulcers or a history of stroke? And in the last day or two, have you taken anything like Viagra or Cialis for erectile problems?",
+  "released": [
+   "anticoagulants",
+   "recent_bleeding",
+   "previous_stroke",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "No blood thinners, no bleeding problems, never had a stroke. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you, because this is time-critical. Your heart tracing shows you are having a heart attack right now — one of the arteries supplying the bottom of your heart is blocked. That's what the heaviness, the jaw ache and the arm heaviness are; it's not indigestion. The sweating and the sick feeling come from that too.\n\nHere's what I've already done and what happens next:\n1. I've called an ambulance (000) to take you straight to hospital. It is on the way. You must not drive yourself, and I'm not letting you walk out of here.\n2. I've given you 300 mg of aspirin, chewed and swallowed, to thin the blood and stop the clot growing.\n3. Your oxygen level and your chest are fine, so you don't need oxygen.\n4. I am deliberately NOT giving you the GTN spray under the tongue. Because you took a Viagra-type tablet last night, that combination can make your blood pressure drop dangerously. No secret between us on this one — I have to tell the paramedics and the hospital doctors you took it, and you must tell them too if they ask. Your privacy is protected, but they need to know to keep you safe.\n5. At hospital they'll give you stronger blood thinners and pain relief, repeat blood tests for heart damage — the first one this morning was too early to show anything — and most likely take you straight to the catheter lab to open the blocked artery with a stent. The sooner that's done, the more heart muscle is saved.\n\nRight now: sit back, keep still, and don't eat or drink anything in case you need a procedure. I'll stay with you until the ambulance arrives, and I'll ring your wife so she can come.\n\nYou told me you'd been getting tightness climbing ladders this week that eased with rest. That was your heart warning you. Once you're through this, we'll deal with the smoking, your cholesterol and your blood pressure properly — that's how we stop the next one.\n\nIf the pain gets worse, you feel faint, or you can't breathe, tell me immediately.",
+  "released": [
+   "sweating",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I've been sweating like anything. Thought it was just hot. The pain's more heavy than sore, maybe a six. I don't know.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Your pulse is steady at 54 and your blood pressure is 104 over 68 — I'll keep an eye on both while we wait for the ambulance, and I'm staying right here with you. The pain score of six out of ten is from the blocked artery, so the real fix is opening it at hospital; the paramedics will be able to give you strong pain relief with proper monitoring, which is safer than anything I can do here given your slow pulse and your blood pressure.\n\nThree things to remember: don't drive, don't eat or drink, and don't take any more of those erectile tablets — and always tell any doctor or pharmacist you've had one in the last 24 to 48 hours, because combined with the heart spray or patches it can be dangerous.\n\nOnce the hospital has treated you, come back and see me within the week. We'll start you on the full set of heart-protective medicines, sort out the cholesterol and blood pressure targets, and get you onto a cardiac rehabilitation program. And the single most powerful thing you can do for your heart from today is to stop smoking — I'll help you with that, and I'll be honest with you: if you keep smoking and keep climbing ladders with that tightness, this will happen again.\n\nYou did the right thing coming in today, even if it was your wife who pushed you.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. I don't know. I just... I don't know.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "That's a completely normal reaction, Graham — it's a big shock and anyone would feel the same. Here's what I want you to hold onto: you're in the right place, I've found the problem within minutes of you walking in, you've already had the aspirin, and the ambulance is coming to take you to a hospital that can open that artery. People who get treated this early do very well. I'm not leaving your side until the paramedics take over, and your wife will be here too. Just keep sitting back and breathing slowly.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. I just... I don't know.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I'll stay with you until the ambulance arrives"
+   }
+  },
+  "total": 295,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 280
+ }
+]

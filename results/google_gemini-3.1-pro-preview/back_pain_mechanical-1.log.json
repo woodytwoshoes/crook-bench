@@ -1,0 +1,429 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Daniel, I understand you hurt your lower back lifting something on the weekend and you're in a lot of pain. Could you tell me exactly what happened and what you were lifting?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I hurt my lower back on Saturday lifting a big pot plant in the garden. I felt a twinge at the time, then woke up on Sunday and could barely get out of bed. The pain is low down on the left side of my back, sometimes extending into my left buttock. It gets worse when I bend or get up from a chair, but it's better when I lie still with a heat pack. It's worse by the evening, but I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly, but it's still painful.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds very painful, I'm sorry to hear that. To make sure there isn't any nerve damage, I need to ask a few specific questions. Do you have any pain, numbness, or tingling going down your legs below the knee? Have you noticed any weakness in your legs, or any changes in your bowel or bladder habits, like difficulty passing urine or numbness around your groin area?",
+  "released": [
+   "leg_neuro_symptoms",
+   "bladder_function",
+   "bowel_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have any pain, numbness, or tingling going down my legs below the knee. My legs feel completely normal, and I haven't noticed any weakness. I've had no changes with passing urine, no difficulty, retention, or leaking, and no loss of bowel control or numbness around my groin area.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring. Have you had any fever, night sweats, or unexplained weight loss recently? Does the pain wake you up from sleep even when you're lying still? And have you ever had back problems like this before, or do you have any other medical conditions?",
+  "released": [],
+  "flooded": true,
+  "reply": "That's a lot at once. I'm not sure where to start. Could you let me know what you'd like to ask first?",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "I apologise for asking so many questions at once! Let's start with this: Have you had any fever, night sweats, or unexplained weight loss recently?",
+  "released": [
+   "fever_infection",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever or night sweats, and I've actually put on a little weight recently.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain wake you up at night when you're resting, or is it mostly just when you move? And have you ever had back problems like this before?",
+  "released": [
+   "night_rest_pain",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "The pain doesn’t wake me up at night once I’m settled, but it does hurt when I roll over. It’s not there constantly, and I had a similar issue maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful to know. Do you have any other medical conditions, and are you taking any regular medications? Also, what have you tried taking for the pain so far?",
+  "released": [
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have any other medical conditions. I'm not taking any regular medications apart from what's listed in my records. I've taken some paracetamol, but it didn't do much, honestly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "I see you have an allergy to Tramadol listed on your file, which caused vomiting and dizziness. Do you have any other allergies to medications?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have any other medication allergies.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I'd like to talk about pain relief. Since the paracetamol hasn't worked well, we could try an anti-inflammatory medication like ibuprofen or naproxen. Before we do, have you ever had stomach ulcers, asthma, or kidney problems?",
+  "released": [
+   "stomach_ulcers",
+   "asthma",
+   "kidney_problems"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had stomach ulcers or indigestion with anti-inflammatories, but I do have asthma. My kidneys are fine as far as I know.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever taken ibuprofen, Nurofen, or aspirin before? If so, did it make your asthma worse?",
+  "released": [],
+  "flooded": false,
+  "reply": "I've taken ibuprofen before, but it didn't make my asthma worse.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Based on my examination, your nerves and reflexes are perfectly normal, and your symptoms point to a muscular strain in your lower back. Because of this, an MRI scan isn't recommended right now. Scans don't change how we treat this kind of pain, and they often show normal age-related changes that aren't causing your pain. How do you feel about this?",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I figured I'd need an MRI to see what's going on, but if the scan isn't going to change the treatment, then maybe it's not necessary. I just want to know what's going on and make sure there's nothing serious.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "naproxen_500mg_tab",
+  "dose": "500 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Naproxen or celecoxib as the NSAID"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "To put your mind at ease, your symptoms are a textbook case of a mechanical lower back strain, which is extremely common after lifting heavily. The good news is that over 90% of people recover fully within a few weeks without needing any scans or complicated treatments. I'm going to prescribe you an anti-inflammatory medication called Naproxen to take twice a day for 5 days. You must take it with food to protect your stomach. You can also use a heat pack and take paracetamol as well.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm relieved to hear it's not serious, but I'm still worried it might be something more. I'll take the Naproxen as prescribed, but I'm not sure how it will help if it's just a strain.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "The pain you're feeling is due to inflammation in the muscles and ligaments in your lower back. The Naproxen will help reduce that inflammation and ease the pain, allowing you to move more freely. The key to getting better is to avoid staying in bed all day. Gentle movement, like taking short walks, actually helps your back heal faster than lying down. Does that sound like a plan you can try?",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess I can try walking a bit, but I'm not sure how much is enough. I'm still worried it might be something more serious.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Just walk as much as your pain allows without pushing too hard. Listen to your body. As for your worry about something serious, the main things we worry about are conditions where the nerves get completely squashed. If you notice any numbness around your groin or back passage, any loss of control of your bowel or bladder, difficulty passing urine, or new weakness or tingling going down your legs, you must go to the emergency department immediately. Otherwise, I'd like to see you back here in a week or two if it's not improving. Does that make sense?",
+  "released": [],
+  "flooded": false,
+  "reply": "I understand. I'll keep an eye out for any changes and try to walk a bit more. I just hope it's not something more serious.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Do you need a medical certificate for work for the next few days to allow you to rest properly and let the medication start working?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't think I need one, but I'll check with my employer just to be safe. I'm trying to rest as much as possible.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds very reasonable. A physiotherapist can also be incredibly helpful in guiding you through stretches and gentle exercises to get you moving again safely. Would you like me to refer you to one, or would you prefer to see how you go with the medication and walking first?",
+  "released": [],
+  "flooded": false,
+  "reply": "I think I'll try the medication and walking first. If it doesn't help, maybe a physiotherapist would be good.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds like a great plan, Daniel. Try the medication and stay active within your limits. Remember to head to the emergency department if you develop any of those concerning nerve symptoms we discussed, or otherwise check back in with me in a week or two if you're not getting better. Take care of yourself!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Doctor. I'll take the medication and try to stay active. I'll keep an eye on any changes and check back in if it doesn't improve.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_2",
+    "ideal_4"
+   ],
+   "quotes": {
+    "ideal_0": "To put your mind at ease, your symptoms are a textbook case of a mechanical lower back strain, which is extremely common after lifting heavily. The good news is that over 90% of people recover fully within a few weeks without needing any scans or complicated treatments.",
+    "ideal_1": "Try the medication and stay active within your limits.",
+    "ideal_2": "Because of this, an MRI scan isn't recommended right now. Scans don't change how we treat this kind of pain, and they often show normal age-related changes that aren't causing your pain.",
+    "ideal_4": "You can also use a heat pack"
+   }
+  },
+  "total": 290,
+  "max": 450,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 230
+ }
+]

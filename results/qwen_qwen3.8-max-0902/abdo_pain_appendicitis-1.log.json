@@ -1,0 +1,476 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. I can see you're uncomfortable, so let's get straight to it. Tell me about this tummy pain — where exactly is it now, and where did it start? And how bad is it out of 10?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down. Started last night, about ten o'clock. It's there all the time now. Maybe a seven out of ten.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. When it started last night, was it somewhere else first — like around your belly button or up in your stomach — before it settled down on the right? And is it a constant ache, or does it come in waves?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button. It moved down to the right sometime overnight. It's there all the time now.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Right. Have you felt sick to your stomach or actually vomited? And have you had any appetite since this started?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours and threw up once this morning. Couldn't face breakfast, not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt hot, feverish or had the shivers? And how have your bowels been — any diarrhoea, or have you not been able to go, or noticed any blood?",
+  "released": [
+   "fever",
+   "diarrhoea",
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. No diarrhoea, I went normally yesterday morning, nothing since. No blood.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Any stinging when you pass urine, or needing to go more often? And any pain or swelling in your testicles — it's an important question, nothing to be embarrassed about.",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal. Nothing down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Does it hurt more when you move, cough, or when the car goes over a bump? And have you taken anything for it — like Panadol, Nurofen, or antacids — and did that help?",
+  "released": [
+   "movement_pain",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts. Every bump in the car on the way here was awful, and coughing is the worst. Took a couple of paracetamol this morning, didn't do much.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and uncomfortable. Lies very still on the couch and walks in slightly stooped.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "finding": "Right lower quadrant: Tender to light percussion. Elsewhere: resonant and non-tender.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "right",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "side": "right",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "No suprapubic tenderness. Bladder not palpable.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "That all fits with what I'm finding on examination. Two quick things: when did you last eat or drink anything? And do you have any other medical problems, take any regular medicines, or have any allergies?",
+  "released": [
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "No, just the usual. Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry, I want to be sure I've got this right — what time did you last eat any food, and what time did you last have a drink? It matters if you might need an operation.",
+  "released": [],
+  "flooded": false,
+  "reply": "I had a drink about six this morning. Last ate yesterday afternoon.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Two more things I need to check. At any point since it started, did the pain suddenly get much worse or spread across your whole tummy? And have you had a sore throat, a cough or a feverish illness in the last week or two?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, it's been the same. No, nothing like that.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "morphine_10mg_ml_inj",
+  "dose": "5 mg IV",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, here's what I think is going on. Your pain started around your belly button and moved down to the right lower side, you've lost your appetite and been sick, you've got a temperature of 37.9 and a fast pulse, and when I press on that right lower area — and when you cough or I percuss it — it's very sore. Your urine and the rest of your tummy are reassuring, and your testicles are normal. That pattern is very typical of an inflamed appendix — appendicitis. I can't be 100% certain without scans and blood tests, but I'm not willing to sit and watch this, because if an appendix bursts it can cause a serious infection spreading through the tummy. So I've given you an injection of morphine for the pain, and I want you to go to the emergency department now to be seen by the surgeons — they'll do blood tests and a scan and decide whether you need an operation, usually a keyhole one. Please don't eat or drink anything from now on in case you need an anaesthetic, don't take any laxatives or painkillers at home, and don't drive yourself. Is there someone who can drive you to the hospital right now?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, my brother's coming. He'll drive me.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "Right, here's the plan and what you need to know.\n\n1. I've rung the emergency department and given them a handover about you, so they're expecting you. Go straight there now with your brother — please don't drive yourself. The morphine I've given you can make you drowsy, so no driving and no operating machinery or working at heights for the next 24 hours.\n\n2. Nothing to eat or drink from now on — not even water — until the hospital team say it's okay. That's in case you need an anaesthetic.\n\n3. Don't take laxatives or enemas, and don't just take painkillers at home and wait this out.\n\n4. I've sent off a full blood count and a CRP (inflammation marker); those results will go to the hospital and I'll get a copy too. Your urine dipstick showed only trace blood and white cells and no infection, which is reassuring against a urine or kidney problem.\n\n5. At hospital they'll examine you, do bloods and a scan — ultrasound or a CT — and if it is your appendix you'll get antibiotics and usually a keyhole operation to remove it. Most people go home in a day or two and are back to normal in a couple of weeks, though you'll need some time off work and off tools — I can write you a certificate.\n\n6. Call 000 straight away, on the way there or at any point, if the pain suddenly becomes much worse or spreads across your whole tummy, if you keep vomiting, if you get a high temperature or shaking chills, if you feel faint, cold and clammy or confused, or if your tummy becomes hard and swollen. Those are signs the appendix may have burst.\n\n7. And if the hospital sends you home saying it isn't appendicitis, but the pain gets worse or isn't clearly settling over the next day or two, come back and see me or return to the emergency department — early appendicitis sometimes only declares itself later, and I'd rather you were checked again.\n\nThis is a very treatable problem and you're doing the right thing by getting it seen today. The sooner it's dealt with, the less chance of complications.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll go with my brother. He'll drive me.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "renal_colic",
+   "sepsis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Renal colic",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Not a can't-miss diagnosis here: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "That pattern is very typical of an inflamed appendix — appendicitis.",
+    "ideal_3": "Please don't eat or drink anything from now on in case you need an anaesthetic, don't take any laxatives or painkillers at home, and don't drive yourself."
+   }
+  },
+  "total": 305,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 275
+ }
+]

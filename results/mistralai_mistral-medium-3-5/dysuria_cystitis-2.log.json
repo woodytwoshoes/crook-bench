@@ -1,0 +1,336 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. Smith. I see you've been having some burning when you pass urine. Can you tell me more about that? When did it start and how severe is it?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, worst right at the end of weeing. It's been happening since yesterday morning, so about a day and a half. I've been going constantly — every half hour — but only a little comes out each time. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, chills, or pain in your lower back or sides? Also, have you noticed any vaginal discharge or itching?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, chills or shaking. The only pain is a bit of a tummy ache low down, not in my back. I haven't noticed any vaginal discharge or itching.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had UTIs before? If so, how often and how were they treated?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it. I wasn't sure what it was at the time, but I took some antibiotics and it cleared up.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent sexual activity or changes in your sexual partners? Also, are you using any contraception or hygiene products that might be new?",
+  "released": [
+   "recent_intercourse",
+   "sexual_partners",
+   "contraception"
+  ],
+  "flooded": false,
+  "reply": "I had sex the night before it started, and I've been with my boyfriend for about a year, just him. I'm on the pill and don't miss it.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any nausea, vomiting, or other symptoms like joint pain or a rash? Also, are you pregnant or could you be pregnant?",
+  "released": [
+   "nausea_vomiting",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any nausea, vomiting or feeling generally unwell. I'm eating normally and haven't been sick. I don't think I'm pregnant, but I'm on the pill and don't miss it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent changes in your hygiene habits, such as using new soaps, bubble baths, or wipes? Also, do you have any history of kidney problems or diabetes?",
+  "released": [
+   "renal_tract_problems",
+   "diabetes"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't changed any of my hygiene products or routines recently. I don't have any history of kidney problems or diabetes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat abdomen. No scars or distension.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Chloe, I’d like to check your urine for signs of infection. This is a simple test we can do here in the clinic. Would that be okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Sure, that sounds fine. I just want to get this sorted and back to work.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "The urine test shows signs of a urinary tract infection (UTI). Given your symptoms—burning when you pass urine, needing to go often, and the test results—it’s very likely you have a UTI. \n\nSince you’re otherwise well, not pregnant, and have no fever or back pain, we can treat this with a short course of antibiotics. \n\nHave you ever had an allergic reaction to any antibiotics?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I'm not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "I’m prescribing you a 5-day course of nitrofurantoin, 100 mg twice daily. This is a common antibiotic for UTIs and should clear the infection. \n\nHere’s what I’d like you to do:\n1. Take the antibiotics as prescribed, and finish the entire course even if you feel better.\n2. Drink plenty of water to help flush out the bacteria.\n3. Avoid sex until the infection has cleared to prevent reinfection or spreading it to your partner.\n4. If your symptoms don’t improve in 2–3 days, or if you develop a fever, back pain, or feel very unwell, come back or go to the emergency department immediately. These could be signs of a kidney infection, which is more serious.\n\nWould you like me to send the prescription to your usual pharmacy?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, please send it to my usual pharmacy. I’ll make sure to take it all and drink plenty of water. I’ll avoid sex until it’s gone.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "dx",
+  "primary": "lower_uti",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lower urinary tract infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Just to recap: You have a likely UTI, and the antibiotics should help. If things worsen—fever, back pain, or vomiting—seek urgent care. Otherwise, follow up if symptoms persist after finishing the course. \n\nAlso, if you develop any new symptoms like unusual vaginal discharge, itching, or pelvic pain, let us know, as we might need to consider other causes like an STI. \n\nTake care, Chloe, and feel better soon!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Dr. Smith. I'll keep an eye on it and come back if anything changes.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water to help flush out the bacteria.",
+    "ideal_3": "If your symptoms don’t improve in 2–3 days, or if you develop a fever, back pain, or feel very unwell, come back or go to the emergency department immediately. These could be signs of a kidney infection, which is more serious."
+   }
+  },
+  "total": 235,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 205
+ }
+]

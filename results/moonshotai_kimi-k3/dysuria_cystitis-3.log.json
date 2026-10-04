@@ -1,0 +1,361 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, come in and take a seat. I can see you've booked in urgently because of burning when you pass urine — that sounds really uncomfortable. Can you tell me in your own words what's been happening since yesterday?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It’s been burning, especially at the end of peeing, like my last UTI. I’ve been going all the time — every half hour — but only a little comes out. It’s been happening since yesterday morning, and the urine is a bit cloudy and smells, but there’s no blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound very much like a bladder infection. Before I confirm that, I need to check a few important things. First, to make sure it hasn't spread up towards your kidneys: have you had any fever or shivers, any pain in your back or side up under your ribs, or any nausea or vomiting?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and I haven’t been sick. No pain in my back or sides — just a bit of a tummy ache low down. I’m eating normally.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that's reassuring. Now a few questions about other possible causes: have you noticed any unusual vaginal discharge, itching, or pain during sex? And are you sexually active at the moment — if so, has there been a new partner in the last few months? I ask because some sexually transmissible infections can cause similar burning, and I'd want to test for those as well if there's any chance.",
+  "released": [
+   "vaginal_discharge_itch",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any unusual discharge, itching, or pain during sex. I'm sexually active — I've been with the same boyfriend for about a year, just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. You mentioned this feels like your last UTI — how many of these have you had before, and roughly when? Do you remember what antibiotic you were given and whether it cleared up completely?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that’s it. I’ve been on antibiotics this year, but I’m not allergic to anything.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Only one before — that's helpful. Now, I know you're on the contraceptive pill, but I still need to check: when was your last period, was it normal, and is there any chance you could be pregnant — for example, any missed pills or vomiting or diarrhoea while taking them? This matters because it affects which antibiotic I can safely use.",
+  "released": [
+   "last_period",
+   "pregnancy_possible",
+   "condom_use",
+   "postcoital_intermenstrual_bleeding",
+   "abnormal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago and it was normal. I don’t think I’m pregnant — I’ve been taking the pill regularly, no missed pills, and I haven’t had any vomiting or diarrhoea. We don’t use condoms because I’m on the pill, and I haven’t had any unusual bleeding — just my normal periods.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any unusual vaginal bleeding"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring. Just a couple more background questions: do you have any other medical conditions — for example diabetes, kidney problems, or kidney stones? And what were the antibiotics you took earlier this year for?",
+  "released": [
+   "diabetes",
+   "renal_tract_problems"
+  ],
+  "flooded": false,
+  "reply": "No, I don’t have diabetes or any kidney or bladder problems. I took amoxicillin last year for a UTI, and it cleared up completely.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Chloe. You're taking one 300 mg tablet once a day for three days — please finish the whole course even if you feel better after a day or two. Most people notice a big improvement within 24 to 48 hours. In the meantime, drink plenty of water, and you can take paracetamol or ibuprofen from the pharmacy for the discomfort. A sachet of a urinary alkaliniser such as Ural, dissolved in water, can also ease the stinging while the antibiotic kicks in. A small number of people get nausea or a rash with this antibiotic — if you get a rash, stop taking it and let us know straight away.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, that sounds doable. I'll make sure to finish the course and drink plenty of water. I'll take the paracetamol if it gets too sore.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Now the important part — when to come back or seek help urgently. If you develop a fever or shivers, pain in your back or side, vomiting, or you feel really unwell, that could mean the infection is travelling up to your kidneys, and you need to be seen urgently — come back here or go to the emergency department if it's after hours. Also come back if you're not clearly improving within 48 hours, if symptoms are still there after you finish the tablets, or if it comes back soon after — in that case we'd send your urine to the lab to check exactly which germ it is and which antibiotic works best. One last thing while you're here: the pill protects you from pregnancy but not from sexually transmissible infections, so condoms are still worth considering, and we're always happy to do a quick screening test if you'd ever like one. Any questions for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, thanks. I'll keep an eye on it and come back if things don't get better.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "lower_uti",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lower urinary tract infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "Lovely, Chloe. Take the script to the pharmacy today and start the first tablet when you get home. You should feel much better in a day or two — and remember, any fever, back pain or vomiting, or if it's not settling, we want to see you back straight away. Take care!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I’ll start the tablets today. I’ll make sure to take them as prescribed and come back if I need to.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_1": "drink plenty of water",
+    "ideal_2": "you can take paracetamol or ibuprofen from the pharmacy for the discomfort"
+   }
+  },
+  "total": 300,
+  "max": 375,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 270
+ }
+]

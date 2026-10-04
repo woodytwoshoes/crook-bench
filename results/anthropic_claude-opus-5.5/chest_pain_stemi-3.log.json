@@ -1,0 +1,293 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Graham, I'm the doctor. You look quite unwell, so I'm going to move quickly. Can you tell me exactly where the discomfort is, what it feels like, and does it spread anywhere like your arm, neck or jaw? What time did it start and has it been constant?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. Feels like a heaviness, like indigestion but heavier. Sort of a weight sitting on my chest. It's been going the whole time — about an hour and a half. Still there now. Jaw's a bit achy, left arm feels heavy. Not my back. Started about seven this morning. Came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your heart tracing shows you're having a heart attack right now. I've called an ambulance to take you straight to hospital so they can open the blocked artery. Before I give you aspirin: have you ever had a reaction to aspirin, any stomach ulcer or bleeding problems, or are you on any blood thinners? And have you taken anything like Viagra in the last couple of days?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "anticoagulants",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of. I've had Disprin before, no problems. No bleeding issues. Nothing like blood thinners. Took one of those Viagra tablets last night.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Please chew this aspirin now. Because you took Viagra last night, I will NOT give you the under-the-tongue spray for the chest pain — together they can drop your blood pressure dangerously. I'll tell the paramedics too. A few quick questions while we wait: any shortness of breath, fainting or feeling light-headed? Any chest pain like this before? How much do you smoke, and has anyone in your family had heart problems young?",
+  "released": [
+   "dyspnoea",
+   "presyncope",
+   "crescendo_angina",
+   "smoking",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Bit short of breath, yeah. Hard to get a proper breath in. Bit light-headed getting out of the car. Didn't pass out. Had a bit of tightness going up ladders — goes away if I stop. It's been happening more. About twenty a day since I was a teenager. Dad had a heart attack at fifty-five. He died from it.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking history"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "aortic_dissection",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's what's happening. One of the arteries feeding the bottom of your heart is blocked. The ambulance is on its way and the hospital will most likely take you straight to the heart unit to open the artery with a small balloon and stent. Time matters, so we act fast. Until they get here: stay sitting, don't get up or walk around, and I'm staying with you and watching your heart, blood pressure and oxygen. Your oxygen level is fine, so you don't need oxygen at the moment. I'll give the paramedics your heart tracing and tell them you've had aspirin 300 mg and took Viagra last night, so no nitrate spray. If the pain gets much worse, you feel faint, or your breathing gets worse, tell me straight away. Please don't eat or drink anything. Your wife can follow the ambulance, but she shouldn't drive you. Later on we'll talk about stopping smoking, which is the most important thing for your heart, and you'll go to cardiac rehab after you leave hospital.",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Yeah. I don't know. Maybe a six? It's more heavy than sore.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Until they get here: stay sitting, don't get up or walk around, and I'm staying with you and watching your heart, blood pressure and oxygen."
+   }
+  },
+  "total": 255,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 240
+ }
+]

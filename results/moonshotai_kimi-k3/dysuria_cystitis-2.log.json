@@ -1,0 +1,299 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr [name]. I can see you've come in with burning when you pass urine, and you mentioned you've had this before. Let's go through what's been happening. First — can you tell me in your own words what you've noticed since yesterday?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, worst right at the end when I wee. I’ve been going all the time — every half hour — but only a little comes out each time. It’s been like this since yesterday morning, so about a day and a half. The urine is a bit cloudy and smells, but I haven’t seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound very typical of a urine infection, but I need to check a few things to make sure we treat it properly and don't miss anything.\n\n1. Have you had a fever, shivers or shaking chills, or any pain in your back or side — up around where your kidneys sit?\n2. Any nausea or vomiting?\n3. Have you noticed any vaginal discharge, itch, or soreness down below?\n4. Are you sexually active at the moment, and if so, do you have a new partner in the last few months?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "vaginal_discharge_itch",
+   "sexual_partners",
+   "recent_intercourse"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and just a bit of a tummy ache low down, nothing in my back. I haven’t been sick or thrown up. No discharge, itching or soreness down there. I’ve got a boyfriend, we’ve been together about a year, just him, and we’d been together the night before it started.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful. A few more things:\n\n1. You said \"a UTI again\" — how many times have you had this before, and when was the last one?\n2. Any chance you could be pregnant? You're on the pill — have you missed any pills recently or had vomiting/diarrhoea that might affect it?\n3. Have you taken anything for it so far — painkillers, or those sachets from the chemist?\n4. Do you have any other medical conditions, like diabetes, or take any other medicines or drugs?",
+  "released": [
+   "pregnancy_possible",
+   "contraception",
+   "postcoital_intermenstrual_bleeding",
+   "diabetes"
+  ],
+  "flooded": false,
+  "reply": "I've had a couple of UTIs before, the last one was maybe six months ago. I don't think I'm pregnant — I'm on the pill and I don't miss it, and I haven't had any vomiting or diarrhoea that might affect it. I haven't taken anything for it yet, just been waiting to see if it gets better. I don't have any other medical conditions.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Good news — this looks like a straightforward bladder infection (a UTI), not anything more serious. Your temperature is normal, your kidneys aren't tender, and the urine test here shows white cells and a chemical called nitrites, which strongly suggests a bacterial infection.\n\nHere's my plan:\n\n1. **Antibiotics:** I'm prescribing trimethoprim — one 300 mg tablet once a day for 3 days. It usually starts easing the burning within a day or so. Take the full course even if you feel better.\n2. **Urine culture:** I've also sent your sample to the lab to confirm which bug it is and which antibiotics work best. That's because this is your third infection in a while — if your symptoms don't clear, we'll use those results to adjust treatment.\n3. **Comfort:** Drink plenty of water, and you can take paracetamol or ibuprofen if it's sore. Urinary alkaliniser sachets from the chemist can ease the sting, but check with the pharmacist that they're okay alongside the antibiotic.\n4. **Why it happened:** Infections like this are often triggered by sex — it started the morning after, which fits. Going for a wee soon after sex and staying well hydrated can help prevent future ones.\n\nOne more thing while you're here: national guidelines recommend a once-a-year chlamydia test for sexually active people under 30, even with no symptoms and a steady partner. It's just a urine test or self-collected swab. Would you like me to do that today?",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess that makes sense — I mean, it did start after sex. I haven't had a chlamydia test in a while, so yeah, I'll go for that today.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Done — both results (the urine culture and the chlamydia test) should be back in about 2 days, and we'll contact you if anything needs follow-up.\n\nImportant things to watch for — please come back straight away, or go to the emergency department if it's after hours, if you develop:\n- a fever, shaking chills, or pain in your back/side over the kidneys\n- vomiting or feeling really unwell\n- symptoms that aren't clearly improving after 48 hours of antibiotics, or that come straight back after finishing the tablets\n\nThat could mean the infection is heading up to the kidneys, which needs different treatment.\n\nOne last thing: this antibiotic isn't ideal in early pregnancy. You're on the pill and taking it reliably so the chance is very low, but if your next period is late or you have any doubt, let us know straight away.\n\nAny questions before you go?",
+  "released": [
+   "last_period"
+  ],
+  "flooded": false,
+  "reply": "No, I don’t think so. I’ve been taking the pill regularly and haven’t missed any. I had a period about two weeks ago, and it was normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water",
+    "ideal_2": "you can take paracetamol or ibuprofen if it's sore",
+    "ideal_3": "please come back straight away, or go to the emergency department if it's after hours, if you develop: - a fever, shaking chills, or pain in your back/side over the kidneys - vomiting or feeling really unwell - symptoms that aren't clearly improving after 48 hours of antibiotics, or that come straight back after finishing the tablets"
+   }
+  },
+  "total": 280,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 235
+ }
+]

@@ -1,0 +1,580 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. [name]. I understand you've got tummy pain since last night. I'm sorry you're feeling rough. Can you tell me where exactly the pain is?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Did the pain start somewhere else before it settled low on the right, or has it been in that one spot the whole time?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button. It moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt sick to your stomach, or actually vomited?",
+  "released": [
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours, and I threw up once this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "And have you had any appetite at all, or any fever, chills or sweats?",
+  "released": [
+   "anorexia",
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I couldn't face breakfast, not hungry at all, which isn't like me. I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "How have your bowels been — any diarrhoea or constipation? Are you still passing wind?",
+  "released": [
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea. I went normally yesterday morning, nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any burning or stinging when you pee, or pain in your testicles?",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal. No, nothing down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "How would you describe the pain — is it sharp, dull, crampy or burning? And on a scale of 0 to 10, how bad is it right now?",
+  "released": [
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's more of a dull, crampy pain now, but it's there all the time. It sort of came and went at first. Maybe a seven out of ten.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Is the pain worse with movement, coughing, or pressing on the area? Does anything make it better?",
+  "released": [
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts. Every bump in the car on the way here was awful, and coughing is the worst. Nothing makes it better.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had anything like this before? And have you ever had any surgery on your tummy?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this. Never had an operation. I've still got my appendix, as far as I know.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "When did you last eat or drink anything?",
+  "released": [
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "No, just the usual. Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry, just to be precise — when did you last have something to eat, and when did you last have a drink?",
+  "released": [],
+  "flooded": false,
+  "reply": "I had something to eat yesterday. Mum's cooking on Sunday. I had a drink this morning.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any cough, cold, sore throat or generally felt unwell in the days before this started?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, just the usual. Mum's cooking on Sunday.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt light-headed, faint or dizzy at all? Any pain up in your chest, shoulder tip, or trouble breathing?",
+  "released": [
+   "faint"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't fainted or felt faint. No pain up in my chest or shoulder tip. No trouble breathing.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Any blood in your vomit or in your poo, or dark black stools?",
+  "released": [
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "No, no blood.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Just a couple of background questions — does anyone in your family have bowel problems like Crohn's, ulcerative colitis or bowel cancer? And do you smoke or drink alcohol?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I don't smoke. A few beers on the weekend, nothing this week. No one in my family has bowel problems like that.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Has your weight been steady recently?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, my weight's been steady.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "finding": "Right lower quadrant: Tender to light percussion. Elsewhere: resonant and non-tender.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "right",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "left",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, from everything I can see — the pain that moved from around your belly button down to the lower right, the fever, the tenderness and the rebound pain when I press — this looks very much like appendicitis, where your appendix is inflamed and irritated. It's the kind of thing that needs to be assessed in hospital today, because it can need an operation to remove it before it bursts.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was that bad. I just thought it was a stomach bug.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "The key thing right now is: do not eat or drink anything from now on, because if you need an anaesthetic your stomach needs to be empty. You should go straight to the emergency department. Please don't drive yourself — have someone take you. I'll phone ahead to let them know you're coming.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was that bad. I just thought it was a stomach bug.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "If on the way the pain suddenly becomes much worse all over your tummy, or you feel faint, dizzy or short of breath, call 000 for an ambulance instead. In hospital they'll give you pain relief through a drip, do some blood tests and likely an ultrasound or scan, and a surgeon will see you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess I should have come earlier.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "You've done the right thing coming in today. It's really common for appendicitis to start off feeling like a tummy bug, so don't blame yourself. The important thing is we've picked it up now and you're going to get it sorted. Are you able to organise someone to take you to the hospital now?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll call someone.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 315
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "this looks very much like appendicitis, where your appendix is inflamed and irritated. It's the kind of thing that needs to be assessed in hospital today, because it can need an operation to remove it before it bursts.",
+    "ideal_3": "do not eat or drink anything from now on, because if you need an anaesthetic your stomach needs to be empty."
+   }
+  },
+  "total": 345,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 315
+ }
+]

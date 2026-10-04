@@ -1,0 +1,429 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham. I'm the doctor seeing you today. Your wife was right to send you in — you look quite unwell, pale and sweaty. Can you tell me exactly what you've been feeling since this morning, and where the discomfort is?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Been there since about seven this morning. Still there now. Right behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale, grey and clammy. Sweating. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds more serious than ordinary indigestion, Graham. A heavy feeling behind the breastbone with jaw ache and a heavy left arm can be a heart problem, and we need to treat it as urgent. Are you short of breath, feeling sick, or have you vomited? Have you had this kind of pain before?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah. Hard to get a proper breath in. Feel a bit sick, haven't vomited. Had a tightness going up ladders this week, goes away if I stop. It's been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this could be your heart, not just indigestion. I am going to do a heart tracing right now and arrange an ambulance to hospital. Have you ever had a bad reaction to aspirin, a stomach ulcer, or a recent bleed? Are you on any blood thinners?",
+  "released": [
+   "aspirin_allergy",
+   "anticoagulants"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of. I've had Disprin before, no problems. Not on any blood thinners.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Phone the receiving hospital with the STEMI ECG"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 microgram",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the heart tracing shows a heart attack — the lower part of the heart muscle is not getting enough blood. This is an emergency. I have given you a full-strength aspirin to chew, which helps stop the clot getting bigger, and I have called an ambulance to take you straight to hospital. They will phone ahead so the heart team is ready. Please stay sitting or lying still and do not eat or drink. The ambulance is the safest way — do not drive. I am also giving you one spray of a heart medicine under the tongue to ease the pain. It can cause a headache or make you feel light-headed. Tell me straight away if you feel faint.",
+  "released": [
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for telling me about feeling light-headed getting out of the car. Did you actually black out or nearly black out at any point today? Is the chest heaviness still the same, better, or worse since the spray? Any pain between the shoulder blades, or does the pain move?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No, didn't pass out. Chest heaviness still there, same as before. Pain doesn't move. No pain between shoulder blades.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "The spray has not taken the heaviness away, which fits with a blocked heart artery rather than simple spasm. The ambulance crew can give more pain relief on the way, with proper monitoring. A few quick questions while we wait: do you have diabetes? Has anyone in your close family had a heart attack young? Have you ever had a heart attack or heart procedure before? And did you take your blood pressure tablet and cholesterol tablet this morning?",
+  "released": [
+   "diabetes",
+   "family_history",
+   "previous_cardiac"
+  ],
+  "flooded": false,
+  "reply": "No, not that I know of. Dad had a heart attack at fifty-five, he died from it. Never had anything wrong with my heart. Took my blood pressure tablet and cholesterol tablet this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "One important check I should have asked before the spray: in the last day or two, have you taken any tablet for erections, such as Viagra, Cialis or similar? Also, is your wife here with you, or is someone we should call?",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you. Wife's at work, but she'll be here soon.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me — that is medically important and I will not mention it to your wife. Erection tablets and the heart spray I just gave you can drop the blood pressure dangerously if they are too close together. Please lie back and stay still. Do not sit up quickly. I will not give you any more spray. When did you take it, and was it Viagra or a longer-acting one like Cialis? The ambulance and hospital team must know, so they do not give you more of that spray. Everything else stays confidential.",
+  "released": [],
+  "flooded": false,
+  "reply": "Viagra. Took it last night.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "How are you feeling right now after that spray — any worse dizziness, fading vision, or feeling like you might pass out? Please stay lying flat.\n\nHere is what is happening and what we will do. The tracing shows a heart attack in the bottom wall of the heart: a clot is blocking an artery. That is why you have the heavy pain, the sweaty grey look, the jaw and left arm ache, and the short breath. Indigestion does not do this, and it does not change the heart tracing.\n\nI have given you aspirin 300 mg to chew, which is the right first medicine. I have called an ambulance, not a taxi, because you need heart monitoring on the way and the hospital needs to be ready. At hospital they will take you straight to the heart catheter laboratory, put dye in the arteries, and usually open the blockage with a balloon and a stent. Minutes matter, so we are not waiting for blood tests here.\n\nPlease do not eat, drink, or get up to the toilet. If the pain suddenly gets much worse, you become very short of breath, you feel you are going to black out, or you vomit and cannot stop, tell me or the crew immediately. Your wife can meet you at the hospital; I will not tell her about the erection tablet. After you are stable, stopping smoking will be one of the most important things for your heart — we can plan that later, not today.\n\nThe ambulance is on its way. I am staying with you until they arrive.",
+  "released": [],
+  "flooded": false,
+  "reply": "Bit light-headed again. Not sure if worse.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Lie completely flat, and if you can, bend your knees or have your legs up a little — that helps blood get back to your heart. The light-headedness is likely from the spray on top of last night's Viagra, plus the heart attack itself. Stay like that. Do not stand. The crew will check your blood pressure as soon as they arrive and can give fluid through a drip if it is low. I am not giving any more spray. You are in the right place, and help is coming.",
+  "released": [],
+  "flooded": false,
+  "reply": "Bit light-headed, but not sure if worse.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "oesophageal_spasm",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Oesophageal spasm",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "The ambulance is on its way. I am staying with you until they arrive."
+   }
+  },
+  "total": 295,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 280
+ }
+]

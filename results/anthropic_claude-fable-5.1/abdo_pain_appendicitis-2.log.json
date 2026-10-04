@@ -1,0 +1,445 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. I can see you're uncomfortable — tell me about this tummy pain. Where did it start, where is it now, and what's it been like since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "It started last night around ten o'clock, on the right side down low, and it's been there all the time now, though it sort of came and went at first. It's a seven out of ten, and walking and coughing make it worse — every bump in the car was awful.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A few more things: did the pain start around your belly button or in the middle before moving to the right? Have you had any nausea or vomiting, and when did you last eat? Any fever, chills or sweats?",
+  "released": [
+   "pain_migration",
+   "nausea_vomiting",
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button, then moved down to the right. I've felt sick since the early hours and threw up once this morning. I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Any change in your bowels — diarrhoea, constipation, blood in the stool? Any burning when you pass urine, going more often, or blood in the urine? Any pain or swelling in your testicles?",
+  "released": [
+   "diarrhoea",
+   "rectal_bleeding",
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea, I went normally yesterday morning and nothing since. No blood in the stools. Weeing is normal, no burning or blood in the urine. Nothing down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had surgery on your tummy before, or any similar pain in the past? Any other medical problems, regular medicines, or allergies? And have you taken any painkillers for this today? Also — anyone around you with a stomach bug, or any recent travel or unusual food?",
+  "released": [
+   "previous_surgery",
+   "previous_episodes",
+   "analgesia_tried",
+   "unwell_contacts",
+   "recent_travel",
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "No, never had an operation, still got my appendix as far as I know. Never had anything like this before. Took a couple of paracetamol this morning, didn't do much. Everyone at home and work is fine, no one else has been sick or had diarrhoea. Haven't been anywhere, just the usual — Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Anyone around him with vomiting or diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent overseas travel"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, drink alcohol or use any recreational drugs? And when did you last have anything to eat or drink?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I don't smoke. A few beers on the weekend, nothing this week. Last ate and drank about six this morning, had some paracetamol.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I'm fairly sure this isn't a stomach bug. The way the pain started around your belly button and moved to the lower right, together with the fever, feeling sick, and how tender that spot is when I press and when you cough, all point very strongly to appendicitis — your appendix is inflamed. This needs to be seen in hospital today, because it usually needs an operation to remove the appendix, and if it's left it can burst and cause a serious infection. I'm going to ring the emergency department now so they expect you, and I'll write a letter for you to take. Please don't eat or drink anything from now on — including painkillers by mouth — in case they need to operate this afternoon. Is there someone who can drive you there right now? You shouldn't drive yourself.",
+  "released": [],
+  "flooded": true,
+  "reply": "That's a lot at once. What's the first thing I need to do?",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Fair enough — one step at a time. First thing: ring someone who can drive you to the hospital emergency department now — a family member, mate, or your boss. If no one can come in the next half hour, tell me and we'll arrange an ambulance. Everything else — I'll handle the phone call to the hospital and the letter. Who can you call?",
+  "released": [],
+  "flooded": false,
+  "reply": "My brother's coming. He's on his way.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "Good. I've phoned the emergency department and they're expecting you, and here's a letter with my findings for you to hand in at the desk when you arrive. While you wait for your brother, rest here on the couch. Key points: nothing to eat or drink from now, including water and tablets, until the hospital says it's okay — they'll give you pain relief and fluids through a drip. Go straight to emergency, don't go home first. If on the way the pain suddenly gets much worse, spreads across your whole belly, you feel faint, or you start vomiting repeatedly, call 000 for an ambulance rather than continuing in the car. Does that make sense, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that makes sense. No questions.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 320
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "The way the pain started around your belly button and moved to the lower right, together with the fever, feeling sick, and how tender that spot is when I press and when you cough, all point very strongly to appendicitis — your appendix is inflamed.",
+    "ideal_3": "Please don't eat or drink anything from now on — including painkillers by mouth — in case they need to operate this afternoon."
+   }
+  },
+  "total": 350,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 320
+ }
+]

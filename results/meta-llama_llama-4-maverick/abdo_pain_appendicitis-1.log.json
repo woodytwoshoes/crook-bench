@@ -1,0 +1,203 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, thanks for coming in today. Can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down. Started last night, about ten o'clock. It's there all the time now. It's a seven out of ten.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you describe the pain? Is it sharp, dull, crampy, or something else?",
+  "released": [],
+  "flooded": false,
+  "reply": "Dull. Not sharp. Not crampy. Just there.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "other",
+  "finding": "Soft and non-tender in this area.",
+  "awards": [],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "subregion": "rlq",
+  "finding": "Tender to light percussion.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms like nausea, vomiting, fever, or changes in bowel movements?",
+  "released": [],
+  "flooded": false,
+  "reply": "Nope. Just the pain.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to order some tests to help figure out what's going on. In the meantime, I want to advise you to avoid eating or drinking until we've got a clearer picture, and to come back or go to the emergency department if your symptoms worsen.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to eat or drink. Alright.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Urine pregnancy test",
+    "domain": "investigations"
+   }
+  ],
+  "score": 58
+ },
+ {
+  "type": "refer",
+  "id": "general_surgery",
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: Routine referral to a general surgeon (outpatient appointment)",
+    "domain": "management"
+   }
+  ],
+  "score": 28
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "appendicitis",
+   "ectopic_pregnancy"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Not a can't-miss diagnosis here: Ectopic pregnancy",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 28
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I want to advise you to avoid eating or drinking until we've got a clearer picture"
+   }
+  },
+  "total": 13,
+  "max": 420,
+  "level": "Intern",
+  "consequence": "harmful",
+  "score": 28
+ }
+]

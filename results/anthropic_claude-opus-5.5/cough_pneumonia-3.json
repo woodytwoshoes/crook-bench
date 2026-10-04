@@ -1,0 +1,105 @@
+{
+ "model": "anthropic/claude-opus-5.5",
+ "case": "cough_pneumonia",
+ "rep": 3,
+ "ending": "ended",
+ "total": 365,
+ "max": 425,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 155,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 85,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 5
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 120,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": true
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": true
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": true
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": false
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": false
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "atypical_pneumonia",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "sepsis",
+   "role": "sinister"
+  }
+ ],
+ "says": 8,
+ "questions": 15,
+ "usage": {
+  "calls": 16,
+  "prompt_tokens": 82051,
+  "completion_tokens": 2995,
+  "cost": 0.388104
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:04:08.903Z",
+ "max_questions": 50
+}

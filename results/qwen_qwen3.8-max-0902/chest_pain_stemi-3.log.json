@@ -1,0 +1,283 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Graham, I can see you're not comfortable — I'm going to get you checked over right away. Tell me about this \"indigestion\": where exactly do you feel it, what does it feel like, and when did it start?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Feeling like a weight on my chest. Right behind the breastbone, up a bit into the throat. Started about seven this morning, came on quick. Still there now. Jaw's a bit achy, left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "That description — a heavy weight behind the breastbone going up into the throat, with a heavy left arm and achy jaw, and you're pale and sweaty — worries me about your heart, not simple indigestion. Have you ever had anything like this before, and are you taking anything else apart from your blood pressure tablet and the cholesterol one? Any aspirin allergy, stomach ulcers or bleeding problems?",
+  "released": [
+   "crescendo_angina",
+   "pde5_inhibitor",
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I had this chest pain before, like a tightness going up ladders, goes away if I stop. It's been happening more. Took one of those Viagra tablets last night. No aspirin allergy, had Disprin before, no problems.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's what's going on. Your ECG shows a blockage in one of the heart's arteries — this is a heart attack, specifically in the lower part of the heart, not indigestion. I've already called 000 for an ambulance to take you straight to the hospital with a cardiac catheter lab, where they can open the blocked artery. I've given you 300 mg of aspirin to chew, which thins the blood and helps. Importantly, because you took Viagra last night I must NOT give you the GTN spray or any nitrate tablets — the combination can drop your blood pressure dangerously — so please don't take any of your own. Sit still, don't eat or drink anything, and absolutely do not drive. A few quick questions while we wait: do you feel sick or have you vomited? Any breathlessness, dizziness or feeling like you might pass out? And did you drive yourself here today?",
+  "released": [
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope",
+   "recent_bleeding",
+   "immobility_travel"
+  ],
+  "flooded": false,
+  "reply": "Feeling a bit sick, haven't vomited. A bit short of breath, bit light-headed getting out of the car, didn't pass out. No, I didn't drive myself here, I came in a car.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Long trips or bed rest recently"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the full picture and the plan, Graham.\n\nWhat this is: your ECG shows an acute heart attack — a blocked artery supplying the bottom part of your heart (an inferior STEMI). The warning signs were all there: heavy central chest pressure going up to your throat, into your jaw and down your left arm, starting suddenly, with you pale, grey and sweaty, plus nausea and light-headedness. Your heart rate is a bit slow (54) and your blood pressure is on the soft side, which goes with this type of heart attack.\n\nWhat I've done: given you 300 mg of aspirin to chew, and called 000 — an ambulance is on the way to take you to a hospital with a cardiac catheter lab, where they can do an angiogram and open the blocked artery, usually with a stent. That's the treatment that saves heart muscle, and it works best the sooner it's done, so we're not waiting around and we're not doing any more tests here that would delay you.\n\nWhat I'm NOT giving you: because you took Viagra (sildenafil) last night, I can't give you GTN — the spray, the tablets or a patch — for at least 24 hours, because together they can drop your blood pressure to a dangerous level. Please tell the ambulance crew and the hospital doctor you took sildenafil last night, and don't take any of your own GTN. I'm also not giving you a beta-blocker today because your pulse is slow.\n\nRight now: stay sitting quietly, don't walk around, don't eat or drink, don't drive or go home — you'll be driven by ambulance. If someone's with you, they should stay; I'll keep monitoring your pulse and blood pressure while we wait, and if you feel worse, more breathless, or you do pass out, tell me straight away. If your heart were to stop, we'd start CPR and use the defibrillator here immediately.\n\nAfterwards: once you're through this, you'll need dual antiplatelet tablets, a statin, blood pressure control and a cardiac rehab plan — and stopping smoking is the single most powerful thing you can do to keep this from happening again; I'll help with that when you're back. Also, that tightening you've been getting on ladders, which has been getting more frequent, was angina — a warning that should always be checked urgently next time, so please don't wait for your wife to insist again.",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "Smoking about twenty a day since I was a teenager. Been meaning to quit.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking history"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Understood — twenty a day since your teens is a big part of why this has happened, but quitting now still cuts your risk of another heart attack dramatically, and I'll sort that out with you once you're home from hospital. For now, stay sitting still and let me keep an eye on you until the paramedics walk through the door. They'll take over with pain relief, more blood thinners and the trip to the cath lab.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Right now: stay sitting quietly, don't walk around, don't eat or drink, don't drive or go home — you'll be driven by ambulance. If someone's with you, they should stay; I'll keep monitoring your pulse and blood pressure while we wait, and if you feel worse, more breathless, or you do pass out, tell me straight away. If your heart were to stop, we'd start CPR and use the defibrillator here immediately."
+   }
+  },
+  "total": 275,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 260
+ }
+]

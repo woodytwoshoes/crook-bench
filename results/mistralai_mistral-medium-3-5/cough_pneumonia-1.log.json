@@ -1,0 +1,492 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm Dr. Smith. I see you've been feeling unwell with a cough and fever. Can you tell me more about how this started and how long you've had these symptoms?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was roasting. Since yesterday I've been bringing stuff up, rusty and brownish, started clear. There's a sharp pain on the right side, low down near my back, catches when I breathe deep or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds quite uncomfortable. Have you had any shortness of breath or difficulty breathing?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any shortness of breath. I'm only going up the stairs — got puffed on the way in from the car park. Sitting here I'm alright.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any wheezing or a whistling sound when you breathe?",
+  "released": [
+   "lung_disease"
+  ],
+  "flooded": false,
+  "reply": "No, never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent contact with anyone who’s been unwell, or have you travelled anywhere recently?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere. Just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms, like a sore throat, runny nose, or body aches?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that. Just the cough, fever and the pain on the right side.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been sweating at night or feeling unusually tired?",
+  "released": [
+   "rigors",
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "Yes, I was shaking and chattering under the doona the first night, even though I was boiling. I haven't been sweating much since, but I've been feeling pretty tired and grumpy, though my head's clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any nausea, vomiting, or pain in your tummy?",
+  "released": [
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, no vomiting. No tummy pain either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent injuries or trauma to your chest or ribs?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that. I've had no injuries or trauma to my chest or ribs.",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, Mark?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "No, never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Do you drink alcohol, and if so, how much?",
+  "released": [
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "A couple of beers on the weekend. None this week.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had pneumonia or any other lung conditions in the past?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't had pneumonia or any other lung conditions.",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent weight loss or loss of appetite?",
+  "released": [
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No, if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I’ve examined your chest and found some signs that suggest you might have an infection in your lung, possibly pneumonia. I’d like to do a few more checks to confirm this. Have you had any recent vaccinations, like the flu or pneumonia vaccine?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "No, didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, the chest X-ray shows a consolidation in the lower part of your right lung, which confirms that you likely have pneumonia. This is a serious infection, but it’s treatable. Given your symptoms—cough with rusty sputum, fever, and the pain when you breathe—this fits with what we’re seeing. Have you had any recent antibiotics or hospital admissions?",
+  "released": [
+   "recent_antibiotics",
+   "recent_hospital"
+  ],
+  "flooded": false,
+  "reply": "No, haven't had any antibiotics and haven't been in hospital for years.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I’m going to start you on antibiotics to treat the pneumonia. The most likely cause is a bacterial infection, and we’ll treat it with a course of antibiotics. I’ll also give you some advice on managing your symptoms at home. Do you have any allergies to antibiotics?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I'm allergic to penicillin. I came up in hives and my lips swelled when I was a kid. It's probably not on my file; I haven't needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Since you’re allergic to penicillin, I’ll prescribe doxycycline, which is safe for you. It’s a tablet you’ll take twice a day for a week. I’ll also recommend paracetamol for the fever and pain. Does that sound okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that sounds okay. I'll take the doxycycline and paracetamol. Just hope it kicks in before the exams.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "200 mg",
+  "frequency": "Once daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "I want you to rest at home, drink plenty of fluids, and take the antibiotics and paracetamol as prescribed. If your fever doesn’t improve in 48 hours, or if you start feeling short of breath, or if the pain in your side gets worse, I need you to come back immediately or go to the emergency department. Avoid contact with others as much as possible to prevent spreading the infection. Do you have any questions about the plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, doc. Just hope it kicks in before the exams.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, to summarise: you have pneumonia, which is a lung infection. We’re treating it with doxycycline and paracetamol. Rest, drink fluids, and monitor your symptoms. If you worsen—especially with breathing difficulties or persistent fever—seek urgent care. I’ll follow up with your blood test results tomorrow, but call me if you’re concerned before then.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that’s about it. Just hope it kicks in before the exams.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "This is a serious infection, but it’s treatable.",
+    "ideal_3": "If you worsen—especially with breathing difficulties or persistent fever—seek urgent care.",
+    "acceptable_2": "I’ll also recommend paracetamol for the fever and pain.",
+    "acceptable_3": "I want you to rest at home, drink plenty of fluids, and take the antibiotics and paracetamol as prescribed."
+   }
+  },
+  "total": 290,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 255
+ }
+]

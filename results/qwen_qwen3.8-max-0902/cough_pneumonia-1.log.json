@@ -1,0 +1,418 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Mark, I'm Dr Chen. Sorry you're feeling so rough. Let's get through it — when exactly did this start, and what's happened since?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "G'day Dr Chen. It started three days ago. It was a dry, hacking cough at first. Then I started burning up, on and off. Since yesterday I've been bringing up stuff — rusty, brownish stuff at first, then clear. And there's this sharp pain on the right side, near my back. It catches when I breathe deep or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. A few things I need to know:\n1) Have you felt short of breath at all, or noticed your breathing faster than usual?\n2) Did you get the shakes and chills — like teeth-chattering rigors — when the fever hit?\n3) How high has the temperature been, and are you still spiking fevers today?\n4) Any other symptoms — headache, sore throat, runny nose, muscle aches, tummy upset, feeling confused or drowsy?\n5) Any blood in the cough, more than just that rusty colour?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "No, only going up the stairs — got puffed on the way in from the car park, but sitting here I'm alright. Yes, the first night I was shaking under the doona, teeth chattering, even though I was boiling. I haven't measured the temperature, but I was roasting. No, not really — just that rusty, brownish colour. I don't know what \"rigors\" means, sorry.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "No problem — \"rigors\" just means those shaking chills, so yes, you had them. Next:\n1) Do you smoke or vape? Any history of asthma, emphysema/COPD, heart problems, diabetes, or anything that lowers your immunity?\n2) Do you take any regular medicines, or have any allergies to medicines — especially antibiotics?\n3) How much alcohol do you drink in a typical week?\n4) Have you been around anyone unwell lately — at school, at home? Any travel in the past month?\n5) Any contact with birds, poultry, farm animals, or dusty soil/hay?",
+  "released": [],
+  "flooded": true,
+  "reply": "No, I don't smoke or vape. No history of asthma, emphysema, heart problems, diabetes, or anything like that. I take a blood pressure pill and a cholesterol one — that's it. I don't know what \"rigors\" means, sorry. I drink maybe two to three beers a week. No, I haven't been around anyone unwell. Just my wife and kids at home. No travel in the past month. No, I don't work with animals or anything like that.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Good — thanks. (Sorry about that: \"rigors\" just means shaking chills, which you did have.)\n1) Do you know the names of your blood pressure and cholesterol tablets? And how well controlled is your blood pressure?\n2) Have you had your flu vaccination this year, and any COVID boosters?\n3) Any swelling or pain in your calves, recent surgery, long periods of sitting still, or a personal/family history of blood clots or cancer?\n4) Any drenching night sweats, unintentional weight loss, or anyone you know diagnosed with tuberculosis?\n5) Have you been able to eat and drink normally, and pass urine normally?",
+  "released": [
+   "flu_vaccine",
+   "leg_swelling",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "I take amlodipine and atorvastatin — blood pressure's been okay. I didn't get the flu jab this year. Legs are fine, no swelling or pain. If anything, I could lose a few kilos. I don't know what \"rigors\" means, sorry.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "subregion": "lungs_back",
+  "finding": "Increased at the right base.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Your chest examination and X-ray show an infection in the bottom part of your right lung — that's pneumonia. Before I write the script, three quick things:\n1) Have you ever had a reaction to penicillin or any antibiotic — rash, swelling, trouble breathing?\n2) Have you taken any antibiotics in the last 3 months?\n3) Have you been keeping fluids down and passing urine normally, and is there someone at home who can keep an eye on you?",
+  "released": [
+   "antibiotic_allergy",
+   "recent_antibiotics",
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "Yes, I had a reaction to penicillin as a kid — hives and my lips swelled. I haven't taken any antibiotics in the last three months. My wife's working from home and she can keep an eye on me if I need.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg (1 tablet)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "influenza",
+   "sepsis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Influenza",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Right, Mark — here's what's going on and the plan.\n\n**The diagnosis**\nYour chest examination and your chest X-ray both show an infection sitting in the bottom part of your right lung — that's pneumonia, not just a chest cold. That explains the fever and shaking chills, the rusty-coloured phlegm, and the sharp pain on the right that catches when you breathe in or cough. The X-ray shows no fluid collection around the lung, and your oxygen level (95%), blood pressure, pulse and breathing rate are all acceptable, and you're thinking clearly — so this is a mild-to-moderate pneumonia that can safely be treated at home with tablets, not in hospital.\n\n**Important: your penicillin allergy**\nThank you for telling me about the hives and swollen lips after penicillin as a child — that's the sort of reaction we take seriously, and it wasn't in your chart, so I'm recording it today. Because of it I have NOT given you the usual first-choice antibiotic (amoxicillin) or anything in that family. Instead you'll have doxycycline, which works well for pneumonia and is safe for you. Down the track, it's worth having that childhood reaction properly assessed by an allergy specialist — a lot of people labelled \"penicillin allergic\" aren't, and it would open up treatment options.\n\n**Your medicines**\n1. Doxycycline 100 mg, one tablet twice daily (morning and night) for 5 days — 10 tablets.\n   • Swallow it with a full glass of water while you're sitting or standing, and stay upright for about 30 minutes afterwards — it can irritate the gullet.\n   • Take it with food if your stomach is upset.\n   • Don't take it at the same time as antacids (Gaviscon, Mylanta), iron, calcium or zinc supplements, or a big glass of milk — leave a 2-hour gap, or it won't be absorbed.\n   • It makes your skin burn more easily in the sun, so cover up and use sunscreen.\n   • Finish all 10 tablets even when you feel better.\n2. Paracetamol 1 g (two 500 mg tablets) every 6 hours as needed for the fever and the chest pain. Maximum 8 tablets (4 g) in 24 hours, and don't double up with cold-and-flu products that already contain paracetamol. This will help you breathe and cough more comfortably.\n\n**Looking after yourself**\n• Rest at home — stay off work until your fever has gone for at least 24 hours and you're on the mend; that's usually about a week. I'll write you a medical certificate.\n• Drink plenty of fluids, roughly 2 to 3 litres a day — water, soup, weak tea. Your wife looking after you at home is a real advantage.\n• Expect to still feel tired and to have some cough for a couple of weeks — that's normal. The fever and the chest pain should clearly be easing within 48 to 72 hours.\n• Pneumonia germs spread in droplets, so cover your coughs, wash your hands, and don't share cups or towels. Your family aren't at high risk.\n• Once you've recovered, please get your flu vaccination — you missed it this year — and ask about it for your household too. It lowers the chance of this happening again.\n\n**When to get help urgently — this is the important bit**\nCall 000 for an ambulance, or go straight to the emergency department, if you have any of:\n• Increasing breathlessness, especially at rest, or you can't say a full sentence without stopping for breath\n• Bluish lips or face\n• Severe or crushing chest pain\n• Confusion, drowsiness, or your wife can't easily wake you\n• Coughing up more than about a teaspoon of blood\n• Vomiting so you can't keep the tablets or fluids down, or you're barely passing urine\n• Feeling faint or light-headed when you stand up\nAsk your wife to keep an eye on you overnight and tell you if you seem muddled or more breathless — that's sometimes hard to judge yourself.\n\n**Follow-up**\nI've sent off two blood tests (an inflammation marker and kidney/salt levels) — results come back tomorrow and I'll ring you with them. I'd like to see you again in 48 hours, or sooner if you're not turning the corner, so please book that in at reception before you go. If the cough is still there at six weeks we'll repeat the chest X-ray to make sure everything has cleared.\n\nAny questions about all that?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, thanks. Just wondering — do I need to take the doxycycline with food or can I take it on an empty stomach?",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Either way works — the antibiotic still gets absorbed. I'd suggest taking it with a bit of food, like toast or a sandwich, because on an empty stomach it can make you feel nauseous or give you stomach cramps, and that's the main reason people stop taking it.\n\nThe one thing to avoid is taking it at exactly the same time as antacids (Gaviscon, Mylanta), iron tablets, calcium or zinc supplements, or a large glass of milk or a yoghurt — those bind to the doxycycline and stop it working. Leave about a 2-hour gap either side. A normal meal or a small amount of dairy in your tea or cereal is fine.\n\nAnd always with a full glass of water while sitting or standing, then stay upright for 30 minutes so it doesn't irritate your food pipe. Finish all 10 tablets.\n\nSo to recap the essentials: pneumonia in the right lower lung, doxycycline twice daily for 5 days because of your penicillin allergy, paracetamol up to four times a day for fever and pain, rest and fluids, and I'll ring you tomorrow with the blood results and see you again in 48 hours. Ring or come straight in sooner — or call 000 — if you get more breathless, confused, or can't keep fluids down. Get some rest, Mark.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Dr Chen. I'll take it with a bit of food. Just making sure I don't mix it with anything else. I'll rest and stay hydrated. See you in 48 hours.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_4"
+   ],
+   "quotes": {
+    "ideal_1": "This is a mild-to-moderate pneumonia that can safely be treated at home with tablets, not in hospital.",
+    "ideal_2": "I'd like to see you again in 48 hours, or sooner if you're not turning the corner, so please book that in at reception before you go.",
+    "ideal_3": "Ring or come straight in sooner — or call 000 — if you get more breathless, confused, or can't keep fluids down.",
+    "acceptable_2": "Paracetamol 1 g (two 500 mg tablets) every 6 hours as needed for the fever and the chest pain.",
+    "acceptable_3": "Drink plenty of fluids, roughly 2 to 3 litres a day — water, soup, weak tea.",
+    "acceptable_4": "Thank you for telling me about the hives and swollen lips after penicillin as a child — that's the sort of reaction we take seriously, and it wasn't in your chart, so I'm recording it today."
+   }
+  },
+  "total": 315,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 260
+ }
+]

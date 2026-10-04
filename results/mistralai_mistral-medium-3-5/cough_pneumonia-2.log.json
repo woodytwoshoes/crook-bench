@@ -1,0 +1,493 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm Dr. Smith. I see you've been feeling unwell with a cough and fever. Can you tell me more about how this started and how long you've had these symptoms?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was roasting. Since yesterday I've been bringing stuff up, rusty and brownish, started clear. There's a sharp pain on the right side, near my back, catches when I cough or take a deep breath.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds quite uncomfortable. Have you had any shortness of breath or difficulty breathing?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any shortness of breath. I'm only going up the stairs — got puffed on the way in from the car park. Sitting here I'm alright.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any wheezing or a whistling sound when you breathe?",
+  "released": [
+   "lung_disease"
+  ],
+  "flooded": false,
+  "reply": "No, I've never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent contact with anyone who’s been unwell, or have you travelled anywhere recently?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere. Just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms, like a sore throat, runny nose, or body aches?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that. Just the cough, fever and the pain on the right side.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any night sweats or weight loss recently?",
+  "released": [
+   "rigors",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "Yes, the first night I was shaking under the doona, teeth chattering, even though I was boiling, and if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any chest pain at rest, or is it only when you cough or take a deep breath?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's only when I cough or take a deep breath.",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any history of heart or lung problems in the past?",
+  "released": [
+   "heart_disease"
+  ],
+  "flooded": false,
+  "reply": "No, no heart problems.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, Mark?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "Never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent surgery or been in hospital?",
+  "released": [
+   "recent_hospital"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been in hospital for years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Are you up to date with your vaccinations, like the flu shot or pneumonia vaccine?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "Didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I’d like to check your temperature, pulse, and oxygen levels. Can I do that now?",
+  "released": [],
+  "flooded": false,
+  "reply": "Sure, go ahead.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, your temperature is 38°C, your heart rate is 96, your breathing rate is 22, and your oxygen levels are 95%, which is slightly lower than normal. Based on your symptoms—cough with rusty-brown sputum, fever, sharp pain on the right side when you cough or breathe deeply, and the findings on examination—I’m concerned you may have a chest infection, possibly pneumonia. I’d like to arrange a chest X-ray to confirm this. Would that be alright?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? That's not good. I'd rather be grading exams. Can I get the X-ray done quickly? I've got a class in an hour.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "I understand your concern, Mark. Pneumonia can be serious, but it’s treatable. Given your symptoms and the examination findings, it’s important to confirm this with a chest X-ray. I’ll arrange it urgently, but you should not go to work today—you need rest and treatment. Do you have someone who can drive you to the imaging centre or would you like me to arrange an ambulance?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll manage. I'll drive myself, but I'll be slower than usual. Just don't want to be stuck in traffic.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, the chest X-ray shows a consolidation in the right lower lobe of your lung, which confirms pneumonia. This is likely a bacterial infection, and we’ll need to start you on antibiotics. Given your symptoms and the X-ray findings, I recommend starting treatment immediately. Do you have any allergies to antibiotics?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I'm allergic to penicillin. I came up in hives and my lips swelled when I was a kid. It's probably not on my file; I haven't needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Since you’re allergic to penicillin, we’ll avoid that class of antibiotics. I’ll prescribe doxycycline, which is suitable for treating pneumonia in your case. Alternatively, if you’ve taken cephalexin before without issues, that could be another option. Have you ever taken doxycycline or cephalexin?",
+  "released": [
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "No, haven't had any antibiotics.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "200 mg",
+  "frequency": "Once daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I’m prescribing you doxycycline 200 mg once daily for 7 days. Take it with a full glass of water and avoid lying down for at least 30 minutes after taking it to prevent stomach irritation. Also, avoid dairy products or antacids within 2 hours of taking the medication, as they can interfere with absorption. Finish the entire course, even if you start feeling better. Can you manage that?",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ll take it. Just hope it doesn’t make me sick. I’ve got a class in a few hours.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, it’s important that you do not go to work today or until you’ve been fever-free for at least 24 hours and your symptoms are improving. Pneumonia is contagious, and you need rest to recover. I strongly advise you to go home, rest, and drink plenty of fluids. If your symptoms worsen—such as difficulty breathing, persistent high fever, or confusion—you should seek immediate medical attention. Do you have someone at home who can check on you?",
+  "released": [
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "My wife and our two teenagers. She's working from home this week, so she can drive me back in if I need.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "That’s good to hear. I’ll also recommend taking paracetamol for fever and pain relief if needed. Avoid ibuprofen if you have any asthma or stomach issues, but paracetamol should be safe. Would you like me to prescribe that as well?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, paracetamol's fine. Just don't want to be stuck with a fever all day.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1-2 tablets",
+  "frequency": "Every 4 hours",
+  "duration": "As directed",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "I’ve prescribed paracetamol 500 mg, 1-2 tablets every 4 hours as needed for fever or pain. Remember not to exceed 4 grams (8 tablets) in 24 hours. Now, I’d like to follow up with you in a few days to ensure the antibiotics are working. If you don’t improve within 48 hours or if you feel worse, please come back sooner or go to the emergency department. Do you have any questions for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I think that's it. Just hope the pills don't make me sick before the exam.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, to summarise: you have community-acquired pneumonia, which is a chest infection. We’ve started you on doxycycline and paracetamol. Rest at home, stay hydrated, and monitor your symptoms. If you develop shortness of breath, chest pain at rest, or a high fever that doesn’t improve, seek urgent medical help. I’ll check in with you in a few days to see how you’re doing. Take care and don’t hesitate to reach out if you need anything.",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What's the next step?",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "The next step is for you to go home, start the antibiotics and paracetamol, and rest. Avoid going to work until you’re fever-free for 24 hours and feeling better. If you worsen or don’t improve in 48 hours, come back or go to the emergency department. I’ll call you in 2-3 days to check on your progress. Does that sound clear?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that sounds clear. Just hope I don’t turn into a patient with a fever and a cough.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "Pneumonia can be serious, but it’s treatable.",
+    "ideal_2": "I’ll call you in 2-3 days to check on your progress.",
+    "ideal_3": "If you develop shortness of breath, chest pain at rest, or a high fever that doesn’t improve, seek urgent medical help.",
+    "acceptable_3": "Rest at home, stay hydrated, and monitor your symptoms."
+   }
+  },
+  "total": 295,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 245
+ }
+]

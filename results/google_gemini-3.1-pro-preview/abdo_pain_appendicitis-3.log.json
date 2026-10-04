@@ -1,0 +1,407 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Samuel, I see you're in quite a bit of discomfort. You mentioned having tummy pain since last night. Can you tell me more about how the pain started and exactly where it is?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "The pain started last night around ten o'clock. It's down here on the right side, low down. It's there all the time now. At first it sort of came and went. I'd say it's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sorry you're in so much pain, Samuel. Did the pain start in that lower right area, or did it begin somewhere else like around your belly button and move down? Also, have you had any nausea, vomiting, or lost your appetite?",
+  "released": [
+   "pain_migration",
+   "nausea_vomiting",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button and moved down to the right sometime overnight. I've felt sick since the early hours and threw up once this morning. I couldn't face breakfast, not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds very uncomfortable, Samuel. Have you felt hot, feverish, or had any chills? Have you noticed any changes in your bowel movements like diarrhoea, any pain when you urinate, or any pain down in your testicles?",
+  "released": [
+   "fever",
+   "diarrhoea",
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. No diarrhoea, I went normally yesterday morning, nothing since. Weeing is normal. Nothing down there.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to check your vital signs and then gently examine your tummy. While I do that, have you ever had any surgeries before, do you have any other medical conditions, and are you taking any medications or supplements?",
+  "released": [
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had an operation. I've still got my appendix, as far as I know. No other medical conditions. I take panadol regularly for headaches.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and my examination, I strongly suspect you have acute appendicitis. The pain, fever, and the tenderness in your lower right tummy all point to your appendix being inflamed. You need to go to the Emergency Department today to have this properly assessed and likely treated with surgery. Do you have someone who can drive you to the hospital right now, or should we call an ambulance?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to go to the hospital. I'm not that bad. Can I go to work instead?",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "I understand that going to the hospital is inconvenient and not what you want to hear. However, an inflamed appendix is a very serious and potentially life-threatening condition if left untreated. If it bursts, the infection can spread throughout your stomach area, making you extremely sick and requiring much more complicated surgery and a longer hospital stay. It is definitely not safe for you to go to work. You need to be seen at the Emergency Department immediately.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be a bother. But I'll go. Just don't make a big deal out of it.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "That's very sensible, Samuel. It's not a bother at all—it's what the emergency department is there for. Do you have a friend or family member who can drive you to the hospital now? Also, please do not eat or drink anything, not even water, from now on. This is because you might need an operation today, and your stomach needs to be completely empty for the anaesthetic.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have anyone. I'll catch a taxi. I'll be fine.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "testicular_torsion"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "I've just called the Emergency Department to let them know you're coming by taxi, so they will be expecting you. I've given them all your details and my findings. Please head straight there now. If you feel dizzy, if the pain suddenly gets much worse, or if there's any delay with the taxi, please call an ambulance on 000 immediately. I'll print out a referral letter for you to hand to the nurses when you arrive. Do you have any questions before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions. I'll go.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "order",
+  "id": "bgl_fingerprick",
+  "result": "5.6 mmol/L.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Blood glucose (finger-prick)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 268
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Samuel, based on your symptoms and my examination, I strongly suspect you have acute appendicitis. The pain, fever, and the tenderness in your lower right tummy all point to your appendix being inflamed. You need to go to the Emergency Department today to have this properly assessed and likely treated with surgery.",
+    "ideal_3": "Also, please do not eat or drink anything, not even water, from now on. This is because you might need an operation today, and your stomach needs to be completely empty for the anaesthetic."
+   }
+  },
+  "total": 298,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 268
+ }
+]

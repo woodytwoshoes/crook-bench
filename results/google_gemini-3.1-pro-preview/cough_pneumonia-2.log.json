@@ -1,0 +1,439 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I understand you've had a cough and a fever for a few days and you're feeling pretty rotten. Can you tell me a bit more about when this started and how it's been progressing?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off – didn't have a thermometer, but I was definitely roasting. Since yesterday I've been bringing up stuff, starting clear but now it's rusty and brownish. There's a sharp pain on the right side, near my back, catches when I breathe deep or cough. It started yesterday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds uncomfortable, Mark. Along with the cough and the fever, have you been feeling short of breath, or had any shaking chills or sweating?",
+  "released": [
+   "breathlessness",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "No, not really short of breath – only going up the stairs, got puffed on the way in from the car park, but sitting here I'm alright. I had some shaking chills the first night, was shaking under the doona, teeth chattering, even though I was boiling.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any bright red blood in your phlegm, or is it just the rusty colour? And are you able to keep fluids and food down okay?",
+  "released": [
+   "haemoptysis",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No actual blood, just that rusty colour. I haven't been vomiting, but I've been bringing up stuff – started clear, now it's rusty and brownish. I'm able to keep fluids and food down, though I've been feeling pretty rotten overall.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had any medical conditions in the past, or do you take any regular medications? Also, do you smoke?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "No, I don't take any regular medications. I've never had any medical conditions, though I did have a mild asthma attack in my late twenties, but it's been under control since. No, I don't smoke.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "sputum_mcs",
+  "result": null,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, just to be absolutely sure, do you have any allergies to any medications, particularly antibiotics like penicillin?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I'm allergic to penicillin. I had a reaction as a kid – hives and my lips swelled. It's probably not on my file, I haven't needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, your examination and chest X-ray show that you have pneumonia, which is an infection in the lower part of your right lung. Because it's a mild case and your oxygen levels are good, you can be treated at home. Since you're allergic to penicillin, I'm prescribing an antibiotic called Doxycycline. You need to take one 100mg tablet twice a day for 5 days. Does that make sense, and would you need a medical certificate for work?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that makes sense. I'll take the Doxycycline. As for a medical certificate, I'll need one for work.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Great, I'll organise the medical certificate for you to take a week off. When taking Doxycycline, make sure to take it with food and a large glass of water, and stay sitting or standing up for at least 30 minutes afterwards, to avoid it irritating your throat. You should also get plenty of rest, keep your fluids up, and you can take over-the-counter paracetamol or ibuprofen for the fever and chest pain.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll make sure to take it with food and water. Thanks, I'll rest and keep fluids up. The paracetamol should help with the fever and pain.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "It's very important that you monitor your symptoms closely. If you start feeling significantly short of breath, confused, if you are unable to keep fluids down, or if you aren't feeling better after 48 hours of starting the antibiotics, you must go straight to the nearest Emergency Department. I would also like you to book a follow-up appointment here in 3 days so we can check your progress. Do you have any questions about this plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, thanks. I'll keep an eye on things and book the follow-up.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Just to be thorough, have you had any recent long flights, surgeries, or any swelling or pain in your calves?",
+  "released": [
+   "recent_travel",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any recent long flights or surgeries, and my legs are fine, no swelling or pain in my calves.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had your flu vaccine this year, and have you ever had the pneumonia vaccine?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "No, I didn't get round to the flu jab this year. I've never had the pneumonia vaccine.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Once you are fully recovered from this infection, I highly recommend you get your flu vaccine for this year. We can also discuss if you might benefit from the pneumonia vaccine at your follow-up appointment. For now, just focus on resting and taking your antibiotics.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I'll make sure to get the flu vaccine once I'm better. I'll see you in three days.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "you can be treated at home",
+    "ideal_2": "book a follow-up appointment here in 3 days so we can check your progress",
+    "acceptable_2": "you can take over-the-counter paracetamol or ibuprofen for the fever and chest pain",
+    "acceptable_3": "keep your fluids up",
+    "acceptable_5": "if you aren't feeling better after 48 hours of starting the antibiotics, you must go straight to the nearest Emergency Department"
+   }
+  },
+  "total": 295,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 250
+ }
+]

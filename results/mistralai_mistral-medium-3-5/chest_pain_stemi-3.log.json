@@ -1,0 +1,443 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm Dr. Smith. I can see you're looking a bit unwell. Can you tell me more about this indigestion you've been having since this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight sitting on my chest. It's been going the whole time — an hour and half, near enough. Still there now. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. About seven this morning. Came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds concerning, Graham. I need to ask a few more questions. Have you ever had pain or discomfort like this before?",
+  "released": [
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "No, never had this before. But this past week I've had a bit of a tightness going up ladders — goes away if I stop. Put it down to being unfit. It's been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been short of breath, nauseous, or sweating more than usual today?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "sweating"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, feel a bit sick, and been sweating like anything.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent illness, fever, or cough? And have you noticed any dizziness, palpitations, or fainting?",
+  "released": [
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "No, no fever or cough. Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any family history of heart disease, heart attacks, or sudden death?",
+  "released": [
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Dad had a heart attack at fifty-five. He died from it.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Are you currently taking any other medications, including over-the-counter or herbal remedies?",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken nitrates, like GTN spray or tablets, for chest pain before?",
+  "released": [],
+  "flooded": false,
+  "reply": "No. Never had chest pain before.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm going to examine your heart and lungs now. Can you lie back on the bed for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to check your pulse in a few places. Can you hold your arms out for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Arms out.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "left",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "right",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "peripheral_pulses",
+  "side": "left",
+  "finding": "Foot pulses present.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "peripheral_pulses",
+  "side": "right",
+  "finding": "Foot pulses present.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to do an ECG urgently. This sounds like it could be a heart issue. Can you lie still while I set it up?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Lie still.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your ECG shows changes that are very concerning for a heart attack. I need to call an ambulance immediately to take you to the hospital. This is serious, and you need urgent treatment.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Ambulance.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "I’ve called an ambulance for you, Graham. It’s on its way. You’re having a heart attack, and the hospital needs to treat you urgently. Stay still, and don’t exert yourself. I’ll stay with you until the ambulance arrives. Do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions. Just… yeah. Ambulance.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the ambulance is on its way. I want you to chew this aspirin tablet now—it will help thin your blood and protect your heart. I’ll also give you a spray under your tongue to help with the chest pain.",
+  "released": [],
+  "flooded": false,
+  "reply": "Chew the aspirin. Yeah.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "2 sprays",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’ve given you aspirin to chew and a GTN spray under your tongue. The ambulance should be here very soon. Keep still and try to stay calm. If the pain gets worse or you feel worse, let me know immediately.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Wait for ambulance.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I’ll stay with you until the ambulance arrives."
+   }
+  },
+  "total": 260,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 245
+ }
+]

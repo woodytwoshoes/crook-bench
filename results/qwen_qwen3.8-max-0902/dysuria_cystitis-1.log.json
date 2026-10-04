@@ -1,0 +1,416 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in. I understand you've got some burning when you pass urine — let's sort this out. Can you tell me exactly when it started and what it feels like?",
+  "released": [],
+  "flooded": false,
+  "reply": "It started yesterday and it stings and burns, especially at the end when I wee. It feels just like my last UTI. I’ve been going all the time — every half hour — but only a little comes out each time. I have to rush to the toilet.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry you're dealing with that — it does sound very much like a bladder infection. A few quick questions to make sure nothing more serious is going on. Have you had any fever, shivering or chills? Any pain up in your back or sides, or in your lower tummy? Any feeling sick or vomiting?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "abdominal_pain",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, shivering or chills. Just a bit of an ache low down in my tummy, not in my back or sides. I'm eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Have you noticed any blood in your urine, or that it looks cloudy or smelly? And have you had any vaginal discharge, itching or soreness down there?",
+  "released": [
+   "haematuria",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any blood in my urine, but it's a bit cloudy and smells. I haven't had any vaginal discharge, itching or soreness down there either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last period, and is there any chance you could be pregnant? Also, are you sexually active at the moment — any new partner in the last couple of months?",
+  "released": [
+   "last_period",
+   "pregnancy_possible",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago and it was normal. I don't think I'm pregnant. I've been sexually active with my boyfriend, who's been my only partner for about a year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "You mentioned this feels like your last UTI — how many bladder infections have you had in total, and when was the last one? What treatment did you have then, and did it clear up?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it. It was treated with antibiotics and cleared up.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any antibiotics in the last couple of months for anything? And do you have any other medical problems — like diabetes, kidney problems or bladder problems — or take anything other than the pill?",
+  "released": [
+   "recent_antibiotics",
+   "renal_tract_problems",
+   "diabetes",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any antibiotics this year. I don't have any other medical problems like diabetes or kidney issues, and I only take the combined oral contraceptive pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "subregion": "suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "subregion": "loins",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I've done a urine dipstick test and it does show signs of infection. Just two more things: have you been taking your pill reliably, without missing any pills or any vomiting or diarrhoea? And do you have any allergies to medicines — even if you've only ever had a rash?",
+  "released": [
+   "contraception",
+   "fluid_intake",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I've been taking my pill reliably without missing any pills, and I haven't had any vomiting or diarrhoea. I don't think I'm allergic to anything, though I do mostly drink coffee instead of water at work.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Two more quick questions. Have you had any bleeding after sex or between your periods, or any pain deep inside when you have sex? And do you use condoms or any spermicide-based product?",
+  "released": [
+   "postcoital_intermenstrual_bleeding",
+   "dyspareunia",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any bleeding after sex or between my periods, and I don't have any pain during intercourse. We don't use condoms because I'm on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_50mg_cap",
+  "dose": "50 mg (1 capsule)",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: paracetamol",
+    "domain": "management"
+   }
+  ],
+  "score": 248
+ },
+ {
+  "type": "say",
+  "utterance": "Here's what I've found and what we'll do, Chloe.\n\nWHAT'S GOING ON: Your history — burning at the end of passing urine, going every half hour with only small amounts, urgency, and a low tummy ache — plus mild tenderness over your bladder and a urine dipstick showing white cells and nitrites, all point to a simple bladder infection, what we call acute cystitis. The good news is there are no warning signs: you have no fever, your pulse and blood pressure are normal, and there's no tenderness in your kidney area at the back, so the infection looks like it's staying in the bladder and hasn't travelled up to your kidneys.\n\nTREATMENT: I've written two scripts.\n1. Nitrofurantoin 50 mg — one capsule four times a day for five days. Take each dose with food or a glass of milk, as it's better absorbed and less likely to make you queasy. It's normal for your urine to turn a bright yellow-orange colour while you're on it — that's harmless. Please finish the whole course even if you feel completely better after a day or two, otherwise the infection is more likely to come back.\n2. Paracetamol — one or two 500 mg tablets every 6 hours as needed for the stinging and the tummy ache, no more than eight tablets in 24 hours.\n\nSELF-CARE: Drink plenty of water over the next few days — and try to swap some of that work coffee for water, because caffeine can irritate the bladder and make the urgency worse. Don't hold on when you need to go; empty your bladder regularly.\n\nYOUR PILL: This antibiotic does not stop your contraceptive pill working. Antibiotics only interfere if they cause vomiting or diarrhoea — so if you end up being sick or having bad diarrhoea, use condoms and let me know.\n\nTESTS: I've also sent your urine to the lab for a culture to identify the exact bug and check the antibiotic is the right one. Results take a couple of days — the practice will contact you if anything needs to change. You should start to feel clearly better within 24 to 48 hours.\n\nWHEN TO COME BACK — IMPORTANT: Get medical help urgently, same day, if you develop a fever or shaking chills, pain in your back or side, vomiting, visible blood in your urine, or if you're not improving after 48 hours on the antibiotic. Also stop the tablets and seek care straight away if you get a rash, swelling or any trouble breathing. If any of those things happen out of hours, go to an emergency department.\n\nPREVENTION: Because it's common after sex, try passing urine after intercourse, wipe front to back, and avoid spermicide-based products if you ever use them. Staying well hydrated helps too. If you ever get these more often — three or more in a year, or two in six months — come and see me, because there are prevention options we can discuss then.\n\nAnd one last thing while you're here: routine screening for chlamydia is recommended at least yearly for sexually active people under 25. You have no symptoms suggesting that today, but you're welcome to book in for a simple urine test any time — just ask the receptionist.\n\nAny questions about the medicines or anything I've said?",
+  "released": [
+   "duration"
+  ],
+  "flooded": false,
+  "reply": "No questions, thanks. I just need to get the script and get back to work. I'll make sure to drink more water and not hold my pee. I'll also try to remember to pee after sex next time.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   }
+  ],
+  "score": 258
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 298
+ },
+ {
+  "type": "say",
+  "utterance": "Great. Just to repeat the key points: one nitrofurantoin capsule four times a day for five days with food, paracetamol as needed, plenty of water, and please come back or go to an emergency department if you get a fever, chills, back or side pain, vomiting, blood in your urine, or if you're not clearly better in 48 hours. The lab culture result will take about two days and the practice will ring you if anything needs changing. Take care, Chloe.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll make sure to take the pills with food and drink more water. I'll keep an eye on how I feel and come back if anything gets worse. Thanks for the advice.",
+  "awards": [],
+  "score": 298
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water over the next few days",
+    "ideal_2": "Paracetamol — one or two 500 mg tablets every 6 hours as needed for the stinging and the tummy ache",
+    "ideal_3": "come back or go to an emergency department if you get a fever, chills, back or side pain, vomiting, blood in your urine, or if you're not clearly better in 48 hours",
+    "acceptable_2": "Take each dose with food or a glass of milk, as it's better absorbed and less likely to make you queasy"
+   }
+  },
+  "total": 348,
+  "max": 375,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 298
+ }
+]

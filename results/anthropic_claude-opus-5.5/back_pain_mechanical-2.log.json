@@ -1,0 +1,477 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm the GP seeing you today. Tell me what happened with your back and how it's been since?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I lifted a big pot plant in the garden on Saturday and felt a twinge. I woke up Sunday and could barely get out of bed. The pain is low down on the left side of my back, sometimes into my left buttock. It gets worse when I bend or get out of a chair, but it's better when I lie still with a heat pack. It's worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain go down your leg below the knee, or any numbness, tingling or weakness in your legs? Any numbness around your bottom or genitals, or any trouble passing urine or controlling your bladder or bowels?",
+  "released": [
+   "leg_neuro_symptoms",
+   "saddle_anaesthesia",
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal — no weakness, numbness or tingling. No numbness around my bottom or genitals, and I haven’t had any trouble passing urine or controlling my bladder or bowels.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any fevers, sweats, unexplained weight loss, history of cancer, steroid use, injecting drugs, recent infections, or pain that's bad at night even when lying still? Any previous back problems?",
+  "released": [],
+  "flooded": true,
+  "reply": "That’s a lot at once. I’m just focused on the back pain — I didn’t have any of those other issues. What would you like to know first?",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Fair enough, sorry. Have you had any fevers or unexplained weight loss lately?",
+  "released": [
+   "fever_infection",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No fevers, no unexplained weight loss — if anything, I've put some on.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had cancer, or taken steroid tablets long-term?",
+  "released": [
+   "cancer_history",
+   "steroid_use"
+  ],
+  "flooded": false,
+  "reply": "No, I’ve never had cancer, and I’ve never taken steroid tablets long-term.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain wake you at night or is it bad even lying completely still? And have you had back trouble before?",
+  "released": [
+   "night_rest_pain",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "The pain doesn’t keep me awake at night, it just hurts when I roll over, but once I’m settled I can sleep. It’s not there constantly. I had a back tweak maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "What have you taken for the pain so far, and how much? Any stomach ulcers, kidney problems, asthma or other health issues I should know about?",
+  "released": [
+   "analgesia_tried",
+   "stomach_ulcers",
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "I’ve taken some paracetamol, but it didn’t do much. I don’t have stomach ulcers, but I do have asthma. My kidneys are fine as far as I know.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever taken anti-inflammatories like ibuprofen or Nurofen, and did they ever make your asthma worse? What asthma puffers do you use?",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ve never taken anti-inflammatories like ibuprofen or Nurofen. I use a blue puffer for my asthma — salbutamol.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "What's making you keen on an MRI — is there something particular you're worried about? And how are things otherwise — stress, mood, sleep?",
+  "released": [
+   "concerns",
+   "stress",
+   "mood"
+  ],
+  "flooded": false,
+  "reply": "I’ve been reading about slipped discs and people needing surgery, so I’m keen on an MRI to rule that out. Work’s busy — big deadline next week — and I’m just feeling frustrated, not too stressed or sleep-deprived.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stress at work or home"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Mood"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft, non-tender. No masses or organomegaly.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "How well controlled is your asthma — how often do you need the blue puffer? And do you have nasal polyps or chronic sinus problems?",
+  "released": [],
+  "flooded": false,
+  "reply": "I use the blue puffer maybe twice a week. No nasal polyps or chronic sinus problems.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Good news, Daniel. Your examination shows strained, tight muscles low on the left side of your back. The nerves to your legs are working perfectly — strength, reflexes and feeling are all normal, and there's no sign of a slipped disc pressing on a nerve.\n\nAbout the MRI: for a back strain like this with no warning signs, a scan doesn't help you get better. Lots of people with no pain at all show \"disc bulges\" and wear on scans, and finding them often leads to worry and unnecessary treatment without improving recovery. Medicare also doesn't cover a GP-ordered MRI for this. So I don't recommend a scan now, but I'll happily reconsider if things change or don't improve.\n\nThe outlook is very good: most people are much better within 2 to 6 weeks.\n\nWhat helps:\n- Keep moving and keep doing your normal activities as much as you can. Bed rest and lying on the couch for long periods actually slow recovery. Short, regular walks are great.\n- Keep working, but get up and move every 30 minutes, and set up a proper desk and chair rather than the couch.\n- Heat packs are fine to keep using.\n- Medicine: I've prescribed ibuprofen 400 mg three times a day with food for up to 5 days. Because you have asthma, watch for any wheeze or chest tightness after taking it. If that happens, stop it and use your blue puffer. Stop it too if you get stomach pain or black stools. Paracetamol on its own doesn't do much for back pain. I'm avoiding stronger opioid painkillers because they don't help much and have side effects, and tramadol made you sick before.\n- A physio can help if you'd like guidance on exercises.\n\nCome back or go to the emergency department straight away if you get numbness around your bottom or genitals, trouble passing or controlling urine or bowels, weakness or numbness in your legs, fever, or pain that becomes constant and severe or wakes you at night. Book in to see me in 2 weeks if you're not improving, or sooner if you're worried.\n\nOne more thing: needing your blue puffer twice a week means your asthma isn't fully controlled, so let's book a separate visit to review it.",
+  "released": [],
+  "flooded": false,
+  "reply": "I’m relieved to hear it’s not a slipped disc, but I’m still worried it could be something serious. I’ll try the ibuprofen, but I’m a bit nervous about the asthma risk. Can I get a referral to a physio just in case?",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Of course, I've written a physio referral. About your worry: I checked for all the signs of something serious, like nerve damage, infection, fracture or cancer, and you have none of them. That's very reassuring. About the asthma: most people with asthma take ibuprofen without any problems, and you've never reacted to it. For extra safety, take your first dose at home with your blue puffer nearby. If you get any wheeze, stop taking it and let me know. Then we'll use other options, such as heat, movement and physio.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I’ll take that advice. I’ll start the ibuprofen with my blue puffer handy. I’ll keep moving and try the physio. Just feeling a bit anxious, but I trust your assessment.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "I checked for all the signs of something serious, like nerve damage, infection, fracture or cancer, and you have none of them. That's very reassuring.",
+    "ideal_1": "Keep working, but get up and move every 30 minutes, and set up a proper desk and chair rather than the couch.",
+    "ideal_4": "Heat packs are fine to keep using.",
+    "ideal_5": "Come back or go to the emergency department straight away if you get numbness around your bottom or genitals, trouble passing or controlling urine or bowels, weakness or numbness in your legs, fever, or pain that becomes constant and severe or wakes you at night."
+   }
+  },
+  "total": 345,
+  "max": 450,
+  "level": "Consultant",
+  "consequence": "acceptable",
+  "score": 285
+ }
+]

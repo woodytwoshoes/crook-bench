@@ -1,0 +1,194 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, thanks for coming in today. Can you tell me a bit more about your cough and fever? When did it start and how have you been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago. It was a dry, hacking cough at first. I've been burning up, on and off, and since yesterday I've been bringing up stuff that's rusty and brownish, clear at first. There's a sharp pain on the right side, near my back, that catches when I breathe deep or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds quite uncomfortable. Have you had any other symptoms like sore throat, runny nose, or body aches?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that. Just the cough, fever and the pain on the right side. I haven't had a sore throat or runny nose.",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to order a chest X-ray to help figure out what's going on with your cough and fever.",
+  "released": [],
+  "flooded": false,
+  "reply": "I guess that's the next step then. I just hope it's nothing too bad. I've got exams to get back to.",
+  "awards": [],
+  "score": 50
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "The chest X-ray shows there's an infection in the lower part of your right lung, which is consistent with pneumonia. I'm going to prescribe you some antibiotics to help clear this up. We'll also need to monitor your symptoms and possibly do some further tests to ensure you're recovering well.",
+  "released": [],
+  "flooded": false,
+  "reply": "That's not good. I mean, it's not good at all. I was hoping it was something minor. I've got exams to get back to.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "It's also important to stay hydrated and get plenty of rest. If your symptoms worsen or you experience difficulty breathing, chest pain, or fever that doesn't improve, please come back to see me or go to the emergency department.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll make sure to drink plenty and rest. I just hope the antibiotics kick in soon. I've got exams to get back to.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "500 mg",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 25
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "acceptable_3"
+   ],
+   "quotes": {
+    "acceptable_3": "It's also important to stay hydrated and get plenty of rest."
+   }
+  },
+  "total": 70,
+  "max": 425,
+  "level": "Intern",
+  "consequence": "harmful",
+  "score": 65
+ }
+]

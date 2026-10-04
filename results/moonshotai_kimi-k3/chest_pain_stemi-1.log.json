@@ -1,0 +1,305 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, thanks for coming in. I want to get onto this quickly. Can you point to where the discomfort is, and does it spread anywhere — into your chest, arm, neck, jaw or back? And is it still there right now?",
+  "released": [
+   "pain_site",
+   "pain_radiation"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. Still there. Jaw's a bit achy, left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to do a heart tracing right now. While I set that up — did this start suddenly, and were you exerting yourself at the time? Have you had anything like this before, and are you feeling sick in the stomach or light-headed?",
+  "released": [
+   "onset_time",
+   "crescendo_angina",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Started about seven this morning, came on quick. Had a bit of tightness going up ladders recently, goes away if I stop. Happening more. Feel a bit sick, haven't thrown up. Bit light-headed getting out of the car, didn't pass out.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg chewed now",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'll be straight with you: the pattern of this pain — behind the breastbone, going to your jaw and left arm, with the sweating and nausea — makes me concerned this is coming from your heart, possibly a heart attack. I've called an ambulance, and I've just given you an aspirin to chew. The blood test we did doesn't show damage yet, but it's too early to be sure — this needs hospital treatment now.\n\nA few quick things while we wait: did you take your usual blood pressure and cholesterol tablets this morning, or anything for the pain like an antacid? Have you used any tablets for erections — like Viagra or Cialis — in the last few days? And is there any family history of heart trouble, or any heart problems of your own before this?",
+  "released": [
+   "pde5_inhibitor",
+   "anticoagulants",
+   "antiplatelet",
+   "family_history",
+   "previous_cardiac"
+  ],
+  "flooded": false,
+  "reply": "No, I didn't take my usual tablets this morning, took one of those Viagra tablets last night. Dad had a heart attack at fifty-five, he died from it. Never had anything wrong with my heart.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Two last things, Graham: do you have diabetes or high blood sugar? And does the pain change if you take a deep breath in, move around, or if I press on your chest?\n\nHere's what's happening now. The ambulance is on its way — you must not drive, and I won't let your wife drive you either; paramedics can treat you on the way and get you into hospital fastest.\n\nImportant: I am NOT going to give you the usual angina spray under the tongue, because you took Viagra last night — the two together can drop your blood pressure dangerously. The paramedics will know about this too.\n\nThe aspirin you chewed helps stop the clot growing. The paramedics will do a heart tracing, give you proper pain relief, and take you straight to the cardiac team — if a blocked artery is confirmed, they can often open it with a stent, and the sooner the better. That's why we're moving quickly.\n\nWhile we wait: stay sitting as still as you can, don't get up and walk around, and don't eat or drink anything in case they need to do procedures. I'll let your wife know what's going on, and I'll send a summary of everything — your medicines, the aspirin given, the Viagra last night — with the paramedics. Your usual blood pressure and cholesterol tablets can be sorted out at the hospital.\n\nIf anything changes while we wait — the pain gets worse, you feel faint, or your heart races — tell me straight away.",
+  "released": [
+   "diabetes",
+   "pleuritic_pain",
+   "movement_pain",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have diabetes. Breathing doesn't change it, moving doesn't change it, and pressing on my chest doesn't make it worse. I don't know — maybe a six? It's more heavy than sore.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain is worse on breathing in"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether moving or pressing on the chest makes it worse"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "dx",
+  "primary": "acs",
+  "differentials": [
+   "pulmonary_embolism",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Acute coronary syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "While we wait: stay sitting as still as you can, don't get up and walk around, and don't eat or drink anything in case they need to do procedures."
+   }
+  },
+  "total": 280,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 265
+ }
+]

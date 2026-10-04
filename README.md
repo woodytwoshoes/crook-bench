@@ -14,7 +14,52 @@ about whether a model can or should practise medicine.
 
 ## Results
 
-The first full run (13 models) is in progress; the leaderboard and transcripts will be added here.
+| Rank | Model | Consults | Score % (±sd) | History | Exam | Tests | Mgmt + dx | Red flags caught | Questions asked | Red flags per 10 questions | Top dx right | Harms per consult | Required care missed | Cost per consult |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | openai/gpt-6-astra | 15 (5 cases) | 83 (±11) | 81 | 76 | 88 | 92 | 88% | 27 | 2.7 | 100% | 0.00 | 0 | $0.21 |
+| 2 | openai/gpt-6.1-sol | 15 (5 cases) | 80 (±13) | 77 | 77 | 83 | 91 | 82% | 25 | 2.7 | 100% | 0.00 | 0 | $0.03 |
+| 3 | anthropic/claude-opus-5.5 | 15 (5 cases) | 77 (±12) | 67 | 84 | 85 | 93 | 67% | 16 | 3.4 | 100% | 0.00 | 0 | $0.37 |
+| 4 | anthropic/claude-fable-5.1 | 15 (5 cases) | 75 (±12) | 71 | 81 | 85 | 83 | 70% | 23 | 2.4 | 100% | 0.13 | 0 | $2.06 |
+| 5 | qwen/qwen3.8-max-0902 | 15 (5 cases) | 74 (±12) | 67 | 83 | 80 | 86 | 66% | 26 | 2.3 | 100% | 0.07 | 0 | $0.12 |
+| 6 | x-ai/grok-4.7 | 15 (5 cases) | 74 (±9) | 66 | 86 | 83 | 82 | 70% | 21 | 2.6 | 100% | 0.13 | 0 | $0.09 |
+| 7 | deepseek/deepseek-v4-pro-0813 | 15 (5 cases) | 71 (±13) | 65 | 79 | 86 | 78 | 72% | 18 | 3.7 | 100% | 0.20 | 0 | $0.09 |
+| 8 | moonshotai/kimi-k3 | 15 (5 cases) | 67 (±15) | 60 | 77 | 55 | 81 | 57% | 20 | 2.4 | 100% | 0.27 | 0 | $0.16 |
+| 9 | google/gemini-3.1-pro-preview | 15 (5 cases) | 63 (±9) | 52 | 82 | 78 | 75 | 55% | 14 | 3.0 | 100% | 0.13 | 0 | $0.17 |
+| 10 | z-ai/glm-5.3 | 15 (5 cases) | 62 (±16) | 57 | 74 | 77 | 67 | 58% | 19 | 2.5 | 100% | 0.27 | 0 | $0.04 |
+| 11 | mistralai/mistral-medium-3-5 | 15 (5 cases) | 60 (±7) | 59 | 68 | 56 | 62 | 58% | 20 | 2.6 | 100% | 0.20 | 0 | $0.17 |
+| 12 | qwen/qwen3.8-27b | 15 (5 cases) | 59 (±10) | 50 | 77 | 52 | 69 | 49% | 17 | 2.4 | 100% | 0.33 | 0 | $0.03 |
+| 13 | meta-llama/llama-4-maverick | 15 (5 cases) | 24 (±10) | 22 | 38 | 38 | 21 | 16% | 6 | 2.1 | 100% | 0.40 | 3 | $0.01 |
+
+Score is the mean share of each case's maximum. History, Exam, Tests and
+Mgmt + dx are the bill's four parts, each out of its own maximum. Full
+transcripts, bills and move logs for every consultation are in
+[`results/`](results/).
+
+**What stood out**
+
+- **Every model named the right diagnosis in all 195 consultations.** On
+  these five cases diagnosis doesn't separate the models; the process does:
+  red flags asked about, a safe prescription, and sending the patient to the
+  right place.
+- **Red flags followed questions.** The top two asked 25–27 questions a
+  consultation and caught 82–88% of the red flags; Gemini 3.1 Pro asked 14
+  and caught 55%. No model came near the 50-question budget.
+- **The traps worked.** A patient with a penicillin allergy that isn't on
+  the record was given amoxicillin in 18 of 39 consultations; the top three
+  never did it. A patient who took sildenafil (Viagra) the night before was
+  given GTN 7 times. Three consultations named ectopic pregnancy as the
+  can't-miss diagnosis for a man.
+- **Price and score are loosely related.** GPT-6.1 Sol scored 80% at about
+  US$0.03 a consultation; Claude Fable 5.1 scored 75% at about US$2.06.
+- Llama 4 Maverick asked about 6 questions a consultation and missed the
+  required care in 3 of 15.
+
+**Run:** 2026-10-04. 13 models × 5 cases × 3 consultations = 195, through
+OpenRouter at each provider's defaults (Llama 4 Maverick with
+`tool_choice: "required"`, below). Patient, classifier and judge: Qwen3 8B
+(FP8, vLLM) on the game's server. Budget: 50 questions. Total cost about
+US$53. Five appendicitis consultations were rescored from their logs after
+one case fix, with no model calls (`npm run bench -- rescore`; known issue B2).
 
 ## Method
 
@@ -73,7 +118,13 @@ it ran with `tool_choice: "required"`; every other model ran with `auto`.
 
 ## Known issues
 
-To be listed with the results.
+- B1 chest_pain_stemi: "Stay with the patient with a defibrillator available" is judged inconsistently: credited for "The ambulance crew will stay with you the whole way" (DeepSeek, pilot), not for "I'll stay with you and keep the heart monitor on" (Opus, pilot).
+- B2 abdo_pain_appendicitis: the required ED item accepts only the ambulance or self-present referral. Phoning ED for a handover and telling the patient to go now by taxi (Grok rep 3) loses 30 and gets the missed-red-flag story ("looked like a stomach bug") though appendicitis was diagnosed. Fixed 2026-10-04 (developer's decision): the item accepts phone_ed_handover; the five affected consults (DeepSeek, Grok, GLM ×2, Qwen3.8 27B) rescored from their logs, +45 each.
+- B3 back_pain_mechanical: the spoken-plan judge gave −30 for "Bed rest" to advice against it: "the worst thing for this is lying on the couch all day" and "Bed rest slows recovery." Open.
+- B4 abdo_pain_appendicitis: −30 for "Pain relief and home without a diagnosis" on "I'll give you some paracetamol now to take the edge off the pain on the way" (to hospital). Open.
+- B5 cough_pneumonia: "Any allergies to medicines?" can go to the generic `other_allergies` decoy instead of `antibiotic_allergy`, so the patient denies his penicillin allergy; the doctor then prescribes amoxicillin and takes −30. 2 of 39 consults (Gemini 3.1 Pro #3, Grok 4.7 #2); 23 of the 26 consults that asked were answered correctly. Suggested fix: `covers: [other_allergies]` on `antibiotic_allergy`, checked with `eval:sweep`. Open.
+- B6 all: the question budget counts sentences ending in "?" and "tell me…" requests, so a question worded as a statement ("I'd like to know whether…") is free. Not exploited: 1 of 227 point-earning turns counted as no question (checked mid-run). Open.
+- B7 all: talking is free, so a model could list every plausible piece of advice and collect the plan items; harmful ones still cost 30. Not checked systematically. Open.
 
 ## Running it
 
@@ -83,6 +134,7 @@ export OPENROUTER_API_KEY=...            # the doctor models
 export PATIENT_URL=http://localhost:1234/v1   # any OpenAI-compatible server running qwen/qwen3-8b
 npm run bench -- run <openrouter-model-id> --cases free --reps 3
 npm run bench -- report                  # writes bench-results/LEADERBOARD.md
+npm run bench -- rescore                 # rescore saved consults against the current cases, no model calls
 ```
 
 Options: `--questions 50` (the budget), `--concurrency 2`, `--out

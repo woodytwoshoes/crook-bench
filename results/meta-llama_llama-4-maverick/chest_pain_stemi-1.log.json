@@ -1,0 +1,255 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Graham. What seems to be the problem today? You mentioned indigestion?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Morning. Indigestion, but it's heavier. Like a weight on my chest. Been there an hour and a half. Right behind the breastbone, up into the throat. My jaw's a bit achy, left arm feels heavy. Came on about seven this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "right",
+  "subregion": "none",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "right",
+  "subregion": "none",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "right",
+  "subregion": "none",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "right",
+  "subregion": "none",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "right",
+  "subregion": "none",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "right",
+  "subregion": "none",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "right",
+  "subregion": "none",
+  "finding": "20.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "right",
+  "subregion": "none",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "right",
+  "subregion": "none",
+  "finding": "36.6 °C.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "subregion": "heart",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm concerned about your symptoms and the ECG results. I'm going to refer you to the emergency department for further evaluation and treatment.",
+  "released": [],
+  "flooded": false,
+  "reply": "I see. You think it's serious? I just wanted some antacid.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "dx",
+  "primary": "myocardial_infarction",
+  "differentials": [
+   "unstable_angina",
+   "acs"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Acute myocardial infarction",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute coronary syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Acute coronary syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 135,
+  "max": 505,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 135
+ }
+]

@@ -1,0 +1,442 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Graham, I'm the doctor. You look quite unwell, so we'll assess this straight away. Can you point to where the discomfort is, tell me when it started, and whether it's still there now?",
+  "released": [
+   "pain_site",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. It's been there an hour and a half, still there now. Right in the middle, behind the breastbone, bit up into the throat. Started about seven this morning, came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "left",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this could be a heart attack rather than indigestion. I'm calling an ambulance now and arranging a heart tracing immediately. Please rest here and don't walk around or drive. We'll stay with you and keep checking you while help comes.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be a bother. Just want some antacid so I can get back to work.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "You're not being a bother. Your heart tracing shows a heart attack, which needs urgent hospital treatment to open a blocked heart artery. An antacid won't treat this and going back to work would be dangerous. Have you ever had an allergy or a serious reaction to aspirin, any recent serious bleeding, or taken aspirin already today?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "antiplatelet"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of. I've had Disprin before, no problems. No recent bleeding. I don't take aspirin or anything like that.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg chewed or dispersed in water orally",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "side": "left",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "side": "left",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "This aspirin helps stop the clot getting bigger. While the ambulance comes, how strong is the discomfort out of ten, and does it spread into either arm, your jaw or your back? Are you short of breath, feeling sick or feeling faint?",
+  "released": [
+   "pain_severity",
+   "pain_radiation",
+   "dyspnoea",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "It's more like a six, but heavier than sore. It's in my chest, up my throat, and my left arm feels heavy, jaw aches a bit. A bit short of breath, feeling sick but no vomiting. Bit light-headed getting out of the car, didn't pass out.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Was the pain suddenly at its worst as it started, or tearing through to your back? Have you had any new weakness, trouble speaking, or a cold painful arm or leg? Have you taken Viagra, Cialis or similar medicines in the past few days, or any other medicines or recreational drugs?",
+  "released": [
+   "tearing_pain",
+   "neuro_symptoms",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "No, it crept up on me. No weakness, numbness or trouble speaking. Arm's heavy but I can use it fine. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Sudden severe tearing or ripping pain"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or other neurological symptoms, or limb pain"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me—that's confidential, but I do need to tell the ambulance team because it affects which heart medicines are safe. We must avoid a medicine called GTN, often given as a spray under the tongue, because with Viagra it can dangerously lower your blood pressure. What dose did you take and roughly what time? Have you had this chest discomfort before, or any previous heart attack, stroke, stomach ulcer or bleeding?",
+  "released": [
+   "crescendo_angina",
+   "previous_cardiac",
+   "previous_stroke"
+  ],
+  "flooded": false,
+  "reply": "No, it's not exactly the same as before. I've had a bit of tightness going up ladders in the past week, goes away if I stop. Put it down to being unfit. Never had anything wrong with my heart, never had a stroke or mini-stroke. Never had a stomach ulcer or bleeding.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "Do you remember the Viagra dose and what time last night you took it? Apart from that, are you taking anything other than your perindopril and atorvastatin, including blood thinners?",
+  "released": [
+   "anticoagulants"
+  ],
+  "flooded": false,
+  "reply": "No. Took a 50mg tablet about nine last night. Nothing else. Just perindopril and atorvastatin.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "jvp",
+  "side": "left",
+  "finding": "JVP not raised.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Jugular venous pressure"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "right",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "The tracing shows a heart attack affecting the lower part of your heart. I'll send the tracing and tell the ambulance team it started at 7 am, your blood pressure is 104 over 68, pulse 54, that we've given 300 milligrams of aspirin, and that you took Viagra at 9 pm. They need to take you urgently to a hospital that can open the blocked artery, usually with a small tube and a stent. We won't wait here for blood tests. Your oxygen level is normal, so extra oxygen isn't needed at present. I'll ask our nurse to keep your heart rhythm, blood pressure and oxygen level under close observation, prepare a drip into a vein, and have emergency equipment ready while I stay with you. The ambulance team can give further pain relief safely with monitoring. Please tell me immediately if the discomfort worsens, breathing becomes harder or you feel faint. Would you like us to let your wife know what's happening?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't want to bother her. Just get me to the hospital. I don't want to be a bother.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "left",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "right",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 320
+ },
+ {
+  "type": "say",
+  "utterance": "Of course—we won't contact her against your wishes. You are absolutely not a bother. This is a medical emergency and getting you safely to hospital is our priority. The ambulance has been called, and you'll stay here with us under observation until we hand you directly over to the crew. No walking out or driving yourself.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be a bother. Just get me to the hospital. I don't want to be a bother.",
+  "awards": [],
+  "score": 320
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please rest here and don't walk around or drive. We'll stay with you and keep checking you while help comes."
+   }
+  },
+  "total": 335,
+  "max": 505,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 320
+ }
+]

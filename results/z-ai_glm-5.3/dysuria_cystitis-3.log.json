@@ -1,0 +1,303 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Patel. Thanks for coming in. I understand you've had burning when you pass urine since yesterday — that sounds really uncomfortable. Let's go through it properly so I can work out what's going on and get you the right treatment. Can you tell me more about it — when did it start, and is it burning all the time or just when you wee?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning and has been getting worse. It burns the most at the end of passing urine, like my last UTI. I’ve been going all the time — every half hour — but only pass a little each time. The urine is a bit cloudy and smells, but I haven’t seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound like it could be a bladder infection. Let me check a few important things. Have you had any fever, chills, or felt generally unwell or achy? Any pain in your lower back or side, near where your kidneys are? Any nausea or vomiting? And have you noticed any unusual vaginal discharge, itching or odour, or pain during sex?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting",
+   "loin_pain",
+   "vaginal_discharge_itch",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, chills or feeling unwell. I'm eating normally and haven't been sick. There's a bit of a tummy ache low down, but nothing in my back. No vaginal discharge, itching or pain during sex.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that makes a kidney infection or anything more serious less likely. You mentioned \"again\" — have you had water infections before? How many times, and when was the last one? Also, are you in a relationship at the moment, and has anything changed with partners in the last few months? Have you ever been tested for chlamydia or similar infections? And when was your last period — are you taking the pill regularly, any chance you could be pregnant?",
+  "released": [
+   "previous_utis",
+   "sexual_partners",
+   "last_period",
+   "contraception",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it. I've been with the same boyfriend for about a year, just him, and nothing's changed with him in the last few months. I've never been tested for chlamydia or similar infections. My last period was about two weeks ago and it was normal. I'm on the pill and don't miss it, and I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Good news — everything fits with a straightforward bladder infection (cystitis). Your urine test shows signs of infection, your temperature is normal, and your tummy and kidneys check out fine. I'll prescribe an antibiotic called nitrofurantoin, which is the standard first choice here in Australia — it's a 5-day course and works very well for this. Before I do, one quick question: since you're under 30, sexually active and have never had a chlamydia test, would you be happy to give a fresh urine sample (the first part of your wee, not midstream) for a chlamydia and gonorrhoea check? It's just a routine screening we recommend, and if anything shows up we can treat it easily.",
+  "released": [
+   "recent_intercourse",
+   "condom_use",
+   "postcoital_intermenstrual_bleeding",
+   "abnormal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "Yes, I had sex the night before it started, but we don't use condoms because I'm on the pill. I haven't had any unusual bleeding after sex or between my periods, just my normal periods.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any unusual vaginal bleeding"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for telling me — having sex the night before fits well, as intercourse is a common trigger for bladder infections in women. Just to double-check: are you happy for me to add the chlamydia and gonorrhoea test on your urine sample? It's optional, but I'd recommend it since you've never had one.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I'll do the test. I'm on the pill and don't miss it, but I guess it's better to be safe.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Here's your plan, Chloe:\n\n**The diagnosis:** You have an acute bladder infection (cystitis) — it came on after sex, which is a common trigger, and your urine test confirmed it. Your kidneys look fine and you have no signs of anything more serious.\n\n**Treatment:** I've prescribed nitrofurantoin, 100 mg twice a day for 5 days. Take it with food and finish the whole course even when you start feeling better. This antibiotic doesn't affect your contraceptive pill. You should notice real improvement within 1 to 2 days.\n\n**Self-care:** Drink plenty of water — aim to keep sipping through the day. Paracetamol can help the stinging if you need it. Some women find it helps to pass urine soon after sex going forward, though it's not guaranteed to prevent every infection.\n\n**The chlamydia/gonorrhoea test:** The result takes about 2 days and we'll contact you either way. If it comes back positive, it's easily treated — we'd arrange treatment for you and your partner, and you'd need to avoid sex for a week after that.\n\n**When to get help urgently:** Please come straight back, or go to emergency, if you get a fever or chills, pain in your back or side, vomiting, or you feel much worse — that could mean the infection has spread to a kidney. Also come back if you're no better after 2 days of antibiotics, or if the symptoms return after finishing the course.\n\nAny questions before you head off?",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Dr Patel. I'll take the antibiotics and do the test. I'll keep drinking water and hope it clears up soon. I'll come back if it doesn't get better or if I feel worse.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water - aim to keep sipping through the day.",
+    "ideal_2": "Paracetamol can help the stinging if you need it.",
+    "ideal_3": "Also come back if you're no better after 2 days of antibiotics, or if the symptoms return after finishing the course.",
+    "acceptable_2": "Take it with food"
+   }
+  },
+  "total": 285,
+  "max": 375,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 235
+ }
+]

@@ -1,0 +1,427 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Sharma — I'll see you today about the tummy pain. Let's start with the story: where did the pain start, and is it still in the same place now, or has it moved? On a scale of 1 to 10, how bad is it right now? And have you had any fever, chills or shivering since it began?",
+  "released": [
+   "pain_onset",
+   "pain_migration",
+   "pain_severity",
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "The pain started around my belly button and moved down to the right side overnight. It's a seven out of ten now. I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks — that migration of the pain is important. A few more questions: have you felt sick (nauseated) or vomited, and if so how many times? Have you lost your appetite? Any diarrhoea or constipation, or passed wind? And have you noticed any burning when you pass urine?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "diarrhoea",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "I've felt sick since the early hours and threw up once this morning. I haven't been hungry at all, which isn't like me. No diarrhoea, just normal bowel movements. Weeing is normal, no burning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Have you had any fever today, or did you take any temperature? Also: any medical conditions I should know about, any previous abdominal operations, or any medicines or allergies? And is there any chance of a recent injury or heavy lifting before it started?",
+  "released": [
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No fever today, didn't take a temperature. No medical conditions. Never had an operation. I've still got my appendix, as far as I know. No recent injury or heavy lifting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "subregion": "rlq",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "abdominal_ultrasound",
+  "result": null,
+  "awards": [
+   {
+    "points": -15,
+    "kind": "penalty",
+    "label": "Harmful: Abdominal ultrasound",
+    "domain": "investigations"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets",
+  "frequency": "Every 6 hours",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I'm glad we've done a proper check. Your exam really concerns me for an inflamed appendix: your pain started around the belly button and moved to the lower right side, you have a low-grade fever, your heart rate is up, and the right lower side is very tender with some of the classic signs. I don't think this is just a stomach bug.\n\nHere's my plan: I've sent blood tests and a urine check, and I've arranged an abdominal ultrasound as extra support. But the most important next step is to be seen at the emergency department today, where the surgeons can confirm the diagnosis and arrange an appendectomy if that's what's needed. Could you take yourself there now, or would you prefer I organise a clinical handover to them?\n\nIn the meantime: take the paracetamol I've just prescribed for the pain — 2 tablets every 6 hours as needed, but don't take ibuprofen or aspirin. Don't eat anything until the surgeons have assessed you, but you can have small sips of water.\n\nYou must go back sooner — or call 000 — if you become rigid, very drowsy, collapse, develop a high fever, or if the pain suddenly spreads across the whole abdomen. And if you can't get to the ED yourself, don't drive: get someone to take you or call an ambulance.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be operated on. Can I have some more time?",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "I hear you, and it's your decision — but I want to be straight with you about the risk. An inflamed appendix that isn't treated can burst, usually within a day or two. If it ruptures, the infection spreads through the belly and you can end up much sicker, needing a bigger operation, a longer hospital stay, or even intensive care. That's why surgeons want to look at you today, not in a few days.\n\nJust to understand: what's your concern — the operation itself, being off work, or something else? Because seeing the surgeons doesn't commit you to anything; they'll examine you, get imaging, and explain your options, including — in some situations — antibiotics instead of surgery. But you need to be assessed to know which options you even have.",
+  "released": [
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "It's there all the time now. At first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "That detail matters a lot: pain that comes and goes and then settles into constant, always-there pain usually means the inflammation is progressing, and that the clock is ticking. An appendix that's inflamed like yours can burst within 24 to 48 hours, and that changes everything — a straightforward small operation becomes a much bigger deal, with more risk of a serious infection and a long hospital stay.\n\nI can't sit on this with you safely, Samuel — and I'd be doing you a disservice if I did. The emergency department is where you need to be now: they can scan you, confirm what's going on, and sit down with you and discuss all the options, including antibiotics-first approaches when appropriate. You're not committing to surgery by going in — you're getting the information to make a real choice.\n\nPlease have someone drive you, or I can ring the ED and give them a heads-up about you. Which do you prefer?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll go now. Can you call the ED for me?",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   },
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Good decision. I've just phoned the emergency department and given them a full handover of your story and examination findings, so tell them Dr. Sharma called about you — it'll speed you up. Please don't drive yourself; have someone drive you.\n\nTo recap: stop eating food once you leave here — sips of water are fine. Keep taking the paracetamol (2 tablets every 6 hours, no ibuprofen or aspirin). If at any point before you're seen the pain suddenly spreads across the whole belly, you become floppy or very drowsy, develop a high shivering fever, or feel faint or collapse — call 000 for an ambulance rather than waiting for a ride.\n\nYou should be seen urgently on arrival — I've explained in my call that you're a 24-year-old with a clinical picture concerning for appendicitis. I hope you're back on your feet quickly. Good luck, Samuel.",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What do you want to know first?",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Take a breath — that was a lot at once. I don't need to know anything more from you; I have everything I need, and I've already phoned the hospital to flag you.\n\nSo the plan, in three simple steps:\nOne — get someone to drive you to the emergency department now, or I can call an ambulance if you'd rather.\nTwo — no food on the way; small sips of water are okay.\nThree — take 2 paracetamol every 6 hours for pain. No ibuprofen.\n\nAnd the only thing that changes the plan: if you suddenly feel much worse — pain spreading across the whole belly, high shivering fever, fainting, or a rigid tummy — call 000 for an ambulance.\n\nDo you have someone who can drive you?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll be fine. I'll get a ride.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3",
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_3": "Don't eat anything until the surgeons have assessed you, but you can have small sips of water.",
+    "ideal_1": "I've explained in my call that you're a 24-year-old with a clinical picture concerning for appendicitis."
+   }
+  },
+  "total": 280,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 250
+ }
+]

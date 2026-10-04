@@ -1,0 +1,480 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm one of the doctors here. I understand you've been having a cough and fever for a few days and feeling pretty rotten. Tell me a bit more about how this all started and what it's been like.",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off—didn't have a thermometer, but I was definitely roasting. Since yesterday I've been bringing stuff up, rusty and brownish, started clear. There's a sharp pain on the right side, near my back, catches when I cough or take a deep breath.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound rotten. Let me ask a few more things about it. Have you been shivering or having chills, or night sweats? And how are your energy levels—have you been able to work?",
+  "released": [
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "Yeah, the first night I was shaking under the doona, teeth chattering, even though I was boiling. I've been struggling to keep up with work—feeling too knackered to do anything properly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. A few more: any breathlessness—like getting puffed just walking or talking? Any wheezing? And have you coughed up any blood, or noticed it in the phlegm?",
+  "released": [
+   "breathlessness",
+   "lung_disease",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "Only going up the stairs, got puffed on the way in from the car park, but I'm alright sitting here. No wheezing, never had asthma or anything with my lungs. Just that rusty, brownish stuff—no actual blood.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Have you had any chest tightness or pain apart from that right-sided catch when you cough or breathe deeply? Any pain anywhere else, like in your shoulder or upper tummy?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, just that sharp pain on the right side. No chest tightness or pain anywhere else.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any headaches, sore throat, runny nose, or ear pain? And any nausea, vomiting, tummy pain or diarrhoea?",
+  "released": [
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, no headaches, sore throat, runny nose or ear pain. No nausea, vomiting, tummy pain or diarrhoea.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken anything for it so far—paracetamol, ibuprofen, cough medicines, anything like that? And anything helping?",
+  "released": [],
+  "flooded": false,
+  "reply": "I've been taking paracetamol, but it's only been helping a bit with the fever. The cough's still going strong, and the pain's not really shifting.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, or have you in the past? And roughly how many drinks of alcohol in a typical week?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I've never smoked. A couple of beers on the weekend, none this week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Any other long-term health conditions I should know about—diabetes, heart, lung, kidney or liver problems, or anything you take regular medication for? And have you had any recent travel, or been around anyone who's been unwell, especially with anything like flu or COVID?",
+  "released": [
+   "diabetes",
+   "heart_disease",
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, no diabetes, no heart problems. Haven't been anywhere, just school and home. No regular medications, apart from paracetamol for the fever. Not been around anyone who's been unwell.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for your patience, Mark. Your chest examination shows there's some inflammation in the bottom of your right lung. Before I explain the plan, can I just check: have you ever been diagnosed with anything at all in the past—even years ago—or been prescribed regular antibiotics recently? And do you have any allergies to medicines?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I had an allergy to penicillin when I was a kid—hives and my lips swelled. It's probably not on my file; I haven't needed antibiotics in years. No other allergies, as far as I know.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "sputum_mcs",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Once daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I've had a good look at you and done some checks. You have a chest infection called pneumonia—inflammation and infection in the bottom part of your right lung. Your chest X-ray confirms this, and it explains the fever, cough, the rusty coloured phlegm, and the pain when you breathe deeply.\n\nThe good news is that it's just in one part of one lung, your oxygen and blood pressure are fine, and you're not confused or severely breathless, so in my view you can be treated safely at home with antibiotics rather than needing hospital.\n\nBecause you're allergic to penicillin, I'm prescribing doxycycline instead, one 100 mg tablet once a day for 7 days. Please take the whole course even if you feel better, and take it with a full glass of water and sitting upright. Keep going with paracetamol for the fever and aches as needed.",
+  "released": [
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "A few things to look after yourself, and some warning signs to watch for.\n\nPlease rest, drink plenty of fluids, and avoid alcohol while you're unwell. I'd like you to stay home from work until your fever has settled for a full day and you're feeling noticeably better.\n\nPlease come back—or go to the emergency department if it's out of hours—straight away if any of these happen: you become more short of breath, your breathing feels fast or laboured; you feel confused or unusually drowsy; you develop chest pain that's worsening; the fever doesn't settle or comes back; your lips or fingertips turn bluish; or the phlegm becomes bloody. Also come back if you're not clearly improving within about 48 hours of starting the antibiotics.",
+  "released": [
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "No, my head's clear. My wife reckons I'm just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "To close off, I need to let you know about smoking and vaccination. Since you've never smoked, that's great and one of your best protections. I'd also suggest once you've recovered we look at whether you should have the pneumococcal and flu vaccines, which help prevent these lung infections.\n\nAny questions for me before we wrap up?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "No, didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "That's something worth doing once you're well, especially given you've now had a pneumonia—I'd recommend you book in for the flu jab this season, and we can talk about the pneumococcal vaccine too.\n\nDo you have everything you need, or any other questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing else. Just need to get back to work before the exams.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Just to be clear, Mark—I'd really like you to rest at home for at least a few days rather than going back to work for the exams this week. You're still running a fever, and you need to let this settle and give the antibiotics a chance to work. Going back too soon can slow your recovery and put others at risk. A medical certificate isn't a problem if work needs one.\n\nTake care, and please don't hesitate to come back or head to ED if anything I mentioned starts happening.",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ll see. Just need to get back to work before the exams.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "it's just in one part of one lung, your oxygen and blood pressure are fine, and you're not confused or severely breathless, so in my view you can be treated safely at home with antibiotics rather than needing hospital.",
+    "ideal_2": "Please come back—or go to the emergency department if it's out of hours—straight away if any of these happen",
+    "ideal_3": "Please come back—or go to the emergency department if it's out of hours—straight away if any of these happen: you become more short of breath, your breathing feels fast or laboured; you feel confused or unusually drowsy; you develop chest pain that's worsening; the fever doesn't settle or comes back; your lips or fingertips turn bluish; or the phlegm becomes bloody. Also come back if you're not clearly improving within about 48 hours of starting the antibiotics.",
+    "acceptable_3": "Please rest, drink plenty of fluids, and avoid alcohol while you're unwell."
+   }
+  },
+  "total": 330,
+  "max": 425,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 280
+ }
+]

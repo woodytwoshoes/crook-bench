@@ -1,0 +1,464 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm Dr. Smith. I can see you've hurt your lower back. Let me ask a few questions to understand what's going on. Can you tell me exactly what happened when you lifted something on the weekend?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday. I felt a twinge, then woke up on Sunday and could barely get out of bed. It's been three days now. The pain is low down on the left side of my back, sometimes into my left buttock. It gets worse when I bend or get out of a chair, but it's better when I lie still with a heat pack. It's worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly, but it's still uncomfortable.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that detail. On a scale of 0 to 10, how severe is the pain at its worst?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "At its worst, the pain is about a seven when I move or roll over. If I keep still, it's maybe a three.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any pain, numbness, or tingling radiating down your leg, like into your calf or foot?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal. I haven't had any pain, numbness, or tingling radiating down my leg into my calf or foot.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any weakness in your legs, or any issues with bladder or bowel control, like difficulty passing urine or a loss of control?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any weakness in my legs, and my bladder and bowel control are normal. I haven't had any difficulty passing urine or a loss of control.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, unexplained weight loss, or a history of cancer?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, and I don't think I've lost weight — if anything, I've put some on. I don't have a history of cancer.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had back pain like this before? And do you have any other medical conditions or take any regular medications?",
+  "released": [
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "I had a similar back pain maybe five years ago, but it was gone in a week. I don't have any other medical conditions, but I have an allergy to Tramadol — it makes me vomit and feel dizzy.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for mentioning the Tramadol allergy. I’ll make sure to avoid that. Now, let me check your back. Can you stand up for me so I can examine your movement and the area?",
+  "released": [],
+  "flooded": false,
+  "reply": "I can stand up, but it's a bit stiff. I'll do my best.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "right",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "leg_palpation",
+  "side": "left",
+  "subregion": "leg",
+  "finding": "Skin warmth normal. No induration or crepitus.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "leg_palpation",
+  "side": "right",
+  "subregion": "leg",
+  "finding": "Skin warmth normal. No induration or crepitus.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, I’d like to check your strength and sensation in your legs. Can you walk on your heels and then on your toes for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "I can walk on my heels and toes, but it's a bit awkward and painful.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "ankle_foot_movement",
+  "side": "left",
+  "subregion": "ankle_foot",
+  "finding": "Full, pain-free ankle movement.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "ankle_foot_movement",
+  "side": "right",
+  "subregion": "ankle_foot",
+  "finding": "Full, pain-free ankle movement.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, I’d like to check your reflexes and sensation. Can you sit down for me? I’ll use a small hammer to tap your knees and ankles.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll sit down. I'm not sure how the hammer will feel, but I'll try to stay still.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "subregion": "lower_limb",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, your examination shows that your legs are strong, your reflexes are normal, and there’s no issue with sensation. This is reassuring. Now, let me ask: have you tried any pain relief so far?",
+  "released": [
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "I took some paracetamol, but it didn't do much, honestly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Have you tried any anti-inflammatory medications like ibuprofen or naproxen?",
+  "released": [],
+  "flooded": false,
+  "reply": "I haven't tried any anti-inflammatory medications like ibuprofen or naproxen.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, based on what you’ve told me and my examination, this seems like a muscular or ligament strain in your lower back, likely from lifting the pot plant. The good news is that there are no signs of anything serious, like nerve compression or a fracture. However, I want to make sure we rule out anything else. \n\nHave you had any recent trauma, like a fall or a car accident, or do you have a history of osteoporosis?",
+  "released": [
+   "significant_trauma",
+   "osteoporosis"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any recent trauma like a fall or car accident, and I don't have a history of osteoporosis.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any fall or significant injury"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for confirming that. Now, let’s talk about your plan. Since this is likely a muscle or ligament strain, the best approach is to stay active as much as you can tolerate, avoid bed rest, and use pain relief to help you move comfortably. I’ll recommend a short course of anti-inflammatory medication, like ibuprofen, to reduce inflammation and pain. Would you like to try that?",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I’d rather try the ibuprofen first. I figured I'd need an MRI to see what's going on, but I’m happy to try this approach if it’s safe.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "An MRI isn’t usually needed for this type of back pain, especially since there are no red flags like nerve issues, weakness, or bladder problems. Most back strains improve within a few weeks with simple measures. However, if your symptoms don’t improve in 4–6 weeks, or if they worsen, we can reconsider imaging.\n\nFor now, I’ll prescribe ibuprofen for a week. Take it with food to protect your stomach. I’ll also advise you to keep moving gently, use heat packs, and avoid heavy lifting. Does that sound okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that sounds okay. I'll take the ibuprofen and try to keep moving. I just want to make sure I'm not missing anything.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "I’ve prescribed ibuprofen 400 mg, three times a day for 7 days. Take it with food to avoid stomach upset. If you experience any stomach pain, heartburn, or notice blood in your stool, stop taking it and let me know immediately.\n\nI also recommend:\n1. Stay active: Avoid bed rest. Try gentle walking and stretching.\n2. Use heat packs for comfort.\n3. Avoid heavy lifting or twisting for the next few weeks.\n4. If the pain is severe, you can add paracetamol for extra relief, but don’t exceed the recommended dose.\n\nIf your symptoms don’t improve in a week, or if they worsen, or if you develop any new symptoms like leg weakness, numbness, or bladder issues, contact me or seek medical attention immediately.\n\nDoes this plan make sense to you?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that makes sense. I’ll follow the plan and keep an eye on how I feel. I just want to make sure I’m not missing anything.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "You’re not missing anything serious, Daniel. This is a straightforward case of mechanical low back pain, likely a muscle or ligament strain. The key is to stay active and manage the pain. If you’re not improving in a week, let’s reassess. And remember, if you develop any red flags like leg weakness, numbness, or bladder issues, seek help immediately.\n\nWould you like a medical certificate for work if needed?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I’d like a medical certificate if needed.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "I’ll provide a medical certificate for a few days to allow you to recover. Since your work is desk-based, you can likely return to work soon, but let’s see how you feel after a few days of rest and treatment. I’ll make it for 3 days. If you need more time, let me know.\n\nFinally, let me summarise: \n- Take ibuprofen 400 mg three times a day with food for 7 days.\n- Stay active, use heat packs, and avoid heavy lifting.\n- Monitor for any red flags like leg weakness, numbness, or bladder issues.\n- Follow up if symptoms don’t improve in a week or worsen.\n\nDoes that cover everything?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "Yes, that covers everything. Honestly? I've been reading about slipped discs and people needing surgery, but I'm glad you don't think that's the case.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, to address your concern about slipped discs: while it’s possible, your symptoms and examination don’t suggest a disc issue with nerve compression (like sciatica). If you had pain, numbness, or weakness radiating down your leg, or issues with bladder control, that would be more concerning. For now, this is mechanical low back pain, which is very common and usually improves with time and simple measures.\n\nIf things change or you’re not improving, we can revisit this. But for now, you’re on the right track.",
+  "released": [],
+  "flooded": false,
+  "reply": "I understand. I just want to make sure I'm not missing anything, but I appreciate you explaining it clearly.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "You’re not missing anything serious, Daniel. This is a straightforward case of mechanical low back pain, likely a muscle or ligament strain. The key is to stay active and manage the pain.",
+    "ideal_1": "The best approach is to stay active as much as you can tolerate, avoid bed rest, and use pain relief to help you move comfortably.",
+    "ideal_4": "Use heat packs for comfort.",
+    "ideal_5": "If your symptoms don’t improve in a week, or if they worsen, or if you develop any new symptoms like leg weakness, numbness, or bladder issues, contact me or seek medical attention immediately."
+   }
+  },
+  "total": 280,
+  "max": 450,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 220
+ }
+]

@@ -1,0 +1,446 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm Dr. Smith. I see you've hurt your lower back. Can you tell me more about what happened when you lifted something on the weekend?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday. I felt a twinge, then woke up on Sunday and could barely get out of bed. It's been three days now. The pain is low down on the left side of my back, sometimes into my left buttock. It gets worse when I bend or get out of a chair, but it's better when I'm lying still with a heat pack. It's worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that. On a scale of 0 to 10, how severe is the pain at its worst?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "At its worst, the pain is about a seven when I move or roll over. If I keep still, it's maybe a three.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any pain, numbness, or tingling going down your leg, or into your foot?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal. I haven't had any pain, numbness, or tingling going down my legs or into my foot.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any issues with bladder or bowel control, like difficulty passing urine, or losing control of your bladder or bowels?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any issues with passing urine or losing control of my bladder or bowels. Everything's normal in that regard.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, unexplained weight loss, or night sweats recently?",
+  "released": [
+   "fever_infection",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, and I haven't noticed any unexplained weight loss. In fact, if anything, I've put some weight on recently.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had back pain like this before? If so, how was it managed?",
+  "released": [
+   "previous_episodes",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "No, I've had back pain like this before, maybe five years ago, but it was gone in a week. I took some paracetamol, but it didn't do much, honestly.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you tried any pain relief this time? If so, what and how effective was it?",
+  "released": [],
+  "flooded": false,
+  "reply": "I took some paracetamol, but it didn't do much, honestly. I haven't tried anything else yet.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any history of osteoporosis, cancer, or long-term steroid use?",
+  "released": [
+   "osteoporosis",
+   "cancer_history",
+   "steroid_use"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have a history of osteoporosis, cancer, or long-term steroid use.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any weakness in your legs, or difficulty standing on your toes or heels?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't noticed any weakness in my legs. I can stand on my toes and heels without difficulty.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Let me check your back and legs to understand what's going on. I'll start by examining your lower back. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that's fine. I'll just lie down on the examination table.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "subregion": "hip",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "ankle_foot_movement",
+  "side": "left",
+  "subregion": "ankle_foot",
+  "finding": "Full, pain-free ankle movement.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "peripheral_pulses",
+  "side": "left",
+  "subregion": "ankle_foot",
+  "finding": "Foot pulses present.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, based on what you've told me and my examination, it seems like you have a muscular strain or a minor issue with the joints in your lower back, likely from lifting the pot plant. The good news is that there are no signs of anything serious like nerve compression, infection, or other red flags. \n\nFor now, I recommend:\n1. Staying active as much as you can tolerate. Avoid bed rest, as gentle movement helps recovery.\n2. Using heat packs for comfort, as you’ve been doing.\n3. Taking regular pain relief: I suggest ibuprofen (if you can take it) or paracetamol. Since paracetamol hasn’t helped much, would you like to try ibuprofen?\n4. Avoiding heavy lifting or twisting movements for the next few weeks.\n\nWould you like to try ibuprofen, or do you have any concerns about taking it?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "I'm a bit anxious about taking ibuprofen. I've been reading about slipped discs and people needing surgery, so I'm worried it might be more serious than it seems.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "I understand your concern, Daniel. A slipped disc, or herniated disc, can sometimes cause pain like yours, but the fact that your pain isn’t going down your leg, and your neurological exam is normal, makes it less likely to be a severe disc issue. Most back pain, even if it’s a disc, improves with time and conservative measures like staying active and taking pain relief.\n\nAn MRI isn’t usually needed for back pain like yours unless there are red flags, like weakness, numbness, or bladder issues, which you don’t have. If your symptoms don’t improve in the next 4-6 weeks, or if they get worse, we can reconsider imaging.\n\nFor now, let’s focus on managing the pain and keeping you mobile. How does that sound?",
+  "released": [
+   "leg_radiation",
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I understand, but I was hoping for an MRI to see what's going on, especially after reading about slipped discs and people needing surgery. I'm worried it might be more serious than it seems, and I don't want to miss anything.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I hear your concern, and it’s completely normal to feel anxious when you’re in pain. However, an MRI isn’t always the best first step. It can sometimes show things that aren’t actually causing your pain, which can lead to unnecessary worry or even procedures that aren’t needed. \n\nRight now, your symptoms and exam suggest a muscular or joint-related issue, which usually improves with time and the right care. If we don’t see improvement in 4-6 weeks, or if you develop any red flags like leg weakness, numbness, or bladder issues, we can absolutely reconsider an MRI.\n\nWould you be comfortable starting with the plan I mentioned—staying active, using heat, and trying ibuprofen or another pain relief option? We can also check in again in a week or two to see how you’re doing.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not sure about the ibuprofen. I've had an allergy to tramadol before, and I'm not sure if ibuprofen would be safe for me. I can try it, but I'd like to check with a pharmacist first.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "That’s a sensible approach, Daniel. Since you’ve had an allergy to tramadol, it’s good to double-check with a pharmacist before trying ibuprofen, especially if you’ve never taken it before. Ibuprofen is generally safe for most people, but it’s always wise to confirm.\n\nIn the meantime, you can continue with the heat packs and gentle movement. If the pain is really bothering you, paracetamol is still an option, even if it hasn’t helped much so far. Sometimes combining it with ibuprofen (if safe for you) can be more effective.\n\nWould you like me to prescribe ibuprofen for you to try after checking with the pharmacist, or would you prefer to stick with paracetamol for now?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'd prefer to stick with paracetamol for now. I'll check with the pharmacist about ibuprofen later.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "That’s fine, Daniel. Let’s stick with paracetamol for now. You can take up to 1 gram (two 500 mg tablets) every 4-6 hours, but don’t exceed 4 grams in 24 hours. If you do decide to try ibuprofen later, remember to take it with food to protect your stomach.\n\nI’d also like you to focus on staying as active as possible. Try to avoid sitting or lying down for too long. Gentle walking and stretching can help. Would you like me to show you some simple back exercises to do at home?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, I'd like to try some exercises. I'm worried about making it worse, but I want to stay active.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "It’s great that you’re willing to try exercises, and I understand your concern about making it worse. The key is to start gently and avoid anything that causes sharp pain. \n\nHere are a few simple exercises you can do at home:\n1. **Pelvic Tilts**: Lie on your back with your knees bent. Gently tighten your stomach muscles and press your lower back into the floor. Hold for 5 seconds, then relax. Repeat 10 times.\n2. **Knee-to-Chest Stretch**: Lie on your back and gently pull one knee up to your chest, keeping the other leg flat. Hold for 10-15 seconds, then switch legs. Do this 5 times for each leg.\n3. **Cat-Cow Stretch**: On your hands and knees, alternate between arching your back (like a cat) and dipping it (like a cow). Do this slowly, 10 times.\n4. **Walking**: Start with short, gentle walks around your home or outside. Aim for 5-10 minutes at a time, and gradually increase as you feel better.\n\nIf any of these exercises cause sharp pain, stop and let me know. Otherwise, a little discomfort is normal as you start moving again.\n\nWould you like me to print these out for you or send them to your phone?",
+  "released": [],
+  "flooded": false,
+  "reply": "I think I'll take them home with me. Thanks.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I’ll print these exercises for you to take home. Remember, the goal is to keep moving gently and avoid prolonged rest. If your pain worsens or you develop any new symptoms like leg weakness, numbness, or bladder issues, contact me or seek medical attention immediately.\n\nLet’s plan to check in again in 2 weeks to see how you’re doing. If you’re not improving by then, we can discuss further options, including physiotherapy or imaging if needed.\n\nDoes that sound okay to you?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that sounds okay. I'll check in in two weeks.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Great. Before you go, I want to summarise the plan:\n1. Continue with heat packs for comfort.\n2. Take paracetamol as needed, up to 4 grams in 24 hours.\n3. Start the gentle exercises we discussed, avoiding anything that causes sharp pain.\n4. Stay active and avoid prolonged sitting or lying down.\n5. Check in with me in 2 weeks, or sooner if your symptoms worsen or you develop any red flags.\n\nIf you decide to try ibuprofen, check with the pharmacist first, especially given your tramadol allergy. Let me know if you have any other questions or concerns before you leave.",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What would you like to know first?",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any questions about the plan or anything else you’d like to clarify before you leave?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I think I've covered everything. I'll follow the plan and check in in two weeks.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_4"
+   ],
+   "quotes": {
+    "ideal_0": "The good news is that there are no signs of anything serious like nerve compression, infection, or other red flags.",
+    "ideal_1": "I recommend: 1. Staying active as much as you can tolerate. Avoid bed rest, as gentle movement helps recovery.",
+    "ideal_4": "Using heat packs for comfort, as you’ve been doing."
+   }
+  },
+  "total": 265,
+  "max": 450,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 220
+ }
+]

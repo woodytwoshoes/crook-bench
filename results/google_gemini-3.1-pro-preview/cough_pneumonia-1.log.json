@@ -1,0 +1,380 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I understand you've had a cough and fever for a few days and are feeling pretty unwell. Can you tell me exactly when this started, and what the cough is like? Are you bringing up any phlegm?",
+  "released": [
+   "sputum_colour"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago. The cough was dry and hacking at first. I've been burning up, on and off, and since yesterday I'm bringing up phlegm that's rusty and brownish, though it was clear at first.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "Are you experiencing any shortness of breath, or any pain in your chest, especially when you take a deep breath or cough? And have you had any shaking chills, sore throat, or a runny nose?",
+  "released": [
+   "breathlessness",
+   "pleuritic_pain",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "I'm only getting puffed going up the stairs, I got out of breath on the way in from the car park, but I'm alright sitting here. There's a sharp pain low down on the right side, near my back, it catches me when I take a deep breath or cough, started yesterday. The first night I was shaking under the doona, teeth chattering, even though I was boiling.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had anything like this before, or any other medical conditions like asthma or diabetes? Do you smoke or drink alcohol? And are you taking any medications or over-the-counter supplements?",
+  "released": [
+   "lung_disease",
+   "diabetes",
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I've never had anything like this before, and I don't have asthma or diabetes. I've never smoked, but I had a couple of beers on the weekend, none this week. I'm not taking any medications or supplements.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been in contact with anyone else who is sick, travelled recently, or taken a COVID test?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere. Just school and home. No one else I've been in contact with is sick. I haven't taken a COVID test.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "neck_stiffness",
+  "finding": "No neck stiffness on passive flexion.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "sputum_mcs",
+  "result": null,
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g",
+  "frequency": "Every 8 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I've listened to your chest and the X-ray confirms that you have community-acquired pneumonia in the lower part of your right lung. This is a bacterial chest infection. I've prescribed an antibiotic called Amoxicillin. You need to take 1 gram (two 500mg capsules) every 8 hours for 5 days. It's important you finish the course. Also, get plenty of rest, stay well hydrated, and you can take paracetamol or ibuprofen for the fever and pain. \n\nBecause pneumonia can sometimes become severe, please go to the nearest emergency department or call an ambulance if you get more short of breath, if you feel confused, if the pain gets much worse, or if your fever doesn't improve after two days of antibiotics. Do you have any questions?",
+  "released": [
+   "confusion",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No questions, just need to make sure I finish the antibiotic course. My head's clear, just a bit grumpy according to my wife, and the chest pain is a solid six when I cough or take a big breath, otherwise just a dull ache. I'll rest and stay hydrated.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "I will write you a medical certificate for the rest of the week so you can stay home and recover. I also did a swab for COVID and other viruses, and we'll let you know the results when they come back. I'd like you to come back and see me next week so I can check your chest is clearing up, but of course seek urgent care sooner if you get worse as we discussed. Does that sound okay?",
+  "released": [
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "Yeah, that sounds okay. I'll stay home, rest and take the antibiotics. I'll keep an eye on how I'm going, and come back next week. If it gets worse, I'll go to the ER.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "covid19",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: COVID-19",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "acceptable_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "acceptable_2": "you can take paracetamol or ibuprofen for the fever and pain",
+    "acceptable_3": "stay well hydrated"
+   }
+  },
+  "total": 220,
+  "max": 425,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 210
+ }
+]

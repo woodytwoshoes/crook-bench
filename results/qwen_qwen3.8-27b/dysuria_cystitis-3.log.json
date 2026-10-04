@@ -1,0 +1,297 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. ... I can see you've booked in for burning when you wee — that's really uncomfortable, so let's work it out properly today. Could you walk me through what's been going on: when did it start, and is it just burning, or are you also going more often, feeling an urgent need to go, or any pain or pressure low down in your tummy?",
+  "released": [
+   "duration",
+   "haematuria",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning and has been getting worse, so about a day and a half now. It's mainly a burning sensation, worst at the end of urinating, and I've been going more often, only passing a little each time. There's a low ache above my bladder, but no pain or pressure lower down. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that helps. Now let me check for a few things that would make this more than a simple bladder infection. Have you had any fever or felt generally unwell — shivering, being cold, or sweaty? Any ache in your back or sides, around the ribs? Any nausea or vomiting? Also, have you seen any blood in your urine, or any vaginal discharge or itching that's new?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, shivers, or feeling generally unwell. I haven't had any nausea or vomiting, and I'm eating normally. There's just a bit of an ache low down in my tummy, nothing in my back or sides. I haven't seen any blood in my urine or noticed any vaginal discharge or itching.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Good to hear — no back pain or fever, so less likely to be a kidney infection. A few more questions: you mentioned this is a UTI \"again\" — how many times in the last year has this happened, and did you have antibiotics for them? And could you be pregnant or might you be — what was the date of your last period? Have you had any new sexual partners recently, and is there anything new in your sex life, like condoms or lubricants you haven't used before?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics",
+   "pregnancy_possible",
+   "last_period",
+   "sexual_partners",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago and haven't had any since then. I haven't taken antibiotics this year. I don't think I'm pregnant — my last period was about two weeks ago and it was normal. I've been with the same boyfriend for about a year, and we don't use condoms because I'm on the pill. Nothing's changed in our sex life recently.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "OK. Last couple: how much fluid are you drinking during the day, and do you tend to delay going to the toilet at work? And have you ever had any problems with your kidneys, or not fully emptying your bladder when you go?",
+  "released": [
+   "fluid_intake",
+   "renal_tract_problems"
+  ],
+  "flooded": false,
+  "reply": "I probably don't drink enough fluid — mostly coffee at work, to be honest. I don't tend to delay going to the toilet much, but I'm not sure. I've never had any problems with my kidneys or issues with not fully emptying my bladder.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Looks well. Not unwell or toxic.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "suprapubic",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "subregion": "loins",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Good news — your vitals are completely normal, your tummy is only mildly tender right above the bladder (which is typical for a bladder infection), and there's no tenderness over your kidneys. The urine dipstick confirms an infection: it shows white blood cells and nitrites, which are classic signs of a bacterial bladder infection (cystitis). There are no signs it has spread to your kidneys, so this is a simple, uncomplicated case.\n\nHere's my plan for you:\n\n1. **Antibiotic:** I'm prescribing **nitrofurantoin 100 mg, take two capsules (one in the morning, one in the evening) with food for 5 days.** This is the standard first-line treatment for uncomplicated bladder infections. It's safe with your birth-control pill — no interaction to worry about.\n\n2. **Comfort measures:**\n   - Drink plenty of water throughout the day — aim for more water and less coffee, since coffee is a bladder irritant.\n   - A warm bath or a heating pad on your lower tummy can ease the aching.\n   - You can take paracetamol (acetaminophen) or ibuprofen for the burning, if you need it.\n   - Try to urinate regularly and don't hold it in, especially between café shifts.\n\n3. **What to expect:** The burning and frequency should start improving within 24 to 48 hours.\n\n**Come back or call us if any of these happen:**\n- You develop a fever (over 38 °C / 100.4 °F), chills, or start feeling generally unwell.\n- You get pain in your back or sides (flank pain).\n- You start vomiting or feel significantly worse.\n- You see blood in your urine.\n- Your symptoms haven't clearly improved after 48 hours on the antibiotic, or they come back after you finish the course.\n\nIn that case we'd want to check for a kidney infection or do a urine culture to make sure the right antibiotic is working.\n\n**Prevention for next time:** staying well hydrated (more water, less coffee), peeing within 30 minutes after sex, and wiping front-to-back all help reduce the risk. Since this is only your second episode in about two years, you don't need any special prevention strategy right now. But if you find yourself getting more than two or three in a year, come see me and we'll talk about options like a post-sex antibiotic or a short course of nightly prophylaxis.\n\nDo you have any questions about the antibiotic or anything else?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, thanks. I just need the script and to get back to work. I'll make sure to drink more water and not hold it in.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "acceptable_2"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water throughout the day — aim for more water and less coffee, since coffee is a bladder irritant.",
+    "ideal_2": "You can take paracetamol (acetaminophen) or ibuprofen for the burning, if you need it.",
+    "acceptable_2": "take two capsules (one in the morning, one in the evening) with food for 5 days"
+   }
+  },
+  "total": 260,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 225
+ }
+]

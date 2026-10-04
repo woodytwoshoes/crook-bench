@@ -1,0 +1,484 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Smith. I can see you're not feeling well. Can you tell me more about the tummy pain? When did it start and where exactly is the pain?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It started last night, about ten o'clock. It's down here on the right side, low down. It's there all the time now. At first it sort of came and went. It's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that. Has the pain changed at all since last night? And can you describe it—is it sharp, dull, or crampy?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, it's been the same. Dull. Not sharp. Not crampy.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any nausea, vomiting, or changes in your bowel habits, like diarrhoea or constipation?",
+  "released": [
+   "nausea_vomiting",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "Yes, I've felt sick since the early hours and threw up once this morning. No diarrhoea, I went normally yesterday morning and nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any fever, sweating, or chills? And have you had any pain or burning when you pass urine?",
+  "released": [
+   "fever",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. Weeing is normal.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent illnesses, like a cold or flu? And have you eaten anything unusual or different in the last day or two?",
+  "released": [
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "No, just the usual. Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had this kind of pain before? And is there any chance you could have been exposed to someone with a stomach bug or food poisoning?",
+  "released": [
+   "previous_episodes",
+   "unwell_contacts"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this. Everyone at home and work is fine.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Anyone around him with vomiting or diarrhoea"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any pain in your groin or testicles? And have you had any recent injuries or heavy lifting?",
+  "released": [
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down there. No lumps down there. No injuries or heavy lifting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent travel, or contact with animals or unusual foods?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent overseas travel"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any medical conditions or past surgeries, especially in your abdomen? And are you on any medications or supplements?",
+  "released": [
+   "previous_surgery",
+   "diabetes"
+  ],
+  "flooded": false,
+  "reply": "No, never had an operation. I've still got my appendix, as far as I know. No medical conditions. I take no medications or supplements.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, drink alcohol, or use any recreational drugs?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "No, I don't smoke. A few beers on the weekend, nothing this week.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any blood in your urine, stool, or vomit? And have you had any dizziness or fainting?",
+  "released": [
+   "rectal_bleeding",
+   "faint"
+  ],
+  "flooded": false,
+  "reply": "No, nothing in my urine, stool, or vomit. I haven't fainted or felt faint.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "llq",
+  "finding": "Soft and non-tender in this area.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I need to check your testicles and groin area to rule out other causes of pain. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't mind. Just do it.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and my examination, I’m concerned you may have appendicitis. This is a serious condition where the appendix, a small part of your bowel, becomes inflamed and needs urgent treatment. I need to arrange some tests to confirm this. Do you have any questions so far?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have any questions.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I need to rule out other causes of your pain. Are you sexually active, and is there any chance your partner could be pregnant?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, not sexually active. No partner.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, your symptoms and examination are very suggestive of appendicitis. This is an emergency, and you need to go to the hospital for further assessment and likely surgery. I’m going to call an ambulance for you. Do you have anyone who can come with you?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have anyone. Just go.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I’ve called an ambulance for you. It’s important you go to the hospital immediately. While you wait, don’t eat or drink anything, and avoid taking any painkillers unless absolutely necessary. The hospital will confirm the diagnosis and provide the right treatment. Do you understand?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, I understand. Just go.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "ectopic_pregnancy"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Not a can't-miss diagnosis here: Ectopic pregnancy",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "I’m concerned you may have appendicitis. This is a serious condition where the appendix, a small part of your bowel, becomes inflamed and needs urgent treatment."
+   }
+  },
+  "total": 260,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 245
+ }
+]

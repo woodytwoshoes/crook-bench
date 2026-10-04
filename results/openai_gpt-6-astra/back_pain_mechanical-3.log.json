@@ -1,0 +1,491 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I’m sorry your back is giving you trouble. Tell me what happened when you hurt it, and how the pain has changed since then.",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I hurt my lower back on Saturday lifting a big pot plant in the garden. I felt a twinge, then woke up Sunday and could barely get out of bed. The pain is low down on the left side of my back, sometimes into my left buttock. It's worse when I bend or get out of a chair, better when lying still with a heat pack, and gets worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop, and can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you’re hoping for an MRI. First I’ll check for any signs of a serious back problem and examine you, then we can discuss whether a scan would help. Does the pain go down your leg below the knee? Have you noticed any leg weakness, numbness or tingling?",
+  "released": [
+   "leg_radiation",
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down my legs, and my legs feel completely normal — no weakness, numbness or tingling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any trouble starting a wee, emptying your bladder, or lost control of urine or bowel movements? Any numbness around your genitals, bottom or inner thighs, or a new change in sexual function?",
+  "released": [
+   "bladder_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any trouble starting a wee or emptying my bladder, and I haven't lost control of urine or bowel movements. I haven't noticed any numbness around my genitals, bottom or inner thighs, and there's been no change in my sexual function.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had fever, chills, felt generally unwell, or lost weight without trying? Does pain wake you at night or stay severe even when you’re resting?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "night_rest_pain",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had a fever or felt generally unwell, and I've actually put on a bit of weight. The pain doesn't wake me at night, it just hurts when I roll over, but once I'm settled I can sleep, and it's not there constantly — it's about a seven when I move or roll over, maybe a three if I keep still.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Was there any fall or direct blow as well as the lifting? Have you ever had cancer, fragile bones, long courses of steroid tablets, or any previous significant back problems?",
+  "released": [
+   "significant_trauma",
+   "cancer_history",
+   "osteoporosis",
+   "steroid_use",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "Just the lifting. I've never had cancer, no osteoporosis, no long courses of steroids. I tweaked my back maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any fall or significant injury"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Have you recently had an infection, surgery or an injection around your spine, or do you have a condition or medicine that weakens your immune system? Have you ever injected recreational drugs?",
+  "released": [
+   "immunosuppression",
+   "iv_drug_use"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any infection, surgery or injection around my spine, and I don't have a condition or medicine that weakens my immune system. I've never injected recreational drugs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune suppression"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Injecting drug use"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Any tummy or chest pain, faintness, pain when passing urine, or blood in your urine? What have you tried for the back so far, including medicines and their doses?",
+  "released": [
+   "stomach_ulcers",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any tummy or chest pain, faintness, pain when passing urine, or blood in my urine. I've only taken some paracetamol, but it didn't do much, honestly. I don't have any stomach ulcers or indigestion from anti-inflammatories.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "How much paracetamol have you taken and how often? Apart from tramadol causing vomiting and dizziness, do you have any medicine allergies, other health conditions, or take any regular medicines or supplements?",
+  "released": [],
+  "flooded": false,
+  "reply": "I've taken a couple of paracetamol tablets a couple of times, but they didn't help much. It made me feel sick and dizzy. Apart from that, I don't have any other medicine allergies, health conditions or regular medicines.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Just to clarify, was it tramadol that made you sick and dizzy, or the paracetamol? Before considering an anti-inflammatory such as ibuprofen, have you ever had kidney disease, stomach bleeding, heart disease, high blood pressure, or asthma or wheezing triggered by aspirin or ibuprofen?",
+  "released": [
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "It was tramadol that made me sick and dizzy. I don't have kidney disease, stomach bleeding, heart disease, high blood pressure, asthma or wheezing triggered by aspirin or ibuprofen. I have asthma.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for mentioning the asthma. Have you taken ibuprofen or other anti-inflammatories safely before, and is your asthma currently well controlled? What worries you most about the back pain, and what were you hoping the MRI would show?",
+  "released": [
+   "concerns",
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I’ve taken ibuprofen safely before, and my asthma is currently well controlled with my inhaler. What worries me most is that I’ve been reading about slipped discs and people needing surgery, so I figured I’d need an MRI to see what’s going on.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "That’s an understandable worry. Severe back pain doesn’t necessarily mean serious damage or a need for surgery. I’d like to check your movement, feel your back and check the strength, sensation and reflexes in your legs. Please tell me if anything is too painful.",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ll do what you need. If anything’s too painful, I’ll let you know.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "left",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "side": "left",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "side": "left",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "side": "left",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "side": "left",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "Your examination shows tender, tight muscles on the left of your lower back, but normal leg strength, feeling and reflexes, with no signs of a trapped nerve. This fits an acute mechanical back strain. What inhaler do you use, and are you taking any blood thinners or other painkillers? Would lighter duties or a short work certificate help you stay mobile rather than working on the couch?",
+  "released": [],
+  "flooded": false,
+  "reply": "I use a blue inhaler for my asthma. I'm not taking any blood thinners or other painkillers. A short work certificate might help me stay mobile rather than working on the couch.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "I don’t recommend an MRI or X-ray now. Your history and examination show no warning signs of fracture, infection, cancer or serious nerve compression. A scan would be unlikely to change treatment or speed your recovery. MRIs often show disc bulges in people with no pain at all, which can cause worry and lead to unnecessary procedures. Most episodes like this start improving within days and settle over a few weeks. If you’re not improving or develop warning symptoms, we’ll reassess the need for imaging.\n\nFor pain, a short trial of ibuprofen is reasonable as you’ve tolerated it before. Take 400 mg with food up to three times a day if needed, for up to three days, using less or stopping sooner if you can. Don’t combine it with other anti-inflammatories such as naproxen or diclofenac. Stop it and seek help if you get wheezing, significant stomach pain, black stools or vomit blood; severe breathing difficulty means call 000. Keep hydrated and avoid it if you’re vomiting or dehydrated. Since paracetamol hasn’t helped, there’s no need to keep taking it. Strong opioid painkillers such as tramadol aren’t recommended for this.\n\nHow does that plan sound, including holding off on the scan?",
+  "released": [],
+  "flooded": false,
+  "reply": "That plan sounds reasonable. I just want to make sure I'm not missing something serious, but I trust your assessment. I'll try the ibuprofen and see how I go.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg with food, up to three times daily if needed",
+  "frequency": "Three times daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "The best recovery plan is gentle movement rather than bed rest. Take short walks several times a day, change position regularly, and gradually increase activity as the pain eases. A little discomfort with movement is usually safe; don’t force movements that sharply worsen it. Use your heat pack wrapped in a towel for 15–20 minutes at a time, and avoid sleeping on it. Avoid heavy lifting and repeated bending or twisting for now, then ease back into these activities.\n\nI can provide a short certificate covering the next two days if needed, with a gradual return to work and regular movement breaks. When working, use a comfortable desk setup rather than staying on the couch all day. Let’s review you in a week, sooner if the pain is worsening or the medicine isn’t helping. If progress is slow, physiotherapy for a graded exercise plan can help. Persistent symptoms over four to six weeks need reassessment, though they don’t automatically mean you need a scan.\n\nGo straight to an emergency department if you develop difficulty passing urine, loss of bladder or bowel control, numbness around your genitals or bottom, or new or worsening leg weakness. Seek urgent same-day review for fever, feeling very unwell, or severe constant pain that doesn’t ease with rest. New leg pain or numbness should also prompt an earlier review.\n\nCould you tell me the main symptoms you’d seek urgent help for, and is there anything else worrying you?",
+  "released": [],
+  "flooded": false,
+  "reply": "The main symptoms I’d seek urgent help for are difficulty passing urine, loss of bladder or bowel control, numbness around my genitals or bottom, or new or worsening leg weakness. I’m just worried I might be missing something serious, but I trust your plan.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "You’ve understood those warning signs correctly. Nothing today suggests a serious cause, and the normal nerve examination is reassuring. I can’t promise symptoms won’t change, which is why those warning signs and our review matter. You don’t need to wait a week if things are getting worse. We’ll also update your record to include your asthma and arrange a routine review of your inhaler treatment.",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ll make sure to keep an eye on things and come in if anything changes. Thanks for updating my record and arranging the inhaler review.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "dx",
+  "primary": "lumbar_strain",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lumbar muscle strain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 300
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 300,
+  "max": 450,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 300
+ }
+]

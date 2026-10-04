@@ -1,0 +1,322 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Mr Delaney — I'm Dr Rao, the GP here. Thanks for coming in. You've booked in with a cough and fever for a few days. Can you tell me about it — how did it start, and what's it been like since?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago as a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was definitely roasting. Since yesterday I've been bringing stuff up, rusty and brownish, started clear. There's a sharp pain on the right side, near my back, catches when I breathe deep or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, that's helpful. A few more details, please. Are you breathless at rest, or with normal things like walking around the house? Have you coughed up any frank red blood, or is it just that rusty-tinged sputum? Have you had any shivering or rigors? And any weight loss or drenching night sweats over the last few weeks?",
+  "released": [
+   "breathlessness",
+   "haemoptysis",
+   "rigors",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs — I was winded coming in from the car park, but I'm fine sitting here. I've been coughing up that rusty, brownish stuff, not actual blood. The first night I was shaking under the doona, teeth chattering, even though I was boiling. I might lose a few kilos, but not sure. What does \"rigors\" mean?",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "\"Rigors\" are those hard shivers and teeth-chattering chills that go with a spiking fever — sounds like you've already had those, so we've covered it. Good: no frank blood is an important point. A couple more background questions: do you smoke, or did you ever? Do you have any medical conditions or take any regular medications? And has anyone around you — at school or at home — been unwell with anything similar lately?",
+  "released": [
+   "smoking",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "No, I've never smoked. No medical conditions, and I don't take any regular medications. No one at school or home has been unwell with anything similar. What does \"rigors\" mean?",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and tired-looking. Alert and orientated. Speaking in full sentences. Not cyanosed.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "2 capsules",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the summary and your plan. The exam and the chest X-ray both show a localised infection in the lower part of your right lung — in plain words, a community-acquired pneumonia on the right side. Your vitals are stable — no confusion, blood pressure is normal — so you can be safely treated at home, and yes, this one does benefit from antibiotics.\n\nYour treatment:\n1. Amoxicillin 500 mg capsules — 2 capsules, twice a day, for 5 days. Please finish the full course even if you feel better earlier, to make sure the infection is fully cleared.\n2. Paracetamol 500 mg — 2 tablets, every 6 hours if you have fever or the chest pain, for 5 days.\n3. Rest, drink plenty of fluids, and avoid alcohol and smoking (or vaping) until you've fully recovered.\n\nImportant safety notes — contact a doctor or go to an emergency department immediately if any of these happen:\n- you start struggling for breath at rest, feel dizzy or faint, or your lips/fingertips turn bluish;\n- the rusty sputum turns into coughing up frank blood;\n- your fever keeps rising or does not start improving within 48–72 hours of starting the antibiotic;\n- the chest pain becomes severe or constant.\n\nOtherwise, I'd like to see you again in 48 hours if the fever or cough have not clearly improved, so we can re-check your lungs and repeat an X-ray if needed. Do you have any questions about the plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, doc. Just, uh… I hope this works. I’ve got exams to get back to.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "tuberculosis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Tuberculosis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Tuberculosis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "you can be safely treated at home, and yes, this one does benefit from antibiotics.",
+    "ideal_2": "I'd like to see you again in 48 hours if the fever or cough have not clearly improved, so we can re-check your lungs and repeat an X-ray if needed.",
+    "acceptable_2": "Paracetamol 500 mg — 2 tablets, every 6 hours if you have fever or the chest pain, for 5 days.",
+    "acceptable_3": "Rest, drink plenty of fluids, and avoid alcohol and smoking (or vaping) until you've fully recovered.",
+    "acceptable_5": "if the fever or cough have not clearly improved, so we can re-check your lungs and repeat an X-ray if needed."
+   }
+  },
+  "total": 225,
+  "max": 425,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 185
+ }
+]

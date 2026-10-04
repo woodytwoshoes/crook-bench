@@ -1,0 +1,392 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, you look quite unwell, and indigestion can sometimes be a sign of a heart problem. We'll assess you immediately. Where do you feel the discomfort, when did it start, and is it still there now?",
+  "released": [
+   "pain_site",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. Started about seven this morning. Came on over a few minutes. Still there now. Like a heaviness, sort of a weight sitting on my chest.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Please rest here and don't walk around. I am arranging an emergency ambulance because this could be a heart attack. How severe is the heaviness out of ten? Does it spread into your arms, jaw or back? Are you short of breath, feeling sick, or faint?",
+  "released": [
+   "pain_severity",
+   "pain_radiation",
+   "dyspnoea",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Maybe a six, more heavy than sore. It's in my jaw and left arm, not my back. A bit short of breath, feel a bit sick, bit light-headed getting out of the car.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "left",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had a reaction to aspirin, any recent bleeding or black stools, or been told you must not take aspirin? What medicines have you taken today, including any blood thinners or medicines for erections such as Viagra or Cialis in the last few days?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "pde5_inhibitor",
+   "anticoagulants"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of, I've had Disprin before, no problems. No recent bleeding, no black stools. Took one of those Viagra tablets last night. No blood thinners.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "The heart tracing shows a heart attack. The ambulance is being arranged urgently to take you to a hospital that can open the blocked heart artery. Please chew this aspirin now. We must avoid angina spray because you took Viagra and the combination could dangerously lower your blood pressure. I will stay with you and have the team keep monitoring you, with the resuscitation equipment ready. Did the pain start suddenly at its worst, or feel like tearing? Have you passed out, or had any new weakness or trouble speaking?",
+  "released": [
+   "tearing_pain",
+   "neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, it crept up on me. No, arm's heavy but I can use it fine. No, no weakness, no trouble speaking.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Sudden severe tearing or ripping pain"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or other neurological symptoms, or limb pain"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "side": "left",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "side": "left",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "right",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had similar pain before, a heart attack, a heart stent, or a stroke? What time and dose of Viagra did you take? Have you taken your usual blood pressure and cholesterol tablets today, or anything for this pain?",
+  "released": [
+   "crescendo_angina",
+   "previous_cardiac",
+   "previous_stroke",
+   "antiplatelet"
+  ],
+  "flooded": false,
+  "reply": "No, never had a heart attack or stroke. Had a bit of tightness going up ladders, goes away if I stop, but never had proper chest pain like this. Never had a heart stent or operation. Took my usual tablets this morning, perindopril and atorvastatin, but didn't take aspirin or anything for the pain. Took Viagra last night, about an hour before bed, one tablet.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "The ambulance team needs to know this is an urgent heart attack affecting the lower part of the heart, with a slow pulse. I'll send the tracings and ask them to alert the hospital's heart artery treatment team immediately. You have received 300 mg of aspirin; I'll also tell them about the Viagra so no nitrate medicines are given. Your oxygen level is normal, so extra oxygen isn't needed now. We'll monitor your heart rhythm, blood pressure and oxygen continuously, arrange a vein line if available without delaying transfer, and have the defibrillator ready. The ambulance team can give carefully monitored pain relief. Is the discomfort getting worse or are you feeling more faint now? Would you like us to contact your wife?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, not worse. No, don’t need to contact the missus.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "gord",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastro-oesophageal reflux disease",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 315
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this is serious, but getting the artery opened quickly gives you the best chance of limiting heart damage. Please stay resting here with us until the ambulance takes over—don't drive or walk out. Tell me immediately if the heaviness increases, breathing becomes difficult, or you feel faint. We won't delay the ambulance for blood tests or try treating this as ordinary indigestion. The hospital will do further tests and give the additional treatment needed.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't take aspirin or anything like that.",
+  "awards": [],
+  "score": 315
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please stay resting here with us until the ambulance takes over—don't drive or walk out."
+   }
+  },
+  "total": 330,
+  "max": 505,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 315
+ }
+]

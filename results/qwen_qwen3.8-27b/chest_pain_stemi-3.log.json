@@ -1,0 +1,301 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, I'm Dr. Patel. Your wife mentioned you've been feeling poorly with some indigestion since this morning. Can you tell me exactly what's been bothering you — where the discomfort is, what it feels like, and when it started?",
+  "released": [
+   "pain_site",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's a heaviness, like indigestion but heavier. Sort of a weight on my chest. Right behind the breastbone, a bit up into the throat. Started about seven this morning, came on over a few minutes. Been there ever since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, that's helpful. I want to check a few things. Is the heaviness spreading anywhere — to your arm, shoulder, jaw, or back? Do you feel nauseated, lightheaded, or short of breath? Has it come and gone in waves, or is it constant? And have you had anything like this before?",
+  "released": [
+   "pain_radiation",
+   "nausea_vomiting",
+   "presyncope",
+   "dyspnoea",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "No, it's not spreading to my back. My jaw's a bit achy and my left arm feels heavy. Feel a bit sick but haven't vomited. Bit light-headed getting out of the car, didn't pass out. A bit short of breath, yeah. It's been constant since this morning, but I've had a tightness going up ladders in the past week — goes away if I stop.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you: your ECG shows that you're having a heart attack — specifically in the lower part of the heart. I've given you 300 mg of aspirin, and I've called an ambulance to bring you to the emergency department of a hospital that can open up the blocked artery, ideally within the hour. Your breathing and oxygen level are okay, so you don't need oxygen.\n\nA few important things right now:\n- Sit still and rest — don't walk around, don't eat or drink anything, and don't drive.\n- If the pain gets worse or you feel faint before the ambulance arrives, we'll be right here.\n- When you get to hospital, take your medication list — the perindopril and statin you take at home — and let the team know if you have any allergies.\n\nYour wife was right to insist you come in. Would you like me to ring her now so she can meet the ambulance?",
+  "released": [
+   "anticoagulants",
+   "aspirin_allergy",
+   "antiplatelet",
+   "previous_cardiac",
+   "previous_stroke",
+   "previous_clots"
+  ],
+  "flooded": false,
+  "reply": "No, I don't take aspirin or anything like that. I've had Disprin before, no problems. Never had anything wrong with my heart, never had a stroke or mini-stroke, never had a clot.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood clots in the legs or lungs, ever"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "subregion": "heart",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "pericarditis",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pericarditis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your heart sounds and lungs are as expected, and there's nothing to change what we've set in motion. To summarise: you're having a heart attack in the lower part of the heart, and the ambulance is on its way to take you to the emergency department for the clot-busting treatment or catheter lab that can reopen the artery.\n\nPlease remember: don't eat or drink, don't take any other medicines on the way unless the paramedics tell you to, keep your medication bottle list with you, and if the pain changes or you feel faint before you're loaded in, tell us immediately.\n\nYou did the right thing coming in today — I hope to see you through to recovery.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't take aspirin or anything like that. I've had Disprin before, no problems. Never had anything wrong with my heart, never had a stroke or mini-stroke, never had a clot.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 270,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 270
+ }
+]

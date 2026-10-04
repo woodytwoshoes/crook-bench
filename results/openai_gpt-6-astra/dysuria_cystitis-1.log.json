@@ -1,0 +1,454 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm the doctor today. I understand it's burning when you wee. Could you tell me more about what's been happening since it started?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, especially at the end when I wee. I've been going a lot — every half hour or so — but only pass a little each time. It's been like this since yesterday morning. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had fever, chills, pain in your back or sides, or any nausea or vomiting? Do you have any pain in your lower tummy?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had a fever or shivers, and I feel fine apart from this. I don't have any pain in my back or sides, just a bit of an ache low down in my tummy. I'm eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Are you able to drink and pass urine without difficulty apart from the stinging? Have you noticed any vaginal discharge, itching, sores or unusual bleeding?",
+  "released": [
+   "fluid_intake",
+   "vaginal_discharge_itch",
+   "abnormal_bleeding",
+   "postcoital_intermenstrual_bleeding"
+  ],
+  "flooded": false,
+  "reply": "I'm able to drink and pass urine without difficulty apart from the stinging. I haven't noticed any vaginal discharge, itching, sores or unusual bleeding — just my normal periods. I've never had bleeding after sex or between periods.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any unusual vaginal bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "When did your last period start, and is there any possibility of pregnancy, including any missed pills? You mentioned a UTI before—when was that, and was it confirmed with a urine test?",
+  "released": [
+   "last_period",
+   "pregnancy_possible",
+   "contraception",
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "My last period started about two weeks ago and was normal. I don't think I'm pregnant — I'm on the pill and I don't miss it. I had a UTI about two years ago, and it was confirmed with a urine test.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "What antibiotic helped last time, and have you taken any antibiotics recently? Have you ever had kidney problems, stones, diabetes, or problems with your immune system?",
+  "released": [
+   "recent_antibiotics",
+   "renal_tract_problems",
+   "diabetes",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "I don't think I've taken any antibiotics this year, but I had some last time for the UTI. I haven't had any kidney problems, stones, diabetes or immune issues.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "I ask everyone with these symptoms a few private sexual health questions because some infections can feel like a bladder infection. Are you sexually active, and have you had a new partner recently? Do you use condoms?",
+  "released": [
+   "sexual_partners",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "Yes, I have a boyfriend — we've been together about a year and just him. We don't use condoms because I'm on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Have you or your boyfriend ever had a sexually transmitted infection, or any recent symptoms or concerns about exposure? Have you had pain during sex?",
+  "released": [
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, that's never been a problem. Neither I nor my boyfriend have had any STIs, and I don't think we've had any recent exposures. We've been together for about a year, and I don't think there's been any new partners.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Just to check, any pain during sex? Are you taking anything other than the pill, including treatments for the burning, and do you have any medicine allergies?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have pain during sex. I'm only taking the pill as my regular medication. I'm not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "This sounds most like a bladder infection. With your permission, I'll check your temperature and pulse, gently feel your tummy and check for tenderness over your kidneys. I'd also like a clean midstream urine sample for a quick test—start weeing into the toilet, then catch some in the cup.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, sure. I'll do that. I just hope it's not too bad.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "left",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "side": "left",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "side": "left",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "side": "right",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Your urine test supports a bladder infection, and your examination doesn't suggest infection in the kidneys. We can treat this with a short antibiotic course. Before treatment, would you be happy to have a urine pregnancy test as a precaution? I also routinely offer chlamydia and gonorrhoea screening to sexually active people your age, even without symptoms—would you like that today?",
+  "released": [
+   "recent_intercourse"
+  ],
+  "flooded": false,
+  "reply": "Yes, I'd be happy to have a urine pregnancy test as a precaution. I'd also like the chlamydia and gonorrhoea screening. Yeah… we'd, um, been together the night before it started.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Sex can sometimes trigger a bladder infection by moving your own bacteria towards the bladder; it doesn't mean either of you has a sexually transmitted infection. Your pregnancy test is negative. For the sexual health screen, a self-collected vaginal swab is a good option. Is that okay, and can we contact you privately on your usual mobile with the result?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, a vaginal swab is fine. I can be contacted on my mobile.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "At night",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "I've prescribed trimethoprim: take one 300 mg tablet tonight, then one each night for three nights in total. Complete the course. It can cause nausea or a rash; seek urgent help for swelling of your face or tongue or trouble breathing. It doesn't directly stop your pill working, but vomiting or severe diarrhoea can—if that happens, follow your pill's missed-pill instructions and check with us or your pharmacist about extra protection.\n\nDrink enough to stay hydrated, without forcing lots of water. You can take paracetamol for discomfort, 500–1000 mg up to four times a day, at least 4–6 hours apart, with no more than 4000 mg in 24 hours. Avoid sex until comfortable. Are there any concerns about the treatment or anything else you'd like to ask?",
+  "released": [],
+  "flooded": false,
+  "reply": "No concerns about the treatment. I just hope it works quickly so I can get back to work.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "You should start feeling better within 24–48 hours. You can work if you feel comfortable, with access to drinks and toilet breaks. If you're not clearly improving within 48 hours, or symptoms return after treatment, please come back—we'll send a urine sample to the lab to check which antibiotic will work.\n\nSeek urgent medical care the same day if you develop fever, shaking chills, pain in your back or side, vomiting, worsening tummy pain or difficulty passing urine. If you become very unwell, faint or can't keep fluids down, go to emergency.\n\nWe'll contact you with the sexual health results in about two days; please call if you haven't heard within three days. Condoms help protect against sexually transmitted infections, unlike the pill. With only two bladder infections years apart, you don't need preventive antibiotics or scans.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks for the info. I'll keep an eye on it and call if anything changes.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 310
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_2": "You can take paracetamol for discomfort, 500–1000 mg up to four times a day, at least 4–6 hours apart, with no more than 4000 mg in 24 hours.",
+    "ideal_3": "If you're not clearly improving within 48 hours, or symptoms return after treatment, please come back—we'll send a urine sample to the lab to check which antibiotic will work."
+   }
+  },
+  "total": 340,
+  "max": 375,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 310
+ }
+]

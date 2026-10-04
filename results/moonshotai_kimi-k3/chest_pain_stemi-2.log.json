@@ -1,0 +1,184 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, thanks for coming in — you did the right thing. I need to ask you a few quick questions. Can you point to where this indigestion feeling is? What does it feel like — burning, pressure, tightness? Does it spread anywhere, like your chest, arm, neck or jaw? And have you noticed anything else with it — shortness of breath, nausea, dizziness, or sweating?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "I point to the middle, behind the breastbone. Feels like a heaviness, like indigestion but heavier. Sort of a weight sitting on my chest. It's been going the whole time, near enough an hour and a half. Still there now. It's right in the middle, behind the breastbone, bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. It started about seven this morning. Came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg (1 tablet, chewed)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm going to be straight with you. This isn't indigestion — your heart tracing shows you're having a heart attack right now. One of the arteries on the underside of your heart is blocked, and that's what's causing the heaviness in your chest, the jaw ache and the heavy arm.\n\nHere's what we're doing: I've given you an aspirin tablet to chew — it helps stop the clot getting bigger. An ambulance is on its way, and they'll take you straight to the hospital where the heart team can open that artery up as quickly as possible. The sooner that's done, the more heart muscle we save.\n\nWhile we wait: I want you to stay seated and as still and calm as you can — don't walk around. Nothing to eat or drink in case the hospital needs to do a procedure. If the pain suddenly gets much worse, you feel faint, or your heart feels like it's racing or thumping oddly, tell me straight away — I'm staying right here with you and we have emergency equipment on hand. Is there someone — your wife — you'd like us to call now?",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What do you want to know first?",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "That's completely understandable, Graham — it's a lot to take in. The short version: you're in the right place, we've caught it early, help is on the way, and this is very treatable when we act fast — which we are. The ambulance officers and I will look after everything. We'll get your wife called and she can meet you at the hospital. Just rest and keep talking to me.",
+  "released": [],
+  "flooded": false,
+  "reply": "Wife's name's Julie. She'll be glad to see me. I just hope she's not too worried.",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I want you to stay seated and as still and calm as you can - don't walk around."
+   }
+  },
+  "total": 155,
+  "max": 505,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 140
+ }
+]

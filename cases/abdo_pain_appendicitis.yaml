@@ -379,9 +379,12 @@ investigations:
 
 management:
   ideal:
+    # 2026-10-04 (developer's decision, benchmark run): phoning ED for a
+    # handover and sending him there counts; five consults that did this
+    # had lost 30 and the missed-red-flag story.
     - text: Refer to the emergency department today for surgical assessment
       required: true
-      when: { refer: [ambulance_ed, ed_self_present] }
+      when: { refer: [ambulance_ed, ed_self_present, phone_ed_handover] }
     - Explain that appendicitis is likely and why he needs to go to hospital today
     # 2026-10-03 (developer's decision, Heidi full key check): one ideal item for
     # either drug, replacing the separate acceptable paracetamol and opioid items

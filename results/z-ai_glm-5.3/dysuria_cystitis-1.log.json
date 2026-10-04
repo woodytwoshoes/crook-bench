@@ -1,0 +1,326 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Evans. Thanks for coming in — I understand you've had burning when you pass urine since yesterday. Before we sort out treatment, I'd like to ask a few questions to make sure we get this right and check for anything more serious. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that's okay. It stings and burns, worst right at the end when I wee. I'm going all the time — every half hour — but only a little comes out. I have to rush.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound very much like a bladder infection, and the pattern you describe is really helpful. Now I need to check for signs it might have spread to your kidneys or something else going on. Have you had any fever, chills or shivering episodes? And any pain in your back or side, around your lower ribs at the back?",
+  "released": [
+   "duration",
+   "haematuria",
+   "fever_rigors",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, chills or shivering. I don't have pain in my back or sides — just a bit of an ache low down in my tummy. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's reassuring — no signs of a kidney infection so far. Now, sometimes burning urine can actually be caused by a vaginal infection or a sexually transmitted infection rather than a UTI. Have you noticed any unusual vaginal discharge, itching, or irritation? And have you started with a new sexual partner recently, or do you have any concerns about a possible infection passed on through sex?",
+  "released": [
+   "vaginal_discharge_itch",
+   "recent_intercourse",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any unusual vaginal discharge, itching or irritation. We'd been together the night before it started, and I have a boyfriend — we've been together about a year, just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful context — sex can trigger bladder infections in women, so that fits. You mentioned in your booking note this might be a UTI \"again\" — how many water infections have you had before, and when was the most recent one? Did any need antibiotic treatment, and did you have a urine test at the time?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it — no others. I haven't had any antibiotics this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Good, thanks. You're on the contraceptive pill — have you missed any pills recently, or had any vomiting or bad diarrhoea that might have stopped it working? And when was your last period, was it normal, and is there any chance at all you could be pregnant?",
+  "released": [
+   "contraception",
+   "nausea_vomiting",
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "No, I don't miss my pills and haven't been sick or had vomiting. My last period was about two weeks ago and was normal. I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's all very reassuring. A couple of last general questions: do you have any ongoing health conditions like diabetes or kidney problems, and do you take any medicines other than the pill? Also, how much water do you drink on a typical day at the café?",
+  "released": [
+   "diabetes",
+   "renal_tract_problems",
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have diabetes or any kidney or bladder problems. I only take the contraceptive pill and don't miss it. I drink probably not enough water — mostly coffee at work, to be honest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Chloe, that's a really clear picture. Based on what you've told me — burning, passing small amounts frequently, cloudy smelly urine, tummy ache low down, no fever or back pain — this sounds like a straightforward bladder infection (cystitis), which is common and easily treated. Let me quickly examine you and check your temperature, then test your urine to confirm before I give you antibiotics. Is that alright?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that's alright. I'm okay with that.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Chloe, here's what's going on and my plan.\n\nYour urine test today confirmed infection — it showed white cells and bacteria markers, which fits perfectly with your story and my examination. So this is a straightforward bladder infection (cystitis), not a kidney infection — your temperature is normal, there's no tenderness over your kidneys, and your tummy is only mildly tender over the bladder.\n\nI've given you a prescription for trimethoprim — one 300 mg tablet once a day for 3 days. It's a targeted antibiotic for bladder infections. Take the full course even if you feel better after a day or so. Good news: this antibiotic does not affect your contraceptive pill. The only caution is that if it makes you vomit or gives you bad diarrhoea within a few hours of a pill, use extra precautions like condoms for the next week.\n\nA few things to help you feel better and prevent this coming back:\n- Drink plenty of water through the day — aim to keep your urine pale. Cutting back on coffee a bit will help too, as it can irritate the bladder.\n- Try to pass urine soon after sex, and always wipe front to back.\n- Don't hold on when you need to go.\n- If the stinging is miserable, paracetamol can take the edge off.\n\nPlease come back or seek urgent care if any of these happen — they'd suggest the infection has spread to your kidneys, which needs stronger treatment:\n- Fever or chills and shivering\n- Pain in your back or side, under the ribs\n- Vomiting or you can't keep fluids down\n- Feeling much worse rather than better\n\nAlso come back if you're no better after 2 days on the antibiotic, or if the symptoms come back within a few weeks of finishing it — in that case I'd send a urine sample to the lab to check what bug it is.\n\nOne last thing — since you're 22 and sexually active, Australian guidelines suggest a chlamydia urine test once a year as routine screening. It's just a quick sample, and it's completely up to you — would you like me to add that today? If not, it's fine to have it at your next visit.",
+  "released": [
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "I'm on the pill and we don't use condoms, so that's why I'm worried about STIs. I don't mind getting the chlamydia test — it's better to be safe.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Great — I've ordered that test. It's a simple urine sample you can leave with our nurse before you go. The result takes a couple of days, and the clinic will contact you either way — usually by text or a call. It's completely confidential. If it did come back positive, it's easily treated with antibiotics, and we'd talk about your partner being tested too, but let's cross that bridge if we get to it. Being on the pill doesn't protect against infections, so if either of you has ever had another partner, this yearly test is a sensible routine.\n\nTo recap: trimethoprim 300 mg once a day for 3 days, plenty of water, and come back urgently if you get fever, chills, back or loin pain, or vomiting, or if you're not improving after 2 days of the antibiotic. Does that all make sense, or is there anything you'd like to ask me?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, that all makes sense. I just want to make sure I take the antibiotic properly and drink enough water. I'll come back if anything gets worse.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water through the day — aim to keep your urine pale.",
+    "ideal_2": "If the stinging is miserable, paracetamol can take the edge off.",
+    "ideal_3": "Please come back or seek urgent care if any of these happen — they'd suggest the infection has spread to your kidneys, which needs stronger treatment: Fever or chills and shivering, Pain in your back or side, under the ribs, Vomiting or you can't keep fluids down, Feeling much worse rather than better. Also come back if you're no better after 2 days on the antibiotic, or if the symptoms come back within a few weeks of finishing it — in that case I'd send a urine sample to the lab to check what bug it is."
+   }
+  },
+  "total": 285,
+  "max": 375,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 240
+ }
+]

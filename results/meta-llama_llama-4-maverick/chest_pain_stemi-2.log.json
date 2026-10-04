@@ -1,0 +1,230 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Mr Mitchell. Your wife has brought you in today with some indigestion. Can you tell me more about it? When did it start and what does it feel like?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Started about seven this morning. Came on over a few minutes. Feels like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "So the discomfort is in the centre of your chest and has radiated to your jaw and left arm. Is there anything that makes it better or worse? Have you experienced anything like this before?",
+  "released": [
+   "antacid_response",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "Nothing's made it better. Quick-Eze didn't touch it. Had a bit of tightness going up ladders before, goes away if I stop. It's been happening more.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "subregion": "heart",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Mr Mitchell, I'm very concerned about your symptoms and the ECG results. I'm going to arrange for you to be taken to the emergency department immediately by ambulance for further assessment and treatment. Your symptoms and ECG findings are suggestive of a myocardial infarction, commonly known as a heart attack.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't know. I thought it was indigestion. I've had high blood pressure and high cholesterol. I take Perindopril and Atorvastatin. I'm a smoker. I don't want to go in an ambulance. I just want to get back to work.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "acs",
+   "myocardial_infarction"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute coronary syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute myocardial infarction",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Acute myocardial infarction",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I'm going to arrange for you to be taken to the emergency department immediately by ambulance for further assessment and treatment."
+   }
+  },
+  "total": 180,
+  "max": 505,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 165
+ }
+]

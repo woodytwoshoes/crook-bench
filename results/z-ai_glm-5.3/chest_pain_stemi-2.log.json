@@ -1,0 +1,232 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham. I'll be honest with you straight away — you're looking quite pale and sweaty, so I want to move quickly here. First, a few important questions about this indigestion:\n\n1. Can you point to exactly where the discomfort is? And what does it feel like — burning, heavy, squeezing, or sharp?\n2. When did it start, and what were you doing at the time?\n3. Does it spread anywhere else — into your chest, your arm, neck, jaw, or back?\n4. How bad is it, out of 10?\n5. Do you feel short of breath, sick in the stomach, or light-headed?\n6. Have you taken anything for it, like antacids or painkillers, and did that help at all?\n7. Is there any pain or pressure in your chest itself, even a mild one?",
+  "released": [],
+  "flooded": true,
+  "reply": "It's right here, under my ribs. Feels like a weight on my chest. Started this morning, still there. No, doesn't spread. Seven out of ten. No, nothing like that. No, not really. No, not that I can tell.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 25
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg (1 tablet, chewed)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you because your wife was right to insist you come in. The heart tracing shows you're having a heart attack right now — a clot blocking one of the arteries that feeds the bottom of your heart. This is very treatable, but time matters, so here's what's happening:\n\n1. I've called an ambulance to take you to hospital — do not drive, and please stay sitting still where you are. The paramedics have the equipment and drugs to keep you safe on the way.\n2. I've given you an aspirin to chew — it thins the blood and helps stop the clot growing.\n3. I'm deliberately NOT giving you the angina spray under your tongue, because with this type of heart attack your blood pressure is already a bit low and the spray could drop it further. The hospital will decide on stronger pain relief.\n4. At the hospital they'll expect to do an urgent procedure to open the blocked artery, usually with a small balloon and stent through the wrist. The sooner that happens, the more heart muscle we save.\n\nPlease don't eat or drink anything for now. Your wife can meet you at the hospital — the ambulance crew will tell you which one. You did exactly the right thing coming in this morning. I'll stay with you until the ambulance arrives. Any questions while we wait?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's right in the middle, behind the breastbone, bit up into the throat. It's like a weight, not a burning or sharp pain. Started about seven this morning, came on over a few minutes. It's in my jaw and left arm too, not my back. It's been steady, seven out of ten. No, I haven't taken anything. No, not really. No, not that I can tell.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "While we wait for the ambulance, Graham: stay exactly where you are, keep as still and calm as you can, and if the pain suddenly gets worse, the sweating or breathlessness worsen, or you feel faint at any point, tell me or the nurse straight away. The crew is on its way with a defibrillator and will monitor your heart the whole way in. Once you're at the hospital, ask them to call your wife — and when you're recovering, we'll talk about quitting the smokes and getting your cholesterol and blood pressure sorted properly, because that's how we stop this happening again. You did the right thing coming in today.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, not really. No, not that I can tell. No, not really. Just wait.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 160,
+  "max": 505,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 160
+ }
+]

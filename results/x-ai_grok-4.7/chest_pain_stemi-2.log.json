@@ -1,0 +1,386 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Graham, I'm one of the doctors here. I can see you're not looking well — pale and sweaty. Can you tell me what's been happening this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Morning. Not feeling good. Got this heaviness, like indigestion but worse. Feels like a weight on my chest. Been there since about seven this morning. Still there. Right behind my breastbone, a bit up my throat. My jaw's aching a bit, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale, grey and clammy. Sweating. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds more serious than simple indigestion. I need to check a few things quickly. Have you had pain like this before, and on a scale of 0 to 10, how bad is it right now?",
+  "released": [
+   "crescendo_angina",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No, not really. Had a bit of tightness going up ladders, goes away if I stop. It's been happening more. Not sure about the scale — maybe a six? It's more heavy than sore.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this heaviness with the jaw and arm, and looking so sweaty, makes me worried your heart might not be getting enough blood. I'm getting a heart tracing now. Have you ever had a heart attack, a stroke, bleeding problems, asthma, or an allergy to aspirin? Any recent vomiting or black stools?",
+  "released": [
+   "previous_cardiac",
+   "previous_stroke",
+   "aspirin_allergy",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, never had a heart attack or stroke. No allergies, took Disprin before, no problems. Feel a bit sick but haven't vomited.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the heart tracing shows a heart attack — a blockage in one of the heart arteries. We need to get you to hospital by ambulance right now so they can open that artery. I'm going to give you an aspirin to chew, which helps stop the clot getting bigger. Do you take any tablets for erections, like Viagra, or anything similar?",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me — that actually matters a lot. Because you took Viagra last night, I must not give you the spray under the tongue that we usually use for heart pain. It can drop your blood pressure dangerously with that tablet. The aspirin is the important one right now, and the ambulance is the priority. Are you diabetic, and has anyone in your family had a heart attack young? Any swelling in your legs, or have you coughed up blood or felt faint?",
+  "released": [
+   "diabetes",
+   "family_history",
+   "leg_swelling",
+   "recent_bleeding",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "No, not diabetic. Dad had a heart attack at fifty-five, he died from it. Legs are fine. Bit light-headed getting out of the car, didn't pass out. No coughed up blood or anything like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Your blood pressure is a bit on the low side and your pulse is a little slow, which can happen with this type of heart attack. You are not short of oxygen, so you don't need oxygen right now. The ambulance is on the way. Chew that aspirin if you haven't already — don't swallow it whole. Stay sitting, try not to walk around, and tell me straight away if the pain gets worse, you feel faint, or you start vomiting.",
+  "released": [],
+  "flooded": false,
+  "reply": "Chewing it now. Not sure about the rest. Staying put. If it gets worse, I'll say.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "rx",
+  "id": "ondansetron_4mg_odt",
+  "dose": "4 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: ondansetron",
+    "domain": "management"
+   }
+  ],
+  "score": 238
+ },
+ {
+  "type": "say",
+  "utterance": "The aspirin is working to thin the blood a little so the clot doesn't grow. At the hospital they will do an urgent procedure, usually through the wrist or groin, to find the blocked artery and open it with a small balloon and often a stent. That's the best treatment, and the sooner the better — that's why we're not waiting for blood tests here. You felt a bit sick earlier; I've got a tablet that dissolves on the tongue for the nausea. Your wife should know you're going to hospital. Don't drive yourself. If you collapse or the pain becomes crushing before the ambulance arrives, we will treat that as an emergency here. Do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions. Just need to get this sorted. Wife knows. Don't want to drive.",
+  "awards": [],
+  "score": 238
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "pericarditis",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pericarditis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 278
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Stay sitting, try not to walk around, and tell me straight away if the pain gets worse, you feel faint, or you start vomiting."
+   }
+  },
+  "total": 293,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 278
+ }
+]

@@ -1,0 +1,372 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. —. I understand you've got burning when you pass urine. Tell me a bit more about what's been happening.",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, especially at the end of peeing, like my last UTI. I’ve been going all the time — every half hour or so — but only a little comes out each time. It’s been like this since yesterday morning. The urine is a bit cloudy and smells, but I haven’t seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you. Have you had any pain in your lower belly, or pain in your back or sides? Any fever, chills, or feeling shaky?",
+  "released": [
+   "abdominal_pain",
+   "loin_pain",
+   "fever_rigors"
+  ],
+  "flooded": false,
+  "reply": "No, just a low ache above my bladder, nothing else. No pain in my back or sides, just that ache low down in my tummy. No fever, shivers or feeling shaky — I feel fine apart from the burning when I pee.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Any nausea or vomiting? And have you had any vaginal discharge, itch, or pain during sex recently?",
+  "released": [
+   "nausea_vomiting",
+   "vaginal_discharge_itch",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, I’ve been eating normally and haven’t been sick. Nothing like that — no vaginal discharge, itch or pain during sex recently.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "When you say \"like your last UTI\" — how many UTIs have you had before, and when was the most recent one?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Are you sexually active at the moment? Any chance you could be pregnant?",
+  "released": [
+   "sexual_partners",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "Yes, I’m sexually active — I have a boyfriend, we’ve been together about a year and it’s just him. I don’t think I could be pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Could your period be late at all? When was the first day of your most recent period?",
+  "released": [
+   "last_period"
+  ],
+  "flooded": false,
+  "reply": "No, my period was about two weeks ago and it was normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions, or have you ever had any kidney problems or stones? And apart from the contraceptive pill, are you on any other medicines or anything over the counter?",
+  "released": [
+   "renal_tract_problems"
+  ],
+  "flooded": false,
+  "reply": "No, I don’t have any other medical conditions or a history of kidney problems or stones. Apart from the contraceptive pill, I’m not on anything else — no other medicines or over the counter stuff.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Just to check — any pain when you pee that feels different, like needing to strain, or any difficulty starting to pass urine? And has there been any new pain in your groin or lower tummy when you move or walk?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, the pain when I pee is the same — just the burning at the end. No new pain in my groin or lower tummy when I move or walk.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever or felt hot at home, or checked your temperature? Any blood at all in your urine, even a tiny bit or pinkish tinge?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven’t checked my temperature or felt hot at home. Just cloudy and smells a bit.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Just two more questions. Have you noticed any pain or swelling in one side higher up, like just under your ribs or reaching toward your back on one side? And any new pain or burning when you pass urine for your partner or history of sexually transmitted infections?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven’t noticed any pain or swelling under my ribs or toward my back. No new pain or burning when my partner pees, and no history of sexually transmitted infections.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "At night",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan.\n\nYou have a bladder infection (a UTI), and your urine test already shows signs of infection, with no signs it has reached your kidneys — you have no fever, no back pain, and your exam was reassuring.\n\nI've started you on an antibiotic called trimethoprim, one 300 mg tablet at night for three days. Finish the whole course even if you feel better.\n\nI've also sent a sample to the lab for culture, so in about two days we'll know exactly which bug it is and whether the antibiotic is the right one. If it needs changing we'll contact you.\n\nTo help: drink plenty of water, don't hold on when you need to go, and you can take paracetamol if you're uncomfortable.\n\nPlease come back or call us right away if you develop any of these: fever or chills, pain in your back or sides, vomiting and being unable to keep fluids down, blood in your urine, or if you're not feeling better within about 48 hours — these could mean the infection is spreading.\n\nDo you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don’t have any questions — thanks for the script. I’ll finish the course and come back if anything gets worse.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "To help: drink plenty of water",
+    "ideal_2": "you can take paracetamol if you're uncomfortable",
+    "ideal_3": "Please come back or call us right away if you develop any of these: fever or chills, pain in your back or sides, vomiting and being unable to keep fluids down, blood in your urine, or if you're not feeling better within about 48 hours — these could mean the infection is spreading."
+   }
+  },
+  "total": 290,
+  "max": 375,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 245
+ }
+]

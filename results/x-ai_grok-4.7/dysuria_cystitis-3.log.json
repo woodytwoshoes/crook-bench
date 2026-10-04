@@ -1,0 +1,357 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. Smith. I can see you've come in because of burning when you wee, and you think it might be a UTI. Can you tell me more about what's been happening? When did it start, and what symptoms have you noticed?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, and it's been burning the most at the end of peeing, like my last UTI. I've been going all the time — every half hour — but only a little comes out each time. The pee is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that helps. Have you had any fever, chills, back or side pain, nausea, or vomiting? And any tummy pain?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "No fever, chills or shivers, and just a bit of a low ache above my bladder — nothing in my back. I'm eating normally and haven't been sick, but there's a bit of a tummy ache low down.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Also, have you noticed any vaginal discharge, itch, or soreness down there? And when was your last period — any chance you could be pregnant?",
+  "released": [
+   "vaginal_discharge_itch",
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any vaginal discharge, itch or soreness. My last period was about two weeks ago, and it was normal. I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had UTIs before, and if so, how many and when was the last one? Did antibiotics clear it?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it — no others. I haven't had any antibiotics this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Are you sexually active at the moment? Any new partners, or unprotected sex recently? And any pain during sex?",
+  "released": [
+   "sexual_partners",
+   "recent_intercourse",
+   "condom_use",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I have a boyfriend — we've been together about a year, just him. We'd been together the night before it started, and we don't use condoms because I'm on the pill. No pain during sex, that's never been a problem.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Any other symptoms — like needing to wee at night more than usual, or leaking? And have you been drinking plenty of water?",
+  "released": [
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "I haven't been needing to wee at night more than usual, and I don't think I've been leaking. I probably haven't been drinking enough — mostly coffee at work, to be honest.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Looks well. Not unwell or toxic.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat abdomen. No scars or distension.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Chloe, your symptoms and the urine test fit with a bladder infection — a straightforward UTI. There's no sign it's gone up to your kidneys: you're not feverish, your back isn't tender, and you look well. A pregnancy test was negative.\n\nI'm prescribing trimethoprim, one 300 mg tablet once a day for 3 days. Take the full course even if you feel better sooner. It should start easing the burning within a day or two.\n\nDrink more water — aim for pale urine — and cut back on coffee while this settles, as it can irritate the bladder. Weeing after sex can help prevent another one.\n\nPlease come back or go to emergency if you get fever, chills, pain in your back or side, vomiting, visible blood in the urine, or if you're not clearly improving within 48 hours. If you develop vaginal discharge, itch, or pelvic pain, let us know, as we would then also check for a sexually transmitted infection. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Dr. Smith. I'll take the tablets and drink more water. I'll keep an eye on how I go. I'll come back if it doesn't get better or if anything new happens.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please come back or go to emergency if you get fever, chills, pain in your back or side, vomiting, visible blood in the urine, or if you're not clearly improving within 48 hours."
+   }
+  },
+  "total": 270,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 255
+ }
+]

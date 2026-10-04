@@ -1,0 +1,494 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Rao. Thanks for coming in. I can see you're not feeling great. Can you tell me about your tummy pain — when did it start, where exactly is it, and has it moved around at all?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started last night around ten, near my belly button, and moved down to the right side over the past few hours. It's been there most of the time now, though it was a bit come and go at first. It's a seven out of ten.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "That pattern of starting around the belly button and moving to the right side is important. Let me ask a few more things:\n1) Have you had any fever, shivering, or feeling generally unwell?\n2) Any nausea or vomiting, or has your appetite been poor?\n3) Have you passed wind and had a bowel movement since the pain started?\n4) Any pain when peeing, or peeing more often than usual?\n5) Any pain in the testicles or groin?\n6) Does it hurt more when you cough, or when you bounce along the road, say when a car hits a bump?",
+  "released": [],
+  "flooded": true,
+  "reply": "That's a lot at once. What's the first thing you want to know?",
+  "awards": [],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that. Let's take it one at a time. First: have you had any fever or chills since the pain started?",
+  "released": [
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I felt a bit hot and shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Have you had any nausea or vomiting, or has your appetite been poor?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "I've felt sick since the early hours and threw up once this morning. I couldn't face breakfast, not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Got it. Have you passed wind and had a bowel movement since the pain started?",
+  "released": [],
+  "flooded": false,
+  "reply": "I passed wind and had a bowel movement this morning. It was a bit loose.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. Any burning when you pee, or peeing more often than usual?",
+  "released": [
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Any pain in the testicles or groin?",
+  "released": [
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down there. No lumps, no pain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain get worse when you cough, or when you bounce along the road in a car over bumps? And does it get better if you lie still or tuck your knees up?",
+  "released": [
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yeah, coughing and bumps in the car hurt. It's worse when I move. Lying still helps a bit.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Have you ever had anything like this before, and have you had any abdominal surgery in the past? Also, do you take any regular medications or have any health conditions we should know about?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this before. Never had an operation. I've still got my appendix, as far as I know. I take no regular medications.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and uncomfortable. Lies very still on the couch and walks in slightly stooped.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "finding": "Right lower quadrant: Tender to light percussion. Elsewhere: resonant and non-tender.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "abdominal_ultrasound",
+  "result": null,
+  "awards": [
+   {
+    "points": -15,
+    "kind": "penalty",
+    "label": "Harmful: Abdominal ultrasound",
+    "domain": "investigations"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1000 mg)",
+  "frequency": "Every 6 hours",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Here's where things stand, Samuel. The pain starting around your belly button and settling into your right lower side, the low fever, the nausea, and the tenderness and guarding I feel when I press your tummy — all of this fits very strongly with an inflamed appendix, which we call appendicitis. This is the kind of thing that can get worse and can burst if left, so it needs to be assessed by a surgeon today.\n\nHere's my plan:\n1) I'm referring you to the hospital emergency department for same-day surgical assessment. They'll examine you, may do further blood tests or imaging, and a surgeon can arrange an operation to remove the appendix, which is a straightforward procedure.\n2) In the meantime, don't eat anything for now — if you need surgery, it's best to have an empty stomach. Small sips of water only.\n3) For pain and fever, you can take paracetamol — I've written you a script: 2 tablets every 6 hours, not more than 8 tablets a day. Avoid ibuprofen or aspirin for now.\n4) Keep lying still and comfortable while you travel.\n\nIf you become much more painful, start vomiting repeatedly, feel faint, or the tummy gets hard, don't wait — call 000 for an ambulance. If you haven't been seen in a couple of hours in the ED, let them know it's for likely appendicitis. Are you clear on all that?",
+  "released": [],
+  "flooded": false,
+  "reply": "I get it. I just hope it's not too bad. I don't like hospitals.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "I hear you — hospitals aren't fun. But getting this looked at today is the quickest road to feeling better, and early surgery for an appendix is a very routine, safe operation. Most people are home within a day or two and back to normal within a week or so. You're doing the right thing by coming in while it's still early.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just hope it's not too bad. I don't like hospitals.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "testicular_torsion"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Testicular torsion",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "left",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "side": "right",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Two more things to reassure you. Your testicles are completely normal, so nothing there is worrying. Your urine test showed only a trace of ketones, which just means you've been running on empty from not eating — the rest was normal, so it's not a urine infection.\n\nQuick recap of what to do now:\n- Head to the hospital emergency department today and tell them you've been referred for likely appendicitis.\n- No food until a surgeon has assessed you; small sips of water only.\n- Paracetamol 1g every 6 hours for pain (max 8 tablets a day); skip ibuprofen/aspirin.\n- If the pain suddenly becomes much worse, you start repeated vomiting, feel faint, or your tummy becomes rigid, call 000 for an ambulance — don't drive yourself.\n\nYou're in good hands at this point. That's what the ER is for, and this is a very treatable problem.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just hope it doesn't take too long. I'd rather be at work.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Totally understand — it's frustrating to pull out of work. But push through with this today: an appendix that's being managed before it bursts is a one-night stay and a day or two off. If it bursts, that's a week in hospital and a lot worse. The ER will sort you out faster than any other path, and your employer will understand a same-day emergency visit. Take the paracetamol, bring a phone charger, and off you go.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll try. I just hope it's not too bad.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "It will be okay — you caught it early, and that matters. Off you go to the ED now, and if anything changes on the way, call 000.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll go. I just hope it's not too bad.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "This is the kind of thing that can get worse and can burst if left, so it needs to be assessed by a surgeon today.",
+    "ideal_3": "Don't eat anything for now - if you need surgery, it's best to have an empty stomach. Small sips of water only."
+   }
+  },
+  "total": 305,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 275
+ }
+]

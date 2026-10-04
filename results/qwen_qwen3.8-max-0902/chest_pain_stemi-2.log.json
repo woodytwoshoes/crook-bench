@@ -1,0 +1,383 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, you look quite unwell — you're pale and sweating. I want to ask you a few quick questions and check your pulse and blood pressure straight away. First: where exactly do you feel this \"indigestion\"? Is it in your chest, upper belly, or anywhere else? And can you describe what it feels like — pressure, tightness, burning, or something else?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Chest, middle, behind the breastbone. Bit up into the throat. Feels like a weight on my chest. Heavier than indigestion. Been there about an hour and half. Now you mention it, my jaw's a bit achy and left arm feels heavy. Not my back. Started about seven this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest wall"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this is serious and I'm not going to wait. Your heart tracing shows a blocked artery at the back of the heart — this is a heart attack, not indigestion. I've called an ambulance and I've given you 300 mg of aspirin to chew, which thins the blood and helps open the blockage. While we wait, I need a few more quick answers:\n1) How bad is the chest pain right now out of ten?\n2) Do you feel sick or have you vomited?\n3) Have you taken any erectile dysfunction tablets like Viagra (sildenafil) or Cialis in the last two days?\n4) Have you ever had a heart attack, angina, a stroke, or bleeding problems, or a bad reaction to aspirin?",
+  "released": [
+   "pain_severity",
+   "nausea_vomiting",
+   "pde5_inhibitor",
+   "previous_cardiac",
+   "previous_stroke",
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "Six, more heavy than sore. Feel a bit sick, haven't vomited. Took one of those Viagra tablets last night. Never had a heart attack, angina, stroke or bleeding problems. No allergies, had Disprin before, no problems.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you — that's really important. Because you took Viagra last night I must NOT give you any GTN spray or anginine under the tongue, because the two together can make your blood pressure drop dangerously. I'll make sure the ambulance crew and the hospital know that straight away. Your pulse is a bit slow (54) and your blood pressure is 104/68, so I'm keeping an eye on both while we wait.\nNow, just to be sure the hospital gets everything right: are you definitely taking perindopril 5 mg and atorvastatin 40 mg every day, and is there anything else you take — including over-the-counter things like ibuprofen, cold and flu tablets, or supplements?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes. Perindopril 5 mg and atorvastatin 40 mg. Nothing else.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "pericarditis",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pericarditis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's exactly what's happening and what I want you to do.\n\nWhat this is: your heart tracing shows an ST-elevation heart attack affecting the lower (inferior) part of the heart — an artery at the back of the heart is blocked. That's why you feel a heavy weight in the centre of your chest going up into your throat and jaw and down your left arm, and why you're pale, sweaty and nauseated. This is not indigestion. The aspirin I gave you is on board, and I've already called 000.\n\nRight now:\n- Stay sitting here and keep still — don't get up, don't walk around, and definitely don't drive yourself anywhere.\n- Don't eat or drink anything, in case you need a procedure.\n- I'll keep your pulse and blood pressure checked every few minutes until the crew arrive, and I'll stay with you.\n- If the pain gets worse, or you feel light-headed, more breathless or like you're going to pass out, tell me immediately.\n\nFor the ambulance crew and hospital, I've noted and will tell them:\n- Onset about 7:00 this morning — you're well within the time window where opening the artery works best.\n- ECG: ST elevation in leads II, III and aVF with reciprocal changes; pulse 54, blood pressure 104/68; oxygen 96% so you don't need oxygen.\n- No ST elevation on the right-sided tracing, so the right ventricle doesn't look involved.\n- You took sildenafil (Viagra) last night, so no GTN/anginine spray or tablets for at least 24 hours — I've deliberately not given you any, and they must not either.\n- Aspirin 300 mg dispersed given at 8:30; no allergies; you take perindopril 5 mg and atorvastatin 40 mg.\n\nWhat happens next: the paramedics will take you straight to the hospital that can do an angiogram and open the blocked artery with a balloon and stent — usually within minutes of arrival. They'll give you a second blood-thinning tablet and, if you need it, something for the pain and the nausea. Please have your wife come with you or meet you there, and bring your medication boxes.\n\nLonger term, once you're through this: I'll see you within the first week or two after discharge to sort out your medicines — you'll be on aspirin plus a second antiplatelet, a statin, a beta-blocker and an ACE inhibitor — and to talk hard about stopping smoking, because that's the single biggest thing you can change. I'll also refer you to cardiac rehab, which really does improve survival.\n\nYou did the right thing coming in this morning, even though you thought it was just indigestion. I'm going to stay with you until the crew walk through the door.",
+  "released": [
+   "presyncope",
+   "dyspnoea"
+  ],
+  "flooded": false,
+  "reply": "Bit light-headed getting out of the car, and a bit short of breath, hard to get a proper breath in.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "I've checked you over again: your blood pressure is steady at 104/68, your pulse 54 and regular, your oxygen 96% and your lungs are clear — no fluid on the lungs. The light-headedness and shortness of breath are what we expect with a heart attack that's slowed your pulse a little, and they're a good reason to keep you still rather than moving around. Lean back in the chair or lie down with your legs up a bit, breathe slowly through your nose, and don't get up for anything. I'll re-check your observations every few minutes until the crew arrive — if your pulse drops further or your pressure falls, they can treat that on the spot.\nTwo quick things so I know nothing else is going on: is that light-headed feeling there right now while you're still sitting, and do you get any fluttering or racing in your chest? And do you have any tearing or ripping pain going through into your back or between your shoulder blades, or have you actually fainted at any point today?",
+  "released": [
+   "tearing_pain"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that. It crept up on me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Sudden severe tearing or ripping pain"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "Good — no tearing back pain and no fainting, so I'm confident this is the blocked heart artery and nothing else mimicking it. Keep sitting back and still. To sum up for you: you're having an inferior heart attack; you've had 300 mg of aspirin; 000 has been called and you're going by ambulance to a hospital that can open the artery with a stent; you will have no GTN because of the Viagra you took last night; and I'm monitoring your pulse, blood pressure and breathing right up until the crew take over, with your full history and ECG findings handed over to them. Your wife should come to the hospital. Once you're discharged, book in to see me within a week or two for your heart medicines, smoking support and cardiac rehab. You came in at exactly the right time.",
+  "released": [],
+  "flooded": true,
+  "reply": "It's a lot at once. What do you want to know first?",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "Nothing more to know from you right now, Graham — you've told me everything I need and you've done exactly the right thing by coming in. Your only job now is to sit still, breathe slowly, and let me and the ambulance crew do the work. I'll stay here with you and keep checking your pulse and blood pressure until they walk through the door. It's frightening, but this is a blockage we can open, and you've got here well inside the time window where that works best. You're in the right place.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. Just want to get this over with.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "I'll stay with you."
+   }
+  },
+  "total": 285,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 270
+ }
+]

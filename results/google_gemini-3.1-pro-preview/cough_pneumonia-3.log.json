@@ -1,0 +1,392 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the doctor. I see you've booked in because you've had a cough and fever for a few days and you're feeling pretty rotten. Could you tell me a bit more about when this all started and how you've been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was definitely roasting. Since yesterday I've been bringing up stuff, started clear but now it's rusty and brownish. There's a sharp pain on the right side, near my back, catches when I cough or take a deep breath.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound rough, Mark. Do you feel short of breath at all, even when resting? Have you noticed any bright red blood in the phlegm? And how much have you been able to eat and drink over the last few days?",
+  "released": [
+   "breathlessness",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "No, not really — only when I go up the stairs, and even then I'm okay once I'm sitting. No bright red blood, just that rusty, brownish colour. I've been eating and drinking a bit, but not much — I've been feeling too rotten to keep anything down for long.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "I'd like to check your vital signs like your heart rate, blood pressure, and temperature. While I do that, could you tell me if you have any other medical conditions, take any regular medications, or have any allergies? Also, do you smoke?",
+  "released": [
+   "immunosuppression",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "No other medical conditions, don't take any regular medications and no allergies. Never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to have a listen to your chest and tap on your back to check your lungs. Have you been around anyone else who has been sick recently, or have you travelled anywhere in the last couple of weeks?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere. Just school and home. No one else I've been around has been sick.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "sputum_mcs",
+  "result": null,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Based on my examination of your chest, it sounds like you have a chest infection, specifically pneumonia in your right lung. This explains the fever, the rusty phlegm, and the pain when you breathe deeply. I'm ordering a chest X-ray to confirm, as well as some basic blood tests, a sputum test, and a respiratory viral swab.",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? That's not good. I'm worried it's serious. I need to get back to work before the exams.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "It is serious in the sense that you definitely need antibiotics and rest, but right now it's mild enough that we can treat you safely at home. You'll need to take at least the next few days off work to recover, as pushing yourself will only make it worse. I'll give you a medical certificate for that. How long until the exams start?",
+  "released": [],
+  "flooded": false,
+  "reply": "The exams start in two weeks. I'll need to take a few days off, but I can manage that.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "2 capsules (1000 mg)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1000 mg)",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Two weeks gives us plenty of time. I've prescribed a strong antibiotic called amoxicillin. I want you to take 2 capsules (which is 1000 mg) three times a day for 5 days. I've also recommended paracetamol to help with the fever and that sharp chest pain when you cough. Make sure you stay well hydrated and rest up.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll take the antibiotics and paracetamol. I'll make sure to rest and stay hydrated. I hope it's not too bad — I need to get back to work.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "If you start feeling more breathless, notice you can't keep fluids down, become confused, or if your fever hasn't settled after 48 hours on the antibiotics, please come back to see me immediately or go straight to the nearest emergency department. Do you have any questions about this plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions. I'll take the antibiotics and paracetamol. Just hope it's not too bad — I need to get back to work.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "We'll get the results of your swabs, sputum, and blood tests in the next day or two, and I'll call you if we need to change the plan. For now, focus on resting up. I'll print your medical certificate and prescriptions for you at the front desk. Take care, Mark.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, doc. I'll be okay. Just hope it's not too bad — I need to get back to work.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "It is serious in the sense that you definitely need antibiotics and rest, but right now it's mild enough that we can treat you safely at home.",
+    "ideal_3": "If you start feeling more breathless, notice you can't keep fluids down, become confused, or if your fever hasn't settled after 48 hours on the antibiotics, please come back to see me immediately or go straight to the nearest emergency department.",
+    "acceptable_2": "I've also recommended paracetamol to help with the fever and that sharp chest pain when you cough.",
+    "acceptable_3": "Make sure you stay well hydrated and rest up."
+   }
+  },
+  "total": 210,
+  "max": 425,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 175
+ }
+]

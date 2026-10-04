@@ -1,0 +1,387 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm Dr. Sharma. I've got you booked in for a cough and fever — sounds like you've had a rough few days. Take a seat, and walk me through what's been going on, from the start.",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It's been three days. Started with a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was roasting. Since yesterday I'm bringing stuff up, rusty and brownish, clear at first. There's a sharp pain on the right side, near my back, catches when I breathe deep or cough. It started yesterday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. So: dry cough three days, fever, now rust-coloured phlegm, and sharp right-sided pain when you breathe deep. Let me ask a few key things. First — are you short of breath at all, even when you're not coughing? Could you walk to the back of this room without being winded? And have you had any rigors or shivering, or night sweats?",
+  "released": [
+   "breathlessness",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "I got puffed going up the stairs and on the way in from the car park, but I'm alright sitting here. The first night I was shaking under the doona, teeth chattering, even though I was boiling. I don't know what rigors means — can you explain?",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good — \"rigors\" just means uncontrollable shivering, shaking so hard your teeth chatter, often when the fever is spiking. So you've had those. Let me ask a few more: any chest pain other than when you breathe deep or cough? Any sweating at night, weight loss over the last few months, or a cough that's been coming and going for weeks? Have you noticed any blood in the sputum beyond that rust-coloured stuff — red or pink streaks? And is there anyone at school or home with a cough or flu-like illness recently?",
+  "released": [
+   "weight_loss",
+   "haemoptysis",
+   "preceding_flu"
+  ],
+  "flooded": false,
+  "reply": "No chest pain other than when I breathe deep or cough. No night sweats, but I could lose a few kilos. The cough's been continuous for three days, not coming and going. Just that rusty colour. No one at school or home with a cough or flu-like illness recently. I don't know what rigors means — can you explain?",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A flu-like illness in the weeks before"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Rigors — sorry, I should have said it sooner. It's the violent shaking or shivering that happens when your fever spikes, sometimes with teeth chattering. So that first night you were shaking under the doona — that's exactly what a rigor is. Noted. Now, a few background questions: do you smoke, or have you ever smoked? Do you have asthma, heart disease, or any other long-term medical condition? And anything else that might lower your defences — any new medications like steroids, or any recent hospital stays?",
+  "released": [
+   "smoking",
+   "lung_disease",
+   "heart_disease"
+  ],
+  "flooded": false,
+  "reply": "No, I've never smoked. Never had asthma or anything with my lungs. No heart problems. Nothing else that might lower my defences. I don't know what rigors means — can you explain?",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry for the repeat — rigor means the violent shaking that happens when your fever spikes, teeth chattering, and shaking hard, like the first night you had. So that night you were shaking under the doona — that was a rigor. One more thing: have you had any burning or frequency when you pee? And is the chest pain only when you cough or take a deep breath, or does it hurt when I press on your chest or when you're just lying there?",
+  "released": [],
+  "flooded": false,
+  "reply": "No burning or frequency when I pee. The chest pain's only when I cough or take a deep breath. It doesn't hurt when you press on my chest or when I'm just lying there.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 capsule (500 mg)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1000 mg)",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, I've got the answer. Your chest X-ray shows pneumonia — an infection in the lower part of your right lung, which matches the rusty phlegm, the fever and the sharp pain on the right when you breathe. The exam findings and the X-ray all line up.\n\nHere's the plan:\n- I've prescribed amoxicillin, 500 mg three times a day for 5 days. You don't need the antibiotic to feel better by tomorrow — it's the body that fights the infection — but it does shorten the illness and reduce the risk of complications, so take every dose as written, with or without food.\n- Paracetamol, up to 1000 mg every 6–8 hours if you need it for the fever or aches, not more than 4000 mg in a day.\n- Rest, drink plenty of fluids, and keep coughing the phlegm up. Avoid smoking around you, and don't smoke yourself.\n\nA few important points. You should start to feel a bit better within 24–48 hours of starting the antibiotic. If your fever is still high after 48 hours, or you feel worse at any time, come back — your treatment may need adjusting.\n\nCome back urgently, or present to ED, if you notice any of these: breathing getting faster or harder than today, chest pain spreading, new confusion or drowsiness, lips or fingertips turning blue, or rigors again with a high fever. Given your lungs are otherwise clear and your oxygen is 95%, this is looking like a straightforward case, but I'd rather you know the warning signs.\n\nAny questions, or anything you'd like me to explain differently?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't know what \"rigors\" means — can you explain?",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry — rigor is just the medical word for the violent shivering or shaking that comes with a high fever — your teeth chattering, shivering so hard your knees knock, even when you're covered. That's what you had on the first night. So, to put it plainly: if you start shaking like that again, or your breathing is getting quicker or harder, come back in or go to the emergency department.\n\nOtherwise — rest, fluids, the antibiotics three times a day, and you should be noticeably better within a day or two. If you're not better in 48 hours, give us a call.",
+  "released": [],
+  "flooded": false,
+  "reply": "I get it — it's like when you're burning up and your body just can't stop shaking. I'll keep an eye out for that.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "acute_bronchitis",
+   "tuberculosis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Acute bronchitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Tuberculosis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Tuberculosis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "Your chest X-ray shows pneumonia — an infection in the lower part of your right lung, which matches the rusty phlegm, the fever and the sharp pain on the right when you breathe.",
+    "ideal_2": "You should start to feel a bit better within 24–48 hours of starting the antibiotic. If your fever is still high after 48 hours, or you feel worse at any time, come back — your treatment may need adjusting.",
+    "ideal_3": "Come back urgently, or present to ED, if you notice any of these: breathing getting faster or harder than today, chest pain spreading, new confusion or drowsiness, lips or fingertips turning blue, or rigors again with a high fever.",
+    "acceptable_3": "Rest, drink plenty of fluids, and keep coughing the phlegm up.",
+    "acceptable_5": "If you're not better in 48 hours, give us a call."
+   }
+  },
+  "total": 265,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 210
+ }
+]

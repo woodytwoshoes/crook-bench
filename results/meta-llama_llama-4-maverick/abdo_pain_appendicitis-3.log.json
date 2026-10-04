@@ -1,0 +1,197 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, thanks for coming in today. Can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down. It started last night, about ten o'clock. It's there all the time now. It sort of came and went at first. It's a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you describe the pain a bit more? Is it sharp, dull, crampy, or something else?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's more of a dull ache. Not sharp. Not crampy. Just a constant ache down there on the right side.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, the examination suggests there's significant tenderness in your lower right abdomen, and you experience pain when I release the pressure. Have you had any fever, nausea, or vomiting?",
+  "released": [
+   "fever",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Yes, I felt hot and a bit shivery last night, and I've felt sick since the early hours, threw up once this morning.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "subregion": "vitals",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "subregion": "vitals",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and examination findings, I'm concerned about the possibility of appendicitis. I am going to refer you to the hospital for further evaluation and management. You may need surgery.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was that bad. I just thought it was a stomach bug.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "gastroenteritis",
+   "appendicitis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastroenteritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "I'm concerned about the possibility of appendicitis. I am going to refer you to the hospital for further evaluation and management."
+   }
+  },
+  "total": 85,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "missed_red_flag",
+  "score": 100
+ }
+]

@@ -1,0 +1,496 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Daniel. I see from your notes you hurt your lower back on the weekend and you're in quite a bit of pain. Could you tell me exactly what you were doing when it started, and what the pain feels like?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday. I felt a twinge, then woke up on Sunday and could barely get out of bed. The pain is low down on the left side of my back, sometimes into my left buttock. It gets worse when I bend or get out of a chair, but it's better when I lie still with a heat pack. It's worse by the evening. I've been working from home the last two days, mostly lying on the couch with the laptop. I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sorry to hear that, back pain can be very debilitating. To make sure there's nothing more serious going on, I need to ask a few specific questions. Does the pain shoot down your leg past your knee? And have you had any numbness, pins and needles, or weakness in your legs?",
+  "released": [
+   "leg_radiation",
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, nothing goes down my legs, and my legs feel completely normal — no numbness, pins and needles, or weakness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring. Have you noticed any changes in your bowel or bladder habits, like difficulty passing urine, or any loss of control? Also, have you had any numbness around your genitals or your bottom?",
+  "released": [
+   "bladder_function",
+   "bowel_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any difficulty passing urine or any loss of control with my bowels. Everything's normal there. I haven't had any numbness around my genitals, bottom or back passage either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Great. Have you had any fevers, chills, unexplained weight loss, or night sweats recently? And have you ever had any history of cancer, or used steroid medications for a long time?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history",
+   "steroid_use"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or chills, and I haven't lost weight — if anything I've put some on. I've never had cancer, and I've never used steroid medications for a long time.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Okay, that's good. Do you have any other medical conditions, and are you taking any regular medications or supplements? Also, the notes say you are allergic to Tramadol, is that right? Do you have any other allergies?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't have any other medical conditions. I take no regular medications or supplements. Yes, I'm allergic to Tramadol — it made me vomit and feel dizzy. No other allergies.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, Daniel. I have examined your back and your nervous system. The good news is that your nerves are working perfectly – you have full strength, normal reflexes, and no numbness. Your spine also feels stable. Based on your symptoms and my examination, you have acute mechanical low back pain, which is essentially a muscle strain or sprain from lifting the pot plant.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm relieved to hear my nerves are okay, but I'm still worried it's serious. I just want to know what's going on and if I need an MRI as I asked.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I completely understand your concern, given how much pain you're in. The reason I don't recommend an MRI right now is that the guidelines for back pain show imaging isn't helpful when there are no signs of nerve damage or serious underlying issues like fractures, which we've ruled out. Also, MRIs often show normal age-related changes that aren't the cause of your pain, which can lead to unnecessary worry or treatments. Most mechanical back pain gets much better on its own within a few weeks with the right pain relief and gentle movement. Does that make sense?",
+  "released": [],
+  "flooded": false,
+  "reply": "I understand the guidelines, but I'm still concerned. I just want to know what's going on and if I need an MRI as I asked.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I hear you, Daniel. What is going on is a sprain in the muscles and ligaments of your lower back from lifting that heavy pot plant. It is very painful, but it is not a serious structural injury to your spine or nerves. An MRI is not needed right now, as it will not change our treatment plan, which is pain relief and keeping you gently active to help it heal. I would like to prescribe some anti-inflammatory medication and pain relief to help you move more comfortably. How does that sound?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm still worried it's serious, but I guess I'll take the medication and try to move more. I just want to make sure I'm not missing anything.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Before I prescribe an anti-inflammatory like naproxen or ibuprofen, do you have any history of stomach ulcers, asthma, or kidney problems?",
+  "released": [
+   "stomach_ulcers",
+   "asthma",
+   "kidney_problems"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have a history of stomach ulcers or asthma, but my kidneys are fine as far as I know.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "rx",
+  "id": "naproxen_500mg_tab",
+  "dose": "1 tablet",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Naproxen or celecoxib as the NSAID"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets",
+  "frequency": "Four times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I've prescribed a strong anti-inflammatory called Naproxen, which you should take with food twice a day, and paracetamol, which you can take up to four times a day. It's important to take them regularly for now to stay on top of the pain. How does that sound?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'll take the medication as prescribed. I just want to make sure I'm not missing anything else.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "You aren't missing anything, Daniel. My advice is to avoid strict bed rest, as it actually slows down recovery. Try to gently keep moving, take short frequent walks, and avoid heavy lifting or awkward bending. Using a heat pack can also help relax the muscle spasm. Continue working from home, but avoid sitting in one position for too long. If you develop new pain shooting down your legs past the knee, weakness or numbness in your legs, numbness around your saddle area, any issues with controlling your urine or bowels, or fevers, please go straight to the emergency department. Otherwise, if you aren't getting better in a week or two, please come back and see me. Do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't have any questions. I'll take the medication and try to move more. I just want to make sure I'm not missing anything else.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "finding": "Resonant. No shifting dullness.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft, non-tender. No masses or organomegaly.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_aaa",
+  "finding": "Soft, non-tender, no pulsatile mass.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Would you be interested in seeing a physiotherapist? They can provide some gentle exercises and stretches to help speed up your recovery and give you advice on safe lifting techniques.",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not sure. I'll think about it. I just want to make sure I'm not missing anything else.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Do you need a medical certificate for work for the next few days? You can keep working from home, but it might help to have less pressure so you can move around as needed.",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I don't need a medical certificate. I'll keep working from home as I am.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "To be absolutely thorough, have you ever been told you have weak bones or osteoporosis? And have you had any recent infections, or ever used intravenous drugs?",
+  "released": [
+   "osteoporosis",
+   "iv_drug_use"
+  ],
+  "flooded": false,
+  "reply": "No, I've never been told I have weak bones or osteoporosis, and I've never used intravenous drugs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Injecting drug use"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, Daniel. I am confident we are not missing anything serious. Your pain pattern and normal examination strongly point to a straightforward mechanical sprain, which heals well with time, anti-inflammatories, paracetamol, and staying gently active. I'll arrange for a review in a couple of weeks to make sure it's settling. Are you comfortable with this plan?",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I'm comfortable with the plan, but I'm still concerned and want to know what's going on. I figured I'd need an MRI to see what's going on.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "differentials": [
+   "disc_prolapse_sciatica",
+   "cauda_equina"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Lumbar disc prolapse with sciatica",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "I completely understand why an MRI feels like the best way to get answers, but medical guidelines strongly recommend against them in the first few weeks of back pain like yours. They don't change how we treat a sprain, and they often show small, normal changes that don't cause pain but can lead to unnecessary worry. Let's try the medication and gentle movement first. If you're not improving in a few weeks, or if you develop any of those warning signs we talked about, we can absolutely revisit the need for a scan. Take care, Daniel.",
+  "released": [],
+  "flooded": false,
+  "reply": "I understand, but I'm still worried. I just want to know what's going on and if I need an MRI as I asked.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 255,
+  "max": 450,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 255
+ }
+]

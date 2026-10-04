@@ -1,0 +1,395 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm Dr. Smith. I can see you're not feeling well. Can you tell me more about this indigestion you've been having since this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Been there an hour and half, still there. Right behind the breastbone, bit up into the throat. Now you mention it, jaw's a bit achy, left arm feels heavy. Not my back. Came on about seven this morning, over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for that. I need to ask a few more questions to understand what's going on. Have you ever had pain like this before?",
+  "released": [
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "No, never had this pain before. But this week I've had a bit of tightness going up ladders — goes away if I stop. Put it down to being unfit. It's been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "That's important. Let me ask: have you had any shortness of breath, nausea, or sweating with this pain?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting",
+   "sweating"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, feel a bit sick but haven't vomited, and been sweating like anything, thought it was just hot.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent illness, fever, or cough? And are you feeling lightheaded or dizzy at all?",
+  "released": [
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "No, no fever or cough. Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken anything for the pain, like an antacid or painkillers? And does the pain change with movement, breathing, or pressing on your chest?",
+  "released": [
+   "antacid_response",
+   "movement_pain",
+   "pleuritic_pain",
+   "positional_pain"
+  ],
+  "flooded": false,
+  "reply": "Had a couple of Quick-Eze, didn’t touch it. Moving doesn’t change it, breathing doesn’t change it, and it’s the same however I sit.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether moving or pressing on the chest makes it worse"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain is worse on breathing in"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain changes lying flat or sitting forward"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any history of heart problems, diabetes, or stroke? And are there any family members with heart disease at a young age?",
+  "released": [
+   "previous_cardiac",
+   "diabetes",
+   "previous_stroke",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart. No diabetes, no stroke. Dad had a heart attack at fifty-five, died from it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "I need to check your vital signs and examine you now. Can you confirm your current medications are just perindopril and atorvastatin, and no other tablets or supplements?",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "Yeah. Current meds are perindopril and atorvastatin. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’m concerned this might be a heart issue. The pain you’re describing, along with the sweating, shortness of breath, and the way it’s spreading to your jaw and arm, are signs that could indicate a heart attack. I need to act quickly. I’m going to call an ambulance to take you to the hospital immediately. Do you understand?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah. I understand.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "unstable_angina",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Unstable angina",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’ve called an ambulance for you. While we wait, I want you to chew this aspirin tablet—it helps thin the blood and can protect your heart. I’ll also give you a spray under your tongue to help with the pain and ease the strain on your heart. Do you have any allergies to aspirin or nitrates?",
+  "released": [
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of. I've had Disprin before, no problems.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 microgram",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I’ve given you aspirin to chew and a spray of glyceryl trinitrate under your tongue. The ambulance is on its way. While we wait, stay as calm as possible and avoid moving around too much. If the pain doesn’t improve or gets worse, let me know immediately. Do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions. Just wait for the ambulance.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "The ambulance is on its way. While we wait, stay as calm as possible and avoid moving around too much."
+   }
+  },
+  "total": 290,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 275
+ }
+]

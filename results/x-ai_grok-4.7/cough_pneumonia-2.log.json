@@ -1,0 +1,433 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Mark, I'm the doctor seeing you today. I understand you've had a cough and fever for a few days and aren't feeling well. Can you tell me more about how this started and what symptoms you've been having?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I've been burning up, on and off — didn't have a thermometer, but I was definitely roasting. Since yesterday I've been bringing stuff up, it's a rusty, brownish colour at first, then clear. There's a sharp pain on the right side, near my back, catches me when I cough or take a deep breath.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds quite unpleasant. The rusty sputum and the sharp pain when you breathe or cough are important. How high has the fever felt, and have you had any chills or sweats? Also, how is your breathing — any shortness of breath at rest or when you walk around?",
+  "released": [
+   "rigors",
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "The fever felt like I was roasting, but the first night I was shaking under the doona, teeth chattering, even though I was boiling. I only got puffed going up the stairs and on the way in from the car park, but I'm alright sitting here.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. Have you coughed up any blood, or noticed any dizziness, confusion, or feeling like you might faint? Any pain or swelling in your legs, or chest pain that feels like pressure rather than the sharp catch you described?",
+  "released": [
+   "haemoptysis",
+   "confusion",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No blood, just that rusty colour. My head's clear, though my wife says I'm grumpy. Legs are fine, no swelling or calf pain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Also, do you smoke, or have you smoked in the past? Any other medical problems, medicines you take regularly, or recent travel or contact with someone who's been unwell?",
+  "released": [
+   "smoking",
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, I've never smoked. No recent travel, just school and home. No other medical problems, though I take some blood pressure tablets regularly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "You mentioned blood pressure tablets — which ones, and how long have you been on them? The clinic notes don't list them, so it's good to check. Any allergies to medicines?",
+  "released": [],
+  "flooded": false,
+  "reply": "I've been on amlodipine for about five years now. No allergies to medicines.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a sore throat, runny nose, headache, or tummy symptoms like nausea or diarrhoea? And how much sputum are you bringing up — a teaspoon, or more? Are you managing to drink and eat?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing like that. The sputum's been a teaspoon or two, but I'm managing to drink and eat, though not great.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had the flu vaccine or a COVID vaccine recently, and have you ever had a pneumonia vaccine? Any previous chest infections or hospital admissions for breathing problems?",
+  "released": [
+   "flu_vaccine",
+   "recent_hospital",
+   "lung_disease"
+  ],
+  "flooded": false,
+  "reply": "No, didn't get the flu jab this year. Never had a pneumonia vaccine either. No previous chest infections or hospital admissions for breathing problems. Never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and tired-looking. Alert and orientated. Speaking in full sentences. Not cyanosed.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "I've examined your chest and the X-ray shows an infection in the lower part of your right lung — pneumonia. That fits with the fever, the rusty phlegm, and the sharp pain when you breathe. How much alcohol do you drink in a typical week, and is there someone at home who can keep an eye on you over the next couple of days?",
+  "released": [
+   "alcohol",
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "I have a couple of beers on the weekend, none this week. My wife and our two teenagers are at home, and she's working from home this week, so she can drive me back if I need.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (two 500 mg capsules)",
+  "frequency": "Every 8 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (two 500 mg tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, this is a lung infection called pneumonia, in the bottom of your right lung. The X-ray confirms it. It is very likely a common bacterial pneumonia, which is why you felt so rotten with the shaking chills, the rusty-coloured phlegm, and the sharp pain on breathing. A less common “atypical” germ can cause a similar picture, and we always keep in mind a blood clot in the lung, but your examination and X-ray fit pneumonia far better than a clot.\n\nYou are well enough to be treated at home. Your oxygen level is acceptable, your blood pressure is fine, you are thinking clearly, and you can drink and have family at home.\n\nPlease take the antibiotic amoxicillin: two 500 mg capsules three times a day, about every 8 hours, for 5 days. Finish the course even if you feel better. It is safe with your amlodipine. For the fever and pain, take two paracetamol 500 mg tablets up to four times a day, no more than 8 tablets in 24 hours. Rest, drink plenty of fluids, and stay off work until the fever has settled and you feel well enough — I would expect at least a few days. I can provide a medical certificate if you need one.\n\nYou should start to feel a bit better within 48 to 72 hours. The cough and tiredness can linger for a couple of weeks, which is normal.\n\nPlease come back sooner, or go to an emergency department, if you get more short of breath, if your breathing is hard even at rest, if you cough up fresh blood, if you become confused or very drowsy, if you cannot keep fluids down, if the pain becomes severe, or if the fever is not improving after two to three days. If you are worried at any time, don’t wait. Your wife can bring you back here, or to hospital if you are worse after hours. Call 000 if you are struggling to breathe.\n\nDo you have any questions about the treatment or what to watch for?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, doc. Just need to get back to work before the exams. I'll take the pills, rest, and hope for the best. Thanks.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Please don’t rush back before you are ready. You are still infectious to some degree while you have a fever and a productive cough, and the students and your own recovery both do better if you rest until the fever has gone and you can manage a normal day without getting badly puffed. A few days off is the right call; the exams can wait. Take the antibiotics as directed, use the paracetamol for fever and the chest pain, and come back or go to emergency if any of those warning signs appear. Take care, Mark.",
+  "released": [],
+  "flooded": false,
+  "reply": "Got it, doc. I'll take it easy, rest until I'm feeling better, and keep an eye on the symptoms. Thanks again.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "It is very likely a common bacterial pneumonia, which is why you felt so rotten with the shaking chills, the rusty-coloured phlegm, and the sharp pain on breathing.",
+    "ideal_2": "Please don’t rush back before you are ready.",
+    "ideal_3": "Please come back sooner, or go to an emergency department, if you get more short of breath, if your breathing is hard even at rest, if you cough up fresh blood, if you become confused or very drowsy, if you cannot keep fluids down, if the pain becomes severe, or if the fever is not improving after two to three days.",
+    "acceptable_3": "Rest, drink plenty of fluids, and stay off work until the fever has settled and you feel well enough"
+   }
+  },
+  "total": 285,
+  "max": 425,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 235
+ }
+]

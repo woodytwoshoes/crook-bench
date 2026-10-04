@@ -1,0 +1,93 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "case": "dysuria_cystitis",
+ "rep": 3,
+ "ending": "ended",
+ "total": 330,
+ "max": 375,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 185,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 35,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 20,
+   "max": 25
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 90,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": true
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": true
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "cystitis",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "sti_urethritis",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "pyelonephritis",
+   "role": "sinister"
+  }
+ ],
+ "says": 11,
+ "questions": 23,
+ "usage": {
+  "calls": 17,
+  "prompt_tokens": 43156,
+  "completion_tokens": 1599,
+  "cost": 0.0277081
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:19:31.578Z",
+ "max_questions": 50
+}

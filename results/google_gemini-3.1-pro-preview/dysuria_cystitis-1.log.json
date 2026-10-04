@@ -1,0 +1,305 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I see you've booked in because of some burning when you pass urine. Can you tell me a bit more about what's been happening?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, especially at the end when I wee, like my last UTI. I've been going all the time — every half hour or so — but only pass a little each time. It's been happening since yesterday morning, so about a day and a half. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fevers, chills, nausea, vomiting, or pain in your back or sides? And have you noticed any vaginal discharge or itching?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting",
+   "loin_pain",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and I haven't been sick or felt generally unwell. No pain in my back or sides, just a bit of a tummy ache low down. No vaginal discharge or itching.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "You mentioned this feels like your last UTI. When did you last have one, and how often have you had them in the past year? Also, any new sexual partners recently, or any chance you could be pregnant?",
+  "released": [
+   "previous_utis",
+   "sexual_partners",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I had a UTI about two years ago and that's the only one I've had. I've been with the same boyfriend for about a year, just him. I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last period, and have you missed any of your contraceptive pills recently? Also, have you taken anything over-the-counter for the burning, and do you have any allergies to medications?",
+  "released": [
+   "last_period",
+   "contraception",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago and it was normal. I'm on the pill and I don't miss it. I haven't taken anything over-the-counter for the burning, and I'm not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Based on your symptoms and the urine tests we just did, you have an uncomplicated urinary tract infection (UTI), often called cystitis. Your pregnancy test was negative. I've prescribed a 3-day course of an antibiotic called trimethoprim, which you take once a day. You should start to feel better within a day or two. Drink plenty of fluids, and you can get some Ural from the pharmacy to help with the burning. If you develop any fevers, chills, lower back or side pain, nausea or vomiting, or if the symptoms don't improve after 3 days, please come back to see me immediately. Does that sound okay, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that sounds okay. I'll start the antibiotic today. I just wanted to make sure I wasn't doing anything else wrong. Thanks.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of fluids",
+    "ideal_3": "If you develop any fevers, chills, lower back or side pain, nausea or vomiting, or if the symptoms don't improve after 3 days, please come back to see me immediately."
+   }
+  },
+  "total": 265,
+  "max": 375,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 235
+ }
+]

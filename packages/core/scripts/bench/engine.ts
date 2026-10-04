@@ -215,7 +215,7 @@ export class Consult {
       this.lib.catalogue.safety,
     );
     this.state = o.state;
-    this.push({ type: "rx", id, dose, frequency: freq, duration: dur, givenNow, awards: o.awards });
+    this.push({ type: "rx", id, dose, frequency: freq, duration: dur, givenNow, quantity, awards: o.awards });
     return `${givenNow ? "Given in clinic" : "Prescribed"}: ${item.name}, ${dose} ${freq}${givenNow ? "" : `, ${dur}`}`;
   }
 
@@ -257,6 +257,53 @@ export class Consult {
     this.result = f;
     this.push({ type: "end", judged: judgement, total: f.total, max: f.max, level: f.level.name, consequence: f.consequence });
     return f;
+  }
+
+  /**
+   * Rebuilds a consult from its log, with no model calls: each turn's logged
+   * releases and reply, then the same actions and the logged judgement of the
+   * spoken plan, scored against the case as it is now (a fixed case key
+   * rescores old consults without replaying them with the models).
+   */
+  replay(log: LogEntry[]): FinalScore {
+    const str = (v: unknown) => (typeof v === "string" ? v : undefined);
+    for (const e of log) {
+      switch (e.type) {
+        case "say": {
+          const utterance = e.utterance as string;
+          const ex = recordExchange(this.c, this.state, utterance, e.released as string[]);
+          this.state = recordPatientReply(ex.state, e.reply as string);
+          this.push({ type: "say", utterance, released: ex.newlyRevealed, flooded: e.flooded, reply: e.reply, awards: ex.awards });
+          break;
+        }
+        case "exam":
+          this.examine(e.id as string, str(e.side), str(e.subregion));
+          break;
+        case "order":
+          this.order(e.id as string);
+          break;
+        case "rx":
+          this.prescribe(e.id as string, e.dose as string, e.frequency as string, e.duration as string, typeof e.quantity === "number" ? e.quantity : undefined);
+          break;
+        case "refer":
+          this.refer(e.id as string);
+          break;
+        case "dx": {
+          const [differential, cantMiss] = e.differentials as string[];
+          this.diagnose(e.primary as string, differential!, cantMiss!);
+          break;
+        }
+        case "end": {
+          const judgement = e.judged as { managementIds: string[]; quotes: Record<string, string> };
+          const f = finalizeConsult(this.c, this.lib.catalogue, this.state, judgement);
+          this.ended = true;
+          this.result = f;
+          this.push({ type: "end", judged: judgement, total: f.total, max: f.max, level: f.level.name, consequence: f.consequence });
+        }
+      }
+    }
+    if (!this.result) throw new Error("The log has no end entry");
+    return this.result;
   }
 
   max(): number {

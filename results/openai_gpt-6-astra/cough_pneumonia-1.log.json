@@ -1,0 +1,478 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP today. I'm sorry you're feeling so rough. Can you tell me when this started and how the cough and fever have changed since then?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's been three days. Started with a dry, hacking cough. Then I've been burning up, on and off. Didn't have a thermometer, but I was roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Are you short of breath, and do you have any chest pain, particularly when breathing in? Are you bringing anything up with the cough, including any blood?",
+  "released": [
+   "breathlessness",
+   "pleuritic_pain",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "Only going up the stairs, got puffed on the way in from the car park, but I'm alright sitting here. There's a sharp pain low down on the right side, round towards my back, catches me when I take a deep breath or cough, started yesterday. No actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt confused, fainted, or had shaking chills? Are you able to drink and pass urine normally?",
+  "released": [
+   "confusion",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "No, my head's clear, my wife reckons I'm just grumpy. I had shaking chills the first night, was shaking under the doona, teeth chattering, even though I was boiling. I'm able to drink and pass urine normally.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "side": "left",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "side": "left",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "side": "left",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "side": "left",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "side": "left",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "I'd like to listen to your heart and lungs and gently tap your chest. Have you had a runny nose, sore throat, wheezing, muscle aches, vomiting or diarrhoea? Have you been around anyone ill, or tested for COVID?",
+  "released": [
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "I'm okay with that. No, no vomiting. No runny nose, sore throat, wheezing, muscle aches, vomiting or diarrhoea. No, I haven't been around anyone ill. Haven't tested for COVID.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "side": "left",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "side": "left",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "side": "left",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "side": "left",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "side": "left",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent travel, surgery, prolonged bed rest, or a swollen painful leg? Have you ever had a blood clot, or any history of cancer?",
+  "released": [
+   "recent_travel",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere, just school and home. Legs are fine, no swelling or calf pain. No, never had a blood clot, no history of cancer.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any ongoing health problems, particularly asthma, lung or heart disease, diabetes, kidney problems, or a weakened immune system? Do you take any regular medicines or supplements, and what have you tried for this illness? Are you allergic to any medicines?",
+  "released": [
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "immunosuppression",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No heart problems, no asthma or lung issues, no diabetes, no immune problems. I’m not on any regular medicines or supplements. I’ve tried nothing specific for this, just paracetamol. I’m allergic to penicillin – I had hives and my lips swelled when I was a kid. It’s probably not on my file; I haven’t needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you—that penicillin reaction is very important, and we must avoid penicillin. How soon after taking it did the hives and lip swelling occur, and did you have trouble breathing or need hospital treatment? Have you safely taken other antibiotics since? Do you smoke or vape, and how much alcohol do you usually drink?",
+  "released": [
+   "recent_antibiotics",
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "The hives and lip swelling happened straight away, maybe within minutes, and I didn't have trouble breathing, didn't need hospital treatment. I've safely taken other antibiotics since, haven't had any penicillin. I've never smoked, and I had a couple of beers on the weekend, none this week.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Do you remember the names of antibiotics you've tolerated? Have you taken any antibiotics or stayed in hospital in the last three months? Is someone at home able to help you and bring you back if needed?",
+  "released": [
+   "recent_hospital",
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "I can't remember the names of antibiotics I've tolerated, but I've safely taken other antibiotics since. I haven't taken any antibiotics or stayed in hospital in the last three months. My wife and our two teenagers are at home, and she's working from home this week, so she can drive me back in if I need.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "The fever and the sounds at the bottom of your right lung suggest pneumonia—an infection in the lung—rather than just a cough from a cold. Your blood pressure and oxygen level are reassuring, and you seem well enough for treatment at home with close review. I'd like a chest X-ray today to check for pneumonia and any fluid around the lung. Because of your immediate penicillin allergy, I'll choose a different antibiotic.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be in hospital. I need to get back to my classes before exams. What's the plan?",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Your X-ray confirms pneumonia in the lower part of your right lung, with no fluid collection. At present you don't need hospital admission, but you do need rest and antibiotics, not teaching while you're feverish. I recommend doxycycline, 100 milligrams twice a day for five days. Have you ever reacted to doxycycline, and do you have trouble swallowing tablets?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I've never taken doxycycline before. No trouble swallowing tablets.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Take each dose with food and a full glass of water, sitting or standing up, and don't lie down for at least 30 minutes afterwards or take it just before bed. Keep antacids and iron, calcium or magnesium supplements at least two hours apart from it. It can cause nausea and make you burn more easily in the sun, so use sun protection. If you develop hives, stop it and seek urgent advice; for lip or tongue swelling or breathing difficulty, call 000. Your penicillin allergy needs to be clearly flagged in your records and mentioned to every doctor and pharmacist. How much paracetamol have you been taking, and do you have any liver disease?",
+  "released": [],
+  "flooded": false,
+  "reply": "I’ve been taking paracetamol as needed, usually two tablets every six hours. No liver disease.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Are those standard 500 milligram paracetamol tablets, and are you taking any other cold-and-flu products containing paracetamol?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yes, standard 500 milligram tablets. No other cold-and-flu products.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "You can continue one or two of those tablets every six hours if needed for pain or fever, no more than eight tablets in 24 hours. Drink regularly, rest and avoid alcohol while you're unwell. I'll provide a medical certificate for time off teaching. Stay home until your fever has gone and you're clearly improving and fit enough to work; cover coughs, wash your hands and avoid close contact with vulnerable people. A home COVID test is sensible too.\n\nI'd like to review you in 48 hours to check your breathing, temperature and oxygen level. You should start feeling better within two to three days, although the cough and tiredness can last several weeks. If you're not improving by then, we'll reassess rather than simply extend the antibiotics. If you fully recover, a repeat X-ray isn't routinely needed at your age as a nonsmoker; persistent symptoms would need further assessment.\n\nIf you get breathless at rest, can't speak comfortably, have blue lips, confusion, collapse or severe chest pain, call 000. Seek urgent same-day care if the breathing or pain worsens, you cough up blood, can't keep fluids or medicine down, pass much less urine, or otherwise feel much sicker. Don't wait for the booked review in those circumstances. Does that plan sound manageable, and is there anything you're concerned about?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that sounds manageable. I just hope the antibiotics work quick—got exams to get back to. No concerns, just keen to get better.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "differentials": [
+   "atypical_pneumonia",
+   "pulmonary_embolism"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Atypical pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 315
+ },
+ {
+  "type": "say",
+  "utterance": "I understand—giving yourself a few days to recover now is the best way to get back safely. Start the antibiotic today and finish the prescribed course unless you have a reaction or we change the plan. We'll review you in two days, sooner if you're getting worse.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks. I'll start the antibiotic today. Just hope it kicks in before the exams.",
+  "awards": [],
+  "score": 315
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3",
+    "acceptable_4",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "The fever and the sounds at the bottom of your right lung suggest pneumonia—an infection in the lung—rather than just a cough from a cold.",
+    "ideal_2": "I'd like to review you in 48 hours to check your breathing, temperature and oxygen level.",
+    "ideal_3": "If you get breathless at rest, can't speak comfortably, have blue lips, confusion, collapse or severe chest pain, call 000.",
+    "acceptable_3": "Drink regularly, rest and avoid alcohol while you're unwell.",
+    "acceptable_4": "Your penicillin allergy needs to be clearly flagged in your records and mentioned to every doctor and pharmacist.",
+    "acceptable_5": "If you're not improving by then, we'll reassess rather than simply extend the antibiotics."
+   }
+  },
+  "total": 375,
+  "max": 425,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 315
+ }
+]

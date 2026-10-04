@@ -1,0 +1,454 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. [Name]. I understand you've got tummy pain since last night. I'm sorry you're feeling unwell. Can you tell me, where exactly is the pain?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's down here on the right side, low down.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you. Did the pain start somewhere else first, like around your belly button, before moving to the right side? And is it constant, or does it come and go?",
+  "released": [
+   "pain_migration",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button and moved down to the right sometime overnight. It's there all the time now, but at first it sort of came and went.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any nausea or vomiting, and have you been able to eat or drink anything today?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "I've felt sick since the early hours and threw up once this morning. I couldn't face breakfast and haven't been hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a fever, chills, or sweats? And have your bowels been normal — any diarrhoea or constipation?",
+  "released": [
+   "fever",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night. No diarrhoea, I went normally yesterday morning and nothing since.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any pain or burning when you pass urine, or any pain in your testicles or groin?",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal, and nothing down there — no pain, no lumps.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Is the pain worse when you move, walk, cough, or go over bumps in the car on the way here?",
+  "released": [
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts. Every bump in the car on the way here was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Apart from that, have you been otherwise well recently — any colds, sore throat, or anything else? And have you ever had tummy surgery before?",
+  "released": [
+   "pain_onset",
+   "pain_severity",
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "Apart from that, I've been otherwise well recently — no colds or sore throat. Never had tummy surgery before. The pain started last night, about ten o'clock, and it's been there pretty much since. It's a seven out of ten, maybe.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on what you've told me and my examination, I'm concerned your pain is coming from your appendix — the small pouch attached to the bowel on your lower right side. It looks like it may be inflamed, which is called appendicitis. The tenderness in that one spot, the fever and the pain on coughing all point to this, and it needs to be assessed in hospital today, because an inflamed appendix can become serious if it's not treated promptly.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be in hospital. I just wanted to sort it out here.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "I completely understand that going to hospital is not what you were hoping for, and I'm sorry. The reason I'm recommending it is that appendicitis can't be safely treated at a GP clinic — it usually needs antibiotics through a drip and often a small operation to remove the appendix before it bursts. If it bursts, it can make you very seriously unwell with infection inside the tummy. Going now, while you're otherwise well, gives you the best chance of a straightforward recovery. I'll phone ahead so the hospital team is expecting you.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just wanted to make sure it wasn't nothing serious. I'm not used to this.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "That's completely understandable, and you did the right thing coming in. I'm glad we've caught it early. I'm going to arrange for you to be seen at the emergency department today. Please don't eat or drink anything from now on, in case you need an anaesthetic — small sips of water only if you're very thirsty. I'll give you some paracetamol now to help with the pain while you get there.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just took the paracetamol. I hope it works.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1000 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "While you're on your way and while you're being assessed, please watch out for warning signs: pain that suddenly gets much worse or spreads across the whole tummy, repeated vomiting, feeling faint or dizzy, or a high fever with shaking. If any of those happen, call 000 for an ambulance. Otherwise, head straight to the emergency department now and hand them this note. At the hospital they'll check your blood, and likely do a scan to confirm, then decide whether you need the appendix removed. Do you have any questions for me?",
+  "released": [
+   "faint",
+   "vomiting_order"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't fainted or felt faint. The pain came first, the sickness came a few hours later.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fainting or light-headedness"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain or the vomiting came first"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "differentials": [
+   "mesenteric_adenitis",
+   "perforated_viscus"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Mesenteric adenitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 330
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I'm concerned your pain is coming from your appendix — the small pouch attached to the bowel on your lower right side. It looks like it may be inflamed, which is called appendicitis. The tenderness in that one spot, the fever and the pain on coughing all point to this, and it needs to be assessed in hospital today",
+    "ideal_3": "Please don't eat or drink anything from now on, in case you need an anaesthetic — small sips of water only if you're very thirsty."
+   }
+  },
+  "total": 360,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 330
+ }
+]

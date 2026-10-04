@@ -1,0 +1,342 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, you look quite unwell — pale and sweaty — so I want to get to the bottom of this quickly. Tell me about this \"indigestion\": where exactly do you feel it — can you point to it with one finger? What does it feel like — a burning, or more of a pressure, heaviness or tightness? Does the feeling travel anywhere, like into your chest, arm, neck, jaw or back? When did it start, and what were you doing at the time? Is it there all the time or does it come and go, and is it getting worse? On a scale of zero to ten, how bad is it right now? Does anything make it better or worse — eating, antacids, moving about, or taking a deep breath?",
+  "released": [],
+  "flooded": true,
+  "reply": "It's in my chest. Feels like a weight. Doesn't go anywhere. Started this morning. Still there. It's a ten. Antacids don't help.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you — a heavy weight on the chest that antacids don't touch worries me. A few quick questions: Are you short of breath at all? Any nausea, or have you vomited? Any dizziness or feeling like you might faint? Is your heart racing or thumping? Any cough or fever? Have you vomited any blood, or passed any black, tarry stools? Have you ever had pain like this before? Have you ever had any heart problems or heart tests? Anyone in your family had heart attacks, especially at a young age? And do you have diabetes?",
+  "released": [],
+  "flooded": true,
+  "reply": "Too many questions at once. What's the first thing you want to know?",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry Graham, let me slow down. First: are you short of breath at all? And any nausea, or have you vomited?",
+  "released": [
+   "dyspnoea",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah. Feel a bit sick, but haven't vomited.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any dizziness or feeling like you might faint? And have you ever had pain like this before, or been told you have any heart problems?",
+  "released": [
+   "presyncope",
+   "previous_cardiac",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "Bit light-headed getting out of the car, didn't pass out. Never had anything wrong with my heart. This past week I've had a bit of tightness going up ladders, goes away if I stop.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Two more quick ones: has anyone in your family had heart attacks, especially at a younger age? And how much do you smoke these days?",
+  "released": [
+   "family_history",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "Dad had a heart attack at fifty-five, died from it. I've smoked about twenty a day since I was a teenager, been meaning to quit.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking history"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the heart tracing shows you are having a heart attack — a blocked artery supplying the bottom of your heart. This is very treatable, but we need to move fast. I am calling an ambulance right now to take you straight to the hospital heart team — you must not drive or go home. One important question while I organise things: have you ever had a problem with aspirin, a stomach ulcer, or any bleeding problem?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding"
+  ],
+  "flooded": false,
+  "reply": "No problems with aspirin, no stomach ulcers, no bleeding problems. I've had Disprin before, no issues.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg (chewed)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 micrograms (1 spray under the tongue)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's the picture. You're having a heart attack — one of the arteries on the bottom of your heart is blocked. The good news is you came in fast, and treatment works best when started early.\n\nHere's the plan:\n1. An ambulance is coming to take you straight to the hospital emergency department. Do NOT drive yourself or go home — the ambulance crew can treat you on the way if anything changes.\n2. The tablet you just chewed is aspirin — it thins the blood to limit the damage while you travel.\n3. The spray under your tongue opens the heart's arteries to ease the pain. It can cause a headache or make you feel light-headed, so stay seated. If the pain hasn't eased after 5 minutes, tell me and I'll repeat it while I watch your blood pressure.\n4. At hospital they'll do blood tests and most likely take you straight to a procedure to open the blocked artery with a small balloon and a stent.\n5. Nothing to eat or drink now, in case you need that procedure quickly. Stay resting in the chair — no walking around.\n\nIf the pain suddenly gets much worse, you feel faint, or your heart starts racing — tell me immediately. Would you like us to phone your wife so she can meet you at the hospital?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "No, I don't need to call my wife. I'll be fine. Just get me to the hospital.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "gord",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Gastro-oesophageal reflux disease",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "An ambulance is coming to take you straight to the hospital emergency department. Do NOT drive yourself or go home — the ambulance crew can treat you on the way if anything changes."
+   }
+  },
+  "total": 225,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 210
+ }
+]

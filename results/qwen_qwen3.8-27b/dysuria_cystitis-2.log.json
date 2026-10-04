@@ -1,0 +1,261 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Sharma. Thanks for coming in — I can see you've been having burning when you pass urine since yesterday, and you're hoping it's a UTI like before. Let me ask you a few questions to check. Can you tell me more about what's been going on — the burning, and anything else you've noticed?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It burns the most at the end of passing urine, like my last UTI. I've been going a lot — every half hour — but only pass a little each time. It's been happening since yesterday morning. The urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that helps. A few more questions:\n1. Have you had any fever, chills, or generally feeling unwell?\n2. Any pain in your back, especially around your sides (loins)?\n3. How many UTIs have you had before, and roughly how long ago was the last one?",
+  "released": [
+   "fever_rigors",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fever, chills, or feeling unwell. I don't have pain in my back, just a bit of an ache low down in my tummy. I've had a few UTIs before, maybe three or four, and the last one was about six months ago.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Good, no back pain or fever is reassuring. A couple more questions just to be thorough, since in younger women burning on urination can sometimes be something else:\n1. Any vaginal discharge that's new or different, or any itching or soreness down there?\n2. Have you had any new sexual partner in the last few months, or any sexual contact where a condom wasn't used?\n3. Any pain with sex?",
+  "released": [
+   "vaginal_discharge_itch",
+   "sexual_partners",
+   "condom_use",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any vaginal discharge, itching, or soreness. I've had the same boyfriend for about a year, and we don't use condoms because I'm on the pill. We've never had any pain with sex.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, Chloe. Here's what I've found and my plan:\n\n- You're well, no fever, and no back or side pain, so there's no sign of a kidney infection — just a bladder infection.\n- The urine dipstick test confirms it: your urine shows white cells and nitrites, which is a very typical result for a bladder infection (cystitis).\n- I'm prescribing nitrofurantoin 100 mg, one capsule twice a day for 5 days. Take it with food so it doesn't upsets your tummy. This is the usual first-line treatment and works well for bladder infections.\n- Because burning on urination in your age group can sometimes be a sexually transmitted infection rather than a UTI, I've also sent a chlamydia and gonorrhoea swab test (a urine sample is enough) — it's a quick safety check. The result takes 2 days. In the meantime, I'd suggest avoiding sex, or always using condoms, until the result comes back.\n- For comfort: drink plenty of water, paracetamol can help with the burning, and don't hold your urine.\n\nOne more thing — this is your third or fourth UTI. If you keep getting these, there are prevention options we can discuss, such as urinating after sex, not using spermicides, and in some cases a daily or after-sex antibiotic. If you get another one before your next check-up, book in.\n\nRed flags to return for: fever, shaking chills, back or side pain, vomiting, or if you're not any better in 48 hours — or if the swab result comes back positive, we'll be in touch.\n\nDo you have any questions before I send you off?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, thanks. I'll take the tablets as instructed and make sure to drink plenty of water. I'll keep an eye on how I feel and book in if I need to.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg (1 capsule)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2"
+   ],
+   "quotes": {
+    "ideal_1": "drink plenty of water",
+    "ideal_2": "paracetamol can help with the burning",
+    "ideal_3": "Red flags to return for: fever, shaking chills, back or side pain, vomiting, or if you're not any better in 48 hours",
+    "acceptable_2": "Take it with food so it doesn't upsets your tummy"
+   }
+  },
+  "total": 220,
+  "max": 375,
+  "level": "Registrar",
+  "consequence": "ideal",
+  "score": 170
+ }
+]

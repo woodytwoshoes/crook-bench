@@ -1,0 +1,93 @@
+{
+ "model": "meta-llama/llama-4-maverick",
+ "case": "abdo_pain_appendicitis",
+ "rep": 2,
+ "ending": "ended",
+ "total": 118,
+ "max": 420,
+ "level": "Resident",
+ "consequence": "missed_red_flag",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 110,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 20,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": -2,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": -10,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": false
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": true
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [
+  "Urine pregnancy test"
+ ],
+ "missed_required": [
+  "Refer to the emergency department today for surgical assessment"
+ ],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Differential 1",
+   "id": "gastroenteritis",
+   "role": "differential"
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "appendicitis",
+   "role": "key"
+  }
+ ],
+ "says": 7,
+ "questions": 7,
+ "usage": {
+  "calls": 8,
+  "prompt_tokens": 20698,
+  "completion_tokens": 1027,
+  "cost": 0.0045509925
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:13:19.428Z",
+ "max_questions": 50
+}

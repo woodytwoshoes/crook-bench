@@ -1,0 +1,311 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm Dr Brown. I can see you're not feeling well at all — let's get straight into it. You mentioned indigestion since this morning. Can you tell me exactly where you feel it, and what it feels like — burning, tight, heavy, squeezing?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight on my chest. Right in the middle, behind the breastbone. Bit up into the throat. Been there an hour and a half, still there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Graham, that's really helpful. A few important questions: is the heaviness spreading anywhere else — your arms, jaw, back or shoulder? And are you feeling short of breath, sick in the stomach, or light-headed?",
+  "released": [
+   "pain_radiation",
+   "dyspnoea",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Jaw's a bit achy, left arm feels heavy. A bit short of breath, feel a bit sick. Bit light-headed getting out of the car.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this sounds like it could be your heart, not indigestion. I'm going to check you over and do a heart tracing right now — please bear with me.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be a bother. Just want some antacid so I can get back to work.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I have to be straight with you: the heart tracing shows you are having a proper heart attack right now — a blocked artery in the heart. This is not indigestion, and antacids will not fix it. The good news is we've caught it early and there is a highly effective treatment that opens the artery, but we need to get you to the hospital heart unit immediately. I'm calling the ambulance now and giving you aspirin to chew, which thins the blood and helps stop the clot from growing. Do you have any bleeding problems, stomach ulcers, or blood-thinning medicines other than what's on my screen?",
+  "released": [
+   "recent_bleeding",
+   "anticoagulants",
+   "antiplatelet"
+  ],
+  "flooded": false,
+  "reply": "No, no recent bleeding. Don't take aspirin or anything like that. No blood-thinning medicines.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "The ambulance is on its way, Graham. While we wait — one more quick question: do you take anything for erections, like Viagra or Cialis? It's important because those medicines can't be mixed with certain heart sprays the paramedics might use.",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "…Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for being honest with me, that's really important — I'll pass that on so the paramedics avoid the heart spray (GTN) that can clash badly with Viagra. Nothing to be embarrassed about. The ambulance crew will take you straight to a hospital with a heart team who will open up the blocked artery, usually with a small tube through the wrist called a stent. Your wife is very wise to send you in today — you've done exactly the right thing.",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was serious. Just wanted some antacid.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's the plan and what's happening. The aspirin I gave you is working on the clot. The ambulance is on the way and I've told them exactly what your tracing shows, plus the important detail about the Viagra last night — so they will not use the nitrate spray, which could drop your blood pressure dangerously. I'm deliberately not giving you any oxygen or heart spray because your numbers are stable and your heart tracing suggests the blockage is at the bottom of the heart, where those can actually make things worse. Please stay sitting, don't wander off, and don't try to drive yourself anywhere. If the pain suddenly gets worse, you faint, or you feel like you can't breathe, tell the staff straight away — we're right here with you until the paramedics arrive. At hospital they'll whisk you up to the heart unit and open the blocked artery, most likely with a stent through your wrist. Most people who get there as quickly as you have do very well. Is your wife here? She can ride along with you.",
+  "released": [
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "About seven this morning. Came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you — so it started around 7 this morning and came on over a few minutes, which fits what your tracing shows. Everything that needs doing right now has been done: aspirin on board, ambulance called, and I'll hand over to the paramedics directly. Once they arrive they'll take over your care and take you to the cardiac team. I'll be telling them everything, including your regular blood pressure and cholesterol tablets, so nothing gets missed. You did the right thing coming in, and your wife's instinct may well have saved your heart muscle today. I'll stay with you until the crew arrives.",
+  "released": [],
+  "flooded": false,
+  "reply": "Wish I'd come in earlier.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "aortic_dissection",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -20,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats another choice: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_3": "Please stay sitting, don't wander off, and don't try to drive yourself anywhere."
+   }
+  },
+  "total": 230,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 215
+ }
+]

@@ -1,0 +1,350 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in — let's get this sorted for you. Before we talk antibiotics, I need to ask a few questions to make sure we treat the right thing.\n\nFirst: can you describe the burning — is it only when you pass urine, and are you needing to go more often than usual or feeling like you have to rush to the toilet?",
+  "released": [],
+  "flooded": false,
+  "reply": "It stings and burns, worst right at the end of weeing. It's like my last UTI. I'm going constantly — every half hour — and only a little bit comes out. I have to rush.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound like cystitis-type symptoms. Now some important checks: have you had a fever, chills or shivers, any pain in your back or side up under your ribs, or any nausea or vomiting? And have you noticed any blood in your urine, or pain in your lower belly?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "haematuria",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and I haven’t been sick. I’ve got a bit of an ache low down in my tummy, but nothing in my back. My urine’s a bit cloudy and smells, but I haven’t seen any blood. Just a low ache above my bladder, nothing else.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good — no fever or back pain is reassuring. Next, a couple of questions I ask everyone with these symptoms, because some sexually transmitted infections can cause identical burning: have you noticed any unusual vaginal discharge, itch, or pain during sex? And are you sexually active at the moment — any new partner in the last few months, and do you use condoms?",
+  "released": [
+   "vaginal_discharge_itch",
+   "sexual_partners",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any unusual vaginal discharge, itch or pain during sex. I'm sexually active — I've had the same boyfriend for about a year, just him — and we don't use condoms because I'm on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. You said \"UTI again\" — how many of these have you had before, when was the last one, and did you have any tests or antibiotics for them? Also, when was your last period, have you been taking your pill every day without misses, and is there any chance you could be pregnant?",
+  "released": [
+   "previous_utis",
+   "last_period",
+   "contraception",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that's it. The last one was about two weeks ago, and I had antibiotics for it. I'm on the pill and I don't miss it. My last period was about two weeks ago, it was normal. I don't think I'm pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "That's really helpful — a second infection only two weeks after antibiotics changes how I approach this. Do you remember which antibiotic you took two weeks ago, did your symptoms clear up completely after that course, and did they test a urine sample before treating you? Also, have you noticed these episodes tend to come on after sex?",
+  "released": [
+   "recent_intercourse"
+  ],
+  "flooded": false,
+  "reply": "I took ciprofloxacin two weeks ago, and my symptoms cleared up completely after that. They didn't test a urine sample before treating me. Yeah… we'd, um, been together the night before it started.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Good news — the pregnancy test is negative, and the dipstick shows white cells and nitrites, which confirms a bacterial urine infection. I've sent a sample to the lab to grow the bug and check which antibiotics it responds to — results in a couple of days — especially important since this has come back so soon after ciprofloxacin.\n\nOne more thing: it's routine in Australia to offer a one-off urine check for chlamydia and gonorrhoea to sexually active women under 30, even in a steady relationship — it's just a urine test, no swabs needed. Are you happy for me to add that to the sample?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, sure — I guess that's a good idea. I'm happy to do it.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Chloe. You have another bladder infection — cystitis — and all the checks show it's staying in the bladder, not the kidneys, so it's straightforward to treat.\n\nI'm prescribing trimethoprim, 300 mg once a day for 3 days — a different antibiotic from the ciprofloxacin you had, and it's the usual first choice here. It does NOT affect your pill, so your contraception keeps working as normal. The lab culture comes back in about 2 days; we'll check the bug responds to this antibiotic and call you if we need to swap it, so keep an eye on your phone.\n\nFor comfort: drink plenty of water today, take paracetamol or ibuprofen for the ache, and pharmacy sachets like Ural that make urine less acidic can ease the sting. Try not to hold on when you need to wee — I know café shifts make that hard — and since both episodes followed sex, weeing soon afterwards may help flush things out.\n\nImportant — come back straight away, or go to emergency after hours, if you get a fever or the shakes, pain in your back or side, vomiting, feel really unwell, or if things aren't clearly improving within 48 hours. And if you end up with three or more of these in a year, come and see me and we'll look at prevention and whether any further tests are needed. The chlamydia and gonorrhoea results will also be back in 2 days — we only call if something needs treating, in which case your boyfriend would need treatment too. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, that makes sense. I'll take the antibiotic and keep an eye on it. I'll make sure to drink plenty of water and try to wee when I need to. I'll call if things don't get better or if I feel worse.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "differentials": [
+   "sti_urethritis",
+   "pyelonephritis"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Urethritis from a sexually transmitted infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "drink plenty of water today",
+    "ideal_2": "take paracetamol or ibuprofen for the ache",
+    "ideal_3": "come back straight away, or go to emergency after hours, if you get a fever or the shakes, pain in your back or side, vomiting, feel really unwell, or if things aren't clearly improving within 48 hours"
+   }
+  },
+  "total": 295,
+  "max": 375,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 250
+ }
+]

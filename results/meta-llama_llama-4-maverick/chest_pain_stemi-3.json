@@ -1,0 +1,99 @@
+{
+ "model": "meta-llama/llama-4-maverick",
+ "case": "chest_pain_stemi",
+ "rep": 3,
+ "ending": "ended",
+ "total": 145,
+ "max": 505,
+ "level": "Resident",
+ "consequence": "harmful",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 60,
+   "max": 290
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 35,
+   "max": 85
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 30
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 40,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Sweating or clamminess with the pain",
+   "elicited": false
+  },
+  {
+   "topic": "Shortness of breath",
+   "elicited": false
+  },
+  {
+   "topic": "Dizziness, light-headedness or fainting",
+   "elicited": false
+  },
+  {
+   "topic": "Had this chest pain before, e.g. on stairs or exertion",
+   "elicited": true
+  },
+  {
+   "topic": "Sudden severe tearing or ripping pain",
+   "elicited": false
+  },
+  {
+   "topic": "Weakness, numbness or other neurological symptoms, or limb pain",
+   "elicited": false
+  },
+  {
+   "topic": "Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)",
+   "elicited": false
+  }
+ ],
+ "harmful": [
+  "GTN (recent sildenafil)"
+ ],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "myocardial_infarction",
+   "role": "acceptable"
+  },
+  {
+   "label": "Differential 1",
+   "id": "nstemi",
+   "role": null
+  },
+  {
+   "label": "Differential 2 (can't miss)",
+   "id": "stemi",
+   "role": "key"
+  }
+ ],
+ "says": 6,
+ "questions": 5,
+ "usage": {
+  "calls": 13,
+  "prompt_tokens": 34432,
+  "completion_tokens": 1288,
+  "cost": 0.007429440000000001
+ },
+ "patient_model": "qwen/qwen3-8b",
+ "started": "2026-10-04T04:23:05.000Z",
+ "max_questions": 50
+}

@@ -1,0 +1,346 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mr Mitchell, I'm Dr Sharma. Thanks for coming in. You mentioned indigestion since this morning — can you tell me more about what's been going on? Where exactly are you feeling it, and what does it feel like — burning, pressure, tightness, something else?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but heavier. Sort of a weight sitting on my chest. It's been going the whole time — an hour and a half, near enough. Still there now. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. About seven this morning. Came on over a few minutes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any shortness of breath, feeling sick to your stomach, or have you vomited? Have you felt your heart racing, fluttering, or felt faint or dizzy at any point?",
+  "released": [],
+  "flooded": true,
+  "reply": "Too much all at once. What do you want to know first?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry, one at a time. Are you short of breath right now, or breathless at all this morning?",
+  "released": [
+   "dyspnoea"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah. Hard to get a proper breath in.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Does the heaviness change when you move around or exert yourself, or does it stay the same? Also, how much do you smoke a day, and have you ever had any previous heart problems, a heart attack, or had a stent or bypass?",
+  "released": [
+   "movement_pain",
+   "smoking",
+   "previous_cardiac"
+  ],
+  "flooded": false,
+  "reply": "Moving doesn't change it. About twenty a day since I was a teenager, been meaning to quit. Never had anything wrong with my heart.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether moving or pressing on the chest makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking history"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale, grey and clammy. Sweating. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "order",
+  "id": "poc_troponin",
+  "result": "Collected 08:30 (consult start). Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Troponin (point-of-care)"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately for STEMI transfer"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "differentials": [
+   "nstemi",
+   "aortic_dissection"
+  ],
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Reasonable differential: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to explain what's happening. Your ECG shows that your heart is being starved of blood — this is a heart attack, specifically an inferior STEMI. It fits everything you've described: the heavy chest pain, the aching jaw, the heavy left arm, the sweating. You've also got strong risk factors — years of smoking, high blood pressure, high cholesterol.\n\nHere's the plan:\n1. I've called an ambulance to take you to hospital urgently. They can open the blocked artery — usually by putting a stent in — and the faster that happens, the less heart muscle is at risk. Sit back and rest, and try not to strain or talk much.\n2. I've given you a one-off dose of aspirin, which helps stop the clot getting bigger. Please don't take any more aspirin.\n3. When the paramedics arrive, tell them you've had chest pain since about 7 this morning and that you've already had aspirin here.\n4. I've arranged the transfer so the hospital has your details — your blood pressure and cholesterol tablets, and no known allergies.\n5. Please don't drive, don't go back to the job site, and don't push through this — this is exactly the sort of thing that kills men who put it off.\n\nYou did the right thing getting in today. With the ambulance on the way and definitive treatment at hospital, your odds are very good. Is there anything else you're worried about, and would you like me to ring your wife?",
+  "released": [],
+  "flooded": false,
+  "reply": "I didn't think it was that bad. I just wanted antacids. What's a stent?",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "I completely understand — the symptoms really do feel like indigestion, and most men your age would feel the same. But this is the heart, and the good news is we caught it early and the ambulance is already on its way.\n\nA stent is a tiny wire mesh tube — think of a small metal straw — that a heart specialist slides down into the artery that's blocked and opens it up, like unclogging a pipe. They often clip a bit of the artery open first with a tiny balloon. It's a routine procedure in a heart hospital and it takes the pressure off the heart almost immediately. That's exactly why getting you there fast is so important.\n\nSo: no antacids needed. Sit back, rest, and let the paramedics come. If your pain gets much worse, you feel like you might pass out, or you get more sick, tell the paramedics straight away. You're in good hands from here.",
+  "released": [
+   "presyncope",
+   "nausea_vomiting",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Bit light-headed getting out of the car, feel a bit sick but haven't vomited, pain's more heavy than sore, maybe a six out of ten.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Right — that light-headedness and sick feeling are common with this, because your heart rate has slowed a bit and your body is under strain. Keep sitting or lying back, don't stand up, and if you feel faint, stay down. The paramedics will have medications for that on the way if it gets worse. Keep resting, and remember: tell them the pain started around 7 and you've had aspirin here already. The ambulance is on its way, and the next step is the cath lab. You're doing everything right.",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't want to be stuck in a hospital. Can I go home?",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "I hear you, and I'd feel the same if I were you — the idea of being stuck in a hospital is the last thing you want. But I have to be straight with you: if you go home now, you could die, or suffer a lot of permanent damage to your heart, and that damage often doesn't show up for hours. The artery is blocked right now, and every minute it stays shut, more of the heart muscle dies. That's not something any medication I can write for you at the surgery can fix — only the procedure at the hospital can.\n\nGoing home after what your ECG shows would be the one decision here that I can't support, and honestly the one I'd regret most. You're 58, you've got a wife who cares about you, and this is very, very treatable if we let the hospital do its job. Ten, fifteen minutes in the ambulance, and a stent that opens the pipe — and then most men are home within a day or two, far stronger than if they'd pushed through it.\n\nSo I'm not going to discharge you — that wouldn't be safe for you or me. But I promise you this: the stay should be short, you'll be looked after properly, and I'll be in touch with my notes when you come out so we can sort the long-term stuff — your bloods, your tablets, and we should seriously talk about quitting smoking, because that's the one thing that would do the most for your heart from here on.\n\nDeal? Let's wait for the ambulance together.",
+  "released": [],
+  "flooded": false,
+  "reply": "Deal.",
+  "awards": [],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 245,
+  "max": 505,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 245
+ }
+]
