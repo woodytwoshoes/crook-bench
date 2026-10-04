@@ -9,6 +9,7 @@
   --rule: #dfe3e2; --grid: #eceeee;
   --closed: #2a78d6; --open: #eb6834; --bad: #c4302b;
   --seq-0: #eef4fc; --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #5598e7; --seq-4: #256abf; --seq-5: #104281;
+  --lab-openai: #2a78d6; --lab-anthropic: #eb6834; --lab-google: #1baf7a; --lab-xai: #eda100; --lab-qwen: #e87ba4; --lab-deepseek: #008300; --lab-mistral: #4a3aa7; --lab-meta: #e34948; --lab-other: #8a918f;
   --t0: #121615; --t1: #121615; --t2: #121615; --t3: #ffffff; --t4: #ffffff; --t5: #ffffff;
   --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
   --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
@@ -18,12 +19,14 @@
   --bg: #121514; --surface: #1a1e1d; --ink: #eef1f0; --ink-2: #b4bcba; --ink-3: #87908e;
   --rule: #2d3332; --grid: #252a29; --closed: #3987e5; --open: #d95926; --bad: #e66767;
   --seq-0: #1b2633; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --lab-openai: #3987e5; --lab-anthropic: #d95926; --lab-google: #199e70; --lab-xai: #c98500; --lab-qwen: #d55181; --lab-deepseek: #008300; --lab-mistral: #9085e9; --lab-meta: #e66767; --lab-other: #7f8784;
   --t0: #eef1f0; --t1: #eef1f0; --t2: #ffffff; --t3: #ffffff; --t4: #0d1a2b; --t5: #0d1a2b;
   color-scheme: dark; } }
 :root[data-theme="dark"] {
   --bg: #121514; --surface: #1a1e1d; --ink: #eef1f0; --ink-2: #b4bcba; --ink-3: #87908e;
   --rule: #2d3332; --grid: #252a29; --closed: #3987e5; --open: #d95926; --bad: #e66767;
   --seq-0: #1b2633; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --lab-openai: #3987e5; --lab-anthropic: #d95926; --lab-google: #199e70; --lab-xai: #c98500; --lab-qwen: #d55181; --lab-deepseek: #008300; --lab-mistral: #9085e9; --lab-meta: #e66767; --lab-other: #7f8784;
   --t0: #eef1f0; --t1: #eef1f0; --t2: #ffffff; --t3: #ffffff; --t4: #0d1a2b; --t5: #0d1a2b;
   color-scheme: dark; }
 body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--body); }
@@ -45,8 +48,10 @@ figure { margin: 0; display: grid; gap: 12px; min-width: 0; }
 figcaption { font-size: 14px; color: var(--ink-3); max-width: 70ch; }
 .legend { display: flex; gap: 16px; font-size: 13px; color: var(--ink-2); align-items: center; flex-wrap: wrap; }
 .legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
-.legend .c { background: var(--closed); border-radius: 50%; }
-.legend .o { background: var(--open); transform: rotate(45deg) scale(.85); }
+.legend span { white-space: nowrap; }
+.legend .c { border-radius: 50%; }
+.legend .o { background: var(--ink-3); transform: rotate(45deg) scale(.85); }
+.legend .ring { background: var(--ink-3); border-radius: 50%; }
 svg text { fill: var(--ink-2); font: 12px var(--body); }
 svg .lbl { fill: var(--ink); font-size: 12.5px; }
 svg .num { font: 11.5px var(--mono); fill: var(--ink-2); font-variant-numeric: tabular-nums; }
@@ -89,7 +94,7 @@ a { color: var(--closed); }
   <figure id="f-board">
     <div class="fighead">
       <div><h2>Overall score</h2><p>Mean share of each case's maximum over 15 consultations. The line shows one standard deviation either side.</p></div>
-      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+      <div class="legend" data-legend></div>
     </div>
     <div class="panel"><svg id="board" role="img" aria-label="Bar chart of overall score by model"></svg></div>
   </figure>
@@ -97,7 +102,7 @@ a { color: var(--closed); }
   <figure id="f-cost">
     <div class="fighead">
       <div><h2>Score against cost</h2><p>Cost per consultation through OpenRouter, on a log scale. Up and to the left is better value.</p></div>
-      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+      <div class="legend" data-legend></div>
     </div>
     <div class="panel"><svg id="cost" role="img" aria-label="Scatter plot of score against cost per consultation"></svg></div>
     <figcaption>GPT-6.1 Sol scored 80% for about 3 cents a consultation. Claude Fable 5.1 scored 75% for about $2.06.</figcaption>
@@ -106,7 +111,7 @@ a { color: var(--closed); }
   <figure id="f-flags">
     <div class="fighead">
       <div><h2>Questions asked against red flags caught</h2><p>Red flags are the history items that change management, such as sweating with chest pain. The budget was 50 questions; no model came close.</p></div>
-      <div class="legend"><span><i class="c"></i>Closed weights</span><span><i class="o"></i>Open weights</span></div>
+      <div class="legend" data-legend></div>
     </div>
     <div class="panel"><svg id="flags" role="img" aria-label="Scatter plot of red flags caught against questions asked"></svg></div>
     <figcaption>Models that asked more found more. Claude Opus 5.5 was the most economical of the top group, at 16 questions a consultation.</figcaption>
@@ -154,7 +159,13 @@ const txt = (parent, x, y, s, cls, anchor = "start") => {
   t.textContent = s;
   return t;
 };
-const colour = (m) => (m.open ? "var(--open)" : "var(--closed)");
+const LABS = [["OpenAI", "openai"], ["Anthropic", "anthropic"], ["Google", "google"], ["xAI", "xai"], ["Alibaba Qwen", "qwen"], ["DeepSeek", "deepseek"], ["Mistral", "mistral"], ["Meta", "meta"]];
+const labKey = (m) => (LABS.find(([n]) => n === m.lab) || [null, "other"])[1];
+const colour = (m) => `var(--lab-${labKey(m)})`;
+for (const lg of document.querySelectorAll("[data-legend]")) {
+  lg.innerHTML = [...LABS, ["Other (Moonshot, Z.ai)", "other"]].map(([n, k]) => `<span><i class="c" style="background:var(--lab-${k})"></i>${n}</span>`).join("") +
+    '<span><i class="ring"></i>Closed weights</span><span><i class="o"></i>Open weights</span>';
+}
 const money = (c) => (c < 0.1 ? `${(c * 100).toFixed(1)}¢` : `$${c.toFixed(2)}`);
 
 // Shared tooltip
@@ -201,7 +212,9 @@ function hover(target, m, extra) {
   DATA.forEach((m, i) => {
     const y = top + i * row, cy = y + row / 2;
     const g = el("g", {}, svg);
-    txt(g, left - 10, cy + 4, m.name, "lbl", "end");
+    txt(g, left - 20, cy + 4, m.name, "lbl", "end");
+    if (m.open) el("rect", { x: left - 13, y: cy - 4, width: 8, height: 8, transform: `rotate(45 ${left - 9} ${cy})`, fill: "var(--ink-3)" }, g);
+    else el("circle", { cx: left - 9, cy, r: 4, fill: "var(--ink-3)" }, g);
     const w = x(m.score) - left;
     el("path", { d: `M${left},${cy - 7} h${w - 3} a3,3 0 0 1 3,3 v8 a3,3 0 0 1 -3,3 h${-(w - 3)} z`, fill: colour(m), class: "bar" }, g);
     const lo = x(Math.max(0, m.score - m.sd)), hi = x(Math.min(100, m.score + m.sd));
