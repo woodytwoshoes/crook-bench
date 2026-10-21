@@ -8,8 +8,12 @@
   --accent: #1d5fbf; --accent-wash: #e5eefa; --primary: #141414; --primary-ink: #ffffff;
   --negative: #c4242a; --negative-wash: #fbeaea;
   --mark: #9aa19a; --mark-dim: #d3d8d3; --human: #141414;
+  /* One colour per lab, as on the 4 Oct page; Meta joins Other so red stays for harms. */
+  --lab-openai: #2a78d6; --lab-anthropic: #eb6834; --lab-google: #1baf7a; --lab-xai: #eda100;
+  --lab-qwen: #e87ba4; --lab-deepseek: #008300; --lab-mistral: #4a3aa7; --lab-other: #8a918f;
   --seq-0: #f3f7fd; --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #5598e7; --seq-4: #256abf; --seq-5: #104281;
-  --seq-ink-dark: #0a0a0a; --seq-ink-light: #ffffff;
+  /* Text on each heat bin: dark on the pale bins, white on the deep ones (dark mode flips the ramp). */
+  --seq-t0: #0a0a0a; --seq-t1: #0a0a0a; --seq-t2: #0a0a0a; --seq-t3: #ffffff; --seq-t4: #ffffff; --seq-t5: #ffffff;
   --font: "Geist", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --serif: "Instrument Serif", Georgia, serif;
@@ -24,8 +28,10 @@
     --accent: #5b9be8; --accent-wash: #16243a; --primary: #eef1ee; --primary-ink: #0f1210;
     --negative: #e66767; --negative-wash: #2c1515;
     --mark: #6e756e; --mark-dim: #353a36; --human: #eef1ee;
+    --lab-openai: #3987e5; --lab-anthropic: #d95926; --lab-google: #199e70; --lab-xai: #c98500;
+    --lab-qwen: #d55181; --lab-deepseek: #008300; --lab-mistral: #9085e9; --lab-other: #7f8784;
     --seq-0: #18202a; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
-    --seq-ink-dark: #0a0a0a; --seq-ink-light: #ffffff;
+    --seq-t0: #eef1ee; --seq-t1: #eef1ee; --seq-t2: #ffffff; --seq-t3: #ffffff; --seq-t4: #0a0a0a; --seq-t5: #0a0a0a;
   }
 }
 :root[data-theme="dark"] {
@@ -36,7 +42,10 @@
   --accent: #5b9be8; --accent-wash: #16243a; --primary: #eef1ee; --primary-ink: #0f1210;
   --negative: #e66767; --negative-wash: #2c1515;
   --mark: #6e756e; --mark-dim: #353a36; --human: #eef1ee;
+  --lab-openai: #3987e5; --lab-anthropic: #d95926; --lab-google: #199e70; --lab-xai: #c98500;
+  --lab-qwen: #d55181; --lab-deepseek: #008300; --lab-mistral: #9085e9; --lab-other: #7f8784;
   --seq-0: #18202a; --seq-1: #13304f; --seq-2: #184f95; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --seq-t0: #eef1ee; --seq-t1: #eef1ee; --seq-t2: #ffffff; --seq-t3: #ffffff; --seq-t4: #0a0a0a; --seq-t5: #0a0a0a;
 }
 
 * { box-sizing: border-box; }
@@ -87,7 +96,7 @@ h1 { font: 600 clamp(28px, 4.4vw, 40px)/1.1 var(--font); letter-spacing: -0.02em
 .seg button:hover:not([aria-pressed="true"]) { background: var(--raised); color: var(--text); }
 select, .chip { height: 32px; border: 1px solid var(--control); background: var(--surface); border-radius: var(--radius-control); padding: 0 10px; color: var(--text); font: inherit; }
 .chip { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-.chip.sel { border-color: var(--accent); color: var(--accent); background: var(--accent-wash); }
+.chip.sel { border-color: var(--text); color: var(--text); background: var(--active); }
 .chip .x { font-size: 16px; line-height: 1; }
 label.check { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: var(--muted); }
 label.check input { accent-color: var(--primary); }
@@ -109,6 +118,7 @@ figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
 figcaption { font-size: 13px; color: var(--muted); max-width: 72ch; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); align-items: center; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.legend .sep { color: var(--control); }
 .legend svg { width: 12px; height: 12px; overflow: visible; }
 
 /* ---------- leaderboard ---------- */
@@ -123,8 +133,8 @@ table.board { border-collapse: collapse; width: 100%; min-width: 1060px; font-si
 .board td.n { font-size: 13px; }
 .board tbody tr { cursor: pointer; }
 .board tbody tr:hover { background: var(--raised); }
-.board tbody tr.sel { background: var(--accent-wash); }
-.board tbody tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.board tbody tr.sel { background: var(--active); }
+.board tbody tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--text); }
 .board tbody tr.dim { opacity: .45; }
 .board tbody tr.human td { border-top: 1px dashed var(--control); }
 .board .who { display: grid; gap: 0; }
@@ -133,7 +143,6 @@ table.board { border-collapse: collapse; width: 100%; min-width: 1060px; font-si
 .board .scorecell { display: inline-flex; align-items: center; gap: 8px; justify-content: flex-end; }
 .board .bar { width: 72px; height: 6px; border-radius: 3px; background: var(--active); position: relative; overflow: hidden; }
 .board .bar i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--mark); }
-.board tr.sel .bar i { background: var(--accent); }
 .board tr.human .bar i { background: var(--human); }
 .board .bad { color: var(--negative); }
 .board .sd { color: var(--muted); font-size: 11px; }
@@ -142,7 +151,7 @@ table.board { border-collapse: collapse; width: 100%; min-width: 1060px; font-si
 svg.chart { display: block; max-width: none; height: auto; }
 .chart text { fill: var(--muted); font: 12px var(--font); }
 .chart .lbl { fill: var(--text); }
-.chart .lbl.sel { fill: var(--accent); font-weight: 600; }
+.chart .lbl.sel { fill: var(--text); font-weight: 700; }
 .chart .num { font: 11px var(--mono); fill: var(--muted); }
 .chart .axis { fill: var(--faint); font: 11px var(--mono); }
 .chart .grid { stroke: var(--rule); stroke-width: 1; }
@@ -161,7 +170,7 @@ svg.chart { display: block; max-width: none; height: auto; }
 table.traps { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13px; }
 .traps th, .traps td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: left; }
 .traps th { font: 500 11px/1.35 var(--font); color: var(--muted); vertical-align: bottom; }
-.traps tr.sel { background: var(--accent-wash); }
+.traps tr.sel { background: var(--active); }
 .traps tr.dim { opacity: .45; }
 .dots { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 6px; }
 .dots i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--control); }
@@ -176,7 +185,7 @@ table.traps { border-collapse: collapse; width: 100%; min-width: 640px; font-siz
 .cmap th, .cmap td { padding: 6px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
 .cmap th { font: 500 11px/1.35 var(--font); color: var(--muted); vertical-align: bottom; }
 .cmap td.cell { white-space: nowrap; }
-.cmap tr.sel { background: var(--accent-wash); }
+.cmap tr.sel { background: var(--active); }
 .cbtn { width: 34px; height: 26px; border-radius: 4px; border: 0; cursor: pointer; font: 500 11px var(--mono); margin-right: 3px; }
 .cbtn[aria-current="true"] { outline: 2px solid var(--accent); outline-offset: 1px; }
 .cbtn.err { background: var(--raised) !important; color: var(--muted) !important; }

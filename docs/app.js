@@ -127,10 +127,17 @@ function select(id) {
 }
 
 // ---------- marks ----------
-// Closed weights: filled circle. Open weights: ring. The registrar: square. Colour only for the highlighted model.
+// Colour is the lab, one per lab (Meta, Moonshot and Z.ai share Other's grey, so red stays
+// for harms). Shape is the weights: filled circle closed, ring open; the registrar an ink square.
+// The highlighted doctor is outlined in ink and the others fade.
+const LABS = [["OpenAI", "openai"], ["Anthropic", "anthropic"], ["Google", "google"], ["xAI", "xai"], ["Alibaba Qwen", "qwen"], ["DeepSeek", "deepseek"], ["Mistral", "mistral"]];
+const labColour = (m) => (m.human ? "var(--human)" : `var(--lab-${(LABS.find(([n]) => n === m.lab) ?? [null, "other"])[1]})`);
 function marker(g, m, x, y, r = 6) {
-  const sel = m.id === state.sel;
-  const fill = sel ? "var(--accent)" : m.human ? "var(--human)" : "var(--mark)";
+  const fill = labColour(m);
+  if (m.id === state.sel) {
+    if (m.human) s("rect", { x: x - r - 3.5, y: y - r - 3.5, width: 2 * r + 7, height: 2 * r + 7, rx: 3, fill: "none", stroke: "var(--text)", "stroke-width": 2 }, g);
+    else s("circle", { cx: x, cy: y, r: r + 3.5, fill: "none", stroke: "var(--text)", "stroke-width": 2 }, g);
+  }
   if (m.human) return s("rect", { x: x - r, y: y - r, width: 2 * r, height: 2 * r, rx: 1.5, fill, stroke: "var(--surface)", "stroke-width": 2 }, g);
   if (m.open) return s("circle", { cx: x, cy: y, r: r - 1, fill: "var(--surface)", stroke: fill, "stroke-width": 2.5 }, g);
   return s("circle", { cx: x, cy: y, r, fill, stroke: "var(--surface)", "stroke-width": 2 }, g);
@@ -141,11 +148,15 @@ function legend(el, withHuman = true) {
     draw(svg);
     return h("span", {}, svg, label);
   };
+  const others = [...new Set(Object.values(RUNS[state.run]?.models ?? {}).filter((m) => !m.human && !LABS.some(([n]) => n === m.lab)).map((m) => m.lab))].sort();
   el.replaceChildren(
+    ...LABS.map(([n, k]) => item(n, (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: `var(--lab-${k})` }, g))),
+    item(`Other${others.length ? ` (${others.join(", ")})` : ""}`, (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: "var(--lab-other)" }, g)),
+    h("span", { class: "sep", "aria-hidden": "true", text: "·" }),
     item("Closed weights", (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: "var(--mark)" }, g)),
     item("Open weights", (g) => s("circle", { cx: 0, cy: 0, r: 4, fill: "none", stroke: "var(--mark)", "stroke-width": 2.5 }, g)),
     withHuman ? item("A GP registrar", (g) => s("rect", { x: -5, y: -5, width: 10, height: 10, rx: 1.5, fill: "var(--human)" }, g)) : null,
-    item("Highlighted", (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: "var(--accent)" }, g)),
+    item("Highlighted (others fade)", (g) => { s("circle", { cx: 0, cy: 0, r: 5.5, fill: "none", stroke: "var(--text)", "stroke-width": 1.5 }, g); s("circle", { cx: 0, cy: 0, r: 3, fill: "var(--mark)" }, g); }),
   );
 }
 
@@ -226,7 +237,7 @@ function renderBoard() {
         case "rank": return h("td", { class: "n", text: m.human ? "" : String(rank.get(m.id)) });
         case "name": return h("td", {}, h("div", { class: "who" }, h("b", { text: m.name }), h("span", { text: m.human ? "Human reference, one play a case" : `${m.lab} · ${m.open ? "open" : "closed"} weights` })));
         case "n": return h("td", { class: "n", text: `${m.n}` });
-        case "score": return h("td", { class: "n" }, h("span", { class: "scorecell" }, h("span", { class: "bar", "aria-hidden": "true" }, h("i", { style: `width:${Math.max(0, Math.min(100, m.score))}%` })), h("span", { text: f0(m.score) }), h("span", { class: "sd", text: `±${f0(m.sd)}` })));
+        case "score": return h("td", { class: "n" }, h("span", { class: "scorecell" }, h("span", { class: "bar", "aria-hidden": "true" }, h("i", { style: `width:${Math.max(0, Math.min(100, m.score))}%;background:${labColour(m)}` })), h("span", { text: f0(m.score) }), h("span", { class: "sd", text: `±${f0(m.sd)}` })));
         case "flags": case "dx": return h("td", { class: "n", text: `${f0(m[c.k])}%` });
         case "perTen": return h("td", { class: "n", text: f1(m.perTen) });
         case "harms": return h("td", { class: `n ${m.harms > 0 ? "bad" : ""}`, text: m.harms.toFixed(2) });
@@ -264,7 +275,7 @@ function renderScore() {
   rs.forEach((m) => {
     const cy = top + row / 2, sel = m.id === state.sel;
     top += heightOf(m);
-    const g = s("g", {}, svg);
+    const g = s("g", { class: state.sel && !sel ? "faded" : "" }, svg);
     if (sel) {
       cases.forEach((k, j) => {
         const y = cy + row / 2 + 4 + j * sub + sub / 2;
@@ -276,7 +287,7 @@ function renderScore() {
     stext(g, L - 24, cy + 4, m.name, `lbl ${sel ? "sel" : ""}`, "end");
     marker(g, m, L - 12, cy, 4.5);
     const w = Math.max(4, x(m.score) - L);
-    s("path", { d: `M${L},${cy - 7} h${w - 4} a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h${-(w - 4)} z`, fill: sel ? "var(--accent)" : m.human ? "var(--human)" : "var(--mark-dim)" }, g);
+    s("path", { d: `M${L},${cy - 7} h${w - 4} a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h${-(w - 4)} z`, fill: labColour(m), stroke: sel ? "var(--text)" : "none", "stroke-width": sel ? 1.5 : 0 }, g);
     const lo = x(m.score - m.sd), hi = x(m.score + m.sd);
     for (const [x1, x2, y1, y2] of [[lo, hi, cy, cy], [lo, lo, cy - 4, cy + 4], [hi, hi, cy - 4, cy + 4]]) s("line", { x1, x2, y1, y2, stroke: "var(--muted)", "stroke-width": 1.5 }, g);
     stext(g, hi + 8, cy + 4, `${f0(m.score)}%`, "num");
@@ -301,7 +312,7 @@ function shapeAt(g, kind, x, y, r, attrs) {
 function consultMark(g, c, x, y, k, cases) {
   const run = RUNS[state.run];
   const kind = SHAPES[cases.indexOf(k) % SHAPES.length];
-  shapeAt(g, kind, x, y, 5, { fill: "var(--accent)", stroke: "var(--surface)", "stroke-width": 1.5 });
+  shapeAt(g, kind, x, y, 5, { fill: labColour(run.models[c.model]), stroke: "var(--text)", "stroke-width": 1 });
   const hit = s("circle", { cx: x, cy: y, r: 11, fill: "transparent", class: "hit", tabindex: "0", role: "button" }, g);
   const flagShare = c.flags.length ? (100 * c.flags.reduce((a, b) => a + b, 0)) / c.flags.length : null;
   const lines = () => [[`${run.cases[k].title} #${c.rep}`], ["score", `${f0(c.score)}%`], ["questions", c.questions == null ? "–" : String(c.questions)], ["red flags", `${f0(flagShare)}%`], ...(c.cost != null ? [["doctor cost", money(c.cost)]] : []), ["click to open the consultation", ""]];
@@ -321,7 +332,7 @@ function renderBurstLegend() {
   const cases = caseOrder(run);
   el.replaceChildren(h("span", { text: `${m.name}'s consultations, by case:` }), ...cases.map((k, i) => {
     const sv = s("svg", { viewBox: "-7 -7 14 14" });
-    shapeAt(sv, SHAPES[i % SHAPES.length], 0, 0, 5, { fill: "var(--accent)" });
+    shapeAt(sv, SHAPES[i % SHAPES.length], 0, 0, 5, { fill: labColour(m), stroke: "var(--text)", "stroke-width": 1 });
     return h("span", {}, sv, run.cases[k].title);
   }), h("span", { text: "Click a mark to open that consultation." }));
 }
@@ -370,7 +381,7 @@ function scatter(svg, pts, xs, ys, xLabel, yLabel, burst) {
     const run = RUNS[state.run], cases = caseOrder(run), g = s("g", {}, svg);
     const at = hub.m.consults.map((c) => ({ c, v: burst(c) })).filter((d) => d.v);
     const px = (d) => Math.max(L, Math.min(R, xs.f(d.v[0], L, R))), py = (d) => Math.max(T, Math.min(B, ys.f(d.v[1], T, B)));
-    for (const d of at) s("line", { x1: hub.x, y1: hub.y, x2: px(d), y2: py(d), stroke: "var(--accent)", "stroke-width": 1, opacity: 0.35 }, g);
+    for (const d of at) s("line", { x1: hub.x, y1: hub.y, x2: px(d), y2: py(d), stroke: "var(--text)", "stroke-width": 1, opacity: 0.3 }, g);
     for (const d of at) consultMark(g, d.c, px(d), py(d), d.c.case, cases);
   }
 }
@@ -422,9 +433,9 @@ function renderHeat() {
     cols.forEach(([k, a], j) => {
       const v = state.heat === "case" ? m.byCase[k] : m[k];
       const b = bin(v), x = L + j * cw, g = s("g", {}, svg);
-      s("rect", { x: x + 1, y: y + 1, width: cw - 2, height: row - 2, rx: 3, fill: b < 0 ? "var(--raised)" : `var(--seq-${b})`, stroke: sel ? "var(--accent)" : "none", "stroke-width": sel ? 2 : 0 }, g);
+      s("rect", { x: x + 1, y: y + 1, width: cw - 2, height: row - 2, rx: 3, fill: b < 0 ? "var(--raised)" : `var(--seq-${b})`, stroke: sel ? "var(--text)" : "none", "stroke-width": sel ? 2 : 0 }, g);
       const t = stext(g, x + cw / 2, y + row / 2 + 4, v == null ? "–" : f0(v), "num", "middle");
-      t.style.fill = b >= 3 ? "var(--seq-ink-light)" : "var(--text)";
+      t.style.fill = b < 0 ? "var(--text)" : `var(--seq-t${b})`;
       hoverable(s("rect", { x, y, width: cw, height: row, fill: "transparent" }, g), m, [[a, `${f0(v)}%`]]);
     });
   });
@@ -482,12 +493,13 @@ function renderCompare() {
   }
   pairs.forEach((p, i) => {
     const cy = T + i * row + row / 2, sel = p.now.id === state.sel || p.old.id === state.sel;
-    const g = s("g", {}, svg);
+    const g = s("g", { class: state.sel && !sel ? "faded" : "" }, svg);
     stext(g, L - 16, cy + 4, p.swap ? `${p.old.name} → ${p.now.name}` : p.now.name, `lbl ${sel ? "sel" : ""}`, "end");
-    const x1 = x(p.old[k]), x2 = x(p.now[k]), ink = sel ? "var(--accent)" : "var(--muted)";
-    s("line", { x1, x2, y1: cy, y2: cy, stroke: ink, "stroke-width": 2, "stroke-dasharray": p.swap ? "4 3" : null }, g);
-    s("circle", { cx: x1, cy, r: 5, fill: "var(--surface)", stroke: ink, "stroke-width": 2 }, g);
-    s("circle", { cx: x2, cy, r: 6, fill: sel ? "var(--accent)" : "var(--primary)", stroke: "var(--surface)", "stroke-width": 2 }, g);
+    const x1 = x(p.old[k]), x2 = x(p.now[k]), lab = labColour(p.now);
+    s("line", { x1, x2, y1: cy, y2: cy, stroke: lab, "stroke-width": 2, "stroke-dasharray": p.swap ? "4 3" : null }, g);
+    s("circle", { cx: x1, cy, r: 5, fill: "var(--surface)", stroke: lab, "stroke-width": 2 }, g);
+    if (sel) s("circle", { cx: x2, cy, r: 9.5, fill: "none", stroke: "var(--text)", "stroke-width": 2 }, g);
+    s("circle", { cx: x2, cy, r: 6, fill: lab, stroke: "var(--surface)", "stroke-width": 2 }, g);
     const d = p.now[k] - p.old[k];
     stext(g, Math.max(x1, x2) + 12, cy + 4, `${d >= 0 ? "+" : "−"}${f0(Math.abs(d))}`, "num");
     const fmt = (v) => (k === "questions" ? f0(v) : `${f0(v)}%`);
@@ -497,8 +509,8 @@ function renderCompare() {
   const it = (label, draw) => { const sv = s("svg", { viewBox: "-7 -7 14 14" }); draw(sv); return h("span", {}, sv, label); };
   lg.replaceChildren(
     it("4 October", (g) => s("circle", { cx: 0, cy: 0, r: 4, fill: "var(--surface)", stroke: "var(--muted)", "stroke-width": 2 }, g)),
-    it("21 October", (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: "var(--primary)" }, g)),
-    h("span", { text: "Dashed: a successor model replaced the 4 October one" }),
+    it("21 October", (g) => s("circle", { cx: 0, cy: 0, r: 5, fill: "var(--mark)" }, g)),
+    h("span", { text: "Colour: the lab. Dashed: a successor model replaced the 4 October one" }),
   );
 }
 const CHANGES = [
@@ -522,7 +534,7 @@ function renderMap() {
     h("td", { text: m.name }),
     ...cases.map(([k]) => h("td", { class: "cell" }, ...m.consults.filter((c) => c.case === k).map((c) => {
       const b = bin(c.score);
-      return h("button", { type: "button", class: "cbtn", "aria-current": String(state.consult === c.file), title: `${m.name}, ${run.cases[k].title} #${c.rep}: ${f0(c.score)}%`, style: `background:var(--seq-${b});color:${b >= 3 ? "var(--seq-ink-light)" : "var(--text)"}`, text: f0(c.score), onclick: () => openConsult(c.file) });
+      return h("button", { type: "button", class: "cbtn", "aria-current": String(state.consult === c.file), title: `${m.name}, ${run.cases[k].title} #${c.rep}: ${f0(c.score)}%`, style: `background:var(--seq-${b});color:var(--seq-t${b})`, text: f0(c.score), onclick: () => openConsult(c.file) });
     })))));
   $("#cmap").replaceChildren(h("thead", {}, head), h("tbody", {}, body));
 }
@@ -681,6 +693,7 @@ function render() {
   renderFilters();
   renderFacts();
   renderBoard();
+  legend($("#legend"));
   renderScore();
   renderScatters();
   renderBurstLegend();
@@ -698,7 +711,6 @@ for (const b of $("#heat-mode").children) b.addEventListener("click", () => { st
 for (const b of $("#cmp-metric").children) b.addEventListener("click", () => { state.cmp = b.dataset.v; render(); });
 let resizeTimer;
 addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (state.run) { renderScore(); renderScatters(); renderHeat(); renderCompare(); } }, 150); });
-legend($("#legend"));
 renderChanges();
 
 (async function boot() {
