@@ -1,0 +1,339 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm Dr Chen. Sorry to hear you've been feeling rotten. Let me get a picture of what's been going on. When did the cough and fever start, and how has it changed since? Do you bring anything up when you cough?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough, and I have been burning up on and off, feeling roasting even without a thermometer. Since yesterday I am bringing stuff up that changed from clear to a rusty, brownish colour, and I also got a sharp pain low down on the right side round towards my back that catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful. A few more questions: how bad is the fever at its highest, any shortness of breath at rest or when walking, any confusion, coughing up any blood, any chest pain not related to coughing? Do you smoke, drink much alcohol, have any long-standing illnesses (diabetes, lung trouble), and have you taken anything so far for this?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that! Let's take them one at a time. First: any shortness of breath — at rest or when you walk around?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am all right.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "OK. Have you been confused at all, or coughed up any blood?",
+  "released": [
+   "confusion",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "My head is clear, though my wife reckons I am just grumpy, and I am not coughing up actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Do you smoke, and do you have any other health problems like diabetes or asthma?",
+  "released": [
+   "smoking",
+   "diabetes",
+   "lung_disease"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, I do not have diabetes, and I never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "And how much alcohol do you drink in a week? Also, are your vaccines up to date — flu shot and the pneumonia one?",
+  "released": [
+   "alcohol",
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I have a couple of beers on the weekend and none this week, and I did not get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Mark. Let me examine you now — check your temperature, oxygen and breathing, and listen to your chest.",
+  "released": [],
+  "flooded": false,
+  "reply": "How does it look? I really need to get back to school before these exams finish me off.",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "You have a chest infection — pneumonia, in the right lower part of your lung, likely bacterial given that rusty phlegm. The good news is your oxygen, blood pressure and heart rate look okay, so this can most likely be treated at home with antibiotics. Let me arrange a chest X-ray to confirm and check bloods. Then I'll start you on antibiotics today.",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Well, that explains why I can't shake this. Just make sure those antibiotics are strong enough because I have got mountains of maths papers to get through.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (2 capsules)",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pulmonary embolism, Sepsis, Lung cancer, Tuberculosis, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Mark:\n\n- I've given you two antibiotics today — amoxicillin 1 g three times a day, and doxycycline 100 mg twice a day, both for 7 days. Take the doxycycline with food and plenty of water, don't lie down for half an hour after, and avoid strong sun while on it.\n- Rest, fluids, and paracetamol or ibuprofen for the fever and chest pain.\n- You're contagious for the first day or two — wash your hands, cover your cough, and keep your distance from the kids at school; you really should take a couple of days off.\n- This isn't a \"grunt through it\" illness — safety net: if your breathing gets worse at rest, your oxygen drops, you feel confused, can't keep fluids down, get a high fever despite antibiotics, or you're no better within 48 hours of starting them, come straight back or call 000.\n- Once you're better, it's worth getting your flu shot and asking about the pneumococcal vaccine.\n\nCome back for a review in a few days if you're not improving, and if you're right as rain, no need. Take care of yourself!",
+  "released": [],
+  "flooded": false,
+  "reply": "A couple of days off? The students are sitting their exams right now, but I suppose I am not much use to anyone coughing up rust. I will try to rest up.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "so this can most likely be treated at home with antibiotics",
+    "ideal_3": "safety net: if your breathing gets worse at rest, your oxygen drops, you feel confused, can't keep fluids down",
+    "acceptable_2": "paracetamol or ibuprofen for the fever and chest pain",
+    "acceptable_3": "Rest, fluids",
+    "acceptable_5": "you're no better within 48 hours of starting them, come straight back or call 000",
+    "acceptable_7": "Once you're better, it's worth getting your flu shot and asking about the pneumococcal vaccine"
+   }
+  },
+  "total": 215,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 165
+ }
+]

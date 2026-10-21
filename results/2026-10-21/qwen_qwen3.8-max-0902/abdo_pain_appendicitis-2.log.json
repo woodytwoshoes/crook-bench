@@ -1,0 +1,513 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the GP today. I can see you're pretty uncomfortable, so let's get through this efficiently. Can you tell me exactly where the pain is right now — point to it with one finger — and did it start anywhere else before settling there?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "Down here on the right side, low down. It started around my belly button and moved down to the right overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A few quick questions: Since it started last night, have you felt sick to your stomach or vomited? Have you had any appetite at all? And has the pain been constant, or coming and going in waves?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "I have felt sick since the early hours and threw up once this morning. I couldn't face breakfast and am not hungry at all, which isn't like me. It is there all the time now, though at first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Any change in your bowels — diarrhoea or constipation, or been unable to pass wind? Any stinging when you pass urine, needing to go more often, or blood in it?",
+  "released": [
+   "diarrhoea",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea, I went normally yesterday morning and nothing since. Weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Important question: any pain, swelling or a lump in either testicle? And out of 10, how bad is the tummy pain right now — and does it get much worse if you cough or move around?",
+  "released": [
+   "testicular_pain",
+   "groin_lump",
+   "pain_severity",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Nothing down there, and no lumps either. It's about a seven out of ten, and walking hurts. Every bump in the car on the way here was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "subregion": "rlq",
+  "finding": "Tender to light percussion.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "suprapubic",
+  "finding": "Soft and non-tender in this area.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "ruq",
+  "finding": "Soft and non-tender in this area.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "ct_abdomen",
+  "result": null,
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "That's really helpful. A few more: Have you had anything like this before, any past operations or medical problems, and are you taking any medicines — including painkillers already today?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "Never had anything like this, and I have never had an operation so I've still got my appendix as far as I know. I took a couple of paracetamol at six this morning, but it didn't do much.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "say",
+  "utterance": "Has anyone around you — at home or on the job — been unwell with a tummy bug or food poisoning lately? And has the pain spread anywhere else, like into your back, down to your groin, or up to the tip of your shoulder?",
+  "released": [
+   "unwell_contacts"
+  ],
+  "flooded": false,
+  "reply": "No, everyone at home and work is fine.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Anyone around him with vomiting or diarrhoea"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Just to be sure — has the pain moved or spread anywhere else at all, like into your back, your groin, or up to the tip of your shoulder? And have you managed to keep any fluids down today, or has everything come back up?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not sure.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Simple question: does either of your shoulders hurt at all?",
+  "released": [],
+  "flooded": false,
+  "reply": "Not that I've noticed.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, here's what I'm finding. Your pain started around your belly button and moved to the lower right side, you've been sick, you've lost your appetite, you've got a temperature of 37.9 and a fast pulse, and your tummy is very tender in the right lower side — it hurts when you cough and even when I press lightly and let go. That pattern is very typical of an inflamed appendix, called appendicitis. This is not a stomach bug, and it needs to be seen by a surgeon today — it can't wait and see. Is there someone who can drive you to the emergency department right now, or would you rather I call an ambulance?",
+  "released": [],
+  "flooded": false,
+  "reply": "Can't I just go home and lie down?",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "I understand wanting to go home — but I'd be doing you a disservice, and I can't safely let you do that. The lining of your appendix is inflamed, and the signs of irritation I found mean the inflammation has reached the lining of your abdomen. If an inflamed appendix is left at home it can burst, usually within a day or so, and that spills infection through the whole abdomen. That turns a routine keyhole operation into a much bigger, life-threatening problem with a long hospital stay and drips of antibiotics. Getting it out early, while it's still just inflamed, is the simple and safe option — most people are home in a day or two and back at work in a couple of weeks.\n\nSo the plan is: go straight to the emergency department today for a surgeon to see you, and get the CT scan of your abdomen that I've already booked. From now on, don't eat or drink anything — no food, no water — because you may need an anaesthetic, and an empty stomach makes that much safer. Don't drive yourself, and don't take any more painkillers at home; they'll give you proper pain relief and fluids through a drip there, and that won't hide anything from the surgeon.\n\nShall I call an ambulance for you now, or would you prefer I ring a family member to drive you straight over while I phone the emergency department to tell them you're coming?",
+  "released": [],
+  "flooded": false,
+  "reply": "I will call my mate to drive me.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1 g)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 325
+ },
+ {
+  "type": "say",
+  "utterance": "Good — here's the plan, and please follow it exactly.\n\nWhat I think is going on: this is very likely appendicitis — an inflamed appendix. The things that point to it are the pain starting around your belly button and moving to the lower right side, losing your appetite, being sick once, your temperature of 37.9 and pulse of 102, and the tenderness at that spot on the right with pain on coughing and on letting go when I press. That last part tells me the lining of your abdomen is irritated. The thing I most want to make sure hasn't already happened is a burst appendix, which spreads infection through the whole abdomen — that's why this is a today problem, not a wait-and-see problem.\n\nWhat I've done: I've sent a referral to the emergency department and phoned them to give them a handover, so they know you're coming and what I found. I've booked a CT scan of your abdomen and pelvis, plus a full blood count and a CRP (an inflammation marker) — those results come back over the next day and the hospital team will use them. Your urine showed only trace changes with no infection markers, which doesn't point to a urine or kidney cause. I've checked your testicles and your hernia sites and they're normal, so a twisted testicle or a trapped hernia is off the list. I've given you 1 gram of paracetamol now for comfort; the hospital can give you stronger pain relief and fluids through a drip, and pain relief does not hide the diagnosis from the surgeon.\n\nWhat you need to do: nothing to eat or drink from now — no food, no water, no lollies or chewing gum — because you may need an anaesthetic and an empty stomach is much safer. Don't drive yourself; your mate drives you, and go straight there now, don't stop at home first. Take your Medicare card and ID. Don't take laxatives or use an enema, and don't put a hot water bottle on your tummy.\n\nCall 000 for an ambulance immediately, rather than continuing in the car, if any of this happens on the way: the pain suddenly gets much worse or spreads across your whole abdomen, you feel faint, light-headed or confused, you get shaking chills or rigors, you keep vomiting, or you can't get to the hospital within the next hour.\n\nAfterwards: I'll follow up the scan and blood results and I'll contact you. The surgeons will decide whether you need the appendix removed — usually by keyhole — and they'll give you a medical certificate; most apprentices are off work for about two weeks, longer if it's heavy lifting. If by any chance you're not seen and you get home instead, and the pain gets worse or you develop a fever, ring 000 or come straight back — do not sit on this. Any questions before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions.",
+  "awards": [],
+  "score": 325
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "That pattern is very typical of an inflamed appendix, called appendicitis.",
+    "ideal_3": "From now on, don't eat or drink anything — no food, no water — because you may need an anaesthetic, and an empty stomach makes that much safer."
+   }
+  },
+  "total": 355,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "acceptable",
+  "score": 325
+ }
+]

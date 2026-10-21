@@ -1,0 +1,100 @@
+{
+ "model": "qwen/qwen3.8-max-0902",
+ "case": "cough_pneumonia",
+ "rep": 2,
+ "ending": "ended",
+ "total": 385,
+ "max": 420,
+ "level": "Director",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 175,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 85,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 100,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": true
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": true
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": true
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": false
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "sepsis",
+   "role": "sinister"
+  }
+ ],
+ "says": 10,
+ "questions": 35,
+ "usage": {
+  "calls": 22,
+  "prompt_tokens": 136054,
+  "completion_tokens": 8444,
+  "cost": 0.11512399999999999
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:13:12.976Z",
+ "max_questions": 50
+}

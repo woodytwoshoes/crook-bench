@@ -1,0 +1,84 @@
+{
+ "model": "human/gp-registrar",
+ "case": "abdo_pain_appendicitis",
+ "rep": 1,
+ "ending": "ended",
+ "total": 90,
+ "max": 420,
+ "level": "Resident",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 0,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 40,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": false
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": false
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": false
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "bowel_obstruction",
+   "role": "differential"
+  }
+ ],
+ "says": 1,
+ "questions": 1,
+ "usage": {
+  "calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "cost": null
+ },
+ "patient_model": "gemini-3.5-flash-lite (classifier gemini-3.1-flash-lite)",
+ "started": "2026-10-12T04:48:38.808Z",
+ "cost": null
+}

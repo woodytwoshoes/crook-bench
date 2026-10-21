@@ -1,0 +1,271 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm the doctor. I understand you've had some indigestion since this morning. Can you tell me more about what you're feeling?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It started about seven this morning, came on over a few minutes. It's like a heaviness. Like indigestion but... heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat. It's been going the whole time, near enough an hour and a half, and it's still there now. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds concerning, Graham. Have you had any sweating, feeling sick to your stomach, or shortness of breath with this?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I've been sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. A bit short of breath, yeah, hard to get a proper breath in.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you. Your heart tracing shows you're having a heart attack — the blood supply to part of your heart muscle is blocked. This is why you feel the heaviness, the sweating and the arm and jaw discomfort. I've already given you aspirin to thin the blood, and I've called an ambulance to take you straight to hospital, where they can open the blocked artery quickly. Please stay sitting and try to stay calm. The ambulance is on its way.",
+  "released": [],
+  "flooded": false,
+  "reply": "A heart attack? Look, I've got a job to finish off down the road, can't I just drive myself after a bit?",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "No, Graham, I really need you not to drive. This is an emergency — your heart muscle is being starved of blood right now, and every minute counts. Driving yourself would be dangerous, both for you and for others on the road, because your heart rhythm could change suddenly. The ambulance crew can monitor you and start treatment on the way. Please stay here with me until they arrive. The job can wait — your life is more important.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright then, if you reckon. My wife's going to kill me.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 micrograms",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "You've done the right thing coming in, Graham. The spray under your tongue should help ease the heaviness. While we wait, if the pain gets worse, you feel faint, or you feel your heart racing or fluttering, tell me straight away. The ambulance crew will take over and get you to the hospital where they can unblock the artery. Try to stay calm and take slow breaths.",
+  "released": [
+   "pain_severity",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "I don't know, maybe a six, it's more heavy than sore. I was a bit light-headed getting out of the car, didn't pass out though.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "Please stay here with me until they arrive."
+   }
+  },
+  "total": 215,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 200
+ }
+]

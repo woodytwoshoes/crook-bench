@@ -1,0 +1,273 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm sorry you're uncomfortable. Before we talk about antibiotics, I want to make sure we work out exactly what's going on so we treat the right thing. Can you tell me in your own words what's been happening — when the burning started and how it's been since?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It really stings and burns, especially right at the end, just like my last one. I am going constantly, about every half hour, but only a little bit comes out and I have to rush. It is a bit cloudy and smells, though I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That does sound like typical bladder infection symptoms. I need to check a few things to make sure it's a simple one. Firstly: have you had any fever, shivers or chills, any pain in your back or sides around your kidney area, or any nausea or vomiting?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or shivers and I feel fine apart from this. I don't have any pain in my back, just a bit of an ache low down in my tummy. I am eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Have you noticed any unusual vaginal discharge, itch, or pain during sex? And are you sexually active at the moment — if so, is it with a regular partner or anyone new recently?",
+  "released": [
+   "vaginal_discharge_itch",
+   "dyspareunia",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "I haven't noticed anything like that, and pain during sex has never been a problem for me. I do have a boyfriend we've been together about a year and it's just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. You mentioned it's like your last one — how many of these urine infections have you had before, and when was the most recent? Did you have any tests done back then?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I only had one about two years ago, and that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Since you're on the pill, I just need to check — is there any chance you could be pregnant? And do you have any other health problems, like diabetes or kidney issues, or take any other medicines or supplements?",
+  "released": [
+   "pregnancy_possible",
+   "diabetes",
+   "renal_tract_problems"
+  ],
+  "flooded": false,
+  "reply": "I don't think I could be pregnant. I don't have diabetes or anything like that, and the only regular medication I take is the combined oral contraceptive pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "No worries if you'd rather skip that test today — it's entirely optional, and you can ask for it any time. To wrap up: take the trimethoprim once a day for the three days, drink plenty of fluids, and Ural sachets from the pharmacy can ease the sting. I expect you to feel much better within 24 to 48 hours. Please come back straight away — or see a doctor sooner — if you develop a fever, shivers, pain in your back or side, vomiting, if the symptoms get worse, or if things haven't settled within a couple of days of finishing the tablets. Any questions before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, no questions, thanks. I just want to get these and get back to work.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "drink plenty of fluids",
+    "ideal_3": "Please come back straight away — or see a doctor sooner — if you develop a fever, shivers, pain in your back or side, vomiting, if the symptoms get worse, or if things haven't settled within a couple of days of finishing the tablets."
+   }
+  },
+  "total": 250,
+  "max": 360,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 220
+ }
+]

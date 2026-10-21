@@ -1,0 +1,381 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good afternoon Daniel, I'm Dr. — glad you could come in. I see you hurt your back over the weekend and booked as urgent, so let's get you looked after properly. Can you walk me through exactly what happened when it started, and what your back has been like since then?",
+  "released": [],
+  "flooded": false,
+  "reply": "It happened on Saturday when I was lifting a big pot plant in the garden and felt a twinge. Then I woke up on Sunday and could barely get out of bed, so it has been about three days now. I was hoping we could arrange an MRI to see if I have a slipped disc.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks for that. I'll be straight with you — most injuries like this settle well without an MRI, and I'll explain why in a moment. But first I need to rule out the things that do need urgent attention. Does the pain go down into your buttock or leg at all? If so, how far — above the knee, below the knee, or into your foot? Do you have any numbness, tingling or weakness in either leg or foot?",
+  "released": [
+   "leg_radiation",
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down my legs at all, and my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Good, that's reassuring. Now the most important screening questions: have you noticed any problems with your bladder — trouble starting, leaking, or anything unusual? Any numbness around your back passage or genitals — the \"saddle\" area? And any changes in your bowels, like accidents or difficulty passing them?",
+  "released": [
+   "bladder_function",
+   "saddle_anaesthesia",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "All of that is completely normal, and I haven't noticed anything like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Great. A few more quick checks: any fevers, chills or drenching night sweats? Any unexplained weight loss? Have you ever had cancer, or ever taken steroid tablets for more than a few weeks? And is the pain worst at night when you're lying still, or mainly when you move and bend?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history",
+   "steroid_use",
+   "night_rest_pain",
+   "aggravating_relieving"
+  ],
+  "flooded": false,
+  "reply": "No fevers or infections, and if anything I have put some weight on. I have never had cancer or taken steroid tablets like that. It hurts when I roll over, but once I'm settled I sleep, and it is worse when I bend or get out of a chair, better lying still with a heat pack, and worse by the evening.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds like a classic mechanical strain. On a scale of 0 to 10, how bad is the pain right now, and what has it been like at its worst? Have you had back pain like this before? And have you taken anything for it so far — and does anything help?",
+  "released": [
+   "pain_severity",
+   "previous_episodes",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "It is about a seven when I move or roll over, but maybe a three if I keep still. I tweaked it once maybe five years ago, but it was gone in a week. I have just taken some paracetamol, but honestly, it did not do much.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "subregion": "lumbar_spine",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "spinal_percussion",
+  "finding": "Tapping down each spinous process from the mid back to the sacrum is comfortable.",
+  "awards": [],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "foot_sensation",
+  "finding": "Feels the monofilament at every site tested on both feet. Vibration sense present at both big toes.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Your legs look fully normal — strong, normal reflexes, full sensation, and no nerve irritation — which is reassuring. One last safety question: any history of stomach ulcers or bleeding, kidney problems, or asthma — anything that would rule out anti-inflammatories like ibuprofen? And do you take any blood-thinners?",
+  "released": [
+   "stomach_ulcers",
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "I do not have ulcers, my kidneys are fine as far as I know, and I do not have asthma or take any blood-thinners.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "1 tablet (400 mg)",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1000 mg)",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "saddle_sensation_pr",
+  "finding": "Saddle sensation intact; anal tone normal.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Saddle sensation and anal tone",
+    "domain": "examination"
+   }
+  ],
+  "score": 213
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 223
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes no abdominal pain.",
+  "awards": [],
+  "score": 223
+ },
+ {
+  "type": "say",
+  "utterance": "One last check before I finish — are you comfortable with the plan, and do you understand which symptoms would mean you need urgent same-day review? And if you're not better in two weeks, just ring the clinic and we'll re-examine you.",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "I still figured I would need an MRI to see what is going on, but I understand what symptoms to watch out for.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 228
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 228,
+  "max": 465,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 228
+ }
+]

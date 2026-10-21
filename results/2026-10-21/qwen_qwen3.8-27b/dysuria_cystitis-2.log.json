@@ -1,0 +1,339 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr. Sharma. Thanks for coming in — I can see you're booked for burning when you pee. Walk me through it: when did it start, and what exactly have you been noticing since then?",
+  "released": [
+   "duration"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It stings and burns, and that is worst right at the end of weeing, just like my last UTI. I am going constantly, about every half hour, and only a little bit comes out and I have to rush.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that does sound like what we'd expect. Let me ask a few questions to make sure this is a straightforward bladder infection and not something that has moved up to the kidneys:\n\n1. Have you had any fever, chills, or generally feeling unwell?\n2. Any pain or tenderness in your back, especially under either rib cage on one side?\n3. Any nausea or vomiting?\n4. Any blood in your urine, or does it look or smell different?\n5. Any pain or pressure low in your tummy, over the bladder?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting",
+   "loin_pain",
+   "haematuria",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I have no fevers or shivers and feel fine apart from this, and there is nothing in my back. I am eating normally and haven't been sick. It is a bit cloudy and smells, but I haven't seen any blood. I just have a bit of an ache low down in my tummy above my bladder, and nothing else.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that all points to the bladder rather than the kidneys. A few more questions so I'm not missing anything:\n\n1. You mention this is \"again\" — how many UTIs have you had before, and were any confirmed by a test?\n2. Are you sexually active at the moment? Any new partners in the last few months, and do you use condoms?\n3. Any new vaginal symptoms — itching, discharge, smell, or pain with sex?\n4. When was your last period, and could you possibly be pregnant?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry, let me take it one at a time. First: how many times have you had these \"UTI\" episodes before, and were any of them actually confirmed with a urine test?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I only had one UTI about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Okay, just the one previously. Next question: are you sexually active at the moment? If so, any new partners in the last few months, and are you using condoms?",
+  "released": [
+   "sexual_partners",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "Um, yeah, I have a boyfriend and we have been together about a year, just him, and we do not use condoms because I am on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. And next: have you noticed any vaginal symptoms at all — itching, unusual discharge, a new smell, or any soreness or bleeding after sex?",
+  "released": [
+   "vaginal_discharge_itch",
+   "postcoital_intermenstrual_bleeding"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that, and I never bleed after sex or between my periods.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Last one on that list: when was your last period, and do you think there's any chance you could be pregnant?",
+  "released": [
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago and it was normal, and I don't think I could be pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "external_genitalia",
+  "finding": "Normal external genitalia. No lesions or discharge.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Okay, here's where things stand. Your urine test came back showing white cells and nitrites — that's very typical of a straightforward bladder infection, which matches your symptoms. The good news: your temperature and observations are normal, your back and tummy exams show no signs of the infection reaching your kidneys, and there's nothing suggesting a pregnancy or any other problem.\n\nHere's my plan:\n1. I'll give you a 5-day course of an antibiotic called nitrofurantoin, 100 mg, two capsules twice a day, with food. That's a first-line antibiotic for bladder infections and it doesn't interfere with your pill.\n2. For the burning, you can take paracetamol — up to two 500 mg tablets every 6 to 8 hours as needed, while the symptoms settle.\n3. Drink plenty of water, don't hold your wee when you feel the need, and remember to urinate after sex and wipe front to back going forward — all of that helps prevent these coming back.\n\nThe important bits: the burning usually eases within a day or two of starting the antibiotic. If your symptoms are not clearly better within 48 hours, or if you develop a fever, back pain under the ribs, or vomiting, come back and we'll recheck you — including testing for a urine culture and a sexually transmitted infection screen, just to be thorough, because in women your age dysuria can occasionally come from other causes. And of course, if you feel much worse at any point, come in or call.",
+  "released": [],
+  "flooded": false,
+  "reply": "Can I just get the script? I need to get back to work.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg (2 capsules)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1-2 tablets",
+  "frequency": "Every 6 hours",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: paracetamol",
+    "domain": "management"
+   }
+  ],
+  "score": 183
+ },
+ {
+  "type": "say",
+  "utterance": "All done — your prescriptions are ready at the counter: nitrofurantoin, two 100 mg capsules twice a day for 5 days (take with food), and paracetamol for the burning if needed. To recap in one line: if you're not clearly better in 48 hours, or if you get a fever, back pain, or vomiting, come back and we'll do a urine culture and an STI screen. Have a good shift!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I will grab it on my way out.",
+  "awards": [],
+  "score": 183
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pyelonephritis, Pelvic inflammatory disease, Ectopic pregnancy, Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 193
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water",
+    "ideal_2": "For the burning, you can take paracetamol",
+    "ideal_3": "If your symptoms are not clearly better within 48 hours, or if you develop a fever, back pain under the ribs, or vomiting, come back and we'll recheck you",
+    "acceptable_2": "two capsules twice a day, with food",
+    "acceptable_3": "remember to urinate after sex"
+   }
+  },
+  "total": 248,
+  "max": 360,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 193
+ }
+]

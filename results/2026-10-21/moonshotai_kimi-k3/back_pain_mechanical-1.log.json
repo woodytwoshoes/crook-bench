@@ -1,0 +1,332 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm Dr. — good to meet you. I can see you've booked in about your lower back after lifting something on the weekend, and that it's really limiting you. Before we talk about scans, I'd like to understand exactly what's happened. Can you tell me in your own words what happened on the weekend, and how it's been since?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "On Saturday I was lifting a big pot plant in the garden and felt a twinge, then woke up Sunday and could barely get out of bed, so it has been three days now. The pain is low down on the left side of my back and sometimes goes into my left buttock, and it is worse when I bend or get out of a chair, though it feels a bit better lying still with a heat pack and gets worse by the evening. I have worked from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "1. Does any pain, numbness or pins-and-needles travel down your leg below the knee, into your calf or foot?\n2. Any weakness in either leg — for example your foot slapping when you walk, or tripping, or trouble standing on your toes or heels?\n3. Any trouble with your bladder or bowels — difficulty starting to urinate, poor flow, or any accidents or loss of control?\n4. Any numbness or loss of feeling around your bottom, genitals or the area you'd sit on a bicycle seat?",
+  "released": [
+   "leg_radiation",
+   "leg_neuro_symptoms",
+   "bladder_function",
+   "bowel_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down my legs, and my legs feel completely normal otherwise. Everything with my bladder and bowels is all normal, and I haven't noticed any numbness around there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "5. Any fevers, chills, night sweats, or have you been generally unwell? Any recent infections, like a urine infection or skin infection?\n6. Have you ever had cancer of any kind, or any unexplained weight loss recently?\n7. Is the pain there even at complete rest, or does it wake you at night and stop you sleeping?\n8. Have you ever had back pain like this before, or any back problems in the past?",
+  "released": [
+   "fever_infection",
+   "cancer_history",
+   "weight_loss",
+   "night_rest_pain",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "No fevers or infections at all, and I have never had cancer, while if anything I have actually put some weight on recently. It hurts when I roll over in bed, but once I am settled I sleep because the pain is not there constantly. I tweaked my back once maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "9. On a scale of 0 to 10, how bad is the pain at its worst?\n10. Have you taken anything for the pain — painkillers, anti-inflammatories, or anything else?\n11. Do you have any other medical conditions, and do you take any regular medications?\n12. Do you smoke, and how much alcohol do you drink?",
+  "released": [
+   "pain_severity",
+   "analgesia_tried",
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "The pain is about a seven when I move or roll over, and maybe a three if I keep still, and I have only taken some paracetamol which didn't do much, honestly. I do not have any other medical conditions and I do not take any regular medications, other than that I am severely allergic to tramadol which makes me vomit and gives me dizziness. I have never smoked, and I have a couple of beers on a Friday and maybe a glass of wine on the weekend.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, here's the honest picture on the MRI. Your story and my examination show a straightforward muscle/joint strain with no sign of a slipped disc pressing on a nerve and none of the danger signs we screen for. In that situation, national guidelines actually recommend AGAINST scanning, for three reasons:\n\n1. It won't change what we do — the treatment is the same whatever the scan shows, because the treatment is time, movement and pain relief.\n2. Scans of healthy 41-year-olds almost always show \"wear and tear\" changes that have nothing to do with the pain, and those findings often cause unnecessary worry and sometimes lead to treatments people don't need.\n3. It keeps the scan in reserve for when it would actually matter.\n\nIf things aren't improving over the next few weeks, or you develop leg pain, numbness or weakness, then a scan becomes appropriate and I'll arrange it promptly.",
+  "released": [],
+  "flooded": false,
+  "reply": "I was really hoping to get a scan just to know for sure what is going on in there, but I suppose if the treatment is the same either way, I can try to manage it with movement and better pain relief.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Now the important safety-netting — please listen to this part:\n\nCome back to see me, or go to an emergency department if it's after hours, STRAIGHT AWAY if you get any of these:\n- Pain, numbness or weakness spreading down your leg, or trouble walking\n- Any problem with your bladder or bowels — trouble passing urine, or loss of control\n- Numbness around your bottom or genitals\n- Fever, feeling unwell, or a hot red area over the spine\n\nOtherwise, I'd like to see you back here in about 2 weeks to check your progress. If at that point it's not clearly improving, we'll look at physiotherapy and, if needed, revisit the question of a scan — with a clear reason by then.\n\nDo you have any questions about any of that?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "Honestly, I have been reading online about slipped discs and people needing surgery, so I just want to know how I can be sure I am not going to end up needing an operation.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "That's a very fair question, and a common worry.\n\nHere's how we can be confident: a \"slipped disc\" only becomes a surgical problem when it presses hard on a nerve — and that produces a very specific pattern: pain shooting down the leg below the knee, numbness, and weakness. You've just had a thorough nerve examination and every single one of those checks was normal: full strength in both legs, normal reflexes, normal sensation, and the tests that stretch the nerves didn't reproduce any leg pain. So there is no sign of nerve compression today.\n\nAnd even for people who DO get a disc pressing on a nerve, the great majority — around 8 or 9 out of 10 — improve without surgery over a few months, because the body reabsorbs the disc material. Surgery is reserved for a small minority with severe, persistent nerve problems or the emergency bladder symptoms I mentioned.\n\nWhat you have — pain staying in the back and buttock, worse with certain movements, better with rest and heat, normal nerves — is the classic pattern of a simple strain, and these heal with time and movement. The best thing you can do to protect your back long-term is exactly what we've discussed: stay active now, build back to regular exercise, strengthen your core and legs, and lift with your legs rather than your back next time there's a pot plant to move.\n\nIf anything changed — leg symptoms appearing, for example — we'd reassess immediately, and a scan would be on the table. Does that put your mind at ease?",
+  "released": [],
+  "flooded": false,
+  "reply": "That actually does make me feel a lot better about it, thanks for explaining it so clearly.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "lumbar_strain",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lumbar muscle strain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_2": "It won't change what we do",
+    "ideal_5": "Pain, numbness or weakness spreading down your leg, or trouble walking"
+   }
+  },
+  "total": 245,
+  "max": 465,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 215
+ }
+]

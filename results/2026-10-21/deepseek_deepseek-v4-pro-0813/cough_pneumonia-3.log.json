@@ -1,0 +1,583 @@
+[
+ {
+  "type": "say",
+  "utterance": "Could you tell me what's been going on — how the cough and fever started, and how you've been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, starting with a dry, hacking cough. I have been burning up on and off, and since yesterday I am bringing stuff up that is a rusty, brownish colour. I also got a sharp pain low down on the right side round towards my back yesterday, which catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any shortness of breath, or feeling like you can't catch your breath?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I only got puffed going up the stairs and on the way in from the car park, but sitting here I am alright.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you coughed up any blood, or anything that looks like blood?",
+  "released": [
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "No actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "How high has your fever been, if you've checked it? And have you had any shaking chills or sweats?",
+  "released": [
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "I did not have a thermometer, but I was roasting, and the first night I was shaking under the doona with my teeth chattering even though I was boiling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Any nausea, vomiting, or upset stomach?",
+  "released": [
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, no vomiting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain or burning when you pass urine, or needing to go more often?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't noticed anything like that.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent contact with people who were unwell, or travelled anywhere lately?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, I have not been anywhere, just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, or have you ever smoked?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "Never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Any ongoing medical conditions like diabetes, asthma, or anything with your heart or lungs?",
+  "released": [
+   "diabetes",
+   "lung_disease",
+   "heart_disease"
+  ],
+  "flooded": false,
+  "reply": "No, I do not have diabetes or any heart problems, and I have never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any weight loss recently, or been feeling more tired than usual over the weeks before this?",
+  "released": [
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No. If anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Do you drink alcohol? And have you had any medications, herbs, or over-the-counter tablets for this so far?",
+  "released": [
+   "alcohol",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I just have a couple of beers on the weekend and none this week, and I haven't had any antibiotics.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain in your chest wall itself, or is it worse lying on one side?",
+  "released": [],
+  "flooded": false,
+  "reply": "It catches me when I take a deep breath or cough, low down on the right side round towards my back.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urea, electrolytes and creatinine (UEC)"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "order",
+  "id": "blood_culture",
+  "result": null,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Blood cultures",
+    "domain": "investigations"
+   }
+  ],
+  "score": 233
+ },
+ {
+  "type": "order",
+  "id": "sputum_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Sputum microscopy and culture"
+   }
+  ],
+  "score": 238
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any confusion, or felt drowsy or unusually sleepy at any point?",
+  "released": [
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "No, my head is clear. My wife reckons I am just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 248
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any pain in your chest when you press on it, or any recent injury to your chest or ribs?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I haven't had any injuries or pain from pressing on it.",
+  "awards": [],
+  "score": 248
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a flu vaccine or the pneumonia vaccine recently, and are you up to date with your COVID vaccinations?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 253
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1000 mg (2 capsules)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 223
+ },
+ {
+  "type": "say",
+  "utterance": "I've had a look at you and taken a chest X-ray. You have pneumonia — an infection in the lower part of your right lung. This is what's causing the fever, the rust-coloured phlegm, and the sharp pain when you breathe.\n\nThe good news is it's at the milder end of the scale: your oxygen level, blood pressure and breathing rate are all reasonable, and you're fully alert. That means you can be treated at home with antibiotics rather than needing hospital.\n\nI'm prescribing you an antibiotic called amoxicillin — take two 500 mg capsules (1000 mg in total) three times a day for five days, with food. Please finish the whole course even if you start to feel better.",
+  "released": [],
+  "flooded": false,
+  "reply": "At least I can stay at home. Can I get a medical certificate for school while I am on these?",
+  "awards": [],
+  "score": 223
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, I'll write you a medical certificate for a week off work — you'll need the rest, and you should not be around students while you're infectious and recovering.\n\nHere are a few other things to help and to keep an eye on:\n\n- Take paracetamol regularly if the fever or pain bothers you — up to 1 gram every 4 to 6 hours (no more than 4 grams in 24 hours).\n- Drink plenty of fluids.\n- Rest at home and don't push yourself for the next week.\n\nMost importantly, please come back or seek urgent care if any of these happen:\n- Your breathing gets harder or faster, or you feel light-headed or faint.\n- You can't keep fluids down, or you become drowsy, confused, or very unwell.\n- The fever isn't settling after a couple of days on the antibiotics, or you feel worse rather than better.\n- You cough up fresh blood, or get pain in your chest that is severe or spreading.\n\nIf you feel breathless or seriously unwell at any point, don't wait — go to your nearest emergency department or call an ambulance.",
+  "released": [
+   "getting_worse_fast",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It is worse than the first day, but about the same since yesterday, so I am not going downhill fast, and the pain is a solid six when I cough or take a big breath, but otherwise it is just a dull ache.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 233
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring — staying stable rather than getting worse quickly is a good sign. The antibiotics should start to help within a couple of days.\n\nTwo more things about your recovery:\n\n- You had some blood and swab tests taken today (blood counts, kidney and infection markers, and cultures to check exactly what bug is causing this). Most results come back tomorrow, and I'll have the team review them. If any result changes the plan or suggests a different antibiotic is needed, we'll contact you.\n- Because you've had this, it would be worth considering a flu vaccine and a pneumonia vaccine once you've fully recovered — pop back in a few weeks and we can sort that out.\n\nDo you have any questions for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "Just how long until I am actually back to normal? I have those exams coming up.",
+  "awards": [],
+  "score": 233
+ },
+ {
+  "type": "say",
+  "utterance": "Everyone's a bit different, but with pneumonia like yours the fever and the worst of it usually settle within 2 to 3 days on antibiotics. The cough and tiredness, though, often linger for 2 to 4 weeks, and you may notice you tire more easily for a few weeks after that.\n\nI'd suggest:\n- Rest properly for the first week, and stay off work.\n- Expect the cough to take a while to fully clear — that's normal and not a sign the antibiotics failed.\n- Build back into normal activity gradually.\n\nWe'll review your X-ray and bloods, and if you're not clearly improving we can reassess. If you're worried about the exams, come and see me when you're feeling better and I can help with any paperwork you need.\n\nIs there anything else?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that is everything. I had better get back.",
+  "awards": [],
+  "score": 233
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 273
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "The good news is it's at the milder end of the scale: your oxygen level, blood pressure and breathing rate are all reasonable, and you're fully alert. That means you can be treated at home with antibiotics rather than needing hospital.",
+    "ideal_3": "Most importantly, please come back or seek urgent care if any of these happen: - Your breathing gets harder or faster, or you feel light-headed or faint. - You can't keep fluids down, or you become drowsy, confused, or very unwell.",
+    "acceptable_2": "Take paracetamol regularly if the fever or pain bothers you",
+    "acceptable_3": "Drink plenty of fluids.",
+    "acceptable_7": "it would be worth considering a flu vaccine and a pneumonia vaccine once you've fully recovered"
+   }
+  },
+  "total": 318,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "harmful",
+  "score": 273
+ }
+]

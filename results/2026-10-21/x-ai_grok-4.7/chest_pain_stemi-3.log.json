@@ -1,0 +1,432 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Graham, I'm the doctor. I can see you're here about indigestion that started this morning, and your wife wanted you checked. You look a bit uncomfortable. Can you tell me what's been happening?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It is like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. About seven this morning. Came on over a few minutes. It has been going the whole time — so an hour and a half, near enough. Still there now. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw is a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds more than ordinary indigestion, and I want to check it carefully. On a scale of 0 to 10, how bad is the heaviness right now? Does anything make it better or worse — breathing, moving, lying down, or food? Have you felt sick, sweaty, short of breath, or light-headed?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale and grey. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "On a scale from 0 to 10, how bad is the chest heaviness right now?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I don't know. Maybe a six? It is more heavy than sore.",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt sweaty, sick in the stomach, short of breath, or light-headed with this?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I have been sweating like anything, thought it was just hot, and I feel a bit sick though I haven't vomited. I am a bit short of breath, yeah, hard to get a proper breath in, and I was a bit light-headed getting out of the car, but I didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had pain like this before, or any heart problems, angina, or a previous heart attack?",
+  "released": [
+   "crescendo_angina",
+   "previous_cardiac"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart, though this past week I have had a bit of a tightness going up ladders that goes away if I stop, and I put it down to being unfit, but it has been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, this is not ordinary indigestion. Your heart tracing shows a heart attack — a blockage in one of the heart arteries, the one that supplies the bottom of the heart. We need to get you to hospital by ambulance straight away so they can open that artery. I'm going to give you an aspirin to chew now, which helps the clot. Have you taken any aspirin, blood thinners, or medicines for erection problems like Viagra in the last day or two?",
+  "released": [
+   "antiplatelet",
+   "anticoagulants",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "I don't take aspirin or anything like that, nothing like that, but yeah, I took one of those Viagra tablets last night, just don't tell the missus I told you. A heart attack? Crikey. Are you sure it's not just a bad case of indigestion? Can't this wait until I finish this job?",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sure this is a heart attack, not indigestion, and it cannot wait — waiting or driving yourself could be dangerous. An ambulance is the safest way, and they can start treatment on the way. You took a Viagra tablet last night, so I must not give you the usual spray under the tongue for chest pain, because the two together can drop your blood pressure dangerously. The aspirin is already working. How is the heaviness right now compared with when you arrived?",
+  "released": [],
+  "flooded": false,
+  "reply": "Still there. Same as before.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "rx",
+  "id": "ondansetron_4mg_odt",
+  "dose": "4 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: ondansetron",
+    "domain": "management"
+   }
+  ],
+  "score": 268
+ },
+ {
+  "type": "rx",
+  "id": "morphine_10mg_ml_inj",
+  "dose": "2.5 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Titrated IV morphine or fentanyl for pain (not if systolic BP is below 100)"
+   }
+  ],
+  "score": 273
+ },
+ {
+  "type": "say",
+  "utterance": "I've given you a small injection of morphine for the pain, and a tablet that dissolves on the tongue for the sick feeling. The ambulance is on its way. Please stay seated or lying down, and don't eat or drink. If the pain suddenly gets much worse, you feel faint, or you feel like you might pass out, tell me or the staff immediately. Do you have pain going through to your back, or is it only in the chest, jaw and arm?",
+  "released": [],
+  "flooded": false,
+  "reply": "Not my back.",
+  "awards": [],
+  "score": 273
+ },
+ {
+  "type": "exam",
+  "id": "bp_both_arms",
+  "finding": "Right 104/68, left 102/66. Radial pulses equal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure in both arms"
+   }
+  ],
+  "score": 283
+ },
+ {
+  "type": "say",
+  "utterance": "At the hospital they will do an urgent procedure, usually through the wrist or groin, to find the blocked artery and open it with a small balloon and often a stent. That is the best treatment for this type of heart attack. You must go in the ambulance, not drive, and not go back to the job. Do you understand that this is an emergency and you need to go now?",
+  "released": [],
+  "flooded": false,
+  "reply": "Right. Well, if you say so, I suppose I had better go.",
+  "awards": [],
+  "score": 283
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 283
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 283
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 283
+ },
+ {
+  "type": "say",
+  "utterance": "Your blood pressure is similar in both arms, which is reassuring. Please tell the ambulance crew you took a Viagra tablet last night, and that you have had aspirin, a small dose of morphine, and a nausea tablet here. Keep taking slow breaths and stay with the staff until they arrive. After the hospital treats the blockage, they will talk to you about blood pressure tablets, cholesterol tablets, stopping smoking, and cardiac rehabilitation — those matter for preventing another one, but the priority right now is getting the artery opened.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, okay. Thanks, Doc.",
+  "awards": [],
+  "score": 283
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 323
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "Keep taking slow breaths and stay with the staff until they arrive."
+   }
+  },
+  "total": 338,
+  "max": 480,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 323
+ }
+]

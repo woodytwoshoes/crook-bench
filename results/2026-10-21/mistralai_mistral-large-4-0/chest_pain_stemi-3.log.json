@@ -1,0 +1,252 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, thanks for coming in today. I can see you're not looking great, so let's work out what's going on. Can you tell me in your own words what's been happening since this morning?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time",
+   "onset_activity",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It started about seven this morning while I was just sitting having a cuppa reading the paper, and it came on over a few minutes. It is right in the middle, behind the breastbone, and a bit up into the throat. Now you mention it, my jaw is a bit achy and my left arm feels heavy, but not my back. It has been going the whole time, near enough an hour and a half, and it is still there now. It is like a heaviness, like indigestion but heavier, sort of a weight sitting on my chest. I do not know, maybe a six? It is more heavy than sore.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Activity at the moment today's pain began"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "A few quick questions while I check things: Are you sweaty or clammy? Any nausea or vomiting? Any shortness of breath or feeling faint? And have you ever had anything like this before? Also — do you have any allergy to aspirin, and are you on any blood-thinning medications?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Are you feeling sweaty or clammy, nauseous, or short of breath at all?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea"
+  ],
+  "flooded": false,
+  "reply": "I have been sweating like anything, thought it was just hot, and I feel a bit sick, though I haven't vomited. I am a bit short of breath too, it is hard to get a proper breath in.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg (one tablet, chewed)",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's what's happening and what we're doing about it. The ECG shows you're having a heart attack — a blocked artery at the back of the heart. That's why you've had the heavy chest pressure spreading to your jaw and arm, the sweating and nausea. I've called 000 — an ambulance is on its way to take you to hospital urgently. I've just given you a 300 mg aspirin to chew and swallow, which thins the blood and helps protect your heart muscle — please take it now if you haven't. Please sit or lie down and stay as still as you can, don't walk around, and don't eat or drink anything from now on. The ambulance crew will give you pain relief and other treatment on the way, and at hospital they'll likely take you straight for a procedure to open the blocked artery. Your heart rate is a bit slow and your blood pressure is on the lower side, so the crew will monitor you closely. If anything changes — the pain gets much worse, you feel faint, or your breathing gets worse — tell the crew straight away, or call 000 yourself if you're ever in this situation again. Do you have any questions? Your wife is welcome to come with you in the ambulance.",
+  "released": [
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "A heart attack? Are you sure it's not just a bad case of indigestion? Can't I just take some antacids and get to my job?",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I understand it's a shock, and I wish I had better news — but yes, I'm sure. This isn't indigestion. Indigestion doesn't cause sweating, nausea, pain spreading to your jaw and arm, and it doesn't show up on the heart tracing the way yours has. The ECG shows a blocked artery in your heart happening right now, and that blockage is what's causing the pain. Antacids won't touch this — they treat acid, and there's no acid problem here. What will help is getting that artery opened up quickly at hospital, and every minute counts for protecting your heart muscle. I know you're self-employed and work matters, but please hear me: if you go back to work, drive yourself, or wait at home, you could collapse, and this can be life-threatening. The ambulance is the fastest and safest way to get you to the treatment you need. Please let them take you. Is there anything practical I can help with — like calling your wife or your employer to let them know you're unwell?",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, if you say so. You better call Brenda and let her know.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, Graham, for listening — you're doing the right thing. I'll ask our receptionist to call Brenda and let her know you're being taken to hospital by ambulance with a suspected heart attack, and the ambulance crew can also help contact her when they arrive. Please keep the aspirin down, stay sitting or lying comfortably, and try to stay calm and breathe slowly. The crew will be here very soon. You're in good hands now.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 205,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 205
+ }
+]

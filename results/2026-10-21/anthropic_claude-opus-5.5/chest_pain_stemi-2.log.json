@@ -1,0 +1,245 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Graham, I'm the GP. Tell me about this indigestion — where exactly is the discomfort, what does it feel like, when did it start, and does it spread anywhere like your arm, jaw, neck or back?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. It's like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. About seven this morning. Came on over a few minutes. It's been going the whole time — so an hour and a half, near enough. Still there now. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your heart tracing shows you are having a heart attack right now. I've called an ambulance to take you straight to hospital so they can open the blocked artery. Quick questions before I give you aspirin: have you ever reacted badly to aspirin, or had any stomach ulcers, vomiting blood, or recent bleeding or surgery? Have you used Viagra or similar in the last couple of days?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "recent_surgery",
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "No allergies that I know of, I've had Disprin before, no problems. No bleeding or operations. And yeah, took one of those Viagra tablets last night, don't tell the missus I told you. Hang on, an ambulance? Can't I just drive home, I've got a job to finish.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent surgery"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I understand about the job, but please don't drive — this is a heart attack happening now, and every minute matters. The hospital can unblock the artery and save heart muscle; without that it could be life-threatening, including dangerous heart rhythms. I've given you an aspirin to chew now. Because you took Viagra last night and your blood pressure is on the low side, I'm deliberately NOT giving you the under-the-tongue spray for chest pain — that combination can drop your blood pressure dangerously; I'll make sure the paramedics and hospital know about the Viagra too. Your oxygen level is fine so you don't need oxygen. Stay sitting, don't get up or walk around; I'll stay with you and we have the defibrillator ready until the ambulance arrives. Shall we call your wife? Has the pain got any worse, and do you feel faint, breathless or sick right now?",
+  "released": [
+   "pain_severity",
+   "presyncope",
+   "dyspnoea",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Maybe a six out of ten, it's more heavy than sore. I felt a bit light-headed getting out of the car, but didn't pass out. I am a bit short of breath, it's hard to get a proper breath in. I feel a bit sick, but haven't vomited. Better call the missus, I suppose.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Graham. We'll ring your wife now and tell her to meet you at the hospital — she shouldn't drive you. The paramedics will be here shortly; they'll give you pain relief and anti-sickness medicine and take you to a hospital that can do the procedure to open the artery. If you feel faint, more breathless, or the pain gets worse before they arrive, tell me straight away — I'm right here. I'll send a letter with your ECG, the aspirin I've given, your medicines and the Viagra.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright. Just get this over with then.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "Stay sitting, don't get up or walk around; I'll stay with you and we have the defibrillator ready until the ambulance arrives."
+   }
+  },
+  "total": 250,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 235
+ }
+]

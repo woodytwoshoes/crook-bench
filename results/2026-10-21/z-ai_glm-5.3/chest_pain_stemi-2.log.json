@@ -1,0 +1,241 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm the doctor. I understand you've had indigestion since this morning. Can you tell me exactly where you feel it and what it's like — burning, pressure, sharp?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat. It's been going the whole time — so an hour and a half, near enough. Still there now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "That's important to know. A few more questions: does it spread anywhere — to your arm, jaw or back? Any sweating, nausea, or shortness of breath? And did anything bring it on, like exertion or stress?",
+  "released": [
+   "pain_radiation",
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "onset_activity"
+  ],
+  "flooded": false,
+  "reply": "Now you mention it, my jaw's a bit achy, and my left arm feels heavy, but not my back. Yeah, I've been sweating like anything, thought it was just hot. Feel a bit sick, though I haven't vomited. A bit short of breath, yeah, hard to get a proper breath in. I was just sitting having a cuppa, reading the paper.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Activity at the moment today's pain began"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm concerned this may be more than indigestion — it sounds like it could be your heart. Let me examine you right now.",
+  "released": [],
+  "flooded": false,
+  "reply": "My heart? Look, doc, I've got a job booked in for this afternoon, can't I just take some Mylanta and be on my way?",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I have to be straight with you: your heart tracing shows you're having a heart attack right now — a blockage in one of the heart arteries. The afternoon job is off, and I've called an ambulance; they'll take you to hospital where they can open the artery. I've given you aspirin to chew, which thins the blood and helps.\n\nI know that's frightening, but you came in time, and this is exactly the right place to be. Paramedics will be here shortly. Please don't drive yourself anywhere, and if the pain gets worse, your breathing changes, or you feel faint, tell us straight away. Your wife will be able to meet you at the hospital. Any questions before the crew arrives?",
+  "released": [],
+  "flooded": false,
+  "reply": "A heart attack? Crikey. Will my missus know?",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Yes — my receptionist is calling her now, and she can meet you at the hospital. The ambulance is on its way and the paramedics will take excellent care of you. I've also told the hospital to expect you, so they can be ready to open the blocked artery as soon as you arrive. Just stay sitting and rest — don't get up and walk around. You did exactly the right thing coming in this morning.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, doc.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 175,
+  "max": 480,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 175
+ }
+]

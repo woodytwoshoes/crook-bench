@@ -1,0 +1,92 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Graham, I'm your doctor today. I'm glad your wife encouraged you to come in — you don't look your best, so let's get to the bottom of this.\n\nCan you tell me in your own words what's been going on since this morning? And while you're at it:\n\n- Where exactly do you feel this indigestion — chest, upper tummy, or somewhere else? Does it spread anywhere, like to your arm, jaw, or back?\n- When did it start, and is it constant or coming and going? How bad is it out of 10?\n- Any chest pain, shortness of breath, sweating, nausea or vomiting, or feeling faint or dizzy?\n- Any vomiting of blood or coffee-ground material, or black/tarry stools?\n- Have you had anything like this before? Any history of stomach ulcers, reflux, or heart problems?\n- Are you taking any pain relievers like ibuprofen, Nurofen, or aspirin, or any blood thinners?\n- When did you last eat or drink, and what was it?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "No worries, Graham — we'll take it one step at a time.\n\nFirst, tell me in your own words: what is this indigestion feeling like, and exactly where do you feel it?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but... heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "Does that heavy feeling spread anywhere else — like to your arm, jaw, neck, or back?",
+  "released": [
+   "pain_radiation"
+  ],
+  "flooded": false,
+  "reply": "Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Are you sweaty, nauseated, or short of breath at all? Or feeling faint or dizzy?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I've been sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. A bit short of breath, yeah, hard to get a proper breath in. And a bit light-headed getting out of the car, didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 60,
+  "max": 480,
+  "level": "Intern",
+  "consequence": "missed_red_flag",
+  "score": 90
+ }
+]

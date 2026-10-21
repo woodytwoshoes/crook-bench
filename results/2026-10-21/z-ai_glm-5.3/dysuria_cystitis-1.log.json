@@ -1,0 +1,281 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Patel. Sorry to hear about the burning when you wee. Before I examine you or prescribe anything, let me ask a few questions so we get it right.\n\n1. Besides the burning, any other urinary symptoms — needing to wee more often or urgently, passing only small amounts, blood in the urine, or difficulty holding on?\n2. Any pain in your lower tummy, back or loin (side of your back)?\n3. Any fever, chills, or feeling generally unwell?\n4. Any vaginal discharge, unusual smell, or pelvic/tummy pain with sex? Could this possibly be a sexually transmitted infection (any new partner, unprotected sex)?\n5. How often do you get UTIs — when was your last one?\n6. Are you pregnant or could you be? When was your last period?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Sure, my apologies! Let's take it slowly. Besides the burning, do you have any other urinary symptoms — needing to go more often or urgently, or blood in the urine?",
+  "released": [
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "Are you needing to go more often or urgently than usual?",
+  "released": [],
+  "flooded": false,
+  "reply": "I am going constantly, every half hour, and only a little bit comes out, so I really have to rush.",
+  "awards": [],
+  "score": 10
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds miserable. Any fever, chills, or feeling generally unwell?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I have no fevers or shivers and I feel fine apart from this. I am eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain in your lower tummy, or in your back or side (near where your kidneys are)?",
+  "released": [
+   "abdominal_pain",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No, nothing in my back, just a bit of an ache low down in my tummy right above my bladder.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Could this be anything else for you — any new sexual partner recently, unprotected sex, or any vaginal discharge or irritation?",
+  "released": [
+   "duration",
+   "sexual_partners",
+   "condom_use",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "It has been going on since yesterday morning, so about a day and a half. I have a boyfriend of about a year and it is just him, and we do not use condoms because I am on the pill. I have not noticed anything like vaginal discharge or irritation.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last period, and is there any chance you could be pregnant? Also, how often do you get UTIs — when was your last one?",
+  "released": [
+   "last_period",
+   "pregnancy_possible",
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "My last period was about two weeks ago and it was normal, and I don't think I could be pregnant. I had one UTI about two years ago, and that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's really helpful. Would you mind if I examine you — check your temperature and have a quick feel of your tummy? I'd also like a urine sample to confirm the infection before antibiotics. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Do I really need a physical check and a sample? I am pretty sure it is just a UTI and I need to get back to work at the cafe.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you're busy, but it only takes a couple of minutes and it's important: a quick tummy check makes sure the infection hasn't spread to your kidneys, and a simple dipstick test of your urine confirms it really is a urine infection — the symptoms can occasionally be caused by other things like an STI, which needs different treatment. I'll have you back to work as quickly as possible, I promise. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Fine, if it makes it faster.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Good news — the urine test confirms it is a urine infection, and the exam shows it hasn't spread to your kidneys. I've prescribed trimethoprim, one 300 mg tablet once a day for 3 days.\n\nA few things:\n- Take the tablets with or after food, with plenty of water.\n- Drink lots of fluids generally, and it's fine to take paracetamol for the tummy ache.\n- Your contraceptive pill isn't affected by this antibiotic, so keep taking it as normal.\n- You should feel much better within 1–2 days, but finish all 3 days of tablets.\n\nSafety net: if you get a fever, shivers, worsening back pain, vomiting, or you're not improving after 48 hours, come straight back — that could mean the infection has moved to your kidneys. Also see a doctor if symptoms return after finishing the course. Any questions before you head back to work?",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh good, at least I can get straight back to work now. Can I just grab that script from you?",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Yes — the script's all done and ready at the desk. Take care, and remember: fever, back pain, or no improvement in 48 hours means come straight back. Good luck at the café!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I will head out and grab it now.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink lots of fluids generally",
+    "ideal_2": "it's fine to take paracetamol for the tummy ache.",
+    "ideal_3": "Safety net: if you get a fever, shivers, worsening back pain, vomiting, or you're not improving after 48 hours, come straight back"
+   }
+  },
+  "total": 250,
+  "max": 360,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 205
+ }
+]

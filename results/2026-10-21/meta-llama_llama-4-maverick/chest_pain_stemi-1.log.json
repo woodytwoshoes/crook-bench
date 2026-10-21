@@ -1,0 +1,174 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Graham. What seems to be the problem today? You mentioned indigestion?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time",
+   "heartburn_history"
+  ],
+  "flooded": false,
+  "reply": "Just some indigestion really, right in the middle behind the breastbone and a bit up into the throat. Now you mention it, my jaw's a bit achy and my left arm feels heavy, but not my back. It started about seven this morning and came on over a few minutes. I get a bit of heartburn after a big feed sometimes, but this isn't like that really.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous heartburn or reflux"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm very concerned about your symptoms and the ECG results. I'm going to call an ambulance to take you to the hospital immediately for further evaluation and treatment. Your symptoms and the ECG changes suggest you may be having a heart attack.",
+  "released": [],
+  "flooded": false,
+  "reply": "An ambulance? Look, I've got a plumbing job booked in for this morning, can't I just drive myself over after?",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm very concerned about your symptoms and the ECG results. I'm going to call an ambulance to take you to the hospital immediately for further evaluation and treatment. Your symptoms and the ECG changes suggest you may be having a heart attack.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right. Well, if you reckon it's that serious, I suppose I better let them take me.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "stemi",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats the most likely diagnosis: ST-elevation myocardial infarction (STEMI). Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 100,
+  "max": 480,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 100
+ }
+]

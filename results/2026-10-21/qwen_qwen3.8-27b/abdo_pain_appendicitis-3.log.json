@@ -1,0 +1,380 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Anand. Thanks for coming in — I can see you're not feeling well. Can you walk me through what's been going on with your tummy, starting from when you first noticed something was wrong?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Started last night, about ten o'clock. So maybe fourteen hours. It's down here on the right side, low down. At first it sort of came and went, but it's there all the time now. Maybe a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, that helps. The pain is low on the right side — can you describe exactly where it is, and was it anywhere else first, like around your belly button, before it settled there? And has it moved or changed since it started?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It actually started around my belly button. It moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. And what else have you noticed since it started — any loss of appetite, nausea or vomiting, fever, chills, wind or bloating? Have you opened your bowels or passed wind recently? Any burning or frequency with urination?",
+  "released": [
+   "anorexia",
+   "nausea_vomiting",
+   "fever",
+   "diarrhoea",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "I couldn't face breakfast and am not hungry at all. I've felt sick since the early hours and threw up once this morning. I felt hot and a bit shivery last night. No diarrhoea, I went normally yesterday morning and nothing since. Weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Does coughing, walking, or little jolts make the pain worse? Do you have any pain or swelling down into your right groin or testicles? And have you ever had anything like this before, or had any abdominal operations?",
+  "released": [
+   "movement_pain",
+   "groin_lump",
+   "testicular_pain",
+   "previous_episodes",
+   "previous_surgery"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts, every bump in the car on the way here was awful, and coughing is the worst. No lumps or anything down there. I've never had anything like this before, and I've never had an operation, so I've still got my appendix as far as I know.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "subregion": "loins",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "subregion": "groin",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1000 mg (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "appendicitis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats the most likely diagnosis: Appendicitis. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 290,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 290
+ }
+]

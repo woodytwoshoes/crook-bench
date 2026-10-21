@@ -1,0 +1,196 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in today. Can you tell me more about the burning when you pass urine? When did it start and has it been constant since then?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It stings and burns, and it is worst right at the end of weeing. I am going constantly, about every half hour, and only a little bit comes out and I have to rush. It is a bit cloudy and smells, but I have not seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "It sounds quite uncomfortable. Have you noticed any other symptoms like pain in your lower abdomen or back, or any vaginal discharge or itching?",
+  "released": [
+   "abdominal_pain",
+   "loin_pain",
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "I just have a bit of an ache low down in my tummy above my bladder, and nothing in my back, and I have not had any discharge or itching like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any UTIs or other urinary problems in the past?",
+  "released": [
+   "previous_utis",
+   "renal_tract_problems"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, and nothing else like that since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "bladder_percussion",
+  "finding": "No suprapubic dullness.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to prescribe Trimethoprim for you to take once daily for 3 days. This is a common antibiotic used to treat UTIs. It should help clear up the infection. Make sure to drink plenty of water and if your symptoms don't improve or get worse, come back and see us.",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh awesome, thank you. I can just take that with my regular contraceptive pill, right?",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, that's fine. Just take the Trimethoprim at a different time of day to your contraceptive pill. If you have any issues or concerns, don't hesitate to reach out. Also, if you experience any severe side effects or if your symptoms don't improve, come back and see us.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, thanks, I will do that. I've got to get back to the cafe soon, so I really appreciate getting this sorted quickly.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "dx",
+  "primary": "lower_uti",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lower urinary tract infection",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "Make sure to drink plenty of water"
+   }
+  },
+  "total": 155,
+  "max": 360,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 140
+ }
+]

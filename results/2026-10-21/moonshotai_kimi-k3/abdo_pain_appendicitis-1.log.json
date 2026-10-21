@@ -1,0 +1,304 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, come in and take a seat — or lie down if that's more comfortable. I can see you're not looking too flash. Tell me about this tummy pain — where did it start, and where is it now?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button last night about ten o'clock, so maybe fourteen hours ago, and it moved down to the right sometime overnight. It's there all the time now, though at first it sort of came and went. It's maybe a seven out of ten, but I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Before I examine your tummy, a few quick questions:\n1. Have you had any nausea or vomiting, and have you felt like eating since this started?\n2. Have your bowels been normal — any diarrhoea or constipation?\n3. Any pain or burning when you pass urine, going more often, or blood in the urine?\n4. Any pain in your testicles?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "diarrhoea",
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "I have felt sick since the early hours and threw up once this morning, and I couldn't face breakfast because I'm not hungry at all which isn't like me. I haven't had diarrhoea, just went normally yesterday morning and nothing since. Weeing is normal, and nothing down there either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Alright Samuel, let me explain what's happening.\n\nFrom what you've told me and what I found on examination, I think you most likely have appendicitis — an inflamed appendix, a small pouch off the bowel in the right lower part of your tummy. The way the pain started around your belly button and moved down to the right, going off your food and vomiting, the mild fever, and the tenderness exactly over the appendix spot all fit.\n\nHere's the plan:\n\n1. You're going to hospital now by ambulance — I've phoned the emergency department to let them know you're coming. Appendicitis usually needs an operation to remove the appendix, and the sooner the better — if it's left, it can burst, which is much more serious.\n2. Nothing to eat or drink from now on, not even water — you may need an anaesthetic and surgery today.\n3. I've given you two paracetamol tablets now for the pain; the ambulance crew and hospital can give you something stronger.\n\nAt the hospital they'll do blood tests and probably a scan, and the surgeons will see you. Don't drive yourself, and don't try to tough this out at home — this isn't a stomach bug.\n\nIs there someone I can call to meet you at the hospital, and do you have any questions before the ambulance arrives?",
+  "released": [],
+  "flooded": false,
+  "reply": "An ambulance? I was hoping I could just get a script and go back to work. Can't my mate just drive me in his ute?",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "I understand, mate — this is the last thing you expected today. But hear me out, because this is serious.\n\nThis isn't something a script can fix. Appendicitis doesn't get better with tablets — it needs surgery, usually within hours. If the appendix bursts, the infection spreads through your whole abdomen, and that can make you critically unwell. You're already showing signs the lining of your tummy is inflamed — even coughing is jolting the pain, and your heart rate and temperature are up.\n\nThe reason I want you in an ambulance and not your mate's ute: if you get worse on the way — the appendix perforates, your blood pressure drops, the pain escalates — the paramedics can treat you on the spot, give you proper pain relief through a drip, and call ahead so the hospital is ready. Your mate can't do any of that, and a bumpy ute ride with this pain would be miserable. The ambulance is also the fastest way to actually get seen — walking in through the front door can mean a wait.\n\nAs for work — I'll sort a medical certificate covering today and whatever time you need off, and the hospital will document everything for your boss. Any reasonable employer will understand; this is exactly the kind of thing certificates are for. Your health has to come first today — a 24-year-old sparky needs his body in one piece for the rest of his career.\n\nSo the plan stands: ambulance to hospital, nothing to eat or drink. If there's any chance this could be something other than appendicitis, the hospital tests will sort that out too. Shall I call someone to meet you there?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, it is all right, I can call my girlfriend myself.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Good on you. The ambulance will be here shortly — the paramedics will look after you from here, and the hospital team is expecting you.\n\nJust remember: nothing to eat or drink, and if the pain suddenly gets much worse, you feel faint, or you start vomiting again while you're waiting, let me or my staff know straight away.\n\nYou've done the right thing coming in. Best of luck with it all — I expect you'll be sore for a few days after the op but back on your feet soon enough.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks doc, appreciate it.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I think you most likely have appendicitis",
+    "ideal_3": "Nothing to eat or drink from now on, not even water"
+   }
+  },
+  "total": 265,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 235
+ }
+]

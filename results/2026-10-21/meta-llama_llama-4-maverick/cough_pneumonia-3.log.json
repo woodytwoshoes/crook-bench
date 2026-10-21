@@ -1,0 +1,145 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day, Mark. Thanks for coming in today. Can you tell me a bit more about your cough and fever? When did it start and how have you been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I have been burning up on and off, and since yesterday I am bringing stuff up that is a rusty, brownish colour after starting out clear. I also got a sharp pain yesterday low down on the right side round towards my back that catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds unpleasant. Have you had any other symptoms like sore throat, runny nose, or body aches?",
+  "released": [],
+  "flooded": false,
+  "reply": "I haven't noticed anything like that. I just want to get this sorted so I can get back to my classes before the exams.",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 50
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, it looks like you've got pneumonia. I'm going to prescribe you some antibiotics to help clear it up. You'll need to take them three times a day for the next seven days. It's also important to rest and drink plenty of fluids. If your symptoms get worse or you experience any difficulty breathing, please come back and see me immediately.",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Right. Well, as long as these antibiotics do the job quickly, because I really cannot afford to be stuck at home with the exams coming up.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_3": "If your symptoms get worse or you experience any difficulty breathing, please come back and see me immediately.",
+    "acceptable_3": "It's also important to rest and drink plenty of fluids."
+   }
+  },
+  "total": 115,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "missed_red_flag",
+  "score": 95
+ }
+]

@@ -1,0 +1,379 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the GP. Sorry you're feeling crook. Can you tell me where the pain started, where it is now, and how it's changed since last night?",
+  "released": [
+   "pain_onset",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button about ten o'clock last night, and then it moved down to the right sometime overnight, so about fourteen hours altogether.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you vomited or felt sick, gone off your food, had diarrhoea or constipation, or had a fever? Any pain passing urine or blood in your urine, and any pain or swelling in your testicles?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia",
+   "diarrhoea",
+   "fever",
+   "urinary_symptoms",
+   "testicular_pain"
+  ],
+  "flooded": false,
+  "reply": "I have felt sick since the early hours and threw up once this morning, and I couldn't face breakfast because I am not hungry at all. I haven't had diarrhoea, just went normally yesterday morning and nothing since, but I felt hot and a bit shivery last night. Weeing is normal, and nothing down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Does it hurt more when you move, cough, or go over bumps in the car? How bad is it out of 10? Have you had anything like this before, any medical problems or surgery, and have you taken anything for it?",
+  "released": [
+   "movement_pain",
+   "pain_severity",
+   "previous_episodes",
+   "previous_surgery",
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts, every bump in the car on the way here was awful, and coughing is the worst. It is maybe a seven out of ten, but I am not one to complain. I have never had anything like this before. I have never had an operation and still got my appendix as far as I know. I took a couple of paracetamol at six this morning, but it didn't do much.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "When did you last eat or drink anything, and is there someone who can drive you to the hospital right now?",
+  "released": [
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "Just the usual, Mum's cooking on Sunday. My mate drove me here, but he had to get back to the site.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "So you haven't eaten since last night — and drink-wise, have you had anything this morning?",
+  "released": [],
+  "flooded": false,
+  "reply": "Just a sip of water, but it didn't stay down.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, from your story and the examination — pain that started around the belly button and moved to the lower right, feeling sick, off your food, a mild fever, and tenderness exactly over the appendix spot — I think it's very likely you have appendicitis, an inflamed appendix. This isn't something we can manage here; you need to go to the hospital emergency department today, now, to see the surgical team. They'll do blood tests and maybe a scan, and most likely you'll need an operation to remove the appendix. I'm going to phone the hospital and let them know you're coming, and I'll give you a letter.\n\nPlease don't drive yourself. We'll get you a taxi straight there, or a family member if they can come right away. Don't eat or drink anything from now on, in case you need surgery soon — that includes water. I won't give you anything stronger for pain here so the surgeons can assess you properly, but they'll give you pain relief at the hospital.\n\nIf on the way or while waiting the pain suddenly gets much worse or spreads across your whole tummy, you feel faint, very shivery, or start vomiting a lot, tell the staff immediately or call 000. The worry is the appendix bursting, which is why we don't wait. Does that make sense?",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh, right. An operation? Can I just go home and get my gear first?",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "I'd really prefer you go straight there. The longer we wait, the higher the chance it bursts, which makes things a lot more serious. Ring your mum or a mate to bring your phone charger and clothes to the hospital later — the important thing is you get there now.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, I will head straight there then.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 300
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I think it's very likely you have appendicitis, an inflamed appendix.",
+    "ideal_3": "Don't eat or drink anything from now on, in case you need surgery soon — that includes water."
+   }
+  },
+  "total": 330,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 300
+ }
+]

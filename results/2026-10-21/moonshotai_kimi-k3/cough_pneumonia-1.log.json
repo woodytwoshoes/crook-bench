@@ -1,0 +1,380 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the doctor. I can see you've been dealing with a cough and fever for a few days — let's get to the bottom of it. First, tell me in your own words what's been going on: when did it start, and how have you been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now. It was a dry, hacking cough to start with, and I have been burning up on and off, roasting even though I did not have a thermometer. Since yesterday I am bringing stuff up that is a rusty, brownish colour, though it was clear at first. I also got a sharp pain low down on the right side round towards my back yesterday, and it catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's really helpful. A few more questions to get the full picture. Are you short of breath at all — for instance, do you get puffed walking around the house or talking? And have you had any other symptoms like a runny nose, sore throat, headache, muscle aches, or feeling sick to your stomach?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I am only going up the stairs, and I got puffed on the way in from the car park, but sitting here I am all right. I have not noticed anything like a runny nose, sore throat, headache, muscle aches, or feeling sick to my stomach, so that is all normal for me.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. Now some background questions: Do you smoke, or have you smoked in the past? And do you have any ongoing health problems, or take any regular medicines — including anything for your immune system like steroids?",
+  "released": [
+   "smoking",
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I never had asthma or anything with my lungs or heart problems. I do not have diabetes or anything like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Have you been around anyone else who's been unwell with a cough or fever recently — at school or at home? And have you travelled anywhere in the past few weeks, or been in hospital or around anyone with tuberculosis?",
+  "released": [
+   "recent_travel",
+   "recent_hospital"
+  ],
+  "flooded": false,
+  "reply": "I have not been anywhere recently, just school and home, and I have not been in hospital for years.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Just a few more questions to rule things out. Have you lost any weight without trying, had drenching night sweats, or coughed up actual bright red blood? And are you managing to eat and drink okay at home — any vomiting?",
+  "released": [
+   "weight_loss",
+   "haemoptysis",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "If anything I could lose a few kilos, there is no actual blood just that rusty colour, and I have not had any vomiting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "That's reassuring. Are your flu and COVID vaccinations up to date? And is there anyone at home with you, or do you live alone?",
+  "released": [
+   "flu_vaccine",
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "I didn't get round to the flu jab this year, and I live with my wife and our two teenagers. She is working from home this week, so she can drive me back in if I need.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (2 capsules)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Mark. You have pneumonia — an infection in the lower part of your right lung. That explains the fever, the rusty-coloured phlegm, and the sharp pain when you breathe in, which comes from the inflamed lung lining rubbing. The good news is you're young and otherwise healthy, your blood pressure is fine, you're thinking clearly, and your oxygen level is acceptable — so you're safe to be treated at home rather than in hospital.\n\nI've prescribed two things: an antibiotic called amoxicillin — two capsules three times a day for five days, and it's important you finish the whole course even if you feel better after a couple of days; and paracetamol — two tablets up to four times a day for the fever and the chest pain. Rest at home, keep your fluids up, and stay off work for at least a few days — I'm happy to give you a medical certificate.\n\nWith treatment, your fever should settle over the next two to three days, but the cough and tiredness can hang around for two to three weeks — that's normal and doesn't mean the antibiotics aren't working.",
+  "released": [],
+  "flooded": false,
+  "reply": "Two to three weeks? I have exams coming up, so I really need to be back at school before then.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "I understand — and it likely won't be that long before you're back. The cough can linger for a few weeks, but most people are well enough to return to work within about five to seven days, once the fever has settled and their energy is coming back. Going back with a bit of a lingering cough is fine as long as you feel up to it. I'll give you a certificate for the rest of this week, and we can extend it if needed.\n\nNow, the important safety net: please come back straight away — or go to the emergency department after hours — if you get more short of breath, if you cough up blood, if you become confused or very drowsy, if you can't keep fluids down, or if you're feeling worse overall rather than better. And if you're not clearly improving within 48 hours of starting the antibiotic, I want to see you again — your wife can drive you in. I'd like to check in with you in two days anyway, either by phone or in person, to make sure you're on the mend.\n\nOne last thing: once you're fully recovered, I'd recommend getting your flu vaccine — it's not too late in the season, and this illness shows how miserable a respiratory infection can be. Do you have any questions about any of that?",
+  "released": [],
+  "flooded": false,
+  "reply": "That sounds fair enough, I will just take the certificate and follow the instructions.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "All right, Mark — here's your script for the amoxicillin and paracetamol, plus your medical certificate. Start the antibiotic as soon as you get it, rest up, and keep the fluids coming. I'll see or speak with you in two days, and remember: worse breathlessness, coughing blood, confusion, or not improving in 48 hours means you come straight back or head to emergency. Take care, and I hope you feel better soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, doctor. I will get these sorted and head home to bed.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "so you're safe to be treated at home rather than in hospital",
+    "ideal_2": "I'd like to check in with you in two days anyway, either by phone or in person, to make sure you're on the mend.",
+    "ideal_3": "please come back straight away — or go to the emergency department after hours — if you get more short of breath, if you cough up blood, if you become confused or very drowsy, if you can't keep fluids down",
+    "acceptable_2": "paracetamol — two tablets up to four times a day for the fever and the chest pain",
+    "acceptable_3": "keep your fluids up",
+    "acceptable_5": "And if you're not clearly improving within 48 hours of starting the antibiotic, I want to see you again",
+    "acceptable_7": "once you're fully recovered, I'd recommend getting your flu vaccine"
+   }
+  },
+  "total": 300,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 240
+ }
+]

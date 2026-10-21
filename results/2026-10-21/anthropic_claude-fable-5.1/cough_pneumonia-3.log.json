@@ -1,0 +1,468 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm the doctor. I can see you've been feeling rotten with a cough and fever. Tell me how it all started and how things have gone since.",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough, and I have been burning up on and off since then, feeling completely roasted. Since yesterday, I have started bringing things up that are a rusty, brownish colour, even though it was clear at first. On top of that, a sharp pain started yesterday low down on the right side, right round towards my back, which catches me whenever I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds unpleasant. A few things I need to check: Are you short of breath — at rest, or when walking around the house? Have you had any shaking chills or sweats? And have you coughed up any actual blood?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am all right. The first night I was shaking under the doona with my teeth chattering, even though I was boiling. There is no actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Have you had any pain or swelling in your calves or legs, or any recent long travel, surgery or time laid up in bed? Any confusion, dizziness or fainting? And have you been able to eat and drink and keep fluids down?",
+  "released": [
+   "leg_swelling",
+   "recent_travel",
+   "confusion",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "My legs are fine, and I haven't been anywhere except school and home. My head is clear, though my wife reckons I'm just grumpy, and I haven't had any vomiting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Do you smoke, or have you ever? How much alcohol do you drink in a typical week? Any other health problems at all — asthma, lung problems, diabetes, heart problems — and any regular medicines or anything you've taken for this so far?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I just have a couple of beers on the weekend with none this week. I have never had asthma or anything with my lungs, no diabetes, and no heart problems. I haven't had any antibiotics either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken any paracetamol or ibuprofen for the fever? Anyone sick around you at home or school, and have you had a COVID or flu test? Have you had your flu or COVID vaccine this year? And have you been near any birds, air-conditioning cooling towers, spas or farm animals recently?",
+  "released": [
+   "flu_vaccine",
+   "bird_contact"
+  ],
+  "flooded": false,
+  "reply": "I haven't taken anything for the fever, nobody is sick around me, and I haven't done any tests. I didn't get round to the flu jab this year. We don't have birds, just a dog, and I haven't been near any of those other things.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "A couple more: any sore throat, runny nose, headache, muscle aches, or diarrhoea or tummy pain? And have you noticed any weight loss or night sweats over the past weeks or months, before this illness?",
+  "released": [
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "I haven't noticed anything like that, and if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and tired-looking. Alert and orientated. Speaking in full sentences. Not cyanosed.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "right",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Calf"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "left",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Respiratory virus PCR (nasopharyngeal swab)"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (2 capsules)",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, here's what's going on. Your examination and the chest X-ray show you have pneumonia — an infection in the lower part of your right lung. The rusty-coloured phlegm, the shaking chills and the sharp pain when you breathe in all fit with that. The pain is from the lining of the lung being inflamed over the infected area. The good news is that your oxygen level, blood pressure, pulse and breathing rate tell me this is on the milder end, so you can safely be treated at home.\n\nThe plan:\n1. Antibiotics: amoxicillin, two 500 mg capsules (1 gram) three times a day for 7 days. Start the first dose as soon as you pick it up today, and finish the whole course even once you feel better.\n2. Paracetamol, two tablets up to four times a day (no more than 8 tablets in 24 hours) for the fever and the chest pain. Easing the pain matters, because it lets you take deep breaths and cough the muck up, which helps the lung clear.\n3. Rest, drink plenty of fluids, and stay home from school — you're not fit to teach and you're infectious at the moment. I'll give you a medical certificate for the week.\n4. I've also taken a swab for flu and COVID — the result will be back tomorrow and we'll ring you if it changes anything.\n\nExpect to feel some improvement in the fever within 2 to 3 days, though the cough and tiredness can take a few weeks to fully settle.\n\nVery important — go straight to the emergency department, or call 000, if any of these happen: you become breathless at rest or struggling to talk in full sentences, your lips or fingers look blue, you become confused or very drowsy, you faint or feel like you might, you cough up actual blood, you can't keep the tablets or fluids down, or the fever and chills get worse rather than better after 48 hours on the antibiotics. If you develop a rash, swelling of the lips or face, or trouble breathing after taking the antibiotic, stop it and seek help straight away.\n\nI'd like to see you again in 2 to 3 days to check you're turning the corner, and then at about 6 weeks for a follow-up chest X-ray to make sure the lung has completely cleared. Once you're better, I'd also recommend you get your flu vaccine each year. Does that all make sense, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? I suppose that explains why I have been feeling so knocked about, but at least I can get home and into bed now.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "empyema",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 5,
+    "kind": "diagnosis",
+    "label": "Acceptable, not ideal: Empyema in the can't-miss slot",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "reasonable"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "Good. One last thing — the paperwork for your medical certificate and the follow-up X-ray request will be at reception. Please book the review for Thursday or Friday on your way out, and don't hesitate to come back sooner or go to emergency if you're worried. Take care, Mark, and get some rest.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, I will do that. Thanks, Doc.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "your oxygen level, blood pressure, pulse and breathing rate tell me this is on the milder end, so you can safely be treated at home.",
+    "ideal_2": "I'd like to see you again in 2 to 3 days to check you're turning the corner",
+    "ideal_3": "go straight to the emergency department, or call 000, if any of these happen: you become breathless at rest or struggling to talk in full sentences, your lips or fingers look blue, you become confused or very drowsy",
+    "acceptable_2": "Paracetamol, two tablets up to four times a day (no more than 8 tablets in 24 hours) for the fever and the chest pain.",
+    "acceptable_3": "Rest, drink plenty of fluids",
+    "acceptable_7": "Once you're better, I'd also recommend you get your flu vaccine each year."
+   }
+  },
+  "total": 320,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "harmful",
+  "score": 265
+ }
+]

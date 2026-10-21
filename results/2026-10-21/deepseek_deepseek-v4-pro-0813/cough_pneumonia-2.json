@@ -1,0 +1,104 @@
+{
+ "model": "deepseek/deepseek-v4-pro-0813",
+ "case": "cough_pneumonia",
+ "rep": 2,
+ "ending": "ended",
+ "total": 273,
+ "max": 420,
+ "level": "Fellow",
+ "consequence": "harmful",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 135,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 85,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 25,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": false
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": true
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": true
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": false
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": false
+  }
+ ],
+ "harmful": [
+  "Unsafe: Penicillin in a penicillin-allergic patient"
+ ],
+ "unnecessary": [
+  "Blood cultures"
+ ],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "pulmonary_embolism",
+   "role": "sinister"
+  }
+ ],
+ "says": 22,
+ "questions": 19,
+ "usage": {
+  "calls": 28,
+  "prompt_tokens": 129416,
+  "completion_tokens": 3797,
+  "cost": 0.03956334399999999
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:58:59.575Z",
+ "max_questions": 50
+}

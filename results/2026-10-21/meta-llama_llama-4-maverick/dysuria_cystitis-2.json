@@ -1,0 +1,88 @@
+{
+ "model": "meta-llama/llama-4-maverick",
+ "case": "dysuria_cystitis",
+ "rep": 2,
+ "ending": "ended",
+ "total": 185,
+ "max": 360,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 100,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 20,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 5,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 60,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": false
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": true
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "lower_uti",
+   "role": "acceptable"
+  },
+  {
+   "label": "Can't miss",
+   "id": "pyelonephritis",
+   "role": "sinister"
+  }
+ ],
+ "says": 9,
+ "questions": 7,
+ "usage": {
+  "calls": 10,
+  "prompt_tokens": 27750,
+  "completion_tokens": 1102,
+  "cost": 0.005577327500000001
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:56:21.305Z",
+ "max_questions": 50
+}

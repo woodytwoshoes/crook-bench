@@ -1,0 +1,373 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. I hear you've had tummy pain since last night — let's get into the details. Where exactly is the pain, and has it moved at all? Can you point to where it hurts most?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button. It moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks — that's important information. A few more questions:\n1. How bad is the pain on a scale of 0–10, and is it constant or coming in waves?\n2. Have you felt sick or actually vomited?\n3. Any fever or chills?\n4. Have you eaten anything unusual, or has anyone around you been sick?\n5. Have your bowels been normal — any diarrhoea or constipation?\n6. Any pain when you pass urine?\n7. Any cough — does it hurt when you cough or move?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "No problem — I'll take them one at a time. How bad is the pain, 0 to 10, and is it constant or does it come and go?",
+  "released": [
+   "pain_severity",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "Maybe a seven out of ten. I am not one to complain. It is there all the time now, but at first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds rough. Have you felt sick in your stomach or actually been vomiting?",
+  "released": [
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours, and I threw up once this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, chills, or felt hot and sweaty?",
+  "released": [
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any change in your bowels — diarrhoea, constipation, or blood in your motions?",
+  "released": [
+   "diarrhoea",
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea, I went normally yesterday morning and nothing since. No, no blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain or stinging when you pass urine, and have you been able to eat or drink anything today?",
+  "released": [
+   "urinary_symptoms",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "Weeing is normal. I couldn't face breakfast, not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "One more important question — has anyone else you live with or work with had a similar tummy bug recently, or eaten the same food as you? And any injury to your tummy recently?",
+  "released": [
+   "unwell_contacts",
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "Everyone at home and work is fine, and I just had the usual, my mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Anyone around him with vomiting or diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you. Now let me examine you — I'll have a look and feel of your tummy, listen to it, and check your temperature and other vitals. Let me know if anything hurts as I go. First, let's check your vital signs.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your story and my examination, I'm quite concerned this is appendicitis — your appendix looks inflamed and possibly infected. This is not a tummy bug. The good news is we've caught it early, but it needs urgent surgical assessment, likely an operation to remove the appendix. I'm sending you to the hospital emergency department now — please don't eat or drink anything from here on, and don't take painkillers that could mask things until they assess you. If your pain suddenly spreads across your whole belly, or you feel very unwell, tell them immediately. I'll arrange the referral now. Do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Do I really have to go to the hospital right now? Can't I just go home and sleep it off?",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "say",
+  "utterance": "I understand it's not what you want to hear, but yes — you really do need to go now, today. Here's why: an inflamed appendix can rupture, and that turns a straightforward operation into a serious infection throughout the belly that can be life-threatening, with a much longer hospital stay. The hospital will likely do a scan and a blood test, and if it is appendicitis, most people have keyhole surgery and are home within a day or two, back at work in a week or two. Going home to sleep it off risks the appendix bursting overnight. Please have someone drive you, or we'll call an ambulance. Do you have someone who can take you?",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright then, I will get my brother to drive me over now.",
+  "awards": [],
+  "score": 175
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "appendicitis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats the most likely diagnosis: Appendicitis. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Great — your brother driving you straight there is fine since you're stable. I'll phone the emergency department ahead so they know you're coming. Remember: nothing to eat or drink, and if your pain suddenly spreads across your whole belly or you feel much worse, call 000 immediately. Wishing you a smooth recovery, Samuel.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, doc. I will go straight there now.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I'm quite concerned this is appendicitis",
+    "ideal_3": "please don't eat or drink anything from here on"
+   }
+  },
+  "total": 235,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 205
+ }
+]

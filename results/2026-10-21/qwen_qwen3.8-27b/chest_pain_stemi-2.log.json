@@ -1,0 +1,290 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Graham. I'm Dr Patel, a GP here. Your wife rang and booked you in for some indigestion since this morning — what's been going on? Walk me through it from when you woke up.",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "About seven this morning, came on over a few minutes. It's like a heaviness. Like indigestion but... heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat. It's been going the whole time — so an hour and a half, near enough. Still there now. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you — that sounds like more than simple indigestion, and I'm glad you're here. A few quick questions to sort out how urgent this is:\n\n- Was it there when you first got up, or did it come on with any activity — like carrying something, walking, or stairs?\n- On a scale of 0 to 10, how bad is the pressure right now?\n- Have you had any sweating, nausea or vomiting, or felt short of breath or dizzy?\n- Does anything make it better or worse — resting, leaning forward, breathing in, eating, antacids?\n- Have you ever had chest pain or pressure like this before, and any heart problems in the family?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Of course, sorry. Let's take it one at a time. Was this pressure present when you first got up this morning, or did it come on with something you were doing — like carrying tools or walking up stairs?",
+  "released": [
+   "onset_activity"
+  ],
+  "flooded": false,
+  "reply": "I was just sitting having a cuppa, reading the paper.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Activity at the moment today's pain began"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Got it — so it started while you were just sitting at rest. Thank you. On a scale of 0 to 10, with 10 being the worst pain you've ever had, how bad is the pressure right now?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I don't know. Maybe a six? It's more heavy than sore.",
+  "awards": [],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "That helps. Have you had any sweating, nausea or vomiting, or felt short of breath or light-headed at any point since it started?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I've been sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. A bit short of breath, yeah, hard to get a proper breath in. Bit light-headed getting out of the car, didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, Graham. Does anything make the pressure better or worse — resting, leaning forward, taking a deep breath, or having antacids or indigestion tablets?",
+  "released": [
+   "pleuritic_pain",
+   "positional_pain",
+   "antacid_response"
+  ],
+  "flooded": false,
+  "reply": "No, breathing doesn't change it, and it's the same however I sit. Had a couple of Quick-Eze and it didn't touch it.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain is worse on breathing in"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain changes lying flat or sitting forward"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. Have you ever had chest pressure or pain like this before, even briefly? And does anyone in your family have heart problems?",
+  "released": [
+   "crescendo_angina",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "This past week I've had a bit of a tightness going up ladders, which goes away if I stop, and I put it down to being unfit, though it's been happening more. And my dad had a heart attack at fifty-five and died from it.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale and grey. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 235,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 235
+ }
+]

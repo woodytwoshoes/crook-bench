@@ -1,0 +1,392 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm the doctor. You look a bit uncomfortable - tell me about this indigestion. Where exactly do you feel it, what does it feel like, and when did it start?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. It's like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. About seven this morning. Came on over a few minutes. It's been going the whole time — so an hour and a half, near enough. Still there now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Does it spread anywhere - into your arms, jaw, neck or back? And have you had any sweating, feeling sick or vomiting, shortness of breath, or feeling faint or dizzy with it?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. Yeah, I've been sweating like anything. Thought it was just hot. Feel a bit sick. Haven't vomited. A bit short of breath, yeah. Hard to get a proper breath in. Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm concerned this is coming from your heart rather than your stomach, so I'm going to move quickly. A few quick questions: have you ever had heart trouble before, or anything like this? Have you taken anything for it this morning - antacids, aspirin, or any medicine for erections like Viagra in the last couple of days? And any history of stomach ulcers or bleeding problems?",
+  "released": [
+   "previous_cardiac",
+   "crescendo_angina",
+   "antacid_response",
+   "antiplatelet",
+   "pde5_inhibitor",
+   "recent_bleeding"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart, though this past week I've had a bit of a tightness going up ladders that goes away if I stop, and I put it down to being unfit. Had a couple of Quick-Eze and it didn't touch it, and I don't take aspirin or anything like that. Took one of those Viagra tablets last night, but don't tell the missus I told you. No.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "exam",
+  "id": "jvp",
+  "finding": "JVP not raised.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Jugular venous pressure"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "exam",
+  "id": "bp_both_arms",
+  "finding": "Right 104/68, left 102/66. Radial pulses equal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure in both arms"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 285
+ },
+ {
+  "type": "rx",
+  "id": "morphine_10mg_ml_inj",
+  "dose": "2.5 mg IV, titrated to pain",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Titrated IV morphine or fentanyl for pain (not if systolic BP is below 100)"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "rx",
+  "id": "ondansetron_4mg_2ml_inj",
+  "dose": "4 mg IV",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: ondansetron",
+    "domain": "management"
+   }
+  ],
+  "score": 288
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you. Your heart tracing shows you are having a heart attack - a blocked artery in the bottom part of your heart. That's why the pain feels like heavy indigestion and why your Quick-Eze didn't help. The tightness going up ladders this past week was an early warning of the same thing.\n\nHere's what's happening right now:\n- I've called an ambulance and it's on its way. You'll go straight to the hospital, where they can open the blocked artery - the quicker that's done, the less damage to the heart muscle, so we aren't going to wait or send you by car.\n- I've given you aspirin to chew, which thins the blood and helps limit the clot.\n- I've put a drip in and given you some pain relief and something for the nausea.\n- I'm deliberately NOT giving you the usual spray under the tongue for chest pain, because you took Viagra last night - the two together can drop your blood pressure dangerously. I will tell the ambulance crew and the hospital about that for the same reason, so it's important you don't leave it out when they ask. They've heard it all before, and it will be handled discreetly.\n- I'm going to stay with you and keep watching your heart rate and blood pressure until the paramedics arrive. If the pain changes, you feel faint, or anything feels worse, tell me straight away.\n\nIs there someone we can ring for you - your wife? And do you have any questions for me?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "A heart attack? Crikey, are you sure? You had better call the missus then.",
+  "awards": [],
+  "score": 288
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sure, Graham - the tracing is very clear, and the good news is we've caught it early and you're in the right place. We'll ring your wife now and tell her which hospital to meet you at. Please stay sitting back, don't get up and walk around, and don't smoke. I'll write a letter for the ambulance crew with your tracing, the medicines you've had, your blood pressure tablet and cholesterol tablet, and the Viagra. After the hospital, you'll be on several new heart medicines, you'll be referred to a cardiac rehabilitation program, and stopping smoking will be the single most important thing you can do - we'll help you with that when you're home. I'll see you for a follow-up after you're discharged.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right. Can I just have a quick cough drop or something first?",
+  "awards": [],
+  "score": 288
+ },
+ {
+  "type": "say",
+  "utterance": "Best to have nothing by mouth for now, Graham, apart from the aspirin you've already chewed - the hospital may need to do a procedure soon and an empty stomach is safer. A sip of water to wet your mouth is fine. Just rest back and we'll keep an eye on you until the paramedics get here.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay then.",
+  "awards": [],
+  "score": 288
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 328
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "I'm going to stay with you and keep watching your heart rate and blood pressure until the paramedics arrive."
+   }
+  },
+  "total": 343,
+  "max": 480,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 328
+ }
+]

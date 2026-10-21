@@ -1,0 +1,100 @@
+{
+ "model": "meta-llama/llama-4-maverick",
+ "case": "cough_pneumonia",
+ "rep": 3,
+ "ending": "ended",
+ "total": 115,
+ "max": 420,
+ "level": "Resident",
+ "consequence": "missed_red_flag",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 20,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 30,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 60,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": false
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": false
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": false
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": false
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": false
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": false
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": false
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "pulmonary_embolism",
+   "role": "sinister"
+  }
+ ],
+ "says": 3,
+ "questions": 4,
+ "usage": {
+  "calls": 13,
+  "prompt_tokens": 34409,
+  "completion_tokens": 838,
+  "cost": 0.006374402499999999
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:55:39.193Z",
+ "max_questions": 50
+}

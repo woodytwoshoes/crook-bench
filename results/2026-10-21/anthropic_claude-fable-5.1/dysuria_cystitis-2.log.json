@@ -1,0 +1,323 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm the doctor today. I hear you've had burning when you wee since yesterday. Tell me a bit more about it — how often are you going, is there any blood in the urine, and does it feel like you can't fully empty?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, and it is the worst right at the end. I am going constantly, about every half hour, and only a little bit comes out and I have to rush. It started yesterday morning, and the urine is a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A few important ones: Any fever, chills or shivers? Any pain in your back or sides, around the kidney area? Any nausea or vomiting? And any chance you could be pregnant — when was your last period, and have you missed any pills?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "pregnancy_possible",
+   "last_period",
+   "contraception"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or shivers, and nothing hurts in my back, just a bit of an ache low down in my tummy. I am eating normally and haven't been sick, and I don't think I could be pregnant because my last period was about two weeks ago and it was normal, plus I am on the pill and I don't miss it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Good. You mentioned it's a UTI \"again\" — how many have you had before, and when was the last one? Also, any vaginal discharge, itch, or pain with sex? Are you sexually active, and any new partner recently?",
+  "released": [
+   "previous_utis",
+   "vaginal_discharge_itch",
+   "dyspareunia",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "I only had one other UTI about two years ago, and I haven't noticed any discharge or itch, and pain with sex has never been a problem. I do have a boyfriend I have been with for about a year, and it is just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had any kidney problems, kidney stones, or other medical conditions? Any allergies to any antibiotics or other medicines? And have you had sex in the last few days, and do you use condoms?",
+  "released": [
+   "renal_tract_problems",
+   "antibiotic_allergy",
+   "recent_intercourse",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "No, I have never had any kidney problems like that, and I am not allergic to anything that I know of. We had, um, been together the night before it started, and we do not use condoms because I am on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken anything for it so far, like painkillers or Ural sachets? Have you had an STI check before, and when? And how's your fluid intake — are you drinking plenty?",
+  "released": [
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't taken anything for it, and I haven't had an STI check before. I probably do not drink enough, mostly just coffee at work, to be honest.",
+  "awards": [],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "say",
+  "utterance": "Your urine test strip shows signs of infection, and with your symptoms and no fever or back pain, this looks like a simple bladder infection (cystitis). One other thing I'd suggest: because you're under 30, sexually active without condoms and have never had a sexual health check, it's recommended to do a chlamydia and gonorrhoea test — it's just done on the same urine sample, and chlamydia often has no symptoms but can occasionally cause burning like this. Are you happy for me to add that?",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh right, okay, we can do that. Can I just get the script for the antibiotics now so I can get back to work?",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "At night",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Here's your script: trimethoprim 300 mg, one tablet at night for 3 days — that's the standard first-choice treatment in Australia for a bladder infection, and it won't interfere with your pill. You should feel noticeably better within 1–2 days, but please finish all three tablets. A few other things:\n\n- Drink plenty of water today and over the next few days, and cut back on the coffee while you're unwell. You can take paracetamol for the discomfort if needed; Ural sachets can ease the sting but don't take them at the same time as the trimethoprim.\n- Try to wee after sex and don't hold on when you need to go — this helps prevent repeat infections.\n- Please come back urgently, or go to the emergency department after hours, if you develop fever, shivers or shakes, pain in your back or sides, vomiting, you see blood in your urine, or if you're not improving after 2 days or getting worse — that could mean the infection has spread to the kidneys and needs different treatment.\n- If it comes back again soon after finishing the antibiotics, come back and we'll send a urine sample to the lab to check for a resistant bug.\n- We'll have the chlamydia/gonorrhoea result in about 2 days; we'll contact you if it's positive, and if it's negative you can assume no news is good news, or ring to check. Does that all make sense, and any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "That all makes sense, thank you. I'll get these tablets picked up and head back to the cafe now.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water today and over the next few days",
+    "ideal_2": "You can take paracetamol for the discomfort if needed",
+    "ideal_3": "Please come back urgently, or go to the emergency department after hours, if you develop fever, shivers or shakes, pain in your back or sides, vomiting, you see blood in your urine, or if you're not improving after 2 days",
+    "acceptable_3": "Try to wee after sex"
+   }
+  },
+  "total": 315,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 265
+ }
+]

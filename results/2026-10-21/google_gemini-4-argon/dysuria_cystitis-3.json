@@ -1,0 +1,88 @@
+{
+ "model": "google/gemini-4-argon",
+ "case": "dysuria_cystitis",
+ "rep": 3,
+ "ending": "ended",
+ "total": 275,
+ "max": 360,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 150,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 70,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": true
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": true
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "cystitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "nothing_to_exclude",
+   "role": null
+  }
+ ],
+ "says": 7,
+ "questions": 15,
+ "usage": {
+  "calls": 16,
+  "prompt_tokens": 49757,
+  "completion_tokens": 1185,
+  "cost": 0.090806
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:06:31.825Z",
+ "max_questions": 50
+}

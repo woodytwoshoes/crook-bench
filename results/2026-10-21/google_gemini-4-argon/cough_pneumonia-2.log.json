@@ -1,0 +1,489 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm Dr Smith. I see you've come in with a cough and fever. Can you tell me more about what's been happening over the last few days?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, starting as a dry, hacking cough. I have been burning up on and off as well, roasting without a thermometer. Since yesterday, I am bringing stuff up that is a rusty, brownish colour, though it was clear at first. I also got a sharp pain low down on the right side round towards my back starting yesterday, and it catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds really uncomfortable. Have you noticed any shortness of breath, either when resting or moving around? And have you had any shaking chills, night sweats, or coughed up any fresh bright red blood?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am all right. The first night I was shaking under the doona with my teeth chattering even though I was boiling, and there is no actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any other symptoms like a runny nose, sore throat, headache, muscle aches, nausea, vomiting, or diarrhoea? And have you felt dizzy or lightheaded at all?",
+  "released": [
+   "vomiting",
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "I haven't noticed anything like that with my nose, throat, head, muscles, or stomach, and there has been no vomiting. My head's clear, and my wife reckons I'm just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been able to keep fluids down alright, and are you passing urine normally? Also, have you lost any weight recently without trying, or had any swelling or pain in your calves?",
+  "released": [
+   "weight_loss",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "I have been able to keep fluids down and am passing urine normally. If anything I could lose a few kilos, and my legs are fine.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been around anyone who's been sick lately, either at home or at school? Have you travelled anywhere recently, been around birds or potting mix, or stayed somewhere with air conditioning towers or spas?",
+  "released": [
+   "recent_travel",
+   "bird_contact",
+   "gardening"
+  ],
+  "flooded": false,
+  "reply": "No, haven't been anywhere, just school and home. No birds, we've got a dog, and I'm not much of a gardener, haven't touched potting mix in years.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Gardening or handling potting mix"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "And just checking your general health—do you have any medical conditions at all, like asthma or heart or kidney problems? Are you taking any regular medications or over-the-counter tablets, and do you have any allergies to medicines like penicillin?",
+  "released": [
+   "lung_disease",
+   "heart_disease",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I have never had asthma or anything with my lungs, nor any heart problems. I am not taking any regular medications, and I am allergic to penicillin because I came up in hives and my lips swelled when I was a kid.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for letting me know about that penicillin allergy—hives and lip swelling is an important reaction, so I'll make sure that's on your file and we avoid penicillin. Do you smoke, or have you ever smoked in the past, and how much alcohol do you usually drink? Also, are you up to date with your flu and COVID vaccinations?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, I usually have a couple of beers on the weekend but none this week, and I didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "You mentioned your wife earlier—is she well and at home with you to help look after you if needed? And have you had any recent surgeries, long car or plane trips, or any personal or family history of blood clots in the lungs or legs?",
+  "released": [
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "My wife and our two teenagers live with me, and she is working from home this week so she can drive me back in if I need. I haven't had any recent surgeries, long trips, or any family history of blood clots.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "left",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Calf"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "right",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "mental_state",
+  "finding": "Well groomed. Good eye contact. Speech normal in rate and volume. Affect reactive. Thoughts follow in order. Alert and oriented.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 325
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, from examining your chest and looking at your chest X-ray, you have a bacterial chest infection in the lower part of your right lung—what we call community-acquired pneumonia. The sharp pain on your right side when you breathe in is inflammation of the lining around the lung from the infection.\n\nBecause your oxygen levels, blood pressure, and breathing rate are safe and you're able to keep fluids down, we can safely treat this at home with oral antibiotics rather than sending you to hospital. Because of your serious penicillin allergy, I have prescribed an antibiotic called doxycycline, 100 mg twice a day for 5 days. When taking doxycycline, swallow it with a full glass of water while sitting or standing upright and stay upright for at least 30 minutes afterwards so it doesn't irritate your food pipe, and protect your skin from the sun as it can make you burn more easily.\n\nFor the fever and chest pain, you can take over-the-counter paracetamol (1000 mg every 4 to 6 hours as needed, up to 4 times a day), get plenty of rest off work, and keep drinking plenty of fluids. I can write you a medical certificate for work as well.\n\nI would like to review you here in the clinic in 48 hours (2 days) to make sure the antibiotics are working and you're improving. However, if at any point you become more short of breath or struggle to breathe at rest, can't keep fluids down, feel dizzy, faint or confused, have worsening chest pain, cough up fresh blood, or if your fever and symptoms are getting worse before our review, your wife should take you straight to the nearest Emergency Department or call an ambulance. Once you've recovered, we should also check back in about 6 weeks to make sure the cough and chest have completely cleared, and get your flu vaccination sorted when you're well. Do you have any questions about this plan?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia sounds pretty serious, but at least I can stay out of hospital. Can I just get that medical certificate for work now so I can let the school know?",
+  "awards": [],
+  "score": 325
+ },
+ {
+  "type": "say",
+  "utterance": "Of course, I'll print your medical certificate for the rest of the week right now so you can rest up and recover. Take care, and I'll see you in two days for our review—or sooner if you feel any worse.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Doc. I will see you in a couple of days then.",
+  "awards": [],
+  "score": 325
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_4",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "we can safely treat this at home with oral antibiotics rather than sending you to hospital",
+    "ideal_2": "I would like to review you here in the clinic in 48 hours (2 days)",
+    "ideal_3": "however, if at any point you become more short of breath or struggle to breathe at rest, can't keep fluids down, feel dizzy, faint or confused, have worsening chest pain, cough up fresh blood, or if your fever and symptoms are getting worse before our review, your wife should take you straight to the nearest Emergency Department or call an ambulance",
+    "acceptable_2": "For the fever and chest pain, you can take over-the-counter paracetamol",
+    "acceptable_3": "keep drinking plenty of fluids",
+    "acceptable_4": "I'll make sure that's on your file and we avoid penicillin",
+    "acceptable_7": "get your flu vaccination sorted when you're well"
+   }
+  },
+  "total": 390,
+  "max": 420,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 325
+ }
+]

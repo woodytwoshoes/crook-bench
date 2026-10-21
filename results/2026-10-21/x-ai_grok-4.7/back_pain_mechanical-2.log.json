@@ -1,0 +1,632 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Daniel, I'm one of the doctors here. I can see you've come in about lower back pain after lifting something on the weekend, and you're hoping for a scan. Can you tell me more about what happened and how the pain feels?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday and felt a twinge, then I woke up Sunday and could barely get out of bed, so it has been three days now. The pain is low down on the left side of my back and sometimes goes into my left buttock. It gets worse when I bend or get out of a chair and is worse by the evening, but it feels better when I am lying still with a heat pack. I have worked from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds uncomfortable. I need to check a few important things. Have you had any numbness or tingling in your legs, groin, or around your bottom? Any weakness in your legs, or trouble controlling your bladder or bowels, such as leaking or not being able to pass urine? Any fever, unexplained weight loss, or pain that wakes you at night?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Also, have you had back problems before, and are you taking any medicines or pain relief at the moment? Any other medical conditions?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, I lost track again. One question at a time, please?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any numbness, tingling, or weakness in your legs or feet?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Any numbness around your groin, genitals, or bottom?",
+  "released": [
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Any trouble controlling your bladder or bowels, such as leaking urine, difficulty passing urine, or constipation that is new?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "No, all normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, chills, or felt unwell with this?",
+  "released": [
+   "fever_infection"
+  ],
+  "flooded": false,
+  "reply": "No fevers, no infections.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Any unexplained weight loss, or a history of cancer?",
+  "released": [
+   "weight_loss",
+   "cancer_history"
+  ],
+  "flooded": false,
+  "reply": "No, if anything I've put some on, and I've never had anything like cancer.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain wake you from sleep at night?",
+  "released": [
+   "night_rest_pain"
+  ],
+  "flooded": false,
+  "reply": "It hurts when I roll over, but once I am settled I sleep, and the pain is not there constantly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had back pain like this before?",
+  "released": [
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "I tweaked it once maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Are you taking any medicines at the moment, including pain relief?",
+  "released": [
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "I am just taking some paracetamol, but it did not do much, honestly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "How much paracetamol have you been taking, and have you tried anything else like ibuprofen?",
+  "released": [],
+  "flooded": false,
+  "reply": "I am just taking the standard dose, and I haven't tried ibuprofen.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions, or take any regular medicines I should know about?",
+  "released": [],
+  "flooded": false,
+  "reply": "No other conditions. I am allergic to tramadol because it makes me vomit and feel dizzy, so I don't take that.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "On a scale of 0 to 10, how bad is the pain at its worst?",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "About a seven when I move or roll over, and maybe a three if I keep still.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain go down your leg past the knee, or stay in the buttock and lower back?",
+  "released": [
+   "leg_radiation"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down my legs, it just stays in my lower back and left buttock.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Any recent heavy steroid use, osteoporosis, or a significant fall or accident besides lifting the pot?",
+  "released": [
+   "steroid_use",
+   "osteoporosis",
+   "significant_trauma"
+  ],
+  "flooded": false,
+  "reply": "No steroid use or osteoporosis, and no fall or accident besides lifting the pot plant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any fall or significant injury"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Is the pain worse first thing in the morning with stiffness that lasts more than half an hour, or does it ease once you get moving?",
+  "released": [
+   "morning_stiffness",
+   "eases_with_exercise"
+  ],
+  "flooded": false,
+  "reply": "I am a bit stiff in the morning, but it loosens up in ten minutes or so, and it is actually the opposite of easing with exercise because moving about makes it worse and it settles when I rest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Morning stiffness and how long it lasts"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain eases with exercise or moving about"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "spinal_percussion",
+  "finding": "Tapping down each spinous process from the mid back to the sacrum is comfortable.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have asthma, stomach ulcers, kidney problems, or take any blood-thinning medicines?",
+  "released": [
+   "asthma",
+   "stomach_ulcers",
+   "kidney_problems"
+  ],
+  "flooded": false,
+  "reply": "No asthma, no ulcers, and my kidneys are fine as far as I know, and I do not take any blood-thinning medicines.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "right",
+  "finding": "Full, painless hip movement.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "sacroiliac_tests",
+  "finding": "SI joint stress tests negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Sacroiliac joint tests"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Your examination fits with a muscle strain in the lower back from lifting, not a slipped disc or a serious nerve problem. Your leg strength, feeling, and reflexes are normal, there is no pain shooting down the leg, and I did not find signs of infection, fracture, or pressure on the nerves to the bladder and bowel. An MRI is not needed at this stage. In uncomplicated back pain like this, a scan rarely changes treatment in the first few weeks, and it can show harmless changes that cause unnecessary worry. Most people improve over one to two weeks, and nearly all are much better by six weeks.",
+  "released": [],
+  "flooded": false,
+  "reply": "Are you sure I don't need a scan? I've been really worried this is a slipped disc, and I just want to make sure we aren't missing anything serious.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (two 500 mg tablets)",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "I understand the worry. A slipped disc usually causes pain that shoots down the leg past the knee, with tingling, numbness, or weakness. You do not have those, and the tests I did for nerve irritation were normal. What you have is a common muscle and ligament strain. A scan would not speed recovery and is not recommended in Australian guidelines for this kind of pain unless there are warning signs or it is not settling after several weeks. I have prescribed ibuprofen 400 mg three times a day with food for five days, and paracetamol two tablets up to four times a day, leaving at least four hours between doses and not more than eight tablets in a day. Do not take extra anti-inflammatories on top of the ibuprofen. You are allergic to tramadol, so we will avoid that. Please keep moving gently, walk a little each day, and avoid staying on the couch all day, because rest makes backs stiffer. Heat packs are fine. Avoid heavy lifting and twisting for now, but you do not need strict bed rest. See a physiotherapist if you would like help with movement, or if it is not easing in a week. Come back sooner, or go to emergency, if you get weakness or numbness in a leg, numbness around the groin or bottom, trouble passing urine or loss of bladder or bowel control, fever, or pain that is rapidly getting worse. If it is not clearly improving in one to two weeks, come back and we can reassess, including whether a scan is then useful. Does that plan make sense?",
+  "released": [
+   "expectations"
+  ],
+  "flooded": false,
+  "reply": "That makes sense, even though I figured I would need an MRI to see what is going on. I will take the ibuprofen and paracetamol as you said, and I will try to walk around a bit more instead of just lying on the couch.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "I have also sent a referral to a physiotherapist, which you can use if you want hands-on advice on moving safely. You can keep working from your desk with regular breaks to stand and walk. Avoid lifting heavy things like that pot plant until the pain has settled, and bend your knees if you must lift. Take the ibuprofen with food. If your stomach gets sore, you get a rash, or you have black stools, stop the ibuprofen and contact us. You are doing the right things already with the heat pack. I expect steady improvement over the next week. Any questions before we finish?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "Honestly, I have been reading about slipped discs and people needing surgery, which is why I was so concerned, but I feel a bit more reassured now.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 295
+ },
+ {
+  "type": "say",
+  "utterance": "Surgery is only for a small number of people with severe nerve compression that is not improving, which is not your situation. Your back should settle with time, movement, and the pain relief. You know the warning signs to watch for. Take care, and we will see you sooner if those come up, or in a couple of weeks if it is not improving.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thank you, doctor, I appreciate the clear explanation and I know what to watch out for now.",
+  "awards": [],
+  "score": 295
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "cantMiss": "cauda_equina",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 335
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_2",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "Most people improve over one to two weeks, and nearly all are much better by six weeks.",
+    "ideal_1": "You can keep working from your desk with regular breaks to stand and walk.",
+    "ideal_2": "In uncomplicated back pain like this, a scan rarely changes treatment in the first few weeks, and it can show harmless changes that cause unnecessary worry.",
+    "ideal_4": "Heat packs are fine.",
+    "ideal_5": "Come back sooner, or go to emergency, if you get weakness or numbness in a leg, numbness around the groin or bottom, trouble passing urine or loss of bladder or bowel control, fever, or pain that is rapidly getting worse."
+   }
+  },
+  "total": 410,
+  "max": 465,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 335
+ }
+]

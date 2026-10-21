@@ -1,0 +1,378 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Mark, I'm Dr. Nguyen. Thanks for coming in — I understand you've had a cough and fever for a few days and you're not feeling great. Let's work through it together. Can you tell me how this all started, and what it's been like day to day?",
+  "released": [],
+  "flooded": false,
+  "reply": "It has been going on for three days now, starting as a dry, hacking cough. I have also been burning up on and off, and while I did not use a thermometer, I was roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. So it started as a dry, hacking cough with fever three days ago. Has any phlegm come up since — if so, what colour, and have you coughed up any blood? Have you had any breathlessness, chest pain (especially with a deep breath), sore throat, or muscle aches?",
+  "released": [
+   "sputum_colour",
+   "haemoptysis",
+   "breathlessness",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "Since yesterday I am bringing stuff up, and it is a rusty brownish colour though it was clear at first, but there is no actual blood. I get puffed walking in from the car park or going up the stairs, but sitting here I am alright, and I have not noticed a sore throat or muscle aches. There is a sharp pain low down on the right side round towards my back that catches me when I take a deep breath or cough, and that started yesterday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you, that's helpful. A few more questions. Have you had any shivers or rigors with the fever? Do you know your temperature — have you had any readings above 38.5? Any swelling or pain in either calf? Have you had any recent long flights, surgery, or a leg injury? And are you a smoker, or have you ever been?",
+  "released": [
+   "rigors",
+   "leg_swelling",
+   "recent_travel",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "The first night I was shaking under the doona with my teeth chattering even though I was boiling, but I do not know what rigors means. My legs are fine, I have not been anywhere except school and home, and I have never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Good — no shivering leg pain, no travel, no smoking, that helps. A few final history questions: do you have any underlying health conditions like asthma, diabetes, heart or lung disease? Have you lost weight recently, or had night sweats or coughing up blood over weeks? And how's your alcohol intake?",
+  "released": [
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "weight_loss",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "I have never had asthma or anything with my lungs, no diabetes, and no heart problems. I have not lost weight recently, though if anything I could lose a few kilos, and I have no night sweats or coughing up blood over weeks. I just have a couple of beers on the weekend and none this week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "Here's what I've found. Your temperature is up at 38, you're breathing a bit fast, and your oxygen is just on the low side at 95%. When I listen to your chest I hear crackles at the bottom of your right lung, and the X-ray confirms it: there's a patch of infection — a pneumonia — in the lower right lung, with a bit of pleurisy on the surface, which explains that sharp pain when you breathe in. The rusty colour of the sputum is just old blood mixed in from the inflammation, and that's a typical feature of this kind of bacterial pneumonia.\n\nThe good news is that it looks like a standard, treatable pneumonia and you're not systemically very unwell — your blood pressure is fine, you're clear-headed, and no one else's lungs are involved. So you can be treated at home with antibiotics, rather than a hospital.\n\nMy plan:\n1. Amoxicillin 500 mg three times a day for 5 days. Please take it for the full course, even if you feel better after a couple of days, and it's fine to take it with food.\n2. Paracetamol 1–2 tablets up to four times a day for the fever and aches — don't exceed 4 tablets a day.\n3. Rest and drink plenty of fluids. I'd suggest you take a day or two off work; you can return when you're fever-free and feeling more like yourself — you're not dangerously contagious for long with this.\n4. I'll check in: if you haven't started to feel a bit better within 48 hours of starting the antibiotics, call me or come back. \n\nAnd please seek urgent care — call 000 or go to the emergency department — if you develop any of these: breathlessness getting noticeably worse, confusion or drowsiness, lips or fingers turning blue, chest pain that's different from the pleuritic kind you have now, or coughing up fresh blood.\n\nDo any of that make sense, and do you have any concerns?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia sounds pretty serious, but at least I can treat it at home instead of going to hospital. Does this mean I am definitely going to miss the exams at school next week?",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "I understand the worry — \"pneumonia\" does sound scary, but in an otherwise healthy person it's a very common and very treatable infection, and yours is the kind that responds well to antibiotics.\n\nFor the timing: with a typical course, the fever and the \"rotten\" feeling usually start to improve within 48 to 72 hours of starting the antibiotics, and most people are back to normal energy over the next week or so. So it's not a given that you'll miss the whole exam week — if you're on track by day 2 or 3, you can plan around a return by then, and even if you're a bit off, you could cover lighter duties like marking or marking invigilation once you're no longer feverish. A lingering cough can take a couple of weeks to fully settle even after you feel fine, and that alone is no reason to stay home.\n\nIf you're not better within 48 hours of starting the course, or you get any of the warning signs I mentioned — worsening breathlessness, confusion, blue lips, fresh blood in the sputum, or fever above 39 that won't budge — contact me or go to the emergency department, and we'll re-check you, including possibly repeating bloods and imaging. Otherwise, just take the course, rest, and you should be on your feet.",
+  "released": [],
+  "flooded": false,
+  "reply": "That makes sense, and I will just focus on getting through the next couple of days so I can hopefully get back for the exams.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 capsule (500 mg)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pulmonary embolism, Sepsis, Lung cancer, Tuberculosis, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "So you can be treated at home with antibiotics, rather than a hospital.",
+    "ideal_3": "And please seek urgent care — call 000 or go to the emergency department — if you develop any of these: breathlessness getting noticeably worse, confusion or drowsiness",
+    "acceptable_3": "Rest and drink plenty of fluids.",
+    "acceptable_5": "if you haven't started to feel a bit better within 48 hours of starting the antibiotics, call me or come back."
+   }
+  },
+  "total": 245,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 205
+ }
+]

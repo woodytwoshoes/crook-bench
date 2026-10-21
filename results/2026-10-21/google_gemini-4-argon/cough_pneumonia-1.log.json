@@ -1,0 +1,463 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm Dr Smith. I see you've come in with a cough and fever for the last few days. Can you tell me more about when it started and how it's been going?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. I have been burning up on and off, and didn't have a thermometer, but I was roasting. Since yesterday I am bringing stuff up that is a rusty, brownish colour, though it was clear at first. Also since yesterday, there is a sharp pain low down on the right side, round towards my back, which catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been feeling short of breath at rest or when walking around, or noticed any frank blood in what you're coughing up? Also, have you had any shaking chills, dizziness, or trouble keeping fluids down?",
+  "released": [
+   "breathlessness",
+   "haemoptysis",
+   "rigors",
+   "confusion",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am alright, and there is no actual blood, just that rusty colour. The first night I was shaking under the doona with my teeth chattering, even though I was boiling. My head is clear, though my wife reckons I am just grumpy, and I have had no vomiting.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any calf pain or swelling, recent long flights or surgeries, or any personal or family history of blood clots? And have you had a runny nose, sore throat, or contact with anyone unwell, birds, or potting mix recently?",
+  "released": [
+   "leg_swelling",
+   "bird_contact",
+   "gardening"
+  ],
+  "flooded": false,
+  "reply": "My legs are fine, I haven't had any of those flights or surgeries, and there is no history of clots in the family. I haven't had a runny nose, sore throat, or contact with anyone unwell, we have got a dog instead of birds, and I am not much of a gardener having not touched potting mix in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Gardening or handling potting mix"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any medical conditions like asthma, diabetes, or heart issues, take any regular medicines, or have any allergies to medications? Also, do you smoke or drink alcohol, and have you had any recent weight loss or drenching night sweats before this week?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that! Do you have any medical conditions, take any regular medicines, or have any allergies?",
+  "released": [
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I have never had asthma or anything with my lungs, no diabetes, and no heart problems. I do not take any regular medicines. As for allergies, I reacted to penicillin when I was a kid by coming up in hives and having my lips swell, which is probably not on my file since I haven't needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "That allergy is really important to know, thank you. Do you smoke or drink alcohol, and have you done a rapid test for COVID or flu at home?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked and I have just a couple of beers on the weekend, though none this week, and I haven't done any tests at home.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Before this week, had you noticed any unexplained weight loss or night sweats, or had any headache or diarrhoea over the last few days?",
+  "released": [
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "No, if anything I could lose a few kilos, and I haven't noticed any headaches, diarrhoea, or night sweats either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "left",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Calf"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "right",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "I've examined your chest and we've got your chest X-ray result back already—it shows an infection in the lower part of your right lung, which is community-acquired pneumonia. Before I go through the treatment plan, is there someone at home with you over the next few days, and do you have any specific concerns or need a certificate for work?",
+  "released": [
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "At home I have my wife and our two teenagers, and since she is working from home this week, she can drive me back in if I need. I am just a bit worried because I can't remember the last time I felt this knocked about, and yes, I will definitely need a certificate for work so I can get these exams sorted.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 285
+ },
+ {
+  "type": "say",
+  "utterance": "Here is our plan to get you feeling better, Mark:\n\n1. **What's going on**: The examination and chest X-ray confirm you have community-acquired pneumonia in the lower part of your right lung. The good news is that your oxygen levels, blood pressure, and breathing rate are all in a safe range, so this is classified as mild pneumonia and can be safely treated at home with antibiotic tablets.\n\n2. **Antibiotic treatment**: Because you had hives and lip swelling with penicillin as a child—which is a serious allergy that I will add to your medical file today—we will avoid penicillin antibiotics. Instead, I have prescribed **doxycycline 100 mg, one tablet twice a day for 5 days**. Make sure to swallow each tablet with a full glass of water and food, and stay sitting or standing upright for at least 30 minutes afterwards so it doesn't irritate your food pipe. It can also make your skin more sensitive to the sun, so wear sunscreen if you go outside.\n\n3. **Symptom relief and rest**: \n   - Take paracetamol regularly as directed on the pack to help bring down your fever and ease that sharp chest pain so you can take deep breaths and clear your chest. Avoid cough-suppressant medicines, as coughing up that phlegm helps clear your lung.\n   - Rest at home and drink plenty of fluids. I will print you a medical certificate for the rest of the week off school. Keep in mind that while the fever should settle within a few days, feeling tired and having a mild cough can take a few weeks to fully clear.\n\n4. **Follow-up**: I would like to review you here in **48 hours (2 days)** to make sure the antibiotics are working and your breathing and temperature are improving. We will also check in again in about 6 weeks to ensure you've made a full recovery.\n\n5. **When to seek urgent help**: Please have your wife take you straight to the hospital Emergency Department or call 000 if you notice any warning signs—such as becoming short of breath at rest, trouble speaking in full sentences, feeling dizzy, faint, or confused, coughing up bright red blood, severe worsening chest pain, inability to keep fluids down, or if you feel you are getting worse rather than better over the next 24 to 48 hours.\n\nDoes that all make sense, or do you have any questions for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "That all makes sense, and I will just make sure I get those tablets into me and follow the instructions. I had better get home to bed now so I can get rid of this before exams.",
+  "awards": [],
+  "score": 285
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 325
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_4"
+   ],
+   "quotes": {
+    "ideal_1": "this is classified as mild pneumonia and can be safely treated at home with antibiotic tablets.",
+    "ideal_2": "I would like to review you here in 48 hours (2 days) to make sure the antibiotics are working",
+    "ideal_3": "Please have your wife take you straight to the hospital Emergency Department or call 000 if you notice any warning signs—such as becoming short of breath at rest, trouble speaking in full sentences, feeling dizzy, faint, or confused, coughing up bright red blood, severe worsening chest pain, inability to keep fluids down",
+    "acceptable_2": "Take paracetamol regularly as directed on the pack to help bring down your fever and ease that sharp chest pain",
+    "acceptable_3": "Rest at home and drink plenty of fluids.",
+    "acceptable_4": "which is a serious allergy that I will add to your medical file today"
+   }
+  },
+  "total": 385,
+  "max": 420,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 325
+ }
+]

@@ -1,0 +1,189 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I see you've had burning when you wee since yesterday. A few questions first: any fever or chills, back or flank pain, nausea or vomiting? Any vaginal discharge or irritation, or new sexual partner? Are you passing urine very frequently or with urgency? And have you had a UTI before — how many, and when was the last one?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "vaginal_discharge_itch",
+   "sexual_partners",
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and nothing in my back, just a bit of an ache low down in my tummy. I'm eating normally and haven't been sick, and I haven't noticed anything like that. I have a boyfriend we have been together about a year, just him. I am going constantly, every half hour, and only a little bit comes out and I have to rush, and I had one UTI about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Here's your plan, Chloe:\n\n- Diagnosis: a bladder infection (UTI/cystitis). Not a kidney infection, and no worrying signs.\n- Treatment: Trimethoprim 300 mg, one tablet once a day for 3 days. Take it with or without food. Your pill is not affected by this antibiotic, but if you get vomiting or diarrhoea, that can reduce the pill's protection.\n- The lab result will be back in about 2 days — if the germ turns out to be resistant, we'll call you to change the antibiotic.\n- Drink plenty of water, and paracetamol or ibuprofen can help with the burning/discomfort. Peeing when you feel the urge (don't hold on) and wiping front-to-back help prevent recurrences.\n- Come back or go to emergency if you get a fever above 38°C, worsening back/flank pain, vomiting, or you're not improving within 48 hours — that could mean the infection is spreading to your kidneys.",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh good, I just want to get this sorted quickly so I can get back to my shift at the café.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water",
+    "ideal_2": "paracetamol or ibuprofen can help with the burning/discomfort",
+    "ideal_3": "Come back or go to emergency if you get a fever above 38°C, worsening back/flank pain, vomiting, or you're not improving within 48 hours"
+   }
+  },
+  "total": 205,
+  "max": 360,
+  "level": "Registrar",
+  "consequence": "ideal",
+  "score": 160
+ }
+]

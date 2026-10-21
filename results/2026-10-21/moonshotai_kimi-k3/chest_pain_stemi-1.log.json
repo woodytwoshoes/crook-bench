@@ -1,0 +1,318 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, I’m worried this may be coming from your heart rather than simple indigestion, so I want to move quickly. Where exactly is the discomfort, and what does it feel like — pressure, burning or pain? Does it spread to your arm, neck, jaw or back? Are you short of breath, sweaty, sick in the stomach or light‑headed? Did it start at rest or with activity, and has it been there constantly since this morning? Have you ever had anything like this before?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Can you point with one finger to where the discomfort is worst?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   }
+  ],
+  "score": 10
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "say",
+  "utterance": "Did it start while you were resting, or while you were doing something?",
+  "released": [
+   "onset_activity"
+  ],
+  "flooded": false,
+  "reply": "I was just sitting having a cuppa, reading the paper.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Activity at the moment today's pain began"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "I’m treating this as a possible heart attack. I’m calling an ambulance now, I want you to chew one aspirin tablet, and we’re doing a heart tracing right now. Please stay seated and don’t drive yourself anywhere.",
+  "released": [],
+  "flooded": false,
+  "reply": "Hang on, an ambulance? It's just a bit of indigestion, Doc. Can't I just take some Mylanta and get to this job?",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the heart tracing shows you are having a heart attack right now — a blocked artery on the underside of the heart. This is not indigestion and Mylanta will not fix it. The ambulance is the fastest safe way to the treatment that reopens the artery, and every minute of delay costs heart muscle. Please do not drive or leave.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right. Well, if you reckon it's that serious, I suppose I better stay put.",
+  "awards": [],
+  "score": 95
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken any tablets for erection problems, such as Viagra or Cialis, in the last couple of days?",
+  "released": [
+   "pde5_inhibitor"
+  ],
+  "flooded": false,
+  "reply": "…Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me — that stays confidential, and it’s important. Because you took Viagra last night, I must not give you the usual chest‑pain spray; the two together can drop your blood pressure dangerously. I’ll use something else for the pain.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, understood.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "I’m giving a small dose of morphine now for the pain while we wait for the ambulance.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, Doc. My chest feels pretty heavy.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "rx",
+  "id": "morphine_10mg_ml_inj",
+  "dose": "2.5 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Titrated IV morphine or fentanyl for pain (not if systolic BP is below 100)"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Here’s the plan, Graham. You’re having a heart attack from a blocked artery on the underside of your heart. The ambulance is coming and will take you straight to the hospital heart team for an urgent procedure to open that artery, usually with a small metal tube called a stent. You’ve had aspirin to chew and a small dose of morphine. I deliberately did not use the chest‑pain spray because of the Viagra last night — together they can crash your blood pressure. I won’t discuss that tablet with your wife, but I must tell the ambulance and hospital team because it changes which medicines are safe for you. Stay seated and as still as you can; don’t walk, drive, eat or drink anything in case you need an anaesthetic. If you suddenly feel worse, more sweaty, faint, or notice your heart racing or slowing, call out to me straight away.",
+  "released": [],
+  "flooded": false,
+  "reply": "A heart attack? Crikey. I just came in for some antacids.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 180,
+  "max": 480,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 180
+ }
+]

@@ -1,0 +1,365 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I'm Dr. Patel. Thanks for coming in — I can see from your message that you hurt your lower back lifting something over the weekend and it's really limiting you. Let's have a proper look at what's going on and work out the best plan. Can you start by telling me what happened exactly, and walk me through how the pain has been since?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "It happened on Saturday when I was lifting a big pot plant in the garden and felt a twinge, then I woke up Sunday and could barely get out of bed, so it has been three days now. The pain is low down on the left side of my back and sometimes goes into my left buttock, and it is worse when I bend or get out of a chair, but feels better lying still with a heat pack, though it gets worse by the evening. I have worked from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. The pain moving into the buttock is common with these injuries, so I'd like to rule out anything involving a nerve. Does the pain travel any further down the leg — below the knee, into the calf or foot? Do you have any numbness, pins-and-needles, or any weakness in your leg or foot, like your foot dragging or your leg giving way?",
+  "released": [
+   "leg_radiation",
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down my legs, and my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good, that's reassuring. Now some questions that sound a bit personal but are important for safety. Have you had any trouble with your bladder since the injury — anything like difficulty starting your stream, feeling you can't empty fully, or any leaking? Have you noticed any numbness in your groin or the area that would touch a bicycle seat, or any changes in your bowel movements like constipation or losing control?",
+  "released": [
+   "bladder_function",
+   "saddle_anaesthesia",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "All of that is normal, and I haven't noticed anything like that or had any loss of control.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "All normal — good. A few more safety checks: have you had any fever, chills or night sweats since this started? Any unexplained weight loss recently? And do you have any other medical conditions — anything like a previous cancer, or have you ever had long courses of steroid tablets? Also, does the pain ever wake you from sleep at night, or is it mainly the movements during the day?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history",
+   "steroid_use",
+   "night_rest_pain",
+   "eases_with_exercise"
+  ],
+  "flooded": false,
+  "reply": "No, no fevers or infections, and if anything I have put some weight on. I have never had cancer or taken steroid tablets, and it hurts when I roll over, but once I am settled I sleep and it is not there constantly. The opposite happens with exercise; moving about makes it worse, and it settles when I rest.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain eases with exercise or moving about"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "That pattern — worse with moving, better with rest — is typical of a muscular or disc strain. Have you taken any pain medications so far, and did any of them help? And is this your first episode of low back pain, or does it come and go?",
+  "released": [
+   "analgesia_tried",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "I have taken some paracetamol, but it didn't do much, honestly. I tweaked my back once maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Before I prescribe an anti-inflammatory, one safety question: have you ever had a stomach ulcer or serious stomach bleeding, any kidney problems, or asthma? And do you take any regular medications or blood thinners at all, even over-the-counter ones?",
+  "released": [
+   "stomach_ulcers",
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "No ulcers, my kidneys are fine as far as I know, and I do not have asthma. I am allergic to Tramadol, which causes vomiting and dizziness, but I do not take any regular medications.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "1 tablet (400 mg)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1000 mg)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Right, here's my read on things, Daniel. This is an acute mechanical low back injury — a strain and spasm of the muscles on the left side around your lower lumbar spine, with the pain referring into your buttock. The good news is that your nerves are completely intact: normal strength, reflexes and sensation, and the leg-raise test was negative. Injuries like this are extremely common, and most people are much better within 2 to 4 weeks, with near full recovery by 6 weeks.\n\nAbout the MRI you'd like: I'd advise against it right now, and here's why. Without red flags — and you have none of those — a scan this early rarely changes treatment, and studies actually show that people who get scanned early in a back injury recover more slowly and tend to worry more, because scans often show minor disc changes that are found in plenty of pain-free people and aren't the cause of the pain. An MRI would be the right call if you developed new leg weakness, numbness below the knee, bladder or bowel changes, or if this failed to improve over 4 to 6 weeks.\n\nFor pain control I've prescribed ibuprofen 400 mg, one tablet three times a day with food for five days, plus paracetamol 1 g twice a day. They work better together, and you should take the ibuprofen with a meal. Avoid tramadol — you've had a reaction before and you don't need it anyway.\n\nLifestyle-wise: please don't go to bed — bed rest makes these take longer. Keep walking as much as you can, even if it's slow, use your heat pack, and get back to your desk work as tolerated this week, standing up or stretching every half hour. Avoid heavy lifting for the next couple of weeks.\n\nNow, the important safety-netting. Go to emergency immediately if you get any difficulty passing urine or leakage, numbness in the saddle area, or new or worsening leg weakness — those would be rare but serious nerve-compression signs. If you develop pain shooting below the knee, fever, or the pain is still limiting you after four to six weeks, come back and see me and I'll refer you for physiotherapy and can reconsider imaging.\n\nDoes that all make sense, and do you have any questions?",
+  "released": [
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "Honestly, I have been reading about slipped discs and people needing surgery, so are you sure I do not need a scan to rule that out?",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "That's a really fair question, and I completely understand the worry — internet stories about slipped discs and surgery can be frightening. But here's what I can tell you with confidence: the main bed test that picks up a disc pressing on a nerve is the straight leg raise, and yours was completely negative, with no leg pain, and your leg strength, reflexes and sensation are perfect. A disc problem serious enough to need surgery would cause leg weakness, numbness, or bladder or bowel trouble — you have none of that.\n\nAnd importantly, even if a scan showed a small disc bulge, it wouldn't change what you should do — the treatment is exactly what I've set up: stay active, pain relief, and time. In fact, minor disc changes show up on scans in lots of people who have no pain at all, and seeing one tends to make people take longer to get better. That's why guidelines are against scanning in the first few weeks unless there are red flags.\n\nHere's my promise to you: if the pain starts shooting below your knee, or you notice numbness, leg weakness, or any bladder or bowel changes, come in straight away or go to emergency — at that point we'd image without hesitation. And if you're not clearly improving in four to six weeks, I'll review you and consider imaging and physiotherapy. Fair enough?",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, that makes sense, and I suppose I can hold off on the scan if you are sure that avoiding bed rest and taking the anti-inflammatories will get me moving again.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Great — that's the right call. To recap: keep walking and use the heat pack, take the ibuprofen with food and the paracetamol twice daily, get back to work as you're able, no bed rest, and avoid heavy lifting for a couple of weeks. If you develop bladder or bowel problems, saddle numbness, leg weakness or pain below the knee, seek care urgently, and if you're not clearly better in four to six weeks, come back and we'll take the next step. Anything else I can help you with today?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that covers it, thank you.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "dx",
+  "primary": "nonspecific_lbp",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute non-specific low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_2",
+    "ideal_4",
+    "ideal_5",
+    "ideal_6"
+   ],
+   "quotes": {
+    "ideal_0": "Injuries like this are extremely common, and most people are much better within 2 to 4 weeks, with near full recovery by 6 weeks.",
+    "ideal_1": "get back to your desk work as tolerated this week, standing up or stretching every half hour.",
+    "ideal_2": "a scan this early rarely changes treatment, and studies actually show that people who get scanned early in a back injury recover more slowly and tend to worry more, because scans often show minor disc changes that are found in plenty of pain-free people and aren't the cause of the pain.",
+    "ideal_4": "use your heat pack",
+    "ideal_5": "Go to emergency immediately if you get any difficulty passing urine or leakage, numbness in the saddle area, or new or worsening leg weakness — those would be rare but serious nerve-compression signs.",
+    "ideal_6": "if you're not clearly improving in four to six weeks, I'll review you and consider imaging and physiotherapy."
+   }
+  },
+  "total": 335,
+  "max": 465,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 245
+ }
+]

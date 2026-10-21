@@ -1,0 +1,476 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm one of the doctors here. I understand you've had a cough and fever for a few days and you're feeling pretty rotten. Can you tell me more about what's been going on?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, starting as a dry, hacking cough. I have been burning up on and off and roasting, though I didn't use a thermometer. Since yesterday I am bringing stuff up that is a rusty, brownish colour, even though it was clear at first. Also since yesterday, there is a sharp pain low down on the right side round towards my back that catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "When did the cough and fever start, and have they been getting better, worse, or staying the same?",
+  "released": [
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago, and it has been worse than the first day, but about the same since yesterday, so it is not going downhill fast.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds uncomfortable. Have you had any shortness of breath, wheezing, or chest tightness? Any blood in the sputum, or is it just the rusty brown colour?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am alright. I don't know the word sputum, so what does that mean?",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Any headaches, sore throat, runny nose, muscle aches, nausea, vomiting, diarrhoea, or pain when you pass urine? And have you noticed any confusion, dizziness, or feeling faint?",
+  "released": [
+   "vomiting",
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "I haven't noticed anything like a sore throat or runny nose, and no vomiting either. My head is clear, though my wife reckons I'm just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry — sputum just means the phlegm or mucus you cough up. Has there been any bright red blood in it, or only that rusty brown colour? And any wheezing or chest tightness?",
+  "released": [
+   "haemoptysis",
+   "lung_disease"
+  ],
+  "flooded": false,
+  "reply": "There is no actual blood, just that rusty colour, and I have never had asthma or anything with my lungs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any chills or shivering, night sweats, weight loss, or loss of appetite? And how is your energy compared to usual?",
+  "released": [
+   "rigors",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "The first night I was shaking under the doona, teeth chattering, even though I was boiling, and I haven't lost weight, if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been around anyone else who's been sick recently? Any recent travel, or contact with birds or animals?",
+  "released": [
+   "recent_travel",
+   "bird_contact"
+  ],
+  "flooded": false,
+  "reply": "I haven't been anywhere, just school and home, and we haven't got any birds, but we've got a dog.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, or have you smoked in the past? And do you have any medical conditions, or take any regular medicines, including over-the-counter ones or supplements?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any past medical problems, like asthma, diabetes, heart problems, or anything else? And are you on any medicines at all, even occasional ones?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I have never had asthma or anything with my lungs, and I don't take any regular medicines.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Has anyone at home or at school been unwell with a cough or fever? And have you had the flu vaccine or a pneumonia vaccine?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I didn't get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Is anyone else at home or among your students unwell at the moment? And have you ever had a pneumonia vaccine?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not sure about the students, and I haven't had a pneumonia vaccine either.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "On a scale of 0 to 10, how bad is the pain when you breathe deeply? Any calf pain, swelling in the legs, or recent long flights or immobility? And do you drink alcohol?",
+  "released": [
+   "pain_severity",
+   "leg_swelling",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "It is a solid six when I cough or take a big breath, but otherwise just a dull ache. My legs are fine, and I haven't had any flights or immobility. I just have a couple of beers on the weekend and none this week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and tired-looking. Alert and orientated. Speaking in full sentences. Not cyanosed.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (two 500 mg capsules)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (two 500 mg tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, you've got a chest infection in the lower part of your right lung — pneumonia. The examination and the chest X-ray both show that clearly, which fits with the rusty phlegm, the fever and the sharp pain when you breathe.\n\nYou're well enough to be treated at home. I'm prescribing an antibiotic called amoxicillin: two 500 mg capsules (1 gram) three times a day for 5 days. Take them with food if they upset your stomach, and finish the course even if you feel better sooner. For the fever and the pain, take paracetamol — two 500 mg tablets, up to four times a day, no more than 8 tablets in 24 hours.\n\nRest, drink plenty of fluids, and stay home from school until the fever has settled and you feel up to it. Use a tissue when you cough and wash your hands.\n\nPlease come back, or go to an emergency department, straight away if you become more short of breath, if your lips look blue, if you feel confused or faint, if you can't keep fluids down, if the pain becomes severe, or if you start coughing up fresh blood. If you're not clearly improving within 48 to 72 hours, or the fever isn't settling, come back and see me so we can reassess. Do you have any questions about that?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia sounds a bit serious, but as long as I can just take these pills at home and get back to marking these exams soon, I suppose I will manage.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "It is a proper infection, but yours is the milder sort that we treat at home with tablets, and most people start to turn the corner within a couple of days. Don't rush back to a full day of teaching until the fever has gone and you're not getting short of breath. If you need a medical certificate for work, the reception desk can sort that out. Take care, and come back sooner if you're worried.",
+  "released": [],
+  "flooded": false,
+  "reply": "I will need a medical certificate for the school, so I will grab that on my way out.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pulmonary embolism, Sepsis, Lung cancer, Tuberculosis, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "You're well enough to be treated at home.",
+    "ideal_3": "Please come back, or go to an emergency department, straight away if you become more short of breath, if your lips look blue, if you feel confused or faint, if you can't keep fluids down, if the pain becomes severe, or if you start coughing up fresh blood.",
+    "acceptable_2": "For the fever and the pain, take paracetamol — two 500 mg tablets, up to four times a day, no more than 8 tablets in 24 hours.",
+    "acceptable_3": "Rest, drink plenty of fluids, and stay home from school until the fever has settled and you feel up to it.",
+    "acceptable_5": "If you're not clearly improving within 48 to 72 hours, or the fever isn't settling, come back and see me so we can reassess."
+   }
+  },
+  "total": 260,
+  "max": 420,
+  "level": "Fellow",
+  "consequence": "harmful",
+  "score": 220
+ }
+]

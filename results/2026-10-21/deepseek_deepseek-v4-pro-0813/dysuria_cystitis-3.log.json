@@ -1,0 +1,363 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I understand you've had some burning when you pass urine. Tell me what's been going on.",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It stings and burns, and it is worst right at the end of weeing, just like my last one. I am going constantly, about every half hour, and only a little bit comes out so I always have to rush. It is a bit cloudy and smells, but I have not seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. Have you had any pain in your lower tummy, in your back, or in your side? Any fever, chills, or feeling generally unwell or shivery?",
+  "released": [
+   "abdominal_pain",
+   "loin_pain",
+   "fever_rigors",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "I just have a bit of an ache low down in my tummy, but nothing in my back. I have no fevers or shivers, and I'm eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "And could you tell me a bit more about this \"last one\" — when was it, and what did you take for it?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one of these about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any blood in the urine at all, even a pink tinge, or any new vaginal discharge or itch? And are you on the pill — is there any chance you could be pregnant?",
+  "released": [
+   "vaginal_discharge_itch",
+   "contraception",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I haven't seen any blood, and there is no itch or anything like that. I am on the pill and I don't miss it, so I don't think I could be pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Any other medical conditions, or have you been in hospital recently or had any procedures? And do you take any medicines or supplements besides the pill?",
+  "released": [
+   "renal_tract_problems",
+   "diabetes",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "I don't have any kidney or bladder problems, and I haven't been in hospital or had any procedures. I don't have diabetes or immune problems, and I am not taking any other medicines or supplements besides the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Any fever or sweating, or pain in your back near your ribs on either side? And are you drinking fluids as usual, keeping them down okay?",
+  "released": [
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "I do not have a fever, and my back does not hurt near my ribs. I am keeping my food down okay, but I probably am not drinking enough fluids — mostly just coffee at work, to be honest.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "When you had this two years ago, do you remember what antibiotic they gave you, and did it clear it up fully?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't remember the name of the medicine from back then, but it cleared it up fully.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Is there any new or different sexual partner recently, or any pain during sex?",
+  "released": [
+   "sexual_partners",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "I have a boyfriend and we have been together about a year, just him, and pain during sex has never been a problem.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Do you drink alcohol or smoke or use any recreational drugs at all?",
+  "released": [
+   "alcohol",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "I have a few drinks if I go out with friends, maybe twice a month, and I do not smoke or use any recreational drugs.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "Your urine sample shows signs of a bladder infection (a UTI), which fits with your symptoms and the mild tenderness low in your tummy. You have no fever and no kidney-area pain, so it looks like a straightforward bladder infection.\n\nI'm giving you a 3-day course of an antibiotic called trimethoprim — one 300 mg tablet once a day for three days. Take it even if you feel better before finishing it. Keep drinking plenty of water (try to swap some of those coffees for water today), and it's fine to keep taking the pill as usual.\n\nI've also sent a sample to the lab to grow the bacteria and confirm which antibiotics work best; if anything is unusual I'll contact you. You should start feeling better within a day or two.\n\nPlease come back or see a doctor sooner if you develop a fever or shivers, pain in your lower back or side, start feeling sick or vomiting, see blood in your urine, or if your symptoms aren't improving after two full days on the antibiotic. If you feel suddenly very unwell at any point, go to the emergency department.",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh, perfect, thank you! Can I just grab the script now so I can get back to work?",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "All done — the prescription is ready for you to take. Take one tablet once a day for three days, remember my advice, and get in touch if any of those warning signs come up. Feel better soon!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks so much, I will go grab it now. Have a good day!",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Keep drinking plenty of water",
+    "ideal_3": "Please come back or see a doctor sooner if you develop a fever or shivers, pain in your lower back or side, start feeling sick or vomiting, see blood in your urine, or if your symptoms aren't improving after two full days on the antibiotic."
+   }
+  },
+  "total": 280,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 250
+ }
+]

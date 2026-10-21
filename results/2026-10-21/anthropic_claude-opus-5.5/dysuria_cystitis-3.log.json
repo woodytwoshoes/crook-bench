@@ -1,0 +1,323 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm the GP. Sorry you're feeling uncomfortable. Can you tell me about the burning — when it started, and whether you're also going to the toilet more often or urgently, or seeing any blood in your wee?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so it has been about a day and a half. It stings and burns, especially right at the end. I am going constantly, about every half hour, and only a little bit comes out and I have to rush. It is a bit cloudy and smells, but I have not seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever, chills, back or side pain, nausea or vomiting? And any unusual vaginal discharge, itch, or pain with sex?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "vaginal_discharge_itch",
+   "dyspareunia"
+  ],
+  "flooded": false,
+  "reply": "No, I have not had any fevers or shivers, and nothing in my back, just a bit of an ache low down in my tummy. I am eating normally and have not been sick, and I have not had any unusual discharge, itch, or pain with sex.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A few personal questions I ask everyone: are you sexually active, and is there any new partner in the last few months? Do you use condoms? Have you had an STI check recently? And is there any chance you could be pregnant — when was your last period, and have you missed any pills?",
+  "released": [
+   "sexual_partners",
+   "condom_use",
+   "pregnancy_possible",
+   "last_period",
+   "contraception"
+  ],
+  "flooded": false,
+  "reply": "Um, yeah, I have a boyfriend and we have been together about a year, just him. We do not use condoms because I am on the pill, and I do not think there is any chance I could be pregnant. My last period was about two weeks ago and it was normal, and I am on the pill and I do not miss it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "You mentioned \"again\" — how many urine infections have you had in the last year, and when was the last one? Did a urine test confirm them, and which antibiotic helped? Have you had antibiotics recently? Any kidney problems, diabetes, or other health issues, and any allergies to medicines?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics",
+   "renal_tract_problems",
+   "diabetes",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that is it, and I have not had any antibiotics this year. I do not have any kidney problems or diabetes, and I am not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Your urine test shows signs of a bladder infection, which fits your symptoms, and there's no sign it has spread to the kidneys. One more question: have you ever had a chlamydia check? We recommend a simple urine test for it yearly for everyone under 30 who's sexually active — would you be happy to do one today from the same sample?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I have not had a chlamydia check. If we have to do it from the same sample, I guess that is fine, but can I just get my script now so I can get back to work?",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "At night",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan. You have a simple bladder infection. I've prescribed trimethoprim 300 mg — one tablet at night for 3 days. Your symptoms should start improving within a day or two. It won't affect your pill. Drink plenty of water, and you can take paracetamol or ibuprofen for the discomfort. Urinating after sex can help reduce future infections. The chlamydia result takes a couple of days — we'll contact you if anything's positive.\nPlease come back, or go to the emergency department if it's after hours, if you get a fever, shivers, pain in your back or side, vomiting, or feel really unwell — those can mean the infection has reached your kidneys. Also come back if you're not getting better after 2–3 days of antibiotics, if symptoms return soon after, if you see blood in your urine, or if you get unusual discharge or think you could be pregnant. Does that all make sense?",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh good, at least I can get back to work now. Thanks for the script.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water",
+    "ideal_2": "you can take paracetamol or ibuprofen for the discomfort",
+    "acceptable_3": "Urinating after sex can help reduce future infections."
+   }
+  },
+  "total": 310,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 275
+ }
+]

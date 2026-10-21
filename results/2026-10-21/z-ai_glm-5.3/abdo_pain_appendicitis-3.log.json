@@ -1,0 +1,324 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm sorry you're not feeling well. Can you tell me where exactly the pain is in your tummy, and has it moved anywhere since it started?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "Down here on the right side, low down. It started around my belly button and moved down overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful, thanks. A few more questions: how bad is the pain out of 10, is it constant or coming in waves, does anything make it better or worse (like coughing or moving)? Any vomiting, fever, loss of appetite, or trouble passing urine or bowel motions? Any diarrhea or blood? And is there any chance a partner could be pregnant, or any sharp pain at the top of your scrotum?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that! Let's take it one at a time. How bad is the pain out of 10, and is it constant or does it come in waves?",
+  "released": [
+   "pain_severity",
+   "pain_character"
+  ],
+  "flooded": false,
+  "reply": "Maybe a seven out of ten, and I'm not one to complain. It's there all the time now, though at first it sort of came and went.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds rough. Have you felt feverish or hot and cold?",
+  "released": [
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been vomiting, or felt sick in your stomach? And have you felt like eating at all today?",
+  "released": [
+   "nausea_vomiting",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "I've felt sick since the early hours and threw up once this morning. I couldn't face breakfast either, and I'm not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Any diarrhoea, or trouble passing urine? Any blood in your poo or when you pee?",
+  "released": [
+   "diarrhoea",
+   "urinary_symptoms",
+   "rectal_bleeding"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea, I went normally yesterday morning, nothing since. Weeing is normal, and no blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "When you move or cough, does the pain get sharper? And is the tummy tender if you press on that right lower spot?",
+  "released": [
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts. Every bump in the car on the way here was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's very helpful. Let me examine your tummy and check you over now. I'd also like to check your temperature and pulse. Is that okay?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, alright.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I'm concerned this is appendicitis — your appendix looks inflamed. That means it needs to come out with an operation, and it's not something I can treat here. I'll phone the hospital emergency department now so they're expecting you, and I'd like you to go straight there — get someone to drive you, don't drive yourself. Don't eat or drink anything from now, in case you need surgery tonight. If the pain suddenly gets much worse, spreads across your whole belly, or you feel faint, call an ambulance. At the hospital they'll do blood tests and a scan to confirm, and a surgeon will see you. This is very treatable, and most people recover fully within a couple of weeks. Any questions before I make the call?",
+  "released": [],
+  "flooded": false,
+  "reply": "Do I really have to go straight there? I've got work tomorrow.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "I'm afraid yes — this really can't wait. If an inflamed appendix bursts, it can make you seriously ill with infection through the whole belly, and that means a much longer hospital stay and recovery. Going tonight gives you the best chance of a quick, straightforward operation and a faster return to work. I'll phone the emergency department now and let them know you're coming. Please go straight there, don't eat or drink anything, and come back or call if anything changes on the way.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright then. I will get my partner to drive me now.",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Done — the emergency department is expecting you, Samuel. To recap: your partner drives you there now, nothing to eat or drink, and if the pain suddenly worsens or you feel faint, call 000. Take care, and I hope you're back on your feet soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, doc.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Samuel, I'm concerned this is appendicitis — your appendix looks inflamed.",
+    "ideal_3": "Don't eat or drink anything from now, in case you need surgery tonight."
+   }
+  },
+  "total": 195,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "missed_red_flag",
+  "score": 195
+ }
+]

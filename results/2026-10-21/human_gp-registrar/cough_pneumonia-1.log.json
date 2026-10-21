@@ -1,0 +1,276 @@
+[
+ {
+  "type": "say",
+  "utterance": "Have you had a productive cough?",
+  "released": [
+   "sputum_colour"
+  ],
+  "flooded": false,
+  "reply": "It started out as a dry, hacking cough for the first couple of days, but since yesterday I am bringing stuff up, and it is a rusty, brownish colour.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any shortness of breath always?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs, and I was puffed on the way in from the car park too, but sitting here right now I am all right.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "Never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions or regular medications?",
+  "released": [],
+  "flooded": false,
+  "reply": "I do not have any other medical conditions, and I do not take any regular medications.",
+  "awards": []
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "ear_pinna",
+  "finding": "Outer ears normal.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "2 capsules",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "1 tablet",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "lung_cancer",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Lung cancer",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": []
+  },
+  "total": 145,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "harmful"
+ }
+]

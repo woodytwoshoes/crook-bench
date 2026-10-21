@@ -1,0 +1,300 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, thanks for coming in today. Can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "It started last night about ten o'clock, so maybe fourteen hours. At first it sort of came and went, but it's there all the time now. It's down here on the right side, low down. Maybe a seven out of ten, though I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you point to exactly where it hurts the most?",
+  "released": [],
+  "flooded": false,
+  "reply": "Right here, low down on the right side.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any vomiting or diarrhoea with this pain?",
+  "released": [
+   "nausea_vomiting",
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "I have felt sick since the early hours and threw up once this morning, but I haven't had diarrhoea. I went normally yesterday morning and nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Does the pain get worse when you move around or cough?",
+  "released": [
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts. Every bump in the car on the way here was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any fever or feeling hot?",
+  "released": [
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any similar pain before?",
+  "released": [
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "No, never had anything like this.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any urinary symptoms like burning when you urinate or needing to go more often?",
+  "released": [
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to do an examination to check your temperature.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "I'm sending off some tests to help figure out what's going on. In the meantime, I'd like to give you some pain relief.",
+  "released": [],
+  "flooded": false,
+  "reply": "Will I be able to head back to work after this, or is this going to take a while?",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Take this medication as directed for your pain. If your symptoms worsen or you develop severe abdominal pain, vomiting, or fever, please seek immediate medical attention.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, thanks doc. I just want to get this sorted so I can get back on the tools.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "refer",
+  "id": "general_surgery",
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: Routine referral to a general surgeon (outpatient appointment)",
+    "domain": "management"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Four times daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "refer",
+  "id": "general_surgery",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 135,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "harmful",
+  "score": 165
+ }
+]

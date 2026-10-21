@@ -1,0 +1,92 @@
+{
+ "model": "anthropic/claude-opus-5.5",
+ "case": "chest_pain_stemi",
+ "rep": 2,
+ "ending": "ended",
+ "total": 250,
+ "max": 480,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 110,
+   "max": 290
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 35,
+   "max": 85
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 20,
+   "max": 20
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 85,
+   "max": 85
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Sweating or clamminess with the pain",
+   "elicited": false
+  },
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Dizziness, light-headedness or fainting",
+   "elicited": true
+  },
+  {
+   "topic": "Had this chest pain before, e.g. on stairs or exertion",
+   "elicited": false
+  },
+  {
+   "topic": "Sudden severe tearing or ripping pain",
+   "elicited": false
+  },
+  {
+   "topic": "Weakness, numbness or other neurological symptoms, or limb pain",
+   "elicited": false
+  },
+  {
+   "topic": "Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "stemi",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "aortic_dissection",
+   "role": "sinister"
+  }
+ ],
+ "says": 4,
+ "questions": 9,
+ "usage": {
+  "calls": 8,
+  "prompt_tokens": 34555,
+  "completion_tokens": 1994,
+  "cost": 0.1781
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:55:19.988Z",
+ "max_questions": 50
+}

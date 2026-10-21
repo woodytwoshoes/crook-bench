@@ -1,0 +1,88 @@
+{
+ "model": "deepseek/deepseek-v4-pro-0813",
+ "case": "dysuria_cystitis",
+ "rep": 2,
+ "ending": "ended",
+ "total": 300,
+ "max": 360,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 145,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 90,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": true
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": true
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "cystitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "pyelonephritis",
+   "role": "sinister"
+  }
+ ],
+ "says": 11,
+ "questions": 16,
+ "usage": {
+  "calls": 16,
+  "prompt_tokens": 61604,
+  "completion_tokens": 2035,
+  "cost": 0.025534784
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:02:05.741Z",
+ "max_questions": 50
+}

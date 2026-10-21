@@ -1,0 +1,400 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Graham, I'm Dr Smith. You look unwell, so I want to check you promptly. Where exactly is the discomfort, when did it start, and is it still there now?",
+  "released": [
+   "pain_site",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. About seven this morning. Came on over a few minutes. It's been going the whole time, so an hour and a half, near enough. Still there now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Pain behind the breastbone that hasn't stopped, together with your appearance, could be a heart attack rather than indigestion. I'm calling an ambulance now and arranging a heart tracing immediately. Please stay resting here; don't walk or drive. What does the discomfort feel like, how severe is it out of ten, and does it spread to your arms, jaw or back?",
+  "released": [
+   "pain_severity",
+   "pain_radiation"
+  ],
+  "flooded": false,
+  "reply": "Hold on, an ambulance? It's just a bit of indigestion, mate. I've got a job I need to get to.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, the heart tracing shows a heart attack affecting the bottom part of your heart. This can be life-threatening, even when it feels like indigestion. The ambulance can monitor and treat you on the way to hospital, where they can urgently open the blocked artery. Delaying for work isn't safe. Have you any allergy to aspirin, any current bleeding or recent serious bleeding, and have you taken aspirin today?",
+  "released": [
+   "aspirin_allergy",
+   "recent_bleeding",
+   "antiplatelet"
+  ],
+  "flooded": false,
+  "reply": "I've had Disprin before, no problems, and no bleeding. I don't take aspirin or anything like that.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "I'm giving you aspirin now to help stop the clot getting bigger. Please chew it or take it dissolved in water. While we wait for the ambulance, can you describe the pain, rate it out of ten, and tell me whether it spreads anywhere?",
+  "released": [],
+  "flooded": false,
+  "reply": "It's like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. I don't know. Maybe a six? It's more heavy than sore. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale and grey. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "say",
+  "utterance": "Have you felt short of breath, sweaty, sick or faint? Did the pain start suddenly at its worst, or feel like tearing through to your back? Have you had any new weakness, numbness or trouble speaking?",
+  "released": [
+   "dyspnoea",
+   "sweating",
+   "nausea_vomiting",
+   "presyncope",
+   "tearing_pain",
+   "neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah, hard to get a proper breath in, and I've been sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. Bit light-headed getting out of the car, didn't pass out. No, nothing like that, it crept up on me. No, arm's heavy but I can use it fine.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Sudden severe tearing or ripping pain"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or other neurological symptoms, or limb pain"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken any medicines today, including indigestion treatments, blood thinners, or erection medicines such as Viagra or Cialis? Have you ever had heart problems, a stroke or a serious stomach bleed?",
+  "released": [
+   "anticoagulants",
+   "pde5_inhibitor",
+   "antacid_response",
+   "previous_cardiac",
+   "previous_stroke"
+  ],
+  "flooded": false,
+  "reply": "Had a couple of Quick-Eze, didn't touch it. Nothing like that. Yeah, took one of those Viagra tablets last night. Don't tell the missus I told you. Never had anything wrong with my heart. Never.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Blood thinners (anticoagulants)"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Ever had a stroke or mini-stroke"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me; that's confidential, but I must tell the ambulance team for your safety. Viagra can interact dangerously with some chest-pain medicines and drop your blood pressure. What dose did you take and about what time? Are perindopril and atorvastatin still your regular medicines, and do you have any other allergies?",
+  "released": [],
+  "flooded": false,
+  "reply": "I'm not sure about the exact dose, just a normal one last night. Perindopril and atorvastatin are my regular medicines. No allergies that I know of.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "We will not give you the nitrate spray called GTN because you took Viagra last night and your blood pressure is already on the low side. Your oxygen level is adequate, so oxygen isn't needed right now. We'll keep you resting and watched closely, with heart monitoring and resuscitation equipment ready, until the ambulance takes over. The ambulance team can give suitable pain relief if the discomfort continues.",
+  "released": [],
+  "flooded": false,
+  "reply": "An ambulance? Bloody hell. I hope the missus doesn't make a big fuss over this.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "left",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "right",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "arm_palpation",
+  "side": "left",
+  "finding": "Skin warmth normal. No induration or crepitus.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "say",
+  "utterance": "I know this is a shock, Graham. You did the right thing coming in. May we contact your wife for you? Please tell me immediately if the pain worsens, breathing gets harder or you feel faint; don't get up. I'll stay with you and have our team prepare heart monitoring, a defibrillator and a vein line while we await the ambulance. We won't delay transfer for blood tests. I'll hand over that your pain began at 7 am, your tracing shows a heart attack, your pulse is slow, you've had 300 mg aspirin, and you took Viagra last night. I'll request urgent transfer to a hospital that can open the artery with a small balloon and stent, with their heart team alerted now.",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, alright. Call her, I suppose.",
+  "awards": [],
+  "score": 280
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 320
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "I'll stay with you and have our team prepare heart monitoring, a defibrillator and a vein line while we await the ambulance."
+   }
+  },
+  "total": 335,
+  "max": 480,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 320
+ }
+]

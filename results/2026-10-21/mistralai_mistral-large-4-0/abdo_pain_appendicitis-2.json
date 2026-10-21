@@ -1,0 +1,75 @@
+{
+ "model": "mistralai/mistral-large-4-0",
+ "case": "abdo_pain_appendicitis",
+ "rep": 2,
+ "ending": "stopped",
+ "total": 155,
+ "max": 420,
+ "level": "Resident",
+ "consequence": "missed_red_flag",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 55,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 80,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 0,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": false
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": false
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [
+  "Refer to the emergency department today for surgical assessment"
+ ],
+ "diagnoses": [],
+ "says": 1,
+ "questions": 2,
+ "usage": {
+  "calls": 10,
+  "prompt_tokens": 49271,
+  "completion_tokens": 6315,
+  "cost": 0.05739574
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:51:14.318Z",
+ "max_questions": 50
+}

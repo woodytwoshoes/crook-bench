@@ -1,0 +1,382 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm the doctor. I can see you're here about indigestion since this morning, and you look a bit uncomfortable. Can you tell me what's been happening?",
+  "released": [
+   "onset_time",
+   "pain_site",
+   "pain_radiation"
+  ],
+  "flooded": false,
+  "reply": "It is like a heaviness. Like indigestion but heavier, sort of a weight sitting on my chest. It started about seven this morning and came on over a few minutes. It has been going the whole time, so an hour and a half, near enough, and it is still there now. Right in the middle, behind the breastbone, and a bit up into the throat. Now you mention it, my jaw is a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds important. On a scale of 0 to 10, how bad is the heaviness right now? Have you had any shortness of breath, sweating, nausea, or feeling faint with it?",
+  "released": [
+   "pain_severity",
+   "dyspnoea",
+   "sweating",
+   "nausea_vomiting",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "I do not know, maybe a six, as it is more heavy than sore. I am a bit short of breath and it is hard to get a proper breath in, plus I have been sweating like anything thinking it was just hot. I feel a bit sick though I have not vomited, and I was a bit light-headed getting out of the car, but I did not pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Pale and grey. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 140
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "apex_beat",
+  "finding": "Apex beat not displaced. No heaves or thrills.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, your ECG shows a heart attack — the kind where a blood vessel to the bottom of the heart is blocked. That is why you have this heavy feeling, the jaw and arm ache, the sweating and feeling sick. I have given you a full-dose aspirin to chew, which helps stop the clot getting worse, and I have called an ambulance to take you straight to hospital. They will do an urgent procedure to open the blocked vessel. Do not stand up. Have you taken any tablets for erections, like Viagra or Cialis, in the last day or two? And have you had any bleeding problems, or aspirin before?",
+  "released": [
+   "pde5_inhibitor",
+   "recent_bleeding",
+   "antiplatelet",
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "A heart attack? Look, I have got a job booked in for this morning, can I just take some antacids and get on the road?",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "I know this is a shock, and I understand you have work on, but this is a medical emergency and you cannot drive or go to work. If the blockage is not opened quickly, part of the heart muscle dies, and people can collapse or die from this. The ambulance is the safest way. Please stay seated. Have you taken any erection tablets such as Viagra or Cialis in the last couple of days? Any allergy to aspirin, or stomach bleeding?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, I took one of those Viagra tablets last night. Do not tell the missus I told you. No, I do not take aspirin or anything like that. No allergies that I know of, and I have had Disprin before with no problems.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you for telling me about the Viagra — that is important for your safety, and the hospital team needs to know so they do not give you certain heart sprays that can make your blood pressure crash. I will be discreet with your wife, but the doctors treating you must know. Please stay here; the ambulance is on its way. Have you ever had heart trouble, diabetes, or a similar pain before? Does anyone in your family have heart disease at a young age?",
+  "released": [
+   "previous_cardiac",
+   "diabetes",
+   "crescendo_angina",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart, and not that I know of with diabetes. This past week I have had a bit of a tightness going up ladders, which goes away if I stop, and I put it down to being unfit as it has been happening more. Dad had a heart attack at fifty-five and he died from it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "exam",
+  "id": "bp_both_arms",
+  "finding": "Right 104/68, left 102/66. Radial pulses equal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure in both arms"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "left",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "exam",
+  "id": "radial_pulse",
+  "side": "right",
+  "finding": "Radial pulse present, regular.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Your blood pressure is the same in both arms, which is reassuring. Here is what is happening and what we do now.\n\nThis heavy feeling is a heart attack. A clot has blocked an artery supplying the bottom of your heart. The tracing of your heart shows the classic pattern, and the ache in your jaw and left arm, the sweating, feeling sick, and being short of breath all fit. The tightness on ladders this past week was your heart warning you, and with your smoking, blood pressure, cholesterol, and your dad’s heart attack at fifty-five, this is a high-risk situation.\n\nI have already given you aspirin to chew, and the ambulance is coming to take you to hospital. Do not drive, do not go to the job, and please stay seated or lying down. At hospital they will take you straight to a heart procedure to open the blocked artery with a small balloon and usually a stent. Minutes matter, so we are not waiting for more tests here.\n\nI will not give you the heart spray under the tongue. Because you took Viagra last night, that spray can drop your blood pressure dangerously. I will tell the ambulance and hospital team that privately; they must know. Your wife does not have to be told the detail unless you want her to.\n\nIf the pain suddenly gets much worse, you feel faint, more breathless, or you feel like you might pass out, tell me or the paramedics immediately. They can give stronger pain relief and monitor your heart on the way. Try not to eat or drink anything now, in case you need the procedure straight away.\n\nAfter you are stable, stopping smoking is the single best thing you can do, and your blood pressure and cholesterol tablets will be reviewed in hospital. Do you want me to ring your wife so she can meet you at the hospital?",
+  "released": [],
+  "flooded": false,
+  "reply": "Please do not call her just yet, just tell her I am going to the hospital.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 330
+ },
+ {
+  "type": "say",
+  "utterance": "I will not call her. When you are ready, the hospital team can let her know you are there and that you are being looked after. Stay seated, the ambulance is on its way, and we will stay with you until they arrive. You have done the right thing coming in.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright.",
+  "awards": [],
+  "score": 330
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 330,
+  "max": 480,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 330
+ }
+]

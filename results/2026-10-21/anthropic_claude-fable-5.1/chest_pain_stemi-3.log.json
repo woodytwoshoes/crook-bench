@@ -1,0 +1,325 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Graham, I'm the doctor. You look a bit uncomfortable — tell me about this indigestion. Where exactly do you feel it, what does it feel like, and when did it start?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat. It's like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. About seven this morning. Came on over a few minutes. It's been going the whole time — so an hour and a half, near enough. Still there now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Does the heaviness spread anywhere — into your arms, jaw, neck or back? And along with it, have you felt sweaty, sick in the stomach, short of breath, or light-headed?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. Yeah, I've been sweating like anything. Thought it was just hot. Feel a bit sick. Haven't vomited. A bit short of breath, yeah. Hard to get a proper breath in. Bit light-headed getting out of the car. Didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'll be straight with you. Your heart tracing shows this is not indigestion — you are having a heart attack. One of the arteries supplying the bottom part of your heart is blocked. I've already called an ambulance; they'll take you straight to hospital where they can open that artery up. You're in the right place and we're going to look after you. A few quick questions so I can give you the right medicines: have you taken any aspirin or other tablets this morning? Have you ever had a stomach ulcer, bleeding problem, or a bad reaction to aspirin? And have you taken any erection tablets like Viagra or Cialis in the last couple of days?",
+  "released": [
+   "antiplatelet",
+   "pde5_inhibitor",
+   "recent_bleeding",
+   "aspirin_allergy"
+  ],
+  "flooded": false,
+  "reply": "A heart attack? Crikey. No, I don't take aspirin or anything like that. No. I've had Disprin before, no problems. …Yeah. Took one of those Viagra tablets last night. Don't tell the missus I told you.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Already taking aspirin or clopidogrel"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Any recent bleeding"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Graham — and don't worry, what you tell me stays between us, but I do need to pass the Viagra on to the hospital team because it means they must not give you a certain spray under the tongue; it could drop your blood pressure dangerously. Two more quick things: have you ever had heart trouble before, or chest pains like this in the past weeks? And has anyone in your family had a heart attack young?",
+  "released": [
+   "previous_cardiac",
+   "crescendo_angina",
+   "family_history"
+  ],
+  "flooded": false,
+  "reply": "Never had anything wrong with my heart, though this past week I've had a bit of a tightness going up ladders that goes away if I stop, and I just put it down to being unfit as it's been happening more. And my dad had a heart attack at fifty-five and died from it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous heart problems, angina, stents or heart operations"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Family history of heart disease at a young age"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, here's the plan. The ambulance is on its way and you're going straight to hospital — this needs treatment within the next hour or two, so there's no option of driving yourself or going home first. I've given you an aspirin to chew, which starts thinning the blood around the clot. Your oxygen level is fine so you don't need oxygen, and your chest is clear. I'm not giving you the usual spray under the tongue because of the Viagra last night — it could drop your pressure too far — so if the pain gets worse, tell us straight away and the paramedics can give you strong pain relief into a vein instead. I'll stay with you, keep the tracing going, and I'll call ahead so the hospital heart team is ready. I'll write up a letter with your tracing, your medicines, your blood pressure and the Viagra for the paramedics. Those tightness episodes going up ladders this week were warning signs — that's useful for the hospital to know too. Do you want us to ring your wife so she can meet you at the hospital? Please don't eat or drink anything now, stay sitting or lying down, and tell me immediately if you feel faint, more breathless, or the pain changes. Once you're through this, we'll talk about quitting smoking and getting your heart risk factors sorted — but today the job is just getting that artery open.",
+  "released": [
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I don't know. Maybe a six? It's more heavy than sore.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "say",
+  "utterance": "Okay, a six out of ten — I'll let the paramedics know so they can give you something for it the moment they arrive. Is there anyone you'd like us to call — your wife? And just to confirm: nothing to eat or drink from now, stay seated, and sing out the moment anything changes.",
+  "released": [],
+  "flooded": false,
+  "reply": "Better not ring her yet, she's flat out at work. Wait until we know what's going on.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'd really encourage you to let us call her now — this is serious enough that she'd want to know, and the hospital will want a family member there. I'll have our nurse ring her and let her know you're being taken to hospital with a suspected heart attack and which hospital to go to. I'll stay with you until the ambulance arrives.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright. If you reckon.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "I'll stay with you until the ambulance arrives."
+   }
+  },
+  "total": 320,
+  "max": 480,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 305
+ }
+]

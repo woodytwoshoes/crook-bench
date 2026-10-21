@@ -1,0 +1,84 @@
+{
+ "model": "z-ai/glm-5.3",
+ "case": "abdo_pain_appendicitis",
+ "rep": 2,
+ "ending": "ended",
+ "total": 235,
+ "max": 420,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 115,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 60,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 60,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": true
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": false
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "appendicitis",
+   "role": null
+  }
+ ],
+ "says": 12,
+ "questions": 26,
+ "usage": {
+  "calls": 21,
+  "prompt_tokens": 60405,
+  "completion_tokens": 1198,
+  "cost": 0.006390570999999999
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:51:14.196Z",
+ "max_questions": 50
+}

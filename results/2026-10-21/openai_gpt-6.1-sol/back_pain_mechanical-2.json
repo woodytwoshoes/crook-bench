@@ -1,0 +1,116 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "case": "back_pain_mechanical",
+ "rep": 2,
+ "ending": "ended",
+ "total": 390,
+ "max": 465,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 215,
+   "max": 245
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 55,
+   "max": 75
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 120,
+   "max": 145
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Numbness around the buttocks, genitals or back passage",
+   "elicited": true
+  },
+  {
+   "topic": "Any change in passing urine — difficulty, retention or leaking",
+   "elicited": true
+  },
+  {
+   "topic": "Any loss of bowel control",
+   "elicited": true
+  },
+  {
+   "topic": "Weakness, numbness or pins and needles in the legs",
+   "elicited": true
+  },
+  {
+   "topic": "Any history of cancer",
+   "elicited": true
+  },
+  {
+   "topic": "Unexplained weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Fever or recent infection",
+   "elicited": true
+  },
+  {
+   "topic": "Injecting drug use",
+   "elicited": true
+  },
+  {
+   "topic": "Immune suppression",
+   "elicited": true
+  },
+  {
+   "topic": "Pain at night or at rest that keeps him awake",
+   "elicited": true
+  },
+  {
+   "topic": "Any fall or significant injury",
+   "elicited": true
+  },
+  {
+   "topic": "Steroid use",
+   "elicited": true
+  },
+  {
+   "topic": "Known osteoporosis",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "mechanical_lbp",
+   "role": "acceptable"
+  },
+  {
+   "label": "Can't miss",
+   "id": "cauda_equina",
+   "role": "sinister"
+  }
+ ],
+ "says": 13,
+ "questions": 23,
+ "usage": {
+  "calls": 21,
+  "prompt_tokens": 60254,
+  "completion_tokens": 1954,
+  "cost": 0.0348339
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:54:17.835Z",
+ "max_questions": 50
+}

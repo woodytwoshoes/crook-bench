@@ -1,0 +1,375 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Chen. Sorry you're dealing with this — burning when you wee is really uncomfortable. Let me ask you a few things so I can work out what's going on. First: how long exactly has the burning been going on, and is it getting worse, the same, or better? And are you needing to wee more often or in a hurry?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half now, and it stings and burns worst right at the end. I am going constantly, about every half hour, and only a little bit comes out so I really have to rush.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. A few important questions: Have you had any fever, chills or shakes, feeling generally unwell or flu-like? Any pain in your back or side under the ribs (your kidney area)? And any nausea or vomiting?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "I haven't had any fevers or shivers and I feel fine apart from this, there's nothing in my back except for a bit of an ache low down in my tummy, and I am eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that's reassuring. Have you noticed any blood in your urine, or that it looks cloudy or smells different? And have you had any unusual vaginal discharge, itching or soreness down there, or any bleeding between periods?",
+  "released": [
+   "vaginal_discharge_itch",
+   "postcoital_intermenstrual_bleeding"
+  ],
+  "flooded": false,
+  "reply": "It is a bit cloudy and smells, but I haven't seen any blood, and I don't have any unusual discharge, itching, or soreness down there, and nothing between my periods or after sex.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "You said it feels like a UTI \"again\" — how many have you had before, and when was the last one? Were they confirmed with a urine test, and did antibiotics sort them out each time?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I only had one about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Any chance you could be pregnant — when was your last period, and are you taking the pill every day without missing any?",
+  "released": [
+   "pregnancy_possible",
+   "last_period",
+   "contraception"
+  ],
+  "flooded": false,
+  "reply": "I don't think I could be pregnant. My last period was about two weeks ago and it was normal, and I am on the pill and do not miss it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have a new sexual partner recently, or have you had sex in the last week or two? And do you use condoms? I ask because some sexually transmitted infections can cause burning when you wee too.",
+  "released": [
+   "sexual_partners",
+   "recent_intercourse",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "I have a boyfriend and we have been together about a year, just him, and we had been together the night before it started, but we do not use condoms because I am on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "Any other health issues I should know about — like kidney stones, diabetes, or problems with your bladder or kidneys? And have you had any antibiotics in the last few months? Any allergies to medicines?",
+  "released": [
+   "renal_tract_problems",
+   "diabetes",
+   "recent_antibiotics",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that, and I haven't had any antibiotics this year, and I am not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "The examination and your urine test fit with a bladder infection — a UTI, like you thought. Before I write a script: have you already taken anything for it, like paracetamol, cranberry or Ural? And since some infections passed on through sex can cause burning like this, would you like me to also send off a urine check for chlamydia, which is recommended for people your age?",
+  "released": [],
+  "flooded": false,
+  "reply": "I haven't taken anything for it, but yeah, you can go ahead and check for that too just to be safe.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "chlamydia_gonorrhoea_naat",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chlamydia and gonorrhoea PCR"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg (1 capsule)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Not indicated: paracetamol",
+    "domain": "management"
+   }
+  ],
+  "score": 223
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 263
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Chloe.\n\nWhat's going on: your symptoms — burning at the end of passing urine, going every half hour, urgency, cloudy smelly urine and a low tummy ache — plus the urine test showing white cells and nitrites, mean you have a bladder infection, a simple UTI. I checked your temperature and your kidney areas at the back, and there's no sign the infection has reached your kidneys, and you're not generally unwell. So this is a straightforward one.\n\nTreatment:\n1. Nitrofurantoin 100 mg, one capsule twice a day for 5 days. Take it with food or a glass of milk — it's better absorbed and less likely to upset your stomach. Please finish all 10 capsules even if you feel fine after a day or two. It can turn your urine a bright yellow-orange colour, which is harmless.\n2. Paracetamol 1 or 2 tablets when you need it for the pain, up to four times a day (no more than 8 tablets in 24 hours).\n3. Drink plenty of water, don't hold on when you need to go, and cut back on coffee, tea and alcohol for the next few days because they irritate the bladder. You should start feeling noticeably better within 24 to 48 hours.\n\nA couple of things worth knowing:\n- If you get vomiting or diarrhoea while on the antibiotic, your pill may not be absorbed properly, so use condoms for 7 days afterwards. Otherwise, no extra contraception is needed.\n- Sex probably set this off — it's very common. It's sensible to avoid sex while you're sore, and passing urine after sex afterwards may reduce the chance of it happening again.\n\nI've also sent off the chlamydia and gonorrhoea urine test you agreed to. That takes a couple of days — the clinic will contact you with the result, and if anything comes back positive we'll treat you and let you know that your boyfriend needs treatment too.\n\nWhen to get help urgently — come back to me, or go to an after-hours service or the emergency department, if you develop: a fever or shivers/rigors, pain in your back or side under the ribs, vomiting or being unable to keep the tablets down, visible blood in the urine, or you feel systemically unwell. Those can mean the infection has moved up to the kidney and needs different, stronger treatment.\n\nAlso come back if you're not clearly improving after 48 hours, or if symptoms are still there at the end of the 5 days. In that case I'd send a urine sample to the lab for culture so we can pick the right antibiotic.\n\nLastly, one UTI every couple of years is normal and nothing to worry about. If you find you're getting them often — say three or more a year, or every time after sex — make an appointment and we can talk about prevention options. Any questions about any of that?",
+  "released": [],
+  "flooded": false,
+  "reply": "I don't know the word rigors, what does that mean?",
+  "awards": [],
+  "score": 263
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry — jargon! \"Rigors\" just means a proper shaking, shivering attack: you feel very cold and you can't stop shaking, often with a high temperature, like a bad bout of the flu. That's different from just feeling a bit chilly. If that happens, along with pain in your back or side or being sick, it can mean the infection has travelled up to a kidney — so get seen the same day.\n\nOtherwise, everything else the same: finish the 5 days of nitrofurantoin with food, paracetamol for the sting, plenty of water, and come back if you're not clearly better in 48 hours. We'll ring you with the chlamydia result in a couple of days. Does that all make sense, and is there anything else you'd like to ask me?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that all makes sense, I just want to get my script so I can get back to work.",
+  "awards": [],
+  "score": 263
+ },
+ {
+  "type": "say",
+  "utterance": "You're all set — the nitrofurantoin, the paracetamol and the urine test are all through. Take the first capsule with some food, and I hope you're feeling much better by tomorrow. Ring the clinic if anything worries you. Take care, Chloe.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thank you, I will do that. Bye.",
+  "awards": [],
+  "score": 263
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water, don't hold on when you need to go, and cut back on coffee, tea and alcohol for the next few days because they irritate the bladder.",
+    "ideal_2": "Paracetamol 1 or 2 tablets when you need it for the pain, up to four times a day (no more than 8 tablets in 24 hours).",
+    "ideal_3": "Also come back if you're not clearly improving after 48 hours",
+    "acceptable_2": "Take it with food or a glass of milk — it's better absorbed and less likely to upset your stomach.",
+    "acceptable_3": "passing urine after sex afterwards may reduce the chance of it happening again."
+   }
+  },
+  "total": 318,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 263
+ }
+]

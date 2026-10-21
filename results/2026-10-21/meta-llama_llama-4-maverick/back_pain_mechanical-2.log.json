@@ -1,0 +1,245 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi, Daniel. What happened to your back on the weekend?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I hurt it on Saturday lifting a big pot plant in the garden, felt a bit of a twinge, and then woke up Sunday and could barely get out of bed, so it has been about three days now. It is low down on the left side of my back, and sometimes it goes into my left buttock. It is worse when I bend or get out of a chair, and worse by the evening, though it feels a bit better when I am lying still with a heat pack. I have worked from home the last two days mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "hip_sacroiliac",
+  "side": "left",
+  "finding": "Full, painless hip movement.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hip movement"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any numbness or tingling in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any problems with your bowels or bladder recently?",
+  "released": [
+   "bowel_function",
+   "bladder_function"
+  ],
+  "flooded": false,
+  "reply": "No, everything is normal there, and I haven't had any problems passing urine either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have a fever or feel unwell in yourself?",
+  "released": [
+   "fever_infection"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or infections.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Full blood examination (FBE)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 88
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": -4,
+    "kind": "penalty",
+    "label": "Unnecessary: C-reactive protein (CRP) (2nd unnecessary test)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 84
+ },
+ {
+  "type": "order",
+  "id": "lumbar_xray",
+  "result": "Mild disc space narrowing at L4/5, consistent with age. No fracture or destructive lesion.",
+  "awards": [
+   {
+    "points": -6,
+    "kind": "penalty",
+    "label": "Unnecessary: Lumbar spine X-ray (3rd unnecessary test)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 78
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray shows some wear and tear in your lower back, but no serious damage. Your examination is reassuring, and your symptoms are consistent with a minor strain. I recommend managing your pain with simple pain relief and gradually increasing your activity level. I'll prescribe you some paracetamol to help with the pain. If your symptoms worsen or you experience any new symptoms, please return for review.",
+  "released": [],
+  "flooded": false,
+  "reply": "Are you sure we shouldn't do an MRI just to make sure I haven't slipped a disc?",
+  "awards": [],
+  "score": 78
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray shows some wear and tear in your lower back, but no serious damage. Your examination is reassuring, and your symptoms are consistent with a minor strain. I recommend managing your pain with simple pain relief and gradually increasing your activity level. I'll prescribe you some paracetamol to help with the pain. If your symptoms worsen or you experience any new symptoms, please return for review.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, if you really think a scan isn't necessary, I will give the paracetamol and moving around a go.",
+  "awards": [],
+  "score": 78
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 83
+ },
+ {
+  "type": "dx",
+  "primary": "lumbar_strain",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lumbar muscle strain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 83
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0"
+   ],
+   "quotes": {
+    "ideal_0": "The X-ray shows some wear and tear in your lower back, but no serious damage. Your examination is reassuring, and your symptoms are consistent with a minor strain."
+   }
+  },
+  "total": 98,
+  "max": 465,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 83
+ }
+]

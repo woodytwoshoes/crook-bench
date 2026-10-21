@@ -1,0 +1,330 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm Dr Chen. I hear you've been feeling pretty rotten with a cough and fever. Can you tell me more — when did this start, and how has it changed day to day?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain",
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough, and I have been burning up on and off. Since yesterday I have started bringing up stuff that is a rusty, brownish colour, though it was clear at first. I also got a sharp pain low down on the right side round towards my back yesterday, which catches me when I take a deep breath or cough. It feels worse than the first day, but about the same since yesterday, so I am not going downhill fast.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds unpleasant. A few more questions: Are you more short of breath than usual, or breathless at rest or lying flat? Any coughing up blood, night sweats, weight loss or feeling confused? Do you smoke, and have you had your COVID and flu shots this year? Any other health problems, and has anything like this happened before?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry — let me take those one at a time. First: are you more short of breath than usual, or breathless at rest or lying flat?",
+  "released": [
+   "breathlessness"
+  ],
+  "flooded": false,
+  "reply": "I am only puffed going up the stairs and on the way in from the car park, but sitting here I am alright.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "OK, that's a bit of extra puff but not too alarming. Next: any coughing up blood, night sweats, or unexplained weight loss?",
+  "released": [
+   "haemoptysis",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "There is no actual blood, just that rusty colour, and if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Do you smoke, and if so how much?",
+  "released": [
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had your flu shot and COVID boosters this year? Any other health problems or regular medicines?",
+  "released": [
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I did not get round to the flu jab this year, and I do not have any other health problems or take any regular medicines.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's really helpful. Let me examine you now — I'll check your temperature, breathing rate, oxygen levels, pulse and blood pressure, then listen to your chest. Could you sit up and take your shirt off for me?",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, let's get on with it then. I need to get back for these exams.",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "500 mg (1 capsule)",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg (1 tablet)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pulmonary embolism, Sepsis, Lung cancer, Tuberculosis, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, the news is clear: you have pneumonia — an infection in the lower part of your right lung. The chest X-ray shows a patch of inflamed lung, which matches your rusty phlegm, fever and the pain when you breathe deeply. The good news is your oxygen level and blood pressure are reasonable, so you can be treated at home rather than in hospital. I've prescribed two antibiotics — amoxicillin capsules (one, three times a day) and doxycycline tablets (one, twice a day) — both for 5 days, to cover the usual pneumonia bugs. Take the doxycycline with food, avoid heavy sun exposure while on it, and finish the whole course even when you start feeling better (which should be within 48–72 hours). Rest, fluids, and paracetamol for the fever and pain are fine. It's a good idea to get the flu shot and a COVID booster once you're recovered.\n\nPlease come back or go to hospital straight away if: your breathing gets more difficult, your oxygen sense drops (feeling faint or blue lips), fever or the rusty phlegm doesn't improve after 2–3 days of antibiotics, you cough up blood, get chest pain not linked to breathing/coughing, become confused, or feel much worse in any way. Also, if the cough lingers more than a few weeks after treatment, we'll re-check you. Any questions before I write this up?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Blimey, I didn't think it was that serious. I just need to get these tablets and get back to school before things get completely out of hand with the maths exams.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "I know it sounds scary, but caught early like this it responds well to antibiotics. That said — please don't push through it. Take today and tomorrow off at minimum, rest and drink plenty of fluids, and you should be feeling markedly better within a couple of days. If you don't improve by day 3, or if anything I mentioned earlier happens (worsening breathlessness, confusion, coughing blood), come straight back. Take care, Mark, and I hope the maths exams go smoothly too!",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, I will take it easy. Thanks, doc.",
+  "awards": [],
+  "score": 155
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "you can be treated at home rather than in hospital",
+    "acceptable_2": "paracetamol for the fever and pain are fine",
+    "acceptable_3": "rest and drink plenty of fluids",
+    "acceptable_7": "It's a good idea to get the flu shot and a COVID booster once you're recovered."
+   }
+  },
+  "total": 185,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 155
+ }
+]

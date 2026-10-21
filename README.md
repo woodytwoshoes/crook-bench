@@ -14,64 +14,71 @@ about whether a model can or should practise medicine.
 
 ## Results
 
-**Interactive charts:** https://woodytwoshoes.github.io/crook-bench/ (hover any model for its numbers).
+**Interactive results:** https://woodytwoshoes.github.io/crook-bench/: sort the leaderboard by any column, filter by lab or open weights, click a model to highlight it everywhere and split its point into its consultations, compare the two runs, and read any consultation's transcript, bill and move log.
 
-![Overall score by model, with one standard deviation either side](images/board.png)
+Latest run: **21 October 2026**, against the live game's patient (Gemini 3.1 Flash-Lite classifier, Gemini 3.5 Flash-Lite voice and judge) and the game's scoring of that date.
+
+![Overall score by doctor, with a 95% interval from resampling each doctor's plays within each case](images/board.png)
 
 | Rank | Model | Consults | Score % (±sd) | History | Exam | Tests | Mgmt + dx | Red flags caught | Questions asked | Red flags per 10 questions | Top dx right | Harms per consult | Required care missed | Cost per consult |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | openai/gpt-6-astra | 15 (5 cases) | 83 (±11) | 81 | 76 | 88 | 92 | 88% | 27 | 2.7 | 100% | 0.00 | 0 | $0.21 |
-| 2 | openai/gpt-6.1-sol | 15 (5 cases) | 80 (±13) | 77 | 77 | 83 | 91 | 82% | 25 | 2.7 | 100% | 0.00 | 0 | $0.03 |
-| 3 | anthropic/claude-opus-5.5 | 15 (5 cases) | 77 (±12) | 67 | 84 | 85 | 93 | 67% | 16 | 3.4 | 100% | 0.00 | 0 | $0.37 |
-| 4 | anthropic/claude-fable-5.1 | 15 (5 cases) | 75 (±12) | 71 | 81 | 85 | 83 | 70% | 23 | 2.4 | 100% | 0.13 | 0 | $2.06 |
-| 5 | qwen/qwen3.8-max-0902 | 15 (5 cases) | 74 (±12) | 67 | 83 | 80 | 86 | 66% | 26 | 2.3 | 100% | 0.07 | 0 | $0.12 |
-| 6 | x-ai/grok-4.7 | 15 (5 cases) | 74 (±9) | 66 | 86 | 83 | 82 | 70% | 21 | 2.6 | 100% | 0.13 | 0 | $0.09 |
-| 7 | deepseek/deepseek-v4-pro-0813 | 15 (5 cases) | 71 (±13) | 65 | 79 | 86 | 78 | 72% | 18 | 3.7 | 100% | 0.20 | 0 | $0.09 |
-| 8 | moonshotai/kimi-k3 | 15 (5 cases) | 67 (±15) | 60 | 77 | 55 | 81 | 57% | 20 | 2.4 | 100% | 0.27 | 0 | $0.16 |
-| 9 | google/gemini-3.1-pro-preview | 15 (5 cases) | 63 (±9) | 52 | 82 | 78 | 75 | 55% | 14 | 3.0 | 100% | 0.13 | 0 | $0.17 |
-| 10 | z-ai/glm-5.3 | 15 (5 cases) | 62 (±16) | 57 | 74 | 77 | 67 | 58% | 19 | 2.5 | 100% | 0.27 | 0 | $0.04 |
-| 11 | mistralai/mistral-medium-3-5 | 15 (5 cases) | 60 (±7) | 59 | 68 | 56 | 62 | 58% | 20 | 2.6 | 100% | 0.20 | 0 | $0.17 |
-| 12 | qwen/qwen3.8-27b | 15 (5 cases) | 59 (±10) | 50 | 77 | 52 | 69 | 49% | 17 | 2.4 | 100% | 0.33 | 0 | $0.03 |
-| 13 | meta-llama/llama-4-maverick | 15 (5 cases) | 24 (±10) | 22 | 38 | 38 | 21 | 16% | 6 | 2.1 | 100% | 0.40 | 3 | $0.01 |
+| 1 | openai/gpt-6.1-sol | 15 (5 cases) | 85 (±10) | 82 | 78 | 100 | 93 | 92% | 21 | 3.5 | 100% | 0.00 | 0 | $0.03 |
+| 2 | openai/gpt-6-astra | 15 (5 cases) | 85 (±9) | 81 | 79 | 100 | 93 | 90% | 23 | 3.2 | 100% | 0.00 | 0 | $0.19 |
+| 3 | google/gemini-4-argon | 15 (5 cases) | 82 (±9) | 73 | 93 | 100 | 89 | 73% | 16 | 4.0 | 100% | 0.00 | 0 | $0.10 |
+| 4 | qwen/qwen3.8-max-0902 | 15 (5 cases) | 81 (±10) | 70 | 80 | 94 | 97 | 73% | 22 | 2.6 | 100% | 0.07 | 0 | $0.11 |
+| 5 | anthropic/claude-fable-5.1 | 15 (5 cases) | 80 (±7) | 72 | 85 | 100 | 89 | 73% | 21 | 2.9 | 100% | 0.20 | 0 | $1.93 |
+| 6 | x-ai/grok-4.7 | 15 (5 cases) | 79 (±8) | 71 | 87 | 100 | 88 | 74% | 20 | 3.2 | 100% | 0.07 | 1 | $0.09 |
+| 7 | anthropic/claude-opus-5.5 | 15 (5 cases) | 75 (±12) | 65 | 79 | 100 | 91 | 63% | 13 | 3.9 | 100% | 0.00 | 0 | $0.34 |
+| 8 | deepseek/deepseek-v4-pro-0813 | 15 (5 cases) | 68 (±13) | 61 | 74 | 78 | 74 | 66% | 16 | 4.3 | 100% | 0.33 | 0 | $0.03 |
+| 9 | mistralai/mistral-large-4-0 | 15 (5 cases) | 63 (±27) | 54 | 74 | 78 | 59 | 54% | 17 | 2.9 | 80% | 0.07 | 3 | $0.04 |
+| 10 | moonshotai/kimi-k3 | 15 (5 cases) | 62 (±18) | 55 | 70 | 56 | 71 | 58% | 16 | 2.9 | 93% | 0.27 | 0 | $0.10 |
+| 11 | qwen/qwen3.8-27b | 15 (5 cases) | 61 (±9) | 57 | 75 | 94 | 54 | 57% | 17 | 2.7 | 100% | 0.13 | 1 | $0.02 |
+| 12 | z-ai/glm-5.3 | 15 (5 cases) | 54 (±9) | 47 | 59 | 47 | 63 | 54% | 15 | 3.4 | 100% | 0.20 | 1 | $0.01 |
+| 13 | meta-llama/llama-4-maverick | 15 (5 cases) | 27 (±11) | 26 | 34 | 67 | 22 | 18% | 5 | 2.7 | 100% | 0.33 | 3 | $0.01 |
+| – | *A GP registrar* (human reference) | 5 (5 cases) | 31 (±6) | 20 | 61 | 63 | 28 | 35% | 4 | 5.7 | 100% | 0.20 | 1 | – |
 
 Score is the mean share of each case's maximum. History, Exam, Tests and
-Mgmt + dx are the bill's four parts, each out of its own maximum. Full
-transcripts, bills and move logs for every consultation are in
-[`results/`](results/).
+Mgmt + dx are the bill's four parts, each out of its own maximum. The GP
+registrar (a co-author of the paper) played each free case once on the live
+game, briskly, on 11–12 October; their consultations were replayed under the
+21 October rules. Five consultations by one person are a reference point, not
+a human baseline. Every consultation's transcript, bill and move log is in
+[`results/2026-10-21/`](results/2026-10-21/); the first run is in
+[`results/2026-10-04/`](results/2026-10-04/).
 
-![Score against cost per consultation, log scale](images/cost.png)
+![Score against the doctor model's cost per consultation, log scale](images/cost.png)
 
 ![Red flags caught against questions asked](images/flags.png)
 
-![Mean score by model and case](images/heat.png)
-
-![How often each model walked into each case's trap](images/traps.png)
+![Each model's score on 4 October and 21 October](images/compare.png)
 
 **What stood out**
 
-- **Every model named the right diagnosis in all 195 consultations.** On
-  these five cases diagnosis doesn't separate the models; the process does:
-  red flags asked about, a safe prescription, and sending the patient to the
-  right place.
-- **Red flags followed questions.** The top two asked 25–27 questions a
-  consultation and caught 82–88% of the red flags; Gemini 3.1 Pro asked 14
-  and caught 55%. No model came near the 50-question budget.
-- **The traps worked.** A patient with a penicillin allergy that isn't on
-  the record was given amoxicillin in 18 of 39 consultations; the top three
-  never did it. A patient who took sildenafil (Viagra) the night before was
-  given GTN 7 times. Three consultations named ectopic pregnancy as the
-  can't-miss diagnosis for a man.
-- **Price and score are loosely related.** GPT-6.1 Sol scored 80% at about
-  US$0.03 a consultation; Claude Fable 5.1 scored 75% at about US$2.06.
-- Llama 4 Maverick asked about 6 questions a consultation and missed the
-  required care in 3 of 15.
+- **Diagnosis doesn't separate the models.** The most likely diagnosis was
+  right in 191 of 195 consultations; the other four ended with no diagnosis
+  because the model stopped calling tools (Mistral Large 4 three times, Kimi
+  K3 once). The process does separate them: red flags asked about, a safe
+  prescription, and sending the patient to the right place.
+- **Red flags followed questions** (r = 0.88 across models). No model came
+  near the 50-question budget.
+- **The record is not the patient.** The patient allergic to penicillin
+  (record: "nil known") was given penicillin in 16 of 39 consultations; in 14
+  the doctor never asked about allergies. GTN was given after sildenafil 5
+  times, each without asking about other medicines.
+- **Price and score are loosely related.** GPT-6.1 Sol scored 85% at about
+  US$0.03 a consultation; Claude Fable 5.1 80% at about US$1.93.
+- **The ranking held between runs** (Spearman 0.92 over the 11 models in
+  both), though the patient model, the scoring rules and the cases all
+  changed. Gemini 4 Argon scored 82% where Gemini 3.1 Pro had scored 63%.
 
-**Run:** 2026-10-04. 13 models × 5 cases × 3 consultations = 195, through
+**Run:** 2026-10-21. 13 models × 5 cases × 3 consultations = 195, through
 OpenRouter at each provider's defaults (Llama 4 Maverick with
-`tool_choice: "required"`, below). Patient, classifier and judge: Qwen3 8B
-(FP8, vLLM) on the game's server. Budget: 50 questions. Total cost about
-US$53. Five appendicitis consultations were rescored from their logs after
-one case fix, with no model calls (`npm run bench -- rescore`; known issue B2).
+`tool_choice: "required"`, below), on the game's server. Budget: 50
+questions. Doctor-model cost about US$45. The first run (2026-10-04) used
+Qwen3 8B as patient, classifier and judge, and the rules of that date; its
+leaderboard is in [`results/2026-10-04/LEADERBOARD.md`](results/2026-10-04/LEADERBOARD.md).
+Open weights: Mistral Medium 3.5 was listed as closed in the first run's
+charts; its weights are on Hugging Face, and the site now shows it as open.
 
 ## Method
 
@@ -83,7 +90,8 @@ referrals and diagnoses), `examine`, `order_test`, `prescribe`, `refer`,
 booking, the clinic record, its own findings and results. It never sees the
 case file or the points.
 
-**The patient** is the game's own patient model, Qwen3 8B, on the game's
+**The patient** is the game's own patient model (Gemini Flash-Lite on 21
+October, Qwen3 8B on 4 October), on the game's
 server, the same one human players talk to. It plays a person from a
 private chart and does not know its diagnosis. A separate classifier call
 (same model) decides which history items each question asked about, and only
@@ -120,13 +128,15 @@ it ran with `tool_choice: "required"`; every other model ran with `auto`.
   standard references and still under review by the game's author, a GP
   registrar. Management follows Australian practice (eTG, PBS), which may
   differ from where you are.
-- **The patient and the marker are an 8B model.** It misses some questions
+- **The patient and the marker are small models** (Gemini Flash-Lite on 21
+  October, Qwen3 8B on 4 October). It misses some questions
   (the classifier's held-out recall is about 90%) and the end-of-consult
   judge sometimes credits or misses a spoken item. Every model faces the same
   patient, but the noise is real: see known issues.
 - **Three runs per case is a small sample.** The ± column is the standard
   deviation across a model's consultations.
-- The developer wrote the cases, so no human baseline is given.
+- The developer wrote the cases. The one human reference point (a GP registrar,
+  five consultations) is not a human baseline.
 
 ## Known issues
 

@@ -1,0 +1,353 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I’m glad you came in. Burning when you wee can have a few causes, so I’ll ask some questions before we decide on antibiotics. Can you tell me about the burning and any other symptoms you’ve noticed?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, and that is worst right at the end of weeing, just like my last one. I am going constantly, about every half hour, and only a little bit comes out so I have to rush. This started yesterday morning, so about a day and a half ago, and my wee is a bit cloudy and smells, but I have not seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had fever, chills, pain in your back or sides, vomiting, or felt generally unwell? Is there any pain in your lower tummy?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting",
+   "abdominal_pain"
+  ],
+  "flooded": false,
+  "reply": "I have not had any fevers or shivers and I feel fine apart from this, and there is nothing in my back. I am eating normally and have not been sick, and I just have a bit of an ache low down in my tummy above my bladder and nothing else.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Abdominal pain beyond a low ache"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Any vaginal discharge, itching, sores, bleeding between periods, or pain during sex? When was your last period, and is there any chance you could be pregnant?",
+  "released": [
+   "vaginal_discharge_itch",
+   "postcoital_intermenstrual_bleeding",
+   "dyspareunia",
+   "last_period",
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "I have not had any discharge or anything like that, and there is no bleeding between periods or pain with sex. My last period was about two weeks ago and it was normal, and I do not think there is any chance I could be pregnant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When her last period was"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Have you missed any pill doses or had vomiting or diarrhoea that might affect it? Have you had a new sexual partner recently, and do you use condoms?",
+  "released": [
+   "contraception",
+   "sexual_partners",
+   "condom_use"
+  ],
+  "flooded": false,
+  "reply": "I am on the pill and I do not miss it, and I have a boyfriend I have been with for about a year with just him, and we do not use condoms because I am on the pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Condom use"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "When was your last urine infection, and how many have you had in the past year? Do you know what antibiotic you took and whether a urine test showed which antibiotics would work?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that is it, and I have not had any antibiotics this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had kidney problems, kidney stones, diabetes or an operation on your urinary tract? Are you taking anything besides the pill, including remedies for this, and do you have any medicine allergies?",
+  "released": [
+   "renal_tract_problems",
+   "diabetes",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I have never had anything like kidney problems or diabetes, I am not taking anything besides the pill, and I am not allergic to anything that I know of.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Known kidney or bladder problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "This sounds most like an infection in your bladder. With your permission I’ll check your temperature and pulse, feel your tummy, and gently check for tenderness over your kidneys. I’d also like a urine sample.",
+  "released": [],
+  "flooded": false,
+  "reply": "Can we just skip straight to the script? I really need to get back to work.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "I understand you’re in a hurry. These checks only take a few minutes and help make sure this is a simple bladder infection rather than something needing different treatment. Are you happy for me to do those quick checks and a urine sample?",
+  "released": [],
+  "flooded": false,
+  "reply": "Oh, alright then, if it is quick.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Your urine test supports a bladder infection, and your examination is reassuring: there are no signs of a kidney infection at present. I recommend trimethoprim, one 300 mg tablet at night for three nights. Complete the course even if you feel better. It doesn’t reduce the pill’s effectiveness, but vomiting or severe diarrhoea can—follow the pill’s missed-dose instructions if that happens. Is there anything worrying you about this treatment?",
+  "released": [],
+  "flooded": false,
+  "reply": "That sounds easy enough, as long as I can just take it at night and get back to work.",
+  "awards": [],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "At night",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, you can return to work if you feel well. Drink enough water to stay hydrated, but you don’t need to force extra fluids, and don’t hold on when you need to wee. You can take paracetamol according to the packet for discomfort. You should start feeling better within 24–48 hours. If you’re not clearly improving within 48 hours, or symptoms return after treatment, come back so we can send urine to the laboratory and review the antibiotic. Seek urgent care the same day if you develop fever, shaking chills, pain in your back or side, vomiting, or worsening tummy pain. Go to emergency if you become very unwell, faint or confused. The antibiotic can cause nausea or diarrhoea; seek urgent help for trouble breathing or swelling of your lips or tongue. Any questions before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that all makes sense, thank you.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_2": "You can take paracetamol according to the packet for discomfort.",
+    "ideal_3": "If you’re not clearly improving within 48 hours, or symptoms return after treatment, come back so we can send urine to the laboratory and review the antibiotic. Seek urgent care the same day if you develop fever, shaking chills, pain in your back or side, vomiting, or worsening tummy pain."
+   }
+  },
+  "total": 320,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 290
+ }
+]

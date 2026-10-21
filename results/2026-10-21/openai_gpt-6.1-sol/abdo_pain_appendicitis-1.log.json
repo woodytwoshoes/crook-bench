@@ -1,0 +1,484 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the doctor. You look uncomfortable. Can you show me where the pain is, and tell me how it started and how it has changed since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Down here on the right side, low down. It started last night, about ten o'clock, so maybe fourteen hours ago. At first it sort of came and went, but it is there all the time now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Was it in the lower right from the start, or did it move there from elsewhere? How severe is it out of ten, and does moving or coughing make it worse?",
+  "released": [
+   "pain_migration",
+   "movement_pain"
+  ],
+  "flooded": false,
+  "reply": "It actually started around my belly button and moved down to the right sometime overnight. It is maybe a seven out of ten. Walking hurts, every bump in the car on the way here was awful, and coughing is the worst.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had nausea or vomiting, and did that start before or after the pain? Have you lost your appetite? Any fever or chills?",
+  "released": [
+   "nausea_vomiting",
+   "vomiting_order",
+   "anorexia",
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours and I threw up once this morning, and the pain came first with the sickness coming a few hours later. I couldn't face breakfast and am not hungry at all, which isn't like me. I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain or the vomiting came first"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "say",
+  "utterance": "Any diarrhoea, constipation, blood in the stool, or trouble passing wind? Any burning or blood when you wee, pain in your back, or pain or swelling in a testicle or groin?",
+  "released": [
+   "diarrhoea",
+   "rectal_bleeding",
+   "urinary_symptoms",
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea, just went normally yesterday morning and nothing since, with no blood. Weeing is normal, and nothing down there with no lumps either.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Blood in the stools"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had anything like this before, any operations on your tummy, or other medical problems? Have you taken any medicines today, and do you have any allergies? When did you last eat or drink?",
+  "released": [
+   "previous_episodes",
+   "previous_surgery",
+   "analgesia_tried",
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "Never had anything like this and never had an operation, I've still got my appendix as far as I know. I took a couple of paracetamol at six this morning, but it didn't do much, and I have no allergies. I haven't eaten since last night, just the usual, Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "I'm concerned this could be appendicitis—an inflamed appendix—rather than a stomach bug. I'll gently examine your tummy now. I'd also like to check your groin and testicles to rule out a twisted testicle or a hernia, which can cause tummy pain. Is that okay, and would you like a chaperone present?",
+  "released": [],
+  "flooded": false,
+  "reply": "I really just want to get this sorted so I can get back to work. I don't need a chaperone.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_percussion",
+  "finding": "Right lower quadrant: Tender to light percussion. Elsewhere: resonant and non-tender.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Abdominal percussion"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "say",
+  "utterance": "Your symptoms and the tenderness strongly suggest appendicitis. You need hospital assessment now by the surgical team; waiting or going back to work could allow the appendix to burst. They may do blood tests and a scan and may recommend an operation. Please don't eat or drink while we arrange transfer. I'll arrange an ambulance because of your pain and give the emergency team a handover. Is that okay? Have you had any water today, and exactly how much paracetamol did you take?",
+  "released": [],
+  "flooded": false,
+  "reply": "An operation? Is there really no other way, I've got work to finish. I haven't had any water today, and I took two paracetamol.",
+  "awards": [],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "I understand work matters, but leaving this untreated could become life-threatening. Antibiotics can sometimes treat selected uncomplicated cases, but the hospital team must first assess whether that's safe for you. We cannot safely treat this as a stomach bug or send you back to work. I can provide a medical certificate. I'll give you a small dose of morphine for the pain while we arrange the ambulance; it can cause sleepiness or nausea, so we'll monitor your breathing and blood pressure. You must not drive or operate tools.",
+  "released": [],
+  "flooded": false,
+  "reply": "Well, if it has to be done, let's get it over with.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "morphine_10mg_ml_inj",
+  "dose": "2.5 mg intravenously, slowly",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "say",
+  "utterance": "We'll keep you here under observation until the ambulance arrives. Please tell us straight away if the pain suddenly worsens or spreads across your tummy, you feel faint, or you become short of breath or unusually sleepy. I'll send the hospital your examination findings, urine result and the medicines you've had. The urine test doesn't show a clear urine infection; it doesn't rule out appendicitis. How is your pain now?",
+  "released": [],
+  "flooded": false,
+  "reply": "It is still pretty sore.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "say",
+  "utterance": "We'll keep checking your pain and the ambulance team can give further pain relief safely. The priority is getting you to hospital without delay. I haven't found signs of a twisted testicle or a hernia, but I can't rule out a complication such as a small leak from the appendix here.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want this pain to stop.",
+  "awards": [],
+  "score": 305
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 345
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I'm concerned this could be appendicitis—an inflamed appendix—rather than a stomach bug.",
+    "ideal_3": "Please don't eat or drink while we arrange transfer."
+   }
+  },
+  "total": 375,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 345
+ }
+]

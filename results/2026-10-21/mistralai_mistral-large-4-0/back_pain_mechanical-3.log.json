@@ -1,0 +1,413 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, I’m sorry you’re in so much pain. Can you tell me what happened when you hurt your back, and what symptoms you’re having now?",
+  "released": [
+   "pain_site",
+   "leg_radiation",
+   "aggravating_relieving",
+   "eases_with_exercise",
+   "morning_stiffness",
+   "cough_sneeze",
+   "function_work",
+   "analgesia_tried",
+   "saddle_anaesthesia",
+   "bladder_function",
+   "bowel_function",
+   "leg_neuro_symptoms",
+   "night_rest_pain",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday, felt a twinge, and then woke up Sunday and could barely get out of bed. The pain is low down on the left side of my back and sometimes goes into my left buttock, but nothing goes down my legs. It gets worse when I bend or get out of a chair and is worse by the evening, while moving about makes it worse and it settles when I rest. I'm a bit stiff in the morning, but it loosens up in ten minutes or so, and sneezing's a bit uncomfortable though nothing shoots anywhere. I've worked from home the last two days mostly lying on the couch with the laptop, and I can walk around slowly. I've tried some paracetamol, but it didn't do much, honestly. I don't have numbness around my buttocks, genitals, or back passage, and my passing urine is all normal with no loss of bowel",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain eases with exercise or moving about"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Morning stiffness and how long it lasts"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether coughing, sneezing or straining makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What treatment or pain relief he has tried so far"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain at night or at rest that keeps him awake"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that’s helpful. A few safety questions: Have you had fever, chills, night sweats, unexplained weight loss, a history of cancer, or long-term steroid use? Do you have any weakness, numbness or tingling in your legs or feet, trouble walking, any loss of bladder or bowel control, or trouble passing urine? Does the pain wake you at night even when you change position? Do you have a history of stomach ulcer or reflux, kidney disease, asthma, or do you take blood thinners, and any allergies apart from tramadol? Have you had back pain like this before?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any weakness, numbness or tingling in your legs or feet, trouble walking, or any loss of bladder or bowel control or trouble passing urine?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal, and everything else is all normal too.",
+  "awards": [],
+  "score": 120
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had fever, chills, night sweats, unexplained weight loss, a history of cancer, or long-term steroid use?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history",
+   "steroid_use"
+  ],
+  "flooded": false,
+  "reply": "I haven't had any fevers or infections, and if anything I've put some weight on rather than losing it. I've never had a history of cancer, and I don't use steroids.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Does the back pain wake you from sleep at night, even when you change position?",
+  "released": [],
+  "flooded": false,
+  "reply": "It hurts when I roll over, but once I am settled I sleep, so it is not there constantly.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have a history of stomach ulcer or reflux, kidney disease, asthma, or do you take blood thinners, and do you have any allergies apart from tramadol?",
+  "released": [
+   "stomach_ulcers",
+   "kidney_problems",
+   "asthma"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have any stomach ulcers or reflux, my kidneys are fine as far as I know, and I don't have asthma. I don't take any blood thinners, and my only allergy is to tramadol, which causes me vomiting and dizziness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Asthma"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "spinal_percussion",
+  "finding": "Tapping down each spinous process from the mid back to the sacrum is comfortable.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "1 tablet (400 mg) with food",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Daniel. This sounds like mechanical low back pain — a muscle and ligament strain on the left side after lifting — rather than a nerve problem or anything serious. Your examination was reassuring: normal temperature and observations, no weakness or numbness in the legs, normal reflexes, and no signs of nerve compression. I found no red flags for fracture, infection, cancer, or cauda equina. Because of that, an MRI is not recommended right now: for recent back pain like this, early scans usually do not change treatment and can show normal age-related changes. Most people improve over 1–2 weeks, though some symptoms can last up to 6 weeks. Plan: stay as active as pain allows and avoid bed rest; do gentle walking, change position often, use heat, and gradually return to desk work. I’ve prescribed ibuprofen 400 mg three times a day with food for 5 days, and referred you to a physiotherapist. You can also take paracetamol 1 g every 6 hours when needed, up to 4 g in 24 hours. I’ve noted your tramadol allergy, so please don’t take tramadol. Safety-net: seek urgent care or call an ambulance if you develop leg weakness or numbness, numbness around your genitals, buttocks or back passage, loss of bladder or bowel control or trouble passing urine, fever or feeling very unwell, severe pain at night not relieved by changing position, or a major fall or injury. If you are not improving in 6 weeks, or your function gets worse, come back and we can reconsider imaging.",
+  "released": [],
+  "flooded": false,
+  "reply": "Without a scan, how can we be sure it is not a slipped disc?",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "I can’t be 100% certain without a scan, but a slipped disc that is pressing on a nerve usually causes pain, numbness or weakness going down the leg, often below the knee, and it often makes the straight-leg-raise test painful down the leg. You don’t have those features: your pain is local to the low back and buttock, your leg strength, sensation and reflexes are normal, and the nerve-stretch tests are negative. Also, many people without any back pain have disc bulges on MRI, so an early scan can be misleading. That’s why the safest plan now is to treat it as a mechanical strain, keep you moving, and use the scan only if nerve symptoms appear, red flags develop, or you are not improving after about 6 weeks.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, I understand. I just want to know what's going on, but if staying active and the ibuprofen will help, I will give it a go.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_1",
+    "ideal_2",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "Most people improve over 1–2 weeks, though some symptoms can last up to 6 weeks.",
+    "ideal_1": "stay as active as pain allows and avoid bed rest; do gentle walking, change position often, use heat, and gradually return to desk work.",
+    "ideal_2": "for recent back pain like this, early scans usually do not change treatment and can show normal age-related changes.",
+    "ideal_4": "use heat",
+    "ideal_5": "seek urgent care or call an ambulance if you develop leg weakness or numbness, numbness around your genitals, buttocks or back passage, loss of bladder or bowel control or trouble passing urine, fever or feeling very unwell"
+   }
+  },
+  "total": 325,
+  "max": 465,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 250
+ }
+]

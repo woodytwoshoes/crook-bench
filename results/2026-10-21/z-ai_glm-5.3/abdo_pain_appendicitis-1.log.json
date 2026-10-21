@@ -1,0 +1,238 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm Dr. Chen. I hear you've had tummy pain since last night. Can you tell me where exactly the pain is, and has it moved at all since it started?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button. It moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. That movement from around the belly button to the lower right is a pattern I want to take seriously. A few more questions: have you felt sick or vomited? Any fever or chills? When did you last eat, and how's your appetite been?",
+  "released": [
+   "nausea_vomiting",
+   "fever",
+   "food_history",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours and I threw up once this morning. I felt hot and a bit shivery last night. Just the usual, Mum's cooking on Sunday. I couldn't face breakfast, not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "say",
+  "utterance": "And a few more: has the pain changed if you cough, sneeze or move? Have your bowels been opened since the pain started? Any pain when passing urine? And any pain like this before?",
+  "released": [
+   "movement_pain",
+   "diarrhoea",
+   "urinary_symptoms",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "Yeah, walking hurts, every bump in the car on the way here was awful, and coughing is the worst. No diarrhoea, I went normally yesterday morning, nothing since. Weeing is normal. No, never had anything like this.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "appendicitis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats the most likely diagnosis: Appendicitis. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, your story and my examination strongly suggest this is appendicitis — inflammation of your appendix, likely from the infection starting overnight. Your pulse and temperature are up, and the tenderness in your right lower side fits. This needs to be seen in hospital urgently: they will do blood tests and a scan (probably a CT or ultrasound) and will most likely remove the appendix with keyhole surgery.\n\nPlease go straight to the emergency department now — don't drive yourself, get someone to take you or call a taxi. Don't eat or drink anything from now on, in case you need an operation. If your pain suddenly gets much worse, you feel faint, or you start vomiting constantly, call 000. This is very fixable if treated early, which is why we're not waiting. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "I just wanted a quick fix so I could get back to the job site. Do I really have to go straight to the hospital now?",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "I'm afraid yes, it really does have to be now. There's no safe quick fix for appendicitis — if the appendix isn't removed in time it can burst and cause a serious infection through your whole abdomen. Going today is the difference between keyhole surgery and being back at work in a week or two, versus emergency surgery and weeks in hospital. Please head to the emergency department right away, and don't eat or drink until they've seen you. If you get suddenly worse on the way, call 000.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, I will head over there now.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Samuel, your story and my examination strongly suggest this is appendicitis",
+    "ideal_3": "Don't eat or drink anything from now on"
+   }
+  },
+  "total": 215,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "ideal",
+  "score": 185
+ }
+]

@@ -1,0 +1,100 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in. I'm sorry you're dealing with this — burning when passing urine is really uncomfortable. Before we decide on treatment, I'd like to ask a few questions to make sure we get it right. Can you tell me in your own words what's been happening since yesterday?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It stings and burns, and it is worst right at the end of going to the toilet. I am going constantly, about every half hour, and have to rush, but only a little bit comes out. It is a bit cloudy and smells, though I have not seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any fever or chills, any pain in your back or sides up around your lower ribs, or any nausea or vomiting?",
+  "released": [
+   "fever_rigors",
+   "loin_pain",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I have not had any fevers or shivers and feel fine apart from this. I do not have anything in my back, just a bit of an ache low down in my tummy. I am eating normally and have not been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you noticed any unusual vaginal discharge, itching, or irritation down below?",
+  "released": [
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Are you sexually active at the moment, and if so, have you had a new partner in the last few months?",
+  "released": [
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "Um, yeah, I have a boyfriend. We have been together about a year, and it is just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 70,
+  "max": 360,
+  "level": "Intern",
+  "consequence": "acceptable",
+  "score": 70
+ }
+]

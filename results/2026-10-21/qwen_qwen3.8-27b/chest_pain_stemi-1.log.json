@@ -1,0 +1,258 @@
+[
+ {
+  "type": "say",
+  "utterance": "Graham, thanks for coming in. So you've been feeling indigestion since this morning — can you take me through what's been going on, starting from when it began?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "About seven this morning, came on over a few minutes. It's like a heaviness. Like indigestion but... heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat. Now you mention it, my jaw's a bit achy, and my left arm feels heavy. Not my back. It's been going the whole time — so an hour and a half, near enough. Still there now.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to ask a few more quick questions because that pattern — a heaviness behind the breastbone with jaw and left arm symptoms — can be your heart as well as your stomach. Are you short of breath at all? Have you been sweating or feeling cold and clammy? Any nausea or vomiting? Any dizziness or near-fainting? And have you ever had anything like this before?",
+  "released": [
+   "dyspnoea",
+   "sweating",
+   "nausea_vomiting",
+   "presyncope",
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah, hard to get a proper breath in, and I've been sweating like anything, thought it was just hot. Feel a bit sick, haven't vomited. Bit light-headed getting out of the car, didn't pass out. This past week I've had a bit of a tightness going up ladders, goes away if I stop, put it down to being unfit, it's been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I have to be straight with you. This isn't indigestion — the tracing of your heart shows you're having a heart attack. An artery in the bottom part of your heart has blocked up, and that explains the heaviness, the jaw and arm ache, the sweating, the sick feeling and the light-headedness. It's a medical emergency, and the good news is we've caught it and you're getting the fastest treatment possible.\n\nHere's the plan:\n- You've just had a chewable aspirin tablet — chew it well, it stops the clot getting bigger.\n- I've called an ambulance. Please don't drive, and don't let anyone else drive you — the paramedics will monitor your heart the whole way and can treat you on the journey.\n- I've pre-alerted the hospital so the heart team with the catheter lab is ready for you. There you'll have a procedure where they thread a tiny tube up to the blocked artery and open it — that's the treatment that saves heart muscle.\n- Your blood pressure is running a bit low, so I've deliberately held back the heart spray; the hospital team will look after your pain and the rest of your medicines — your blood pressure and cholesterol tablets will be reviewed there, so don't take any more of them today.\n- Until the team at the hospital clears you, it's best not to eat or drink, in case of the procedure.\n\nTry to sit still and relaxed in your chair — any movement makes the heart work harder. If the pain gets worse, or you feel faint before the ambulance arrives, press the call button or call 000 straight away and tell me. Your wife can follow in the car if she likes. We're doing this right, and time is on your side now — let's get you to the cath lab quickly.",
+  "released": [],
+  "flooded": false,
+  "reply": "Bloody hell. Are you sure? I've got a job I need to finish today.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I'm sure — the heart tracing shows a blocked artery with an acute injury pattern, and your symptoms and risk factors all fit. I know a job site can wait, but a blocked heart artery can't — the next hour or two is exactly when the team can open it and save your heart muscle. If this were just indigestion, none of this would be happening.\n\nCall your boss or whoever's expecting you — say you're being taken to hospital as a medical emergency, and that's all they need to know. I can put a note in for you confirming that, so you don't have to explain anything more. Your only job today is to sit still and let the ambulance and the heart team do theirs.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright. I'll call him.",
+  "awards": [],
+  "score": 215
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 225,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "acceptable",
+  "score": 225
+ }
+]

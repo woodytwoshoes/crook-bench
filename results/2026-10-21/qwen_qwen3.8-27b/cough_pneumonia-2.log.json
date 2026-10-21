@@ -1,0 +1,334 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm Dr. Ansel. You've booked in with a cough and fever — could you tell me about that? When did it all start, and how has it been progressing day by day?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain",
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough and I have been burning up on and off. Since yesterday I am bringing up stuff that is a rusty, brownish colour, though it was clear at first, and a sharp pain started yesterday low down on the right side round towards my back that catches me when I take a deep breath or cough. It has been worse than the first day, but about the same since yesterday, so I am not going downhill fast.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "On the breathing front: are you short of breath at all — like, does a climb to your desk or up stairs wind you more than usual? Do you feel any dizziness or confusion? Have you had any shivering chills with the fever, and have you measured your temperature at home — what was the highest?",
+  "released": [
+   "breathlessness",
+   "confusion",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "Only going up the stairs, and I got puffed on the way in from the car park, but sitting here I am alright. My head is clear, though my wife reckons I am just grumpy. The first night I was shaking under the doona with my teeth chattering, even though I was boiling, and I did not measure my temperature because I do not have a thermometer.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Good — no confusion is a good sign. Now some background: do you smoke, or have you smoked in the past? How much alcohol do you drink? Do you have any other health conditions like asthma, heart or lung disease, diabetes? And what regular medicines or supplements do you take, if any?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "lung_disease",
+   "heart_disease",
+   "diabetes"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I just have a couple of beers on the weekend with none this week. I have never had asthma or anything with my lungs, no heart problems, and no diabetes.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Given you teach high schoolers — have any students, or your wife or anyone at home, been sick with a bug recently? And apart from the cough, fever and chest pain, have you had a sore throat, runny nose, aching muscles, bad headaches, or any tummy upset or burning when you pee?",
+  "released": [],
+  "flooded": false,
+  "reply": "Nobody at home has been sick, and I haven't noticed anything else like that.",
+  "awards": [],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "2 capsules",
+  "frequency": "Every 8 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, here's where we are: your exam and your chest X-ray show a consolidation — an infection — in the lower right lobe of your lung. So this isn't just a chest cold; it's community-acquired pneumonia, and the rusty sputum and the pleuritic pain on the right side all fit that.\n\nThe good news: your oxygen levels are only marginally low, your blood pressure is fine, you're not drowsy or confused, and you've got no underlying conditions. By the standard pneumonia severity score, this is mild, so I can treat you here at home rather than hospital.\n\nYour plan:\n- Amoxicillin — two 500 mg capsules every 8 hours for 5 days. Take it through the whole course, even if you feel better by day two or three.\n- Paracetamol — 2 tablets up to every 4–6 hours as needed for fever and chest pain.\n- Rest for a few days, plenty of fluids, honey or lozenges for the cough, and no alcohol while on the antibiotic.\n- Your fever should start to drop within 48–72 hours of starting the antibiotics, and the cough will tail off over the next one to two weeks — that's normal, don't worry if the cough lingers a bit.\n\nSafety net — come back or go to the ED urgently if any of these happen:\n- You start to struggle to breathe, feel breathless at rest, or your lips look blue\n- You feel confused or very drowsy\n- Your fever spikes or comes back after it's settled\n- You cough up frank blood, or the chest pain worsens\n- No improvement at all within 72 hours of starting the antibiotic\n\nIf you're not clearly better in 3 days, I'd like to review you and re-check you. And once this has cleared, we'll discuss pneumococcal and flu vaccinations to help prevent it happening again. How does that all sound?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Well, I am glad I do not need to go to hospital, but I really need to get back to my classes before the exams.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "You're not significantly infectious once you're on antibiotics and fever-free — but with pneumonia the rule of thumb is to be off work until you've been free of fever for a full 24 hours and you're not breathless with effort. So for most people that's about 3 to 4 days off. It's sensible to work from home or take a light load for a few days after that, because the cough and tiredness will linger a week or more even as you recover. Please don't push yourself hard in the second week — a post-pneumonia flare-up is easier to avoid by taking it steady.\n\nQuick recap of the plan: amoxicillin two capsules every 8 hours for 5 days, paracetamol as needed, fluids and rest, no alcohol with the antibiotic. And remember the warning signs — breathlessness at rest, confusion, blue lips, frank blood in the sputum, or no improvement in 72 hours — come back immediately for any of those. Call the practice if you're unsure.\n\nWould you like me to email you a summary of today's findings and the safety-net advice you can keep on your desk?",
+  "released": [],
+  "flooded": false,
+  "reply": "Yeah, that would be alright.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Pulmonary embolism, Sepsis, Lung cancer, Tuberculosis, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "this is mild, so I can treat you here at home rather than hospital.",
+    "ideal_3": "Safety net — come back or go to the ED urgently if any of these happen: - You start to struggle to breathe, feel breathless at rest, or your lips look blue - You feel confused or very drowsy",
+    "acceptable_2": "Paracetamol — 2 tablets up to every 4–6 hours as needed for fever and chest pain.",
+    "acceptable_3": "plenty of fluids",
+    "acceptable_5": "If you're not clearly better in 3 days, I'd like to review you and re-check you."
+   }
+  },
+  "total": 215,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 175
+ }
+]

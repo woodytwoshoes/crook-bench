@@ -1,0 +1,489 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello Mark, I'm the doctor. Thanks for coming in — let's get to the bottom of this cough and fever. Can you tell me a bit more about it? When did it start, and how has it changed over the last few days? Is the cough dry, or are you bringing up phlegm — and if so, what colour? How high has your fever been, and do you get chills or sweats, especially at night?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "It started three days ago with a dry, hacking cough. Since yesterday I have been bringing up stuff that is a rusty, brownish colour, though it was clear at first. I didn't use a thermometer, but I was roasting on and off, and the first night I was shaking under the doona with my teeth chattering even though I was boiling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That's helpful, Mark. Rusty-coloured phlegm with fever and shaking chills is a pattern I take seriously. A few more questions: are you short of breath at rest, or when you walk around? Any chest pain, especially when you breathe in or cough? Have you coughed up any fresh blood? And how are you managing with fluids and food — any nausea or vomiting, and are you passing urine as normal?",
+  "released": [
+   "breathlessness",
+   "haemoptysis",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "I am only getting puffed going up the stairs and walking in from the car park, while sitting here I am alright. There is no actual blood, just that rusty colour. I have had no vomiting.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Good — no fresh blood, and you're comfortable at rest. To round out the picture: do you have any ongoing health conditions, and do you smoke or drink alcohol? Have you had any antibiotics recently for this, or been around anyone with a chest infection or flu? Any recent travel? And who's at home with you — is there someone who can keep an eye on you?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "No worries, Mark — I'll take it one at a time. Do you have any ongoing health conditions, like asthma, diabetes, or heart or lung disease? And do you smoke?",
+  "released": [
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "smoking"
+  ],
+  "flooded": false,
+  "reply": "I have never had asthma or anything with my lungs, no heart problems, and I have never smoked.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, Mark. Do you drink alcohol, and if so, roughly how much in a week?",
+  "released": [
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "I just have a couple of beers on the weekend, and none this week.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Have you taken any antibiotics in the last few months, or been in hospital recently?",
+  "released": [
+   "recent_antibiotics",
+   "recent_hospital"
+  ],
+  "flooded": false,
+  "reply": "I haven't had any antibiotics, and I haven't been in hospital for years.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you been around anyone with a bad cough, flu, or COVID recently, or been overseas in the last few months?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "I haven't been anywhere, just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "say",
+  "utterance": "And is there someone at home who can keep an eye on you and help you out while you're unwell?",
+  "released": [
+   "home_support"
+  ],
+  "flooded": false,
+  "reply": "There is my wife and our two teenagers. She is working from home this week, so she can drive me back in if I need.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_front",
+  "finding": "Resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "subregion": "lungs_back",
+  "finding": "Increased at the right base.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urea, electrolytes and creatinine (UEC)"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray confirms it: there's a patch of consolidation — an infection — in the bottom of your right lung. That's pneumonia. Before I prescribe antibiotics, one quick safety question: do you have any allergies to penicillin or any other medications?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "Yes, I am allergic to penicillin. I came up in hives and my lips swelled when I was a kid, though it is probably not on my file because I have not needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "200 mg (2 tablets) as the first dose, then 100 mg (1 tablet)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "Here's the plan, Mark. You have pneumonia — a bacterial chest infection in the bottom of your right lung. The good news: your oxygen levels, blood pressure and heart are all stable, you're eating and drinking, and you have your wife at home, so you can be treated safely at home rather than in hospital.\n\nBecause of your penicillin allergy, I've prescribed doxycycline, an antibiotic that's safe for you: two 100 mg tablets now as a first dose, then one 100 mg tablet twice a day for 5 days. Take it with a meal and a full glass of water, and stay upright for half an hour afterwards. Avoid sun exposure — it can make your skin more sensitive to sunburn — and don't take it within two hours of dairy products, antacids or iron tablets.\n\nFor the fever and aches, you can take paracetamol or ibuprofen, drink plenty of fluids, and rest. I've ordered blood tests — they'll be back tomorrow and I'll check the results.\n\nPlease come back or call us urgently if: you become short of breath at rest or can't speak in full sentences, you get chest pain, you cough up fresh blood, you become confused or drowsy, you can't keep fluids down, your fever isn't settling after 48 hours of antibiotics, or you develop a rash, swelling or breathing difficulty from the antibiotic — stop it and seek urgent care immediately.\n\nI'd like to review you in 48 hours to make sure you're improving. Does that all make sense, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia sounds pretty serious, but at least I can go home instead of staying in hospital. I will just take these tablets and hopefully be back teaching my classes soon.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "That's the right attitude, Mark. A few last things: most people start to feel better within 2 to 3 days of starting the antibiotic, though the cough and tiredness can linger for a couple of weeks — that's normal. Please take the full 5-day course even if you feel better. I'd like to review you in 48 hours — I'll give you a call, and we can arrange a repeat check if needed. If anything worries you before then, don't hesitate to call the clinic or go to the emergency department. Any questions before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No questions, I just want to get home and get this over with so I can get back to work.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 315
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3"
+   ],
+   "quotes": {
+    "ideal_1": "you can be treated safely at home rather than in hospital",
+    "ideal_2": "I'd like to review you in 48 hours",
+    "ideal_3": "Please come back or call us urgently if: you become short of breath at rest or can't speak in full sentences, you get chest pain, you cough up fresh blood, you become confused or drowsy, you can't keep fluids down",
+    "acceptable_3": "drink plenty of fluids"
+   }
+  },
+  "total": 365,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 315
+ }
+]

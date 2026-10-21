@@ -1,0 +1,444 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm sorry you're feeling so rough. Could you tell me when this started and how the cough and fever have changed since then?",
+  "released": [],
+  "flooded": false,
+  "reply": "It has been going on for three days now. It started as a dry, hacking cough, and I have been burning up, on and off. I did not have a thermometer, but I was roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Are you short of breath, either sitting still or walking? Have you had chest pain, coughed up any blood, or felt faint or confused?",
+  "released": [
+   "breathlessness",
+   "pleuritic_pain",
+   "haemoptysis",
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs or walking in from the car park, but sitting here I am all right. There is a sharp pain low down on the right side round towards my back that catches me when I take a deep breath or cough, which started yesterday. I have not coughed up any actual blood, just that rusty colour. My head is clear, though my wife reckons I am just grumpy.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "What are you coughing up now, and how much? Are you managing to drink and pass urine normally, and have you had any shaking chills or vomiting?",
+  "released": [
+   "sputum_colour",
+   "rigors",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "Since yesterday I have been bringing stuff up, and it is a rusty, brownish colour after starting out clear. I am drinking and passing water normally, and I had shaking chills that first night under the doona with my teeth chattering even though I was boiling, but there is no vomiting.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a sore throat, runny nose, muscle aches or diarrhoea, and has anyone around you been sick? Have you recently travelled, stayed in a hotel, or used a spa?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "I have not had a sore throat, runny nose, muscle aches, or diarrhoea, and nobody around me has been sick. I have not travelled anywhere recently, just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had pain or swelling in one leg, a previous blood clot, recent surgery, or spent a prolonged time immobile? Do you have any lung or heart conditions, diabetes, kidney problems, or a weakened immune system?",
+  "released": [
+   "leg_swelling",
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "My legs are fine, and I have never had asthma or anything with my lungs or any heart problems. I do not have diabetes or anything like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "Just to check the rest of that: any previous blood clots, recent operations or long periods confined to bed? What medicines or supplements have you taken, including anything for this illness, and do you have any medicine allergies?",
+  "released": [
+   "recent_antibiotics",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I have not had any operations or long periods stuck in bed, and I haven't had any antibiotics for this. I am allergic to penicillin though, as I came up in hives and my lips swelled when I was a kid, which is probably not on my file since I have not needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "say",
+  "utterance": "Thank you—that sounds like a significant penicillin allergy, so we must avoid it and make sure it's clearly recorded. Are you taking any regular medicines, supplements or cold-and-flu remedies? Do you smoke or vape, and how much alcohol do you usually drink?",
+  "released": [
+   "smoking",
+   "alcohol"
+  ],
+  "flooded": false,
+  "reply": "I do not take any regular medicines or supplements, and I have never smoked. I usually have a couple of beers on the weekend, but I have not had any this week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "The examination suggests pneumonia—an infection in the lower part of your right lung. It can cause fever, coloured mucus and pain when breathing. Your blood pressure, alertness and oxygen level are reassuring enough that treatment at home is likely suitable. I'd like a chest X-ray today to confirm this and check for fluid around the lung. Is someone able to stay with you and help if you get worse?",
+  "released": [
+   "home_support",
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "My wife and our two teenagers are at home, and since she is working from home this week, she can drive me back in if I need. I am feeling worse than the first day, but about the same since yesterday, so I am not going downhill fast.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "say",
+  "utterance": "The X-ray confirms pneumonia in the lower right lung, with no fluid collection. Because of your penicillin allergy, I'll prescribe doxycycline instead. Have you ever reacted to that antibiotic, or had trouble swallowing tablets?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I have never reacted to that, and I do not have any trouble swallowing tablets. I really need to get this sorted so I can get back to my classes before exams.",
+  "awards": [],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Take one doxycycline tablet twice daily for five days, with food and a full glass of water, staying upright for at least 30 minutes afterwards; don't take it just before bed. Keep antacids and iron, calcium or magnesium supplements at least two hours away from the dose. It can make your skin more sensitive to sunlight, so cover up and use sunscreen. If you develop hives, stop it and seek urgent advice; lip or tongue swelling, or trouble breathing, needs an ambulance on 000.\n\nRest, drink regularly, and use paracetamol if needed for the fever and pain—500 mg to 1 gram up to every six hours, maximum 4 grams in 24 hours, and don't double up with cold-and-flu products containing it. You'll need some time off teaching; I can provide a medical certificate. Stay home while feverish or feeling unwell, cover coughs and wash your hands. Don't push yourself back into full activity.",
+  "released": [],
+  "flooded": false,
+  "reply": "I will take the certificate, thanks, as I definitely need a few days off to get over this.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "I'd like to review you in 48 hours, sooner if you're worsening. The fever and breathing should start improving within two to three days of antibiotics, although the cough and tiredness can take several weeks to settle. If you're not clearly improving by 48 hours, contact us that day rather than waiting until the tablets run out; we may need further tests or hospital care.\n\nCall 000 for severe breathlessness, blue lips, confusion, collapse or severe chest pain. Seek urgent same-day assessment if breathing or pain worsens, you cough up fresh blood, can't keep fluids or tablets down, pass much less urine, or feel rapidly more unwell. A blood clot in the lung is much less likely than pneumonia here, but new or worsening breathing trouble mustn't simply be put down to the infection.\n\nIf the cough or pain isn't resolving over the next four to six weeks, we'll reassess and consider another X-ray. At your age, as a nonsmoker, a repeat X-ray isn't automatically needed if you recover fully. Does that plan make sense, and is there anything else worrying you?",
+  "released": [],
+  "flooded": false,
+  "reply": "That all makes sense, and I will be glad to just get home and lie down.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 330
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_3",
+    "acceptable_4",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "Your blood pressure, alertness and oxygen level are reassuring enough that treatment at home is likely suitable.",
+    "ideal_2": "I'd like to review you in 48 hours",
+    "ideal_3": "Seek urgent same-day assessment if breathing or pain worsens, you cough up fresh blood, can't keep fluids or tablets down, pass much less urine, or feel rapidly more unwell.",
+    "acceptable_3": "drink regularly",
+    "acceptable_4": "we must avoid it and make sure it's clearly recorded.",
+    "acceptable_5": "If you're not clearly improving by 48 hours, contact us that day rather than waiting until the tablets run out"
+   }
+  },
+  "total": 390,
+  "max": 420,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 330
+ }
+]

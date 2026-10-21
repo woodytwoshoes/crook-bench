@@ -1,0 +1,118 @@
+{
+ "model": "deepseek/deepseek-v4-pro-0813",
+ "case": "back_pain_mechanical",
+ "rep": 3,
+ "ending": "ended",
+ "total": 353,
+ "max": 465,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 180,
+   "max": 245
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 48,
+   "max": 75
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 125,
+   "max": 145
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Numbness around the buttocks, genitals or back passage",
+   "elicited": true
+  },
+  {
+   "topic": "Any change in passing urine — difficulty, retention or leaking",
+   "elicited": true
+  },
+  {
+   "topic": "Any loss of bowel control",
+   "elicited": true
+  },
+  {
+   "topic": "Weakness, numbness or pins and needles in the legs",
+   "elicited": true
+  },
+  {
+   "topic": "Any history of cancer",
+   "elicited": true
+  },
+  {
+   "topic": "Unexplained weight loss",
+   "elicited": true
+  },
+  {
+   "topic": "Fever or recent infection",
+   "elicited": true
+  },
+  {
+   "topic": "Injecting drug use",
+   "elicited": true
+  },
+  {
+   "topic": "Immune suppression",
+   "elicited": false
+  },
+  {
+   "topic": "Pain at night or at rest that keeps him awake",
+   "elicited": false
+  },
+  {
+   "topic": "Any fall or significant injury",
+   "elicited": true
+  },
+  {
+   "topic": "Steroid use",
+   "elicited": false
+  },
+  {
+   "topic": "Known osteoporosis",
+   "elicited": true
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [
+  "Saddle sensation and anal tone"
+ ],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "mechanical_lbp",
+   "role": "acceptable"
+  },
+  {
+   "label": "Can't miss",
+   "id": "cauda_equina",
+   "role": "sinister"
+  }
+ ],
+ "says": 15,
+ "questions": 16,
+ "usage": {
+  "calls": 26,
+  "prompt_tokens": 123418,
+  "completion_tokens": 3421,
+  "cost": 0.02247987
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:55:37.993Z",
+ "max_questions": 50
+}

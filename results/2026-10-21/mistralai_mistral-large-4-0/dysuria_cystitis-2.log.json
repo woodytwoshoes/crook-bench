@@ -1,0 +1,305 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, thanks for coming in. I'm sorry you're uncomfortable — let me ask you a few questions to work out what's going on. Can you tell me more about the burning when you pass urine? When did it start, how bad is it, and are you going more often or feeling a sudden urge to go?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It stings and burns, and it is worst right at the end of weeing, just like my last UTI. It started since yesterday morning, so about a day and a half ago. I am going constantly, about every half hour, and only a little bit comes out and I have to rush. It is also a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds really uncomfortable. A few more questions to make sure this is a simple bladder infection and nothing more serious:\n\n1. Any fever, chills, or sweats? Any pain in your back or side, up near your kidneys?\n2. Any nausea or vomiting?\n3. Any vaginal discharge, itching, or irritation? Any new sexual partner or change in sexual activity recently?\n4. Is there any chance you could be pregnant?\n5. Have you had UTIs before, and have you had any antibiotics recently?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "No worries, I'll take it one at a time. First: do you have any fever, chills, or sweats — or any pain in your back or side, up near your kidneys?",
+  "released": [
+   "fever_rigors",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't had any fevers or shivers, and I feel fine apart from this. There is nothing in my back either, just a bit of an ache low down in my tummy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Good, that's reassuring — no fever and no kidney-area pain. Next: any nausea or vomiting?",
+  "released": [
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, I am eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Next: any vaginal discharge, itching, or irritation down there? And have you had any new sexual partner or change in your sex life recently?",
+  "released": [
+   "vaginal_discharge_itch",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that. Um — yeah, I have a boyfriend we've been together about a year, and it is just him.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful. Is there any chance you could be pregnant?",
+  "released": [
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "No, I don't think so.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. You mentioned it feels like your last UTI — have you had UTIs before, and have you taken any antibiotics recently?",
+  "released": [
+   "previous_utis",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that is it, and I have not had any antibiotics this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Just to check before I prescribe anything: do you have any allergies to medications, and any other medical conditions or regular medicines besides the contraceptive pill?",
+  "released": [
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "No, I am not allergic to anything that I know of, and I take the combined oral contraceptive pill.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Soft. Mild suprapubic tenderness; non-tender elsewhere. No masses or organomegaly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "say",
+  "utterance": "Just to wrap up — do you have any questions about the plan, or anything else I can help you with today?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, I just need the script please, as I need to get back to work.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 225,
+  "max": 360,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 225
+ }
+]

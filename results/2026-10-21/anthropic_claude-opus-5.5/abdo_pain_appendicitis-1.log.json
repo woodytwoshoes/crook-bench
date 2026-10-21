@@ -1,0 +1,385 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, I'm the GP. Sorry you're feeling crook. Can you tell me where the pain started, where it is now, and how it's changed since last night?",
+  "released": [
+   "pain_onset",
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It started around my belly button last night about ten o'clock, and then it moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "How bad is it out of 10, and does moving, coughing or bumps in the car make it worse? Have you had any vomiting, diarrhoea, fever, or loss of appetite?",
+  "released": [
+   "pain_severity",
+   "movement_pain",
+   "nausea_vomiting",
+   "diarrhoea",
+   "fever",
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "Maybe a seven out of ten. Walking hurts, every bump in the car on the way here was awful, and coughing is the worst. I have felt sick since the early hours and threw up once this morning, but no diarrhoea. I felt hot and a bit shivery last night, and I couldn't face breakfast because I am not hungry at all.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Whether moving, walking or coughing makes it worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain or burning passing urine, blood in urine, or pain in your testicles or groin? Any recent similar episodes, medical problems, operations, medicines or allergies? When did you last eat or drink?",
+  "released": [
+   "urinary_symptoms",
+   "testicular_pain",
+   "groin_lump",
+   "previous_episodes",
+   "previous_surgery",
+   "food_history"
+  ],
+  "flooded": false,
+  "reply": "Weeing is normal, and there is nothing wrong down there or any lumps. I have never had anything like this before and never had an operation, I've still got my appendix as far as I know. I just had the usual food, Mum's cooking on Sunday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether he has had this pain before"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous operations"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Unusual food or takeaway recently"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Have you eaten or drunk anything since last night, and have you taken any painkillers today?",
+  "released": [
+   "analgesia_tried"
+  ],
+  "flooded": false,
+  "reply": "I took a couple of paracetamol at six this morning, but it didn't do much.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain relief taken so far"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "hernial_orifices",
+  "finding": "No hernias.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Hernial orifices"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Is there someone who can drive you straight to the hospital now? You shouldn't drive yourself.",
+  "released": [],
+  "flooded": false,
+  "reply": "Can't I just go back to work? My mate brought me here, so I suppose he can drive me.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 295
+ },
+ {
+  "type": "refer",
+  "id": "ed_self_present",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Refer to the emergency department today for surgical assessment"
+   }
+  ],
+  "score": 310
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, I'm sorry but you can't go back to work today. Your story and my examination strongly suggest appendicitis: an inflamed appendix. The pain moving from your belly button to the lower right, the pain with coughing and bumps, the fever, fast heart rate and the tenderness when I let go of your tummy all point that way. The urine test doesn't suggest a kidney or bladder infection. Appendicitis usually needs surgery and antibiotics, and if it's left it can burst and cause a serious infection through the belly. So I've phoned the emergency department and I'm writing a letter. Please have your mate drive you straight there now, no stops. Don't eat or drink anything from now on, in case you need an operation, and don't take more painkillers by mouth; the hospital will give you pain relief through a drip. If on the way the pain suddenly gets much worse or spreads across your whole tummy, you feel faint, very shivery or confused, or you keep vomiting, have your mate call 000 for an ambulance. I'll give you a medical certificate for work. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Surgery? Are you serious? I just wanted to get this sorted so I could get back on the tools.",
+  "awards": [],
+  "score": 310
+ },
+ {
+  "type": "say",
+  "utterance": "I understand it's a shock. Most people have a keyhole operation, stay a day or two, and are back at light duties within a couple of weeks; heavy lifting usually a few weeks after that. The hospital team will confirm the diagnosis with blood tests and possibly a scan before deciding. Getting it treated today is the quickest way back on the tools; waiting risks it bursting, which means a much longer recovery. Please head straight there now.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright. My mate is outside, so I will go now.",
+  "awards": [],
+  "score": 310
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Your story and my examination strongly suggest appendicitis",
+    "ideal_3": "Don't eat or drink anything from now on"
+   }
+  },
+  "total": 340,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 310
+ }
+]

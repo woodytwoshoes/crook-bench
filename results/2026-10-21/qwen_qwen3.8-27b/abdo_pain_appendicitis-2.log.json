@@ -1,0 +1,461 @@
+[
+ {
+  "type": "say",
+  "utterance": "Morning Samuel, I'm Dr ___, a GP here. I can see you're not feeling well — let's sort out what's going on with your tummy. Can you tell me in your own words when this started and what it's been like since? And where exactly does it hurt — can you point to it with one finger?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Started last night about ten o'clock, so maybe fourteen hours ago. It hurts right down here on the right side, low down. At first it sort of came and went, but it is there all the time now. It is maybe a seven out of ten, though I am not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's helpful — constant pain in the right lower belly for 14 hours. A few more questions to narrow this down:\n\n1. Did the pain start somewhere else first, like around your belly button, and then move to the right?\n2. Have you had any nausea or vomiting?\n3. Have you been able to eat? Any loss of appetite?\n4. Have you had a fever, chills, or felt generally shivery?\n5. Any burning when you pee, or peeing more often than usual?\n6. How were your last bowels — normal, loose, or constipated?\n7. Any pain or swelling in your testicles?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "My apologies — one at a time then. First: did the pain start somewhere else, like around your belly button, and then move down to the right side?",
+  "released": [
+   "pain_migration"
+  ],
+  "flooded": false,
+  "reply": "It actually started around my belly button. It moved down to the right sometime overnight.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Where the pain started and whether it has moved"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "That's an important clue. Have you had any nausea or vomiting?",
+  "released": [
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours, and I threw up once this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Got it. Have you had much of an appetite — have you been able to keep food down?",
+  "released": [
+   "anorexia"
+  ],
+  "flooded": false,
+  "reply": "I couldn't face breakfast. Not hungry at all, which isn't like me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Appetite"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Okay. Have you had a fever, chills, or felt shivery?",
+  "released": [
+   "fever"
+  ],
+  "flooded": false,
+  "reply": "I felt hot and a bit shivery last night.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "say",
+  "utterance": "And how about your bowels — have you passed any since it started? Normal, loose, or constipated?",
+  "released": [
+   "diarrhoea"
+  ],
+  "flooded": false,
+  "reply": "No diarrhoea. I went normally yesterday morning, nothing since.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "And any pain when you pee, or need to pee more often?",
+  "released": [
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Any pain or swelling down there — your testicles or groin? And you're an apprentice electrician — any heavy lifting or straining at work recently?",
+  "released": [
+   "testicular_pain",
+   "groin_lump"
+  ],
+  "flooded": false,
+  "reply": "No, nothing down there, and no lumps down there.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain or swelling in the testicles"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A lump or bulge in the groin"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "37.9 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "102, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "126/78.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "16.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and uncomfortable. Lies very still on the couch and walks in slightly stooped.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_inspection",
+  "finding": "Flat. No scars. Moves little with breathing.",
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "cough_test",
+  "finding": "Coughing causes sharp pain in the right lower quadrant; he holds his side.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Cough test"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "bowel_sounds",
+  "finding": "Present, slightly reduced.",
+  "awards": [],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes trace, nitrites negative, blood trace, protein negative, ketones +.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "testicular",
+  "finding": "Both testes normal lie, non-tender, no swelling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Testes"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "Right, Samuel — I have a clear picture now, and I want to be straight with you. This is very unlikely to be a stomach bug.\n\nHere's what the evidence points to: the pain started around your belly button and moved to the right lower side, you've lost your appetite, you've had some fever and nausea, and when I pressed on the area below your right hip bone it was sharply tender — it even hurt when you coughed or when I let go suddenly. Your urine was clear, your kidneys and testicles check out fine, and there's no sign of anything else. All of that together is classic for an inflamed appendix — appendicitis.\n\nThat's the good news in a way, because it's very treatable, but it's not something we manage from the clinic. The plan:\n\n1. I'm sending you to the Emergency Department now — just drive or get a ride in; you don't need an ambulance for this, but if the pain suddenly becomes unbearable on the way, call 000.\n2. They'll confirm it — usually with blood results and possibly a CT or ultrasound — and a surgeon will see you. Most people your age get the appendix out under general anaesthetic, and people recover quickly.\n3. Important for tonight: don't eat or drink anything from now on, in case you need an operation quickly. I'll give you some paracetamol you can take for the pain, even though you might not want to — if you are going to be operated on, this is the safer pain relief.\n4. If you develop a very high fever, start feeling much worse, get confused, or the pain spreads all over before you reach the ED, call 000.\n\nDo you have someone who can drive you, or would you like me to call the ED so you're met at the door?",
+  "released": [],
+  "flooded": false,
+  "reply": "I really just need to get back to the job site. Do I have to go straight there now?",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "I understand — job site, apprenticeships are tight, and it's only \"a stomach bug\" in your head. But I have to be honest with you: I think you have an appendix that's inflamed, and an appendix can tear and burst, usually over the next 24 to 48 hours. If that happens the infection spreads into your belly and the surgery gets much harder, recovery much longer, and in rare cases it can be dangerous. There's nothing you can do at home to stop that, and if it worsens overnight, you'd be dealing with it alone, far from any hospital.\n\nSo no, I can't clear you to go to the job site. I'd strongly advise you to message your site foreman right now and say a doctor has sent you to the emergency department tonight — they'll have no argument with that. It's much easier to explain a missed shift tonight than weeks of hospital if it bursts.\n\nIf you still feel strongly, here's the bottom line: at the very least you must go to the ED within the next few hours, not tomorrow. And you must not eat or drink anything in the meantime. If the pain suddenly becomes much worse, or you feel very hot and shivery, or the area gets very hard and swollen, that means call 000 — don't drive yourself.\n\nShall I ring the emergency department now to let them know you're coming, so they can sort you straight into?",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, I will go. Can you just call them so they know I am coming?",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "refer",
+  "id": "phone_ed_handover",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Phone the emergency department with a handover"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1000 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Pain relief before transfer"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1000 mg",
+  "frequency": "Every 6 hours",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "One last thing — I've written you a script for paracetamol 1000 mg every 6 hours as needed for up to 3 days, max 4000 mg in a day. Don't take ibuprofen or aspirin until the surgeon says it's okay, and tell the ED exactly what you've taken.\n\nYour key points before you leave:\n- Don't eat or drink anything, from now.\n- Get to the emergency department within the next few hours — ideally right now while the car is easy to manage.\n- If the pain suddenly gets much worse, you start feeling hot and shivery, confused, or your tummy gets very hard, call 000 and don't drive.\n- Message your foreman now — the ED visit tonight is the safer call for your job in the long run.\n\nThe ED will confirm with bloods and a scan and a surgeon will see you. You'll very likely get the appendix out and be home within a day or two.\n\nRight, then. I've phoned ahead, so you're being met at the door. Let me save your diagnosis and we're done here — go well, Samuel.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, thanks doctor. I will head straight there now.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "All of that together is classic for an inflamed appendix — appendicitis.",
+    "ideal_3": "don't eat or drink anything from now on, in case you need an operation quickly."
+   }
+  },
+  "total": 250,
+  "max": 420,
+  "level": "Registrar",
+  "consequence": "missed_red_flag",
+  "score": 250
+ }
+]

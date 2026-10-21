@@ -1,0 +1,263 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm Dr Sharma. Thanks for coming in — and you're right to book it urgently, that must be uncomfortable. Tell me, what's been going on since yesterday? Is it just the burning, or have you been needing to go a lot more often or more urgently too?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It stings and burns, and it is worst right at the end of going to the toilet. I am going constantly, about every half hour, and only a little bit comes out and I have to rush. It is also a bit cloudy and smells, but I haven't seen any blood.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds like a very typical bladder infection picture. I need to rule out anything more serious, like the infection moving up to the kidneys. Have you had any fever or temperature, shivers, nausea or vomiting? And do you have any pain in your back or either side under your ribs?",
+  "released": [
+   "fever_rigors",
+   "nausea_vomiting",
+   "loin_pain"
+  ],
+  "flooded": false,
+  "reply": "No fevers or shivers, and I haven't been sick and am eating normally. I don't have anything in my back, just a bit of an ache low down in my tummy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that's reassuring. A couple more things: have you had any unusual vaginal discharge or itching lately? Have you had a new sexual partner recently? You said this is \"again\" — how many bladder infections have you had before, and have you ever had one that was hard to treat or needed special antibiotics?",
+  "released": [
+   "vaginal_discharge_itch",
+   "sexual_partners",
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that. Um — yeah, I have a boyfriend, we have been together about a year and it is just him. I had one UTI about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that helps. Last couple of questions before I examine you: have you taken your pill every day lately, or been sick or on antibiotics that might have affected it? And in your job do you tend to hold on to wee for long stretches, or not drink much through the day?",
+  "released": [
+   "contraception",
+   "recent_antibiotics",
+   "fluid_intake"
+  ],
+  "flooded": false,
+  "reply": "I am on the pill and I do not miss it, and I haven't had any antibiotics this year. I probably don't drink enough water, mostly just coffee at work to be honest.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Contraception"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Antibiotics in the last few months"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "subregion": "loins",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "rx",
+  "id": "nitrofurantoin_100mg_cap",
+  "dose": "100 mg (1 capsule)",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [],
+  "score": 160
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "say",
+  "utterance": "Here's what I've found and my plan. Your urine test shows signs of infection — lots of white cells and nitrites — and your urine pregnancy test is negative, so I'm confident this is a simple bladder infection (cystitis). Importantly, you don't have fever, back pain or tummy signs that would suggest the infection has spread to the kidneys, so it's treatable as an uncomplicated infection.\n\nI've prescribed nitrofurantoin — one 100 mg capsule twice a day for 5 days. Please take them with food, and finish the whole course even if you feel better sooner. It doesn't interact with your pill.\n\nA few practical tips:\n- Drink plenty of water over the next few days and try not to hold on to wee, especially at work.\n- You can take paracetamol or ibuprofen for the burning and tummy ache.\n- The symptoms usually start improving within 24–48 hours.\n\nOne important thing: come back or call us sooner if you develop a fever or shivers, pain in your back under your ribs, nausea or vomiting, blood in your wee, or if you're not better after 48–72 hours — that could mean the infection has moved up and you'd need different treatment. And if you get these symptoms again, or two or more times in the next six months, book in so we can look at prevention options. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "That's great, thank you so much for the script. I've got to get back to my shift at the café now.",
+  "awards": [],
+  "score": 200
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water over the next few days",
+    "ideal_2": "You can take paracetamol or ibuprofen for the burning and tummy ache.",
+    "ideal_3": "come back or call us sooner if you develop a fever or shivers, pain in your back under your ribs, nausea or vomiting, blood in your wee, or if you're not better after 48–72 hours",
+    "acceptable_2": "Please take them with food"
+   }
+  },
+  "total": 250,
+  "max": 360,
+  "level": "Fellow",
+  "consequence": "ideal",
+  "score": 200
+ }
+]

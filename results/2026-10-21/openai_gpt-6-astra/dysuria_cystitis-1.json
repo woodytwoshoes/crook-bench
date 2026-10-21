@@ -1,0 +1,88 @@
+{
+ "model": "openai/gpt-6-astra",
+ "case": "dysuria_cystitis",
+ "rep": 1,
+ "ending": "ended",
+ "total": 330,
+ "max": 360,
+ "level": "Director",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 185,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 45,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 90,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": true
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": true
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "cystitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "pyelonephritis",
+   "role": "sinister"
+  }
+ ],
+ "says": 13,
+ "questions": 25,
+ "usage": {
+  "calls": 21,
+  "prompt_tokens": 55530,
+  "completion_tokens": 1552,
+  "cost": 0.198488
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:29:32.281Z",
+ "max_questions": 50
+}

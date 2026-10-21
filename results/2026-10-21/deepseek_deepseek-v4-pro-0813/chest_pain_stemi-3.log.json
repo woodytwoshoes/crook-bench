@@ -1,0 +1,276 @@
+[
+ {
+  "type": "say",
+  "utterance": "G'day Graham, I'm the doctor. I understand you've got some indigestion since this morning. Tell me what it feels like.",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "It is like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest right in the middle, behind the breastbone, and a bit up into my throat. Started about seven this morning, came on over a few minutes, and it has been going the whole time — so an hour and a half, near enough. Still there now. Now you mention it, my jaw is a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds like it could be coming from your heart, Graham, so I want to check a few things quickly. Have you had any sweating, feeling sick, or shortness of breath with it?",
+  "released": [
+   "sweating",
+   "nausea_vomiting",
+   "dyspnoea"
+  ],
+  "flooded": false,
+  "reply": "Yeah, I have been sweating like anything, thought it was just hot, and I feel a bit sick, though I haven't vomited. And a bit short of breath, yeah, it is hard to get a proper breath in.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Sweating or clamminess with the pain"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "Have you ever had anything like this before? And have you taken anything for it, like antacids, and did it help?",
+  "released": [
+   "crescendo_angina",
+   "antacid_response"
+  ],
+  "flooded": false,
+  "reply": "This past week I have had a bit of a tightness going up ladders that goes away if I stop, and I put it down to being unfit, though it has been happening more. I had a couple of Quick-Eze and it did not touch it.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether antacids or anything else relieved it"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "ecg_right_sided",
+  "result": "No ST elevation in V4R. No evidence of right ventricular involvement.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Right-sided ECG (V4R)"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "rx",
+  "id": "aspirin_300mg_dispersible_tab",
+  "dose": "300 mg",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Aspirin 300 mg chewed"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "gtn_400mcg_spray",
+  "dose": "400 micrograms",
+  "frequency": "Stat dose",
+  "duration": "Single dose",
+  "givenNow": true,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: GTN (recent sildenafil)",
+    "domain": "management"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "Graham, I need to be straight with you. Your heart tracing shows you're having a heart attack — a blockage in one of the arteries supplying your heart. This is why you feel the heaviness, the sweating and the arm and jaw ache.\n\nI've already called an ambulance, and I've given you aspirin to thin the blood and a spray under your tongue to help the pain. The ambulance will take you straight to hospital, where they can open the blocked artery quickly. The sooner that's done, the better your heart will recover.\n\nPlease stay sitting and try to stay calm. Don't get up or walk around. The ambulance is on its way.",
+  "released": [],
+  "flooded": false,
+  "reply": "An ambulance? Bloody hell, doc. I've got a job I need to finish today.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "say",
+  "utterance": "I understand, Graham, and I know this is a shock. But the job can wait — right now your heart muscle is being starved of blood, and every minute counts. Going to hospital now is what will save your heart and quite possibly your life. I need you to stay here with me until the ambulance arrives. Is there anyone I can call for you — your wife, or someone to let work know?",
+  "released": [],
+  "flooded": false,
+  "reply": "You had better call the missus.",
+  "awards": [],
+  "score": 165
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_2"
+   ],
+   "quotes": {
+    "ideal_2": "I need you to stay here with me until the ambulance arrives."
+   }
+  },
+  "total": 220,
+  "max": 480,
+  "level": "Registrar",
+  "consequence": "harmful",
+  "score": 205
+ }
+]

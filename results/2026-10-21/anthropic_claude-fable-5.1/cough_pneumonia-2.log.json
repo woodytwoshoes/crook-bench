@@ -1,0 +1,464 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning Mark, I'm the doctor. I hear you've had a cough and fever for a few days and you're feeling rotten. Tell me how it started and how it's been going since.",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, starting as a dry, hacking cough. I have been burning up on and off as well, and didn't have a thermometer, but I was roasting. Since yesterday I am bringing stuff up that is a rusty, brownish colour, though it was clear at first. I also got a sharp pain low down on the right side, round towards my back, which started yesterday and catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds unpleasant. A few more things: are you short of breath at all, either at rest or walking around? Have you had any shivering or shaking chills, or sweats at night? And have you coughed up any blood?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs or walking in from the car park, but sitting here I am alright. The first night I was shaking under the doona with my teeth chattering, even though I was boiling. There is no actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks. Do you smoke, or have you ever? How much alcohol do you drink in a typical week? And do you have any ongoing health problems like asthma, diabetes, heart or lung conditions, or take any regular medicines?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "lung_disease",
+   "diabetes",
+   "heart_disease"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I have a couple of beers on the weekend and none this week. I have never had asthma or anything with my lungs, no diabetes, and no heart problems.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Any recent travel, overseas or interstate, or any time in hospital recently? Anyone sick at home or at school with something similar? And any contact with birds, farm animals, or spa pools, air-conditioning cooling towers, that sort of thing?",
+  "released": [
+   "recent_travel",
+   "recent_hospital",
+   "bird_contact"
+  ],
+  "flooded": false,
+  "reply": "I haven't been anywhere, just school and home, and I haven't been in hospital for years. Nobody sick at home or school that I know of. We do not have any birds, but we have got a dog, and I haven't been near any of those other things.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any pain or swelling in your calves, or recently been immobile for a long period, like a long flight or being laid up? Any headache, confusion, or feeling muddled? Any vomiting, diarrhoea, or trouble passing urine? And are you managing to eat and drink normally?",
+  "released": [
+   "leg_swelling",
+   "confusion",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "My legs are fine, and I haven't been laid up anywhere. My head's clear, though my wife reckons I'm just grumpy, and I haven't had any vomiting or anything else like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken anything for it so far, like paracetamol or ibuprofen? Have you had your flu shot or any COVID booster this year, and have you done a COVID test? And have you been able to get out of bed and do normal things, or has it kept you in bed?",
+  "released": [
+   "flu_vaccine",
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "I did not get around to the flu jab this year, and I have not tested for anything else. I am worse than the first day, but about the same since yesterday, so I am not going downhill fast.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "say",
+  "utterance": "Have you taken any paracetamol or other medicines for it? And are you drinking enough fluids and passing urine normally?",
+  "released": [],
+  "flooded": false,
+  "reply": "I haven't taken any medicines for it, and as for drinking and passing urine, I haven't noticed anything unusual.",
+  "awards": [],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Flushed and tired-looking. Alert and orientated. Speaking in full sentences. Not cyanosed.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 255
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "order",
+  "id": "resp_viral_pcr",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Respiratory virus PCR (nasopharyngeal swab)"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_500mg_cap",
+  "dose": "1 g (2 capsules)",
+  "frequency": "Three times daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Unsafe: Penicillin in a penicillin-allergic patient",
+    "domain": "management"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (2 tablets)",
+  "frequency": "Every 6 hours",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, here's what I've found. Your temperature is 38, your breathing is a little fast, and your oxygen level is 95%, which is acceptable. When I listened to and tapped on your chest, the lower part of your right lung sounds and feels different from the left, and the chest X-ray confirms it: you have pneumonia, an infection in the lower right lung. The rusty phlegm, the shaking chills and the sharp pain when you breathe in all fit with this. The good news is that it's a mild pneumonia on all the measures we use: your blood pressure, oxygen, alertness and age all put you in the group that can be safely treated at home with tablets rather than in hospital.\n\nThe plan:\n1. Antibiotics: amoxicillin, 2 capsules (1 gram) three times a day for 7 days. Finish the whole course even once you feel better. This is the recommended first-choice antibiotic for this type of pneumonia. Side effects can include loose bowels or a rash; if you get a rash, swelling of the face or lips, or trouble breathing, stop it and seek help straight away.\n2. Paracetamol, 2 tablets up to four times a day (no more than 8 tablets in 24 hours) for the fever and the chest pain. Taking the edge off the pain is important so you can breathe deeply and cough the phlegm up, which helps clear the infection.\n3. Rest, drink plenty of fluids, and stay off work for at least this week. I'll give you a medical certificate. Don't suppress the cough with cough medicines; coughing is doing a job.\n4. I've taken a nose swab for flu and COVID; the result comes back tomorrow, and if it shows flu I'll call you because there's a specific treatment for that. In the meantime, keep your distance from others, cover coughs and wash your hands.\n5. I want to see you again in 48 hours, so the day after tomorrow, to check you're turning the corner. If you're not clearly improving by then, we'd add a second antibiotic that covers other types of germs. If you're not getting better, that visit is essential, not optional.\n\nNow, the important warning signs. Go to the emergency department, or call 000 for an ambulance, if any of these happen: you become breathless at rest or struggle to speak in full sentences; your lips or fingers look blue or grey; the chest pain becomes severe or constant; you cough up actual blood; you become confused, very drowsy, or hard to rouse; you can't keep fluids down or stop passing urine; or you have a very high fever with shaking that doesn't settle with paracetamol. Also, if you feel you're going downhill at any time rather than holding steady, don't wait for the appointment.\n\nLonger term, we should repeat your chest X-ray in about six weeks to make sure the lung has fully cleared, and I'd recommend you get the flu vaccine each year from now on. Does that all make sense, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Bloody hell. I can't be off work for the exams next week, is there any way I can just get this sorted quicker?",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "I understand, and the timing is rotten. The honest answer is that there's no shortcut: the antibiotics are the thing that fixes it, and they work as fast as they work. Most people with mild pneumonia feel noticeably better within 2 to 3 days of starting them, and the fever usually settles within that time, though the cough and tiredness can hang around for a few weeks. The way to get back fastest is to take the antibiotics exactly as prescribed, rest properly this week rather than pushing through, and keep well hydrated. If you push yourself back too soon, you're more likely to relapse and lose more time. Exams are next week, so if you respond as most people do, there's a reasonable chance you'll be well enough for at least some of it. We'll reassess that at your review the day after tomorrow, and I can give you a certificate for this week with a view to extending or not depending on how you're going. Also, pneumonia is infectious, so your students and colleagues are better off without you coughing on them this week. Anything else before you go?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, that sounds about right. I'll get these tablets on the way home and see you the day after tomorrow.",
+  "awards": [],
+  "score": 240
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "lung_cancer",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Lung cancer",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 280
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "your blood pressure, oxygen, alertness and age all put you in the group that can be safely treated at home with tablets rather than in hospital.",
+    "ideal_2": "I want to see you again in 48 hours, so the day after tomorrow, to check you're turning the corner.",
+    "ideal_3": "Go to the emergency department, or call 000 for an ambulance, if any of these happen: you become breathless at rest or struggle to speak in full sentences; your lips or fingers look blue or grey; the chest pain becomes severe or constant; you cough up actual blood; you become confused, very drowsy, or hard to rouse; you can't keep fluids down or stop passing urine; or you have a very high fever with shaking that doesn't settle with paracetamol.",
+    "acceptable_2": "Paracetamol, 2 tablets up to four times a day (no more than 8 tablets in 24 hours) for the fever and the chest pain.",
+    "acceptable_3": "Rest, drink plenty of fluids, and stay off work for at least this week.",
+    "acceptable_5": "If you're not clearly improving by then, we'd add a second antibiotic that covers other types of germs.",
+    "acceptable_7": "I'd recommend you get the flu vaccine each year from now on."
+   }
+  },
+  "total": 340,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "harmful",
+  "score": 280
+ }
+]

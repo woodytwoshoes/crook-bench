@@ -1,0 +1,359 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Chloe, I'm the doctor. I understand you've had burning when passing urine since yesterday. Tell me a bit more about it — when did it start, and how bad is the burning?",
+  "released": [
+   "duration",
+   "haematuria"
+  ],
+  "flooded": false,
+  "reply": "It started yesterday morning, so about a day and a half ago. It really stings and burns, especially right at the end, and I am going constantly every half hour with only a little bit coming out and I have to rush.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How long the symptoms have been present"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the urine or any visible blood"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds uncomfortable. A few things I need to ask to make sure I treat this safely. Have you noticed any blood in your urine?",
+  "released": [],
+  "flooded": false,
+  "reply": "I haven't seen any blood, but it is a bit cloudy and smells.",
+  "awards": [],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any pain in your lower back or on the sides, fever, chills, or feeling generally unwell?",
+  "released": [
+   "loin_pain",
+   "fever_rigors",
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "No, nothing in my back, just a bit of an ache low down in my tummy. I don't have any fevers or shivers and I feel fine apart from this, and I'm eating normally and haven't been sick.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Pain in the back or sides (loins)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever, sweats, chills or shaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Nausea, vomiting or feeling generally unwell"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Any new or changed vaginal discharge, itching, or smell?",
+  "released": [
+   "vaginal_discharge_itch"
+  ],
+  "flooded": false,
+  "reply": "No, nothing like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Vaginal discharge, itch or irritation"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had a fever, or measured your temperature at all?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, no fevers or shivers.",
+  "awards": [],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Are you pregnant, or is there any chance you could be pregnant?",
+  "released": [
+   "pregnancy_possible"
+  ],
+  "flooded": false,
+  "reply": "No, I don't think so.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether she could be pregnant"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "How many \"water infections\" or UTIs have you had before, and roughly when was the last one?",
+  "released": [
+   "previous_utis"
+  ],
+  "flooded": false,
+  "reply": "I had one UTI about two years ago, that is it.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Previous urine infections"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "And have you been sexually active recently? Any new partner?",
+  "released": [
+   "recent_intercourse",
+   "sexual_partners"
+  ],
+  "flooded": false,
+  "reply": "Yeah, we had been together the night before it started. I have a boyfriend, and we've been together about a year, just him.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent sexual intercourse as a possible trigger"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Sexual activity and partners"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any pain during sex, or bleeding between your periods?",
+  "released": [
+   "dyspareunia",
+   "postcoital_intermenstrual_bleeding"
+  ],
+  "flooded": false,
+  "reply": "That has never been a problem, and no, never after sex and nothing between my periods.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Pain during intercourse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Bleeding after sex or between periods"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any other medical conditions, or take any other medicines or supplements besides the pill?",
+  "released": [],
+  "flooded": false,
+  "reply": "I take the combined oral contraceptive pill, but that is it.",
+  "awards": [],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.8 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "78, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "118/72.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 135
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_suprapubic",
+  "finding": "Soft abdomen. Mild suprapubic tenderness. No guarding or rebound. No masses.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Suprapubic palpation"
+   }
+  ],
+  "score": 145
+ },
+ {
+  "type": "exam",
+  "id": "renal_angle",
+  "finding": "No renal angle tenderness on either side.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Renal angle tenderness"
+   }
+  ],
+  "score": 155
+ },
+ {
+  "type": "order",
+  "id": "urine_dipstick",
+  "result": "Leucocytes ++, nitrites positive, blood trace, protein trace. hCG not tested.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "Urine dipstick"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "order",
+  "id": "urine_mcs",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine microscopy, culture and sensitivity (MC&S)"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "order",
+  "id": "urine_pregnancy_test",
+  "result": "Negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urine pregnancy test"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "rx",
+  "id": "trimethoprim_300mg_tab",
+  "dose": "300 mg",
+  "frequency": "Once daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "First-line antibiotic: nitrofurantoin 100 mg 6-hourly for 5 days, fosfomycin 3 g once, or trimethoprim 300 mg daily for 3 days"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "say",
+  "utterance": "Everything points to a simple bladder infection (cystitis), which is likely why it feels like last time. Your urine test shows white cells and nitrites, which are signs of a bacterial infection, and you have no fever, back pain or signs of kidney involvement, so it's safe to treat simply.\n\nI've prescribed a 3-day course of an antibiotic called trimethoprim — one 300 mg tablet once a day for three days. It's safe with the pill, but I'd suggest using condoms as well until you finish the pack, just to be extra safe, though the pill should still work.\n\nA few helpful things:\n- Drink plenty of water.\n- Some people find a simple painkiller like paracetamol helps with the discomfort, and you can also get a urinary alkaliniser (like Ural) from the pharmacy if it stings a lot.\n- Finish the full three days even if you feel better.\n\nI've also sent your urine to the lab to grow and check which bacteria it is and the best antibiotic, in case the trimethoprim doesn't suit.\n\nPlease come back or seek care promptly if:\n- you develop fever, chills, shaking, or vomiting;\n- you get new pain in your back or sides;\n- or you're not improving within 48 hours of starting the antibiotic.\n\nDoes that all sound okay, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Great, can I just get that script now so I can get back to work?",
+  "awards": [],
+  "score": 190
+ },
+ {
+  "type": "dx",
+  "primary": "cystitis",
+  "cantMiss": "pyelonephritis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Acute uncomplicated cystitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pyelonephritis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "say",
+  "utterance": "Yes, your prescription is done and ready to take to any pharmacy straight away. Thanks for coming in, Chloe — feel better soon.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I'll go get it now.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "Drink plenty of water.",
+    "ideal_2": "Some people find a simple painkiller like paracetamol helps with the discomfort",
+    "ideal_3": "Please come back or seek care promptly if: - you develop fever, chills, shaking, or vomiting; - you get new pain in your back or sides; - or you're not improving within 48 hours of starting the antibiotic."
+   }
+  },
+  "total": 275,
+  "max": 360,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 230
+ }
+]

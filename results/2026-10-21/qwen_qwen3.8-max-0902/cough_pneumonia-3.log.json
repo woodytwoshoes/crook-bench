@@ -1,0 +1,523 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP. I've read your note — cough and fever and feeling pretty rotten. Can you tell me how this started: exactly how many days it's been going on, and what came first?",
+  "released": [],
+  "flooded": false,
+  "reply": "It has been three days now. It was a dry, hacking cough to start with, and I have been burning up, on and off. I did not have a thermometer, but I was roasting.",
+  "awards": [],
+  "score": 0
+ },
+ {
+  "type": "say",
+  "utterance": "Three days, dry hacking cough and burning up. A few more things to pin down: is the cough still dry, or are you bringing anything up — and if so, what colour? Are you short of breath, either at rest or when you walk around? And do you get any chest pain, especially when you breathe in or cough?",
+  "released": [
+   "sputum_colour",
+   "breathlessness",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "Since yesterday I am bringing stuff up, and it changed from clear to a rusty, brownish colour. I only get puffed going up the stairs and on the way in from the car park, but sitting here I am alright. There is a sharp pain low down on the right side, round towards my back, which started yesterday and catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks — that's helpful. Have you coughed up any blood? Any vomiting or diarrhoea with this? And any other symptoms — a bad headache, neck stiffness, rash, muscle aches, sore throat or a blocked nose?",
+  "released": [
+   "haemoptysis",
+   "vomiting"
+  ],
+  "flooded": false,
+  "reply": "There is no actual blood, just that rusty colour, and no, I have not been vomiting. I haven't noticed anything like that with my head, neck, skin, muscles, throat, or nose, so that is all normal for me.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "say",
+  "utterance": "Right. Have you been managing to drink fluids over the last three days, and are you still passing urine as often as usual? And have you felt unusually drowsy or muddled at all?",
+  "released": [
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "I am drinking enough, and passing urine as usual. My head is clear, though my wife reckons I am just grumpy.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Now some background about you. Do you have any medical problems — asthma, diabetes, heart or lung disease, anything affecting your immune system? Are you on any regular medicines, including inhalers, or any supplements?",
+  "released": [
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "immunosuppression"
+  ],
+  "flooded": false,
+  "reply": "I have never had asthma or anything with my lungs, diabetes, or heart problems, and I am not on any regular medicines or supplements like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke, or have you ever smoked — and roughly how much alcohol do you drink in a week? Have you had a flu shot this year, and any pneumonia vaccine?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "flu_vaccine"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I have a couple of beers on the weekend with none this week. I did not get round to the flu jab this year.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Flu vaccination"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 185
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "subregion": "lungs_back",
+  "finding": "Dull to percussion at the right base. Left base resonant.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 205
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "subregion": "lungs_back",
+  "finding": "Increased at the right base.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Vesicular breath sounds. No added sounds.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 215
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "left",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Calf"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "right",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 225
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks Mark — I've had a listen and I'm sending you for a chest x-ray while we talk. A couple more questions: have you been in hospital recently, or travelled anywhere, or been around anyone who's been unwell with a chest infection at school or at home?",
+  "released": [
+   "recent_hospital",
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "I haven't been in hospital for years, and I haven't been anywhere, just school and home.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "say",
+  "utterance": "Two quick ones before I plan things: have you ever had a reaction to any antibiotic, particularly penicillin or amoxicillin? And have you taken any antibiotics in the last three months, or anything for the fever so far?",
+  "released": [
+   "antibiotic_allergy",
+   "recent_antibiotics"
+  ],
+  "flooded": false,
+  "reply": "Yes, I am allergic to penicillin as I came up in hives and my lips swelled when I was a kid, though it is probably not on my file since I haven't needed antibiotics in years, and I haven't had any antibiotics recently.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Antibiotics already taken"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "say",
+  "utterance": "That penicillin allergy is really important — thank you for telling me, I'll make sure it's clearly on your file and we'll use a completely different antibiotic. Just two more questions: have you lost any weight without trying, or had drenching night sweats, or coughed up blood at any point over the past few months? And is anyone else at home or at school unwell at the moment?",
+  "released": [
+   "weight_loss",
+   "rigors"
+  ],
+  "flooded": false,
+  "reply": "If anything I could lose a few kilos, and the first night I was shaking under the doona with my teeth chattering even though I was boiling.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g (two tablets)",
+  "frequency": "When required",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol for fever and chest pain"
+   }
+  ],
+  "score": 295
+ },
+ {
+  "type": "say",
+  "utterance": "Here's what I've found and what we'll do, Mark.\n\n**The diagnosis:** Your chest x-ray shows an infection in the bottom part of your right lung — pneumonia. That fits everything: the three days of fever and rigors, the rusty-brown phlegm, the sharp pain on the right that catches when you breathe in, and the crackles and dullness I found at the base of your right lung.\n\n**How serious is it?** Reassuringly, this is a mild-to-moderate infection. Your oxygen level is 95% on room air, your blood pressure and heart rate are fine, your head is clear and you're drinking normally — so this is safe to treat at home with tablets. You don't need hospital or an ambulance today.\n\n**The antibiotic:** Because you had hives and swollen lips with penicillin as a child, that's an immediate-type allergy, so I will not give you amoxicillin or any penicillin. I've prescribed **doxycycline 100 mg, one tablet twice a day for 5 days** — a completely different family of antibiotic. How to take it: swallow it with a full glass of water while you're sitting or standing, and stay upright for about 30 minutes afterwards so it doesn't irritate your food pipe; have it with food if it makes you queasy; keep it 2 hours apart from antacids, iron, calcium or zinc tablets; and use sunscreen and a hat, because it can make your skin burn easily in the sun. Finish all 10 tablets even if you feel great by day three. I've also recorded the penicillin allergy prominently on your file — please tell every pharmacist, dentist and doctor about it from now on.\n\n**For the fever and the chest pain:** paracetamol one or two tablets (500 mg each) up to four times a day as needed — no more than 8 tablets, that's 4 grams, in 24 hours, and don't double up with any cold-and-flu products that already contain paracetamol.\n\n**Self-care:** rest properly, drink 2–3 litres of fluid a day, prop yourself up on pillows at night if breathing is more comfortable that way, and avoid smoke.\n\n**What to expect:** the fever and the sharp pain should start easing within 48 hours of starting the antibiotic. The cough takes longer — commonly two to four weeks to fully settle — and feeling washed out for a couple of weeks is normal, so don't judge yourself on the cough alone.\n\n**Work:** stay home until you've had no fever for 24 hours and you've been on the antibiotic for at least 24 to 48 hours. I'll write you a medical certificate for the rest of this week. Wash your hands, and try not to be in close contact with anyone elderly, pregnant or with heart or lung problems until you're better.",
+  "released": [],
+  "flooded": false,
+  "reply": "Pneumonia? Well, that explains why I have been feeling so rotten, but at least I can go home and get into bed instead of trying to teach through exams.",
+  "awards": [],
+  "score": 295
+ },
+ {
+  "type": "say",
+  "utterance": "Exactly — get into bed and let the antibiotics do the work.\n\nNow the most important part, the safety net. **Get urgent medical help — call 000 or go to the emergency department — if any of these happen:** you become breathless at rest or can't speak in full sentences; your lips or face look blue or grey; the chest pain gets much worse; you become confused, drowsy or hard to wake (your wife should watch for this too); you cough up more than a small streak of blood; you're vomiting and can't keep the tablets or fluids down; you're passing much less urine than normal; or you simply get distinctly worse rather than better.\n\n**Also, if you haven't clearly started turning the corner — fever still there, still feeling rotten — by 48 hours after your first dose, ring the surgery and we'll see you again the same day.** That's when I'd think about whether the germ is resistant to doxycycline, whether there's fluid collecting around the lung, or whether something else is going on. I'd like you to book a review with me in two days anyway, face-to-face or by phone, so I can check your oxygen and chest again.\n\nOne last thing for the future: you mentioned you missed this year's flu shot. Once you've recovered, please come in and have it — influenza is free for everyone in Australia now, and flu is one of the commonest ways people end up with exactly this kind of pneumonia. At 46 and a non-smoker you don't need the pneumonia vaccine routinely, but we can discuss it at your review. And if your cough or breathlessness isn't completely gone by about six weeks, we'll repeat the chest x-ray to make sure everything has cleared.\n\nAny questions about the medicines or the plan?",
+  "released": [
+   "getting_worse_fast"
+  ],
+  "flooded": false,
+  "reply": "My symptoms are worse than the first day, but about the same since yesterday, so I am not going downhill fast.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Whether he is getting rapidly worse"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "sepsis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 345
+ },
+ {
+  "type": "say",
+  "utterance": "Good — that's exactly the picture we'd expect at day three, and from here it should only get better. So: doxycycline 100 mg twice daily for five days (upright, with a full glass of water, sunscreen), paracetamol for the fever and the pain, rest and fluids at home, medical certificate for this week, and a review with me in two days — or sooner if you're not clearly improving or if any of those warning signs appear. I've recorded your penicillin allergy on your file so nobody gives you amoxicillin by mistake. Take care of yourself, Mark.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, doc. I will get those tablets and head straight home to bed.",
+  "awards": [],
+  "score": 345
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_4",
+    "acceptable_5",
+    "acceptable_7"
+   ],
+   "quotes": {
+    "ideal_1": "so this is safe to treat at home with tablets",
+    "ideal_2": "I'd like you to book a review with me in two days anyway, face-to-face or by phone, so I can check your oxygen and chest again.",
+    "ideal_3": "Get urgent medical help — call 000 or go to the emergency department — if any of these happen: you become breathless at rest or can't speak in full sentences; your lips or face look blue or grey; the chest pain gets much worse; you become confused, drowsy or hard to wake (your wife should watch for this too); you cough up more than a small streak of blood; you're vomiting and can't keep the tablets or fluids down; you're passing much less urine than normal; or you simply get distinctly worse rather than better.",
+    "acceptable_2": "paracetamol one or two tablets (500 mg each) up to four times a day as needed",
+    "acceptable_3": "drink 2–3 litres of fluid a day",
+    "acceptable_4": "I'll make sure it's clearly on your file",
+    "acceptable_5": "Also, if you haven't clearly started turning the corner — fever still there, still feeling rotten — by 48 hours after your first dose, ring the surgery and we'll see you again the same day.",
+    "acceptable_7": "Once you've recovered, please come in and have it — influenza is free for everyone in Australia now"
+   }
+  },
+  "total": 410,
+  "max": 420,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 345
+ }
+]

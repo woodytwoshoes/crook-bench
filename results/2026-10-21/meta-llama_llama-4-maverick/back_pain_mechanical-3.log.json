@@ -1,0 +1,237 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, can you tell me more about your back pain? What happened on the weekend when you hurt your lower back?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "I was lifting a big pot plant in the garden on Saturday and felt a twinge, then I woke up Sunday and could barely get out of bed, so it has been about three days now. It is low down on the left side of my back, and sometimes it goes into my left buttock. It is worse when I bend or get out of a chair, and worse by the evening, but it feels a bit better when I lie still with a heat pack. I have worked from home the last two days, mostly lying on the couch with my laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any numbness or tingling in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent illnesses, fever, or urinary symptoms?",
+  "released": [
+   "fever_infection",
+   "bladder_function"
+  ],
+  "flooded": false,
+  "reply": "I haven't had any fevers or infections, and everything with passing urine is completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Full blood examination (FBE)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 73
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": -4,
+    "kind": "penalty",
+    "label": "Unnecessary: C-reactive protein (CRP) (2nd unnecessary test)",
+    "domain": "investigations"
+   }
+  ],
+  "score": 69
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, it seems like you have mechanical low back pain from lifting something heavy. I don't think you need an MRI at this stage. I'd like to manage your pain and get you moving again. I'll prescribe you some simple pain relief and advise on some exercises. We'll review how you're doing in a few days.",
+  "released": [],
+  "flooded": false,
+  "reply": "Are you sure I don't need a scan? I've been reading online and I'm really worried I've done some serious damage to a disc, especially since I can barely move.",
+  "awards": [],
+  "score": 69
+ },
+ {
+  "type": "say",
+  "utterance": "Daniel, it seems like you have mechanical low back pain from lifting something heavy. I don't think you need an MRI at this stage. I'd like to manage your pain and get you moving again. I'll prescribe you some simple pain relief and advise on some exercises. We'll review how you're doing in a few days.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, if you really think a scan isn't necessary and that this approach is safe, I suppose we can try it your way. Just out of interest, what kind of pain relief are you planning to prescribe, considering I can't take tramadol because it makes me vomit and dizzy?",
+  "awards": [],
+  "score": 69
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_665mg_mr_tab",
+  "dose": "1 g",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 74
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_200mg_tab",
+  "dose": "200 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 89
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 94
+ },
+ {
+  "type": "say",
+  "utterance": "I've prescribed paracetamol and ibuprofen to help manage your pain. You can also try some gentle exercises to help your back feel better. If your symptoms don't improve or get worse, please come back and see me.",
+  "released": [],
+  "flooded": false,
+  "reply": "Thank you, I will fill that prescription and try the exercises, but I just want to know what is going on.",
+  "awards": [],
+  "score": 94
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 94
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_6"
+   ],
+   "quotes": {
+    "ideal_6": "We'll review how you're doing in a few days."
+   }
+  },
+  "total": 109,
+  "max": 465,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 94
+ }
+]

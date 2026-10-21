@@ -1,0 +1,216 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Started last night, about ten o'clock. So maybe fourteen hours. It's down here on the right side, low down. At first it sort of came and went, but it's there all the time now. Maybe a seven out of ten. I'm not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Can you describe the pain in more detail? Is it sharp, dull, crampy, or something else?",
+  "released": [],
+  "flooded": false,
+  "reply": "I am not sure.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "finding": "Right lower quadrant: Marked tenderness, maximal at McBurney's point, with voluntary guarding. Central (periumbilical): Mild tenderness only. Elsewhere: soft and non-tender.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "The pain seems to be mainly in your right lower abdomen. Have you noticed any other symptoms like nausea, vomiting, fever, or changes in bowel movements or urination?",
+  "released": [
+   "nausea_vomiting",
+   "fever",
+   "diarrhoea",
+   "urinary_symptoms"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours, and I threw up once this morning. I felt hot and a bit shivery last night. No diarrhoea, I went normally yesterday morning, nothing since. No, weeing is normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Fever, sweats or chills"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diarrhoea"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Pain or frequency passing urine"
+   }
+  ],
+  "score": 90
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "finding": "Right lower quadrant: Rebound tenderness present; he winces sharply. Elsewhere: no rebound tenderness.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "rovsings_sign",
+  "finding": "Positive. Pressure in the left lower quadrant causes pain in the right lower quadrant.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rovsing's sign"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urea, electrolytes and creatinine (UEC)"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "refer",
+  "id": "general_surgery",
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: Routine referral to a general surgeon (outpatient appointment)",
+    "domain": "management"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and the examination, I am concerned that you might have appendicitis. I have referred you to see a general surgeon as soon as possible for further evaluation and management. In the meantime, it's essential to avoid eating or drinking until you've been seen by the surgeon, as you may need surgery. Please go directly to the emergency department if you experience severe pain, vomiting, or feel unwell.",
+  "released": [],
+  "flooded": false,
+  "reply": "Surgery? I was just hoping to get some tablets and head back to the site.",
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Testicular torsion, Perforated viscus with peritonitis, Strangulated or incarcerated hernia",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3"
+   ],
+   "quotes": {
+    "ideal_1": "I am concerned that you might have appendicitis.",
+    "ideal_3": "it's essential to avoid eating or drinking until you've been seen by the surgeon"
+   }
+  },
+  "total": 95,
+  "max": 420,
+  "level": "Resident",
+  "consequence": "harmful",
+  "score": 95
+ }
+]

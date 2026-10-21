@@ -1,0 +1,84 @@
+{
+ "model": "openai/gpt-6-astra",
+ "case": "abdo_pain_appendicitis",
+ "rep": 3,
+ "ending": "ended",
+ "total": 375,
+ "max": 420,
+ "level": "Consultant",
+ "consequence": "ideal",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 195,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 65,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 100,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": true
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": true
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": true
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "perforated_viscus",
+   "role": "sinister"
+  }
+ ],
+ "says": 12,
+ "questions": 29,
+ "usage": {
+  "calls": 16,
+  "prompt_tokens": 49941,
+  "completion_tokens": 1735,
+  "cost": 0.1759355
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:52:39.772Z",
+ "max_questions": 50
+}

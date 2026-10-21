@@ -1,0 +1,176 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Samuel, thanks for coming in today. Can you tell me more about the tummy pain you've been having since last night?",
+  "released": [
+   "pain_onset",
+   "pain_character",
+   "pain_severity"
+  ],
+  "flooded": false,
+  "reply": "Down here on the right side, low down. Started last night, about ten o'clock, so maybe fourteen hours. It is there all the time now, but at first it sort of came and went. Maybe a seven out of ten, though I am not one to complain.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the pain started"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain is constant or comes and goes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "How bad the pain is"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "abdominal_palpation",
+  "subregion": "rlq",
+  "finding": "Marked tenderness, maximal at McBurney's point, with voluntary guarding.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Abdominal palpation"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to check for some other signs that might be related to your pain. Can you tell me if you've had any nausea or vomiting?",
+  "released": [
+   "nausea_vomiting"
+  ],
+  "flooded": false,
+  "reply": "Felt sick since the early hours, and I threw up once this morning.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Nausea or vomiting"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "rebound_tenderness",
+  "subregion": "rlq",
+  "finding": "Rebound tenderness present; he winces sharply.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Rebound tenderness"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "order",
+  "id": "fbe",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Full blood examination (FBE)"
+   }
+  ],
+  "score": 60
+ },
+ {
+  "type": "order",
+  "id": "uec",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Urea, electrolytes and creatinine (UEC)"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "refer",
+  "id": "general_surgery",
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: Routine referral to a general surgeon (outpatient appointment)",
+    "domain": "management"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Samuel, based on your symptoms and the examination, I'm concerned that you might have appendicitis. I'm going to refer you to a general surgeon for further evaluation and possible surgery. You should go to the hospital as soon as possible for further assessment.",
+  "released": [],
+  "flooded": false,
+  "reply": "Surgery? I just thought it was a bad stomach bug. Can I at least go home and grab my phone charger first?",
+  "awards": [],
+  "score": 40
+ },
+ {
+  "type": "dx",
+  "primary": "appendicitis",
+  "cantMiss": "perforated_viscus",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Appendicitis",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Perforated viscus with peritonitis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1"
+   ],
+   "quotes": {
+    "ideal_1": "I'm concerned that you might have appendicitis."
+   }
+  },
+  "total": 65,
+  "max": 420,
+  "level": "Intern",
+  "consequence": "harmful",
+  "score": 80
+ }
+]

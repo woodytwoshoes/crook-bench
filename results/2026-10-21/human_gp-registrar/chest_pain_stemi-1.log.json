@@ -1,0 +1,197 @@
+[
+ {
+  "type": "say",
+  "utterance": "Where is your pain located?",
+  "released": [
+   "pain_site"
+  ],
+  "flooded": false,
+  "reply": "Right in the middle, behind the breastbone. Bit up into the throat.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Is the pain worse after eating?",
+  "released": [
+   "meal_relation"
+  ],
+  "flooded": false,
+  "reply": "No, I didn't eat much. It wasn't after food.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Whether the pain is related to meals"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had this pain before?",
+  "released": [
+   "crescendo_angina"
+  ],
+  "flooded": false,
+  "reply": "This past week I have had a bit of a tightness going up ladders. It goes away if I stop. I just put it down to being unfit. It has been happening more.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Had this chest pain before, e.g. on stairs or exertion"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any associated shortness of breath or dizziness/",
+  "released": [
+   "dyspnoea",
+   "presyncope"
+  ],
+  "flooded": false,
+  "reply": "A bit short of breath, yeah, hard to get a proper breath in. And a bit light-headed getting out of the car, though I didn't pass out.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Dizziness, light-headedness or fainting"
+   }
+  ]
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.6 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Normal heart size, clear lungs, normal mediastinum.",
+  "awards": [
+   {
+    "points": -2,
+    "kind": "penalty",
+    "label": "Unnecessary: Chest X-ray",
+    "domain": "investigations"
+   }
+  ],
+  "score": 123
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "aortic_dissection",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Aortic dissection",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 163
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": []
+  },
+  "total": 133,
+  "max": 480,
+  "level": "Resident",
+  "consequence": "missed_red_flag"
+ }
+]

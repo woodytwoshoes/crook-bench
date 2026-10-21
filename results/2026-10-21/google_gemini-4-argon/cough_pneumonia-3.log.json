@@ -1,0 +1,458 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP today. I see you've come in with a cough and a fever. Tell me a bit more about what's been happening over the last few days?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, and it started as a dry, hacking cough. I have been burning up on and off as well, and while I do not own a thermometer, I was definitely roasting. Since yesterday, I have started bringing stuff up, which was clear at first but is now a rusty, brownish colour. On top of that, a sharp pain started yesterday low down on the right side, round towards my back, and it catches me whenever I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds really rough, Mark. Have you felt short of breath at all, either at rest or when walking around, or noticed any bright red blood when you cough?",
+  "released": [
+   "breathlessness",
+   "haemoptysis"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs and on the way in from the car park, but sitting here I am alright. There is no actual blood, just that rusty colour.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any shaking chills, vomiting, or trouble keeping fluids down? And have you noticed any calf pain or swelling, or done any long-haul travel recently?",
+  "released": [
+   "rigors",
+   "vomiting",
+   "leg_swelling",
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "That first night I was shaking under the doona with my teeth chattering even though I was boiling, but there is no vomiting and my legs are fine. I have not been anywhere recently either, just school and home.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Vomiting"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any medical conditions at all, take any regular medications or things over the counter, or have any allergies to medicines like penicillin?",
+  "released": [
+   "lung_disease",
+   "heart_disease",
+   "diabetes",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I have never had asthma or anything with my lungs, and no heart problems or diabetes either. I do not take any regular medicines or things over the counter. As for allergies, I came up in hives and my lips swelled from penicillin when I was a kid, though it is probably not on my file since I have not needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "That's really important to know about the penicillin allergy—I'll make sure that goes on your record. Do you smoke, drink alcohol, live with anyone at home, or have you been around any sick contacts, birds, or potting mix recently?",
+  "released": [
+   "smoking",
+   "alcohol",
+   "home_support",
+   "bird_contact",
+   "gardening"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I just have a couple of beers on the weekend with none this week. My wife and our two teenagers are at home with me, and she is working from home this week so she can drive me back in if I need. We have a dog instead of birds, and I am not much of a gardener, so I have not touched potting mix in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Alcohol"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Who is at home with him"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Gardening or handling potting mix"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "say",
+  "utterance": "Did you have a cold or flu leading up to this, or any other symptoms like headache, sore throat, muscle aches, or unintended weight loss? And have you taken anything like paracetamol for the fever?",
+  "released": [
+   "preceding_flu",
+   "weight_loss"
+  ],
+  "flooded": false,
+  "reply": "I was completely fine until three days ago, and as for my weight, if anything I could lose a few kilos.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "A flu-like illness in the weeks before"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weight loss"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_inspection",
+  "finding": "Normal chest shape. Breathing slightly fast; holds back on deep breaths on the right.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_wall_palpation",
+  "finding": "No chest wall tenderness.",
+  "awards": [],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 255
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 260
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "throat",
+  "finding": "Moist mucous membranes. Throat and tonsils normal.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "lymph_nodes",
+  "finding": "No lymphadenopathy.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "left",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Calf"
+   }
+  ],
+  "score": 270
+ },
+ {
+  "type": "exam",
+  "id": "calves",
+  "side": "right",
+  "finding": "Calf soft and non-tender. No swelling.",
+  "awards": [],
+  "score": 270
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 275
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "7 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, examining your chest and looking at your chest X-ray confirms that you have pneumonia in the lower part of your right lung. The good news is that your oxygen levels and blood pressure are stable, and there's no fluid collection around the lung, so this is a mild-severity pneumonia that we can safely treat at home with antibiotic tablets rather than needing hospital.\n\nNormally we would use a penicillin antibiotic, but because you had hives and lip swelling with penicillin as a child—which is a serious immediate allergy—you must avoid all penicillins, and I've recorded that allergy on your file. Instead, I've prescribed doxycycline 100 mg tablets, to take one tablet twice a day for 7 days. Take each tablet with food and a big glass of water, and stay sitting or standing upright for at least 30 minutes afterwards so it doesn't irritate your food pipe. Also wear sunscreen or a hat if you go outside as doxycycline can make your skin burn more easily in the sun, and avoid taking calcium, iron, or antacids within 2 hours of the tablet.\n\nAlongside the antibiotics, get plenty of rest, drink plenty of fluids, and take paracetamol regularly as needed for the fever and the sharp chest pain so you can breathe and cough comfortably. Avoid cough suppressants as coughing helps clear your lung. I'll write you a medical certificate to stay off work for the rest of the week.\n\nI'd like to review you here in 48 hours—in two days' time—to make sure your fever is settling and you're improving. However, if at any point you become more breathless at rest, develop worsening chest pain, cough up bright red blood, feel dizzy or confused, can't keep fluids down, or feel you're getting worse, please have your wife bring you straight back or go to the emergency department (or call 000 if severe). How does that plan sound, and do you have any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, pneumonia. Well, at least I am staying out of hospital, though I am definitely keen to get this cleared up so I can get back to my classes before exams.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "say",
+  "utterance": "Your fever should start settling within two to three days of starting the antibiotics, though it's very normal for the cough and tiredness to linger for a few weeks while your lung heals—and if your cough hasn't completely cleared in 6 weeks, come back so we can recheck your chest. Take care and I'll see you in two days for your check-up.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, I will be back in two days then. Thanks, Doctor.",
+  "awards": [],
+  "score": 290
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 330
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_2",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_4"
+   ],
+   "quotes": {
+    "ideal_1": "this is a mild-severity pneumonia that we can safely treat at home with antibiotic tablets rather than needing hospital.",
+    "ideal_2": "I'd like to review you here in 48 hours—in two days' time—to make sure your fever is settling and you're improving.",
+    "ideal_3": "However, if at any point you become more breathless at rest, develop worsening chest pain, cough up bright red blood, feel dizzy or confused, can't keep fluids down, or feel you're getting worse, please have your wife bring you straight back or go to the emergency department",
+    "acceptable_2": "take paracetamol regularly as needed for the fever and the sharp chest pain",
+    "acceptable_3": "drink plenty of fluids",
+    "acceptable_4": "I'll make sure that goes on your record."
+   }
+  },
+  "total": 390,
+  "max": 420,
+  "level": "Director",
+  "consequence": "ideal",
+  "score": 330
+ }
+]

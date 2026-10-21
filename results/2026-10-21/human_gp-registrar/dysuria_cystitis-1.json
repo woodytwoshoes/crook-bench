@@ -1,0 +1,88 @@
+{
+ "model": "human/gp-registrar",
+ "case": "dysuria_cystitis",
+ "rep": 1,
+ "ending": "ended",
+ "total": 130,
+ "max": 360,
+ "level": "Resident",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 50,
+   "max": 205
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 35,
+   "max": 45
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 30,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Fever, sweats, chills or shaking",
+   "elicited": true
+  },
+  {
+   "topic": "Pain in the back or sides (loins)",
+   "elicited": true
+  },
+  {
+   "topic": "Nausea, vomiting or feeling generally unwell",
+   "elicited": true
+  },
+  {
+   "topic": "Whether she could be pregnant",
+   "elicited": false
+  },
+  {
+   "topic": "Abdominal pain beyond a low ache",
+   "elicited": false
+  },
+  {
+   "topic": "Any unusual vaginal bleeding",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "uti",
+   "role": "acceptable"
+  },
+  {
+   "label": "Can't miss",
+   "id": "sti_urethritis",
+   "role": "differential"
+  }
+ ],
+ "says": 5,
+ "questions": 5,
+ "usage": {
+  "calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "cost": null
+ },
+ "patient_model": "gemini-3.5-flash-lite (classifier gemini-3.1-flash-lite)",
+ "started": "2026-10-12T06:49:30.371Z",
+ "cost": null
+}

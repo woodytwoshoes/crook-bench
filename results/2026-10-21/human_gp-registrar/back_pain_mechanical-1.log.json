@@ -1,0 +1,288 @@
+[
+ {
+  "type": "say",
+  "utterance": "Do you have any incontinence?",
+  "released": [
+   "bladder_function",
+   "bowel_function"
+  ],
+  "flooded": false,
+  "reply": "Passing urine is all normal, and I haven't had any loss of bowel control.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any numbness around your backside or around your perineum?",
+  "released": [
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "No, I haven't noticed any numbness like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any shooting pain down into your legs?",
+  "released": [
+   "leg_radiation"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have any pain shooting down my legs.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the pain spreads down the legs"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any weakness in your legs?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any numbness in your legs?",
+  "released": [],
+  "flooded": false,
+  "reply": "No, nothing down my legs.",
+  "awards": []
+ },
+ {
+  "type": "say",
+  "utterance": "Do you have any history of fractures in the absence of trauma or any history of prostate cancer?",
+  "released": [
+   "osteoporosis",
+   "cancer_history"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have osteoporosis, and I've never had cancer.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   }
+  ]
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any favours?",
+  "released": [
+   "fever_infection"
+  ],
+  "flooded": false,
+  "reply": "No fevers or infections at all.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   }
+  ]
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "72 regular.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "124/78.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "14.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "98% on room air.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 95
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 105
+ },
+ {
+  "type": "exam",
+  "id": "sacroiliac_tests",
+  "finding": "SI joint stress tests negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Sacroiliac joint tests"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 115
+ },
+ {
+  "type": "rx",
+  "id": "celecoxib_200mg_cap",
+  "dose": "1 capsule",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Naproxen or celecoxib as the NSAID"
+   }
+  ],
+  "score": 120
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 tablet",
+  "frequency": "Four times daily",
+  "duration": "3 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "refer",
+  "id": "physiotherapy",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Physiotherapy referral"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "dx",
+  "primary": "lumbar_strain",
+  "cantMiss": "cauda_equina",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Lumbar muscle strain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": []
+  },
+  "total": 160,
+  "max": 465,
+  "level": "Resident",
+  "consequence": "acceptable"
+ }
+]

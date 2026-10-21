@@ -1,0 +1,166 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, thanks for coming in today. Can you tell me a bit more about your cough and fever? When did it start and how have you been feeling?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, and it started as a dry, hacking cough. I have been burning up on and off, and since yesterday I am bringing stuff up that is a rusty, brownish colour. Also, there is a sharp pain low down on the right side round towards my back that catches me when I take a deep breath or cough, which started yesterday.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_back",
+  "finding": "Bronchial breathing with coarse crackles at the right base. Left base clear.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Your temperature is?",
+  "released": [],
+  "flooded": false,
+  "reply": "I did not use a thermometer, but I was roasting.",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "subregion": "oral",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "order",
+  "id": "crp",
+  "result": null,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "C-reactive protein (CRP)"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "say",
+  "utterance": "Have you had any recent travel or contact with anyone who's been unwell?",
+  "released": [
+   "recent_travel"
+  ],
+  "flooded": false,
+  "reply": "No, I have not been anywhere, just school and home.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "rx",
+  "id": "amoxicillin_clavulanate_875_125_tab",
+  "dose": "500 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": -30,
+    "kind": "penalty",
+    "label": "Harmful: Broad-spectrum antibiotic first-line",
+    "domain": "management"
+   }
+  ],
+  "score": 25
+ },
+ {
+  "type": "say",
+  "utterance": "I'm going to prescribe you some antibiotics to help clear up the infection in your lung. It's called amoxicillin-clavulanate, and you should take one tablet twice a day for five days. You should start to feel better within a few days, but it's really important that you finish the whole course, even if you start to feel better before you've taken all the tablets. If your symptoms get worse or you experience any side effects, please come back and see me. I'll also check on your CRP result when it comes back tomorrow.",
+  "released": [],
+  "flooded": false,
+  "reply": "Look, I am really keen to get back to my classes before exams, but if these tablets fix me up so I can get back to work, I will take them.",
+  "awards": [],
+  "score": 25
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "pulmonary_embolism",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Pulmonary embolism",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 65,
+  "max": 420,
+  "level": "Intern",
+  "consequence": "harmful",
+  "score": 65
+ }
+]

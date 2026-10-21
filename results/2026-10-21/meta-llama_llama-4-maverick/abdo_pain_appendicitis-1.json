@@ -1,0 +1,88 @@
+{
+ "model": "meta-llama/llama-4-maverick",
+ "case": "abdo_pain_appendicitis",
+ "rep": 1,
+ "ending": "ended",
+ "total": 95,
+ "max": 420,
+ "level": "Resident",
+ "consequence": "harmful",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 80,
+   "max": 220
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 20,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 10,
+   "max": 10
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": -20,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Where the pain started and whether it has moved",
+   "elicited": false
+  },
+  {
+   "topic": "Whether moving, walking or coughing makes it worse",
+   "elicited": false
+  },
+  {
+   "topic": "Fever, sweats or chills",
+   "elicited": true
+  },
+  {
+   "topic": "Pain or swelling in the testicles",
+   "elicited": false
+  },
+  {
+   "topic": "Fainting or light-headedness",
+   "elicited": false
+  }
+ ],
+ "harmful": [
+  "Routine referral to a general surgeon (outpatient appointment)"
+ ],
+ "unnecessary": [],
+ "missed_required": [
+  "Refer to the emergency department today for surgical assessment"
+ ],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "appendicitis",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "nothing_to_exclude",
+   "role": null
+  }
+ ],
+ "says": 4,
+ "questions": 5,
+ "usage": {
+  "calls": 16,
+  "prompt_tokens": 49503,
+  "completion_tokens": 1095,
+  "cost": 0.008459502499999999
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T08:51:13.813Z",
+ "max_questions": 50
+}

@@ -1,0 +1,366 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Mark, I'm the GP. Tell me about this cough and fever — when did it start, and how has it been going?",
+  "released": [
+   "sputum_colour",
+   "pleuritic_pain"
+  ],
+  "flooded": false,
+  "reply": "It has been going on for three days now, and it started as a dry, hacking cough. I have been burning up on and off as well, and since yesterday I am bringing stuff up that is a rusty, brownish colour, even though it was clear at first. I also got a sharp pain yesterday low down on the right side round towards my back that catches me when I take a deep breath or cough.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Colour of the phlegm"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Chest pain with breathing or coughing"
+   }
+  ],
+  "score": 20
+ },
+ {
+  "type": "say",
+  "utterance": "That sounds rough. Are you short of breath — at rest or walking around? Any shaking chills, coughing up actual bright blood, or feeling confused or faint?",
+  "released": [
+   "breathlessness",
+   "rigors",
+   "haemoptysis",
+   "confusion"
+  ],
+  "flooded": false,
+  "reply": "I only get puffed going up the stairs or on the way in from the car park, but sitting here I am all right. The first night I was shaking under the doona with my teeth chattering even though I was boiling, but there is no actual blood coming up, just that rusty colour. My head is clear, though my wife reckons I am just grumpy.",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "red_flag",
+    "label": "Red flag: Shortness of breath"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Shaking chills (rigors)"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Coughing up blood"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Confusion or drowsiness"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Do you smoke or vape, and do you have any health problems like asthma, diabetes, heart or kidney issues, or a weakened immune system? Do you take any medicines, and any allergies, especially to penicillin?",
+  "released": [
+   "smoking",
+   "lung_disease",
+   "diabetes",
+   "heart_disease",
+   "immunosuppression",
+   "antibiotic_allergy"
+  ],
+  "flooded": false,
+  "reply": "I have never smoked, and I have never had asthma or anything with my lungs, diabetes, heart problems, or anything like that. I do not take any regular medicines, but I am allergic to penicillin because I came up in hives and my lips swelled when I was a kid, which is probably not on my file since I have not needed antibiotics in years.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Smoking"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Asthma or other lung disease"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Diabetes"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Heart problems"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Immune problems or immunosuppressant medicines"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Allergy to antibiotics"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's really important — I'll put that on your file. Have you travelled recently, been in hospital, or been around anyone else sick, birds, or air-conditioning cooling towers? Any calf pain or leg swelling? And are you managing to drink fluids and pass urine normally?",
+  "released": [
+   "recent_travel",
+   "recent_hospital",
+   "bird_contact",
+   "leg_swelling"
+  ],
+  "flooded": false,
+  "reply": "I have not been anywhere except school and home, and I have not been in hospital for years, while for animals we have got a dog instead of birds. My legs are fine, and I am managing to drink fluids and pass urine normally.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Recent travel"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Recent hospital stay"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Contact with birds"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Leg swelling or calf pain"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "finding": "96, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 170
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "finding": "128/80.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "finding": "22.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "finding": "95% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 200
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "38.0 °C.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "finding": "Lungs (front): Vesicular breath sounds. No added sounds. Lungs (back): Bronchial breathing with coarse crackles at the right base. Left base clear. Elsewhere: bronchial breathing and coarse crackles at the right base posteriorly. Vesicular elsewhere. No wheeze.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "exam",
+  "id": "chest_percussion",
+  "finding": "Lungs (front): Resonant. Lungs (back): Dull to percussion at the right base. Left base resonant. Elsewhere: dull at the right base posteriorly. Resonant elsewhere.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Chest percussion"
+   }
+  ],
+  "score": 230
+ },
+ {
+  "type": "exam",
+  "id": "vocal_resonance",
+  "finding": "Lungs (front): Normal and symmetrical. Lungs (back): Increased at the right base. Elsewhere: increased at the right base posteriorly. Normal elsewhere.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Vocal resonance"
+   }
+  ],
+  "score": 235
+ },
+ {
+  "type": "exam",
+  "id": "chest_expansion",
+  "finding": "Expansion reduced on the right lower chest.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Chest expansion"
+   }
+  ],
+  "score": 240
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "finding": "Heart sounds dual, no added sounds. No murmurs.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 245
+ },
+ {
+  "type": "order",
+  "id": "chest_xray",
+  "result": "Right lower lobe consolidation with air bronchograms. Other lobes clear. No pleural effusion. Normal heart size.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "investigation",
+    "label": "Chest X-ray"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "rx",
+  "id": "doxycycline_100mg_tab",
+  "dose": "100 mg",
+  "frequency": "Twice daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Doxycycline 100 mg orally 12-hourly for 5–7 days (penicillin allergy)"
+   }
+  ],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "Mark, your examination and X-ray show a chest infection in the lower part of your right lung — a pneumonia. The good news is your oxygen level, blood pressure and thinking are all fine, so it's safe to treat at home. Because of your penicillin allergy, I've prescribed doxycycline, one 100 mg tablet twice a day for 5 days. Take it with a full glass of water and food, stay upright for half an hour after, avoid taking it with milk, antacids or iron, and use sunscreen as it can make you sunburn easily. Paracetamol regularly helps the fever and the chest pain, rest, and drink plenty. Please stay home from school until the fever settles and you feel better. I'd like to see you again in 2 to 3 days to check you're improving, and we'll repeat a chest X-ray in about 6 weeks to make sure it's fully cleared. Go straight to the emergency department or call 000 if you get more breathless, breathless at rest, lips going blue, confusion or extreme drowsiness, fainting, coughing up a lot of blood, worse chest pain, or you can't keep fluids or the tablets down. Also come back sooner if you're no better after 48 hours. Any questions?",
+  "released": [],
+  "flooded": false,
+  "reply": "Off school? The term exams start next week, so I am really hoping I can get this sorted quickly.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "say",
+  "utterance": "Understandable. Most people start feeling better within 2–3 days of antibiotics, but tiredness can linger a couple of weeks. I'll give you a certificate for this week and we'll review at your follow-up whether you're fit to go back. Pushing on too early can set you back.",
+  "released": [],
+  "flooded": false,
+  "reply": "Right, well, I will just take the tablets then and try to get some rest so I am ready for when I get back to my classes.",
+  "awards": [],
+  "score": 265
+ },
+ {
+  "type": "dx",
+  "primary": "pneumonia",
+  "cantMiss": "sepsis",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: Community-acquired pneumonia",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Sepsis",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 305
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_1",
+    "ideal_3",
+    "acceptable_2",
+    "acceptable_3",
+    "acceptable_5"
+   ],
+   "quotes": {
+    "ideal_1": "The good news is your oxygen level, blood pressure and thinking are all fine, so it's safe to treat at home.",
+    "ideal_3": "Go straight to the emergency department or call 000 if you get more breathless, breathless at rest, lips going blue, confusion or extreme drowsiness, fainting, coughing up a lot of blood, worse chest pain, or you can't keep fluids or the tablets down.",
+    "acceptable_2": "Paracetamol regularly helps the fever and the chest pain",
+    "acceptable_3": "drink plenty",
+    "acceptable_5": "Also come back sooner if you're no better after 48 hours."
+   }
+  },
+  "total": 350,
+  "max": 420,
+  "level": "Consultant",
+  "consequence": "ideal",
+  "score": 305
+ }
+]

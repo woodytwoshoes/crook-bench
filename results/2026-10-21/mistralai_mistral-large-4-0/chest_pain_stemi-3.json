@@ -1,0 +1,92 @@
+{
+ "model": "mistralai/mistral-large-4-0",
+ "case": "chest_pain_stemi",
+ "rep": 3,
+ "ending": "ended",
+ "total": 205,
+ "max": 480,
+ "level": "Registrar",
+ "consequence": "acceptable",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 110,
+   "max": 290
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 35,
+   "max": 85
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 20,
+   "max": 20
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 40,
+   "max": 85
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Sweating or clamminess with the pain",
+   "elicited": true
+  },
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Dizziness, light-headedness or fainting",
+   "elicited": true
+  },
+  {
+   "topic": "Had this chest pain before, e.g. on stairs or exertion",
+   "elicited": false
+  },
+  {
+   "topic": "Sudden severe tearing or ripping pain",
+   "elicited": false
+  },
+  {
+   "topic": "Weakness, numbness or other neurological symptoms, or limb pain",
+   "elicited": false
+  },
+  {
+   "topic": "Taking any other medicines or tablets, beyond the regular ones (e.g. occasional, from the chemist, a friend or online)",
+   "elicited": false
+  }
+ ],
+ "harmful": [],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "stemi",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "nothing_to_exclude",
+   "role": null
+  }
+ ],
+ "says": 6,
+ "questions": 12,
+ "usage": {
+  "calls": 10,
+  "prompt_tokens": 40805,
+  "completion_tokens": 3348,
+  "cost": 0.02788256
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:01:58.055Z",
+ "max_questions": 50
+}

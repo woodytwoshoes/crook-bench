@@ -1,0 +1,199 @@
+[
+ {
+  "type": "say",
+  "utterance": "Good morning, Mr Mitchell. What seems to be the problem with your indigestion today?",
+  "released": [
+   "pain_site",
+   "pain_radiation",
+   "onset_time"
+  ],
+  "flooded": false,
+  "reply": "Started about seven this morning, came on over a few minutes. It is like a heaviness. Like indigestion but… heavier. Sort of a weight sitting on my chest. Right in the middle, behind the breastbone. Bit up into the throat. It has been going the whole time — so an hour and a half, near enough. Still there now. Now you mention it, my jaw is a bit achy, and my left arm feels heavy. Not my back.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the discomfort is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Whether the discomfort spreads or travels anywhere (arms, jaw, neck, back)"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "When the discomfort started"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "heart_rate",
+  "subregion": "none",
+  "finding": "54, regular.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Heart rate"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "exam",
+  "id": "blood_pressure",
+  "subregion": "none",
+  "finding": "104/68.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Blood pressure"
+   }
+  ],
+  "score": 50
+ },
+ {
+  "type": "exam",
+  "id": "resp_rate",
+  "subregion": "none",
+  "finding": "20.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Respiratory rate"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spo2",
+  "subregion": "none",
+  "finding": "96% on room air.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Oxygen saturation"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "subregion": "none",
+  "finding": "Pale and grey. Anxious, shifting in the chair.",
+  "awards": [],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "chest_auscultation",
+  "subregion": "lungs_front",
+  "finding": "Chest clear. No crackles.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Breath sounds"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "exam",
+  "id": "cardiac_auscultation",
+  "subregion": "heart",
+  "finding": "Heart sounds dual, soft S4. No murmur. No rub.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Heart sounds"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "order",
+  "id": "ecg_12_lead",
+  "result": "Sinus bradycardia 54/min. ST elevation 2–3 mm in II, III and aVF. Reciprocal ST depression in I and aVL. No LBBB.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "investigation",
+    "label": "ECG (12-lead)"
+   }
+  ],
+  "score": 85
+ },
+ {
+  "type": "order",
+  "id": "troponin_lab",
+  "result": null,
+  "awards": [],
+  "score": 85
+ },
+ {
+  "type": "refer",
+  "id": "ambulance_ed",
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Call an ambulance (000) immediately"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Mr Mitchell, I'm very concerned about your symptoms. I'm going to arrange for an ambulance to take you to the hospital immediately for further assessment and treatment.",
+  "released": [],
+  "flooded": false,
+  "reply": "Hold on, Doc, can't I just take some Mylanta? I've got a hot water heater to put in this morning.",
+  "awards": [],
+  "score": 100
+ },
+ {
+  "type": "dx",
+  "primary": "stemi",
+  "cantMiss": "stemi",
+  "awards": [
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Correct diagnosis: ST-elevation myocardial infarction (STEMI)",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Can't-miss slot repeats the most likely diagnosis: ST-elevation myocardial infarction (STEMI). Can't miss here: Aortic dissection, Pulmonary embolism, Pneumothorax",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 110
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 110,
+  "max": 480,
+  "level": "Resident",
+  "consequence": "acceptable",
+  "score": 110
+ }
+]

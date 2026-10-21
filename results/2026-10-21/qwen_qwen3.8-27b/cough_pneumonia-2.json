@@ -1,0 +1,102 @@
+{
+ "model": "qwen/qwen3.8-27b",
+ "case": "cough_pneumonia",
+ "rep": 2,
+ "ending": "ended",
+ "total": 215,
+ "max": 420,
+ "level": "Registrar",
+ "consequence": "harmful",
+ "domains": [
+  {
+   "id": "history",
+   "name": "History",
+   "earned": 115,
+   "max": 230
+  },
+  {
+   "id": "examination",
+   "name": "Examination",
+   "earned": 65,
+   "max": 90
+  },
+  {
+   "id": "investigations",
+   "name": "Investigations",
+   "earned": 0,
+   "max": 0
+  },
+  {
+   "id": "management",
+   "name": "Management and diagnosis",
+   "earned": 25,
+   "max": 100
+  }
+ ],
+ "red_flags": [
+  {
+   "topic": "Shortness of breath",
+   "elicited": true
+  },
+  {
+   "topic": "Confusion or drowsiness",
+   "elicited": true
+  },
+  {
+   "topic": "Coughing up blood",
+   "elicited": false
+  },
+  {
+   "topic": "Whether he is getting rapidly worse",
+   "elicited": true
+  },
+  {
+   "topic": "Vomiting",
+   "elicited": false
+  },
+  {
+   "topic": "Immune problems or immunosuppressant medicines",
+   "elicited": false
+  },
+  {
+   "topic": "Recent hospital stay",
+   "elicited": false
+  },
+  {
+   "topic": "Weight loss",
+   "elicited": false
+  },
+  {
+   "topic": "Leg swelling or calf pain",
+   "elicited": false
+  }
+ ],
+ "harmful": [
+  "Unsafe: Penicillin in a penicillin-allergic patient"
+ ],
+ "unnecessary": [],
+ "missed_required": [],
+ "diagnoses": [
+  {
+   "label": "Most likely",
+   "id": "pneumonia",
+   "role": "key"
+  },
+  {
+   "label": "Can't miss",
+   "id": "nothing_to_exclude",
+   "role": null
+  }
+ ],
+ "says": 6,
+ "questions": 17,
+ "usage": {
+  "calls": 15,
+  "prompt_tokens": 86050,
+  "completion_tokens": 6268,
+  "cost": 0.02440384
+ },
+ "patient_model": "gemini-3.5-flash-lite",
+ "started": "2026-10-21T09:01:42.458Z",
+ "max_questions": 50
+}

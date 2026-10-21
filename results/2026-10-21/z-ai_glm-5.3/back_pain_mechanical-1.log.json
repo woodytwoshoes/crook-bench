@@ -1,0 +1,385 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hi Daniel, come on in. I hear you hurt your lower back lifting something on the weekend — that's no fun. Can you tell me exactly what happened, and what it feels like now?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "On Saturday I was lifting a big pot plant in the garden and felt a twinge, then woke up Sunday and could barely get out of bed, so it has been three days now. It is low down on the left side of my back, and sometimes goes into my left buttock. It is worse when I bend or get out of a chair, and worse by the evening, though it feels a bit better lying still with a heat pack. I have worked from home the last two days, mostly lying on the couch with the laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Ouch, that sounds sore. A few important questions: any numbness or tingling in your legs, or weakness in your foot or leg? Any changes to your bladder or bowel — trouble passing urine, losing control, or numbness around your backside? Any fever, feeling unwell, weight loss, or problems like cancer you've had before? And are you on any medications like steroids, or have osteoporosis?",
+  "released": [],
+  "flooded": true,
+  "reply": "Sorry, that's a lot of questions at once. Could you ask me one thing at a time?",
+  "awards": [],
+  "score": 30
+ },
+ {
+  "type": "say",
+  "utterance": "Sorry about that! First one: any numbness or tingling in your legs, or weakness in your foot or leg?",
+  "released": [
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "No, my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 40
+ },
+ {
+  "type": "say",
+  "utterance": "Good. Any problems with your bladder or bowels — trouble passing urine, loss of control, or numbness around your backside?",
+  "released": [
+   "bladder_function",
+   "bowel_function",
+   "saddle_anaesthesia"
+  ],
+  "flooded": false,
+  "reply": "All of that is completely normal, and I haven't noticed anything like that.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any change in passing urine — difficulty, retention or leaking"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any loss of bowel control"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Numbness around the buttocks, genitals or back passage"
+   }
+  ],
+  "score": 70
+ },
+ {
+  "type": "say",
+  "utterance": "Any fever, chills, or feeling generally unwell? Or any weight loss, or any history of cancer?",
+  "released": [
+   "fever_infection",
+   "weight_loss",
+   "cancer_history"
+  ],
+  "flooded": false,
+  "reply": "No fevers or infections at all, if anything I've put some weight on, and I've never had cancer.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Unexplained weight loss"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Any history of cancer"
+   }
+  ],
+  "score": 100
+ },
+ {
+  "type": "say",
+  "utterance": "Great. Last couple: any history of osteoporosis or steroid tablets? And has anything like this happened before?",
+  "released": [
+   "osteoporosis",
+   "steroid_use",
+   "previous_episodes"
+  ],
+  "flooded": false,
+  "reply": "No, I don't have osteoporosis and I am not on any steroid tablets. I tweaked my back once maybe five years ago, but it was gone in a week.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Known osteoporosis"
+   },
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Steroid use"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Previous episodes of back pain"
+   }
+  ],
+  "score": 125
+ },
+ {
+  "type": "say",
+  "utterance": "Thanks, that's really helpful. Let me have a quick look and examine your back and legs now.",
+  "released": [],
+  "flooded": false,
+  "reply": "I just want to know what is going on, and whether I can get an MRI referral so we can see if it is a slipped disc.",
+  "awards": [],
+  "score": 125
+ },
+ {
+  "type": "exam",
+  "id": "back_inspection",
+  "finding": "Slight lean away from the left. No deformity or skin changes.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Back and posture"
+   }
+  ],
+  "score": 130
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 140
+ },
+ {
+  "type": "exam",
+  "id": "lumbar_range_of_movement",
+  "finding": "Flexion limited to fingertips at mid-shin by pain; extension mildly uncomfortable; lateral flexion to the right painful on the left.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar range of movement"
+   }
+  ],
+  "score": 150
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 160
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 165
+ },
+ {
+  "type": "exam",
+  "id": "inspection_gait",
+  "finding": "Walks slowly and guardedly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Gait"
+   }
+  ],
+  "score": 175
+ },
+ {
+  "type": "exam",
+  "id": "temperature",
+  "finding": "36.7 °C.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Temperature"
+   }
+  ],
+  "score": 180
+ },
+ {
+  "type": "say",
+  "utterance": "Good news, Daniel: your examination shows normal leg strength, reflexes and sensation — so no sign of a pinched or slipped disc causing nerve damage. No fever, and no red flags. This looks like a mechanical strain of the muscles and joints in your lower back from lifting — a \"non-specific\" low back pain. I know it's very painful, but it usually settles within 2–6 weeks.\n\nThat's also why I don't think an MRI is the right move right a scan often shows incidental findings in healthy backs and would likely cost you money without changing treatment. Scans are for people with nerve problems, or if pain persists beyond ~6 weeks despite good treatment. If it hasn't improved in 4–6 weeks, I'll happily reassess and consider imaging then.\n\nThe best treatment is: keep moving as much as you can (walking is great), heat packs, gentle stretches, and avoiding long periods lying still — staying active is proven to speed recovery. Avoid heavy lifting and twisting for now, and when you do lift, bend the knees and keep the load close.\n\nFor pain relief: paracetamol regularly, and if it's safe for you (no stomach ulcers, kidney issues, or reflux), an anti-inflammatory like ibuprofen or naproxen. Note I'm avoiding tramadol because of your allergy. Is there anything else? Any history of stomach ulcers, reflux, kidney problems, or blood pressure issues? And does paracetamol or ibuprofen normally agree with you?",
+  "released": [
+   "stomach_ulcers",
+   "kidney_problems"
+  ],
+  "flooded": false,
+  "reply": "I have never had ulcers, my kidneys are fine as far as I know, and paracetamol and ibuprofen agree with me completely. I just really thought a scan was the safest option so we could know for sure what is happening.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Stomach ulcers or indigestion with anti-inflammatories"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "Kidney problems"
+   }
+  ],
+  "score": 190
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "2 tablets (1 g)",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 195
+ },
+ {
+  "type": "rx",
+  "id": "ibuprofen_400mg_tab",
+  "dose": "400 mg",
+  "frequency": "Three times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 15,
+    "kind": "management",
+    "label": "Ibuprofen 400 mg orally three times daily with food, short course"
+   }
+  ],
+  "score": 210
+ },
+ {
+  "type": "say",
+  "utterance": "That's completely understandable — scans feel reassuring. But without red flags, an MRI at this stage can actually mislead rather than reassure, and it doesn't change treatment for a simple strain. I'd rather avoid unnecessary radiation/costs and treat what's clearly there.\n\nI've prescribed paracetamol (1 g, up to 4 times a day — maximum 4 g daily, never more) and ibuprofen 400 mg three times a day with food, for 5 days. Take them regularly while the pain is bad.\n\nSafety netting: come back sooner if you develop new numbness or weakness in your legs, problems controlling your bladder or bowels, numbness around your backside, fever, or if the pain gets much worse. Otherwise, I'll review you in 4–6 weeks if it hasn't settled — and if it persists then, we'll talk about imaging and possibly physiotherapy. Does that sound okay? Any questions?",
+  "released": [
+   "expectations",
+   "concerns"
+  ],
+  "flooded": false,
+  "reply": "I figured I would need an MRI to see what is going on, because honestly, I have been reading about slipped discs and people needing surgery.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he expects from the visit"
+   },
+   {
+    "points": 5,
+    "kind": "history",
+    "label": "What he is worried the pain might be"
+   }
+  ],
+  "score": 220
+ },
+ {
+  "type": "say",
+  "utterance": "I get it — Dr Google can be scary! But surgery is only for people with significant nerve problems: leg weakness, foot drop, severe sciatica with numbness, or bladder/bowel issues. Your legs are completely normal on my exam, so you're nowhere near that territory. You have a good prognosis — most people with this pattern of pain recover well within weeks. If anything neurological does appear, that would be a different story and we'd investigate urgently — but nothing suggests that now.\n\nSo the plan: stay active, heat, the two medications, review in 4–6 weeks or sooner if red flags appear. Sound good?",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, I understand. I will try to keep moving and take the medications, and I'll come back if anything gets worse.",
+  "awards": [],
+  "score": 220
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "cantMiss": "cauda_equina",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": 20,
+    "kind": "diagnosis",
+    "label": "Can't-miss diagnosis considered: Cauda equina syndrome",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "ideal"
+   }
+  ],
+  "score": 250
+ },
+ {
+  "type": "say",
+  "utterance": "Great, Daniel. Take care of your back — keep moving, use heat and the medications, and come back sooner if any of those warning signs I mentioned appear, or if it hasn't improved in 4–6 weeks. All the best!",
+  "released": [],
+  "flooded": false,
+  "reply": "Thanks, I will do that.",
+  "awards": [],
+  "score": 250
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [
+    "ideal_0",
+    "ideal_2",
+    "ideal_4",
+    "ideal_5"
+   ],
+   "quotes": {
+    "ideal_0": "This looks like a mechanical strain of the muscles and joints in your lower back from lifting — a \"non-specific\" low back pain. I know it's very painful, but it usually settles within 2–6 weeks.",
+    "ideal_2": "That's also why I don't think an MRI is the right move right a scan often shows incidental findings in healthy backs and would likely cost you money without changing treatment.",
+    "ideal_4": "heat packs",
+    "ideal_5": "Safety netting: come back sooner if you develop new numbness or weakness in your legs, problems controlling your bladder or bowels, numbness around your backside, fever, or if the pain gets much worse."
+   }
+  },
+  "total": 310,
+  "max": 465,
+  "level": "Fellow",
+  "consequence": "acceptable",
+  "score": 250
+ }
+]

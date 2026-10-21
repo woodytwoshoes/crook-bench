@@ -1,0 +1,215 @@
+[
+ {
+  "type": "say",
+  "utterance": "Hello, Daniel. So, you've been having some lower back pain since the weekend? Can you tell me more about it?",
+  "released": [
+   "pain_site",
+   "aggravating_relieving",
+   "function_work"
+  ],
+  "flooded": false,
+  "reply": "It happened on Saturday when I was lifting a big pot plant in the garden and felt a twinge, but then I woke up Sunday and could barely get out of bed, so it has been three days. The pain is low down on the left side of my back, and sometimes it goes into my left buttock. It is worse when I bend or get out of a chair, and it gets worse by the evening, but it feels a bit better when I lie still with a heat pack. I have worked from home the last two days, mostly lying on the couch with my laptop, and I can walk around slowly.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Where exactly the pain is"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "What makes the pain better or worse"
+   },
+   {
+    "points": 10,
+    "kind": "history",
+    "label": "Effect on work and daily activities"
+   }
+  ],
+  "score": 30
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "left",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [
+   {
+    "points": 5,
+    "kind": "examination",
+    "label": "Straight leg raise and slump"
+   }
+  ],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "straight_leg_raise_slump",
+  "side": "right",
+  "finding": "SLR to 85° bilaterally; back discomfort only, no leg pain. Slump negative.",
+  "awards": [],
+  "score": 35
+ },
+ {
+  "type": "exam",
+  "id": "general_inspection",
+  "finding": "Well-looking, comfortable at rest. Not pale, jaundiced or distressed.",
+  "awards": [],
+  "score": 35
+ },
+ {
+  "type": "say",
+  "utterance": "Can you tell me more about your pain? Is it a sharp pain or more of a dull ache? Have you noticed any numbness or tingling in your legs?",
+  "released": [
+   "pain_severity",
+   "leg_neuro_symptoms"
+  ],
+  "flooded": false,
+  "reply": "It is about a seven when I move or roll over, and maybe a three if I keep still, and my legs feel completely normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Weakness, numbness or pins and needles in the legs"
+   }
+  ],
+  "score": 45
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Lumbar spine"
+   }
+  ],
+  "score": 55
+ },
+ {
+  "type": "exam",
+  "id": "spinal_palpation",
+  "finding": "Tender over left paraspinal muscles at L4–L5 with some spasm. No bony midline tenderness.",
+  "awards": [],
+  "score": 55
+ },
+ {
+  "type": "say",
+  "utterance": "So, it seems like the pain is mainly muscular. Have you had any recent illnesses, fever, or other symptoms besides the back pain?",
+  "released": [
+   "fever_infection"
+  ],
+  "flooded": false,
+  "reply": "I have not had any fevers or infections.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "red_flag",
+    "label": "Red flag excluded: Fever or recent infection"
+   }
+  ],
+  "score": 65
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "left",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "examination",
+    "label": "Leg neurology"
+   }
+  ],
+  "score": 75
+ },
+ {
+  "type": "exam",
+  "id": "lower_limb_neuro",
+  "side": "right",
+  "finding": "Power 5/5 throughout. Reflexes normal and symmetrical. Sensation intact. Heel and toe walking normal.",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "It seems like you've got a mechanical lower back pain, likely due to the strain from lifting that pot plant. I'm going to advise on some management strategies and we can discuss if any further tests are needed. In the meantime, I'd like to prescribe you some simple analgesia to help manage the pain.",
+  "released": [],
+  "flooded": false,
+  "reply": "Will pain relief actually fix a slipped disc though, or shouldn't we do an MRI just to be completely sure what is going on in there?",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "say",
+  "utterance": "Most cases of lower back pain like yours improve with simple measures. An MRI is not usually needed unless there are some red flags or the pain doesn't improve with treatment. Let's try some pain relief first and see how you go. I'll prescribe you some paracetamol to start with.",
+  "released": [],
+  "flooded": false,
+  "reply": "Alright, if you really think we can hold off on the scan for now, I will give the paracetamol a try.",
+  "awards": [],
+  "score": 75
+ },
+ {
+  "type": "rx",
+  "id": "paracetamol_500mg_tab",
+  "dose": "1 g",
+  "frequency": "Four times daily",
+  "duration": "5 days",
+  "givenNow": false,
+  "awards": [
+   {
+    "points": 5,
+    "kind": "management",
+    "label": "Paracetamol as the analgesic"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "say",
+  "utterance": "I also recommend you avoid heavy lifting and bending for a few days, and try some gentle exercises to help improve your back pain. If your symptoms don't improve or get worse, please come back and see me. Let's review in a week or so.",
+  "released": [],
+  "flooded": false,
+  "reply": "Okay, I will try to stay as active as I can and avoid lifting anything heavy. By the way, just so you know, I am allergic to Tramadol because it makes me vomit and feel dizzy.",
+  "awards": [],
+  "score": 80
+ },
+ {
+  "type": "dx",
+  "primary": "mechanical_lbp",
+  "cantMiss": "nothing_to_exclude",
+  "awards": [
+   {
+    "points": 10,
+    "kind": "diagnosis",
+    "label": "Defensible diagnosis: Mechanical low back pain",
+    "fromDiagnosis": true,
+    "domain": "management"
+   },
+   {
+    "points": -10,
+    "kind": "penalty",
+    "label": "Something can't be excluded here: the can't-miss slot needs it. Can't miss here: Cauda equina syndrome, Spinal malignancy (metastases or myeloma), Spinal infection (discitis or epidural abscess), Vertebral fracture, Abdominal aortic aneurysm",
+    "fromDiagnosis": true,
+    "domain": "management",
+    "cantMiss": "wrong"
+   }
+  ],
+  "score": 80
+ },
+ {
+  "type": "end",
+  "judged": {
+   "managementIds": [],
+   "quotes": {}
+  },
+  "total": 80,
+  "max": 465,
+  "level": "Intern",
+  "consequence": "acceptable",
+  "score": 80
+ }
+]
